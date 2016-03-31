@@ -3,26 +3,27 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+ /*
  @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
  @import url(https://fonts.googleapis.com/css?family=Exo:600,700);
  @import url(https://fonts.googleapis.com/css?family=Courgette);
+ */
+ /*
 .header-top{
 	padding:30px 0;
 	background-color:#FFF;	
 }
-/* Pour enlever la barre de séparation blanche dans le collapse de la version mobile*/
-.navbar-collapse{ 
-	border:0;
-	box-shadow:none;	
-}
+*/
+/*
 body{
 	Font-family:'Roboto', sans-serif;
 }
+*/
 .mt120{
 	margin-top:120px;	
 }
 
-/**Logo**/
+/* Logo */
 .navbar-brand{
 	width:250px; /* you can use % */
 	height: auto;
