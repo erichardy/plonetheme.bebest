@@ -1,7 +1,7 @@
  @import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
  @import url(https://fonts.googleapis.com/css?family=Exo:600,700);
  @import url(https://fonts.googleapis.com/css?family=Courgette);
- 
+ @import url('bebest-mixins.less');
  
  @text-bright: #FFF;
  @text-dark: #000;
@@ -11,29 +11,17 @@
  @font-titre: 'Exo';
  @font-contrast: 'Courgette';
 
+ /* BODY */
+body {
+	Font-family:'Lora', sans-serif;
+}
+
  /* HEADER */
 
  .header-top {
 	padding:30px 0;
 	background-color:#FFF;	
 }
-
-/* BODY */
-body {
-	Font-family:'Lora', sans-serif;
-}
-
-/* MIXINS */
-
-.super-mixin {
-	position:absolute;
-	Font-family: @font-contrast;
-	Font-size: 50px;
-	Font-weight: 300;
-	width:100%;	
-}
-
-
 
 /* LOGO */
 
