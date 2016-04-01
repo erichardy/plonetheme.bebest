@@ -34,16 +34,15 @@ body {
 /* LIENS */
 
 .navbar-bebest {
+	font-size: 1.188em;
 		.navbar-nav {
 			>li {
 				>a {
-					font-size: 19px;
 					font-family: @font-titre;
 					font-weight: 600;
 					color: @color_1;
 					&:hover {
 							color: @color_2;
-							font-size: 19px;
 							}	
 					}
 				}
@@ -52,11 +51,9 @@ body {
 				>a {
 					color: @color_2;
 					background-color: #eee;
-					font-size: 19px;
 					}
 				}		
 }
-
 
 /* TOGGLE */
 
@@ -72,61 +69,61 @@ body {
 	background: #FFF !important;	
 }
 
-
-
-
 /* CAROUSEL */
+
+#home-carousel-bebest {
+	margin-top:120px;
+}
 
 /*Image*/
 .bgimage {
 	position:relative !important;	
+	overflow:hidden;
 }
-
 
 .super {
 	top:0;
 	left:0;
-	top:350px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 	.super-mixin;
-	
 		.bright {
 			color: @text-bright;
 			}
 		.dark {
 			color: @text-dark;
-		}
-		
+		}		
 }
 
 .imgwhite {
 	margin-right: auto;
 	margin-left: auto;	
+	max-width: 100%;
 }
 
 .homeimg-container {
-    height: 740px;
+	background-position: center-top;
+	max-height: 750px;
     left: 0;
     position: relative;
     top: 0;
     width: 100%;
-	
 		.img-src {
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: cover;
-			height: 740px;
 			position: fixed;
 			width: 100%;
 	}
 }
 
 .scrollbot{
-	margin-top:200px;
-	font-size:50px;
-	font-color: #eee;
-	line-height:20px !important;
+	font-size: 3vw;
+	color: #fff;
+	line-height: 50%;
+	position: relative;
 }
-
 
 .glyphiconbutton {
     display: inline-block;
@@ -136,7 +133,6 @@ body {
     position: relative;
     top: 1px;
 }
-
 
 /* HOME THUMBNAILS */
 
@@ -189,7 +185,7 @@ body {
 			transition: top .5s;
 			}
 }
-
+/*
 .mt120{
 	margin-top:120px;	
-}
+}*/
