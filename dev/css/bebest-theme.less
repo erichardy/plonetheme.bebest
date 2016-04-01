@@ -1,18 +1,207 @@
  @import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
  @import url(https://fonts.googleapis.com/css?family=Exo:600,700);
  @import url(https://fonts.googleapis.com/css?family=Courgette);
+ 
+ 
+ @text-bright: #FFF;
+ @text-dark: #000;
+ @color_1: #252747;
+ @color_2: #DE963E;
+ @font-content: 'Lora';
+ @font-titre: 'Exo';
+ @font-contrast: 'Courgette';
 
-/* HEADER */
+ /* HEADER */
 
  .header-top {
 	padding:30px 0;
 	background-color:#FFF;	
 }
 
-
-
-
 /* BODY */
 body {
 	Font-family:'Lora', sans-serif;
+}
+
+/* MIXINS */
+
+.super-mixin {
+	position:absolute;
+	Font-family: @font-contrast;
+	Font-size: 50px;
+	Font-weight: 300;
+	width:100%;	
+}
+
+
+
+/* LOGO */
+
+.navbar-brand{
+	width:250px; /* you can use % */
+	height: auto;
+	margin-top: -30px;
+}
+
+/* LIENS */
+
+.navbar-bebest {
+		.navbar-nav {
+			>li {
+				>a {
+					font-size: 19px;
+					font-family: @font-titre;
+					font-weight: 600;
+					color: @color_1;
+					&:hover {
+							color: @color_2;
+							font-size: 19px;
+							}	
+					}
+				}
+			}
+			>.active {
+				>a {
+					color: @color_2;
+					background-color: #eee;
+					font-size: 19px;
+					}
+				}		
+}
+
+
+/* TOGGLE */
+
+.navbar-toggle{
+	background:	#e95858;
+
+		&:hover{
+			background:	#222;
+			}
+}
+
+.icon-bar{
+	background: #FFF !important;	
+}
+
+
+
+
+/* CAROUSEL */
+
+/*Image*/
+.bgimage {
+	position:relative !important;	
+}
+
+
+.super {
+	top:0;
+	left:0;
+	top:350px;
+	.super-mixin;
+	
+		.bright {
+			color: @text-bright;
+			}
+		.dark {
+			color: @text-dark;
+		}
+		
+}
+
+.imgwhite {
+	margin-right: auto;
+	margin-left: auto;	
+}
+
+.homeimg-container {
+    height: 740px;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+	
+		.img-src {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 740px;
+			position: fixed;
+			width: 100%;
+	}
+}
+
+.scrollbot{
+	margin-top:200px;
+	font-size:50px;
+	font-color: #eee;
+	line-height:20px !important;
+}
+
+
+.glyphiconbutton {
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-style: normal;
+    font-weight: normal;
+    position: relative;
+    top: 1px;
+}
+
+
+/* HOME THUMBNAILS */
+
+.home-thumbnail-item{
+	width: 370px; 
+	height: 230px; 
+	border: 5px solid white;
+  	position:relative;
+	display: block;
+	 overflow: hidden;
+	 
+		img{
+			width: 100%; 
+			height: 100%; 
+			}
+
+		.thumbnail-item-dark{
+		  background: #000;
+		  height: 100%;
+		  width: 100%;
+		  opacity: 0.3;
+		  top: 150px;
+		  left: 0;
+		  position: absolute;
+		  padding: 0;
+		  transition: opacity .5s;
+		  -webkit-transition: top .5s; 
+		  transition: top .5s;
+		  }
+
+		h3 {
+			color: #FFF;	
+			line-height: 50px;
+			text-align: left;
+			padding: 2px;
+			}
+
+		p {
+			color:#fff;
+			text-align: left;
+			opacity: 1;
+			padding: 5px;	
+			}
+
+		&:hover .thumbnail-item-dark{
+			opacity: .6;
+			top: 0;
+			transition: opacity .5s;
+			-webkit-transition: top .5s; 
+			transition: top .5s;
+			}
+}
+
+.mt120{
+	margin-top:120px;	
 }
