@@ -1,0 +1,67 @@
+ /*TYPOGRAPHIE*/
+ 
+ @text-bright: #FFF;
+ @text-dark: #000;
+ @color_1: #252747;
+ @color_2: #DE963E;
+ @font-content: 'Lora';
+ @font-titre: 'Exo';
+ @font-contrast: 'Courgette';
+
+ /* Modifications de texte */
+ 
+ .bright {
+	color: @text-bright;
+	}
+.dark {
+	color: @text-dark;
+	}
+.small {
+	font-size: 0.8em
+	}
+.large {
+	font-size: 1.4em
+	}
+ 
+/* Headings */
+
+.super {
+	Font-family: @font-contrast;
+	Font-size: 3.5em;
+	Font-weight: 300;
+	width: 100%;	
+/*
+	.super-mixin;
+		.bright {
+			color: @text-bright;
+			}
+		.dark {
+			color: @text-dark;
+		}*/
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: @font-titre;
+  font-weight: 700;
+}
+
+// Alignment
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
+
+// Transformation
+.text-lowercase      { text-transform: lowercase; }
+.text-uppercase      { text-transform: uppercase; }
+.text-capitalize     { text-transform: capitalize; }
+
+/* Content font */
+
+.p {
+	font-family:@font-content;
+	font-size: 1em
+
+	}
