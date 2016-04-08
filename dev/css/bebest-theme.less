@@ -60,18 +60,17 @@
 
 /* CAROUSEL */
 
-#home-carousel-bebest {
+#home-carousel-bebest { // Marge du navbar
 	margin-top:120px;
 }
 
-/*Image*/
-.bgimage {
+.bgimage {	//Image du Carousel
 	position:relative ;	
 	overflow:hidden;
 }
 
 
-#bebest-slider-content{
+#bebest-slider-content { // Texte d'accroche 
 	top:0;
 	left:0;
 	top: 50%;
@@ -79,13 +78,13 @@
 	position: absolute;
 }
 
-.imgwhite {
+.imgwhite { // Logo Bebest blanc
 	margin-right: auto;
 	margin-left: auto;	
 	max-width: 100%;
 }
 
-.homeimg-container {
+.homeimg-container { // Conteneur du Carousel
 	background-position: center-top;
 	max-height: 750px;
     left: 0;
@@ -101,14 +100,14 @@
 	}
 }
 
-.scrollbot{
+.scrollbot { // Données fleche bas
 	font-size: 1em;
 	color: #fff;
 	line-height: 40%;
 	position: relative;
 }
 
-.glyphiconbutton {
+.glyphiconbutton { //Glyphicon Double fleche bas
     display: inline-block;
     font-family: "Glyphicons Halflings";
     font-style: normal;
@@ -124,7 +123,7 @@
 	display: block;
 }
 
-.home-thumbnail-item {
+.home-thumbnail-item { //Images thumnails
 	height: 230px; 
 	border-top: 5px solid white;
 	border-bottom: 5px solid white;
@@ -135,46 +134,52 @@
 	margin-right: -10px;
 	 
 		img {
-			max-width: 100%; 
+			max-width: 120%; 
 			height: auto;
+			-webkit-transition: max-width .9s; /* For Safari 3.1 to 6.0 */
+			transition: max-width .9s;
+			transition-timing-function: ease-in;
 			}
 
-		.thumbnail-item-dark{
+		.thumbnail-item-dark{ //Overlay noir
 		  background: #000;
 		  height: 100%;
 		  width: 100%;
-		  opacity: 0.3;
+		  opacity: 0.5;
 		  top: 150px;
 		  left: 0;
 		  position: absolute;
 		  padding: 0;
-		  transition: opacity .8s;
-		  -webkit-transition: top .8s; 
-		  transition: top .8s;
+		  transition: opacity .9s;
+		  -webkit-transition: top .9s; 
+		  transition: top .9s;
 		  }
 
-		h3 {
+		h3 {					//Titre thumbnail
 			margin-top: -1px;
-			color: #FFF;	
-			text-align: left;
-			padding: 2px;
+			.bright;
+			.large;
+			.text-left;  
+			padding: 10px;
+			margin-bottom: -25px;
 			}
 
-		p {
-			margin-top: 50px;
-			color:#fff;
-			text-align: left;
+		p {					// Contenu thumbnail
+			.bright;
+			.text-left  ;
+			position: absolute;
+			bottom: 0px;
 			opacity: 1;
-			padding: 5px;	
+			padding: 10px;	
 			}
 
 		&:hover .thumbnail-item-dark{
-			opacity: .6;
+			opacity: .7;
 			top: 0;
-			transition: opacity .5s;
-			-webkit-transition: top .5s; 
-			transition: top .5s;
 			}
+		&:hover img{ 
+		max-width: 130%; 
+		}
 }
 /* NEWS SLIDER */
 
@@ -182,7 +187,7 @@
 
 /* ABOUT US */
 
-#about-bebest {
+#about-bebest {					//Section et background section
 	margin-top: 50px;
 	background: #eeeeee;
 	padding: 50px;
@@ -192,19 +197,13 @@
 	display: block;
 
 		.home-h1 {
-		font-family: @font-titre;
-		font-size: 2em;
+		.h1;
+		.xlarge;
 		margin-top: 20%;
 		.text-left;
 		}
 		.home-content {
-		font-family: @font-content;
-		font-size: 1.2em;
+		.large;
 		.text-left;
 		}
 }
-
-/*
-.mt120{
-	margin-top:120px;	
-}*/
