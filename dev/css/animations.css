@@ -445,13 +445,12 @@ fadeIn
 	}		
 }
 
-
 /*
 ==============================================
 fadeinstill
 ==============================================
 */
-
+/*
 .fadeinstill{
 	animation-name: fadeIn;
 	-webkit-animation-name: fadeIn;	
@@ -484,6 +483,7 @@ fadeinstill
 		opacity: 0.3;	
 	}		
 }
+*/
 
 /*
 ==============================================
