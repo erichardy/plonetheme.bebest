@@ -2,12 +2,23 @@
 <rules
     xmlns="http://namespaces.plone.org/diazo"
     xmlns:css="http://namespaces.plone.org/diazo/css"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    >
+
+  <xi:include href="++theme++barceloneta/backend.xml" />
 
   <!-- Apply the following rules to standard Plone pages -->
   <rules css:if-content="#visual-portal-wrapper">
 
-    <theme href="index.html" />
+    <theme href="index-bebest.html" />
+
+	<before
+	    css:theme-children="body"
+	    css:content-children="#edit-bar"
+	    css:if-not-content=".ajax_load"
+	    css:if-content=".userrole-authenticated"
+    />
 
     <!-- Replace title with Plone's page title  -->
     <replace
@@ -27,7 +38,7 @@
       css:theme-children="html head"
       />
 
-    <!-- merge classes from Plone body with theme body -->
+    <!-- merge classes from Plone body with theme body  -->
     <merge
       attributes="class"
       css:content="body"
@@ -50,7 +61,7 @@
     <!-- PORTAL NAVIGATION -->
     <replace
       css:content-children="#portal-globalnav"
-      css:theme-children="#navbar"
+      css:theme-children="#navbar-bebest ul.nav"
       />
 
     <!-- LOGIN (FOR ANONYMOUS USERS) -->

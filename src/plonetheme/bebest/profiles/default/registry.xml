@@ -21,7 +21,7 @@ grunt compile-grayscale-bundle
        <value key="css">
           <element>++theme++plonetheme.bebest/css/bootstrap.less</element>
        </value>
-       <value key="js">++theme++plonetheme.bebest/js/bootsrap.js</value>
+       <value key="js">++theme++plonetheme.bebest/js/bootstrap.js</value>
     </records>
 
 
@@ -29,14 +29,15 @@ grunt compile-grayscale-bundle
     <records prefix="plone.bundles/bebest-bundle"
               interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
-        <element>bebest-bootstrap</element>
         <element>bebest-main</element>
+        <element>bebest-bootstrap</element>
       </value>
       <value key="enabled">True</value>
       <value key="compile">True</value>
       <value key="jscompilation">++theme++plonetheme.bebest/js/bebest-compiled.js</value>
       <value key="csscompilation">++theme++plonetheme.bebest/css/bebest-compiled.css</value>
       <value key="last_compilation"></value>
+      <value key="depends">plone</value>
     </records>
 
 <!--
