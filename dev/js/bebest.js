@@ -1,5 +1,12 @@
 // JavaScript Document
 
-$('.carousel-home-bebest').carousel({
-  interval: 4000
-})
+$('#homeCarousel').carousel({
+  interval: 3000
+});
+
+
+/*
+navbarHeight = $("#navbar-bebest").height();
+marg = navbarHeight - 20;
+$("#home-big-pictures").css("margin-top", marg + "px");
+*/
