@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<registry>
+<!--
+Si on change ce fichier, il faut IMPERATIVEMENT lancer :
+ ./bin/plone-compile-resources - -bundle=tango-bundle
+
+Si on ne change que le contenu des fichiers .less ou .css :
+grunt compile-grayscale-bundle
+
+ -->
+    <records prefix="plone.resources/bebest-main"
+              interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+       <value key="css">
+          <element>++theme++plonetheme.bebest/css/bebest-theme.less</element>
+       </value>
+       <value key="js">++theme++plonetheme.bebest/js/bebest.js</value>
+    </records>
+
+    <records prefix="plone.resources/bebest-bootstrap"
+              interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+       <value key="css">
+          <element>++theme++plonetheme.bebest/css/bootstrap.less</element>
+       </value>
+       <value key="js">++theme++plonetheme.bebest/js/bootsrap.js</value>
+    </records>
+
+
+    <!-- bundle definition -->
+    <records prefix="plone.bundles/bebest-bundle"
+              interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+      <value key="resources">
+        <element>bebest-bootstrap</element>
+        <element>bebest-main</element>
+      </value>
+      <value key="enabled">True</value>
+      <value key="compile">True</value>
+      <value key="jscompilation">++theme++plonetheme.bebest/js/bebest-compiled.js</value>
+      <value key="csscompilation">++theme++plonetheme.bebest/css/bebest-compiled.css</value>
+      <value key="last_compilation"></value>
+    </records>
+
+<!--
+    <record name="plone.templates" interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema" field="templates">
+  		<field type="plone.registry.field.Text">
+    	<default></default>
+    	<description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="help_tinymce_templates">Enter the list of templates in json format                 http://www.tinymce.com/wiki.php/Plugin:template</description>
+    	<required>False</required>
+    	<title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="label_tinymce_templates">Templates</title>
+  		</field>
+  	<value>[ &#13;
+  		{&#13;
+      "title": "Content box", &#13;
+      "url": "++theme++plonetheme.grayscale/tinymce_templates/content-box.html"}&#13;
+]	</value>
+	</record>
+
+   <record name="plone.custom_plugins" interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema" field="custom_plugins">
+    <field type="plone.registry.field.List">
+      <default/>
+      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">Enter a list of custom plugins which will be loaded in the editor. Format is pluginname|location, one per line.</description>
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">Custom plugins</title>
+      <value_type type="plone.registry.field.TextLine"/>
+    </field>
+    <value>
+      <element>template|+plone+static/components/tinymce-builded/js/tinymce/plugins/template</element>
+    </value>
+  </record>
+-->
+
+</registry>
+
