@@ -9,8 +9,13 @@
   <xi:include href="++theme++barceloneta/backend.xml" />
 
   <!-- Apply the following rules to standard Plone pages -->
-  <rules css:if-content="#visual-portal-wrapper">
-
+  
+  <!-- <rules css:if-content="#visual-portal-wrapper"> -->
+  
+<rules css:if-content=".userrole-authenticated">
+  <xi:include href="/++theme++barceloneta/backend.xml" />
+</rules>
+  <rules css:if-not-content=".userrole-authenticated">
     <theme href="index-bebest.html" />
 
 	<before
