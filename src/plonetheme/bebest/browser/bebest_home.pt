@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body
+	>
+
+<metal:content-core fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+
+    <section id="home-carousel-bebest">
+   		<div class="container-fluid hidden-xs">
+        	<div class="row">
+             	<div class="slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                  	<div class="carousel-inner" role="listbox">
+                    	<div class="item active homeimg-container">
+                      		<img src="++theme++plonetheme.bebest/images/carousel/home/banner1.jpg" width="100%" alt="banner">
+                   		</div>
+                    	<div class="item homeimg-container">
+                      		<img src="++theme++plonetheme.bebest/images/carousel/home/banner2.jpg" width="100%" alt="banner">
+                    	</div>
+                        <div class="item homeimg-container">
+                      		<img src="++theme++plonetheme.bebest/images/carousel/home/banner3.jpg" width="100%" alt="banner">
+                    	</div>
+                  	</div>
+                </div>
+              	<div id="bebest-slider-content" class="super text-center hidden-xs">
+                   	<img class="imgwhite" src="++theme++plonetheme.bebest/images/logos/logoblanc.svg" width="500" alt="bebest blanc" class="img-responsive" />
+                    <p class="bright">Joint laboratory in benthic and coastal science</p>
+                    	<div class="scrollbot">
+                          <span class="glyphiconbutton glyphicon-menu-down"></span> <br />
+                          <span class="glyphiconbutton glyphicon-menu-down"></span>
+   						</div>
+			   </div>
+    </section> <!--FIN SECTION CAROUSEL-->
+
+
+  
+  </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+  

@@ -17,4 +17,12 @@
         directory="static"
         />
 
+   <browser:page
+      name="bebest_home"
+      for="*"
+      class=".bebesthome.bebestHome"
+      template="bebest_home.pt"
+      permission="zope2.View"
+      />
+
 </configure>
