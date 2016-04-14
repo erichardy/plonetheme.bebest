@@ -1,25 +1,35 @@
+ /*--------------------TYPOGRAPHIE---------------------------------------------------*/
+
+  /*CUSTOM FONTS*/
  @import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
  @import url(https://fonts.googleapis.com/css?family=Exo:600,700);
  @import url(https://fonts.googleapis.com/css?family=Courgette);
 
- /*TYPOGRAPHIE*/
+ /*VARIABLES*/
  
  @text-bright: #FFF;
  @text-dark: #000;
+ @text-grey: #808080;
  @color_1: #252747;
  @color_2: #DE963E;
  @font-content: 'Lora';
  @font-titre: 'Exo';
  @font-contrast: 'Courgette';
+ @h-offset: 80px;
 
  /* Modifications de texte */
- 
+ /* color */
  .bright {
 	color: @text-bright;
 	}
 .dark {
 	color: @text-dark;
 	}
+.grey {
+	color: @text-grey;
+	}
+
+/* text size */
 .small {
 	font-size: 80%;
 	}
@@ -30,6 +40,12 @@
 	font-size: 200%;
 	}
 	
+ /* decalages */ 
+ .pushtop {
+	margin-top: @h-offset;
+	}
+ 
+ 
 /* Headings */
 
 .super {
@@ -38,6 +54,8 @@
 	Font-weight: 300;
 	padding-left: 50px;
 	padding-right: 50px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -56,14 +74,16 @@ h3, .h3 {
 	font-size: 1.5em;
 }
 
-// Alignment
+/* Alignment */
+
 .text-left           { text-align: left; }
 .text-right          { text-align: right; }
 .text-center         { text-align: center; }
 .text-justify        { text-align: justify; }
 .text-nowrap         { white-space: nowrap; }
 
-// Transformation
+/* Transformation */
+
 .text-lowercase      { text-transform: lowercase; }
 .text-uppercase      { text-transform: uppercase; }
 .text-capitalize     { text-transform: capitalize; }
