@@ -6,18 +6,34 @@
     xmlns:xi="http://www.w3.org/2001/XInclude"
     >
 
-  <xi:include href="++theme++barceloneta/backend.xml" />
-
   <!-- Apply the following rules to standard Plone pages -->
   
   <!-- <rules css:if-content="#visual-portal-wrapper"> -->
+  <theme href="bebest.html" />
+  <notheme css:if-not-content="#visual-portal-wrapper" />
   
-<rules css:if-content=".userrole-authenticated">
-  <xi:include href="/++theme++barceloneta/backend.xml" />
-</rules>
-  <rules css:if-not-content=".userrole-authenticated">
-    <theme href="index-bebest.html" />
-
+  <rules css:if-content="#portal-top">
+    <!-- Attributes -->
+    <copy attributes="*" css:theme="html" css:content="html" />
+    <!-- Base tag -->
+    <before css:theme="head title" css:content="head base" />
+    <!-- Title -->
+    <replace css:theme="head title" css:content="head title" />
+    <!-- Pull in Plone Meta -->
+    <after css:theme-children="head" css:content="head meta" />
+    <!-- dont use Plone icons, use the theme's -->
+    <drop css:content="head link[rel='apple-touch-icon'], head link[rel='shortcut icon']" />
+    <!-- CSS -->
+    <after css:theme-children="head" css:content="head link" />
+    <!-- Script -->
+    <after css:theme-children="head" css:content="head script" />
+  </rules>
+  
+  <!-- Copy over the id/class attributes on the body tag.
+       This is important for per-section styling -->
+  <copy attributes="*" css:content="body" css:theme="body" />
+  
+	<!-- toolbar -->
 	<before
 	    css:theme-children="body"
 	    css:content-children="#edit-bar"
@@ -25,123 +41,53 @@
 	    css:if-content=".userrole-authenticated"
     />
 
-    <!-- Replace title with Plone's page title  -->
-    <replace
-      css:content="html head title"
-      css:theme="html head title"
-      />
-
-    <!-- Copy base tag from Plone -->
-    <before
-      css:content="html head base"
-      css:theme-children="html head"
-      />
-
-    <!-- Copy link, style, meta tags from Plone head -->
+    <!-- login link -->
     <after
-      content="/html/head/link | /html/head/style | /html/head/meta"
-      css:theme-children="html head"
-      />
+	    css:theme-children="body"
+	    css:content="#portal-anontools"
+	    css:if-not-content=".ajax_load"
+	    css:if-content=".userrole-anonymous"
+    />
 
-    <!-- merge classes from Plone body with theme body  -->
-    <merge
-      attributes="class"
-      css:content="body"
-      css:theme="body"
-      />
+<!-- replace theme navbar-nav with Plone plone-navbar-nav -->
+  <replace
+    css:theme-children=".plone-navbar-nav"
+    css:content-children=".plone-navbar-nav" />
 
-    <!-- Copy script tags from Plone head to end of body -->
-    <after
-      css:content="html head script"
-      css:theme-children="html body"
-      />
+  <!-- full-width breadcrumb -->
+  <replace
+    css:theme-children="#above-content"
+    css:content-children="#viewlet-above-content"
+    />
+   <drop css:content="#portal-breadcrumbs" />
 
-    <!-- LOGO -->
-    <copy
-      attributes="href"
-      css:content="#portal-logo"
-      css:theme=".navbar-brand"
-      />
+  <!-- Alert message -->
+  <replace
+    css:theme-children="#global_statusmessage"
+    css:content-children="#global_statusmessage"
+    />
 
-    <!-- PORTAL NAVIGATION -->
-    <replace
-      css:content-children="#portal-globalnav"
-      css:theme-children="#navbar-bebest ul.nav"
-      />
+<replace css:theme-children="#content-container" content-children="#main-container" />
+<!-- Central column
+  <replace css:theme="#content-container" method="raw">
 
-    <!-- LOGIN (FOR ANONYMOUS USERS) -->
-    <replace
-      if-content="//li[@id='anon-personalbar']"
-      css:content="#personaltools-login"
-      css:theme=".dropdown-toggle"
-      />
-
-    <!-- USER NAME (FOR LOGGED-IN USERS) -->
-    <replace
-      if-content="not(//li[@id='anon-personalbar'])"
-      content="//a[@id='user-name']/text()"
-      css:theme="#user-name"
-      />
-
-    <!-- USER ACTIONS (FOR LOGGED-IN USERS) -->
-    <replace
-      if-content="not(//li[@id='anon-personalbar'])"
-      css:content-children="#portal-personaltools .actionMenuContent ul"
-      css:theme-children="#action-menu-content"
-      />
-
-    <!-- BREADCRUMBS -->
-    <replace
-      css:content-children="div#portal-breadcrumbs"
-      css:theme-children="ol.breadcrumb"
-      />
-    <drop css:content="span#breadcrumbs-you-are-here" />
-
-    <!-- EDIT BAR (CONTENT VIEWS) -->
-    <replace
-      css:content-children="#content-views"
-      css:theme-children="#contentViews"
-      />
-
-    <!-- EDIT BAR (DISPLAY) -->
-    <replace
-      css:content-children="#plone-contentmenu-display .actionMenuContent ul"
-      css:theme-children="#contentMenuDisplay"
-      />
-
-    <!-- EDIT BAR (ADD NEW) -->
-    <replace
-      css:content-children="#plone-contentmenu-factories .actionMenuContent ul"
-      css:theme-children="#contentMenuAddNew"
-      />
-
-    <!-- EDIT BAR (WORKFLOW STATE) -->
-    <replace
-      css:content-children="#plone-contentmenu-workflow .actionMenuContent ul"
-      css:theme-children="#contentMenuWorkflowState"
-      />
-    <!-- copy current workflow state into the -->
-    <replace
-      css:content="#plone-contentmenu-workflow .actionMenuHeader a span"
-      css:theme="#currentWorkflowState"
-      />
-    <!-- drop Plone dropdown arrow -->
-    <drop
-      css:content="#plone-contentmenu-workflow .arrowDownAlternative"
-      />
-
-    <!-- CONTENT -->
-    <replace
-      css:content="#content"
-      css:theme-children="#content"
-      />
-
-    <!-- FOOTER -->
-    <replace
-      css:content="#portal-siteactions"
-      css:theme-children="footer"
-      />
-
-  </rules>
-
+     <div class="col-xs-12 col-sm-12">
+        <div class="row">
+          <div class="box">
+            <div class="col-xs-12 col-sm-12">
+              <xsl:apply-templates css:select="#content" />
+            </div>
+            <div class="clearFix"></div>
+          </div>
+        </div>
+        <section id="viewlet-below-content-body" class="row">
+          <div class="box">
+            <div class="col-xs-12 col-sm-12">
+             <xsl:copy-of css:select="#viewlet-below-content" />
+            </div>
+            <div class="clearFix"></div>
+          </div>
+        </section>
+      </div>
+  </replace>  -->
 </rules>

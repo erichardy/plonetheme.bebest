@@ -7,7 +7,7 @@ Si on change ce fichier, il faut IMPERATIVEMENT lancer :
 Si on ne change que le contenu des fichiers .less ou .css :
 grunt compile-grayscale-bundle
 
- -->
+ 
     <records prefix="plone.resources/bebest-main"
               interface='Products.CMFPlone.interfaces.IResourceRegistry'>
        <value key="css">
@@ -23,9 +23,9 @@ grunt compile-grayscale-bundle
        </value>
        <value key="js">++theme++plonetheme.bebest/js/bootstrap.js</value>
     </records>
+ -->
 
-
-    <!-- bundle definition -->
+    <!-- bundle definition
     <records prefix="plone.bundles/bebest-bundle"
               interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
@@ -39,7 +39,7 @@ grunt compile-grayscale-bundle
       <value key="last_compilation"></value>
       <value key="depends">plone</value>
     </records>
-
+ -->
 <!--
     <record name="plone.templates" interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema" field="templates">
   		<field type="plone.registry.field.Text">
