@@ -7,18 +7,21 @@ from plone import api
 
 class bebestHome(BrowserView):
 
-    def getCarousselImages(self):
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def getCarouselImages(self):
         context = self.context
         objs = []
-        images = api.content.find(context=context.aq_parent,
+        images = api.content.find(context=context['bebest-carousel'],
                                      depth=1,
                                      portal_type='Image')
         for image in images:
-            if image.getObject().getId() != context.getId():
-                objs.append(image.getObject())
+            objs.append(image.getObject())
         return objs
 
-    def text(self, obj):
+    def localText(self, obj):
         if obj.text:
             return obj.text.raw
         else:

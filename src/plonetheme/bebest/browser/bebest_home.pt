@@ -14,8 +14,11 @@
     <section id="home-carousel-bebest">
    		<div class="container-fluid hidden-xs">
         	<div class="row">
-             	<div class="slide" data-ride="carousel">
+             	<div class="slide" data-ride="carousel"
+             	     tal:define="imgs ${view/getCarouselImages}"
+             	>
                 <!-- Wrapper for slides -->
+                <span></span>
                   	<div class="carousel-inner" role="listbox">
                     	<div class="item active homeimg-container">
                       		<img src="++theme++plonetheme.bebest/images/carousel/home/banner1.jpg" width="100%" alt="banner">
