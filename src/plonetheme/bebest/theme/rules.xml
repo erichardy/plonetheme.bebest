@@ -10,8 +10,9 @@
   
   <!-- <rules css:if-content="#visual-portal-wrapper"> -->
   <theme href="bebest.html" />
+  <!--
   <notheme css:if-not-content="#visual-portal-wrapper" />
-  
+  -->
   <rules css:if-content="#portal-top">
     <!-- Attributes -->
     <copy attributes="*" css:theme="html" css:content="html" />
@@ -51,9 +52,15 @@
 
 <!-- replace theme navbar-nav with Plone plone-navbar-nav -->
   <replace
-    css:theme-children=".plone-navbar-nav"
-    css:content-children=".plone-navbar-nav" />
+    css:theme-children="#navbar"
+    css:content-children="#portal-globalnav" />
 
+	<!-- LOGO : copie de l'attribut href -->
+    <copy
+      attributes="href"
+      css:content="#portal-logo"
+      css:theme=".navbar-brand"
+      />
   <!-- full-width breadcrumb -->
   <replace
     css:theme-children="#above-content"
@@ -67,7 +74,8 @@
     css:content-children="#global_statusmessage"
     />
 
-<replace css:theme-children="#content-container" content-children="#main-container" />
+  <replace css:theme-children="#content"
+           css:content-children="#content" />
 <!-- Central column
   <replace css:theme="#content-container" method="raw">
 

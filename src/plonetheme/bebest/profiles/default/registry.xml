@@ -1,36 +1,19 @@
 <?xml version="1.0"?>
 <registry>
-<!--
-Si on change ce fichier, il faut IMPERATIVEMENT lancer :
- ./bin/plone-compile-resources - -bundle=tango-bundle
-
-Si on ne change que le contenu des fichiers .less ou .css :
-grunt compile-grayscale-bundle
-
  
     <records prefix="plone.resources/bebest-main"
               interface='Products.CMFPlone.interfaces.IResourceRegistry'>
        <value key="css">
           <element>++theme++plonetheme.bebest/css/bebest-theme.less</element>
        </value>
-       <value key="js">++theme++plonetheme.bebest/js/bebest.js</value>
     </records>
 
-    <records prefix="plone.resources/bebest-bootstrap"
-              interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-       <value key="css">
-          <element>++theme++plonetheme.bebest/css/bootstrap.less</element>
-       </value>
-       <value key="js">++theme++plonetheme.bebest/js/bootstrap.js</value>
-    </records>
- -->
 
-    <!-- bundle definition
+    <!-- bundle definition  -->
     <records prefix="plone.bundles/bebest-bundle"
               interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
         <element>bebest-main</element>
-        <element>bebest-bootstrap</element>
       </value>
       <value key="enabled">True</value>
       <value key="compile">True</value>
@@ -39,7 +22,7 @@ grunt compile-grayscale-bundle
       <value key="last_compilation"></value>
       <value key="depends">plone</value>
     </records>
- -->
+
 <!--
     <record name="plone.templates" interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema" field="templates">
   		<field type="plone.registry.field.Text">
