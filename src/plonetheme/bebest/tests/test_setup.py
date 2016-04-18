@@ -17,13 +17,15 @@ class TestSetup(unittest.TestCase):
         self.installer = api.portal.get_tool('portal_quickinstaller')
 
     def test_product_installed(self):
-        """Test if plonetheme.bebest is installed with portal_quickinstaller."""
+        """Test if plonetheme.bebest is installed with
+        portal_quickinstaller."""
         self.assertTrue(self.installer.isProductInstalled('plonetheme.bebest'))
 
     def test_uninstall(self):
         """Test if plonetheme.bebest is cleanly uninstalled."""
+        module = 'plonetheme.bebest'
         self.installer.uninstallProducts(['plonetheme.bebest'])
-        self.assertFalse(self.installer.isProductInstalled('plonetheme.bebest'))
+        self.assertFalse(self.installer.isProductInstalled(module))
 
     def test_browserlayer(self):
         """Test that IPlonethemeBebestLayer is registered."""

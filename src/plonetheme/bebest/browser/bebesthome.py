@@ -15,8 +15,8 @@ class bebestHome(BrowserView):
         context = self.context
         objs = []
         images = api.content.find(context=context['bebest-carousel'],
-                                     depth=1,
-                                     portal_type='Image')
+                                  depth=1,
+                                  portal_type='Image')
         for image in images:
             objs.append(image.getObject())
         return objs
