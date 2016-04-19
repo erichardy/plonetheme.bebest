@@ -23,7 +23,7 @@ class bebestHome(BrowserView):
                                   portal_type='Image')
             for image in images:
                 objs.append(image.getObject())
-            logger.info(len(images))
+            # logger.info(len(images))
         except Exception:
             logger.info('0 images !')
         return objs

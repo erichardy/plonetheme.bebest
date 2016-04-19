@@ -11,27 +11,22 @@
 <metal:content-core fill-slot="content-core">
   <metal:content-core define-macro="content-core">
   <div tal:define="imgs python:view.getCarouselImages()">
-   <span tal:repeat="img imgs">
-   <p><img tal:attributes="src string:${img/absolute_url}" /></p>
-   </span>
+   
     <section id="home-carousel-bebest">
    		<div class="container-fluid hidden-xs">
         	<div class="row">
-             	<div class="slide" data-ride="carousel"
-             	     
-             	>
+             	<div class="slide" data-ride="carousel">
                 <!-- Wrapper for slides -->
-                <span></span>
+                 <span></span>
                   	<div class="carousel-inner" role="listbox">
-                    	<div class="item active homeimg-container">
-                      		<img src="++theme++plonetheme.bebest/images/carousel/home/banner1.jpg" width="100%" alt="banner">
+                  	<span tal:omit-tag="" tal:repeat="img imgs">
+                    	<div tal:condition="python:repeat.img.start" class="item active homeimg-container">
+                      		<img tal:attributes="src python:img.absolute_url()" width="100%" alt="banner">
                    		</div>
-                    	<div class="item homeimg-container">
-                      		<img src="++theme++plonetheme.bebest/images/carousel/home/banner2.jpg" width="100%" alt="banner">
-                    	</div>
-                        <div class="item homeimg-container">
-                      		<img src="++theme++plonetheme.bebest/images/carousel/home/banner3.jpg" width="100%" alt="banner">
-                    	</div>
+                   		<div tal:condition="python:not repeat.img.start" class="item homeimg-container">
+                            <img tal:attributes="src python:img.absolute_url()" width="100%" alt="banner">
+                        </div>
+                    </span>
                   	</div>
                 </div>
               	<div id="bebest-slider-content" class="super text-center hidden-xs">
