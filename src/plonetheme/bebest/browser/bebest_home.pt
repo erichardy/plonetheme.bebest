@@ -4,18 +4,21 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="context/main_template/macros/master"
-      i18n:domain="plone">
+      i18n:domain="plonetheme.bebest">
 <body
 	>
 
 <metal:content-core fill-slot="content-core">
   <metal:content-core define-macro="content-core">
-
+  <div tal:define="imgs python:view.getCarouselImages()">
+   <span tal:repeat="img imgs">
+   <p><img tal:attributes="src string:${img/absolute_url}" /></p>
+   </span>
     <section id="home-carousel-bebest">
    		<div class="container-fluid hidden-xs">
         	<div class="row">
              	<div class="slide" data-ride="carousel"
-             	     tal:define="imgs ${view/getCarouselImages}"
+             	     
              	>
                 <!-- Wrapper for slides -->
                 <span></span>
@@ -42,7 +45,7 @@
     </section> <!--FIN SECTION CAROUSEL-->
 
 
-  
+  </div>
   </metal:content-core>
 </metal:content-core>
 
