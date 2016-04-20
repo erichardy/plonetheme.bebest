@@ -10,7 +10,7 @@
 
 
     <!-- bundle definition  -->
-    <records prefix="plone.bundles/bebest-bundle"
+    <records prefix="plone.bundles/bebest"
               interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
         <element>bebest-main</element>

@@ -8,8 +8,8 @@
 <body
 	>
 
-<metal:content-core fill-slot="content-core">
-  <metal:content-core define-macro="content-core">
+<metal:content-core fill-slot="main">
+  <metal:content-core define-macro="main">
   <div tal:define="imgs python:view.getCarouselImages()">
    
     <section id="home-carousel-bebest">
@@ -30,7 +30,10 @@
                   	</div>
                 </div>
               	<div id="bebest-slider-content" class="super text-center hidden-xs">
-                   	<img class="imgwhite" src="++theme++plonetheme.bebest/images/logos/logoblanc.svg" width="500" alt="bebest blanc" class="img-responsive" />
+                   	<img class="imgwhite" src="++theme++plonetheme.bebest/images/logos/logoblanc.svg"
+                   	     width="500"
+                   	     alt="bebest blanc"
+                   	     class="img-responsive" />
                     <p class="bright">Joint laboratory in benthic and coastal science</p>
                     	<div class="scrollbot">
                           <span class="glyphiconbutton glyphicon-menu-down"></span> <br />
