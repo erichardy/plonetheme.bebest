@@ -29,12 +29,13 @@
                     </span>
                   	</div>
                 </div>
-              	<div id="bebest-slider-content" class="super text-center hidden-xs">
-                   	<img class="imgwhite" src="++theme++plonetheme.bebest/images/logos/logoblanc.svg"
+              	<div id="bebest-slider-content" class="super text-center hidden-xs"
+              	     tal:define="logo_name python:view.getCarouselLogoName()">
+                   	<img class="imgwhite" tal:attributes="src string:${portal_url}/images/${logo_name}"
                    	     width="500"
                    	     alt="bebest blanc"
                    	     class="img-responsive" />
-                    <p class="bright">Joint laboratory in benthic and coastal science</p>
+                    <p class="bright">${view/getCarouselText}</p>
                     	<div class="scrollbot">
                           <span class="glyphiconbutton glyphicon-menu-down"></span> <br />
                           <span class="glyphiconbutton glyphicon-menu-down"></span>

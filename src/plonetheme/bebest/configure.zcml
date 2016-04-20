@@ -2,6 +2,8 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="plonetheme.bebest">
@@ -11,6 +13,8 @@
     <i18n:registerTranslations directory="locales" />
 
     <include package=".browser" />
+
+    <cmf:registerDirectory name="bebest" recursive="True"/>
 
     <plone:static
         directory="theme"
@@ -33,4 +37,11 @@
         handler=".setuphandlers.post_install">
     </genericsetup:importStep>
 
+
+	<browser:page
+       name="bebest-settings"
+       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+       class=".controlpanel.IPlonethemeBebestSettingsForm"
+       permission="cmf.ManagePortal"
+    />
 </configure>
