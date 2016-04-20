@@ -28,8 +28,10 @@ class IPlonethemeBebestSettings(Interface):
 
     carousel_label = TextLine(title=_(u"carousel label"),
                               description=_(u"for carousel at home page"),
+                              default=u"Joint laboratory in benthic ecology",
                               )
 
     logo_name = TextLine(title=_(u"Logo filename, should be in"),
                          description=_(u"portal_skins/custom/images"),
+                         default=u"logoblanc.svg",
                          )
