@@ -38,3 +38,7 @@ class IPlonethemeBebestSettings(Interface):
                          description=_(u"portal_skins/custom/images"),
                          default=u"logoblanc.svg",
                          )
+    tag_home = TextLine(title=_(u"Tag used for thumbnails on home page"),
+                        description=_(u"Only One word, used for folders"),
+                        default=u"bebest-home",
+                        )

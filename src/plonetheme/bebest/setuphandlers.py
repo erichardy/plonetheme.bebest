@@ -42,7 +42,16 @@ def post_install(context):
         carousel = api.content.create(type='Folder',
                                       title='bebest-carousel',
                                       container=portal)
+    installImages(carousel, imagesDir)
+
+
+def installImages(carousel, imagesDir):
     carouselContent = [f.getId() for f in carousel.objectValues()]
+    for c in carouselContent:
+        # if image(s) already present in carousel, do nothing
+        if carousel.get(c).portal_type == 'Image':
+            logger.info('Images already present in carousel')
+            return
     images = [u'banner1.jpg', u'banner2.jpg', u'banner3.jpg']
 
     for image in images:

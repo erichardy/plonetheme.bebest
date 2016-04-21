@@ -52,3 +52,19 @@ class bebestHome(BrowserView):
             return obj.text.raw
         else:
             return "<p />"
+
+    def getCarouselThumbnails(self):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.tag_home'
+        tag = api.portal.get_registry_record(prefix)
+        portal = api.portal.get()
+        founds = api.content.find(context=portal,
+                                  portal_type='Folder',
+                                  )
+        
+        thumbs = []
+        for found in founds:
+            thumb = found.getObject()
+            if tag in thumbs.Subject():
+                thumbs.append(thumb)
+        return thumbs
