@@ -19,6 +19,12 @@ class bebestHome(BrowserView):
         label = api.portal.get_registry_record(prefix)
         return label
 
+    def getCarouselInterval(self):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.carousel_interval'
+        interval = api.portal.get_registry_record(prefix)
+        return interval
+
     def getCarouselLogoName(self):
         prefix = 'plonetheme.bebest.interfaces.'
         prefix += 'IPlonethemeBebestSettings.logo_name'

@@ -10,12 +10,14 @@
 
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
-  <div tal:define="imgs python:view.getCarouselImages()">
+  <div tal:define="imgs python:view.getCarouselImages();
+                   interval python:view.getCarouselInterval()">
    
     <section id="home-carousel-bebest">
    		<div class="container-fluid hidden-xs">
         	<div class="row">
-             	<div class="carousel slide" data-ride="carousel" data-wrap="true" data-pause="false">
+             	<div class="carousel slide" data-ride="carousel" data-wrap="true" data-pause="false"
+             	     tal:attributes="data-interval string:${interval}">
                 <!-- Wrapper for slides -->
                   	<div class="carousel-inner" role="listbox">
                   	<span tal:omit-tag="" tal:repeat="img imgs">
