@@ -15,9 +15,8 @@
     <section id="home-carousel-bebest">
    		<div class="container-fluid hidden-xs">
         	<div class="row">
-             	<div class="slide" data-ride="carousel">
+             	<div class="carousel slide" data-ride="carousel" data-wrap="true" data-pause="false">
                 <!-- Wrapper for slides -->
-                 <span></span>
                   	<div class="carousel-inner" role="listbox">
                   	<span tal:omit-tag="" tal:repeat="img imgs">
                     	<div tal:condition="python:repeat.img.start" class="item active homeimg-container">

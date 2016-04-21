@@ -2,6 +2,7 @@
 
 import logging
 from plone import api
+from plone.namedfile.file import NamedBlobImage as nbi
 
 logger = logging.getLogger('bebest')
 
@@ -21,7 +22,7 @@ def post_install(context):
     logoBlanc = imagesDir + 'logos/logoblanc.svg'
     portal = api.portal.get()
     custom = portal['portal_skins']['custom']
-    import pdb;pdb.set_trace()
+    # import pdb;pdb.set_trace()
     customContents = [f.getId() for f in custom.objectValues()]
     if 'images' not in customContents:
         custom.manage_addFolder('images', 'images')
@@ -42,17 +43,30 @@ def post_install(context):
                                       title='bebest-carousel',
                                       container=portal)
     carouselContent = [f.getId() for f in carousel.objectValues()]
-    images = ['banner1.jpg', 'banner1.jpg', 'banner1.jpg']
+    images = [u'banner1.jpg', u'banner2.jpg', u'banner3.jpg']
     
     for image in images:
         if image not in carouselContent:
             fimg = open(imagesDir + 'carousel/home/' + image)
             img = fimg.read()
-            api.content.create(type='Image',
-                               title=image,
-                               container=carousel,
-                               image=img
-                               )
+            fimg.close()
+            """
+            carousel.invokeFactory(id=image,
+                                   title=image,
+                                   type_name='Image')
+            i = carousel.get(image)
+            """
+
+            blobScore = nbi(img,
+                            contentType=u'image/png',
+                            filename=image)
+            i = api.content.create(type='Image',
+                                   title=image,
+                                   container=carousel,
+                                   image=blobScore
+                                   )
+            # i.image = blobScore
+            i.reindexObject()
                                              
 
 

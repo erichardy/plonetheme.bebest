@@ -10,9 +10,9 @@
   
   <!-- <rules css:if-content="#visual-portal-wrapper"> -->
   <theme href="bebest.html" />
-  <!--
+  
   <notheme css:if-not-content="#visual-portal-wrapper" />
-  -->
+  
   <rules css:if-content="#portal-top">
     <!-- Attributes -->
     <copy attributes="*" css:theme="html" css:content="html" />
