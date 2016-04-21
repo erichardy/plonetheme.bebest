@@ -44,6 +44,25 @@
 			   </div>
     </section> <!--FIN SECTION CAROUSEL-->
 
+	<!-- DEBUT THUMBNAILS -->
+	<section id="home-thumbnail"
+	         class="container">
+	  <div tal:define="thumbs python:view.getCarouselThumbnails()">
+	  <span tal:omit-tag="" tal:repeat="thumb thumbs">
+		<div class="col-xs-12 col-sm-6 col-md-4 text-center">  
+      	  <div class="home-thumbnail-item">
+            <img tal:define="scale thumb/@@images" 
+                 tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='newsImage')" />
+            <div class="thumbnail-item-dark"> 
+              <h3>${thumb/title}</h3>
+			  <hr>
+              <p>${thumb/description}</p>
+           </div>
+          </div>  
+        </div>
+	  </span>
+	  </div>
+	</section>
 
   </div>
   </metal:content-core>

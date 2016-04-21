@@ -61,10 +61,9 @@ class bebestHome(BrowserView):
         founds = api.content.find(context=portal,
                                   portal_type='Folder',
                                   )
-        
         thumbs = []
         for found in founds:
             thumb = found.getObject()
-            if tag in thumbs.Subject():
+            if tag in thumb.Subject():
                 thumbs.append(thumb)
         return thumbs
