@@ -31,9 +31,9 @@ class IPlonethemeBebestSettings(Interface):
                               default=u"Joint laboratory in benthic ecology",
                               )
     carousel_interval = TextLine(title=_(u"carousel interval"),
-                              description=_(u"milliseconds"),
-                              default=u"4000",
-                              )
+                                 description=_(u"milliseconds"),
+                                 default=u"4000",
+                                 )
     logo_name = TextLine(title=_(u"Logo filename, should be in"),
                          description=_(u"portal_skins/custom/images"),
                          default=u"logoblanc.svg",
