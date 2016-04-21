@@ -13,7 +13,7 @@ def isNotCurrentProfile(context):
 
 def post_install(context):
     """Post install script"""
-    
+
     if isNotCurrentProfile(context):
         return
     # Do something during the installation of this package
@@ -32,10 +32,10 @@ def post_install(context):
         flogoblanc = open(logoBlanc, 'r')
         logoBlanc = flogoblanc.read()
         custom['images'].manage_addFile('logoblanc.svg',
-                                         logoBlanc,
-                                         'logoblanc.svg')
+                                        logoBlanc,
+                                        'logoblanc.svg')
         logger.info('create portal_skins/images/logoblanc.svg')
-    
+
     try:
         carousel = portal['bebest-carousel']
     except:
@@ -44,7 +44,7 @@ def post_install(context):
                                       container=portal)
     carouselContent = [f.getId() for f in carousel.objectValues()]
     images = [u'banner1.jpg', u'banner2.jpg', u'banner3.jpg']
-    
+
     for image in images:
         if image not in carouselContent:
             fimg = open(imagesDir + 'carousel/home/' + image)
@@ -67,13 +67,10 @@ def post_install(context):
                                    )
             # i.image = blobScore
             i.reindexObject()
-                                             
 
 
 """
 manage_addDTMLMethod
 manage_addFolder
 manage_addImage
-
-
 """
