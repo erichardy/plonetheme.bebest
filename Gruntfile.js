@@ -7,7 +7,7 @@ module.exports = function(grunt) {
             
             "bebest": {
                 files: [
-                    {"/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css": ["/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-theme.less"]}
+                    {"/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css": ["/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-theme.less"]}
                 ],
                 options: {
                     compress: true,
@@ -15,44 +15,44 @@ module.exports = function(grunt) {
                     sourceMap: true,
                     outputSourceFiles: true,
                     strictImports: false,
-                    sourceMapURL: "bebest-compiled.css.map",
+                    sourceMapURL: "bebest-compiled.min.css.map",
                     sourceMapBasepath: "/Volumes/SSD/Dev/plonetheme.bebest",
                     relativeUrls: true,
                     plugins: [
                         new require('less-plugin-inline-urls'),
                     ],
                     paths: [
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/less", 
-                      "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources", 
-                      "/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.17-py2.7.egg/plonetheme/barceloneta/theme/less", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/less", 
+                      "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources", 
+                      "/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.18-py2.7.egg/plonetheme/barceloneta/theme/less", 
                       "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css", 
                       "temp_resources"
 ],
@@ -111,7 +111,6 @@ module.exports = function(grunt) {
                       "barceloneta-type": "'type.plone.less'",
                       "barceloneta-variables": "'variables.plone.less'",
                       "barceloneta-views": "'views.plone.less'",
-                      "bebest-bootstrap": "'bootstrap.less'",
                       "bebest-main": "'bebest-theme.less'",
                       "bootstrap-badges": "'badges.less'",
                       "bootstrap-basic": "'navbar.less'",
@@ -123,7 +122,7 @@ module.exports = function(grunt) {
                       "bootstrap-modal": "'modals.less'",
                       "bootstrap-progress-bars": "'progress-bars.less'",
                       "bootstrap-variables": "'variables.less'",
-                      "bowerPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/'",
+                      "bowerPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/'",
                       "dropzone": "'dropzone.css'",
                       "icon-font-path": "\"../fonts/\"",
                       "isMockup": "false",
@@ -148,8 +147,8 @@ module.exports = function(grunt) {
                       "mockup-patterns-tree": "'pattern.tree.less'",
                       "mockup-patterns-upload": "'pattern.upload.less'",
                       "mockup-popover": "'popover.less'",
-                      "mockupPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/'",
-                      "mockuplessPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less/'",
+                      "mockupPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/'",
+                      "mockuplessPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less/'",
                       "picker": "'classic.css'",
                       "picker_date": "'classic.date.css'",
                       "picker_time": "'classic.time.css'",
@@ -186,13 +185,13 @@ module.exports = function(grunt) {
                       "plone-toolbar-submenu-header-color": "lighten(#000, 80%)",
                       "plone-toolbar-submenu-text-color": "lighten(#000, 90%)",
                       "plone-toolbar-text-color": "rgba(255,255,255,1)",
-                      "resource-plone-app-event-event-css": "'dc2fd645166e43638f62455a18d5f04f.js'",
+                      "resource-plone-app-event-event-css": "'af67b31313974f1fb318dae7e1880598.js'",
                       "resource-plone-app-jquerytools-dateinput-js": "'jquery.tools.dateinput.css'",
                       "resource-plone-app-jquerytools-js": "'jquery.tools.overlay.css'",
                       "resourceregistry": "'resourceregistry.less'",
                       "select2": "'select2.css'",
                       "sitePath": "'/'",
-                      "staticPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static'",
+                      "staticPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static'",
                       "thememapper": "'thememapper.less'",
                       "tinymce": "'Content.less'",
                       "tinymce-default-styles": "'tinymce-styles.css'",
@@ -204,7 +203,7 @@ module.exports = function(grunt) {
 ,
             "plone-logged-in": {
                 files: [
-                    {"/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css": ["/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in.less"]}
+                    {"/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css": ["/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in.less"]}
                 ],
                 options: {
                     compress: true,
@@ -219,37 +218,37 @@ module.exports = function(grunt) {
                         new require('less-plugin-inline-urls'),
                     ],
                     paths: [
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/less", 
-                      "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources", 
-                      "/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.17-py2.7.egg/plonetheme/barceloneta/theme/less", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/less", 
+                      "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources", 
+                      "/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.18-py2.7.egg/plonetheme/barceloneta/theme/less", 
                       "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css", 
                       "temp_resources"
 ],
@@ -308,7 +307,6 @@ module.exports = function(grunt) {
                       "barceloneta-type": "'type.plone.less'",
                       "barceloneta-variables": "'variables.plone.less'",
                       "barceloneta-views": "'views.plone.less'",
-                      "bebest-bootstrap": "'bootstrap.less'",
                       "bebest-main": "'bebest-theme.less'",
                       "bootstrap-badges": "'badges.less'",
                       "bootstrap-basic": "'navbar.less'",
@@ -320,7 +318,7 @@ module.exports = function(grunt) {
                       "bootstrap-modal": "'modals.less'",
                       "bootstrap-progress-bars": "'progress-bars.less'",
                       "bootstrap-variables": "'variables.less'",
-                      "bowerPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/'",
+                      "bowerPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/'",
                       "dropzone": "'dropzone.css'",
                       "icon-font-path": "\"../fonts/\"",
                       "isMockup": "false",
@@ -345,8 +343,8 @@ module.exports = function(grunt) {
                       "mockup-patterns-tree": "'pattern.tree.less'",
                       "mockup-patterns-upload": "'pattern.upload.less'",
                       "mockup-popover": "'popover.less'",
-                      "mockupPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/'",
-                      "mockuplessPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less/'",
+                      "mockupPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/'",
+                      "mockuplessPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less/'",
                       "picker": "'classic.css'",
                       "picker_date": "'classic.date.css'",
                       "picker_time": "'classic.time.css'",
@@ -383,13 +381,13 @@ module.exports = function(grunt) {
                       "plone-toolbar-submenu-header-color": "lighten(#000, 80%)",
                       "plone-toolbar-submenu-text-color": "lighten(#000, 90%)",
                       "plone-toolbar-text-color": "rgba(255,255,255,1)",
-                      "resource-plone-app-event-event-css": "'dc2fd645166e43638f62455a18d5f04f.js'",
+                      "resource-plone-app-event-event-css": "'af67b31313974f1fb318dae7e1880598.js'",
                       "resource-plone-app-jquerytools-dateinput-js": "'jquery.tools.dateinput.css'",
                       "resource-plone-app-jquerytools-js": "'jquery.tools.overlay.css'",
                       "resourceregistry": "'resourceregistry.less'",
                       "select2": "'select2.css'",
                       "sitePath": "'/'",
-                      "staticPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static'",
+                      "staticPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static'",
                       "thememapper": "'thememapper.less'",
                       "tinymce": "'Content.less'",
                       "tinymce-default-styles": "'tinymce-styles.css'",
@@ -401,7 +399,7 @@ module.exports = function(grunt) {
 ,
             "plone": {
                 files: [
-                    {"/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css": ["/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone.less"]}
+                    {"/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css": ["/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone.less"]}
                 ],
                 options: {
                     compress: true,
@@ -416,37 +414,37 @@ module.exports = function(grunt) {
                         new require('less-plugin-inline-urls'),
                     ],
                     paths: [
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/less", 
-                      "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources", 
-                      "/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.17-py2.7.egg/plonetheme/barceloneta/theme/less", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/less", 
+                      "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources", 
+                      "/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.18-py2.7.egg/plonetheme/barceloneta/theme/less", 
                       "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css", 
                       "temp_resources"
 ],
@@ -505,7 +503,6 @@ module.exports = function(grunt) {
                       "barceloneta-type": "'type.plone.less'",
                       "barceloneta-variables": "'variables.plone.less'",
                       "barceloneta-views": "'views.plone.less'",
-                      "bebest-bootstrap": "'bootstrap.less'",
                       "bebest-main": "'bebest-theme.less'",
                       "bootstrap-badges": "'badges.less'",
                       "bootstrap-basic": "'navbar.less'",
@@ -517,7 +514,7 @@ module.exports = function(grunt) {
                       "bootstrap-modal": "'modals.less'",
                       "bootstrap-progress-bars": "'progress-bars.less'",
                       "bootstrap-variables": "'variables.less'",
-                      "bowerPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/'",
+                      "bowerPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/'",
                       "dropzone": "'dropzone.css'",
                       "icon-font-path": "\"../fonts/\"",
                       "isMockup": "false",
@@ -542,8 +539,8 @@ module.exports = function(grunt) {
                       "mockup-patterns-tree": "'pattern.tree.less'",
                       "mockup-patterns-upload": "'pattern.upload.less'",
                       "mockup-popover": "'popover.less'",
-                      "mockupPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/'",
-                      "mockuplessPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less/'",
+                      "mockupPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/'",
+                      "mockuplessPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less/'",
                       "picker": "'classic.css'",
                       "picker_date": "'classic.date.css'",
                       "picker_time": "'classic.time.css'",
@@ -580,13 +577,13 @@ module.exports = function(grunt) {
                       "plone-toolbar-submenu-header-color": "lighten(#000, 80%)",
                       "plone-toolbar-submenu-text-color": "lighten(#000, 90%)",
                       "plone-toolbar-text-color": "rgba(255,255,255,1)",
-                      "resource-plone-app-event-event-css": "'dc2fd645166e43638f62455a18d5f04f.js'",
+                      "resource-plone-app-event-event-css": "'af67b31313974f1fb318dae7e1880598.js'",
                       "resource-plone-app-jquerytools-dateinput-js": "'jquery.tools.dateinput.css'",
                       "resource-plone-app-jquerytools-js": "'jquery.tools.overlay.css'",
                       "resourceregistry": "'resourceregistry.less'",
                       "select2": "'select2.css'",
                       "sitePath": "'/'",
-                      "staticPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static'",
+                      "staticPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static'",
                       "thememapper": "'thememapper.less'",
                       "tinymce": "'Content.less'",
                       "tinymce-default-styles": "'tinymce-styles.css'",
@@ -598,7 +595,7 @@ module.exports = function(grunt) {
 ,
             "resourceregistry": {
                 files: [
-                    {"/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css": ["/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry.less"]}
+                    {"/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css": ["/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry.less"]}
                 ],
                 options: {
                     compress: true,
@@ -613,37 +610,37 @@ module.exports = function(grunt) {
                         new require('less-plugin-inline-urls'),
                     ],
                     paths: [
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/less", 
-                      "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources", 
-                      "/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.17-py2.7.egg/plonetheme/barceloneta/theme/less", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/less", 
+                      "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources", 
+                      "/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.18-py2.7.egg/plonetheme/barceloneta/theme/less", 
                       "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css", 
                       "temp_resources"
 ],
@@ -702,7 +699,6 @@ module.exports = function(grunt) {
                       "barceloneta-type": "'type.plone.less'",
                       "barceloneta-variables": "'variables.plone.less'",
                       "barceloneta-views": "'views.plone.less'",
-                      "bebest-bootstrap": "'bootstrap.less'",
                       "bebest-main": "'bebest-theme.less'",
                       "bootstrap-badges": "'badges.less'",
                       "bootstrap-basic": "'navbar.less'",
@@ -714,7 +710,7 @@ module.exports = function(grunt) {
                       "bootstrap-modal": "'modals.less'",
                       "bootstrap-progress-bars": "'progress-bars.less'",
                       "bootstrap-variables": "'variables.less'",
-                      "bowerPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/'",
+                      "bowerPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/'",
                       "dropzone": "'dropzone.css'",
                       "icon-font-path": "\"../fonts/\"",
                       "isMockup": "false",
@@ -739,8 +735,8 @@ module.exports = function(grunt) {
                       "mockup-patterns-tree": "'pattern.tree.less'",
                       "mockup-patterns-upload": "'pattern.upload.less'",
                       "mockup-popover": "'popover.less'",
-                      "mockupPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/'",
-                      "mockuplessPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less/'",
+                      "mockupPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/'",
+                      "mockuplessPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less/'",
                       "picker": "'classic.css'",
                       "picker_date": "'classic.date.css'",
                       "picker_time": "'classic.time.css'",
@@ -777,13 +773,13 @@ module.exports = function(grunt) {
                       "plone-toolbar-submenu-header-color": "lighten(#000, 80%)",
                       "plone-toolbar-submenu-text-color": "lighten(#000, 90%)",
                       "plone-toolbar-text-color": "rgba(255,255,255,1)",
-                      "resource-plone-app-event-event-css": "'dc2fd645166e43638f62455a18d5f04f.js'",
+                      "resource-plone-app-event-event-css": "'af67b31313974f1fb318dae7e1880598.js'",
                       "resource-plone-app-jquerytools-dateinput-js": "'jquery.tools.dateinput.css'",
                       "resource-plone-app-jquerytools-js": "'jquery.tools.overlay.css'",
                       "resourceregistry": "'resourceregistry.less'",
                       "select2": "'select2.css'",
                       "sitePath": "'/'",
-                      "staticPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static'",
+                      "staticPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static'",
                       "thememapper": "'thememapper.less'",
                       "tinymce": "'Content.less'",
                       "tinymce-default-styles": "'tinymce-styles.css'",
@@ -795,7 +791,7 @@ module.exports = function(grunt) {
 ,
             "thememapper": {
                 files: [
-                    {"/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css": ["/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper.less"]}
+                    {"/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css": ["/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper.less"]}
                 ],
                 options: {
                     compress: true,
@@ -810,37 +806,37 @@ module.exports = function(grunt) {
                         new require('less-plugin-inline-urls'),
                     ],
                     paths: [
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray", 
-                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/less", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree", 
-                      "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/less", 
-                      "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources", 
-                      "/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.17-py2.7.egg/plonetheme/barceloneta/theme/less", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray", 
+                      "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/less", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree", 
+                      "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/less", 
+                      "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources", 
+                      "/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.18-py2.7.egg/plonetheme/barceloneta/theme/less", 
                       "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css", 
                       "temp_resources"
 ],
@@ -899,7 +895,6 @@ module.exports = function(grunt) {
                       "barceloneta-type": "'type.plone.less'",
                       "barceloneta-variables": "'variables.plone.less'",
                       "barceloneta-views": "'views.plone.less'",
-                      "bebest-bootstrap": "'bootstrap.less'",
                       "bebest-main": "'bebest-theme.less'",
                       "bootstrap-badges": "'badges.less'",
                       "bootstrap-basic": "'navbar.less'",
@@ -911,7 +906,7 @@ module.exports = function(grunt) {
                       "bootstrap-modal": "'modals.less'",
                       "bootstrap-progress-bars": "'progress-bars.less'",
                       "bootstrap-variables": "'variables.less'",
-                      "bowerPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/'",
+                      "bowerPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/'",
                       "dropzone": "'dropzone.css'",
                       "icon-font-path": "\"../fonts/\"",
                       "isMockup": "false",
@@ -936,8 +931,8 @@ module.exports = function(grunt) {
                       "mockup-patterns-tree": "'pattern.tree.less'",
                       "mockup-patterns-upload": "'pattern.upload.less'",
                       "mockup-popover": "'popover.less'",
-                      "mockupPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/'",
-                      "mockuplessPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less/'",
+                      "mockupPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/'",
+                      "mockuplessPath": "'/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less/'",
                       "picker": "'classic.css'",
                       "picker_date": "'classic.date.css'",
                       "picker_time": "'classic.time.css'",
@@ -974,13 +969,13 @@ module.exports = function(grunt) {
                       "plone-toolbar-submenu-header-color": "lighten(#000, 80%)",
                       "plone-toolbar-submenu-text-color": "lighten(#000, 90%)",
                       "plone-toolbar-text-color": "rgba(255,255,255,1)",
-                      "resource-plone-app-event-event-css": "'dc2fd645166e43638f62455a18d5f04f.js'",
+                      "resource-plone-app-event-event-css": "'af67b31313974f1fb318dae7e1880598.js'",
                       "resource-plone-app-jquerytools-dateinput-js": "'jquery.tools.dateinput.css'",
                       "resource-plone-app-jquerytools-js": "'jquery.tools.overlay.css'",
                       "resourceregistry": "'resourceregistry.less'",
                       "select2": "'select2.css'",
                       "sitePath": "'/'",
-                      "staticPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static'",
+                      "staticPath": "'/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static'",
                       "thememapper": "'thememapper.less'",
                       "tinymce": "'Content.less'",
                       "tinymce-default-styles": "'tinymce-styles.css'",
@@ -998,8 +993,8 @@ module.exports = function(grunt) {
                     baseUrl: '/',
                     generateSourceMaps: false,
                     preserveLicenseComments: false,
-                    paths: {"less": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/less/dist/less", "text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/requirejs-text/text", "mockup-patterns-recurrence": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence/pattern", "mockup-patterns-tinymce": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/pattern", "mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/parser", "mockup-router": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/router", "tinymce-spellchecker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/spellchecker/plugin", "jquery.event.drop": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/lib/jquery.event.drop", "tinymce-autosave": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autosave/plugin", "tinymce-charmap": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/charmap/plugin", "tinymce-save": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/save/plugin", "tinymce-fullscreen": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullscreen/plugin", "tinymce-noneditable": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/noneditable/plugin", "ace-mode-javascript": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-javascript", "mockup-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/registry", "tinymce-preview": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/preview/plugin", "jquery": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery/dist/jquery.min", "tinymce-visualblocks": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/plugin", "mockup-ui-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/ui", "mockup-patterns-formautofocus": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/formautofocus/pattern", "mockup-patterns-base": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/base/pattern", "mockup-i18n": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/i18n", "underscore": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/underscore/underscore", "pat-logger": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/logger", "ace-mode-text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-text", "backbone.paginator": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/backbone.paginator/lib/backbone.paginator", "tinymce-tabfocus": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/tabfocus/plugin", "picker.time": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.time", "tinymce-fullpage": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullpage/plugin", "tinymce-compat3x": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/compat3x/plugin", "pat-jquery-ext": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/jquery-ext", "mockup-patterns-thememapper": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper/pattern", "mockup-patterns-filemanager-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager", "bootstrap-transition": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/transition", "mockup-patterns-tinymce-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce", "mockup-patterns-preventdoublesubmit": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/preventdoublesubmit/pattern", "tinymce-visualchars": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualchars/plugin", "expect": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/expect/index", "tinymce-anchor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/anchor/plugin", "mockup-patterns-filemanager": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager/pattern", "mockup-patterns-backdrop": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/backdrop/pattern", "mockup-patterns-cookietrigger": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/cookietrigger/pattern", "tinymce-layer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/layer/plugin", "mockup-patterns-modal": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal/pattern", "jquery.cookie": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.cookie/jquery.cookie", "tinymce-wordcount": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/wordcount/plugin", "mockup-utils": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/utils", "tinymce-advlist": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/advlist/plugin", "plone-patterns-portletmanager": "/Volumes/SSD/Dev/eggs/plone.app.portlets-3.1.3-py2.7.egg/plone/app/portlets/browser/manage-portlets", "bebest-bootstrap": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bootstrap", "tinymce-modern-theme": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/themes/modern/theme", "tinymce-paste": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/paste/plugin", "resource-plone-app-discussion-javascripts-comments": "temp_resources/76627b68add04c22b3a15bf9001f2f15", "mockup-patterns-resourceregistry": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry/pattern", "mockup-patterns-upload-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload", "tinymce-bbcode": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/bbcode/plugin", "mockup-patterns-querystring": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring/pattern", "bebest-main": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest", "logging": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/logging/src/logging", "ace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/ace", "mockup-patterns-thememapper-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper", "tinymce-autolink": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autolink/plugin", "mockup-patterns-formunloadalert": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/formunloadalert/pattern", "picker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker", "mockup-patterns-structure-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure", "tinymce-image": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/image/plugin", "marked": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/marked/lib/marked", "ace-mode-css": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-css", "pat-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/registry", "plone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone", "resource-plone-app-jquerytools-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.overlay", "mockup-patterns-select2": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2/pattern", "mockup-patterns-structure": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/pattern", "tinymce-autoresize": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autoresize/plugin", "jquery.recurrenceinput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src/jquery.recurrenceinput", "jquery.form": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery-form/jquery.form", "mockup-patterns-sortable": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/sortable/pattern", "tinymce-template": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/template/plugin", "translate": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/i18n-wrapper", "bootstrap-dropdown": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/dropdown", "mockup-patterns-contentloader": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/contentloader/pattern", "rjs": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/r.js/dist/r", "tinymce-pagebreak": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/pagebreak/plugin", "bootstrap-alert": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/alert", "tinymce-textpattern": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textpattern/plugin", "tinymce-emoticons": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/emoticons/plugin", "resourceregistry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry", "tinymce-table": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/table/plugin", "mockup-patterns-tree": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree/pattern", "jquery.event.drag": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/lib/jquery.event.drag", "tinymce-textcolor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textcolor/plugin", "resource-plone-app-event-event-js": "temp_resources/c1422b30b43745058d631c769ee26de9", "tinymce-print": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/print/plugin", "tinymce-link": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/link/plugin", "pat-compat": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/compat", "tinymce-hr": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/hr/plugin", "select2": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2/select2", "tinymce-media": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/media/plugin", "mockup-patterns-texteditor": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/texteditor/pattern", "mockup-patterns-tooltip": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip/pattern", "resource-plone-app-jquerytools-dateinput-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.dateinput", "plone-logged-in": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in", "mockup-patterns-pickadate": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate/pattern", "mockup-patterns-moment": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/moment/pattern", "tinymce-contextmenu": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/contextmenu/plugin", "ace-theme-monokai": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/theme-monokai", "mockup-patterns-toggle": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/toggle/pattern", "tinymce-directionality": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/directionality/plugin", "mockup-patterns-markspeciallinks": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks/pattern", "tinymce-legacyoutput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/legacyoutput/plugin", "pat-base": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/base", "plone-patterns-toolbar": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/toolbar", "mockup-patterns-inlinevalidation": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/inlinevalidation/pattern", "thememapper": "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper", "tinymce": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/tinymce", "mockup-patterns-resourceregistry-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry", "tinymce-insertdatetime": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/insertdatetime/plugin", "jqtree": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree/tree.jquery", "mockup-patterns-livesearch": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch/pattern", "mockup-patterns-upload": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/pattern", "picker.date": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.date", "bootstrap-tooltip": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/tooltip", "mockup-patterns-autotoc": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc/pattern", "tinymce-importcss": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/importcss/plugin", "backbone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/backbone/backbone", "tinymce-lists": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/lists/plugin", "react": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/react/react", "mockup-patterns-textareamimetypeselector": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/textareamimetypeselector/pattern", "moment": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/moment/min/moment-with-locales.min", "sinon": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/sinonjs/sinon", "tinymce-code": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/code/plugin", "pat-utils": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/utils", "tinymce-colorpicker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/colorpicker/plugin", "jquery.tmpl": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tmpl", "bootstrap-collapse": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/collapse", "jquery-highlightsearchterms": "temp_resources/17000b4df9df43bd9e929627faf4f973", "JSXTransformer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/react/JSXTransformer", "mockup-patterns-relateditems": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems/pattern", "tinymce-nonbreaking": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/nonbreaking/plugin", "tinymce-searchreplace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/searchreplace/plugin", "pat-mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/mockup-parser", "dropzone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist/dropzone-amd-module"},
-                    shim: {"less": {}, "text": {}, "mockup-patterns-recurrence": {}, "mockup-patterns-tinymce": {}, "mockup-parser": {}, "mockup-router": {}, "tinymce-spellchecker": {"deps": ["tinymce"]}, "jquery.event.drop": {"exports": "$.drop", "deps": ["jquery"]}, "tinymce-autosave": {"deps": ["tinymce"]}, "tinymce-charmap": {"deps": ["tinymce"]}, "tinymce-save": {"deps": ["tinymce"]}, "tinymce-fullscreen": {"deps": ["tinymce"]}, "tinymce-noneditable": {"deps": ["tinymce"]}, "ace-mode-javascript": {}, "tinymce-advlist": {"deps": ["tinymce"]}, "tinymce-preview": {"deps": ["tinymce"]}, "mockup-patterns-tree": {}, "tinymce-pagebreak": {"deps": ["tinymce"]}, "mockup-patterns-formautofocus": {}, "mockup-i18n": {}, "underscore": {"exports": "window._"}, "pat-logger": {}, "ace-mode-text": {}, "backbone.paginator": {"exports": "window.Backbone.Paginator", "deps": ["backbone"]}, "jqtree": {"deps": ["jquery"]}, "tinymce-textcolor": {"deps": ["tinymce"]}, "picker.time": {"deps": ["picker"]}, "tinymce-fullpage": {"deps": ["tinymce"]}, "tinymce-compat3x": {"deps": ["tinymce"]}, "pat-jquery-ext": {}, "mockup-patterns-thememapper": {}, "picker": {}, "bootstrap-transition": {"exports": "window.jQuery.support.transition", "deps": ["jquery"]}, "mockup-patterns-preventdoublesubmit": {}, "tinymce-visualchars": {"deps": ["tinymce"]}, "expect": {"exports": "window.expect"}, "tinymce-anchor": {"deps": ["tinymce"]}, "mockup-patterns-filemanager": {}, "mockup-patterns-backdrop": {}, "mockup-patterns-cookietrigger": {}, "tinymce-layer": {"deps": ["tinymce"]}, "mockup-patterns-modal": {}, "jquery.cookie": {"deps": ["jquery"]}, "tinymce-wordcount": {"deps": ["tinymce"]}, "mockup-utils": {}, "mockup-registry": {}, "plone-patterns-portletmanager": {}, "bebest-bootstrap": {}, "tinymce-modern-theme": {"deps": ["tinymce"]}, "tinymce-paste": {"deps": ["tinymce"]}, "resource-plone-app-discussion-javascripts-comments": {}, "tinymce-bbcode": {"deps": ["tinymce"]}, "mockup-patterns-querystring": {}, "bebest-main": {}, "logging": {}, "ace": {}, "tinymce-autolink": {"deps": ["tinymce"]}, "mockup-patterns-formunloadalert": {}, "resource-plone-app-jquerytools-dateinput-js": {"deps": ["jquery"]}, "tinymce-image": {"deps": ["tinymce"]}, "marked": {}, "ace-mode-css": {}, "pat-registry": {}, "plone": {}, "resource-plone-app-jquerytools-js": {"deps": ["jquery"]}, "mockup-patterns-select2": {}, "mockup-patterns-structure": {}, "tinymce-autoresize": {"deps": ["tinymce"]}, "jquery.recurrenceinput": {"deps": ["jquery", "resource-plone-app-jquerytools-js", "resource-plone-app-jquerytools-dateinput-js", "jquery.tmpl"]}, "jquery.form": {}, "mockup-patterns-sortable": {}, "tinymce-template": {"deps": ["tinymce"]}, "translate": {}, "bootstrap-dropdown": {"deps": ["jquery"]}, "mockup-patterns-contentloader": {}, "rjs": {}, "tinymce-lists": {"deps": ["tinymce"]}, "bootstrap-alert": {"deps": ["jquery"]}, "tinymce-textpattern": {"deps": ["tinymce"]}, "tinymce-emoticons": {"deps": ["tinymce"]}, "resourceregistry": {}, "tinymce-table": {"deps": ["tinymce"]}, "jquery": {}, "jquery.event.drag": {"deps": ["jquery"]}, "tinymce-tabfocus": {"deps": ["tinymce"]}, "resource-plone-app-event-event-js": {}, "tinymce-print": {"deps": ["tinymce"]}, "tinymce-link": {"deps": ["tinymce"]}, "pat-compat": {}, "tinymce-hr": {"deps": ["tinymce"]}, "select2": {}, "tinymce-media": {"deps": ["tinymce"]}, "mockup-patterns-texteditor": {}, "mockup-patterns-tooltip": {}, "plone-logged-in": {}, "mockup-patterns-pickadate": {}, "JSXTransformer": {"exports": "window.JSXTransformer"}, "tinymce-contextmenu": {"deps": ["tinymce"]}, "ace-theme-monokai": {}, "mockup-patterns-toggle": {}, "tinymce-directionality": {"deps": ["tinymce"]}, "mockup-patterns-markspeciallinks": {}, "tinymce-legacyoutput": {"deps": ["tinymce"]}, "pat-base": {}, "plone-patterns-toolbar": {}, "mockup-patterns-inlinevalidation": {}, "thememapper": {}, "tinymce": {"exports": "window.tinyMCE", "init": "function () { this.tinyMCE.DOM.events.domLoaded = true; return this.tinyMCE; }"}, "tinymce-visualblocks": {"deps": ["tinymce"]}, "tinymce-insertdatetime": {"deps": ["tinymce"]}, "mockup-patterns-base": {}, "mockup-patterns-livesearch": {}, "mockup-patterns-upload": {}, "picker.date": {"deps": ["picker"]}, "tinymce-searchreplace": {"deps": ["tinymce"]}, "mockup-patterns-autotoc": {}, "tinymce-importcss": {"deps": ["tinymce"]}, "backbone": {"exports": "window.Backbone", "deps": ["underscore", "jquery"]}, "mockup-patterns-resourceregistry": {}, "react": {}, "mockup-patterns-textareamimetypeselector": {}, "moment": {}, "sinon": {"exports": "window.sinon"}, "tinymce-code": {"deps": ["tinymce"]}, "pat-utils": {}, "tinymce-colorpicker": {"deps": ["tinymce"]}, "jquery.tmpl": {"deps": ["jquery"]}, "bootstrap-collapse": {"exports": "window.jQuery.fn.collapse.Constructor", "deps": ["jquery"]}, "jquery-highlightsearchterms": {}, "mockup-patterns-moment": {}, "mockup-patterns-relateditems": {}, "tinymce-nonbreaking": {"deps": ["tinymce"]}, "bootstrap-tooltip": {"deps": ["jquery"]}, "pat-mockup-parser": {}, "dropzone": {}},
+                    paths: {"less": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/less/dist/less", "text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/requirejs-text/text", "mockup-patterns-recurrence": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence/pattern", "mockup-patterns-tinymce": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/pattern", "mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/parser", "mockup-router": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/router", "tinymce-spellchecker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/spellchecker/plugin", "jquery.event.drop": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/lib/jquery.event.drop", "tinymce-autosave": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autosave/plugin", "tinymce-charmap": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/charmap/plugin", "tinymce-save": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/save/plugin", "tinymce-fullscreen": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullscreen/plugin", "tinymce-noneditable": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/noneditable/plugin", "ace-mode-javascript": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-javascript", "mockup-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/registry", "tinymce-preview": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/preview/plugin", "jquery": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery/dist/jquery.min", "tinymce-visualblocks": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/plugin", "mockup-ui-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/ui", "mockup-patterns-formautofocus": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/formautofocus/pattern", "mockup-patterns-base": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/base/pattern", "mockup-i18n": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/i18n", "underscore": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/underscore/underscore", "pat-logger": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/logger", "ace-mode-text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-text", "backbone.paginator": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/backbone.paginator/lib/backbone.paginator", "tinymce-tabfocus": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/tabfocus/plugin", "picker.time": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.time", "tinymce-fullpage": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullpage/plugin", "tinymce-compat3x": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/compat3x/plugin", "pat-jquery-ext": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/jquery-ext", "mockup-patterns-thememapper": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper/pattern", "mockup-patterns-filemanager-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager", "bootstrap-transition": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/transition", "mockup-patterns-tinymce-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce", "mockup-patterns-preventdoublesubmit": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/preventdoublesubmit/pattern", "tinymce-visualchars": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualchars/plugin", "expect": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/expect/index", "tinymce-anchor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/anchor/plugin", "mockup-patterns-filemanager": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager/pattern", "mockup-patterns-backdrop": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/backdrop/pattern", "mockup-patterns-cookietrigger": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/cookietrigger/pattern", "tinymce-layer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/layer/plugin", "mockup-patterns-modal": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal/pattern", "jquery.cookie": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.cookie/jquery.cookie", "tinymce-wordcount": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/wordcount/plugin", "mockup-utils": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/utils", "tinymce-advlist": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/advlist/plugin", "plone-patterns-portletmanager": "/Volumes/SSD/Dev/eggs/plone.app.portlets-3.1.3-py2.7.egg/plone/app/portlets/browser/manage-portlets", "tinymce-modern-theme": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/themes/modern/theme", "tinymce-paste": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/paste/plugin", "resource-plone-app-discussion-javascripts-comments": "temp_resources/7af840ab8c874dbba2a4c00f249a913d", "mockup-patterns-resourceregistry": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry/pattern", "mockup-patterns-upload-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload", "tinymce-bbcode": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/bbcode/plugin", "mockup-patterns-querystring": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring/pattern", "bebest-main": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest", "logging": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/logging/src/logging", "ace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/ace", "mockup-patterns-thememapper-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper", "tinymce-autolink": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autolink/plugin", "mockup-patterns-formunloadalert": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/formunloadalert/pattern", "picker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker", "mockup-patterns-structure-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure", "tinymce-image": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/image/plugin", "marked": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/marked/lib/marked", "ace-mode-css": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-css", "pat-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/registry", "plone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone", "resource-plone-app-jquerytools-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.overlay", "mockup-patterns-select2": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2/pattern", "mockup-patterns-structure": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/pattern", "tinymce-autoresize": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autoresize/plugin", "jquery.recurrenceinput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src/jquery.recurrenceinput", "jquery.form": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery-form/jquery.form", "mockup-patterns-sortable": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/sortable/pattern", "tinymce-template": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/template/plugin", "translate": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/i18n-wrapper", "bootstrap-dropdown": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/dropdown", "mockup-patterns-contentloader": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/contentloader/pattern", "rjs": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/r.js/dist/r", "tinymce-pagebreak": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/pagebreak/plugin", "bootstrap-alert": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/alert", "tinymce-textpattern": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textpattern/plugin", "tinymce-emoticons": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/emoticons/plugin", "resourceregistry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry", "tinymce-table": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/table/plugin", "mockup-patterns-tree": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree/pattern", "jquery.event.drag": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/lib/jquery.event.drag", "tinymce-textcolor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textcolor/plugin", "resource-plone-app-event-event-js": "temp_resources/0b7fe5233fa0418dbc91ca1c71cda816", "tinymce-print": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/print/plugin", "tinymce-link": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/link/plugin", "pat-compat": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/compat", "tinymce-hr": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/hr/plugin", "select2": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2/select2", "tinymce-media": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/media/plugin", "mockup-patterns-texteditor": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/texteditor/pattern", "mockup-patterns-tooltip": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip/pattern", "resource-plone-app-jquerytools-dateinput-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.dateinput", "plone-logged-in": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in", "mockup-patterns-pickadate": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate/pattern", "mockup-patterns-moment": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/moment/pattern", "tinymce-contextmenu": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/contextmenu/plugin", "ace-theme-monokai": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/theme-monokai", "mockup-patterns-toggle": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/toggle/pattern", "tinymce-directionality": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/directionality/plugin", "mockup-patterns-markspeciallinks": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks/pattern", "tinymce-legacyoutput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/legacyoutput/plugin", "pat-base": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/base", "plone-patterns-toolbar": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/toolbar", "mockup-patterns-inlinevalidation": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/inlinevalidation/pattern", "thememapper": "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper", "tinymce": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/tinymce", "mockup-patterns-resourceregistry-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry", "tinymce-insertdatetime": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/insertdatetime/plugin", "jqtree": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree/tree.jquery", "mockup-patterns-livesearch": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch/pattern", "mockup-patterns-upload": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/pattern", "picker.date": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.date", "bootstrap-tooltip": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/tooltip", "mockup-patterns-autotoc": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc/pattern", "tinymce-importcss": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/importcss/plugin", "backbone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/backbone/backbone", "tinymce-lists": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/lists/plugin", "react": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/react/react", "mockup-patterns-textareamimetypeselector": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/textareamimetypeselector/pattern", "moment": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/moment/min/moment-with-locales.min", "sinon": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/sinonjs/sinon", "tinymce-code": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/code/plugin", "pat-utils": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/utils", "tinymce-colorpicker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/colorpicker/plugin", "jquery.tmpl": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tmpl", "bootstrap-collapse": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/collapse", "jquery-highlightsearchterms": "temp_resources/1aeefcc6733745e88077030930211959", "JSXTransformer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/react/JSXTransformer", "mockup-patterns-relateditems": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems/pattern", "tinymce-nonbreaking": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/nonbreaking/plugin", "tinymce-searchreplace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/searchreplace/plugin", "pat-mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/mockup-parser", "dropzone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist/dropzone-amd-module"},
+                    shim: {"less": {}, "text": {}, "mockup-patterns-recurrence": {}, "mockup-patterns-tinymce": {}, "mockup-parser": {}, "mockup-router": {}, "tinymce-spellchecker": {"deps": ["tinymce"]}, "jquery.event.drop": {"exports": "$.drop", "deps": ["jquery"]}, "tinymce-autosave": {"deps": ["tinymce"]}, "tinymce-charmap": {"deps": ["tinymce"]}, "tinymce-save": {"deps": ["tinymce"]}, "tinymce-fullscreen": {"deps": ["tinymce"]}, "tinymce-noneditable": {"deps": ["tinymce"]}, "ace-mode-javascript": {}, "tinymce-advlist": {"deps": ["tinymce"]}, "tinymce-preview": {"deps": ["tinymce"]}, "mockup-patterns-tree": {}, "tinymce-pagebreak": {"deps": ["tinymce"]}, "mockup-patterns-formautofocus": {}, "mockup-i18n": {}, "underscore": {"exports": "window._"}, "pat-logger": {}, "ace-mode-text": {}, "backbone.paginator": {"exports": "window.Backbone.Paginator", "deps": ["backbone"]}, "jqtree": {"deps": ["jquery"]}, "tinymce-textcolor": {"deps": ["tinymce"]}, "picker.time": {"deps": ["picker"]}, "tinymce-fullpage": {"deps": ["tinymce"]}, "tinymce-compat3x": {"deps": ["tinymce"]}, "pat-jquery-ext": {}, "mockup-patterns-thememapper": {}, "picker": {}, "bootstrap-transition": {"exports": "window.jQuery.support.transition", "deps": ["jquery"]}, "mockup-patterns-preventdoublesubmit": {}, "tinymce-visualchars": {"deps": ["tinymce"]}, "expect": {"exports": "window.expect"}, "tinymce-anchor": {"deps": ["tinymce"]}, "mockup-patterns-filemanager": {}, "mockup-patterns-backdrop": {}, "mockup-patterns-cookietrigger": {}, "tinymce-layer": {"deps": ["tinymce"]}, "mockup-patterns-modal": {}, "jquery.cookie": {"deps": ["jquery"]}, "tinymce-wordcount": {"deps": ["tinymce"]}, "mockup-utils": {}, "mockup-registry": {}, "plone-patterns-portletmanager": {}, "tinymce-modern-theme": {"deps": ["tinymce"]}, "tinymce-paste": {"deps": ["tinymce"]}, "resource-plone-app-discussion-javascripts-comments": {}, "tinymce-bbcode": {"deps": ["tinymce"]}, "mockup-patterns-querystring": {}, "bebest-main": {}, "logging": {}, "ace": {}, "tinymce-autolink": {"deps": ["tinymce"]}, "mockup-patterns-formunloadalert": {}, "resource-plone-app-jquerytools-dateinput-js": {"deps": ["jquery"]}, "tinymce-image": {"deps": ["tinymce"]}, "marked": {}, "ace-mode-css": {}, "pat-registry": {}, "plone": {}, "resource-plone-app-jquerytools-js": {"deps": ["jquery"]}, "mockup-patterns-select2": {}, "mockup-patterns-structure": {}, "tinymce-autoresize": {"deps": ["tinymce"]}, "jquery.recurrenceinput": {"deps": ["jquery", "resource-plone-app-jquerytools-js", "resource-plone-app-jquerytools-dateinput-js", "jquery.tmpl"]}, "jquery.form": {}, "mockup-patterns-sortable": {}, "tinymce-template": {"deps": ["tinymce"]}, "translate": {}, "bootstrap-dropdown": {"deps": ["jquery"]}, "mockup-patterns-contentloader": {}, "rjs": {}, "tinymce-lists": {"deps": ["tinymce"]}, "bootstrap-alert": {"deps": ["jquery"]}, "tinymce-textpattern": {"deps": ["tinymce"]}, "tinymce-emoticons": {"deps": ["tinymce"]}, "resourceregistry": {}, "tinymce-table": {"deps": ["tinymce"]}, "jquery": {}, "jquery.event.drag": {"deps": ["jquery"]}, "tinymce-tabfocus": {"deps": ["tinymce"]}, "resource-plone-app-event-event-js": {}, "tinymce-print": {"deps": ["tinymce"]}, "tinymce-link": {"deps": ["tinymce"]}, "pat-compat": {}, "tinymce-hr": {"deps": ["tinymce"]}, "select2": {}, "tinymce-media": {"deps": ["tinymce"]}, "mockup-patterns-texteditor": {}, "mockup-patterns-tooltip": {}, "plone-logged-in": {}, "mockup-patterns-pickadate": {}, "JSXTransformer": {"exports": "window.JSXTransformer"}, "tinymce-contextmenu": {"deps": ["tinymce"]}, "ace-theme-monokai": {}, "mockup-patterns-toggle": {}, "tinymce-directionality": {"deps": ["tinymce"]}, "mockup-patterns-markspeciallinks": {}, "tinymce-legacyoutput": {"deps": ["tinymce"]}, "pat-base": {}, "plone-patterns-toolbar": {}, "mockup-patterns-inlinevalidation": {}, "thememapper": {}, "tinymce": {"exports": "window.tinyMCE", "init": "function () { this.tinyMCE.DOM.events.domLoaded = true; return this.tinyMCE; }"}, "tinymce-visualblocks": {"deps": ["tinymce"]}, "tinymce-insertdatetime": {"deps": ["tinymce"]}, "mockup-patterns-base": {}, "mockup-patterns-livesearch": {}, "mockup-patterns-upload": {}, "picker.date": {"deps": ["picker"]}, "tinymce-searchreplace": {"deps": ["tinymce"]}, "mockup-patterns-autotoc": {}, "tinymce-importcss": {"deps": ["tinymce"]}, "backbone": {"exports": "window.Backbone", "deps": ["underscore", "jquery"]}, "mockup-patterns-resourceregistry": {}, "react": {}, "mockup-patterns-textareamimetypeselector": {}, "moment": {}, "sinon": {"exports": "window.sinon"}, "tinymce-code": {"deps": ["tinymce"]}, "pat-utils": {}, "tinymce-colorpicker": {"deps": ["tinymce"]}, "jquery.tmpl": {"deps": ["jquery"]}, "bootstrap-collapse": {"exports": "window.jQuery.fn.collapse.Constructor", "deps": ["jquery"]}, "jquery-highlightsearchterms": {}, "mockup-patterns-moment": {}, "mockup-patterns-relateditems": {}, "tinymce-nonbreaking": {"deps": ["tinymce"]}, "bootstrap-tooltip": {"deps": ["jquery"]}, "pat-mockup-parser": {}, "dropzone": {}},
                     wrapShim: true,
                     name: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest.js',
                     exclude: ['jquery'],
@@ -1013,12 +1008,12 @@ module.exports = function(grunt) {
                     baseUrl: '/',
                     generateSourceMaps: false,
                     preserveLicenseComments: false,
-                    paths: {"less": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/less/dist/less", "text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/requirejs-text/text", "mockup-patterns-recurrence": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence/pattern", "mockup-patterns-tinymce": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/pattern", "mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/parser", "mockup-router": "empty:", "tinymce-spellchecker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/spellchecker/plugin", "jquery.event.drop": "empty:", "tinymce-autosave": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autosave/plugin", "tinymce-charmap": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/charmap/plugin", "tinymce-save": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/save/plugin", "tinymce-fullscreen": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullscreen/plugin", "tinymce-noneditable": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/noneditable/plugin", "ace-mode-javascript": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-javascript", "mockup-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/registry", "tinymce-preview": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/preview/plugin", "jquery": "empty:", "tinymce-visualblocks": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/plugin", "mockup-ui-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/ui", "mockup-patterns-formautofocus": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/formautofocus/pattern", "mockup-patterns-base": "empty:", "mockup-i18n": "empty:", "underscore": "empty:", "pat-logger": "empty:", "ace-mode-text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-text", "backbone.paginator": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/backbone.paginator/lib/backbone.paginator", "tinymce-tabfocus": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/tabfocus/plugin", "picker.time": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.time", "tinymce-fullpage": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullpage/plugin", "tinymce-compat3x": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/compat3x/plugin", "pat-jquery-ext": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/jquery-ext", "mockup-patterns-thememapper": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper/pattern", "mockup-patterns-filemanager-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager", "bootstrap-transition": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/transition", "mockup-patterns-tinymce-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce", "mockup-patterns-preventdoublesubmit": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/preventdoublesubmit/pattern", "tinymce-visualchars": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualchars/plugin", "expect": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/expect/index", "tinymce-anchor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/anchor/plugin", "mockup-patterns-filemanager": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager/pattern", "mockup-patterns-backdrop": "empty:", "mockup-patterns-cookietrigger": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/cookietrigger/pattern", "tinymce-layer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/layer/plugin", "mockup-patterns-modal": "empty:", "jquery.cookie": "empty:", "tinymce-wordcount": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/wordcount/plugin", "mockup-utils": "empty:", "tinymce-advlist": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/advlist/plugin", "plone-patterns-portletmanager": "/Volumes/SSD/Dev/eggs/plone.app.portlets-3.1.3-py2.7.egg/plone/app/portlets/browser/manage-portlets", "bebest-bootstrap": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bootstrap", "tinymce-modern-theme": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/themes/modern/theme", "tinymce-paste": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/paste/plugin", "resource-plone-app-discussion-javascripts-comments": "temp_resources/76627b68add04c22b3a15bf9001f2f15", "mockup-patterns-resourceregistry": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry/pattern", "mockup-patterns-upload-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload", "tinymce-bbcode": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/bbcode/plugin", "mockup-patterns-querystring": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring/pattern", "bebest-main": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest", "logging": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/logging/src/logging", "ace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/ace", "mockup-patterns-thememapper-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper", "tinymce-autolink": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autolink/plugin", "mockup-patterns-formunloadalert": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/formunloadalert/pattern", "picker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker", "mockup-patterns-structure-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure", "tinymce-image": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/image/plugin", "marked": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/marked/lib/marked", "ace-mode-css": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-css", "pat-registry": "empty:", "plone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone", "resource-plone-app-jquerytools-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.overlay", "mockup-patterns-select2": "empty:", "mockup-patterns-structure": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/pattern", "tinymce-autoresize": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autoresize/plugin", "jquery.recurrenceinput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src/jquery.recurrenceinput", "jquery.form": "empty:", "mockup-patterns-sortable": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/sortable/pattern", "tinymce-template": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/template/plugin", "translate": "empty:", "bootstrap-dropdown": "empty:", "mockup-patterns-contentloader": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/contentloader/pattern", "rjs": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/r.js/dist/r", "tinymce-pagebreak": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/pagebreak/plugin", "bootstrap-alert": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/alert", "tinymce-textpattern": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textpattern/plugin", "tinymce-emoticons": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/emoticons/plugin", "resourceregistry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry", "tinymce-table": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/table/plugin", "mockup-patterns-tree": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree/pattern", "jquery.event.drag": "empty:", "tinymce-textcolor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textcolor/plugin", "resource-plone-app-event-event-js": "temp_resources/c1422b30b43745058d631c769ee26de9", "tinymce-print": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/print/plugin", "tinymce-link": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/link/plugin", "pat-compat": "empty:", "tinymce-hr": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/hr/plugin", "select2": "empty:", "tinymce-media": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/media/plugin", "mockup-patterns-texteditor": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/texteditor/pattern", "mockup-patterns-tooltip": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip/pattern", "resource-plone-app-jquerytools-dateinput-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.dateinput", "plone-logged-in": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in", "mockup-patterns-pickadate": "empty:", "mockup-patterns-moment": "empty:", "tinymce-contextmenu": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/contextmenu/plugin", "ace-theme-monokai": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/theme-monokai", "mockup-patterns-toggle": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/toggle/pattern", "tinymce-directionality": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/directionality/plugin", "mockup-patterns-markspeciallinks": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks/pattern", "tinymce-legacyoutput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/legacyoutput/plugin", "pat-base": "empty:", "plone-patterns-toolbar": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/toolbar", "mockup-patterns-inlinevalidation": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/inlinevalidation/pattern", "thememapper": "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper", "tinymce": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/tinymce", "mockup-patterns-resourceregistry-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry", "tinymce-insertdatetime": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/insertdatetime/plugin", "jqtree": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree/tree.jquery", "mockup-patterns-livesearch": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch/pattern", "mockup-patterns-upload": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/pattern", "picker.date": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.date", "bootstrap-tooltip": "empty:", "mockup-patterns-autotoc": "empty:", "tinymce-importcss": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/importcss/plugin", "backbone": "empty:", "tinymce-lists": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/lists/plugin", "react": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/react/react", "mockup-patterns-textareamimetypeselector": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/textareamimetypeselector/pattern", "moment": "empty:", "sinon": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/sinonjs/sinon", "tinymce-code": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/code/plugin", "pat-utils": "empty:", "tinymce-colorpicker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/colorpicker/plugin", "jquery.tmpl": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tmpl", "bootstrap-collapse": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/collapse", "jquery-highlightsearchterms": "temp_resources/17000b4df9df43bd9e929627faf4f973", "JSXTransformer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/react/JSXTransformer", "mockup-patterns-relateditems": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems/pattern", "tinymce-nonbreaking": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/nonbreaking/plugin", "tinymce-searchreplace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/searchreplace/plugin", "pat-mockup-parser": "empty:", "dropzone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist/dropzone-amd-module"},
-                    shim: {"less": {}, "text": {}, "mockup-patterns-recurrence": {}, "mockup-patterns-tinymce": {}, "mockup-parser": {}, "mockup-router": {}, "tinymce-spellchecker": {"deps": ["tinymce"]}, "jquery.event.drop": {"exports": "$.drop", "deps": ["jquery"]}, "tinymce-autosave": {"deps": ["tinymce"]}, "tinymce-charmap": {"deps": ["tinymce"]}, "tinymce-save": {"deps": ["tinymce"]}, "tinymce-fullscreen": {"deps": ["tinymce"]}, "tinymce-noneditable": {"deps": ["tinymce"]}, "ace-mode-javascript": {}, "tinymce-advlist": {"deps": ["tinymce"]}, "tinymce-preview": {"deps": ["tinymce"]}, "mockup-patterns-tree": {}, "tinymce-pagebreak": {"deps": ["tinymce"]}, "mockup-patterns-formautofocus": {}, "mockup-i18n": {}, "underscore": {"exports": "window._"}, "pat-logger": {}, "ace-mode-text": {}, "backbone.paginator": {"exports": "window.Backbone.Paginator", "deps": ["backbone"]}, "jqtree": {"deps": ["jquery"]}, "tinymce-textcolor": {"deps": ["tinymce"]}, "picker.time": {"deps": ["picker"]}, "tinymce-fullpage": {"deps": ["tinymce"]}, "tinymce-compat3x": {"deps": ["tinymce"]}, "pat-jquery-ext": {}, "mockup-patterns-thememapper": {}, "picker": {}, "bootstrap-transition": {"exports": "window.jQuery.support.transition", "deps": ["jquery"]}, "mockup-patterns-preventdoublesubmit": {}, "tinymce-visualchars": {"deps": ["tinymce"]}, "expect": {"exports": "window.expect"}, "tinymce-anchor": {"deps": ["tinymce"]}, "mockup-patterns-filemanager": {}, "mockup-patterns-backdrop": {}, "mockup-patterns-cookietrigger": {}, "tinymce-layer": {"deps": ["tinymce"]}, "mockup-patterns-modal": {}, "jquery.cookie": {"deps": ["jquery"]}, "tinymce-wordcount": {"deps": ["tinymce"]}, "mockup-utils": {}, "mockup-registry": {}, "plone-patterns-portletmanager": {}, "bebest-bootstrap": {}, "tinymce-modern-theme": {"deps": ["tinymce"]}, "tinymce-paste": {"deps": ["tinymce"]}, "resource-plone-app-discussion-javascripts-comments": {}, "tinymce-bbcode": {"deps": ["tinymce"]}, "mockup-patterns-querystring": {}, "bebest-main": {}, "logging": {}, "ace": {}, "tinymce-autolink": {"deps": ["tinymce"]}, "mockup-patterns-formunloadalert": {}, "resource-plone-app-jquerytools-dateinput-js": {"deps": ["jquery"]}, "tinymce-image": {"deps": ["tinymce"]}, "marked": {}, "ace-mode-css": {}, "pat-registry": {}, "plone": {}, "resource-plone-app-jquerytools-js": {"deps": ["jquery"]}, "mockup-patterns-select2": {}, "mockup-patterns-structure": {}, "tinymce-autoresize": {"deps": ["tinymce"]}, "jquery.recurrenceinput": {"deps": ["jquery", "resource-plone-app-jquerytools-js", "resource-plone-app-jquerytools-dateinput-js", "jquery.tmpl"]}, "jquery.form": {}, "mockup-patterns-sortable": {}, "tinymce-template": {"deps": ["tinymce"]}, "translate": {}, "bootstrap-dropdown": {"deps": ["jquery"]}, "mockup-patterns-contentloader": {}, "rjs": {}, "tinymce-lists": {"deps": ["tinymce"]}, "bootstrap-alert": {"deps": ["jquery"]}, "tinymce-textpattern": {"deps": ["tinymce"]}, "tinymce-emoticons": {"deps": ["tinymce"]}, "resourceregistry": {}, "tinymce-table": {"deps": ["tinymce"]}, "jquery": {}, "jquery.event.drag": {"deps": ["jquery"]}, "tinymce-tabfocus": {"deps": ["tinymce"]}, "resource-plone-app-event-event-js": {}, "tinymce-print": {"deps": ["tinymce"]}, "tinymce-link": {"deps": ["tinymce"]}, "pat-compat": {}, "tinymce-hr": {"deps": ["tinymce"]}, "select2": {}, "tinymce-media": {"deps": ["tinymce"]}, "mockup-patterns-texteditor": {}, "mockup-patterns-tooltip": {}, "plone-logged-in": {}, "mockup-patterns-pickadate": {}, "JSXTransformer": {"exports": "window.JSXTransformer"}, "tinymce-contextmenu": {"deps": ["tinymce"]}, "ace-theme-monokai": {}, "mockup-patterns-toggle": {}, "tinymce-directionality": {"deps": ["tinymce"]}, "mockup-patterns-markspeciallinks": {}, "tinymce-legacyoutput": {"deps": ["tinymce"]}, "pat-base": {}, "plone-patterns-toolbar": {}, "mockup-patterns-inlinevalidation": {}, "thememapper": {}, "tinymce": {"exports": "window.tinyMCE", "init": "function () { this.tinyMCE.DOM.events.domLoaded = true; return this.tinyMCE; }"}, "tinymce-visualblocks": {"deps": ["tinymce"]}, "tinymce-insertdatetime": {"deps": ["tinymce"]}, "mockup-patterns-base": {}, "mockup-patterns-livesearch": {}, "mockup-patterns-upload": {}, "picker.date": {"deps": ["picker"]}, "tinymce-searchreplace": {"deps": ["tinymce"]}, "mockup-patterns-autotoc": {}, "tinymce-importcss": {"deps": ["tinymce"]}, "backbone": {"exports": "window.Backbone", "deps": ["underscore", "jquery"]}, "mockup-patterns-resourceregistry": {}, "react": {}, "mockup-patterns-textareamimetypeselector": {}, "moment": {}, "sinon": {"exports": "window.sinon"}, "tinymce-code": {"deps": ["tinymce"]}, "pat-utils": {}, "tinymce-colorpicker": {"deps": ["tinymce"]}, "jquery.tmpl": {"deps": ["jquery"]}, "bootstrap-collapse": {"exports": "window.jQuery.fn.collapse.Constructor", "deps": ["jquery"]}, "jquery-highlightsearchterms": {}, "mockup-patterns-moment": {}, "mockup-patterns-relateditems": {}, "tinymce-nonbreaking": {"deps": ["tinymce"]}, "bootstrap-tooltip": {"deps": ["jquery"]}, "pat-mockup-parser": {}, "dropzone": {}},
+                    paths: {"less": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/less/dist/less", "text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/requirejs-text/text", "mockup-patterns-recurrence": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence/pattern", "mockup-patterns-tinymce": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/pattern", "mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/parser", "mockup-router": "empty:", "tinymce-spellchecker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/spellchecker/plugin", "jquery.event.drop": "empty:", "tinymce-autosave": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autosave/plugin", "tinymce-charmap": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/charmap/plugin", "tinymce-save": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/save/plugin", "tinymce-fullscreen": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullscreen/plugin", "tinymce-noneditable": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/noneditable/plugin", "ace-mode-javascript": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-javascript", "mockup-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/registry", "tinymce-preview": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/preview/plugin", "jquery": "empty:", "tinymce-visualblocks": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/plugin", "mockup-ui-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/ui", "mockup-patterns-formautofocus": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/formautofocus/pattern", "mockup-patterns-base": "empty:", "mockup-i18n": "empty:", "underscore": "empty:", "pat-logger": "empty:", "ace-mode-text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-text", "backbone.paginator": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/backbone.paginator/lib/backbone.paginator", "tinymce-tabfocus": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/tabfocus/plugin", "picker.time": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.time", "tinymce-fullpage": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullpage/plugin", "tinymce-compat3x": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/compat3x/plugin", "pat-jquery-ext": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/jquery-ext", "mockup-patterns-thememapper": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper/pattern", "mockup-patterns-filemanager-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager", "bootstrap-transition": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/transition", "mockup-patterns-tinymce-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce", "mockup-patterns-preventdoublesubmit": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/preventdoublesubmit/pattern", "tinymce-visualchars": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualchars/plugin", "expect": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/expect/index", "tinymce-anchor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/anchor/plugin", "mockup-patterns-filemanager": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager/pattern", "mockup-patterns-backdrop": "empty:", "mockup-patterns-cookietrigger": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/cookietrigger/pattern", "tinymce-layer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/layer/plugin", "mockup-patterns-modal": "empty:", "jquery.cookie": "empty:", "tinymce-wordcount": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/wordcount/plugin", "mockup-utils": "empty:", "tinymce-advlist": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/advlist/plugin", "plone-patterns-portletmanager": "/Volumes/SSD/Dev/eggs/plone.app.portlets-3.1.3-py2.7.egg/plone/app/portlets/browser/manage-portlets", "tinymce-modern-theme": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/themes/modern/theme", "tinymce-paste": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/paste/plugin", "resource-plone-app-discussion-javascripts-comments": "temp_resources/7af840ab8c874dbba2a4c00f249a913d", "mockup-patterns-resourceregistry": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry/pattern", "mockup-patterns-upload-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload", "tinymce-bbcode": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/bbcode/plugin", "mockup-patterns-querystring": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring/pattern", "bebest-main": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest", "logging": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/logging/src/logging", "ace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/ace", "mockup-patterns-thememapper-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper", "tinymce-autolink": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autolink/plugin", "mockup-patterns-formunloadalert": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/formunloadalert/pattern", "picker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker", "mockup-patterns-structure-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure", "tinymce-image": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/image/plugin", "marked": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/marked/lib/marked", "ace-mode-css": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-css", "pat-registry": "empty:", "plone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone", "resource-plone-app-jquerytools-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.overlay", "mockup-patterns-select2": "empty:", "mockup-patterns-structure": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/pattern", "tinymce-autoresize": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autoresize/plugin", "jquery.recurrenceinput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src/jquery.recurrenceinput", "jquery.form": "empty:", "mockup-patterns-sortable": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/sortable/pattern", "tinymce-template": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/template/plugin", "translate": "empty:", "bootstrap-dropdown": "empty:", "mockup-patterns-contentloader": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/contentloader/pattern", "rjs": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/r.js/dist/r", "tinymce-pagebreak": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/pagebreak/plugin", "bootstrap-alert": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/alert", "tinymce-textpattern": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textpattern/plugin", "tinymce-emoticons": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/emoticons/plugin", "resourceregistry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry", "tinymce-table": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/table/plugin", "mockup-patterns-tree": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree/pattern", "jquery.event.drag": "empty:", "tinymce-textcolor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textcolor/plugin", "resource-plone-app-event-event-js": "temp_resources/0b7fe5233fa0418dbc91ca1c71cda816", "tinymce-print": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/print/plugin", "tinymce-link": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/link/plugin", "pat-compat": "empty:", "tinymce-hr": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/hr/plugin", "select2": "empty:", "tinymce-media": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/media/plugin", "mockup-patterns-texteditor": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/texteditor/pattern", "mockup-patterns-tooltip": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip/pattern", "resource-plone-app-jquerytools-dateinput-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.dateinput", "plone-logged-in": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in", "mockup-patterns-pickadate": "empty:", "mockup-patterns-moment": "empty:", "tinymce-contextmenu": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/contextmenu/plugin", "ace-theme-monokai": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/theme-monokai", "mockup-patterns-toggle": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/toggle/pattern", "tinymce-directionality": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/directionality/plugin", "mockup-patterns-markspeciallinks": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks/pattern", "tinymce-legacyoutput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/legacyoutput/plugin", "pat-base": "empty:", "plone-patterns-toolbar": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/toolbar", "mockup-patterns-inlinevalidation": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/inlinevalidation/pattern", "thememapper": "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper", "tinymce": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/tinymce", "mockup-patterns-resourceregistry-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry", "tinymce-insertdatetime": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/insertdatetime/plugin", "jqtree": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree/tree.jquery", "mockup-patterns-livesearch": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch/pattern", "mockup-patterns-upload": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/pattern", "picker.date": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.date", "bootstrap-tooltip": "empty:", "mockup-patterns-autotoc": "empty:", "tinymce-importcss": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/importcss/plugin", "backbone": "empty:", "tinymce-lists": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/lists/plugin", "react": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/react/react", "mockup-patterns-textareamimetypeselector": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/textareamimetypeselector/pattern", "moment": "empty:", "sinon": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/sinonjs/sinon", "tinymce-code": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/code/plugin", "pat-utils": "empty:", "tinymce-colorpicker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/colorpicker/plugin", "jquery.tmpl": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tmpl", "bootstrap-collapse": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/collapse", "jquery-highlightsearchterms": "temp_resources/1aeefcc6733745e88077030930211959", "JSXTransformer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/react/JSXTransformer", "mockup-patterns-relateditems": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems/pattern", "tinymce-nonbreaking": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/nonbreaking/plugin", "tinymce-searchreplace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/searchreplace/plugin", "pat-mockup-parser": "empty:", "dropzone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist/dropzone-amd-module"},
+                    shim: {"less": {}, "text": {}, "mockup-patterns-recurrence": {}, "mockup-patterns-tinymce": {}, "mockup-parser": {}, "mockup-router": {}, "tinymce-spellchecker": {"deps": ["tinymce"]}, "jquery.event.drop": {"exports": "$.drop", "deps": ["jquery"]}, "tinymce-autosave": {"deps": ["tinymce"]}, "tinymce-charmap": {"deps": ["tinymce"]}, "tinymce-save": {"deps": ["tinymce"]}, "tinymce-fullscreen": {"deps": ["tinymce"]}, "tinymce-noneditable": {"deps": ["tinymce"]}, "ace-mode-javascript": {}, "tinymce-advlist": {"deps": ["tinymce"]}, "tinymce-preview": {"deps": ["tinymce"]}, "mockup-patterns-tree": {}, "tinymce-pagebreak": {"deps": ["tinymce"]}, "mockup-patterns-formautofocus": {}, "mockup-i18n": {}, "underscore": {"exports": "window._"}, "pat-logger": {}, "ace-mode-text": {}, "backbone.paginator": {"exports": "window.Backbone.Paginator", "deps": ["backbone"]}, "jqtree": {"deps": ["jquery"]}, "tinymce-textcolor": {"deps": ["tinymce"]}, "picker.time": {"deps": ["picker"]}, "tinymce-fullpage": {"deps": ["tinymce"]}, "tinymce-compat3x": {"deps": ["tinymce"]}, "pat-jquery-ext": {}, "mockup-patterns-thememapper": {}, "picker": {}, "bootstrap-transition": {"exports": "window.jQuery.support.transition", "deps": ["jquery"]}, "mockup-patterns-preventdoublesubmit": {}, "tinymce-visualchars": {"deps": ["tinymce"]}, "expect": {"exports": "window.expect"}, "tinymce-anchor": {"deps": ["tinymce"]}, "mockup-patterns-filemanager": {}, "mockup-patterns-backdrop": {}, "mockup-patterns-cookietrigger": {}, "tinymce-layer": {"deps": ["tinymce"]}, "mockup-patterns-modal": {}, "jquery.cookie": {"deps": ["jquery"]}, "tinymce-wordcount": {"deps": ["tinymce"]}, "mockup-utils": {}, "mockup-registry": {}, "plone-patterns-portletmanager": {}, "tinymce-modern-theme": {"deps": ["tinymce"]}, "tinymce-paste": {"deps": ["tinymce"]}, "resource-plone-app-discussion-javascripts-comments": {}, "tinymce-bbcode": {"deps": ["tinymce"]}, "mockup-patterns-querystring": {}, "bebest-main": {}, "logging": {}, "ace": {}, "tinymce-autolink": {"deps": ["tinymce"]}, "mockup-patterns-formunloadalert": {}, "resource-plone-app-jquerytools-dateinput-js": {"deps": ["jquery"]}, "tinymce-image": {"deps": ["tinymce"]}, "marked": {}, "ace-mode-css": {}, "pat-registry": {}, "plone": {}, "resource-plone-app-jquerytools-js": {"deps": ["jquery"]}, "mockup-patterns-select2": {}, "mockup-patterns-structure": {}, "tinymce-autoresize": {"deps": ["tinymce"]}, "jquery.recurrenceinput": {"deps": ["jquery", "resource-plone-app-jquerytools-js", "resource-plone-app-jquerytools-dateinput-js", "jquery.tmpl"]}, "jquery.form": {}, "mockup-patterns-sortable": {}, "tinymce-template": {"deps": ["tinymce"]}, "translate": {}, "bootstrap-dropdown": {"deps": ["jquery"]}, "mockup-patterns-contentloader": {}, "rjs": {}, "tinymce-lists": {"deps": ["tinymce"]}, "bootstrap-alert": {"deps": ["jquery"]}, "tinymce-textpattern": {"deps": ["tinymce"]}, "tinymce-emoticons": {"deps": ["tinymce"]}, "resourceregistry": {}, "tinymce-table": {"deps": ["tinymce"]}, "jquery": {}, "jquery.event.drag": {"deps": ["jquery"]}, "tinymce-tabfocus": {"deps": ["tinymce"]}, "resource-plone-app-event-event-js": {}, "tinymce-print": {"deps": ["tinymce"]}, "tinymce-link": {"deps": ["tinymce"]}, "pat-compat": {}, "tinymce-hr": {"deps": ["tinymce"]}, "select2": {}, "tinymce-media": {"deps": ["tinymce"]}, "mockup-patterns-texteditor": {}, "mockup-patterns-tooltip": {}, "plone-logged-in": {}, "mockup-patterns-pickadate": {}, "JSXTransformer": {"exports": "window.JSXTransformer"}, "tinymce-contextmenu": {"deps": ["tinymce"]}, "ace-theme-monokai": {}, "mockup-patterns-toggle": {}, "tinymce-directionality": {"deps": ["tinymce"]}, "mockup-patterns-markspeciallinks": {}, "tinymce-legacyoutput": {"deps": ["tinymce"]}, "pat-base": {}, "plone-patterns-toolbar": {}, "mockup-patterns-inlinevalidation": {}, "thememapper": {}, "tinymce": {"exports": "window.tinyMCE", "init": "function () { this.tinyMCE.DOM.events.domLoaded = true; return this.tinyMCE; }"}, "tinymce-visualblocks": {"deps": ["tinymce"]}, "tinymce-insertdatetime": {"deps": ["tinymce"]}, "mockup-patterns-base": {}, "mockup-patterns-livesearch": {}, "mockup-patterns-upload": {}, "picker.date": {"deps": ["picker"]}, "tinymce-searchreplace": {"deps": ["tinymce"]}, "mockup-patterns-autotoc": {}, "tinymce-importcss": {"deps": ["tinymce"]}, "backbone": {"exports": "window.Backbone", "deps": ["underscore", "jquery"]}, "mockup-patterns-resourceregistry": {}, "react": {}, "mockup-patterns-textareamimetypeselector": {}, "moment": {}, "sinon": {"exports": "window.sinon"}, "tinymce-code": {"deps": ["tinymce"]}, "pat-utils": {}, "tinymce-colorpicker": {"deps": ["tinymce"]}, "jquery.tmpl": {"deps": ["jquery"]}, "bootstrap-collapse": {"exports": "window.jQuery.fn.collapse.Constructor", "deps": ["jquery"]}, "jquery-highlightsearchterms": {}, "mockup-patterns-moment": {}, "mockup-patterns-relateditems": {}, "tinymce-nonbreaking": {"deps": ["tinymce"]}, "bootstrap-tooltip": {"deps": ["jquery"]}, "pat-mockup-parser": {}, "dropzone": {}},
                     wrapShim: true,
-                    name: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in.js',
+                    name: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in.js',
                     exclude: ['jquery'],
-                    out: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.js',
+                    out: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.js',
                     optimize: "none"
                 }
             },
@@ -1028,12 +1023,12 @@ module.exports = function(grunt) {
                     baseUrl: '/',
                     generateSourceMaps: false,
                     preserveLicenseComments: false,
-                    paths: {"less": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/less/dist/less", "text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/requirejs-text/text", "mockup-patterns-recurrence": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence/pattern", "mockup-patterns-tinymce": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/pattern", "mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/parser", "mockup-router": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/router", "tinymce-spellchecker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/spellchecker/plugin", "jquery.event.drop": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/lib/jquery.event.drop", "tinymce-autosave": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autosave/plugin", "tinymce-charmap": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/charmap/plugin", "tinymce-save": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/save/plugin", "tinymce-fullscreen": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullscreen/plugin", "tinymce-noneditable": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/noneditable/plugin", "ace-mode-javascript": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-javascript", "mockup-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/registry", "tinymce-preview": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/preview/plugin", "jquery": "empty:", "tinymce-visualblocks": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/plugin", "mockup-ui-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/ui", "mockup-patterns-formautofocus": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/formautofocus/pattern", "mockup-patterns-base": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/base/pattern", "mockup-i18n": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/i18n", "underscore": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/underscore/underscore", "pat-logger": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/logger", "ace-mode-text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-text", "backbone.paginator": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/backbone.paginator/lib/backbone.paginator", "tinymce-tabfocus": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/tabfocus/plugin", "picker.time": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.time", "tinymce-fullpage": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullpage/plugin", "tinymce-compat3x": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/compat3x/plugin", "pat-jquery-ext": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/jquery-ext", "mockup-patterns-thememapper": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper/pattern", "mockup-patterns-filemanager-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager", "bootstrap-transition": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/transition", "mockup-patterns-tinymce-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce", "mockup-patterns-preventdoublesubmit": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/preventdoublesubmit/pattern", "tinymce-visualchars": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualchars/plugin", "expect": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/expect/index", "tinymce-anchor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/anchor/plugin", "mockup-patterns-filemanager": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager/pattern", "mockup-patterns-backdrop": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/backdrop/pattern", "mockup-patterns-cookietrigger": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/cookietrigger/pattern", "tinymce-layer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/layer/plugin", "mockup-patterns-modal": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal/pattern", "jquery.cookie": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.cookie/jquery.cookie", "tinymce-wordcount": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/wordcount/plugin", "mockup-utils": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/utils", "tinymce-advlist": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/advlist/plugin", "plone-patterns-portletmanager": "/Volumes/SSD/Dev/eggs/plone.app.portlets-3.1.3-py2.7.egg/plone/app/portlets/browser/manage-portlets", "bebest-bootstrap": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bootstrap", "tinymce-modern-theme": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/themes/modern/theme", "tinymce-paste": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/paste/plugin", "resource-plone-app-discussion-javascripts-comments": "temp_resources/76627b68add04c22b3a15bf9001f2f15", "mockup-patterns-resourceregistry": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry/pattern", "mockup-patterns-upload-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload", "tinymce-bbcode": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/bbcode/plugin", "mockup-patterns-querystring": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring/pattern", "bebest-main": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest", "logging": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/logging/src/logging", "ace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/ace", "mockup-patterns-thememapper-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper", "tinymce-autolink": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autolink/plugin", "mockup-patterns-formunloadalert": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/formunloadalert/pattern", "picker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker", "mockup-patterns-structure-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure", "tinymce-image": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/image/plugin", "marked": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/marked/lib/marked", "ace-mode-css": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-css", "pat-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/registry", "plone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone", "resource-plone-app-jquerytools-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.overlay", "mockup-patterns-select2": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2/pattern", "mockup-patterns-structure": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/pattern", "tinymce-autoresize": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autoresize/plugin", "jquery.recurrenceinput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src/jquery.recurrenceinput", "jquery.form": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery-form/jquery.form", "mockup-patterns-sortable": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/sortable/pattern", "tinymce-template": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/template/plugin", "translate": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/i18n-wrapper", "bootstrap-dropdown": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/dropdown", "mockup-patterns-contentloader": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/contentloader/pattern", "rjs": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/r.js/dist/r", "tinymce-pagebreak": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/pagebreak/plugin", "bootstrap-alert": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/alert", "tinymce-textpattern": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textpattern/plugin", "tinymce-emoticons": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/emoticons/plugin", "resourceregistry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry", "tinymce-table": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/table/plugin", "mockup-patterns-tree": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree/pattern", "jquery.event.drag": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/lib/jquery.event.drag", "tinymce-textcolor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textcolor/plugin", "resource-plone-app-event-event-js": "temp_resources/c1422b30b43745058d631c769ee26de9", "tinymce-print": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/print/plugin", "tinymce-link": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/link/plugin", "pat-compat": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/compat", "tinymce-hr": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/hr/plugin", "select2": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2/select2", "tinymce-media": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/media/plugin", "mockup-patterns-texteditor": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/texteditor/pattern", "mockup-patterns-tooltip": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip/pattern", "resource-plone-app-jquerytools-dateinput-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.dateinput", "plone-logged-in": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in", "mockup-patterns-pickadate": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate/pattern", "mockup-patterns-moment": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/moment/pattern", "tinymce-contextmenu": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/contextmenu/plugin", "ace-theme-monokai": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/theme-monokai", "mockup-patterns-toggle": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/toggle/pattern", "tinymce-directionality": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/directionality/plugin", "mockup-patterns-markspeciallinks": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks/pattern", "tinymce-legacyoutput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/legacyoutput/plugin", "pat-base": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/base", "plone-patterns-toolbar": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/toolbar", "mockup-patterns-inlinevalidation": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/inlinevalidation/pattern", "thememapper": "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper", "tinymce": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/tinymce", "mockup-patterns-resourceregistry-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry", "tinymce-insertdatetime": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/insertdatetime/plugin", "jqtree": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree/tree.jquery", "mockup-patterns-livesearch": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch/pattern", "mockup-patterns-upload": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/pattern", "picker.date": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.date", "bootstrap-tooltip": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/tooltip", "mockup-patterns-autotoc": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc/pattern", "tinymce-importcss": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/importcss/plugin", "backbone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/backbone/backbone", "tinymce-lists": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/lists/plugin", "react": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/react/react", "mockup-patterns-textareamimetypeselector": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/textareamimetypeselector/pattern", "moment": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/moment/min/moment-with-locales.min", "sinon": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/sinonjs/sinon", "tinymce-code": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/code/plugin", "pat-utils": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/utils", "tinymce-colorpicker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/colorpicker/plugin", "jquery.tmpl": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tmpl", "bootstrap-collapse": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/collapse", "jquery-highlightsearchterms": "temp_resources/17000b4df9df43bd9e929627faf4f973", "JSXTransformer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/react/JSXTransformer", "mockup-patterns-relateditems": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems/pattern", "tinymce-nonbreaking": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/nonbreaking/plugin", "tinymce-searchreplace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/searchreplace/plugin", "pat-mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/mockup-parser", "dropzone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist/dropzone-amd-module"},
-                    shim: {"less": {}, "text": {}, "mockup-patterns-recurrence": {}, "mockup-patterns-tinymce": {}, "mockup-parser": {}, "mockup-router": {}, "tinymce-spellchecker": {"deps": ["tinymce"]}, "jquery.event.drop": {"exports": "$.drop", "deps": ["jquery"]}, "tinymce-autosave": {"deps": ["tinymce"]}, "tinymce-charmap": {"deps": ["tinymce"]}, "tinymce-save": {"deps": ["tinymce"]}, "tinymce-fullscreen": {"deps": ["tinymce"]}, "tinymce-noneditable": {"deps": ["tinymce"]}, "ace-mode-javascript": {}, "tinymce-advlist": {"deps": ["tinymce"]}, "tinymce-preview": {"deps": ["tinymce"]}, "mockup-patterns-tree": {}, "tinymce-pagebreak": {"deps": ["tinymce"]}, "mockup-patterns-formautofocus": {}, "mockup-i18n": {}, "underscore": {"exports": "window._"}, "pat-logger": {}, "ace-mode-text": {}, "backbone.paginator": {"exports": "window.Backbone.Paginator", "deps": ["backbone"]}, "jqtree": {"deps": ["jquery"]}, "tinymce-textcolor": {"deps": ["tinymce"]}, "picker.time": {"deps": ["picker"]}, "tinymce-fullpage": {"deps": ["tinymce"]}, "tinymce-compat3x": {"deps": ["tinymce"]}, "pat-jquery-ext": {}, "mockup-patterns-thememapper": {}, "picker": {}, "bootstrap-transition": {"exports": "window.jQuery.support.transition", "deps": ["jquery"]}, "mockup-patterns-preventdoublesubmit": {}, "tinymce-visualchars": {"deps": ["tinymce"]}, "expect": {"exports": "window.expect"}, "tinymce-anchor": {"deps": ["tinymce"]}, "mockup-patterns-filemanager": {}, "mockup-patterns-backdrop": {}, "mockup-patterns-cookietrigger": {}, "tinymce-layer": {"deps": ["tinymce"]}, "mockup-patterns-modal": {}, "jquery.cookie": {"deps": ["jquery"]}, "tinymce-wordcount": {"deps": ["tinymce"]}, "mockup-utils": {}, "mockup-registry": {}, "plone-patterns-portletmanager": {}, "bebest-bootstrap": {}, "tinymce-modern-theme": {"deps": ["tinymce"]}, "tinymce-paste": {"deps": ["tinymce"]}, "resource-plone-app-discussion-javascripts-comments": {}, "tinymce-bbcode": {"deps": ["tinymce"]}, "mockup-patterns-querystring": {}, "bebest-main": {}, "logging": {}, "ace": {}, "tinymce-autolink": {"deps": ["tinymce"]}, "mockup-patterns-formunloadalert": {}, "resource-plone-app-jquerytools-dateinput-js": {"deps": ["jquery"]}, "tinymce-image": {"deps": ["tinymce"]}, "marked": {}, "ace-mode-css": {}, "pat-registry": {}, "plone": {}, "resource-plone-app-jquerytools-js": {"deps": ["jquery"]}, "mockup-patterns-select2": {}, "mockup-patterns-structure": {}, "tinymce-autoresize": {"deps": ["tinymce"]}, "jquery.recurrenceinput": {"deps": ["jquery", "resource-plone-app-jquerytools-js", "resource-plone-app-jquerytools-dateinput-js", "jquery.tmpl"]}, "jquery.form": {}, "mockup-patterns-sortable": {}, "tinymce-template": {"deps": ["tinymce"]}, "translate": {}, "bootstrap-dropdown": {"deps": ["jquery"]}, "mockup-patterns-contentloader": {}, "rjs": {}, "tinymce-lists": {"deps": ["tinymce"]}, "bootstrap-alert": {"deps": ["jquery"]}, "tinymce-textpattern": {"deps": ["tinymce"]}, "tinymce-emoticons": {"deps": ["tinymce"]}, "resourceregistry": {}, "tinymce-table": {"deps": ["tinymce"]}, "jquery": {}, "jquery.event.drag": {"deps": ["jquery"]}, "tinymce-tabfocus": {"deps": ["tinymce"]}, "resource-plone-app-event-event-js": {}, "tinymce-print": {"deps": ["tinymce"]}, "tinymce-link": {"deps": ["tinymce"]}, "pat-compat": {}, "tinymce-hr": {"deps": ["tinymce"]}, "select2": {}, "tinymce-media": {"deps": ["tinymce"]}, "mockup-patterns-texteditor": {}, "mockup-patterns-tooltip": {}, "plone-logged-in": {}, "mockup-patterns-pickadate": {}, "JSXTransformer": {"exports": "window.JSXTransformer"}, "tinymce-contextmenu": {"deps": ["tinymce"]}, "ace-theme-monokai": {}, "mockup-patterns-toggle": {}, "tinymce-directionality": {"deps": ["tinymce"]}, "mockup-patterns-markspeciallinks": {}, "tinymce-legacyoutput": {"deps": ["tinymce"]}, "pat-base": {}, "plone-patterns-toolbar": {}, "mockup-patterns-inlinevalidation": {}, "thememapper": {}, "tinymce": {"exports": "window.tinyMCE", "init": "function () { this.tinyMCE.DOM.events.domLoaded = true; return this.tinyMCE; }"}, "tinymce-visualblocks": {"deps": ["tinymce"]}, "tinymce-insertdatetime": {"deps": ["tinymce"]}, "mockup-patterns-base": {}, "mockup-patterns-livesearch": {}, "mockup-patterns-upload": {}, "picker.date": {"deps": ["picker"]}, "tinymce-searchreplace": {"deps": ["tinymce"]}, "mockup-patterns-autotoc": {}, "tinymce-importcss": {"deps": ["tinymce"]}, "backbone": {"exports": "window.Backbone", "deps": ["underscore", "jquery"]}, "mockup-patterns-resourceregistry": {}, "react": {}, "mockup-patterns-textareamimetypeselector": {}, "moment": {}, "sinon": {"exports": "window.sinon"}, "tinymce-code": {"deps": ["tinymce"]}, "pat-utils": {}, "tinymce-colorpicker": {"deps": ["tinymce"]}, "jquery.tmpl": {"deps": ["jquery"]}, "bootstrap-collapse": {"exports": "window.jQuery.fn.collapse.Constructor", "deps": ["jquery"]}, "jquery-highlightsearchterms": {}, "mockup-patterns-moment": {}, "mockup-patterns-relateditems": {}, "tinymce-nonbreaking": {"deps": ["tinymce"]}, "bootstrap-tooltip": {"deps": ["jquery"]}, "pat-mockup-parser": {}, "dropzone": {}},
+                    paths: {"less": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/less/dist/less", "text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/requirejs-text/text", "mockup-patterns-recurrence": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence/pattern", "mockup-patterns-tinymce": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/pattern", "mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/parser", "mockup-router": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/router", "tinymce-spellchecker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/spellchecker/plugin", "jquery.event.drop": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/lib/jquery.event.drop", "tinymce-autosave": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autosave/plugin", "tinymce-charmap": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/charmap/plugin", "tinymce-save": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/save/plugin", "tinymce-fullscreen": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullscreen/plugin", "tinymce-noneditable": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/noneditable/plugin", "ace-mode-javascript": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-javascript", "mockup-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/registry", "tinymce-preview": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/preview/plugin", "jquery": "empty:", "tinymce-visualblocks": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/plugin", "mockup-ui-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/ui", "mockup-patterns-formautofocus": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/formautofocus/pattern", "mockup-patterns-base": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/base/pattern", "mockup-i18n": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/i18n", "underscore": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/underscore/underscore", "pat-logger": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/logger", "ace-mode-text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-text", "backbone.paginator": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/backbone.paginator/lib/backbone.paginator", "tinymce-tabfocus": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/tabfocus/plugin", "picker.time": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.time", "tinymce-fullpage": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullpage/plugin", "tinymce-compat3x": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/compat3x/plugin", "pat-jquery-ext": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/jquery-ext", "mockup-patterns-thememapper": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper/pattern", "mockup-patterns-filemanager-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager", "bootstrap-transition": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/transition", "mockup-patterns-tinymce-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce", "mockup-patterns-preventdoublesubmit": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/preventdoublesubmit/pattern", "tinymce-visualchars": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualchars/plugin", "expect": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/expect/index", "tinymce-anchor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/anchor/plugin", "mockup-patterns-filemanager": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager/pattern", "mockup-patterns-backdrop": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/backdrop/pattern", "mockup-patterns-cookietrigger": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/cookietrigger/pattern", "tinymce-layer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/layer/plugin", "mockup-patterns-modal": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal/pattern", "jquery.cookie": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.cookie/jquery.cookie", "tinymce-wordcount": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/wordcount/plugin", "mockup-utils": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/utils", "tinymce-advlist": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/advlist/plugin", "plone-patterns-portletmanager": "/Volumes/SSD/Dev/eggs/plone.app.portlets-3.1.3-py2.7.egg/plone/app/portlets/browser/manage-portlets", "tinymce-modern-theme": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/themes/modern/theme", "tinymce-paste": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/paste/plugin", "resource-plone-app-discussion-javascripts-comments": "temp_resources/7af840ab8c874dbba2a4c00f249a913d", "mockup-patterns-resourceregistry": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry/pattern", "mockup-patterns-upload-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload", "tinymce-bbcode": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/bbcode/plugin", "mockup-patterns-querystring": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring/pattern", "bebest-main": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest", "logging": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/logging/src/logging", "ace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/ace", "mockup-patterns-thememapper-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper", "tinymce-autolink": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autolink/plugin", "mockup-patterns-formunloadalert": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/formunloadalert/pattern", "picker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker", "mockup-patterns-structure-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure", "tinymce-image": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/image/plugin", "marked": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/marked/lib/marked", "ace-mode-css": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-css", "pat-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/registry", "plone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone", "resource-plone-app-jquerytools-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.overlay", "mockup-patterns-select2": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2/pattern", "mockup-patterns-structure": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/pattern", "tinymce-autoresize": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autoresize/plugin", "jquery.recurrenceinput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src/jquery.recurrenceinput", "jquery.form": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery-form/jquery.form", "mockup-patterns-sortable": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/sortable/pattern", "tinymce-template": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/template/plugin", "translate": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/i18n-wrapper", "bootstrap-dropdown": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/dropdown", "mockup-patterns-contentloader": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/contentloader/pattern", "rjs": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/r.js/dist/r", "tinymce-pagebreak": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/pagebreak/plugin", "bootstrap-alert": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/alert", "tinymce-textpattern": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textpattern/plugin", "tinymce-emoticons": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/emoticons/plugin", "resourceregistry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry", "tinymce-table": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/table/plugin", "mockup-patterns-tree": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree/pattern", "jquery.event.drag": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/lib/jquery.event.drag", "tinymce-textcolor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textcolor/plugin", "resource-plone-app-event-event-js": "temp_resources/0b7fe5233fa0418dbc91ca1c71cda816", "tinymce-print": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/print/plugin", "tinymce-link": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/link/plugin", "pat-compat": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/compat", "tinymce-hr": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/hr/plugin", "select2": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2/select2", "tinymce-media": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/media/plugin", "mockup-patterns-texteditor": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/texteditor/pattern", "mockup-patterns-tooltip": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip/pattern", "resource-plone-app-jquerytools-dateinput-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.dateinput", "plone-logged-in": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in", "mockup-patterns-pickadate": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate/pattern", "mockup-patterns-moment": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/moment/pattern", "tinymce-contextmenu": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/contextmenu/plugin", "ace-theme-monokai": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/theme-monokai", "mockup-patterns-toggle": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/toggle/pattern", "tinymce-directionality": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/directionality/plugin", "mockup-patterns-markspeciallinks": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks/pattern", "tinymce-legacyoutput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/legacyoutput/plugin", "pat-base": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/base", "plone-patterns-toolbar": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/toolbar", "mockup-patterns-inlinevalidation": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/inlinevalidation/pattern", "thememapper": "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper", "tinymce": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/tinymce", "mockup-patterns-resourceregistry-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry", "tinymce-insertdatetime": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/insertdatetime/plugin", "jqtree": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree/tree.jquery", "mockup-patterns-livesearch": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch/pattern", "mockup-patterns-upload": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/pattern", "picker.date": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.date", "bootstrap-tooltip": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/tooltip", "mockup-patterns-autotoc": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc/pattern", "tinymce-importcss": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/importcss/plugin", "backbone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/backbone/backbone", "tinymce-lists": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/lists/plugin", "react": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/react/react", "mockup-patterns-textareamimetypeselector": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/textareamimetypeselector/pattern", "moment": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/moment/min/moment-with-locales.min", "sinon": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/sinonjs/sinon", "tinymce-code": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/code/plugin", "pat-utils": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/utils", "tinymce-colorpicker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/colorpicker/plugin", "jquery.tmpl": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tmpl", "bootstrap-collapse": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/collapse", "jquery-highlightsearchterms": "temp_resources/1aeefcc6733745e88077030930211959", "JSXTransformer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/react/JSXTransformer", "mockup-patterns-relateditems": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems/pattern", "tinymce-nonbreaking": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/nonbreaking/plugin", "tinymce-searchreplace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/searchreplace/plugin", "pat-mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/mockup-parser", "dropzone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist/dropzone-amd-module"},
+                    shim: {"less": {}, "text": {}, "mockup-patterns-recurrence": {}, "mockup-patterns-tinymce": {}, "mockup-parser": {}, "mockup-router": {}, "tinymce-spellchecker": {"deps": ["tinymce"]}, "jquery.event.drop": {"exports": "$.drop", "deps": ["jquery"]}, "tinymce-autosave": {"deps": ["tinymce"]}, "tinymce-charmap": {"deps": ["tinymce"]}, "tinymce-save": {"deps": ["tinymce"]}, "tinymce-fullscreen": {"deps": ["tinymce"]}, "tinymce-noneditable": {"deps": ["tinymce"]}, "ace-mode-javascript": {}, "tinymce-advlist": {"deps": ["tinymce"]}, "tinymce-preview": {"deps": ["tinymce"]}, "mockup-patterns-tree": {}, "tinymce-pagebreak": {"deps": ["tinymce"]}, "mockup-patterns-formautofocus": {}, "mockup-i18n": {}, "underscore": {"exports": "window._"}, "pat-logger": {}, "ace-mode-text": {}, "backbone.paginator": {"exports": "window.Backbone.Paginator", "deps": ["backbone"]}, "jqtree": {"deps": ["jquery"]}, "tinymce-textcolor": {"deps": ["tinymce"]}, "picker.time": {"deps": ["picker"]}, "tinymce-fullpage": {"deps": ["tinymce"]}, "tinymce-compat3x": {"deps": ["tinymce"]}, "pat-jquery-ext": {}, "mockup-patterns-thememapper": {}, "picker": {}, "bootstrap-transition": {"exports": "window.jQuery.support.transition", "deps": ["jquery"]}, "mockup-patterns-preventdoublesubmit": {}, "tinymce-visualchars": {"deps": ["tinymce"]}, "expect": {"exports": "window.expect"}, "tinymce-anchor": {"deps": ["tinymce"]}, "mockup-patterns-filemanager": {}, "mockup-patterns-backdrop": {}, "mockup-patterns-cookietrigger": {}, "tinymce-layer": {"deps": ["tinymce"]}, "mockup-patterns-modal": {}, "jquery.cookie": {"deps": ["jquery"]}, "tinymce-wordcount": {"deps": ["tinymce"]}, "mockup-utils": {}, "mockup-registry": {}, "plone-patterns-portletmanager": {}, "tinymce-modern-theme": {"deps": ["tinymce"]}, "tinymce-paste": {"deps": ["tinymce"]}, "resource-plone-app-discussion-javascripts-comments": {}, "tinymce-bbcode": {"deps": ["tinymce"]}, "mockup-patterns-querystring": {}, "bebest-main": {}, "logging": {}, "ace": {}, "tinymce-autolink": {"deps": ["tinymce"]}, "mockup-patterns-formunloadalert": {}, "resource-plone-app-jquerytools-dateinput-js": {"deps": ["jquery"]}, "tinymce-image": {"deps": ["tinymce"]}, "marked": {}, "ace-mode-css": {}, "pat-registry": {}, "plone": {}, "resource-plone-app-jquerytools-js": {"deps": ["jquery"]}, "mockup-patterns-select2": {}, "mockup-patterns-structure": {}, "tinymce-autoresize": {"deps": ["tinymce"]}, "jquery.recurrenceinput": {"deps": ["jquery", "resource-plone-app-jquerytools-js", "resource-plone-app-jquerytools-dateinput-js", "jquery.tmpl"]}, "jquery.form": {}, "mockup-patterns-sortable": {}, "tinymce-template": {"deps": ["tinymce"]}, "translate": {}, "bootstrap-dropdown": {"deps": ["jquery"]}, "mockup-patterns-contentloader": {}, "rjs": {}, "tinymce-lists": {"deps": ["tinymce"]}, "bootstrap-alert": {"deps": ["jquery"]}, "tinymce-textpattern": {"deps": ["tinymce"]}, "tinymce-emoticons": {"deps": ["tinymce"]}, "resourceregistry": {}, "tinymce-table": {"deps": ["tinymce"]}, "jquery": {}, "jquery.event.drag": {"deps": ["jquery"]}, "tinymce-tabfocus": {"deps": ["tinymce"]}, "resource-plone-app-event-event-js": {}, "tinymce-print": {"deps": ["tinymce"]}, "tinymce-link": {"deps": ["tinymce"]}, "pat-compat": {}, "tinymce-hr": {"deps": ["tinymce"]}, "select2": {}, "tinymce-media": {"deps": ["tinymce"]}, "mockup-patterns-texteditor": {}, "mockup-patterns-tooltip": {}, "plone-logged-in": {}, "mockup-patterns-pickadate": {}, "JSXTransformer": {"exports": "window.JSXTransformer"}, "tinymce-contextmenu": {"deps": ["tinymce"]}, "ace-theme-monokai": {}, "mockup-patterns-toggle": {}, "tinymce-directionality": {"deps": ["tinymce"]}, "mockup-patterns-markspeciallinks": {}, "tinymce-legacyoutput": {"deps": ["tinymce"]}, "pat-base": {}, "plone-patterns-toolbar": {}, "mockup-patterns-inlinevalidation": {}, "thememapper": {}, "tinymce": {"exports": "window.tinyMCE", "init": "function () { this.tinyMCE.DOM.events.domLoaded = true; return this.tinyMCE; }"}, "tinymce-visualblocks": {"deps": ["tinymce"]}, "tinymce-insertdatetime": {"deps": ["tinymce"]}, "mockup-patterns-base": {}, "mockup-patterns-livesearch": {}, "mockup-patterns-upload": {}, "picker.date": {"deps": ["picker"]}, "tinymce-searchreplace": {"deps": ["tinymce"]}, "mockup-patterns-autotoc": {}, "tinymce-importcss": {"deps": ["tinymce"]}, "backbone": {"exports": "window.Backbone", "deps": ["underscore", "jquery"]}, "mockup-patterns-resourceregistry": {}, "react": {}, "mockup-patterns-textareamimetypeselector": {}, "moment": {}, "sinon": {"exports": "window.sinon"}, "tinymce-code": {"deps": ["tinymce"]}, "pat-utils": {}, "tinymce-colorpicker": {"deps": ["tinymce"]}, "jquery.tmpl": {"deps": ["jquery"]}, "bootstrap-collapse": {"exports": "window.jQuery.fn.collapse.Constructor", "deps": ["jquery"]}, "jquery-highlightsearchterms": {}, "mockup-patterns-moment": {}, "mockup-patterns-relateditems": {}, "tinymce-nonbreaking": {"deps": ["tinymce"]}, "bootstrap-tooltip": {"deps": ["jquery"]}, "pat-mockup-parser": {}, "dropzone": {}},
                     wrapShim: true,
-                    name: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone.js',
+                    name: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone.js',
                     exclude: ['jquery'],
-                    out: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.js',
+                    out: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.js',
                     optimize: "none"
                 }
             },
@@ -1043,12 +1038,12 @@ module.exports = function(grunt) {
                     baseUrl: '/',
                     generateSourceMaps: false,
                     preserveLicenseComments: false,
-                    paths: {"less": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/less/dist/less", "text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/requirejs-text/text", "mockup-patterns-recurrence": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence/pattern", "mockup-patterns-tinymce": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/pattern", "mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/parser", "mockup-router": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/router", "tinymce-spellchecker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/spellchecker/plugin", "jquery.event.drop": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/lib/jquery.event.drop", "tinymce-autosave": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autosave/plugin", "tinymce-charmap": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/charmap/plugin", "tinymce-save": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/save/plugin", "tinymce-fullscreen": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullscreen/plugin", "tinymce-noneditable": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/noneditable/plugin", "ace-mode-javascript": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-javascript", "mockup-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/registry", "tinymce-preview": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/preview/plugin", "jquery": "empty:", "tinymce-visualblocks": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/plugin", "mockup-ui-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/ui", "mockup-patterns-formautofocus": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/formautofocus/pattern", "mockup-patterns-base": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/base/pattern", "mockup-i18n": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/i18n", "underscore": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/underscore/underscore", "pat-logger": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/logger", "ace-mode-text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-text", "backbone.paginator": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/backbone.paginator/lib/backbone.paginator", "tinymce-tabfocus": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/tabfocus/plugin", "picker.time": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.time", "tinymce-fullpage": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullpage/plugin", "tinymce-compat3x": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/compat3x/plugin", "pat-jquery-ext": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/jquery-ext", "mockup-patterns-thememapper": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper/pattern", "mockup-patterns-filemanager-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager", "bootstrap-transition": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/transition", "mockup-patterns-tinymce-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce", "mockup-patterns-preventdoublesubmit": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/preventdoublesubmit/pattern", "tinymce-visualchars": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualchars/plugin", "expect": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/expect/index", "tinymce-anchor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/anchor/plugin", "mockup-patterns-filemanager": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager/pattern", "mockup-patterns-backdrop": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/backdrop/pattern", "mockup-patterns-cookietrigger": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/cookietrigger/pattern", "tinymce-layer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/layer/plugin", "mockup-patterns-modal": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal/pattern", "jquery.cookie": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.cookie/jquery.cookie", "tinymce-wordcount": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/wordcount/plugin", "mockup-utils": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/utils", "tinymce-advlist": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/advlist/plugin", "plone-patterns-portletmanager": "/Volumes/SSD/Dev/eggs/plone.app.portlets-3.1.3-py2.7.egg/plone/app/portlets/browser/manage-portlets", "bebest-bootstrap": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bootstrap", "tinymce-modern-theme": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/themes/modern/theme", "tinymce-paste": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/paste/plugin", "resource-plone-app-discussion-javascripts-comments": "temp_resources/76627b68add04c22b3a15bf9001f2f15", "mockup-patterns-resourceregistry": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry/pattern", "mockup-patterns-upload-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload", "tinymce-bbcode": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/bbcode/plugin", "mockup-patterns-querystring": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring/pattern", "bebest-main": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest", "logging": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/logging/src/logging", "ace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/ace", "mockup-patterns-thememapper-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper", "tinymce-autolink": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autolink/plugin", "mockup-patterns-formunloadalert": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/formunloadalert/pattern", "picker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker", "mockup-patterns-structure-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure", "tinymce-image": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/image/plugin", "marked": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/marked/lib/marked", "ace-mode-css": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-css", "pat-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/registry", "plone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone", "resource-plone-app-jquerytools-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.overlay", "mockup-patterns-select2": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2/pattern", "mockup-patterns-structure": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/pattern", "tinymce-autoresize": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autoresize/plugin", "jquery.recurrenceinput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src/jquery.recurrenceinput", "jquery.form": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery-form/jquery.form", "mockup-patterns-sortable": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/sortable/pattern", "tinymce-template": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/template/plugin", "translate": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/i18n-wrapper", "bootstrap-dropdown": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/dropdown", "mockup-patterns-contentloader": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/contentloader/pattern", "rjs": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/r.js/dist/r", "tinymce-pagebreak": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/pagebreak/plugin", "bootstrap-alert": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/alert", "tinymce-textpattern": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textpattern/plugin", "tinymce-emoticons": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/emoticons/plugin", "resourceregistry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry", "tinymce-table": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/table/plugin", "mockup-patterns-tree": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree/pattern", "jquery.event.drag": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/lib/jquery.event.drag", "tinymce-textcolor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textcolor/plugin", "resource-plone-app-event-event-js": "temp_resources/c1422b30b43745058d631c769ee26de9", "tinymce-print": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/print/plugin", "tinymce-link": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/link/plugin", "pat-compat": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/compat", "tinymce-hr": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/hr/plugin", "select2": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2/select2", "tinymce-media": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/media/plugin", "mockup-patterns-texteditor": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/texteditor/pattern", "mockup-patterns-tooltip": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip/pattern", "resource-plone-app-jquerytools-dateinput-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.dateinput", "plone-logged-in": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in", "mockup-patterns-pickadate": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate/pattern", "mockup-patterns-moment": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/moment/pattern", "tinymce-contextmenu": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/contextmenu/plugin", "ace-theme-monokai": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/theme-monokai", "mockup-patterns-toggle": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/toggle/pattern", "tinymce-directionality": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/directionality/plugin", "mockup-patterns-markspeciallinks": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks/pattern", "tinymce-legacyoutput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/legacyoutput/plugin", "pat-base": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/base", "plone-patterns-toolbar": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/toolbar", "mockup-patterns-inlinevalidation": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/inlinevalidation/pattern", "thememapper": "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper", "tinymce": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/tinymce", "mockup-patterns-resourceregistry-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry", "tinymce-insertdatetime": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/insertdatetime/plugin", "jqtree": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree/tree.jquery", "mockup-patterns-livesearch": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch/pattern", "mockup-patterns-upload": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/pattern", "picker.date": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.date", "bootstrap-tooltip": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/tooltip", "mockup-patterns-autotoc": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc/pattern", "tinymce-importcss": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/importcss/plugin", "backbone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/backbone/backbone", "tinymce-lists": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/lists/plugin", "react": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/react/react", "mockup-patterns-textareamimetypeselector": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/textareamimetypeselector/pattern", "moment": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/moment/min/moment-with-locales.min", "sinon": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/sinonjs/sinon", "tinymce-code": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/code/plugin", "pat-utils": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/utils", "tinymce-colorpicker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/colorpicker/plugin", "jquery.tmpl": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tmpl", "bootstrap-collapse": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/collapse", "jquery-highlightsearchterms": "temp_resources/17000b4df9df43bd9e929627faf4f973", "JSXTransformer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/react/JSXTransformer", "mockup-patterns-relateditems": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems/pattern", "tinymce-nonbreaking": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/nonbreaking/plugin", "tinymce-searchreplace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/searchreplace/plugin", "pat-mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/mockup-parser", "dropzone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist/dropzone-amd-module"},
-                    shim: {"less": {}, "text": {}, "mockup-patterns-recurrence": {}, "mockup-patterns-tinymce": {}, "mockup-parser": {}, "mockup-router": {}, "tinymce-spellchecker": {"deps": ["tinymce"]}, "jquery.event.drop": {"exports": "$.drop", "deps": ["jquery"]}, "tinymce-autosave": {"deps": ["tinymce"]}, "tinymce-charmap": {"deps": ["tinymce"]}, "tinymce-save": {"deps": ["tinymce"]}, "tinymce-fullscreen": {"deps": ["tinymce"]}, "tinymce-noneditable": {"deps": ["tinymce"]}, "ace-mode-javascript": {}, "tinymce-advlist": {"deps": ["tinymce"]}, "tinymce-preview": {"deps": ["tinymce"]}, "mockup-patterns-tree": {}, "tinymce-pagebreak": {"deps": ["tinymce"]}, "mockup-patterns-formautofocus": {}, "mockup-i18n": {}, "underscore": {"exports": "window._"}, "pat-logger": {}, "ace-mode-text": {}, "backbone.paginator": {"exports": "window.Backbone.Paginator", "deps": ["backbone"]}, "jqtree": {"deps": ["jquery"]}, "tinymce-textcolor": {"deps": ["tinymce"]}, "picker.time": {"deps": ["picker"]}, "tinymce-fullpage": {"deps": ["tinymce"]}, "tinymce-compat3x": {"deps": ["tinymce"]}, "pat-jquery-ext": {}, "mockup-patterns-thememapper": {}, "picker": {}, "bootstrap-transition": {"exports": "window.jQuery.support.transition", "deps": ["jquery"]}, "mockup-patterns-preventdoublesubmit": {}, "tinymce-visualchars": {"deps": ["tinymce"]}, "expect": {"exports": "window.expect"}, "tinymce-anchor": {"deps": ["tinymce"]}, "mockup-patterns-filemanager": {}, "mockup-patterns-backdrop": {}, "mockup-patterns-cookietrigger": {}, "tinymce-layer": {"deps": ["tinymce"]}, "mockup-patterns-modal": {}, "jquery.cookie": {"deps": ["jquery"]}, "tinymce-wordcount": {"deps": ["tinymce"]}, "mockup-utils": {}, "mockup-registry": {}, "plone-patterns-portletmanager": {}, "bebest-bootstrap": {}, "tinymce-modern-theme": {"deps": ["tinymce"]}, "tinymce-paste": {"deps": ["tinymce"]}, "resource-plone-app-discussion-javascripts-comments": {}, "tinymce-bbcode": {"deps": ["tinymce"]}, "mockup-patterns-querystring": {}, "bebest-main": {}, "logging": {}, "ace": {}, "tinymce-autolink": {"deps": ["tinymce"]}, "mockup-patterns-formunloadalert": {}, "resource-plone-app-jquerytools-dateinput-js": {"deps": ["jquery"]}, "tinymce-image": {"deps": ["tinymce"]}, "marked": {}, "ace-mode-css": {}, "pat-registry": {}, "plone": {}, "resource-plone-app-jquerytools-js": {"deps": ["jquery"]}, "mockup-patterns-select2": {}, "mockup-patterns-structure": {}, "tinymce-autoresize": {"deps": ["tinymce"]}, "jquery.recurrenceinput": {"deps": ["jquery", "resource-plone-app-jquerytools-js", "resource-plone-app-jquerytools-dateinput-js", "jquery.tmpl"]}, "jquery.form": {}, "mockup-patterns-sortable": {}, "tinymce-template": {"deps": ["tinymce"]}, "translate": {}, "bootstrap-dropdown": {"deps": ["jquery"]}, "mockup-patterns-contentloader": {}, "rjs": {}, "tinymce-lists": {"deps": ["tinymce"]}, "bootstrap-alert": {"deps": ["jquery"]}, "tinymce-textpattern": {"deps": ["tinymce"]}, "tinymce-emoticons": {"deps": ["tinymce"]}, "resourceregistry": {}, "tinymce-table": {"deps": ["tinymce"]}, "jquery": {}, "jquery.event.drag": {"deps": ["jquery"]}, "tinymce-tabfocus": {"deps": ["tinymce"]}, "resource-plone-app-event-event-js": {}, "tinymce-print": {"deps": ["tinymce"]}, "tinymce-link": {"deps": ["tinymce"]}, "pat-compat": {}, "tinymce-hr": {"deps": ["tinymce"]}, "select2": {}, "tinymce-media": {"deps": ["tinymce"]}, "mockup-patterns-texteditor": {}, "mockup-patterns-tooltip": {}, "plone-logged-in": {}, "mockup-patterns-pickadate": {}, "JSXTransformer": {"exports": "window.JSXTransformer"}, "tinymce-contextmenu": {"deps": ["tinymce"]}, "ace-theme-monokai": {}, "mockup-patterns-toggle": {}, "tinymce-directionality": {"deps": ["tinymce"]}, "mockup-patterns-markspeciallinks": {}, "tinymce-legacyoutput": {"deps": ["tinymce"]}, "pat-base": {}, "plone-patterns-toolbar": {}, "mockup-patterns-inlinevalidation": {}, "thememapper": {}, "tinymce": {"exports": "window.tinyMCE", "init": "function () { this.tinyMCE.DOM.events.domLoaded = true; return this.tinyMCE; }"}, "tinymce-visualblocks": {"deps": ["tinymce"]}, "tinymce-insertdatetime": {"deps": ["tinymce"]}, "mockup-patterns-base": {}, "mockup-patterns-livesearch": {}, "mockup-patterns-upload": {}, "picker.date": {"deps": ["picker"]}, "tinymce-searchreplace": {"deps": ["tinymce"]}, "mockup-patterns-autotoc": {}, "tinymce-importcss": {"deps": ["tinymce"]}, "backbone": {"exports": "window.Backbone", "deps": ["underscore", "jquery"]}, "mockup-patterns-resourceregistry": {}, "react": {}, "mockup-patterns-textareamimetypeselector": {}, "moment": {}, "sinon": {"exports": "window.sinon"}, "tinymce-code": {"deps": ["tinymce"]}, "pat-utils": {}, "tinymce-colorpicker": {"deps": ["tinymce"]}, "jquery.tmpl": {"deps": ["jquery"]}, "bootstrap-collapse": {"exports": "window.jQuery.fn.collapse.Constructor", "deps": ["jquery"]}, "jquery-highlightsearchterms": {}, "mockup-patterns-moment": {}, "mockup-patterns-relateditems": {}, "tinymce-nonbreaking": {"deps": ["tinymce"]}, "bootstrap-tooltip": {"deps": ["jquery"]}, "pat-mockup-parser": {}, "dropzone": {}},
+                    paths: {"less": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/less/dist/less", "text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/requirejs-text/text", "mockup-patterns-recurrence": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence/pattern", "mockup-patterns-tinymce": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/pattern", "mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/parser", "mockup-router": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/router", "tinymce-spellchecker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/spellchecker/plugin", "jquery.event.drop": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/lib/jquery.event.drop", "tinymce-autosave": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autosave/plugin", "tinymce-charmap": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/charmap/plugin", "tinymce-save": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/save/plugin", "tinymce-fullscreen": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullscreen/plugin", "tinymce-noneditable": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/noneditable/plugin", "ace-mode-javascript": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-javascript", "mockup-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/registry", "tinymce-preview": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/preview/plugin", "jquery": "empty:", "tinymce-visualblocks": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/plugin", "mockup-ui-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/ui", "mockup-patterns-formautofocus": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/formautofocus/pattern", "mockup-patterns-base": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/base/pattern", "mockup-i18n": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/i18n", "underscore": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/underscore/underscore", "pat-logger": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/logger", "ace-mode-text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-text", "backbone.paginator": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/backbone.paginator/lib/backbone.paginator", "tinymce-tabfocus": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/tabfocus/plugin", "picker.time": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.time", "tinymce-fullpage": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullpage/plugin", "tinymce-compat3x": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/compat3x/plugin", "pat-jquery-ext": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/jquery-ext", "mockup-patterns-thememapper": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper/pattern", "mockup-patterns-filemanager-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager", "bootstrap-transition": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/transition", "mockup-patterns-tinymce-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce", "mockup-patterns-preventdoublesubmit": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/preventdoublesubmit/pattern", "tinymce-visualchars": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualchars/plugin", "expect": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/expect/index", "tinymce-anchor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/anchor/plugin", "mockup-patterns-filemanager": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager/pattern", "mockup-patterns-backdrop": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/backdrop/pattern", "mockup-patterns-cookietrigger": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/cookietrigger/pattern", "tinymce-layer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/layer/plugin", "mockup-patterns-modal": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal/pattern", "jquery.cookie": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.cookie/jquery.cookie", "tinymce-wordcount": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/wordcount/plugin", "mockup-utils": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/utils", "tinymce-advlist": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/advlist/plugin", "plone-patterns-portletmanager": "/Volumes/SSD/Dev/eggs/plone.app.portlets-3.1.3-py2.7.egg/plone/app/portlets/browser/manage-portlets", "tinymce-modern-theme": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/themes/modern/theme", "tinymce-paste": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/paste/plugin", "resource-plone-app-discussion-javascripts-comments": "temp_resources/7af840ab8c874dbba2a4c00f249a913d", "mockup-patterns-resourceregistry": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry/pattern", "mockup-patterns-upload-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload", "tinymce-bbcode": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/bbcode/plugin", "mockup-patterns-querystring": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring/pattern", "bebest-main": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest", "logging": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/logging/src/logging", "ace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/ace", "mockup-patterns-thememapper-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper", "tinymce-autolink": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autolink/plugin", "mockup-patterns-formunloadalert": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/formunloadalert/pattern", "picker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker", "mockup-patterns-structure-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure", "tinymce-image": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/image/plugin", "marked": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/marked/lib/marked", "ace-mode-css": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-css", "pat-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/registry", "plone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone", "resource-plone-app-jquerytools-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.overlay", "mockup-patterns-select2": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2/pattern", "mockup-patterns-structure": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/pattern", "tinymce-autoresize": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autoresize/plugin", "jquery.recurrenceinput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src/jquery.recurrenceinput", "jquery.form": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery-form/jquery.form", "mockup-patterns-sortable": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/sortable/pattern", "tinymce-template": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/template/plugin", "translate": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/i18n-wrapper", "bootstrap-dropdown": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/dropdown", "mockup-patterns-contentloader": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/contentloader/pattern", "rjs": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/r.js/dist/r", "tinymce-pagebreak": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/pagebreak/plugin", "bootstrap-alert": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/alert", "tinymce-textpattern": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textpattern/plugin", "tinymce-emoticons": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/emoticons/plugin", "resourceregistry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry", "tinymce-table": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/table/plugin", "mockup-patterns-tree": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree/pattern", "jquery.event.drag": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/lib/jquery.event.drag", "tinymce-textcolor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textcolor/plugin", "resource-plone-app-event-event-js": "temp_resources/0b7fe5233fa0418dbc91ca1c71cda816", "tinymce-print": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/print/plugin", "tinymce-link": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/link/plugin", "pat-compat": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/compat", "tinymce-hr": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/hr/plugin", "select2": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2/select2", "tinymce-media": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/media/plugin", "mockup-patterns-texteditor": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/texteditor/pattern", "mockup-patterns-tooltip": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip/pattern", "resource-plone-app-jquerytools-dateinput-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.dateinput", "plone-logged-in": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in", "mockup-patterns-pickadate": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate/pattern", "mockup-patterns-moment": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/moment/pattern", "tinymce-contextmenu": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/contextmenu/plugin", "ace-theme-monokai": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/theme-monokai", "mockup-patterns-toggle": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/toggle/pattern", "tinymce-directionality": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/directionality/plugin", "mockup-patterns-markspeciallinks": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks/pattern", "tinymce-legacyoutput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/legacyoutput/plugin", "pat-base": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/base", "plone-patterns-toolbar": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/toolbar", "mockup-patterns-inlinevalidation": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/inlinevalidation/pattern", "thememapper": "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper", "tinymce": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/tinymce", "mockup-patterns-resourceregistry-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry", "tinymce-insertdatetime": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/insertdatetime/plugin", "jqtree": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree/tree.jquery", "mockup-patterns-livesearch": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch/pattern", "mockup-patterns-upload": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/pattern", "picker.date": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.date", "bootstrap-tooltip": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/tooltip", "mockup-patterns-autotoc": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc/pattern", "tinymce-importcss": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/importcss/plugin", "backbone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/backbone/backbone", "tinymce-lists": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/lists/plugin", "react": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/react/react", "mockup-patterns-textareamimetypeselector": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/textareamimetypeselector/pattern", "moment": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/moment/min/moment-with-locales.min", "sinon": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/sinonjs/sinon", "tinymce-code": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/code/plugin", "pat-utils": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/utils", "tinymce-colorpicker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/colorpicker/plugin", "jquery.tmpl": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tmpl", "bootstrap-collapse": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/collapse", "jquery-highlightsearchterms": "temp_resources/1aeefcc6733745e88077030930211959", "JSXTransformer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/react/JSXTransformer", "mockup-patterns-relateditems": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems/pattern", "tinymce-nonbreaking": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/nonbreaking/plugin", "tinymce-searchreplace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/searchreplace/plugin", "pat-mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/mockup-parser", "dropzone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist/dropzone-amd-module"},
+                    shim: {"less": {}, "text": {}, "mockup-patterns-recurrence": {}, "mockup-patterns-tinymce": {}, "mockup-parser": {}, "mockup-router": {}, "tinymce-spellchecker": {"deps": ["tinymce"]}, "jquery.event.drop": {"exports": "$.drop", "deps": ["jquery"]}, "tinymce-autosave": {"deps": ["tinymce"]}, "tinymce-charmap": {"deps": ["tinymce"]}, "tinymce-save": {"deps": ["tinymce"]}, "tinymce-fullscreen": {"deps": ["tinymce"]}, "tinymce-noneditable": {"deps": ["tinymce"]}, "ace-mode-javascript": {}, "tinymce-advlist": {"deps": ["tinymce"]}, "tinymce-preview": {"deps": ["tinymce"]}, "mockup-patterns-tree": {}, "tinymce-pagebreak": {"deps": ["tinymce"]}, "mockup-patterns-formautofocus": {}, "mockup-i18n": {}, "underscore": {"exports": "window._"}, "pat-logger": {}, "ace-mode-text": {}, "backbone.paginator": {"exports": "window.Backbone.Paginator", "deps": ["backbone"]}, "jqtree": {"deps": ["jquery"]}, "tinymce-textcolor": {"deps": ["tinymce"]}, "picker.time": {"deps": ["picker"]}, "tinymce-fullpage": {"deps": ["tinymce"]}, "tinymce-compat3x": {"deps": ["tinymce"]}, "pat-jquery-ext": {}, "mockup-patterns-thememapper": {}, "picker": {}, "bootstrap-transition": {"exports": "window.jQuery.support.transition", "deps": ["jquery"]}, "mockup-patterns-preventdoublesubmit": {}, "tinymce-visualchars": {"deps": ["tinymce"]}, "expect": {"exports": "window.expect"}, "tinymce-anchor": {"deps": ["tinymce"]}, "mockup-patterns-filemanager": {}, "mockup-patterns-backdrop": {}, "mockup-patterns-cookietrigger": {}, "tinymce-layer": {"deps": ["tinymce"]}, "mockup-patterns-modal": {}, "jquery.cookie": {"deps": ["jquery"]}, "tinymce-wordcount": {"deps": ["tinymce"]}, "mockup-utils": {}, "mockup-registry": {}, "plone-patterns-portletmanager": {}, "tinymce-modern-theme": {"deps": ["tinymce"]}, "tinymce-paste": {"deps": ["tinymce"]}, "resource-plone-app-discussion-javascripts-comments": {}, "tinymce-bbcode": {"deps": ["tinymce"]}, "mockup-patterns-querystring": {}, "bebest-main": {}, "logging": {}, "ace": {}, "tinymce-autolink": {"deps": ["tinymce"]}, "mockup-patterns-formunloadalert": {}, "resource-plone-app-jquerytools-dateinput-js": {"deps": ["jquery"]}, "tinymce-image": {"deps": ["tinymce"]}, "marked": {}, "ace-mode-css": {}, "pat-registry": {}, "plone": {}, "resource-plone-app-jquerytools-js": {"deps": ["jquery"]}, "mockup-patterns-select2": {}, "mockup-patterns-structure": {}, "tinymce-autoresize": {"deps": ["tinymce"]}, "jquery.recurrenceinput": {"deps": ["jquery", "resource-plone-app-jquerytools-js", "resource-plone-app-jquerytools-dateinput-js", "jquery.tmpl"]}, "jquery.form": {}, "mockup-patterns-sortable": {}, "tinymce-template": {"deps": ["tinymce"]}, "translate": {}, "bootstrap-dropdown": {"deps": ["jquery"]}, "mockup-patterns-contentloader": {}, "rjs": {}, "tinymce-lists": {"deps": ["tinymce"]}, "bootstrap-alert": {"deps": ["jquery"]}, "tinymce-textpattern": {"deps": ["tinymce"]}, "tinymce-emoticons": {"deps": ["tinymce"]}, "resourceregistry": {}, "tinymce-table": {"deps": ["tinymce"]}, "jquery": {}, "jquery.event.drag": {"deps": ["jquery"]}, "tinymce-tabfocus": {"deps": ["tinymce"]}, "resource-plone-app-event-event-js": {}, "tinymce-print": {"deps": ["tinymce"]}, "tinymce-link": {"deps": ["tinymce"]}, "pat-compat": {}, "tinymce-hr": {"deps": ["tinymce"]}, "select2": {}, "tinymce-media": {"deps": ["tinymce"]}, "mockup-patterns-texteditor": {}, "mockup-patterns-tooltip": {}, "plone-logged-in": {}, "mockup-patterns-pickadate": {}, "JSXTransformer": {"exports": "window.JSXTransformer"}, "tinymce-contextmenu": {"deps": ["tinymce"]}, "ace-theme-monokai": {}, "mockup-patterns-toggle": {}, "tinymce-directionality": {"deps": ["tinymce"]}, "mockup-patterns-markspeciallinks": {}, "tinymce-legacyoutput": {"deps": ["tinymce"]}, "pat-base": {}, "plone-patterns-toolbar": {}, "mockup-patterns-inlinevalidation": {}, "thememapper": {}, "tinymce": {"exports": "window.tinyMCE", "init": "function () { this.tinyMCE.DOM.events.domLoaded = true; return this.tinyMCE; }"}, "tinymce-visualblocks": {"deps": ["tinymce"]}, "tinymce-insertdatetime": {"deps": ["tinymce"]}, "mockup-patterns-base": {}, "mockup-patterns-livesearch": {}, "mockup-patterns-upload": {}, "picker.date": {"deps": ["picker"]}, "tinymce-searchreplace": {"deps": ["tinymce"]}, "mockup-patterns-autotoc": {}, "tinymce-importcss": {"deps": ["tinymce"]}, "backbone": {"exports": "window.Backbone", "deps": ["underscore", "jquery"]}, "mockup-patterns-resourceregistry": {}, "react": {}, "mockup-patterns-textareamimetypeselector": {}, "moment": {}, "sinon": {"exports": "window.sinon"}, "tinymce-code": {"deps": ["tinymce"]}, "pat-utils": {}, "tinymce-colorpicker": {"deps": ["tinymce"]}, "jquery.tmpl": {"deps": ["jquery"]}, "bootstrap-collapse": {"exports": "window.jQuery.fn.collapse.Constructor", "deps": ["jquery"]}, "jquery-highlightsearchterms": {}, "mockup-patterns-moment": {}, "mockup-patterns-relateditems": {}, "tinymce-nonbreaking": {"deps": ["tinymce"]}, "bootstrap-tooltip": {"deps": ["jquery"]}, "pat-mockup-parser": {}, "dropzone": {}},
                     wrapShim: true,
-                    name: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry.js',
+                    name: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry.js',
                     exclude: ['jquery'],
-                    out: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.js',
+                    out: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.js',
                     optimize: "none"
                 }
             },
@@ -1058,12 +1053,12 @@ module.exports = function(grunt) {
                     baseUrl: '/',
                     generateSourceMaps: false,
                     preserveLicenseComments: false,
-                    paths: {"less": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/less/dist/less", "text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/requirejs-text/text", "mockup-patterns-recurrence": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence/pattern", "mockup-patterns-tinymce": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/pattern", "mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/parser", "mockup-router": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/router", "tinymce-spellchecker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/spellchecker/plugin", "jquery.event.drop": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/lib/jquery.event.drop", "tinymce-autosave": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autosave/plugin", "tinymce-charmap": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/charmap/plugin", "tinymce-save": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/save/plugin", "tinymce-fullscreen": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullscreen/plugin", "tinymce-noneditable": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/noneditable/plugin", "ace-mode-javascript": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-javascript", "mockup-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/registry", "tinymce-preview": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/preview/plugin", "jquery": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery/dist/jquery.min", "tinymce-visualblocks": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/plugin", "mockup-ui-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/ui", "mockup-patterns-formautofocus": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/formautofocus/pattern", "mockup-patterns-base": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/base/pattern", "mockup-i18n": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/i18n", "underscore": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/underscore/underscore", "pat-logger": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/logger", "ace-mode-text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-text", "backbone.paginator": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/backbone.paginator/lib/backbone.paginator", "tinymce-tabfocus": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/tabfocus/plugin", "picker.time": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.time", "tinymce-fullpage": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullpage/plugin", "tinymce-compat3x": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/compat3x/plugin", "pat-jquery-ext": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/jquery-ext", "mockup-patterns-thememapper": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper/pattern", "mockup-patterns-filemanager-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager", "bootstrap-transition": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/transition", "mockup-patterns-tinymce-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce", "mockup-patterns-preventdoublesubmit": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/preventdoublesubmit/pattern", "tinymce-visualchars": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualchars/plugin", "expect": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/expect/index", "tinymce-anchor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/anchor/plugin", "mockup-patterns-filemanager": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager/pattern", "mockup-patterns-backdrop": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/backdrop/pattern", "mockup-patterns-cookietrigger": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/cookietrigger/pattern", "tinymce-layer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/layer/plugin", "mockup-patterns-modal": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal/pattern", "jquery.cookie": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.cookie/jquery.cookie", "tinymce-wordcount": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/wordcount/plugin", "mockup-utils": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/utils", "tinymce-advlist": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/advlist/plugin", "plone-patterns-portletmanager": "/Volumes/SSD/Dev/eggs/plone.app.portlets-3.1.3-py2.7.egg/plone/app/portlets/browser/manage-portlets", "bebest-bootstrap": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bootstrap", "tinymce-modern-theme": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/themes/modern/theme", "tinymce-paste": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/paste/plugin", "resource-plone-app-discussion-javascripts-comments": "temp_resources/76627b68add04c22b3a15bf9001f2f15", "mockup-patterns-resourceregistry": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry/pattern", "mockup-patterns-upload-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload", "tinymce-bbcode": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/bbcode/plugin", "mockup-patterns-querystring": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring/pattern", "bebest-main": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest", "logging": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/logging/src/logging", "ace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/ace", "mockup-patterns-thememapper-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper", "tinymce-autolink": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autolink/plugin", "mockup-patterns-formunloadalert": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/formunloadalert/pattern", "picker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker", "mockup-patterns-structure-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure", "tinymce-image": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/image/plugin", "marked": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/marked/lib/marked", "ace-mode-css": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-css", "pat-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/registry", "plone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone", "resource-plone-app-jquerytools-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.overlay", "mockup-patterns-select2": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2/pattern", "mockup-patterns-structure": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/pattern", "tinymce-autoresize": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autoresize/plugin", "jquery.recurrenceinput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src/jquery.recurrenceinput", "jquery.form": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery-form/jquery.form", "mockup-patterns-sortable": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/sortable/pattern", "tinymce-template": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/template/plugin", "translate": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/js/i18n-wrapper", "bootstrap-dropdown": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/dropdown", "mockup-patterns-contentloader": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/contentloader/pattern", "rjs": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/r.js/dist/r", "tinymce-pagebreak": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/pagebreak/plugin", "bootstrap-alert": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/alert", "tinymce-textpattern": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textpattern/plugin", "tinymce-emoticons": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/emoticons/plugin", "resourceregistry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry", "tinymce-table": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/table/plugin", "mockup-patterns-tree": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree/pattern", "jquery.event.drag": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/lib/jquery.event.drag", "tinymce-textcolor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textcolor/plugin", "resource-plone-app-event-event-js": "temp_resources/c1422b30b43745058d631c769ee26de9", "tinymce-print": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/print/plugin", "tinymce-link": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/link/plugin", "pat-compat": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/compat", "tinymce-hr": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/hr/plugin", "select2": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2/select2", "tinymce-media": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/media/plugin", "mockup-patterns-texteditor": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/texteditor/pattern", "mockup-patterns-tooltip": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip/pattern", "resource-plone-app-jquerytools-dateinput-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.dateinput", "plone-logged-in": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in", "mockup-patterns-pickadate": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate/pattern", "mockup-patterns-moment": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/moment/pattern", "tinymce-contextmenu": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/contextmenu/plugin", "ace-theme-monokai": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/theme-monokai", "mockup-patterns-toggle": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/toggle/pattern", "tinymce-directionality": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/directionality/plugin", "mockup-patterns-markspeciallinks": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks/pattern", "tinymce-legacyoutput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/legacyoutput/plugin", "pat-base": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/base", "plone-patterns-toolbar": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/toolbar", "mockup-patterns-inlinevalidation": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/inlinevalidation/pattern", "thememapper": "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper", "tinymce": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/tinymce", "mockup-patterns-resourceregistry-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry", "tinymce-insertdatetime": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/insertdatetime/plugin", "jqtree": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree/tree.jquery", "mockup-patterns-livesearch": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch/pattern", "mockup-patterns-upload": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/pattern", "picker.date": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.date", "bootstrap-tooltip": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/tooltip", "mockup-patterns-autotoc": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc/pattern", "tinymce-importcss": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/importcss/plugin", "backbone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/backbone/backbone", "tinymce-lists": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/lists/plugin", "react": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/react/react", "mockup-patterns-textareamimetypeselector": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/textareamimetypeselector/pattern", "moment": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/moment/min/moment-with-locales.min", "sinon": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/sinonjs/sinon", "tinymce-code": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/code/plugin", "pat-utils": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/utils", "tinymce-colorpicker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/colorpicker/plugin", "jquery.tmpl": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tmpl", "bootstrap-collapse": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/collapse", "jquery-highlightsearchterms": "temp_resources/17000b4df9df43bd9e929627faf4f973", "JSXTransformer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/react/JSXTransformer", "mockup-patterns-relateditems": "/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems/pattern", "tinymce-nonbreaking": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/nonbreaking/plugin", "tinymce-searchreplace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/searchreplace/plugin", "pat-mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/mockup-parser", "dropzone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist/dropzone-amd-module"},
-                    shim: {"less": {}, "text": {}, "mockup-patterns-recurrence": {}, "mockup-patterns-tinymce": {}, "mockup-parser": {}, "mockup-router": {}, "tinymce-spellchecker": {"deps": ["tinymce"]}, "jquery.event.drop": {"exports": "$.drop", "deps": ["jquery"]}, "tinymce-autosave": {"deps": ["tinymce"]}, "tinymce-charmap": {"deps": ["tinymce"]}, "tinymce-save": {"deps": ["tinymce"]}, "tinymce-fullscreen": {"deps": ["tinymce"]}, "tinymce-noneditable": {"deps": ["tinymce"]}, "ace-mode-javascript": {}, "tinymce-advlist": {"deps": ["tinymce"]}, "tinymce-preview": {"deps": ["tinymce"]}, "mockup-patterns-tree": {}, "tinymce-pagebreak": {"deps": ["tinymce"]}, "mockup-patterns-formautofocus": {}, "mockup-i18n": {}, "underscore": {"exports": "window._"}, "pat-logger": {}, "ace-mode-text": {}, "backbone.paginator": {"exports": "window.Backbone.Paginator", "deps": ["backbone"]}, "jqtree": {"deps": ["jquery"]}, "tinymce-textcolor": {"deps": ["tinymce"]}, "picker.time": {"deps": ["picker"]}, "tinymce-fullpage": {"deps": ["tinymce"]}, "tinymce-compat3x": {"deps": ["tinymce"]}, "pat-jquery-ext": {}, "mockup-patterns-thememapper": {}, "picker": {}, "bootstrap-transition": {"exports": "window.jQuery.support.transition", "deps": ["jquery"]}, "mockup-patterns-preventdoublesubmit": {}, "tinymce-visualchars": {"deps": ["tinymce"]}, "expect": {"exports": "window.expect"}, "tinymce-anchor": {"deps": ["tinymce"]}, "mockup-patterns-filemanager": {}, "mockup-patterns-backdrop": {}, "mockup-patterns-cookietrigger": {}, "tinymce-layer": {"deps": ["tinymce"]}, "mockup-patterns-modal": {}, "jquery.cookie": {"deps": ["jquery"]}, "tinymce-wordcount": {"deps": ["tinymce"]}, "mockup-utils": {}, "mockup-registry": {}, "plone-patterns-portletmanager": {}, "bebest-bootstrap": {}, "tinymce-modern-theme": {"deps": ["tinymce"]}, "tinymce-paste": {"deps": ["tinymce"]}, "resource-plone-app-discussion-javascripts-comments": {}, "tinymce-bbcode": {"deps": ["tinymce"]}, "mockup-patterns-querystring": {}, "bebest-main": {}, "logging": {}, "ace": {}, "tinymce-autolink": {"deps": ["tinymce"]}, "mockup-patterns-formunloadalert": {}, "resource-plone-app-jquerytools-dateinput-js": {"deps": ["jquery"]}, "tinymce-image": {"deps": ["tinymce"]}, "marked": {}, "ace-mode-css": {}, "pat-registry": {}, "plone": {}, "resource-plone-app-jquerytools-js": {"deps": ["jquery"]}, "mockup-patterns-select2": {}, "mockup-patterns-structure": {}, "tinymce-autoresize": {"deps": ["tinymce"]}, "jquery.recurrenceinput": {"deps": ["jquery", "resource-plone-app-jquerytools-js", "resource-plone-app-jquerytools-dateinput-js", "jquery.tmpl"]}, "jquery.form": {}, "mockup-patterns-sortable": {}, "tinymce-template": {"deps": ["tinymce"]}, "translate": {}, "bootstrap-dropdown": {"deps": ["jquery"]}, "mockup-patterns-contentloader": {}, "rjs": {}, "tinymce-lists": {"deps": ["tinymce"]}, "bootstrap-alert": {"deps": ["jquery"]}, "tinymce-textpattern": {"deps": ["tinymce"]}, "tinymce-emoticons": {"deps": ["tinymce"]}, "resourceregistry": {}, "tinymce-table": {"deps": ["tinymce"]}, "jquery": {}, "jquery.event.drag": {"deps": ["jquery"]}, "tinymce-tabfocus": {"deps": ["tinymce"]}, "resource-plone-app-event-event-js": {}, "tinymce-print": {"deps": ["tinymce"]}, "tinymce-link": {"deps": ["tinymce"]}, "pat-compat": {}, "tinymce-hr": {"deps": ["tinymce"]}, "select2": {}, "tinymce-media": {"deps": ["tinymce"]}, "mockup-patterns-texteditor": {}, "mockup-patterns-tooltip": {}, "plone-logged-in": {}, "mockup-patterns-pickadate": {}, "JSXTransformer": {"exports": "window.JSXTransformer"}, "tinymce-contextmenu": {"deps": ["tinymce"]}, "ace-theme-monokai": {}, "mockup-patterns-toggle": {}, "tinymce-directionality": {"deps": ["tinymce"]}, "mockup-patterns-markspeciallinks": {}, "tinymce-legacyoutput": {"deps": ["tinymce"]}, "pat-base": {}, "plone-patterns-toolbar": {}, "mockup-patterns-inlinevalidation": {}, "thememapper": {}, "tinymce": {"exports": "window.tinyMCE", "init": "function () { this.tinyMCE.DOM.events.domLoaded = true; return this.tinyMCE; }"}, "tinymce-visualblocks": {"deps": ["tinymce"]}, "tinymce-insertdatetime": {"deps": ["tinymce"]}, "mockup-patterns-base": {}, "mockup-patterns-livesearch": {}, "mockup-patterns-upload": {}, "picker.date": {"deps": ["picker"]}, "tinymce-searchreplace": {"deps": ["tinymce"]}, "mockup-patterns-autotoc": {}, "tinymce-importcss": {"deps": ["tinymce"]}, "backbone": {"exports": "window.Backbone", "deps": ["underscore", "jquery"]}, "mockup-patterns-resourceregistry": {}, "react": {}, "mockup-patterns-textareamimetypeselector": {}, "moment": {}, "sinon": {"exports": "window.sinon"}, "tinymce-code": {"deps": ["tinymce"]}, "pat-utils": {}, "tinymce-colorpicker": {"deps": ["tinymce"]}, "jquery.tmpl": {"deps": ["jquery"]}, "bootstrap-collapse": {"exports": "window.jQuery.fn.collapse.Constructor", "deps": ["jquery"]}, "jquery-highlightsearchterms": {}, "mockup-patterns-moment": {}, "mockup-patterns-relateditems": {}, "tinymce-nonbreaking": {"deps": ["tinymce"]}, "bootstrap-tooltip": {"deps": ["jquery"]}, "pat-mockup-parser": {}, "dropzone": {}},
+                    paths: {"less": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/less/dist/less", "text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/requirejs-text/text", "mockup-patterns-recurrence": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence/pattern", "mockup-patterns-tinymce": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/pattern", "mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/parser", "mockup-router": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/router", "tinymce-spellchecker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/spellchecker/plugin", "jquery.event.drop": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/lib/jquery.event.drop", "tinymce-autosave": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autosave/plugin", "tinymce-charmap": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/charmap/plugin", "tinymce-save": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/save/plugin", "tinymce-fullscreen": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullscreen/plugin", "tinymce-noneditable": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/noneditable/plugin", "ace-mode-javascript": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-javascript", "mockup-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/mockup-core/js/registry", "tinymce-preview": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/preview/plugin", "jquery": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery/dist/jquery.min", "tinymce-visualblocks": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/plugin", "mockup-ui-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/ui", "mockup-patterns-formautofocus": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/formautofocus/pattern", "mockup-patterns-base": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/base/pattern", "mockup-i18n": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/i18n", "underscore": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/underscore/underscore", "pat-logger": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/logger", "ace-mode-text": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-text", "backbone.paginator": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/backbone.paginator/lib/backbone.paginator", "tinymce-tabfocus": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/tabfocus/plugin", "picker.time": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.time", "tinymce-fullpage": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/fullpage/plugin", "tinymce-compat3x": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/compat3x/plugin", "pat-jquery-ext": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/jquery-ext", "mockup-patterns-thememapper": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper/pattern", "mockup-patterns-filemanager-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager", "bootstrap-transition": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/transition", "mockup-patterns-tinymce-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce", "mockup-patterns-preventdoublesubmit": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/preventdoublesubmit/pattern", "tinymce-visualchars": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualchars/plugin", "expect": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/expect/index", "tinymce-anchor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/anchor/plugin", "mockup-patterns-filemanager": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager/pattern", "mockup-patterns-backdrop": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/backdrop/pattern", "mockup-patterns-cookietrigger": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/cookietrigger/pattern", "tinymce-layer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/layer/plugin", "mockup-patterns-modal": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal/pattern", "jquery.cookie": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.cookie/jquery.cookie", "tinymce-wordcount": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/wordcount/plugin", "mockup-utils": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/utils", "tinymce-advlist": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/advlist/plugin", "plone-patterns-portletmanager": "/Volumes/SSD/Dev/eggs/plone.app.portlets-3.1.3-py2.7.egg/plone/app/portlets/browser/manage-portlets", "tinymce-modern-theme": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/themes/modern/theme", "tinymce-paste": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/paste/plugin", "resource-plone-app-discussion-javascripts-comments": "temp_resources/7af840ab8c874dbba2a4c00f249a913d", "mockup-patterns-resourceregistry": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry/pattern", "mockup-patterns-upload-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload", "tinymce-bbcode": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/bbcode/plugin", "mockup-patterns-querystring": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring/pattern", "bebest-main": "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest", "logging": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/logging/src/logging", "ace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/ace", "mockup-patterns-thememapper-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper", "tinymce-autolink": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autolink/plugin", "mockup-patterns-formunloadalert": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/formunloadalert/pattern", "picker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker", "mockup-patterns-structure-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure", "tinymce-image": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/image/plugin", "marked": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/marked/lib/marked", "ace-mode-css": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/mode-css", "pat-registry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/registry", "plone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone", "resource-plone-app-jquerytools-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.overlay", "mockup-patterns-select2": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2/pattern", "mockup-patterns-structure": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/pattern", "tinymce-autoresize": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/autoresize/plugin", "jquery.recurrenceinput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src/jquery.recurrenceinput", "jquery.form": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery-form/jquery.form", "mockup-patterns-sortable": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/sortable/pattern", "tinymce-template": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/template/plugin", "translate": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/js/i18n-wrapper", "bootstrap-dropdown": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/dropdown", "mockup-patterns-contentloader": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/contentloader/pattern", "rjs": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/r.js/dist/r", "tinymce-pagebreak": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/pagebreak/plugin", "bootstrap-alert": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/alert", "tinymce-textpattern": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textpattern/plugin", "tinymce-emoticons": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/emoticons/plugin", "resourceregistry": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry", "tinymce-table": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/table/plugin", "mockup-patterns-tree": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree/pattern", "jquery.event.drag": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/lib/jquery.event.drag", "tinymce-textcolor": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/textcolor/plugin", "resource-plone-app-event-event-js": "temp_resources/0b7fe5233fa0418dbc91ca1c71cda816", "tinymce-print": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/print/plugin", "tinymce-link": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/link/plugin", "pat-compat": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/compat", "tinymce-hr": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/hr/plugin", "select2": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2/select2", "tinymce-media": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/media/plugin", "mockup-patterns-texteditor": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/texteditor/pattern", "mockup-patterns-tooltip": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip/pattern", "resource-plone-app-jquerytools-dateinput-js": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tools.dateinput", "plone-logged-in": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in", "mockup-patterns-pickadate": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate/pattern", "mockup-patterns-moment": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/moment/pattern", "tinymce-contextmenu": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/contextmenu/plugin", "ace-theme-monokai": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/ace-builds/src/theme-monokai", "mockup-patterns-toggle": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/toggle/pattern", "tinymce-directionality": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/directionality/plugin", "mockup-patterns-markspeciallinks": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks/pattern", "tinymce-legacyoutput": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/legacyoutput/plugin", "pat-base": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/base", "plone-patterns-toolbar": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/toolbar", "mockup-patterns-inlinevalidation": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/inlinevalidation/pattern", "thememapper": "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper", "tinymce": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/tinymce", "mockup-patterns-resourceregistry-url": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry", "tinymce-insertdatetime": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/insertdatetime/plugin", "jqtree": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree/tree.jquery", "mockup-patterns-livesearch": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch/pattern", "mockup-patterns-upload": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/pattern", "picker.date": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/picker.date", "bootstrap-tooltip": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/tooltip", "mockup-patterns-autotoc": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc/pattern", "tinymce-importcss": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/importcss/plugin", "backbone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/backbone/backbone", "tinymce-lists": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/lists/plugin", "react": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/react/react", "mockup-patterns-textareamimetypeselector": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/textareamimetypeselector/pattern", "moment": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/moment/min/moment-with-locales.min", "sinon": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/sinonjs/sinon", "tinymce-code": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/code/plugin", "pat-utils": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/utils", "tinymce-colorpicker": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/colorpicker/plugin", "jquery.tmpl": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib/jquery.tmpl", "bootstrap-collapse": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/js/collapse", "jquery-highlightsearchterms": "temp_resources/1aeefcc6733745e88077030930211959", "JSXTransformer": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/react/JSXTransformer", "mockup-patterns-relateditems": "/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems/pattern", "tinymce-nonbreaking": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/nonbreaking/plugin", "tinymce-searchreplace": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/searchreplace/plugin", "pat-mockup-parser": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/patternslib/src/core/mockup-parser", "dropzone": "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist/dropzone-amd-module"},
+                    shim: {"less": {}, "text": {}, "mockup-patterns-recurrence": {}, "mockup-patterns-tinymce": {}, "mockup-parser": {}, "mockup-router": {}, "tinymce-spellchecker": {"deps": ["tinymce"]}, "jquery.event.drop": {"exports": "$.drop", "deps": ["jquery"]}, "tinymce-autosave": {"deps": ["tinymce"]}, "tinymce-charmap": {"deps": ["tinymce"]}, "tinymce-save": {"deps": ["tinymce"]}, "tinymce-fullscreen": {"deps": ["tinymce"]}, "tinymce-noneditable": {"deps": ["tinymce"]}, "ace-mode-javascript": {}, "tinymce-advlist": {"deps": ["tinymce"]}, "tinymce-preview": {"deps": ["tinymce"]}, "mockup-patterns-tree": {}, "tinymce-pagebreak": {"deps": ["tinymce"]}, "mockup-patterns-formautofocus": {}, "mockup-i18n": {}, "underscore": {"exports": "window._"}, "pat-logger": {}, "ace-mode-text": {}, "backbone.paginator": {"exports": "window.Backbone.Paginator", "deps": ["backbone"]}, "jqtree": {"deps": ["jquery"]}, "tinymce-textcolor": {"deps": ["tinymce"]}, "picker.time": {"deps": ["picker"]}, "tinymce-fullpage": {"deps": ["tinymce"]}, "tinymce-compat3x": {"deps": ["tinymce"]}, "pat-jquery-ext": {}, "mockup-patterns-thememapper": {}, "picker": {}, "bootstrap-transition": {"exports": "window.jQuery.support.transition", "deps": ["jquery"]}, "mockup-patterns-preventdoublesubmit": {}, "tinymce-visualchars": {"deps": ["tinymce"]}, "expect": {"exports": "window.expect"}, "tinymce-anchor": {"deps": ["tinymce"]}, "mockup-patterns-filemanager": {}, "mockup-patterns-backdrop": {}, "mockup-patterns-cookietrigger": {}, "tinymce-layer": {"deps": ["tinymce"]}, "mockup-patterns-modal": {}, "jquery.cookie": {"deps": ["jquery"]}, "tinymce-wordcount": {"deps": ["tinymce"]}, "mockup-utils": {}, "mockup-registry": {}, "plone-patterns-portletmanager": {}, "tinymce-modern-theme": {"deps": ["tinymce"]}, "tinymce-paste": {"deps": ["tinymce"]}, "resource-plone-app-discussion-javascripts-comments": {}, "tinymce-bbcode": {"deps": ["tinymce"]}, "mockup-patterns-querystring": {}, "bebest-main": {}, "logging": {}, "ace": {}, "tinymce-autolink": {"deps": ["tinymce"]}, "mockup-patterns-formunloadalert": {}, "resource-plone-app-jquerytools-dateinput-js": {"deps": ["jquery"]}, "tinymce-image": {"deps": ["tinymce"]}, "marked": {}, "ace-mode-css": {}, "pat-registry": {}, "plone": {}, "resource-plone-app-jquerytools-js": {"deps": ["jquery"]}, "mockup-patterns-select2": {}, "mockup-patterns-structure": {}, "tinymce-autoresize": {"deps": ["tinymce"]}, "jquery.recurrenceinput": {"deps": ["jquery", "resource-plone-app-jquerytools-js", "resource-plone-app-jquerytools-dateinput-js", "jquery.tmpl"]}, "jquery.form": {}, "mockup-patterns-sortable": {}, "tinymce-template": {"deps": ["tinymce"]}, "translate": {}, "bootstrap-dropdown": {"deps": ["jquery"]}, "mockup-patterns-contentloader": {}, "rjs": {}, "tinymce-lists": {"deps": ["tinymce"]}, "bootstrap-alert": {"deps": ["jquery"]}, "tinymce-textpattern": {"deps": ["tinymce"]}, "tinymce-emoticons": {"deps": ["tinymce"]}, "resourceregistry": {}, "tinymce-table": {"deps": ["tinymce"]}, "jquery": {}, "jquery.event.drag": {"deps": ["jquery"]}, "tinymce-tabfocus": {"deps": ["tinymce"]}, "resource-plone-app-event-event-js": {}, "tinymce-print": {"deps": ["tinymce"]}, "tinymce-link": {"deps": ["tinymce"]}, "pat-compat": {}, "tinymce-hr": {"deps": ["tinymce"]}, "select2": {}, "tinymce-media": {"deps": ["tinymce"]}, "mockup-patterns-texteditor": {}, "mockup-patterns-tooltip": {}, "plone-logged-in": {}, "mockup-patterns-pickadate": {}, "JSXTransformer": {"exports": "window.JSXTransformer"}, "tinymce-contextmenu": {"deps": ["tinymce"]}, "ace-theme-monokai": {}, "mockup-patterns-toggle": {}, "tinymce-directionality": {"deps": ["tinymce"]}, "mockup-patterns-markspeciallinks": {}, "tinymce-legacyoutput": {"deps": ["tinymce"]}, "pat-base": {}, "plone-patterns-toolbar": {}, "mockup-patterns-inlinevalidation": {}, "thememapper": {}, "tinymce": {"exports": "window.tinyMCE", "init": "function () { this.tinyMCE.DOM.events.domLoaded = true; return this.tinyMCE; }"}, "tinymce-visualblocks": {"deps": ["tinymce"]}, "tinymce-insertdatetime": {"deps": ["tinymce"]}, "mockup-patterns-base": {}, "mockup-patterns-livesearch": {}, "mockup-patterns-upload": {}, "picker.date": {"deps": ["picker"]}, "tinymce-searchreplace": {"deps": ["tinymce"]}, "mockup-patterns-autotoc": {}, "tinymce-importcss": {"deps": ["tinymce"]}, "backbone": {"exports": "window.Backbone", "deps": ["underscore", "jquery"]}, "mockup-patterns-resourceregistry": {}, "react": {}, "mockup-patterns-textareamimetypeselector": {}, "moment": {}, "sinon": {"exports": "window.sinon"}, "tinymce-code": {"deps": ["tinymce"]}, "pat-utils": {}, "tinymce-colorpicker": {"deps": ["tinymce"]}, "jquery.tmpl": {"deps": ["jquery"]}, "bootstrap-collapse": {"exports": "window.jQuery.fn.collapse.Constructor", "deps": ["jquery"]}, "jquery-highlightsearchterms": {}, "mockup-patterns-moment": {}, "mockup-patterns-relateditems": {}, "tinymce-nonbreaking": {"deps": ["tinymce"]}, "bootstrap-tooltip": {"deps": ["jquery"]}, "pat-mockup-parser": {}, "dropzone": {}},
                     wrapShim: true,
-                    name: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper.js',
+                    name: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper.js',
                     exclude: ['jquery'],
-                    out: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.js',
+                    out: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.js',
                     optimize: "none"
                 }
             },
@@ -1072,1021 +1067,1021 @@ module.exports = function(grunt) {
         sed: {
             
     sed0: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.17-py2.7.egg/plonetheme/barceloneta/theme/less',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.18-py2.7.egg/plonetheme/barceloneta/theme/less',
       replacement: '../../++theme++barceloneta/less',
     },
 
     sed1: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems',
       replacement: '../../++resource++mockup/relateditems',
     },
 
     sed2: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree',
       replacement: '../../++plone++static/components/jqtree',
     },
 
     sed3: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate',
       replacement: '../../++resource++mockup/pickadate',
     },
 
     sed4: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/less',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/less',
       replacement: '../../++resource++mockup/structure/less',
     },
 
     sed5: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/less',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/less',
       replacement: '../../++resource++mockup/upload/less',
     },
 
     sed6: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2',
       replacement: '../../++plone++static/components/select2',
     },
 
     sed7: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src',
       replacement: '../../++plone++static/components/jquery.recurrenceinput.js/src',
     },
 
     sed8: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray',
       replacement: '../../++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray',
     },
 
     sed9: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist',
       replacement: '../../++plone++static/components/dropzone/dist',
     },
 
     sed10: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry',
       replacement: '../../++resource++mockup/resourceregistry',
     },
 
     sed11: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal',
       replacement: '../../++resource++mockup/modal',
     },
 
     sed12: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks',
       replacement: '../../++resource++mockup/markspeciallinks',
     },
 
     sed13: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring',
       replacement: '../../++resource++mockup/querystring',
     },
 
     sed14: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc',
       replacement: '../../++resource++mockup/autotoc',
     },
 
     sed15: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes',
       replacement: '../../++plone++static/components/pickadate/lib/themes',
     },
 
     sed16: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree',
       replacement: '../../++resource++mockup/tree',
     },
 
     sed17: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less',
       replacement: '../../++resource++mockupless',
     },
 
     sed18: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2',
       replacement: '../../++resource++mockup/select2',
     },
 
     sed19: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/less',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/less',
       replacement: '../../++resource++mockup/tinymce/less',
     },
 
     sed20: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
       pattern: 'src/plonetheme/bebest/theme/css',
       replacement: '../../++theme++plonetheme.bebest/css',
     },
 
     sed21: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources',
       replacement: '../../++resource++plone.app.theming',
     },
 
     sed22: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib',
       replacement: '../../++plone++static/components/jquery.recurrenceinput.js/lib',
     },
 
     sed23: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less',
       replacement: '../../++plone++static/components/bootstrap/less',
     },
 
     sed24: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
       pattern: 'temp_resources',
       replacement: '../../++resource++plone.app.event',
     },
 
     sed25: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch',
       replacement: '../../++resource++mockup/livesearch',
     },
 
     sed26: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static',
       replacement: '../../++plone++static',
     },
 
     sed27: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence',
       replacement: '../../++resource++mockup/recurrence',
     },
 
     sed28: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css',
       replacement: '../../++plone++static/patterns/toolbar/src/css',
     },
 
     sed29: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
       replacement: '../../++plone++static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
     },
 
     sed30: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip',
       replacement: '../../++resource++mockup/tooltip',
     },
 
     sed31: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager',
       replacement: '../../++resource++mockup/filemanager',
     },
 
     sed32: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper',
       replacement: '../../++resource++mockup/thememapper',
     },
 
     sed33: {
-      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.css',
+      path: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-compiled.min.css',
       pattern: '/Volumes/SSD/Dev/plonetheme.bebest',
       replacement: '',
     },
 
     sed34: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.17-py2.7.egg/plonetheme/barceloneta/theme/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.18-py2.7.egg/plonetheme/barceloneta/theme/less',
       replacement: '../++theme++barceloneta/less',
     },
 
     sed35: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems',
       replacement: '../++resource++mockup/relateditems',
     },
 
     sed36: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree',
       replacement: '../++plone++static/components/jqtree',
     },
 
     sed37: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate',
       replacement: '../++resource++mockup/pickadate',
     },
 
     sed38: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/less',
       replacement: '../++resource++mockup/structure/less',
     },
 
     sed39: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/less',
       replacement: '../++resource++mockup/upload/less',
     },
 
     sed40: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2',
       replacement: '../++plone++static/components/select2',
     },
 
     sed41: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src',
       replacement: '../++plone++static/components/jquery.recurrenceinput.js/src',
     },
 
     sed42: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray',
       replacement: '../++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray',
     },
 
     sed43: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist',
       replacement: '../++plone++static/components/dropzone/dist',
     },
 
     sed44: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry',
       replacement: '../++resource++mockup/resourceregistry',
     },
 
     sed45: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal',
       replacement: '../++resource++mockup/modal',
     },
 
     sed46: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks',
       replacement: '../++resource++mockup/markspeciallinks',
     },
 
     sed47: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring',
       replacement: '../++resource++mockup/querystring',
     },
 
     sed48: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc',
       replacement: '../++resource++mockup/autotoc',
     },
 
     sed49: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes',
       replacement: '../++plone++static/components/pickadate/lib/themes',
     },
 
     sed50: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree',
       replacement: '../++resource++mockup/tree',
     },
 
     sed51: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less',
       replacement: '../++resource++mockupless',
     },
 
     sed52: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2',
       replacement: '../++resource++mockup/select2',
     },
 
     sed53: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/less',
       replacement: '../++resource++mockup/tinymce/less',
     },
 
     sed54: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
       pattern: 'src/plonetheme/bebest/theme/css',
       replacement: '../++theme++plonetheme.bebest/css',
     },
 
     sed55: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources',
       replacement: '../++resource++plone.app.theming',
     },
 
     sed56: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib',
       replacement: '../++plone++static/components/jquery.recurrenceinput.js/lib',
     },
 
     sed57: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less',
       replacement: '../++plone++static/components/bootstrap/less',
     },
 
     sed58: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
       pattern: 'temp_resources',
       replacement: '../++resource++plone.app.event',
     },
 
     sed59: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch',
       replacement: '../++resource++mockup/livesearch',
     },
 
     sed60: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static',
       replacement: '../++plone++static',
     },
 
     sed61: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence',
       replacement: '../++resource++mockup/recurrence',
     },
 
     sed62: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css',
       replacement: '../++plone++static/patterns/toolbar/src/css',
     },
 
     sed63: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
       replacement: '../++plone++static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
     },
 
     sed64: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip',
       replacement: '../++resource++mockup/tooltip',
     },
 
     sed65: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager',
       replacement: '../++resource++mockup/filemanager',
     },
 
     sed66: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper',
       replacement: '../++resource++mockup/thememapper',
     },
 
     sed67: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.css',
       pattern: '/Volumes/SSD/Dev/plonetheme.bebest',
       replacement: '',
     },
 
     sed68: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.17-py2.7.egg/plonetheme/barceloneta/theme/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.18-py2.7.egg/plonetheme/barceloneta/theme/less',
       replacement: '../++theme++barceloneta/less',
     },
 
     sed69: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems',
       replacement: '../++resource++mockup/relateditems',
     },
 
     sed70: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree',
       replacement: '../++plone++static/components/jqtree',
     },
 
     sed71: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate',
       replacement: '../++resource++mockup/pickadate',
     },
 
     sed72: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/less',
       replacement: '../++resource++mockup/structure/less',
     },
 
     sed73: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/less',
       replacement: '../++resource++mockup/upload/less',
     },
 
     sed74: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2',
       replacement: '../++plone++static/components/select2',
     },
 
     sed75: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src',
       replacement: '../++plone++static/components/jquery.recurrenceinput.js/src',
     },
 
     sed76: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray',
       replacement: '../++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray',
     },
 
     sed77: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist',
       replacement: '../++plone++static/components/dropzone/dist',
     },
 
     sed78: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry',
       replacement: '../++resource++mockup/resourceregistry',
     },
 
     sed79: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal',
       replacement: '../++resource++mockup/modal',
     },
 
     sed80: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks',
       replacement: '../++resource++mockup/markspeciallinks',
     },
 
     sed81: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring',
       replacement: '../++resource++mockup/querystring',
     },
 
     sed82: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc',
       replacement: '../++resource++mockup/autotoc',
     },
 
     sed83: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes',
       replacement: '../++plone++static/components/pickadate/lib/themes',
     },
 
     sed84: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree',
       replacement: '../++resource++mockup/tree',
     },
 
     sed85: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less',
       replacement: '../++resource++mockupless',
     },
 
     sed86: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2',
       replacement: '../++resource++mockup/select2',
     },
 
     sed87: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/less',
       replacement: '../++resource++mockup/tinymce/less',
     },
 
     sed88: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
       pattern: 'src/plonetheme/bebest/theme/css',
       replacement: '../++theme++plonetheme.bebest/css',
     },
 
     sed89: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources',
       replacement: '../++resource++plone.app.theming',
     },
 
     sed90: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib',
       replacement: '../++plone++static/components/jquery.recurrenceinput.js/lib',
     },
 
     sed91: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less',
       replacement: '../++plone++static/components/bootstrap/less',
     },
 
     sed92: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
       pattern: 'temp_resources',
       replacement: '../++resource++plone.app.event',
     },
 
     sed93: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch',
       replacement: '../++resource++mockup/livesearch',
     },
 
     sed94: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static',
       replacement: '../++plone++static',
     },
 
     sed95: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence',
       replacement: '../++resource++mockup/recurrence',
     },
 
     sed96: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css',
       replacement: '../++plone++static/patterns/toolbar/src/css',
     },
 
     sed97: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
       replacement: '../++plone++static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
     },
 
     sed98: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip',
       replacement: '../++resource++mockup/tooltip',
     },
 
     sed99: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager',
       replacement: '../++resource++mockup/filemanager',
     },
 
     sed100: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper',
       replacement: '../++resource++mockup/thememapper',
     },
 
     sed101: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.css',
       pattern: '/Volumes/SSD/Dev/plonetheme.bebest',
       replacement: '',
     },
 
     sed102: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.17-py2.7.egg/plonetheme/barceloneta/theme/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.18-py2.7.egg/plonetheme/barceloneta/theme/less',
       replacement: '../++theme++barceloneta/less',
     },
 
     sed103: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems',
       replacement: '../++resource++mockup/relateditems',
     },
 
     sed104: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree',
       replacement: '../++plone++static/components/jqtree',
     },
 
     sed105: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate',
       replacement: '../++resource++mockup/pickadate',
     },
 
     sed106: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/less',
       replacement: '../++resource++mockup/structure/less',
     },
 
     sed107: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/less',
       replacement: '../++resource++mockup/upload/less',
     },
 
     sed108: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2',
       replacement: '../++plone++static/components/select2',
     },
 
     sed109: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src',
       replacement: '../++plone++static/components/jquery.recurrenceinput.js/src',
     },
 
     sed110: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray',
       replacement: '../++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray',
     },
 
     sed111: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist',
       replacement: '../++plone++static/components/dropzone/dist',
     },
 
     sed112: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry',
       replacement: '../++resource++mockup/resourceregistry',
     },
 
     sed113: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal',
       replacement: '../++resource++mockup/modal',
     },
 
     sed114: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks',
       replacement: '../++resource++mockup/markspeciallinks',
     },
 
     sed115: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring',
       replacement: '../++resource++mockup/querystring',
     },
 
     sed116: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc',
       replacement: '../++resource++mockup/autotoc',
     },
 
     sed117: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes',
       replacement: '../++plone++static/components/pickadate/lib/themes',
     },
 
     sed118: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree',
       replacement: '../++resource++mockup/tree',
     },
 
     sed119: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less',
       replacement: '../++resource++mockupless',
     },
 
     sed120: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2',
       replacement: '../++resource++mockup/select2',
     },
 
     sed121: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/less',
       replacement: '../++resource++mockup/tinymce/less',
     },
 
     sed122: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
       pattern: 'src/plonetheme/bebest/theme/css',
       replacement: '../++theme++plonetheme.bebest/css',
     },
 
     sed123: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources',
       replacement: '../++resource++plone.app.theming',
     },
 
     sed124: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib',
       replacement: '../++plone++static/components/jquery.recurrenceinput.js/lib',
     },
 
     sed125: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less',
       replacement: '../++plone++static/components/bootstrap/less',
     },
 
     sed126: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
       pattern: 'temp_resources',
       replacement: '../++resource++plone.app.event',
     },
 
     sed127: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch',
       replacement: '../++resource++mockup/livesearch',
     },
 
     sed128: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static',
       replacement: '../++plone++static',
     },
 
     sed129: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence',
       replacement: '../++resource++mockup/recurrence',
     },
 
     sed130: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css',
       replacement: '../++plone++static/patterns/toolbar/src/css',
     },
 
     sed131: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
       replacement: '../++plone++static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
     },
 
     sed132: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip',
       replacement: '../++resource++mockup/tooltip',
     },
 
     sed133: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager',
       replacement: '../++resource++mockup/filemanager',
     },
 
     sed134: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper',
       replacement: '../++resource++mockup/thememapper',
     },
 
     sed135: {
-      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
+      path: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.css',
       pattern: '/Volumes/SSD/Dev/plonetheme.bebest',
       replacement: '',
     },
 
     sed136: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.17-py2.7.egg/plonetheme/barceloneta/theme/less',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/plonetheme.barceloneta-1.6.18-py2.7.egg/plonetheme/barceloneta/theme/less',
       replacement: '../++theme++barceloneta/less',
     },
 
     sed137: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/relateditems',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/relateditems',
       replacement: '../++resource++mockup/relateditems',
     },
 
     sed138: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jqtree',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jqtree',
       replacement: '../++plone++static/components/jqtree',
     },
 
     sed139: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/pickadate',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/pickadate',
       replacement: '../++resource++mockup/pickadate',
     },
 
     sed140: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/structure/less',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/structure/less',
       replacement: '../++resource++mockup/structure/less',
     },
 
     sed141: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/upload/less',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/upload/less',
       replacement: '../++resource++mockup/upload/less',
     },
 
     sed142: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/select2',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/select2',
       replacement: '../++plone++static/components/select2',
     },
 
     sed143: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/src',
       replacement: '../++plone++static/components/jquery.recurrenceinput.js/src',
     },
 
     sed144: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/skins/lightgray',
       replacement: '../++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray',
     },
 
     sed145: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/dropzone/dist',
       replacement: '../++plone++static/components/dropzone/dist',
     },
 
     sed146: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/resourceregistry',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/resourceregistry',
       replacement: '../++resource++mockup/resourceregistry',
     },
 
     sed147: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/modal',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/modal',
       replacement: '../++resource++mockup/modal',
     },
 
     sed148: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/markspeciallinks',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/markspeciallinks',
       replacement: '../++resource++mockup/markspeciallinks',
     },
 
     sed149: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/querystring',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/querystring',
       replacement: '../++resource++mockup/querystring',
     },
 
     sed150: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/autotoc',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/autotoc',
       replacement: '../++resource++mockup/autotoc',
     },
 
     sed151: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/pickadate/lib/themes',
       replacement: '../++plone++static/components/pickadate/lib/themes',
     },
 
     sed152: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tree',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tree',
       replacement: '../++resource++mockup/tree',
     },
 
     sed153: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/less',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/less',
       replacement: '../++resource++mockupless',
     },
 
     sed154: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/select2',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/select2',
       replacement: '../++resource++mockup/select2',
     },
 
     sed155: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tinymce/less',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tinymce/less',
       replacement: '../++resource++mockup/tinymce/less',
     },
 
     sed156: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
       pattern: 'src/plonetheme/bebest/theme/css',
       replacement: '../++theme++plonetheme.bebest/css',
     },
 
     sed157: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources',
       replacement: '../++resource++plone.app.theming',
     },
 
     sed158: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/jquery.recurrenceinput.js/lib',
       replacement: '../++plone++static/components/jquery.recurrenceinput.js/lib',
     },
 
     sed159: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/bootstrap/less',
       replacement: '../++plone++static/components/bootstrap/less',
     },
 
     sed160: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
       pattern: 'temp_resources',
       replacement: '../++resource++plone.app.event',
     },
 
     sed161: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/livesearch',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/livesearch',
       replacement: '../++resource++mockup/livesearch',
     },
 
     sed162: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static',
       replacement: '../++plone++static',
     },
 
     sed163: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/recurrence',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/recurrence',
       replacement: '../++resource++mockup/recurrence',
     },
 
     sed164: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/patterns/toolbar/src/css',
       replacement: '../++plone++static/patterns/toolbar/src/css',
     },
 
     sed165: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
       replacement: '../++plone++static/components/tinymce-builded/js/tinymce/plugins/visualblocks/css',
     },
 
     sed166: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/tooltip',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/tooltip',
       replacement: '../++resource++mockup/tooltip',
     },
 
     sed167: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/filemanager',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/filemanager',
       replacement: '../++resource++mockup/filemanager',
     },
 
     sed168: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
-      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.3-py2.7.egg/mockup/patterns/thememapper',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      pattern: '/Volumes/SSD/Dev/eggs/mockup-2.1.4-py2.7.egg/mockup/patterns/thememapper',
       replacement: '../++resource++mockup/thememapper',
     },
 
     sed169: {
-      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
+      path: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.css',
       pattern: '/Volumes/SSD/Dev/plonetheme.bebest',
       replacement: '',
     },
@@ -2097,62 +2092,62 @@ module.exports = function(grunt) {
         "bebest": {
           options: {
             sourceMap: true,
-            sourceMapName: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest-compiled.js.map',
+            sourceMapName: '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest-compiled.min.js.map',
             sourceMapIncludeSources: false
           },
           files: {
-            '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest-compiled.js': ["/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest-main-compiled.js"]
+            '/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest-compiled.min.js': ["/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest-main-compiled.js"]
           }
         },
 
         "plone-logged-in": {
           options: {
             sourceMap: true,
-            sourceMapName: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.min.js.map',
+            sourceMapName: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.min.js.map',
             sourceMapIncludeSources: false
           },
           files: {
-            '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.min.js': ["/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.js"]
+            '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.min.js': ["/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in-compiled.js"]
           }
         },
 
         "plone": {
           options: {
             sourceMap: true,
-            sourceMapName: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.min.js.map',
+            sourceMapName: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.min.js.map',
             sourceMapIncludeSources: false
           },
           files: {
-            '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.min.js': ["/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-compiled.js"]
+            '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.min.js': ["/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-compiled.js"]
           }
         },
 
         "resourceregistry": {
           options: {
             sourceMap: true,
-            sourceMapName: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.min.js.map',
+            sourceMapName: '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.min.js.map',
             sourceMapIncludeSources: false
           },
           files: {
-            '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.min.js': ["/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.js"]
+            '/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.min.js': ["/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry-compiled.js"]
           }
         },
 
         "thememapper": {
           options: {
             sourceMap: true,
-            sourceMapName: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.min.js.map',
+            sourceMapName: '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.min.js.map',
             sourceMapIncludeSources: false
           },
           files: {
-            '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.min.js': ["/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.js"]
+            '/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.min.js': ["/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper-compiled.js"]
           }
         },
 
         },
         watch: {
             scripts: {
-                files: ["/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest.js", "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-theme.less", "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in.js", "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone-logged-in.less", "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone.js", "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/plone.less", "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry.js", "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.3.1-py2.7.egg/Products/CMFPlone/static/resourceregistry.less", "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper.js", "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.18-py2.7.egg/plone/app/theming/browser/resources/thememapper.less"],
+                files: ["/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/js/bebest.js", "/Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/bebest-theme.less", "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in.js", "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone-logged-in.less", "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone.js", "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/plone.less", "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry.js", "/Volumes/SSD/Dev/eggs/Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/static/resourceregistry.less", "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper.js", "/Volumes/SSD/Dev/eggs/plone.app.theming-1.2.19-py2.7.egg/plone/app/theming/browser/resources/thememapper.less"],
                 tasks: ['requirejs', 'less', 'sed', 'uglify']
             }
         }

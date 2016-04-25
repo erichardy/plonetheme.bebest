@@ -4,6 +4,7 @@
     
     <records prefix="plone.resources/bebest-main"
               interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+       <value key="js">++theme++plonetheme.bebest/js/bebest.js</value>
        <value key="css">
           <element>++theme++plonetheme.bebest/css/bebest-theme.less</element>
        </value>
@@ -18,8 +19,8 @@
       </value>
       <value key="enabled">True</value>
       <value key="compile">True</value>
-      <value key="jscompilation">++theme++plonetheme.bebest/js/bebest-compiled.js</value>
-      <value key="csscompilation">++theme++plonetheme.bebest/css/bebest-compiled.css</value>
+      <value key="jscompilation">++theme++plonetheme.bebest/js/bebest-compiled.min.js</value>
+      <value key="csscompilation">++theme++plonetheme.bebest/css/bebest-compiled.min.css</value>
       <value key="last_compilation"></value>
       <value key="depends">plone</value>
     </records>
