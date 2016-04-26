@@ -30,7 +30,7 @@
                     </span>
                   	</div>
                 </div>
-              	<div id="bebest-slider-content" class="super text-center hidden-xs"
+              	<div id="bebest-slider-content" class="text-center hidden-xs"
               	     tal:define="logo_name python:view.getCarouselLogoName()">
                    	<img class="imgwhite" tal:attributes="src string:${portal_url}/images/${logo_name}"
                    	     width="500"

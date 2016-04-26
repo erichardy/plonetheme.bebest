@@ -1,14 +1,33 @@
 /* CAROUSEL */
+@text-bright: #FFF;
+@font-contrast: 'Courgette';
 
 #home-carousel-bebest { // Marge du navbar
 	margin-top: 0px;
-}
+	background-color: #ddd;
+	display: flex;
+	overflow: hidden;
+	height: 70vh;
+	max-height: 750px;
+	.slide {
+		position: absolute;
+	}
+
 
 #bebest-slider-content { // Texte d'accroche 
  	left: 0px;
     top: 50%;
 	transform: translateY(-50%);  
 	position: absolute;
+	.bright {
+		Font-family: @font-contrast;
+		Font-size: 3.5em;
+		Font-weight: 300;
+		padding-left: 50px;
+		padding-right: 50px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
 }
 
 .imgwhite { // Logo Bebest blanc
@@ -50,4 +69,5 @@
     font-family: "Glyphicons Halflings";
     font-style: normal;
     font-weight: normal;
+}
 }
