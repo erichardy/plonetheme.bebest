@@ -1,73 +1,88 @@
 /* CAROUSEL */
+/* Attribut display: flex ; VOIR http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
+ * et https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Flexible_Box_Layout/Utilisation_des_flexbox_en_CSS
+ */
+
 @text-bright: #FFF;
 @font-contrast: 'Courgette';
 
 #home-carousel-bebest { // Marge du navbar
-	margin-top: 0px;
+	margin-top: 80px;
 	background-color: #ddd;
-	display: flex;
+	// display: -webkit-flex;
+	// display: flex;
 	overflow: hidden;
 	height: 70vh;
 	max-height: 750px;
-	.slide {
-		position: absolute;
+	width: 100% !important;
+
+	#bebest-slider-content { // Texte d'accroche 
+	/* Il est important de donner les memes dimensions a cette boite que
+	 * la boite #home-carousel-bebest
+	 * ATTENTION: il n'est pas poossible d'appliquer un attribut "display: flex" a #home-carousel-bebest
+	 * car, en consequence, tous les autres elements deviennent des flex-item. Or, on ne veut pas
+	 * cela pour les image du carousel
+	 */
+	 	position: absolute;
+	 	left: 0px;
+	    top: 80px;
+	    height: 70vh;
+	    max-height: 750px;
+	    width: 100%;
+	    display: -webkit-flex;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: center;
+		
+		.bright {
+			Font-family: @font-contrast;
+			Font-size: 3.5em;
+			Font-weight: 300;
+			padding-left: 50px;
+			padding-right: 50px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+	}
+	
+	.imgwhite { // Logo Bebest blanc
+		margin-right: auto;
+		margin-left: auto;	
+		max-width: 100%;
+	}
+	
+	.bgimage {	//Image du Carousel
+		position: relative;	
+		overflow: hidden;
 	}
 
-
-#bebest-slider-content { // Texte d'accroche 
- 	left: 0px;
-    top: 50%;
-	transform: translateY(-50%);  
-	position: absolute;
-	.bright {
-		Font-family: @font-contrast;
-		Font-size: 3.5em;
-		Font-weight: 300;
-		padding-left: 50px;
-		padding-right: 50px;
-		padding-top: 15px;
-		padding-bottom: 15px;
+	.homeimg-container { // Conteneur du Carousel
+		background-position: center-top;
+		max-height: 70vh;
+	    left: 0;
+	    position: relative;
+	    top: 0;
+	    width: 100%;
+			.img-src {
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: fixed;
+				width: 100%;
+		}
 	}
-}
-
-.imgwhite { // Logo Bebest blanc
-	margin-right: auto;
-	margin-left: auto;	
-	max-width: 100%;
-}
-
-.bgimage {	//Image du Carousel
-	position: relative;	
-	overflow: hidden;
-}
-
-
-.homeimg-container { // Conteneur du Carousel
-	background-position: center-top;
-	max-height: 70vh;
-    left: 0;
-    position: relative;
-    top: 0;
-    width: 100%;
-		.img-src {
-			background-position: center center;
-			background-repeat: no-repeat;
-			background-size: cover;
-			position: fixed;
-			width: 100%;
+	
+	.scrollbot { // Donnees fleche bas
+		font-size: 1em;
+		color: #fff;
+		line-height: 40%;
+		position: relative;
 	}
-}
-
-.scrollbot { // Donnees fleche bas
-	font-size: 1em;
-	color: #fff;
-	line-height: 40%;
-	position: relative;
-}
-
-.glyphiconbutton { //Glyphicon Double fleche bas
-    font-family: "Glyphicons Halflings";
-    font-style: normal;
-    font-weight: normal;
-}
+	
+	.glyphiconbutton { //Glyphicon Double fleche bas
+	    font-family: "Glyphicons Halflings";
+	    font-style: normal;
+	    font-weight: normal;
+	}
 }

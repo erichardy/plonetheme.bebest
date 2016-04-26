@@ -31,22 +31,19 @@
                   	</div>
                 </div>
               	<div id="bebest-slider-content" class="text-center hidden-xs"
-              	     tal:define="logo_name python:view.getCarouselLogoName()">
+              	     tal:define="logo_name python:view.getCarouselLogoName()"
+              	     >
                    	<img class="imgwhite" tal:attributes="src string:${portal_url}/images/${logo_name}"
                    	     width="500"
                    	     alt="bebest blanc"
                    	     class="img-responsive" />
                     <p class="bright">${view/getCarouselText}</p>
-                    	<div class="scrollbot">
-                          <span class="glyphiconbutton glyphicon-menu-down"></span> <br />
-                          <span class="glyphiconbutton glyphicon-menu-down"></span>
-   						</div>
 			   </div>
     </section> <!--FIN SECTION CAROUSEL-->
 
 	<!-- DEBUT THUMBNAILS -->
 	<section id="home-thumbnail"
-	         class="container">
+	         class="container" tal:replace="nothing">
 	  <div tal:define="thumbs python:view.getCarouselThumbnails()">
 	  <span tal:omit-tag="" tal:repeat="thumb thumbs">
 		<div class="col-xs-12 col-sm-6 col-md-4 text-center">  

@@ -8,6 +8,10 @@
 	background-color: @global-bg;
 }
 
+.navbar-inverse {
+	border: none;
+}
+
 /* LOGO */
 
 .navbar-brand{
@@ -20,6 +24,17 @@
 
 .navbar-bebest {
 	font-size: 1.188em;
+	/*
+	@media (min-width: 1200px) {
+		width: 1170px;
+	}
+	* 
+	*/
+	.container {
+		@media (min-width: 1200px) {
+			width: 1170px !important;
+		}
+	}
 		.navbar-nav {
 			>li {
 				>a {
