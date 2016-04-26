@@ -54,3 +54,53 @@
 	background: #FFF !important;	
 }
 
+.nav-bar-frame {
+	background-image: none;
+	background-color: white;
+	color: black;
+}
+.nav-bar-frame-borders {
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: grey;
+}
+
+ul.navbar-nav {
+	background-color: white;
+	&>li:hover {
+		.nav-bar-frame;
+		.nav-bar-frame-borders;
+	}
+	li {
+		.nav-bar-frame;
+		.dropdown {
+			a {
+			background-color: white;
+			color: black;
+			}
+		}
+	   .active {
+			a {
+				.nav-bar-frame;
+				.nav-bar-frame-borders;
+			}
+		}
+		&:hover {
+			.nav-bar-frame;
+		}
+	}
+	.dropdown-menu {
+		right: 28px;
+		left: auto;
+	}
+}
+
+ul.dropdown-menu {
+	li a {
+		.nav-bar-frame;
+		&:hover {
+			color: #71b398;
+		}
+	}
+}
+

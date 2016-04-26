@@ -51,9 +51,19 @@
     />
 
 <!-- replace theme navbar-nav with Plone plone-navbar-nav -->
+  <!--  methode sans dropdown menus
   <replace
     css:theme-children="#navbar"
     css:content-children="#portal-globalnav" />
+  -->
+  <!-- methode avec dropdown menu issue de plonetheme.dellec -->
+  <replace css:theme-children="div#div-navbar ul#navbar">
+      <xsl:for-each css:select="ul#portal-globalnav > li">
+        <xi:include href="navigation-rules.xml"/>
+      </xsl:for-each>
+    </replace>
+  
+  
   <drop css:content="#portaltab-index_html" />
 	<!-- LOGO : copie de l'attribut href -->
     <copy
