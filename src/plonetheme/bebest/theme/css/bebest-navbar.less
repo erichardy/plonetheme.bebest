@@ -22,37 +22,28 @@
 
 /* Navbar */
 
-.navbar-bebest {
-	font-size: 1.188em;
-	/*
-	@media (min-width: 1200px) {
-		width: 1170px;
-	}
-	* 
-	*/
-	.container {
-		@media (min-width: 1200px) {
-			width: 1170px !important;
+.navbar-nav.navbar-bebest {
+	font-size: 1.1em;
+	>li {
+		>a {
+			font-family: @font-titre;
+			font-weight: 600;
+			color: @color_1;
+			&:hover {
+					color: @color_2;
+					}	
+			}
 		}
-	}
-		.navbar-nav {
-			>li {
-				>a {
-					font-family: @font-titre;
-					font-weight: 600;
+	>.active {
+		>a {
+			color: @color_1;
+			background-color: #eee;
+			&:hover {
 					color: @color_1;
-					&:hover {
-							color: @color_2;
-							}	
-					}
+					background-color: #eee;
 				}
 			}
-			>.active {
-				>a {
-					color: @color_2;
-					background-color: #eee;
-					}
-				}		
+		}
 }
 
 /* TOGGLE */
@@ -79,7 +70,7 @@
 	border-width: 1px 1px 1px 1px;
 	border-color: grey;
 }
-
+/*
 ul.navbar-nav {
 	background-color: white;
 	&>li:hover {
@@ -109,7 +100,7 @@ ul.navbar-nav {
 		left: auto;
 	}
 }
-
+*/
 ul.dropdown-menu {
 	li a {
 		.nav-bar-frame;

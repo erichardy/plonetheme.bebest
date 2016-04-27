@@ -11,6 +11,16 @@ def isNotCurrentProfile(context):
     return context.readDataFile('plonethemebebest_marker.txt') is None
 
 
+def installInCustom(obj, container='images'):
+    """Install objects (i.e. images) in portal_skins/container/...
+    Used for images installation at product activation.
+    Default folder for container : images
+    """
+    portal = api.portal.get()
+    custom = portal['portal_skins']['custom']
+    pass
+
+
 def post_install(context):
     """Post install script"""
 

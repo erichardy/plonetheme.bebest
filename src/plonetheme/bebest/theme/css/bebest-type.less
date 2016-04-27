@@ -3,11 +3,14 @@
  
 @text-bright: #FFF;
 @text-dark: #000;
+@text-grey: #808080;
 @color_1: #252747;
+// @color_1: red;
 @color_2: #DE963E;
 @font-content: 'Lora';
 @font-titre: 'Exo';
 @font-contrast: 'Courgette';
+@h-offset: 80px;
 
 /* Modifications de texte */
 
@@ -17,6 +20,10 @@
 .dark {
 	color: @text-dark;
 	}
+.grey {
+	color: @text-grey;
+	}
+/* text size */
 .small {
 	font-size: 80%;
 	}
@@ -26,7 +33,13 @@
 .xlarge {
 	font-size: 200%;
 	}
-	
+
+/* decalages */ 
+ .pushtop {
+	margin-top: @h-offset;
+}
+ 
+
 /* Headings */
 
 .super {
@@ -35,7 +48,18 @@
 	Font-weight: 300;
 	padding-left: 50px;
 	padding-right: 50px;
-	width: 100%;	
+	padding-top: 15px;
+	padding-bottom: 15px;
+	// width: 100%;
+}
+.super-small {
+	Font-family: @font-contrast;
+	Font-size: 2.5em;
+	Font-weight: 300;
+	padding-left: 35px;
+	padding-right: 35px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 
 h1, h2, h3, h4, h5, h6,

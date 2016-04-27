@@ -42,13 +42,13 @@
                    	     width="500"
                    	     alt="bebest blanc"
                    	     />
-                    <p class="bright">${view/getCarouselText}</p>
+                    <p class="bright" tal:content="structure string:${view/getCarouselText}"></p>
 			   </div>
     </section> <!--FIN SECTION CAROUSEL-->
 
 	<!-- DEBUT THUMBNAILS -->
 	<section id="home-thumbnail"
-	         class="container" tal:replace="nothing">
+	         class="container">
 	  <div tal:define="thumbs python:view.getCarouselThumbnails()">
 	  <span tal:omit-tag="" tal:repeat="thumb thumbs">
 		<div class="col-xs-12 col-sm-6 col-md-4 text-center">  
