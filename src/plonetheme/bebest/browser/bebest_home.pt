@@ -42,7 +42,7 @@
                    	     width="500"
                    	     alt="bebest blanc"
                    	     />
-                    <p class="bright">${view/getCarouselText}</p>
+                    <p class="bright" tal:content="structure string:${view/getCarouselText}"></p>
 			   </div>
     </section> <!--FIN SECTION CAROUSEL-->
 
