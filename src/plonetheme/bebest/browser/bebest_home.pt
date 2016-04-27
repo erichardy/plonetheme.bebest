@@ -48,7 +48,7 @@
 
 	<!-- DEBUT THUMBNAILS -->
 	<section id="home-thumbnail"
-	         class="container" tal:replace="nothing">
+	         class="container">
 	  <div tal:define="thumbs python:view.getCarouselThumbnails()">
 	  <span tal:omit-tag="" tal:repeat="thumb thumbs">
 		<div class="col-xs-12 col-sm-6 col-md-4 text-center">  
