@@ -11,7 +11,7 @@
     </records>
 
 
-    <!-- bundle definition  -->
+    <!-- bundle definition  date "+%Y-%m-%d %H:%M:%S" -->
     <records prefix="plone.bundles/bebest"
               interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
@@ -21,7 +21,7 @@
       <value key="compile">True</value>
       <value key="jscompilation">++theme++plonetheme.bebest/js/bebest-compiled.min.js</value>
       <value key="csscompilation">++theme++plonetheme.bebest/css/bebest-compiled.min.css</value>
-      <value key="last_compilation"></value>
+      <value key="last_compilation">2016-04-27 11:40:02</value>
       <value key="depends">plone</value>
     </records>
 
