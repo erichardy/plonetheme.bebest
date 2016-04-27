@@ -13,19 +13,23 @@
   <div tal:define="imgs python:view.getCarouselImages();
                    interval python:view.getCarouselInterval()">
    
-    <section id="home-carousel-bebest">
-   		<div class="container-fluid hidden-xs">
-        	<div class="row">
+    <section id="home-carousel-bebest" class="container-fluid hidden-xs">
              	<div class="carousel slide" data-ride="carousel" data-wrap="true" data-pause="false"
              	     tal:attributes="data-interval string:${interval}">
                 <!-- Wrapper for slides -->
                   	<div class="carousel-inner" role="listbox">
                   	<span tal:omit-tag="" tal:repeat="img imgs">
                     	<div tal:condition="python:repeat.img.start" class="item active homeimg-container">
-                      		<img tal:attributes="src python:img.absolute_url()" width="100%" alt="banner">
+                      		<img tal:attributes="src python:img.absolute_url()"
+                      		     width="100%"
+                      		     alt="banner"
+                      		     class="img-responsive">
                    		</div>
                    		<div tal:condition="python:not repeat.img.start" class="item homeimg-container">
-                            <img tal:attributes="src python:img.absolute_url()" width="100%" alt="banner">
+                            <img tal:attributes="src python:img.absolute_url()"
+                                 width="100%"
+                                 alt="banner"
+                                 class="img-responsive">
                         </div>
                     </span>
                   	</div>
@@ -33,10 +37,11 @@
               	<div id="bebest-slider-content" class="text-center hidden-xs"
               	     tal:define="logo_name python:view.getCarouselLogoName()"
               	     >
-                   	<img class="imgwhite" tal:attributes="src string:${portal_url}/images/${logo_name}"
+                   	<img class="imgwhite img-responsive"
+                   	     tal:attributes="src string:${portal_url}/images/${logo_name}"
                    	     width="500"
                    	     alt="bebest blanc"
-                   	     class="img-responsive" />
+                   	     />
                     <p class="bright">${view/getCarouselText}</p>
 			   </div>
     </section> <!--FIN SECTION CAROUSEL-->
