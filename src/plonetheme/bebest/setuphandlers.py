@@ -64,7 +64,7 @@ def post_install(context):
     installInCustom('src/plonetheme/bebest/theme/images/about/',
                     'csj-soft.png',
                     obj_type='Image')
-    
+
     carouselDir = 'src/plonetheme/bebest/theme/images/carousel/home/'
     installImages('bebest-carousel', carouselDir)
 
@@ -80,8 +80,8 @@ def installImages(folder, imagesDir):
         folder = portal['bebest-carousel']
     except:
         folder = api.content.create(type='Folder',
-                                      title='bebest-carousel',
-                                      container=portal)
+                                    title='bebest-carousel',
+                                    container=portal)
     carouselContent = [f.getId() for f in folder.objectValues()]
     for c in carouselContent:
         # if image(s) already present in carousel, do nothing
