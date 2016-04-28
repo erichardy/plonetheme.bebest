@@ -49,6 +49,17 @@ var marker = L.marker([51.5, -0.09], {icon: bebestIcon}).addTo(mymap);
             //featureInfo object we added is available as e.target.featureInfo 
         });
     } */
+	
+	/*
+	    // create popup contents
+    var customPopup = "test";
+    
+    // specify popup options 
+    var customOptions =
+        {
+        'maxWidth': '500',
+        'className' : 'custom'
+        } */
 
 var marker = L.marker([48.455, -68.472], {icon: bebestIcon}).addTo(mymap);
 marker.bindPopup("<b><u>UQAR</b></u><br>Laboratoire investis dans le projet BEBEST.").openPopup();
