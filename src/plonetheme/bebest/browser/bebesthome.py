@@ -95,3 +95,9 @@ class bebestHome(BrowserView):
             logger.info(n.effective())
         """
         return newsSorted
+
+    def getAboutBgImage(self):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.about_bg_image'
+        bg_image = api.portal.get_registry_record(prefix)
+        return bg_image

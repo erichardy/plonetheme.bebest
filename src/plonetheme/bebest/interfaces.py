@@ -42,3 +42,7 @@ class IPlonethemeBebestSettings(Interface):
                         description=_(u"Only One word, used for folders"),
                         default=u"bebest-home",
                         )
+    about_bg_image = TextLine(title=_(u"Background image for about section"),
+                              description=_(u"in portal_skins/custom/images"),
+                              default=u"csj-soft.png",
+                              )
