@@ -33,7 +33,33 @@ L.control.layers(baseLayers).addTo(mymap); // offrir à l'utilisateur la possibi
 // début des points
 
 var marker = L.marker([51.5, -0.09], {icon: bebestIcon}).addTo(mymap);
-marker.bindPopup("<h2>UQAR</b></h2><p>Laboratoire investis dans le projet BEBEST.</p>").openPopup();
+    
+/*	onEachFeature: function (feature, layer) {
+        //layer.bindPopup(feature.properties.GPSUserName);
+
+        layer.on('click', function (e) {
+            document.getElementById("info").innerHTML = feature.properties.name;
+            $("#feature_infos").stop();
+            $("#feature_infos").fadeIn("fast");
+
+            console.log(feature.properties.name);
+            $("#feature_infos").fadeOut(5000);
+            // This is your click handler. 
+            // Your feature is available here as e.target, and the 
+            //featureInfo object we added is available as e.target.featureInfo 
+        });
+    } */
+	
+	/*
+	    // create popup contents
+    var customPopup = "test";
+    
+    // specify popup options 
+    var customOptions =
+        {
+        'maxWidth': '500',
+        'className' : 'custom'
+        } */
 
 var marker = L.marker([48.455, -68.472], {icon: bebestIcon}).addTo(mymap);
 marker.bindPopup("<b><u>UQAR</b></u><br>Laboratoire investis dans le projet BEBEST.").openPopup();
