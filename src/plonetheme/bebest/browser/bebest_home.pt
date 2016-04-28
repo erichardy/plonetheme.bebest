@@ -11,7 +11,8 @@
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
   <div tal:define="imgs python:view.getCarouselImages();
-                   interval python:view.getCarouselInterval()">
+                   interval python:view.getCarouselInterval();
+                   newsItems python:view.getHomeNews()">
    
     <section id="home-carousel-bebest" class="container-fluid hidden-xs">
              	<div class="carousel slide" data-ride="carousel" data-wrap="true" data-pause="false"
@@ -65,6 +66,23 @@
 	  </span>
 	  </div>
 	</section>
+
+    <section id="section-news-carousel" class="row w-limit">
+      <div class="super-small text-left">News</div>
+      <div id="news-Carousel" 
+           class="carousel slide"
+           data-ride="carousel"
+           data-wrap="true"
+           data-pause="false"
+           tal:attributes="data-interval string:${interval}">
+           <div class="carousel-inner" role="listbox">
+           <span tal:omit-tag="" tal:repeat="newsItem newsItems">
+              <p>${newsItem/title}</p>
+           </span>
+           </div>
+      	
+      </div>
+    </section>
 
   </div>
   </metal:content-core>

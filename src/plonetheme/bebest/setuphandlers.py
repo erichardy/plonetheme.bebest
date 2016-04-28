@@ -95,13 +95,6 @@ def installImages(folder, imagesDir):
             fimg = open(imagesDir + '/' + image)
             img = fimg.read()
             fimg.close()
-            """
-            carousel.invokeFactory(id=image,
-                                   title=image,
-                                   type_name='Image')
-            i = carousel.get(image)
-            """
-
             blobScore = nbi(img,
                             contentType=u'image/png',
                             filename=image)
@@ -114,8 +107,8 @@ def installImages(folder, imagesDir):
             i.reindexObject()
 
 
-"""
-manage_addDTMLMethod
-manage_addFolder
-manage_addImage
-"""
+def installNews(imagesDir):
+    portal = api.portal.get()
+    newsFolder = portal.get['news']
+    news = ['news1', 'news2', 'news3']
+    
