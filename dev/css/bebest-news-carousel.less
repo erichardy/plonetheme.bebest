@@ -7,7 +7,7 @@
 }
 
 #news-Carousel {
-	background-color: #ddd;
+	background-color: @text-bright;
 	overflow: hidden;
 	height: 200px;
 	.slide {
@@ -19,8 +19,7 @@
 	background-color: @bg-bright;
 	height: 200px;
 	width: 500px;
-	margin-right: 10px;
-	margin-left: 10px;
+	margin-left: 30px;
 	padding-right: 15px;
 	display: -webkit-box;
 	display: -moz-box;
@@ -46,13 +45,20 @@
 
 /* Fleches de controle --------------------------*/
 .carousel-control {
-    opacity: 0.6;
+    color: @color-main;
+	opacity: 1;
     text-shadow: none;
     top: 0;
-    width: 5%;
+    width: 15px;
 	:hover {
+	color: @color-contrast;	
 	opacity: 1;	
 	}
+}
+
+.carousel-control:hover, .carousel-control:focus {
+    color: @color-main;
+    opacity: 1;
 }
 
 .carousel-control.left {
