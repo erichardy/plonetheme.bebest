@@ -7,9 +7,7 @@
 }
 
 #news-Carousel {
-	background-color: @text-bright;
-	overflow: hidden;
-	height: 200px;
+	background-color: @bg-bright;
 	.slide {
 		position: absolute;
 	}
@@ -17,21 +15,14 @@
 
 .news-wrapper { /* Conteneur de chaque news ----------------------*/
 	background-color: @bg-bright;
-	height: 200px;
-	width: 500px;
-	margin-left: 30px;
+	height: auto;
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
 	padding-right: 15px;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-flow: row wrap;
-	justify-content: space-around;
 }
 
 .carousel-inner > .item {
-    display: inline-block;
     float: left;
 }
 
@@ -43,13 +34,17 @@
 	float: left;
 }
 
+.news-info {
+	height: auto;
+}
+
 /* Fleches de controle --------------------------*/
 .carousel-control {
     color: @color-main;
 	opacity: 1;
     text-shadow: none;
     top: 0;
-    width: 15px;
+    width: 10%;
 	:hover {
 	color: @color-contrast;	
 	opacity: 1;	

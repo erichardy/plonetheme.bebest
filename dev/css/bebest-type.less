@@ -86,6 +86,33 @@ h2, .h2 {
 h3, .h3 {
 	font-size: 1.5em;
 }
+/* Content font */
+
+p, .p {
+	font-family:@font-content;
+	font-size: 1em;
+}
+
+/* liens--------------------------------*/
+a, .a {
+	color: @color-main;
+	text-decoration: none;
+}
+
+a:visited, .a:visited {
+	color: @color-main;
+	text-decoration: none;
+}
+
+a:hover, .a:hover {
+	color: @color-contrast;
+	text-decoration: none;
+}
+ 
+a:active, .a:actve {
+	color: @color-vivid;
+	text-decoration: none;
+}
 
 /* Alignment */
 
@@ -95,12 +122,7 @@ h3, .h3 {
 .text-justify        { text-align: justify; }
 .text-nowrap         { white-space: nowrap; }
 
-/* Content font */
 
-p, .p {
-	font-family:@font-content;
-	font-size: 1em;
-}
 
 
 	
