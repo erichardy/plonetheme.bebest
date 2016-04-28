@@ -25,13 +25,13 @@
                       		<img tal:attributes="src python:img.absolute_url()"
                       		     width="100%"
                       		     alt="banner"
-                      		     class="img-responsive">
+                      		     class="img-responsive" />
                    		</div>
                    		<div tal:condition="python:not repeat.img.start" class="item homeimg-container">
                             <img tal:attributes="src python:img.absolute_url()"
                                  width="100%"
                                  alt="banner"
-                                 class="img-responsive">
+                                 class="img-responsive" />
                         </div>
                     </span>
                   	</div>
@@ -68,7 +68,7 @@
 	  </div>
 	</section>
 
-    <section id="section-news-carousel" class="row w-limit">
+    <section id="section-news-carousel" class="row w-limit" tal:condition="newsItems">
       <div class="super-small text-left">News</div>
       <div id="news-Carousel" 
            class="carousel slide"

@@ -103,12 +103,12 @@ def installImages(folder, imagesDir):
                                    container=folder,
                                    image=blobScore
                                    )
-            # i.image = blobScore
+            i.image = blobScore
             i.reindexObject()
 
-
+"""
 def installNews(imagesDir):
     portal = api.portal.get()
     newsFolder = portal.get['news']
     news = ['news1', 'news2', 'news3']
-    
+"""

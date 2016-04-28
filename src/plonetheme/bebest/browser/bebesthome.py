@@ -2,7 +2,7 @@
 
 import logging
 from zope.publisher.browser import BrowserView
-from operator import attrgetter
+# from operator import attrgetter
 from plone import api
 
 logger = logging.getLogger('bebest')
@@ -46,6 +46,7 @@ class bebestHome(BrowserView):
             # logger.info(len(images))
         except Exception:
             logger.info('0 images !')
+        logger.info(str(len(objs)) + ' images dans le carousel')
         return objs
 
     def localText(self, obj):
@@ -77,7 +78,7 @@ class bebestHome(BrowserView):
         founds = api.content.find(context=portal,
                                   portal_type='News Item',
                                   )
-        
+
         if len(founds) == 0:
             return False
         newsItems = []
