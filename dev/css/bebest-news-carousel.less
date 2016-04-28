@@ -1,69 +1,58 @@
-/* CAROUSEL */
+/* CAROUSEL DE NEWS (ACTUALITES)*/
 
 #section-news-carousel {
 	margin-top: 15px;
 	margin-bottom: 50px;
-	
-}
-
-#news-Carousel {
-	background-color: @bg-bright;
-	.slide {
-		position: absolute;
+	#news-Carousel {
+		background-color: @bg-bright;
+		.slide {
+			position: absolute;
+		}
+		.carousel-inner > .item {
+			float: left;
+		}	
+		.news-wrapper { /* Conteneur de chaque news ----------------------*/
+			background-color: @bg-bright;
+			width: 70%;
+			margin-left: 15%;
+			margin-right: 15%;
+			padding-right: 15px;
+		}
+		.news-img { /* Conteneur de l'image ----------------------*/
+			height: 200px;
+			width: 200px;
+			left: 0;
+			margin-right: 15px;
+			float: left;
+		}
+		.news-info { /* Conteneur du texte ----------------------*/
+			height: auto;
+		}
+		.carousel-control { /* Emplacement des fleches de controle*/
+			background-color: @bg-bright;
+			background-image: none;
+			opacity: 1;
+			width: 10%;
+			.right {
+				left: auto;
+				right: 0;
+			}
+			span.glyphicon { /* Fleches de controle --------------------------*/
+				text-shadow: none;
+				color: @color-main;
+				&:hover {
+					color: @color-contrast;	
+				}
+			}		
+		}
+		
 	}
 }
 
-.news-wrapper { /* Conteneur de chaque news ----------------------*/
-	background-color: @bg-bright;
-	height: auto;
-	width: 70%;
-	margin-left: 15%;
-	margin-right: 15%;
-	padding-right: 15px;
-}
 
-.carousel-inner > .item {
-    float: left;
-}
 
-.news-img {
-	height: 200px;
-	width: 200px;
-	left: 0;
-	margin-right: 15px;
-	float: left;
-}
 
-.news-info {
-	height: auto;
-}
 
-/* Fleches de controle --------------------------*/
-.carousel-control {
-    color: @color-main;
-	opacity: 1;
-    text-shadow: none;
-    top: 0;
-    width: 10%;
-	:hover {
-	color: @color-contrast;	
-	opacity: 1;	
-	}
-}
 
-.carousel-control:hover, .carousel-control:focus {
-    color: @color-main;
-    opacity: 1;
-}
 
-.carousel-control.left {
-    background-image: none;
-    background-repeat: no-repeat;
-}
 
-.carousel-control.right {
-    background-image: none;
-    background-repeat: no-repeat;
-    left: auto;
-    right: 0;
-}
