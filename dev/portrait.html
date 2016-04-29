@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- To ensure proper rendering and touch zooming on mobiles -->
 
-<title>Bebest-home</title>
+<title>Bebest-portrait</title>
 
   <link href="css/bootstrap.css" rel="stylesheet">
   <link rel="stylesheet/less" type="text/css" href="css/bebest-theme.less">
@@ -41,18 +41,30 @@
            </div>
         </nav>
     </header>
-	
-	<!-----------DEBUT SECTION PORTRAIT------------------>
-	<section id="section-portrait" class="container-fluid">
-		<div class="row">
-			<div id="personnel-info" class="col-xs-12 col-md-4">
-				<div class="portrait-wrapper"><img class="img-responsive" src="images/portraits/chauvaud.jpg"/></div>
+	<div id="content">	
+		<!-----------DEBUT SECTION PORTRAIT------------------>
+		<section class="container-fluid">
+			<div class="row">
+					<!----panneau de gauche: la carte d'identité --------->
+					<div class="personnel-info-panel col-xs-12 col-md-4">
+						<!---- conteneur des infos de la carte d'ID  --------->
+						<div class="personnel-info">
+							<div class="personnel-name">Laurent Chauvaud</div> <!---- prenom puis nom -->
+							<strong> Docteur </strong>
+						</div>
+						<!---- photo du portrait  --------->
+						<div class="personnel-img-wrapper"><img class="img-responsive" src="images/portraits/chauvaud.jpg"/></div>
+						<!---- auteur de la photo  --------->
+						<div class="img-author"><p>(C) Erwan Amice / CNRS</p></div>
+						
+					</div>
+					<!----panneau de droite: la courte biographie --------->
+					<div class="personnel-bio col-xs-12 col-md-8">
+					<p class="text-justify"> BeBEST Lab sera coordonné <!--tutut--> par Dr. Laurent Chauvaud du laboratoire LEMAR (UMR 6539, IUEM, France). Il possède une expérience de 20 ans sur le fonctionnement des écosystèmes côtiers et sur le rôle des suspensivores dans le contrôle de la production primaire. Ses recherches sont centrées sur l'intégration des facteurs anthropiques (espèces invasives, la pollution ...) et sur l'identification des forçages naturels (NAO ...) affectant les écosystèmes. Il a développé l'utilisation de bivalves comme archives biologiques de l'environnement et, plus récemment, l'utilisation de l'accélérométrie et l'acoustique passive pour la surveillance des écosystèmes. Il est reconnu internationalement pour ses publications (~ 90 communications de rang A) et a participé à 4 projets dans les régions polaires, y compris MACARBI 2005-2008 en Antarctique. Il est actuellement PI du projet internationale pan-arctique "BB Polar" (2013- 2015) utilisant des invertébrés marins pour surveiller les paramètres environnementaux des écosystèmes arctiques à différentes échelles de temps (journalières à décennales).</p>
+					</div>
 			</div>
-			<div id="personnel-bio" class="col-xs-12 col-md-8">
-			</div>
-		</div>
-	</section>
-	
+		</section>
+	</div>	
 	<!---------- DEBUT FOOTER ---------------------------->
 	<footer>
 		<div id="bebest-footer" class="text-center">

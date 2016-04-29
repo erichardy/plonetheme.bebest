@@ -1,13 +1,29 @@
 /* PORTRAIT */
 
-#section-portrait {
-	margin-top: 80px;  // Marge du navbar
-	#personnel-info {
-		height: 600px;
-		background-color: @bg-dark;
+	.personnel-info-panel {
+		padding: 0px;
+		.personnel-img-wrapper {
+			max-height: 400px;
+			overflow: hidden;
+		}
+		.personnel-name{
+			.super-small;
+			.bright;
+		}
+		.img-author {
+			.grey;
+			.small;
+			.text-right;
+			padding: 10px 15px 10px 0;
+		} 
+		.personnel-info {
+			background-color: @bg-dark;
+			color: @text-bright;
+			padding-left: 35px;
+			padding-right: 35px;
+		}
 	}
-	#personnel-bio {
+	.personnel-bio {
 		height: 600px;
 		background-color: @bg-bright;
 	}
-}
