@@ -25,3 +25,6 @@ $(window).scroll(function() {
 			}		
 		});
 });
+
+bodyClasses = document.getElementById("visual-portal-wrapper").classList
+
