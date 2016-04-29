@@ -15,8 +15,8 @@ var stamenTiles = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png'
 }); 
 
 var bebestIcon = L.icon({ // Appel de la variable Bebesticon pour personnaliser le marker
-    iconUrl: 'images/map/icon-blue.png', //Url du l'image icone
-
+    iconUrl: 'images/map/icon-orange.png', //Url du l'image icone
+	
     iconSize:     [27, 40], // Taille de l'icone
     iconAnchor:   [13, 40], // Point de l'icone où se trouve la location exacte du marker
     popupAnchor:  [0, -40] // Point de l'icone où se trouvera le debut de la popup par rapport a l'iconAnchor
@@ -33,24 +33,19 @@ L.control.layers(baseLayers).addTo(mymap); // Bouton pour permettre au utilisate
 // début des points
 
 var marker = L.marker([51.5, -0.09], {icon: bebestIcon}).addTo(mymap); //Variable Marker qui fais appel au marker leaflet avec la geolocalisation, il appelle ensuite la variable bebestIcon et ajoute a mymap.
-    
+//données de la popup
+marker.bindPopup("<div id='bebest-popup-content'><h2>IUEM<h2><hr><h3>MISSION XSZ21</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat ex. Praesent urna mi, maximus pretium dictum tristique, sodales sed enim.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat ex. Praesent urna mi, maximus pretium dictum tristique, sodales sed enim.. <br/><a href='#'>Click to learn more...</a></p></div>").openPopup();    
 	
-/*	    // create popup contents
-    var customPopup = "test";
-    
-    // specify popup options 
-    var customOptions =
-        {
-        'maxWidth': '300',
-        'className' : 'custom'
-        } 
-
-var marker = L.marker([43.64701, -79.39425], {icon: bebestIcon}).bindPopup(customPopup,customOptions).addTo(mymap);
-
-*/
 
 var marker = L.marker([48.455, -68.472], {icon: bebestIcon}).addTo(mymap); //Variable Marker qui fais appel au marker leaflet avec la geolocalisation, il appelle ensuite la variable bebestIcon et ajoute a mymap.
-marker.bindPopup("<div id='bebest-popup-content'><h3>UQAR</h3><br><p>Laboratoire investis dans le projet BEBEST.</p></div>").openPopup(); //Données de la popup
+//données de la popup
+marker.bindPopup("<div id='bebest-popup-content'><h2>UQAR<h2><hr><h3>MISSION XSZ21</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat ex. Praesent urna mi, maximus pretium dictum tristique, sodales sed enim.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat ex. Praesent urna mi, maximus pretium dictum tristique, sodales sed enim.. <br/><a href='#'>Click to learn more...</a></p></div>").openPopup(); 
 
 var marker = L.marker([78.5, 10.75], {icon: bebestIcon}).addTo(mymap); //Variable Marker qui fais appel au marker leaflet avec la geolocalisation, il appelle ensuite la variable bebestIcon et ajoute a mymap.
-marker.bindPopup("<h3>Svalbard project</h3><br><p>Laboratoire investis dans le projet BEBEST.</p>").openPopup(); //Données de la popup
+//données de la popup
+marker.bindPopup("<div id='bebest-popup-content'><h2>Svalbard<h2><hr><h3>MISSION XSZ21</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat ex. Praesent urna mi, maximus pretium dictum tristique, sodales sed enim.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat ex. Praesent urna mi, maximus pretium dictum tristique, sodales sed enim.. <br/><a href='#'>Click to learn more...</a></p></div>").openPopup();   
+
+
+
+
+// Voilà un exemple de popup a positionnement absolu qui semble bien marcher: http://jsfiddle.net/expedio/z1nw3pt4/ 

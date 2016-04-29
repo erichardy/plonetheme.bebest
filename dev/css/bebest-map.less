@@ -1,6 +1,12 @@
 #bebest-map {
-   height: 600px;
+   height: 700px;
    background-color: black;
+   .super{
+		color: #47AAC9;
+		position: relative;
+		z-index: 1000;
+		.pushtop;
+	}
 }
 
 .leaflet-popup-content-wrapper {
@@ -9,7 +15,7 @@
 		padding: 15px;
 		border: 2px solid #47AAC9;
 		border-radius: 15px;
-		box-shadow: 5px 5px 0px #000 rgba(0, 0, 0, 0.7);
+		box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.3);
 		text-align: left;
 		h3{
 			color: #47AAC9;
@@ -19,3 +25,9 @@
 .leaflet-popup-tip {
 	opacity:0;
 }
+
+.leaflet-popup {
+	transform: none;
+	position: absolute;
+	top: 0px;
+} 
