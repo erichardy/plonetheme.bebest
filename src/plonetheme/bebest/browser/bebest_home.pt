@@ -71,8 +71,9 @@
 	</section>
 
     <section id="section-news-carousel"
-             class="row w-limit"
+             class="container w-limit"
              tal:condition="newsItems">
+      <div  class="row">
       <div class="super-small text-left">News</div>
       <div id="news-Carousel" 
            class="carousel slide"
@@ -82,19 +83,31 @@
            tal:attributes="data-interval string:${interval}">
            <div class="carousel-inner" role="listbox">
            <span tal:omit-tag="" tal:repeat="newsItem newsItems">
-             <div tal:condition="python:repeat.newsItem.start" class="item active news-img">
+             <div tal:condition="python:repeat.newsItem.start" class="item active news-wrapper">
+	             <div class="news-img">
 	             <img tal:define="scale newsItem/@@images"
 	                    tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='img-circle')" />
-	             <h3>${newsItem/title}</h3>
-	             <hr />
-	             <p>${newsItem/Description}</p>
+	             </div>
+	             <div class="news-info">
+		             <h3>${newsItem/title}</h3>
+		             <hr />
+		             <p>${newsItem/Description}</p>
+		             <a href="#" tal:attributes="href string:${newsItem/absolute_url()"
+		                         tal:content="string:+">url</a>
+                 </div>
              </div>
-             <div tal:condition="python:not repeat.newsItem.start" class="item news-img">
-	             <img tal:define="scale newsItem/@@images"
-	                    tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='img-circle')" />
-	             <h3>${newsItem/title}</h3>
-	             <hr />
-	             <p>${newsItem/Description}</p>
+             <div tal:condition="python:not repeat.newsItem.start" class="item news-wrapper">
+	             <div class="news-img">
+		             <img tal:define="scale newsItem/@@images"
+		                    tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='img-circle')" />
+	             </div>
+	             <div class="news-info">
+		             <h3>${newsItem/title}</h3>
+		             <hr />
+		             <p>${newsItem/Description}</p>
+		             <a href="#" tal:attributes="href string:${newsItem/absolute_url()"
+		                         tal:content="string:+">url</a>
+                 </div>
              </div>
 
            </span>
@@ -108,6 +121,7 @@
 			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			<span class="sr-only">Next</span>
 		</a>
+      </div>
       </div>
     </section>
 
