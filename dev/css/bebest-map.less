@@ -1,41 +1,29 @@
 #bebest-map {
    height: 600px;
+   background-color: black;
 }
 
-#feature_infos {
-    width:25%;
-    height: 25%;
-    background: rgba(255, 255, 255, 0.7);
-    position: absolute;
-    top:0px;
-    right:0px;
-    padding:5px;
-    border:1px solid grey;
-    display:none;
-}
-#info {
-    font-weight:bold;
-    color:red;
+.leaflet-popup-content-wrapper {
+		width: 300px;
+		min-height: 250px;
+		padding: 15px;
+		border: 2px solid #47AAC9;
+		border-radius: 15px;
+		box-shadow: 5px 5px 0px #000 rgba(0, 0, 0, 0.7);
+		text-align: left;
+		h3{
+			color: red;
+		}
 }
 
-.custom .leaflet-popup-tip,
-.custom .leaflet-popup-content-wrapper {
-    background: #e93434;
-    color: #ffffff;
-}
-
-#bebest-info{
-	margin-top: 50px;
-	width: 300px;
-	height: 350px;
-	border: 2px solid #47AAC9;
-	border-radius: 15px;
-	box-shadow: 5px 5px 0px #aaa;
-	h3{
-		font-family: @font-titre;
-	}
+/*.bebest-popup-content{
+	
 	p{
 		font-family: @font-content;
+		font-size: 13px;
 	}
-	
+}*/
+
+.leaflet-popup-tip {
+	opacity:0;
 }

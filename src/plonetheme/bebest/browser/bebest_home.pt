@@ -12,10 +12,13 @@
   <metal:content-core define-macro="main">
   <div tal:define="imgs python:view.getCarouselImages();
                    interval python:view.getCarouselInterval();
+                   thumbs python:view.getCarouselThumbnails();
                    newsItems python:view.getHomeNews();
                    aboutBgImage python:view.getAboutBgImage()">
    
-    <section id="home-carousel-bebest" class="container-fluid hidden-xs">
+    <section id="home-carousel-bebest"
+             class="container-fluid hidden-xs"
+             tal:condition="imgs">
              	<div class="carousel slide" data-ride="carousel" data-wrap="true" data-pause="false"
              	     tal:attributes="data-interval string:${interval}">
                 <!-- Wrapper for slides -->
@@ -50,8 +53,8 @@
 
 	<!-- DEBUT THUMBNAILS -->
 	<section id="home-thumbnail"
-	         class="container">
-	  <div tal:define="thumbs python:view.getCarouselThumbnails()">
+	         class="container"
+	         tal:condition="thumbs">
 	  <span tal:omit-tag="" tal:repeat="thumb thumbs">
 		<div class="col-xs-12 col-sm-6 col-md-4 text-center">  
       	  <div class="home-thumbnail-item">
@@ -65,10 +68,11 @@
           </div>  
         </div>
 	  </span>
-	  </div>
 	</section>
 
-    <section id="section-news-carousel" class="row w-limit" tal:condition="newsItems">
+    <section id="section-news-carousel"
+             class="row w-limit"
+             tal:condition="newsItems">
       <div class="super-small text-left">News</div>
       <div id="news-Carousel" 
            class="carousel slide"

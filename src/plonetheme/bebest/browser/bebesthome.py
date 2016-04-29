@@ -46,7 +46,9 @@ class bebestHome(BrowserView):
             # logger.info(len(images))
         except Exception:
             logger.info('0 images !')
-        logger.info(str(len(objs)) + ' images dans le carousel')
+        # logger.info(str(len(objs)) + ' images dans le carousel')
+        if len(objs) == 0:
+            return False
         return objs
 
     def localText(self, obj):
@@ -68,6 +70,8 @@ class bebestHome(BrowserView):
             thumb = found.getObject()
             if tag in thumb.Subject():
                 thumbs.append(thumb)
+        if len(thumbs) == 0:
+            return False
         return thumbs
 
     def getHomeNews(self):
