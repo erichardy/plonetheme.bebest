@@ -58,6 +58,7 @@
 	         tal:condition="thumbs">
 	  <span tal:omit-tag="" tal:repeat="thumb thumbs">
 		<div class="col-xs-12 col-sm-6 col-md-4 text-center">  
+      	  <a href="#" tal:attributes="href string:${thumb/absolute_url}">
       	  <div class="home-thumbnail-item">
             <img tal:define="scale thumb/@@images" 
                  tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='newsImage')"
@@ -68,6 +69,7 @@
               <p>${thumb/description}</p>
            </div>
           </div>  
+          </a>
         </div>
 	  </span>
 	</section>
@@ -86,6 +88,7 @@
            <div class="carousel-inner" role="listbox">
            <span tal:omit-tag="" tal:repeat="newsItem newsItems">
              <div tal:condition="python:repeat.newsItem.start" class="item active news-wrapper">
+               <a href="#" tal:attributes="href string:${newsItem/absolute_url}">
 	             <div class="news-img">
 	             <img tal:define="scale newsItem/@@images"
 	                    tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='img-circle')"
@@ -98,8 +101,10 @@
 		             <a href="#" tal:attributes="href string:${newsItem/absolute_url}"
 		                         tal:content="string:+">url</a>
                  </div>
+               </a>
              </div>
              <div tal:condition="python:not repeat.newsItem.start" class="item news-wrapper">
+               <a href="#" tal:attributes="href string:${newsItem/absolute_url}">
 	             <div class="news-img">
 		             <img tal:define="scale newsItem/@@images"
 		                    tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='img-circle')"
@@ -112,6 +117,7 @@
 		             <a href="#" tal:attributes="href string:${newsItem/absolute_url}"
 		                         tal:content="string:+">url</a>
                  </div>
+               </a>
              </div>
 
            </span>

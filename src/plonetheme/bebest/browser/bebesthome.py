@@ -27,13 +27,16 @@ class bebestHome(BrowserView):
         portal = api.portal.get()
         founds = api.content.find(context=portal,
                                   portal_type=obj_type,
+                                  state="published"
                                   )
         if len(founds) == 0:
             return False
         objs = []
         for found in founds:
             obj = found.getObject()
-            if tag in obj.Subject():
+            state = api.content.get_state(obj)
+            if (tag in obj.Subject()) and (state == 'published'):
+                # if tag in obj.Subject():
                 objs.append(obj)
         if len(objs) == 0:
             return False
@@ -110,7 +113,10 @@ class bebestHome(BrowserView):
         aboutUsDocuments = self._getHomeObject(registry_record=reg,
                                                obj_type='Document',
                                                effective=True)
-        return aboutUsDocuments[:3]
+        if aboutUsDocuments:
+            return aboutUsDocuments[:3]
+        else:
+            return False
 
     def getAboutClasses(self, nb):
         """
