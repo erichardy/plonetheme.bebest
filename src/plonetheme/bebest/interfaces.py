@@ -46,3 +46,7 @@ class IPlonethemeBebestSettings(Interface):
                               description=_(u"in portal_skins/custom/images"),
                               default=u"csj-soft.png",
                               )
+    about_document_tag = TextLine(title=_(u"Tag used for about items"),
+                                  description=_(u"For home page"),
+                                  default=u"bebest-home",
+                                  )

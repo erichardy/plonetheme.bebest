@@ -14,7 +14,8 @@
                    interval python:view.getCarouselInterval();
                    thumbs python:view.getCarouselThumbnails();
                    newsItems python:view.getHomeNews();
-                   aboutBgImage python:view.getAboutBgImage()">
+                   aboutBgImage python:view.getAboutBgImage();
+                   aboutDocuments python:view.getAboutUsDocuments()">
    
     <section id="home-carousel-bebest"
              class="container-fluid hidden-xs"
@@ -92,7 +93,7 @@
 		             <h3>${newsItem/title}</h3>
 		             <hr />
 		             <p>${newsItem/Description}</p>
-		             <a href="#" tal:attributes="href string:${newsItem/absolute_url()"
+		             <a href="#" tal:attributes="href string:${newsItem/absolute_url}"
 		                         tal:content="string:+">url</a>
                  </div>
              </div>
@@ -105,7 +106,7 @@
 		             <h3>${newsItem/title}</h3>
 		             <hr />
 		             <p>${newsItem/Description}</p>
-		             <a href="#" tal:attributes="href string:${newsItem/absolute_url()"
+		             <a href="#" tal:attributes="href string:${newsItem/absolute_url}"
 		                         tal:content="string:+">url</a>
                  </div>
              </div>
@@ -127,7 +128,9 @@
 
 
     <!-- DEBUT SECTION ABOUT-->
-   <section id="about-bebest">
+   <section id="about-bebest"
+            tal:condition="aboutDocuments"
+            tal:define="classes python:view.getAboutClasses(len(aboutDocuments))">
 		<img id="scrollreveal" class="hidden-xs"
 		     tal:attributes="src string:${portal_url}/images/${aboutBgImage}" />
    		<div class="container">

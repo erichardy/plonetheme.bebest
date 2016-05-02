@@ -14,6 +14,36 @@ class bebestHome(BrowserView):
         self.context = context
         self.request = request
 
+    def _getHomeObject(self,
+                       registry_record,
+                       obj_type,
+                       effective=True):
+        """
+        @param registry_record:
+        """
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.' + registry_record
+        tag = api.portal.get_registry_record(prefix)
+        portal = api.portal.get()
+        founds = api.content.find(context=portal,
+                                  portal_type=obj_type,
+                                  )
+        if len(founds) == 0:
+            return False
+        objs = []
+        for found in founds:
+            obj = found.getObject()
+            if tag in obj.Subject():
+                objs.append(obj)
+        if len(objs) == 0:
+            return False
+        if effective:
+            sortedObjs = sorted(objs,
+                                key=lambda obj: obj.effective(),
+                                reverse=True)
+            return sortedObjs
+        return objs
+
     def getCarouselText(self):
         prefix = 'plonetheme.bebest.interfaces.'
         prefix += 'IPlonethemeBebestSettings.carousel_label'
@@ -58,51 +88,43 @@ class bebestHome(BrowserView):
             return "<p />"
 
     def getCarouselThumbnails(self):
-        prefix = 'plonetheme.bebest.interfaces.'
-        prefix += 'IPlonethemeBebestSettings.tag_home'
-        tag = api.portal.get_registry_record(prefix)
-        portal = api.portal.get()
-        founds = api.content.find(context=portal,
-                                  portal_type='Folder',
-                                  )
-        thumbs = []
-        for found in founds:
-            thumb = found.getObject()
-            if tag in thumb.Subject():
-                thumbs.append(thumb)
-        if len(thumbs) == 0:
-            return False
-        return thumbs
+        homeThumbnails = self._getHomeObject(registry_record='tag_home',
+                                             obj_type='Folder',
+                                             effective=True)
+        return homeThumbnails
 
     def getHomeNews(self):
-        prefix = 'plonetheme.bebest.interfaces.'
-        prefix += 'IPlonethemeBebestSettings.tag_home'
-        tag = api.portal.get_registry_record(prefix)
-        portal = api.portal.get()
-        founds = api.content.find(context=portal,
-                                  portal_type='News Item',
-                                  )
-
-        if len(founds) == 0:
-            return False
-        newsItems = []
-        for found in founds:
-            newsItem = found.getObject()
-            if tag in newsItem.Subject():
-                newsItems.append(newsItem)
-        newsSorted = sorted(newsItems,
-                            key=lambda newsitem: newsitem.effective(),
-                            reverse=True)
-        """
-        for n in newsItems:
-            logger.info(n.effective())
-        for n in newsSorted:
-            logger.info(n.effective())
-        """
-        return newsSorted
+        homeNews = self._getHomeObject(registry_record='tag_home',
+                                       obj_type='News Item',
+                                       effective=True)
+        return homeNews
 
     def getAboutBgImage(self):
         prefix = 'plonetheme.bebest.interfaces.'
         prefix += 'IPlonethemeBebestSettings.about_bg_image'
         bg_image = api.portal.get_registry_record(prefix)
         return bg_image
+
+    def getAboutUsDocuments(self):
+        reg = 'about_document_tag'
+        aboutUsDocument = self._getHomeObject(registry_record=reg,
+                                              obj_type='Document',
+                                              effective=True)
+        return aboutUsDocument
+
+    def getAboutClasses(self, nb):
+        """
+        les classes des items dependent du nombre de ceux-ci
+        """
+        classes = []
+        base = "col-xs-12 col-sm-10 col-sm-offset-1 "
+        if nb == 1:
+            classes[0] = base + "col-md-8 col-md-offset-2"
+        if nb == 2:
+            classes[0] = base + "col-md-4 col-md-offset-1"
+            classes[1] = base + "col-md-4 col-md-offset-2"
+        if nb == 3:
+            classes[0] = base + "col-md-4 col-md-offset-0"
+            classes[1] = classes[0]
+            classes[2] = classes[0]
+        return classes
