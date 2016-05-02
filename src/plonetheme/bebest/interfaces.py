@@ -50,3 +50,7 @@ class IPlonethemeBebestSettings(Interface):
                                   description=_(u"For home page"),
                                   default=u"bebest-home",
                                   )
+    portfolio_author_tag = TextLine(title=_(u"Tag used for Authors"),
+                                    description=_(u"used for portfolio view"),
+                                    default=u"portfolio-author",
+                                    )

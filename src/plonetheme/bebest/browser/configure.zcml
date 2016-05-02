@@ -24,5 +24,12 @@
       template="bebest_home.pt"
       permission="zope2.View"
       />
+   <browser:page
+      name="portfolio"
+      for="*"
+      class=".portfolio.portFolio"
+      template="portfolio.pt"
+      permission="zope2.View"
+      />
 
 </configure>
