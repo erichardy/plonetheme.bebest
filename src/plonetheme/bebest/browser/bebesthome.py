@@ -108,8 +108,8 @@ class bebestHome(BrowserView):
     def getAboutUsDocuments(self):
         reg = 'about_document_tag'
         aboutUsDocuments = self._getHomeObject(registry_record=reg,
-                                              obj_type='Document',
-                                              effective=True)
+                                               obj_type='Document',
+                                               effective=True)
         return aboutUsDocuments[:3]
 
     def getAboutClasses(self, nb):
