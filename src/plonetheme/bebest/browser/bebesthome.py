@@ -107,24 +107,24 @@ class bebestHome(BrowserView):
 
     def getAboutUsDocuments(self):
         reg = 'about_document_tag'
-        aboutUsDocument = self._getHomeObject(registry_record=reg,
+        aboutUsDocuments = self._getHomeObject(registry_record=reg,
                                               obj_type='Document',
                                               effective=True)
-        return aboutUsDocument
+        return aboutUsDocuments[:3]
 
     def getAboutClasses(self, nb):
         """
         les classes des items dependent du nombre de ceux-ci
         """
-        classes = []
         base = "col-xs-12 col-sm-10 col-sm-offset-1 "
+        classesAbout = []
         if nb == 1:
-            classes[0] = base + "col-md-8 col-md-offset-2"
+            classesAbout.append(base + "col-md-8 col-md-offset-2")
         if nb == 2:
-            classes[0] = base + "col-md-4 col-md-offset-1"
-            classes[1] = base + "col-md-4 col-md-offset-2"
+            classesAbout.append(base + "col-md-4 col-md-offset-1")
+            classesAbout.append(base + "col-md-4 col-md-offset-2")
         if nb == 3:
-            classes[0] = base + "col-md-4 col-md-offset-0"
-            classes[1] = classes[0]
-            classes[2] = classes[0]
-        return classes
+            classesAbout.append(base + "col-md-4 col-md-offset-0")
+            classesAbout.append(classesAbout[0])
+            classesAbout.append(classesAbout[0])
+        return classesAbout

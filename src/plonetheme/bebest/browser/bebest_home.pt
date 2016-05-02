@@ -129,22 +129,23 @@
 
     <!-- DEBUT SECTION ABOUT-->
    <section id="about-bebest"
-            tal:condition="aboutDocuments"
-            tal:define="classes python:view.getAboutClasses(len(aboutDocuments))">
+            tal:condition="aboutDocuments">
 		<img id="scrollreveal" class="hidden-xs"
 		     tal:attributes="src string:${portal_url}/images/${aboutBgImage}" />
-   		<div class="container">
+   		<div class="container"
+   		     tal:define="nbDocs python:len(aboutDocuments);
+   		                 classesAbout python:view.getAboutClasses(nbDocs)">
    			<div class="super text-center">What we do</div>
    			<div class="row">
-   			  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-1">
-   			    <h2 class="text-center">Benthic and coastal biodiversity science</h2>
-					<p class="home-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat ex. Praesent urna mi, maximus pretium dictum tristique, sodales sed enim.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat ex. Praesent urna mi, maximus pretium dictum tristique, sodales sed enim.</p>
+   			<span tal:omit-tag="" tal:repeat="aboutDocument aboutDocuments">
+   			  <div tal:attributes="class python:classesAbout[0]">
+   			    <h2 class="text-center"
+   			        tal:content="string:${aboutDocument/title}">Benthic and coastal biodiversity science</h2>
+				<p class="home-content"
+				   tal:content="string:${aboutDocument/description}">Lorem ipsum
+				</p>
    			  </div>
-   			  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-2">
-					<h2 class="text-center">Instrumental innovation</h2>
-					<p class="home-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-				</div>
+			</span>
    			</div>
    		</div>
    </section>
