@@ -44,4 +44,11 @@
        class=".controlpanel.IPlonethemeBebestSettingsForm"
        permission="cmf.ManagePortal"
     />
+    <!--Subscribers Objects initialized -->
+    <subscriber
+      for=".portrait.IPortrait
+           zope.lifecycleevent.interfaces.IObjectCreatedEvent"
+      handler=".subscribers.setPortraitTitle"
+	/>
+    
 </configure>

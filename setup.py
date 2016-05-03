@@ -46,6 +46,7 @@ setup(
         'z3c.jbot',
         'plone.app.theming',
         'plone.app.themingplugins',
+        'collective.dexteritytextindexer',
     ],
     extras_require={
         'test': [
