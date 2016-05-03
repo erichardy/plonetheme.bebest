@@ -12,7 +12,6 @@ from zope.component import getUtility
 
 def make_terms(terms, termsList):
     normalizer = getUtility(INormalizer)
-    
     for term in termsList:
         norm = normalizer.normalize(term)
         terms.append(SimpleTerm(value=norm, token=norm, title=term))

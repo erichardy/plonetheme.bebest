@@ -2,8 +2,8 @@
 """Module where all interfaces, events and exceptions live."""
 
 from plonetheme.bebest import _
-from zope.schema import TextLine, Text, List
-from zope.interface import Interface
+from zope.schema import TextLine, List
+# from zope.interface import Interface
 from plone.supermodel import model
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
@@ -29,7 +29,7 @@ class IPlonethemeBebestSettings(model.Schema):
                            'logo_name',
                            'tag_home',
                            'about_bg_image',
-                           'about_document_tag',])
+                           'about_document_tag', ])
 
     carousel_label = TextLine(title=_(u"carousel label"),
                               description=_(u"for carousel at home page"),
