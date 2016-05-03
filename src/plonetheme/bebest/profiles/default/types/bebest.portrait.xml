@@ -21,6 +21,7 @@
 
   <property name="behaviors">
      <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
+     <element value="plone.app.contenttypes.behaviors.leadimage.ILeadImage"/>
      <!--
      <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
      -->

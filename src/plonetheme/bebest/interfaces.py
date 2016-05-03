@@ -2,8 +2,9 @@
 """Module where all interfaces, events and exceptions live."""
 
 from plonetheme.bebest import _
-from zope.schema import TextLine, Text
+from zope.schema import TextLine, Text, List
 from zope.interface import Interface
+from plone.supermodel import model
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 
@@ -11,20 +12,24 @@ class IPlonethemeBebestLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 
-class I(Interface):
-
-    title = TextLine(
-        title=_(u"Title"),
-        required=True,
-    )
-
-    description = Text(
-        title=_(u"Description"),
-        required=False,
-    )
+jobList = []
+jobList.append(u'Chercheur')
+jobList.append(u'Plongeur')
+jobList.append(u'Photographe')
+jobList.append(u'Danseuse/Danseur')
+jobList.append(u'')
 
 
-class IPlonethemeBebestSettings(Interface):
+class IPlonethemeBebestSettings(model.Schema):
+
+    model.fieldset('home-page',
+                   label=_(u"home page settings"),
+                   fields=['carousel_label',
+                           'carousel_interval',
+                           'logo_name',
+                           'tag_home',
+                           'about_bg_image',
+                           'about_document_tag',])
 
     carousel_label = TextLine(title=_(u"carousel label"),
                               description=_(u"for carousel at home page"),
@@ -50,7 +55,18 @@ class IPlonethemeBebestSettings(Interface):
                                   description=_(u"For home page"),
                                   default=u"bebest-home",
                                   )
+    model.fieldset('portfolio',
+                   label=_(u"portfolio settings"),
+                   fields=['portfolio_author_tag'],)
     portfolio_author_tag = TextLine(title=_(u"Tag used for Authors"),
                                     description=_(u"used for portfolio view"),
                                     default=u"portfolio-author",
                                     )
+    model.fieldset('positions',
+                   label=_(u"misc for portraits"),
+                   fields=['jobs'],)
+    jobs = List(title=_(u"position, jobs, etc..."),
+                description=_(u"One job per line"),
+                value_type=TextLine(),
+                default=jobList,
+                )

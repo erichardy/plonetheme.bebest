@@ -50,5 +50,8 @@
            zope.lifecycleevent.interfaces.IObjectCreatedEvent"
       handler=".subscribers.setPortraitTitle"
 	/>
+	
+	<!-- utilities  -->
+    <utility component=".vocabulary.jobs" name="bebest.jobs" />
     
 </configure>
