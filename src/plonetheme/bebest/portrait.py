@@ -17,6 +17,7 @@ from zope.interface import implements
 from zope.interface import Invalid
 from collective import dexteritytextindexer
 # import logging
+import urllib
 import re
 
 from plonetheme.bebest import _
@@ -29,6 +30,14 @@ def validateEmail(value):
     if not checkEmail(value):
         raise Invalid(_(u"Invalid adress email"))
     return True
+
+
+def validateURL(url):
+    try:
+        urllib.urlopen(url)
+        return True
+    except Exception:
+        raise Invalid(_(u"Invalid URL"))
 
 
 class IPortrait(model.Schema):
@@ -67,11 +76,34 @@ class IPortrait(model.Schema):
     bio_en = RichText(title=_(u"english biography"),
                       required=False,
                       )
+    model.fieldset('position',
+                   label=_(u"position"),
+                   fields=['jobs', 'employer'])
     dexteritytextindexer.searchable('jobs')
     directives.widget(jobs='z3c.form.browser.checkbox.CheckBoxFieldWidget')
     jobs = schema.Set(title=_(u"jobs"),
                       description=_(u"select your jobs"),
                       value_type=schema.Choice(vocabulary=u"bebest.jobs"),)
+    dexteritytextindexer.searchable('employer')
+    employer = schema.Choice(title=_(u"employer"),
+                             description=_(u"main employer"),
+                             source="bebest.employers",
+                             )
+    model.fieldset('web',
+                   label=_(u"web"),
+                   fields=['personal_page', 'unit_page', 'research'])
+    personal_page = schema.TextLine(title=_(u"personal page"),
+                                    constraint=validateURL,
+                                    required=False,
+                                    )
+    unit_page = schema.TextLine(title=_(u"web site of the research unit"),
+                                constraint=validateURL,
+                                required=False,
+                                )
+    research = schema.TextLine(title=_(u"web page of your researches"),
+                               constraint=validateURL,
+                               required=False,
+                               )
 
 
 class portrait(Item):

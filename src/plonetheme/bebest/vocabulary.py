@@ -42,4 +42,19 @@ class _Jobs(object):
         return voc
 
 
+class _Employers(object):
+    """Voc. without grok"""
+    implements(IVocabularyFactory)
+
+    def __call__(self, context):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.employers'
+        xjobs = api.portal.get_registry_record(prefix)
+        terms = []
+        voc = make_voc(terms, xjobs)
+        # import pdb;pdb.set_trace()
+        return voc
+
+
 jobs = _Jobs()
+employers = _Employers()

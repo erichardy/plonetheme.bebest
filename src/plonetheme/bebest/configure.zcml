@@ -53,5 +53,6 @@
 	
 	<!-- utilities  -->
     <utility component=".vocabulary.jobs" name="bebest.jobs" />
+    <utility component=".vocabulary.employers" name="bebest.employers" />
     
 </configure>
