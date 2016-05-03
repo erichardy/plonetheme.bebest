@@ -1,7 +1,7 @@
  /*--------------------TYPOGRAPHIE---------------------------------------------------*/
 
   /*CUSTOM FONTS*/
- @import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
+ @import url(https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic);
  @import url(https://fonts.googleapis.com/css?family=Exo:600,700);
  @import url(https://fonts.googleapis.com/css?family=Courgette);
 
@@ -13,7 +13,7 @@
  @color-main: #47AAC9;
  @color-vivid: #8BB797;
  @color-contrast: #DE963E;
- @font-content: 'Lora';
+ @font-content: 'Merriweather';
  @font-titre: 'Exo';
  @font-contrast: 'Courgette';
  @h-offset: 80px;
@@ -38,7 +38,7 @@
 	font-size: 80%;
 	}
 .large {
-	font-size: 140%;
+	font-size: 125%;
 	}
 .xlarge {
 	font-size: 200%;
@@ -88,6 +88,9 @@ h3, .h3 {
 	font-size: 1.5em;
 }
 /* Content font */
+body{
+	font-family:@font-content;
+}
 
 p, .p {
 	font-family:@font-content;
@@ -118,11 +121,21 @@ a:active, .a:actve {
 
 /* Alignment */
 
-.text-left           { text-align: left; }
-.text-right          { text-align: right; }
-.text-center         { text-align: center; }
-.text-justify        { text-align: justify; }
-.text-nowrap         { white-space: nowrap; }
+.text-left  {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+.text-justify  {
+	text-align: justify;
+}
+.text-nowrap  { 
+white-space: nowrap;
+}
 
 
 
