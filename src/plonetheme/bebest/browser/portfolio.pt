@@ -10,10 +10,34 @@
 
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
-  <div>
+  <div tal:define="images python:view.getPortfolioImages();
+                   authors python:view.getPortfolioAuthors()">
    
-Vue PORTFOLIOOOooooooo.....
-<span tal:define="images python:view.getPortfolioImages()">azeazeaze</span>
+	<section>
+	  <div class="container-fluid portfolio-fullimg">
+	    <img tal:define="scale context/@@images"
+             tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='full-width img-responsive')"
+             tal:on-error="string: No image for this folder !" />
+	  </div>
+	  <div class="row w-limit">
+		
+		  <div class="table-responsive">
+		    <table class="table">
+		      <thead></thead>
+		      <tbody>
+		        <tr>
+		          <span tal:omit-tag="" tal:repeat="author authors">
+		            <td><img src="" tal:attributes="src string:${author/absolute_url}" />
+		            </td>
+		          </span>
+		        </tr>
+		      </tbody>
+		    
+		    </table>
+		  </div>
+	  </div>
+
+	</section>
 
   </div>
   </metal:content-core>

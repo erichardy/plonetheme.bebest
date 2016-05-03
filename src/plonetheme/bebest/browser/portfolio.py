@@ -4,8 +4,23 @@ import logging
 from zope.publisher.browser import BrowserView
 # from operator import attrgetter
 from plone import api
+from OFS.interfaces import IOrderedContainer
 
 logger = logging.getLogger('bebest')
+
+
+# from http://docs.plone.org/develop/plone/content/listing.html
+def get_position_in_parent(obj):
+    parent = obj.aq_inner.aq_parent
+    ordered = IOrderedContainer(parent, None)
+    if ordered is not None:
+        return ordered.getObjectPosition(obj.getId())
+    return 0
+
+
+def sort_by_position(a, b):
+    return get_position_in_parent(a) - get_position_in_parent(b)
+#
 
 
 class portFolio(BrowserView):
@@ -25,23 +40,20 @@ class portFolio(BrowserView):
         prefix = 'plonetheme.bebest.interfaces.'
         prefix += 'IPlonethemeBebestSettings.' + registry_record
         tag = api.portal.get_registry_record(prefix)
-        portal = api.portal.get()
-        founds = api.content.find(context=portal,
+        founds = api.content.find(context=self.context,
                                   portal_type=obj_type,
                                   depth=1,
                                   )
-        logger.info(founds)
         if len(founds) == 0:
             return False
         objs = []
         for found in founds:
             obj = found.getObject()
-            state = api.content.get_state(obj)
             if withtag:
-                if (tag in obj.Subject()) and (state == 'published'):
+                if (tag in obj.Subject()):
                     objs.append(obj)
             else:
-                if (tag not in obj.Subject()) and (state == 'published'):
+                if (tag not in obj.Subject()):
                     objs.append(obj)
         if len(objs) == 0:
             return False
@@ -58,13 +70,14 @@ class portFolio(BrowserView):
                                          obj_type='Image',
                                          withtag=True,
                                          effective=True)
-        return authors
+        sortedAuthors = sorted(authors, sort_by_position)
+        return sortedAuthors
 
     def getPortfolioImages(self):
-        # portfolio_author_tag
-        images = self._getPortfolioObjs(registry_record='portfolio_author_tag',
+        reg = 'portfolio_author_tag'
+        images = self._getPortfolioObjs(registry_record=reg,
                                         obj_type='Image',
                                         withtag=False,
                                         effective=True)
-        import pdb;pdb.set_trace()
-        return images
+        sortedImages = sorted(images, sort_by_position)
+        return sortedImages
