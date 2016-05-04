@@ -7,15 +7,25 @@ pour associer un projet a des missions et des portraits.
 
 from plone.dexterity.content import Container
 from plone.app.textfield import RichText
-# from plone.autoform import directives
+from plone.autoform import directives
+from plone.autoform.interfaces import IFormFieldProvider
 # from plone.namedfile import field as namedfile
 from plone.supermodel import model
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
+from plone.app.vocabularies.catalog import CatalogSource
+
 from zope.interface import implements
 from zope.interface import Invalid, invariant
+from zope.interface import alsoProvides
+
 from collective import dexteritytextindexer
+from plone.formwidget.contenttree import PathSourceBinder
+from plone.formwidget.contenttree import ContentTreeFieldWidget
+from plone.formwidget.contenttree import MultiContentTreeFieldWidget
 # from plone.namedfile.field import NamedBlobImage
 # import logging
 # import urllib
@@ -74,10 +84,23 @@ class IMission(model.Schema):
                            required=False,
                            )
     dexteritytextindexer.searchable('coordinates')
-    coordinates = schema.TextLine(title=_(u"coordinates, point or polygone"),
+    coordinates = schema.Text(title=_(u"coordinates, point or polygone"),
                                   description=_(u"must be in kml format"),
                                   required=False,
                                   )
+    model.fieldset('participants',
+                   label=_(u"participants"),
+                   fields=['chief',
+                           'other',
+                           ])
+    # directives.widget(chief='plone.formwidget.contenttree.ContentTreeFieldWidget')
+    chief = RelationChoice(title=_(u"chief scientits"),
+                           vocabulary="plone.app.vocabularies.Catalog")
+    other = RelationList(title=_(u"other participants"),
+                         value_type=RelationChoice(title=_(u'Target'),
+                                                   source=CatalogSource(banner_has_image=True))
+                         
+                           )
 
     @invariant
     def validateStartEnd(data):
@@ -85,6 +108,8 @@ class IMission(model.Schema):
             if data.start_date > data.end_date:
                 msg = u"The start date must be before the end date."
                 raise StartBeforeEnd(_(msg))
+
+alsoProvides(IMission, IFormFieldProvider)
 
 
 class mission(Container):

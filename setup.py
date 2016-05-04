@@ -47,6 +47,8 @@ setup(
         'plone.app.theming',
         'plone.app.themingplugins',
         'collective.dexteritytextindexer',
+        'plone.formwidget.autocomplete',
+        'plone.formwidget.contenttree',
     ],
     extras_require={
         'test': [

@@ -48,6 +48,8 @@ class IPortrait(model.Schema):
                    fields=['family_name',
                            'first_name',
                            'email',
+                           'main_pict',
+                           'thumb_pict',
                            ])
     directives.omitted('title')
     dexteritytextindexer.searchable('title')
@@ -61,6 +63,10 @@ class IPortrait(model.Schema):
     first_name = schema.TextLine(title=_(u"person first name"),
                                  required=True,
                                  )
+    dexteritytextindexer.searchable('email')
+    email = schema.ASCIILine(title=_(u"email address"),
+                             constraint=validateEmail,
+                             )
     main_pict = NamedBlobImage(title=_(u"main photo"),
                                required=False
                                )
@@ -74,14 +80,11 @@ class IPortrait(model.Schema):
     Proposer l'affichage de la version anglaise. Par defaut : oui
     PHOTO : supprimer leadimage, champ photo + champ auteur de la photo !
     """
-    dexteritytextindexer.searchable('email')
-    email = schema.ASCIILine(title=_(u"email address"),
-                             constraint=validateEmail,
-                             )
     #
     model.fieldset('biography',
                    label=_(u"biography"),
                    fields=['bio_fr',
+                           'display_en',
                            'bio_en'])
     dexteritytextindexer.searchable('bio_fr')
     bio_fr = RichText(title=_(u"french biography"),
