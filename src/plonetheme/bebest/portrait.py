@@ -16,6 +16,7 @@ from zope import schema
 from zope.interface import implements
 from zope.interface import Invalid
 from collective import dexteritytextindexer
+from plone.namedfile.field import NamedBlobImage
 # import logging
 import urllib
 import re
@@ -60,6 +61,12 @@ class IPortrait(model.Schema):
     first_name = schema.TextLine(title=_(u"person first name"),
                                  required=True,
                                  )
+    main_pict = NamedBlobImage(title=_(u"main photo"),
+                               required=False
+                               )
+    thumb_pict = NamedBlobImage(title=_(u"small photo"),
+                                required=False
+                                )
     """
     status : technicien, ingenieur, chercheur (ne pas faire apparaitre)
     affiliation : 3 max, 3 champs libres.
@@ -71,6 +78,7 @@ class IPortrait(model.Schema):
     email = schema.ASCIILine(title=_(u"email address"),
                              constraint=validateEmail,
                              )
+    #
     model.fieldset('biography',
                    label=_(u"biography"),
                    fields=['bio_fr',
@@ -79,23 +87,45 @@ class IPortrait(model.Schema):
     bio_fr = RichText(title=_(u"french biography"),
                       required=False,
                       )
+    display_en = schema.Bool(title=_(u"display or not english biography"),
+                             description=_(u"unselect to disable"),
+                             default=True
+                             )
     dexteritytextindexer.searchable('bio_en')
     bio_en = RichText(title=_(u"english biography"),
                       required=False,
                       )
+    #
     model.fieldset('position',
                    label=_(u"position"),
-                   fields=['jobs', 'employer'])
+                   fields=['jobs',
+                           'status',
+                           'affiliation1',
+                           'affiliation2',
+                           'affiliation3',
+                           ])
     dexteritytextindexer.searchable('jobs')
     directives.widget(jobs='z3c.form.browser.checkbox.CheckBoxFieldWidget')
     jobs = schema.Set(title=_(u"jobs"),
                       description=_(u"select your jobs"),
                       value_type=schema.Choice(vocabulary=u"bebest.jobs"),)
-    dexteritytextindexer.searchable('employer')
-    employer = schema.Choice(title=_(u"employer"),
-                             description=_(u"main employer"),
-                             source="bebest.employers",
+    dexteritytextindexer.searchable('status')
+    status = schema.TextLine(title=_(u"status"),
+                             required=False,
                              )
+    dexteritytextindexer.searchable('affiliation1')
+    affiliation1 = schema.TextLine(title=_(u"main affiliation"),
+                                   required=False,
+                                   )
+    dexteritytextindexer.searchable('affiliation2')
+    affiliation2 = schema.TextLine(title=_(u"second affiliation"),
+                                   required=False,
+                                   )
+    dexteritytextindexer.searchable('affiliation3')
+    affiliation3 = schema.TextLine(title=_(u"third affiliation"),
+                                   required=False,
+                                   )
+    #
     model.fieldset('web',
                    label=_(u"web"),
                    fields=['personal_page', 'unit_page', 'research'])

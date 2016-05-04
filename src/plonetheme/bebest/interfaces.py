@@ -18,10 +18,10 @@ jobList.append(u'Plongeur')
 jobList.append(u'Photographe')
 jobList.append(u'Danseuse/Danseur')
 jobList.append(u'')
-employersList = []
-employersList.append(u'CNRS')
-employersList.append(u'UBO')
-employersList.append(u'UQAR')
+affiliationList = []
+affiliationList.append(u'CNRS')
+affiliationList.append(u'UBO')
+affiliationList.append(u'UQAR')
 
 
 class IPlonethemeBebestSettings(model.Schema):
@@ -68,14 +68,9 @@ class IPlonethemeBebestSettings(model.Schema):
                                     )
     model.fieldset('positions',
                    label=_(u"misc for portraits"),
-                   fields=['jobs', 'employers'],)
+                   fields=['jobs'],)
     jobs = List(title=_(u"position, jobs, etc..."),
                 description=_(u"One job per line"),
                 value_type=TextLine(),
                 default=jobList,
                 )
-    employers = List(title=_(u"employer"),
-                     description=_(u"main organisation"),
-                     value_type=TextLine(),
-                     default=employersList,
-                     )

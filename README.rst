@@ -1,6 +1,6 @@
-====================
+=================
 plonetheme.bebest
-====================
+=================
 
 Voir le fichier less  : bebest-layout.less qui contient
 des classes pour full-width et non full-width....
@@ -54,16 +54,16 @@ courte description (- de 200 chars)
 absctract = RichText
 abstract_en : avec uncollapse
 boutton pour proposer si la version anglaise est proposée.
---
+----------------------------------------------------------
 primary contact
 contact france
 contact canada
 Les 3 contacts sont des portraits existants ! => trouver une solution pour que ces contacts
 soient proposés à la saisie
 Proposer le choix d'afficher la vignette ou non
---
+-----------------------------------------------
 team members : déjà dans les portraits.
---
+---------------------------------------
 Dossier avec des images => carousel
 les images contiennent les légendes et les 
 
@@ -76,8 +76,9 @@ date fin
 carousel
 chef de mission (chief scientist)
 participants
-coordonnées : point ou polygone (pour affichage carte et sites d'études)
-texte (riche) descriptif
+coordonnées : point ou polygone (pour affichage carte et liens avec les sites d'études)
+texte (riche) : descriptif de la mission
+
 
 
 
