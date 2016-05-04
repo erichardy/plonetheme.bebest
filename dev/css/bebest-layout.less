@@ -1,9 +1,12 @@
 /* LAYOUT */
 
-/* BACKGROUNDS-------------------------------------------*/
+/* BACKGROUND VARIABLES-------------------------------------------*/
 @bg-dark: #000;
 @bg-bright: #fff;
 
+/*LAYOUT VARIABLES-------------------------------------------*/
+@h-offset: 80px;
+ 
 .bg-dark {
 	background-color: @bg-dark;
 }
@@ -49,3 +52,8 @@
 	width:100%;
 	padding: 0;
 }
+
+ /* decalages -----Décaler un élément du haut de sa div----*/ 
+ .pushtop {
+	margin-top: @h-offset;
+	}
