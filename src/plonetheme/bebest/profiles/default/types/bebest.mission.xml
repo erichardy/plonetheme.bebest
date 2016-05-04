@@ -20,9 +20,9 @@
   <property name="klass">plone.dexterity.content.Item</property>
 
   <property name="behaviors">
+     <element value="plone.app.content.interfaces.INameFromTitle"/>
      <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
-     <element value="plone.app.contenttypes.behaviors.leadimage.ILeadImage"/>
-     <!--
+    <!--
      <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
      -->
    </property>
