@@ -60,6 +60,13 @@ class IPortrait(model.Schema):
     first_name = schema.TextLine(title=_(u"person first name"),
                                  required=True,
                                  )
+    """
+    status : technicien, ingenieur, chercheur (ne pas faire apparaitre)
+    affiliation : 3 max, 3 champs libres.
+    !!! supprimer le champ employer !
+    Proposer l'affichage de la version anglaise. Par defaut : oui
+    PHOTO : supprimer leadimage, champ photo + champ auteur de la photo !
+    """
     dexteritytextindexer.searchable('email')
     email = schema.ASCIILine(title=_(u"email address"),
                              constraint=validateEmail,

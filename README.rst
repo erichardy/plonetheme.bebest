@@ -38,6 +38,52 @@ On ajoute les missions dans les sites d'étude au fur et à mesure du dérouleme
 
 Type de contenu : portfolio
 
+=== PROJET ====
+Projet == activité "financée"
+Ce peut être une création artistique, de la recherche scientifique
+Catégorie : 
+* recherche scientifique
+* création artistique
+* enseignement,
+* film documentaire
+* exposition "grand public"
+NB: un projet peut être de plusieurs de ces catégories ci-dessus => présentation avec cases à cocher
+Nom == titre : description en une phrase
+sous-titre == contient éventuellement l'acronyme
+courte description (- de 200 chars)
+absctract = RichText
+abstract_en : avec uncollapse
+boutton pour proposer si la version anglaise est proposée.
+--
+primary contact
+contact france
+contact canada
+Les 3 contacts sont des portraits existants ! => trouver une solution pour que ces contacts
+soient proposés à la saisie
+Proposer le choix d'afficher la vignette ou non
+--
+team members : déjà dans les portraits.
+--
+Dossier avec des images => carousel
+les images contiennent les légendes et les 
+
+
+==== MISSION ====
+titre
+sous-titre
+date début
+date fin
+carousel
+chef de mission (chief scientist)
+participants
+coordonnées : point ou polygone (pour affichage carte et sites d'études)
+texte (riche) descriptif
+
+
+
+
+
+
 
 
  

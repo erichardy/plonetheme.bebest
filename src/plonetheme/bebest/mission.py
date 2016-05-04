@@ -66,7 +66,10 @@ class IMission(model.Schema):
                            constraint=validateCoord,
                            required=True,
                            )
+"""
+Changer mission item -> container !!!!
 
+"""
 
 class mission(Item):
     implements(IMission)
