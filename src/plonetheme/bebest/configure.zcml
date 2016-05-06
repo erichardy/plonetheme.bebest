@@ -51,6 +51,7 @@
        permission="cmf.ManagePortal"
     />
     <!-- add forms -->
+    <!-- PROJECT -->
     <adapter
     for="Products.CMFCore.interfaces.IFolderish
          zope.publisher.interfaces.browser.IDefaultBrowserLayer
@@ -65,7 +66,21 @@
 	        interface="zope.publisher.interfaces.browser.IBrowserPage"
 	        />
 	</class>
-    
+	<!-- MISSION -->
+    <adapter
+    for="Products.CMFCore.interfaces.IFolderish
+         zope.publisher.interfaces.browser.IDefaultBrowserLayer
+         plone.dexterity.interfaces.IDexterityFTI"
+    provides="zope.publisher.interfaces.browser.IBrowserPage"
+    factory=".mission.AddView"
+    name="bebest.mission"
+    />
+	<class class=".mission.AddView">
+	    <require
+	        permission="cmf.AddPortalContent"
+	        interface="zope.publisher.interfaces.browser.IBrowserPage"
+	        />
+	</class>
     
     <!--Subscribers Objects initialized -->
     <subscriber
@@ -84,6 +99,10 @@
     <utility
       factory=".utils.AllPortraitsVocabularyFactory"
       name="bebest.allportraits"
+      />
+    <utility
+      factory=".utils.ProjectPortraitsVocabularyFactory"
+      name="bebest.projectportraits"
       />
 
 </configure>

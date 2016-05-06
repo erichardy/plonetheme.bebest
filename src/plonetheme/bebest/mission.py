@@ -17,22 +17,28 @@ from plone.supermodel import model
 from zope import schema
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
-# from plone.app.vocabularies.catalog import CatalogSource
+from z3c.form import button
+from plone.app.vocabularies.catalog import CatalogSource
 
 from zope.interface import implements
 from zope.interface import Invalid, invariant
 from zope.interface import alsoProvides
 
 from collective import dexteritytextindexer
+from plone.formwidget.contenttree import ObjPathSourceBinder
+from plone.formwidget.contenttree.source import PathSource
+from Products.CMFCore.interfaces import IFolderish
 # from plone.formwidget.contenttree import PathSourceBinder
 # from plone.formwidget.contenttree import ContentTreeFieldWidget
 # from plone.formwidget.contenttree import MultiContentTreeFieldWidget
-# from plone.namedfile.field import NamedBlobImage
-# import logging
+from plone.namedfile.field import NamedBlobImage
+import logging
 # import urllib
 # import re
 # from plonetheme.bebest.utils import CatalogSource
 from plonetheme.bebest import _
+
+logger = logging.getLogger('bebest MISSIONS')
 
 
 class StartBeforeEnd(Invalid):
@@ -54,6 +60,7 @@ class IMission(model.Schema):
                    fields=['title',
                            'subtitle',
                            'description',
+                           'main_pict',
                            ])
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(title=_(u"mission label"),
@@ -62,6 +69,9 @@ class IMission(model.Schema):
     dexteritytextindexer.searchable('subtitle')
     subtitle = schema.TextLine(title=_(u"very short description"),
                                required=False,
+                               )
+    main_pict = NamedBlobImage(title=_(u"main photo"),
+                               required=False
                                )
     dexteritytextindexer.searchable('description')
     description = RichText(title=_(u"Presentation"),
@@ -89,21 +99,42 @@ class IMission(model.Schema):
                               description=_(u"must be in kml format"),
                               required=False,
                               )
+    
     model.fieldset('participants',
                    label=_(u"participants"),
                    fields=['chief',
                            'other',
                            ])
-    # directives.widget(chief='plone.formwidget.contenttree.ContentTreeFieldWidget')
     chief = RelationChoice(title=_(u"chief scientits"),
-                           vocabulary="bebest.local-portraits")
+                           # vocabulary="plone.app.vocabularies.Catalog",
+                           vocabulary="bebest.projectportraits"
+                           )
 
     other = RelationList(title=_(u"other participants"),
                          value_type=RelationChoice(
                                       title=_(u'Target'),
-                                      vocabulary="bebest.local-portraits")
+                                      # vocabulary="plone.app.vocabularies.Catalog",
+                                      source=CatalogSource(),
+                                      )
                          )
-
+    """
+    chief = RelationChoice(title=_(u"chief scientits"),
+                           source=ObjPathSourceBinder())
+    other = RelationList(title=_(u"other participants"),
+                         value_type=RelationChoice(
+                                      title=_(u'Target'),
+                                      source=ObjPathSourceBinder())
+                         )
+    
+    chief = RelationChoice(title=_(u"chief scientits"),
+                           vocabulary="bebest.projectportraits")
+    other = RelationList(title=_(u"other participants"),
+                         value_type=RelationChoice(
+                                      title=_(u'Target'),
+                                      vocabulary="bebest.projectportraits")
+                         )
+    """
+    
     @invariant
     def validateStartEnd(data):
         if data.start_date is not None and data.end_date is not None:
@@ -116,6 +147,37 @@ alsoProvides(IMission, IFormFieldProvider)
 
 class AddForm(add.DefaultAddForm):
     portal_type = 'bebest.mission'
+    ignoreContext = True
+    title = _(u"Add a new mission !")
+
+    def update(self):
+        super(add.DefaultAddForm, self).update()
+        logger.info('in update')
+        logger.info(self.context)
+
+    def updateWidgets(self):
+        super(add.DefaultAddForm, self).updateWidgets()
+        # logger.info(self.context)
+
+    @button.buttonAndHandler(_(u'Save this mission'), name="save_this_mission")
+    def handleApply(self, action):
+        data, errors = self.extractData()
+        if errors:
+            self.status = _("Please correct errors")
+            return
+        try:
+            obj = self.createAndAdd(data)
+            contextURL = self.context.absolute_url()
+            self.request.response.redirect(contextURL)
+        except Exception:
+            raise
+
+    @button.buttonAndHandler(_(u'Cancel this mission'))
+    def handleCancel(self, action):
+        data, errors = self.extractData()
+        # context is the thesis repo
+        contextURL = self.context.absolute_url()
+        self.request.response.redirect(contextURL)
 
 
 class AddView(add.DefaultAddView):

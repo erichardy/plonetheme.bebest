@@ -17,6 +17,7 @@ from plone.supermodel import model
 from zope import schema
 from z3c.form import button
 from z3c.relationfield.schema import RelationChoice
+from plone.namedfile.field import NamedBlobImage
 # from z3c.relationfield.schema import RelationList
 # from plone.app.vocabularies.catalog import CatalogSource
 
@@ -45,6 +46,7 @@ class IProject(model.Schema):
                    fields=['title',
                            'subtitle',
                            'categories',
+                           'main_pict',
                            ])
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(title=_(u"mission label"),
@@ -60,13 +62,21 @@ class IProject(model.Schema):
                           description=_(u"select categories for this project"),
                           value_type=schema.Choice(
                                      vocabulary=u"bebest.projectcategories"),)
+    main_pict = NamedBlobImage(title=_(u"main photo"),
+                               required=False
+                               )
     #
     model.fieldset('descriptions',
                   label=_(u"project descriptions"),
                   fields=['descripton_fr',
+                          'display_en',
                           'descripton_en'])
     descripton_fr = RichText(title=_(u"french description"),
                              required=False,
+                             )
+    display_en = schema.Bool(title=_(u"display or not english description"),
+                             description=_(u"unselect to disable"),
+                             default=True
                              )
     descripton_en = RichText(title=_(u"english description"),
                              required=False,
@@ -96,7 +106,7 @@ class IProject(model.Schema):
                            ])
     # directives.widget(chief='plone.formwidget.contenttree.ContentTreeFieldWidget')
 
-    primary_contact = RelationChoice(title=_(u"chief scientits"),
+    primary_contact = RelationChoice(title=_(u"primary contact"),
                                      vocabulary="bebest.allportraits")
 
     contact_fr = RelationChoice(title=_(u"french contact"),
