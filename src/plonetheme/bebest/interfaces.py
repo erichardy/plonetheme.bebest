@@ -22,6 +22,12 @@ affiliationList = []
 affiliationList.append(u'CNRS')
 affiliationList.append(u'UBO')
 affiliationList.append(u'UQAR')
+categoriesList = []
+categoriesList.append(u"Recherche scientifique")
+categoriesList.append(u"création artistique")
+categoriesList.append(u"Enseignement")
+categoriesList.append(u"Film documentaire")
+categoriesList.append(u'Exposition "grand public"')
 
 
 class IPlonethemeBebestSettings(model.Schema):
@@ -74,3 +80,8 @@ class IPlonethemeBebestSettings(model.Schema):
                 value_type=TextLine(),
                 default=jobList,
                 )
+    project_categories = List(title=_(u"Project categories"),
+                              description=_(u"One category per line"),
+                              value_type=TextLine(),
+                              default=categoriesList,
+                              )

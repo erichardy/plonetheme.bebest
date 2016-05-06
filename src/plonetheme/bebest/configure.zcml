@@ -44,6 +44,29 @@
        class=".controlpanel.IPlonethemeBebestSettingsForm"
        permission="cmf.ManagePortal"
     />
+    <browser:page
+       name="debug"
+       for="*"
+       class=".utils.debug"
+       permission="cmf.ManagePortal"
+    />
+    <!-- add forms -->
+    <adapter
+    for="Products.CMFCore.interfaces.IFolderish
+         zope.publisher.interfaces.browser.IDefaultBrowserLayer
+         plone.dexterity.interfaces.IDexterityFTI"
+    provides="zope.publisher.interfaces.browser.IBrowserPage"
+    factory=".project.AddView"
+    name="bebest.project"
+    />
+	<class class=".project.AddView">
+	    <require
+	        permission="cmf.AddPortalContent"
+	        interface="zope.publisher.interfaces.browser.IBrowserPage"
+	        />
+	</class>
+    
+    
     <!--Subscribers Objects initialized -->
     <subscriber
       for=".portrait.IPortrait
@@ -53,6 +76,7 @@
 	
 	<!-- utilities  -->
     <utility component=".vocabulary.jobs" name="bebest.jobs" />
+    <utility component=".vocabulary.projectCategories" name="bebest.projectcategories" />
     <utility
       factory=".utils.CatalogVocabularyFactory"
       name="bebest.Catalog"
@@ -61,5 +85,9 @@
       factory=".utils.LocalPortraitsVocabularyFactory"
       name="bebest.local-portraits"
       />
-    
+    <utility
+      factory=".utils.AllPortraitsVocabularyFactory"
+      name="bebest.allportraits"
+      />
+
 </configure>

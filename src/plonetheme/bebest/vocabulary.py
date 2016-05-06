@@ -44,15 +44,31 @@ class _Jobs(object):
         # import pdb;pdb.set_trace()
         return voc
 
+
 class _localPortraits(object):
     implements(IVocabularyFactory)
+
     def __call__(self, context):
         logger.info(context.absolute_url())
         portraits = ['a', 'b']
         terms = []
         voc = make_voc(terms, portraits)
         return voc
-        
+
+
+class _projectCategories(object):
+    implements(IVocabularyFactory)
+
+    def __call__(self, context):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.project_categories'
+        xjobs = api.portal.get_registry_record(prefix)
+        terms = []
+        voc = make_voc(terms, xjobs)
+        # import pdb;pdb.set_trace()
+        return voc
+
 
 jobs = _Jobs()
+projectCategories = _projectCategories()
 localPortraits = _localPortraits()

@@ -9,12 +9,21 @@ from zope.schema.interfaces import ISource
 from zope.interface import implementer
 from zope.site.hooks import getSite
 from plone.uuid.interfaces import IUUID
+from Products.CMFCore.interfaces import IFolderish
+# from zope.schema.interfaces import IContextSourceBinder
 from Products.CMFCore.utils import getToolByName
+# from plone import api
 import os
 import logging
 
 logger = logging.getLogger('bebest')
 
+
+def getFolderish(obj):
+    if IFolderish.providedBy(obj):
+        return obj
+    else:
+        return getFolderish(obj.aq_parent)
 
 """
 plone.app.vocabularies.Catalog from plone.app.vocabularies-2.2.3-py2.7.egg
@@ -24,6 +33,8 @@ configure.zcml :
     name="plone.app.vocabularies.Catalog"
     />
 """
+
+
 @implementer(IVocabularyFactory)
 class CatalogVocabularyFactory(object):
 
@@ -54,32 +65,34 @@ class CatalogVocabularyFactory(object):
         brains = catalog(**parsed)
         """ """
         returned = CatalogVocabulary.fromItems(brains, context)
-        logger.info(context)
         return returned
         """ """
         # return CatalogVocabulary.fromItems(brains, context)
 
 
 @implementer(IVocabularyFactory)
-class LocalPortraitsVocabularyFactory(object):
+class ProjectPortraitsVocabularyFactory(object):
 
     def __call__(self, context, query=None):
-        path = context.absolute_url()
-        depth = 1
-        portal_type = "bebest.portrait"
-        parsed = {}
+        logger.info('++++')
+        logger.info(context)
+        # depth = 1
+        # portal_type = "bebest.portrait"
+        # parsed = {}
         query = {}
         query['sort_on'] = u'sortable_title'
         query['sort_order'] = 'ascending'
-        query['portal_tyle'] = u"bebest.portrait"
-        query['path'] = context.absolute_url()
-        query['depth'] = 1
+        query['portal_type'] = u"bebest.portrait"
+        folderish = getFolderish(context)
+        query['path'] = {'query': folderish.absolute_url(),
+                         'depth': 1
+                         }
         try:
             catalog = getToolByName(context, 'portal_catalog')
         except AttributeError:
             context = getSite()
             catalog = getToolByName(context, 'portal_catalog')
-
+        """
         if 'path' not in parsed:
             portal = getToolByName(context, 'portal_url').getPortalObject()
             nav_root = getNavigationRootObject(context, portal)
@@ -88,18 +101,18 @@ class LocalPortraitsVocabularyFactory(object):
                     'query': '/'.join(nav_root.getPhysicalPath()),
                     'depth': -1
                 }
+        """
         brains = catalog(**query)
         """ """
         returned = CatalogVocabulary.fromItems(brains, context)
-        logger.info(context)
-        logger.info(query)
         return returned
         """ """
         # return CatalogVocabulary.fromItems(brains, context)
 
 
 """
-[21] > /Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/utils.py(58)__call__()
+[21] > /Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/utils.py(58)\
+__call__()
 -> return returned
 (Pdb++) returned
 <plone.app.vocabularies.catalog.CatalogVocabulary object at 0x10ac59710>
@@ -119,6 +132,37 @@ title = token = UUID
 value = brain
 """
 
+
+@implementer(IVocabularyFactory)
+class AllPortraitsVocabularyFactory(object):
+
+    def __call__(self, context, query=None):
+        logger.info('++++')
+        logger.info(context)
+        parsed = {}
+        query = {}
+        query['sort_on'] = u'sortable_title'
+        query['sort_order'] = 'ascending'
+        query['portal_type'] = u"bebest.portrait"
+        query['depth'] = 0
+        try:
+            catalog = getToolByName(context, 'portal_catalog')
+        except AttributeError:
+            context = getSite()
+            catalog = getToolByName(context, 'portal_catalog')
+
+        if 'path' not in parsed:
+            portal = getToolByName(context, 'portal_url').getPortalObject()
+            nav_root = getNavigationRootObject(context, portal)
+            if nav_root.getPhysicalPath() != portal.getPhysicalPath():
+                parsed['path'] = {
+                    'query': '/'.join(nav_root.getPhysicalPath()),
+                    'depth': -1
+                }
+        brains = catalog(**query)
+        """ """
+        returned = CatalogVocabulary.fromItems(brains, context)
+        return returned
 
 
 # code from plone.app.vocabularies-2.2.3-py2.7.egg : catalog.py
@@ -167,6 +211,11 @@ class CatalogSource(object):
         query = user_query.copy()
         query.update(self.query)
         catalog = getToolByName(getSite(), 'portal_catalog')
-        
         # {'sort_on': u'sortable_title', 'sort_order': 'ascending'}
         return catalog(query)
+
+
+class debug(object):
+    def __call__(self):
+        import pdb
+        pdb.set_trace()
