@@ -8,6 +8,9 @@ from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 from plone import api
 from plone.i18n.normalizer.interfaces import INormalizer
 from zope.component import getUtility
+import logging
+
+logger = logging.getLogger('bebest')
 
 
 def make_terms(terms, termsList):
@@ -41,5 +44,15 @@ class _Jobs(object):
         # import pdb;pdb.set_trace()
         return voc
 
+class _localPortraits(object):
+    implements(IVocabularyFactory)
+    def __call__(self, context):
+        logger.info(context.absolute_url())
+        portraits = ['a', 'b']
+        terms = []
+        voc = make_voc(terms, portraits)
+        return voc
+        
 
 jobs = _Jobs()
+localPortraits = _localPortraits()

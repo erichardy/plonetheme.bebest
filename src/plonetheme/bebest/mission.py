@@ -30,7 +30,7 @@ from plone.formwidget.contenttree import MultiContentTreeFieldWidget
 # import logging
 # import urllib
 # import re
-
+# from plonetheme.bebest.utils import CatalogSource
 from plonetheme.bebest import _
 
 
@@ -94,14 +94,25 @@ class IMission(model.Schema):
                            'other',
                            ])
     # directives.widget(chief='plone.formwidget.contenttree.ContentTreeFieldWidget')
+    
     chief = RelationChoice(title=_(u"chief scientits"),
-                           vocabulary="plone.app.vocabularies.Catalog")
+                           vocabulary="bebest.local-portraits")
     other = RelationList(title=_(u"other participants"),
                          value_type=RelationChoice(title=_(u'Target'),
-                                                   source=CatalogSource(banner_has_image=True))
+                                                   vocabulary="bebest.local-portraits")
+                         )
+    """
+    chief = RelationChoice(title=_(u"chief scientits"),
+                           vocabulary="bebest.Catalog")
+    
+    other = RelationList(title=_(u"other participants"),
+                         value_type=RelationChoice(title=_(u'Target'),
+                                                   source=CatalogSource(portal_type='Image',
+                                                                        depth=1)
+                                                   )
                          
                            )
-
+    """
     @invariant
     def validateStartEnd(data):
         if data.start_date is not None and data.end_date is not None:
