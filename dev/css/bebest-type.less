@@ -16,7 +16,6 @@
  @font-content: 'Merriweather';
  @font-titre: 'Exo';
  @font-contrast: 'Courgette';
- @h-offset: 80px;
 
  /* Modifications de texte */
  /* color */
@@ -29,6 +28,9 @@
 .grey {
 	color: @text-grey;
 	}
+.vivid {
+	color: @color-vivid;
+}
 .italic {
 	font-style: italic;
 }
@@ -44,14 +46,7 @@
 	font-size: 200%;
 	}
 
-
 	
- /* decalages -----Décaler un titre du haut de sa div----*/ 
- .pushtop {
-	margin-top: @h-offset;
-	}
- 
- 
 /* Headings */
 
 .super {
@@ -81,12 +76,34 @@ h1, h2, h3, h4, h5, h6,
 h1, .h1 {
 	font-size: 3em;
 }
+
 h2, .h2 {
 	font-size: 2em;
 }
+
 h3, .h3 {
 	font-size: 1.5em;
 }
+
+/*----CHAMPS GENERIQUES-----*/
+.bebest-title {
+	.h1;
+	.text-center;
+	.pushtop;
+	margin-bottom: 15px;
+}
+
+.bebest-subtitle {
+	.h3;
+	.text-center;
+	color: @color-main;
+}
+
+.bebest-dates {
+	.text-center;
+	.grey; 
+}
+
 /* Content font */
 body{
 	font-family:@font-content;
