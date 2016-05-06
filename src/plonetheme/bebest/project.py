@@ -8,6 +8,7 @@ pour associer un projet a des missions et des portraits.
 from plone.dexterity.content import Container
 from plone.dexterity.browser import add
 from plone.app.textfield import RichText
+from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 # from plone.namedfile import field as namedfile
 from plone.supermodel import model
@@ -43,7 +44,7 @@ class IProject(model.Schema):
                    label=_(u"general"),
                    fields=['title',
                            'subtitle',
-                           'category',
+                           'categories',
                            ])
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(title=_(u"mission label"),
@@ -53,13 +54,14 @@ class IProject(model.Schema):
     subtitle = schema.TextLine(title=_(u"very short description"),
                                required=False,
                                )
-    dexteritytextindexer.searchable('category')
-    category = schema.Set(title=_(u"project categories"),
+    dexteritytextindexer.searchable('categories')
+    directives.widget(categories='z3c.form.browser.checkbox.CheckBoxFieldWidget')
+    categories = schema.Set(title=_(u"project categories"),
                           description=_(u"select categories for this project"),
                           value_type=schema.Choice(
                                      vocabulary=u"bebest.projectcategories"),)
     #
-    model.fielset('descriptions',
+    model.fieldset('descriptions',
                   label=_(u"project descriptions"),
                   fields=['descripton_fr',
                           'descripton_en'])

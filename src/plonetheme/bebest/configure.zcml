@@ -82,10 +82,6 @@
       name="bebest.Catalog"
     />
     <utility
-      factory=".utils.LocalPortraitsVocabularyFactory"
-      name="bebest.local-portraits"
-      />
-    <utility
       factory=".utils.AllPortraitsVocabularyFactory"
       name="bebest.allportraits"
       />
