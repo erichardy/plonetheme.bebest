@@ -10,12 +10,20 @@
        </value>
     </records>
 
+    <records prefix="plone.resources/leaflet"
+              interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+       <value key="js">++theme++plonetheme.bebest/js/leaflet.js</value>
+       <value key="css">
+          <element>++theme++plonetheme.bebest/css/leaflet.css</element>
+       </value>
+    </records>
 
     <!-- bundle definition  date "+%Y-%m-%d %H:%M:%S" -->
     <records prefix="plone.bundles/bebest"
               interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
         <element>bebest-main</element>
+        <element>leaflet</element>
       </value>
       <value key="enabled">True</value>
       <value key="compile">True</value>

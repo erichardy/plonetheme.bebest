@@ -158,7 +158,16 @@
    			</div>
    		</div>
    </section>
+   <!-- DEBUT SECTION MAP -->
+   <section>
+		<div id="bebest-map">
+			
+		</div>
+   <section>
   </div>
+
+  <script src="++theme++plonetheme.bebest/js/bebest-map.js"></script>
+
   </metal:content-core>
 </metal:content-core>
 

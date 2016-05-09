@@ -173,8 +173,8 @@ class AddForm(add.DefaultAddForm):
 
     def update(self):
         super(add.DefaultAddForm, self).update()
-        logger.info('in update')
-        logger.info(self.context)
+        # logger.info('in update')
+        # logger.info(self.context)
 
     def updateWidgets(self):
         super(add.DefaultAddForm, self).updateWidgets()
