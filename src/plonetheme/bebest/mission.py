@@ -31,11 +31,12 @@ from Products.CMFCore.interfaces import IFolderish
 # from plone.formwidget.contenttree import PathSourceBinder
 # from plone.formwidget.contenttree import ContentTreeFieldWidget
 # from plone.formwidget.contenttree import MultiContentTreeFieldWidget
-from plone.namedfile.field import NamedBlobImage
+from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 import logging
 # import urllib
 # import re
 # from plonetheme.bebest.utils import CatalogSource
+
 from plonetheme.bebest import _
 
 logger = logging.getLogger('bebest MISSIONS')
@@ -59,8 +60,8 @@ class IMission(model.Schema):
                    label=_(u"general"),
                    fields=['title',
                            'subtitle',
-                           'description',
-                           'main_pict',
+                           'start_date',
+                           'end_date',
                            ])
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(title=_(u"mission label"),
@@ -70,20 +71,6 @@ class IMission(model.Schema):
     subtitle = schema.TextLine(title=_(u"very short description"),
                                required=False,
                                )
-    main_pict = NamedBlobImage(title=_(u"main photo"),
-                               required=False
-                               )
-    dexteritytextindexer.searchable('description')
-    description = RichText(title=_(u"Presentation"),
-                           description=_(u"Mission presentation"),
-                           required=False
-                           )
-    model.fieldset('geo_dates',
-                   label=_(u"geo and dates"),
-                   fields=['coordinates',
-                           'start_date',
-                           'end_date',
-                           ])
     dexteritytextindexer.searchable('start_date')
     start_date = schema.Date(title=_(u"start date for the mission"),
                              description=_(u""),
@@ -94,6 +81,36 @@ class IMission(model.Schema):
                            description=_(u""),
                            required=False,
                            )
+    model.fieldset('descriptions',
+                   label=_(u"descriptions"),
+                   fields=['presentation',
+                           'main_pict',
+                           'doc'])
+    dexteritytextindexer.searchable('presentation')
+    presentation = RichText(title=_(u"Presentation"),
+                            description=_(u"Mission presentation"),
+                            required=False
+                            )
+    main_pict = NamedBlobImage(title=_(u"main photo"),
+                               required=False
+                               )
+    doc = NamedBlobFile(title=_(u"other document"),
+                        description=_(u"downloaded by visitors"),
+                        required=False)
+
+    """
+    tools to get coordinates :
+    http://www.birdtheme.org/useful/v3tool.html
+    http://www.latlong.net/
+    http://codepen.io/jhawes/pen/ujdgK
+    http://stackoverflow.com/questions/5072059/polygon-drawing-and-getting-coordinates-with-google-map-api-v3
+    charger un kml/gps/geojson dans leaflet : 
+    http://www.d3noob.org/2014/02/load-kml-gpx-or-geojson-traces-into.html
+    """
+    model.fieldset('geo_dates',
+                   label=_(u"geo"),
+                   fields=['coordinates',
+                           ])
     dexteritytextindexer.searchable('coordinates')
     coordinates = schema.Text(title=_(u"coordinates, point or polygone"),
                               description=_(u"must be in kml format"),
@@ -105,27 +122,31 @@ class IMission(model.Schema):
                    fields=['chief',
                            'other',
                            ])
-    chief = RelationChoice(title=_(u"chief scientits"),
+    """
+    chief = RelationChoice(title=_(u"chief scientist"),
                            # vocabulary="plone.app.vocabularies.Catalog",
-                           vocabulary="bebest.projectportraits"
+                           vocabulary="bebest.allportraits"
                            )
-
     other = RelationList(title=_(u"other participants"),
                          value_type=RelationChoice(
                                       title=_(u'Target'),
+                                      vocabulary="bebest.allportraits",
                                       # vocabulary="plone.app.vocabularies.Catalog",
-                                      source=CatalogSource(),
+                                      # source=CatalogSource(),
                                       )
                          )
     """
-    chief = RelationChoice(title=_(u"chief scientits"),
-                           source=ObjPathSourceBinder())
+    chief = RelationChoice(title=_(u"chief scientist"),
+                           source=CatalogSource(portal_type="bebest.portrait"),
+                           required=False,
+                           )
     other = RelationList(title=_(u"other participants"),
                          value_type=RelationChoice(
                                       title=_(u'Target'),
-                                      source=ObjPathSourceBinder())
+                                      source=CatalogSource(portal_type="bebest.portrait")),
+                         required=False,
                          )
-    
+    """
     chief = RelationChoice(title=_(u"chief scientits"),
                            vocabulary="bebest.projectportraits")
     other = RelationList(title=_(u"other participants"),
