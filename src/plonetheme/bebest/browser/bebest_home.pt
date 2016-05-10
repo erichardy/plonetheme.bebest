@@ -160,7 +160,39 @@
    		</div>
    </section>
    <!-- DEBUT SECTION MAP -->
+   <style>
+     .leaflet-popup {
+     	position: absolute;
+     	left: 0px;
+     }
+     .leaflet-control-layers-toggle {
+		background-image:url(++theme++plonetheme.bebest/images/leaflet/layers.png);
+		width: 44px;
+		height: 44px;
+	 }
+	 #feature_infos {
+	    width: 25%;
+	    height: 25%;
+	    background: rgba(255, 255, 255, 0.7);
+	    position: absolute;
+	    top: 20px;
+	    /* right: 0px; */
+	    left: 20px;
+	    padding: 5px;
+	    border: 1px solid grey;
+	    display: none;
+	    z-index: 200;
+	}
+	#info {
+	    font-weight: bold;
+	    color: red;
+	}
+   </style>
+  
    <section>
+   	<div id="feature_infos">
+   	  <span id="info"></span>
+   	</div>
 		<div id="bebest-map">
 			
 		</div>

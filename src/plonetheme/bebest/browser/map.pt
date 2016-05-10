@@ -11,11 +11,6 @@
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
   <link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/css/leaflet.css" />
-  <style>
-    #bebest-map {
-    	height: 700px;
-    }
-  </style>
   <div>
    
 	  <section>
