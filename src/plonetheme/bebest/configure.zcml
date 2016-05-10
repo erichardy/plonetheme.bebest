@@ -92,6 +92,8 @@
 	<!-- utilities  -->
     <utility component=".vocabulary.jobs" name="bebest.jobs" />
     <utility component=".vocabulary.projectCategories" name="bebest.projectcategories" />
+    <utility component=".vocabulary.geometry_types" name="bebest.geometry_types" />
+    
     <utility
       factory=".utils.CatalogVocabularyFactory"
       name="bebest.Catalog"

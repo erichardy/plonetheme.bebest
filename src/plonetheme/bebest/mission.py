@@ -25,9 +25,9 @@ from zope.interface import Invalid, invariant
 from zope.interface import alsoProvides
 
 from collective import dexteritytextindexer
-from plone.formwidget.contenttree import ObjPathSourceBinder
-from plone.formwidget.contenttree.source import PathSource
-from Products.CMFCore.interfaces import IFolderish
+# from plone.formwidget.contenttree import ObjPathSourceBinder
+# from plone.formwidget.contenttree.source import PathSource
+# from Products.CMFCore.interfaces import IFolderish
 # from plone.formwidget.contenttree import PathSourceBinder
 # from plone.formwidget.contenttree import ContentTreeFieldWidget
 # from plone.formwidget.contenttree import MultiContentTreeFieldWidget
@@ -103,39 +103,33 @@ class IMission(model.Schema):
     http://www.birdtheme.org/useful/v3tool.html
     http://www.latlong.net/
     http://codepen.io/jhawes/pen/ujdgK
-    http://stackoverflow.com/questions/5072059/polygon-drawing-and-getting-coordinates-with-google-map-api-v3
-    charger un kml/gps/geojson dans leaflet : 
+    http://stackoverflow.com/questions/5072059/polygon-drawing-and-getting-\
+    coordinates-with-google-map-api-v3
+    charger un kml/gps/geojson dans leaflet :
     http://www.d3noob.org/2014/02/load-kml-gpx-or-geojson-traces-into.html
     """
-    model.fieldset('geo_dates',
+    model.fieldset('geo',
                    label=_(u"geo"),
-                   fields=['coordinates',
+                   fields=['geometry',
+                           'coordinates',
                            ])
+    dexteritytextindexer.searchable('geometry')
+    geometry = schema.Choice(title=_(u"type of coordinates"),
+                             description=_(u"Point, MultiPoint, etc..."),
+                             vocabulary="bebest.geometry_types",
+                             default="point",
+                             required=False)
     dexteritytextindexer.searchable('coordinates')
-    coordinates = schema.Text(title=_(u"coordinates, point or polygone"),
-                              description=_(u"must be in kml format"),
+    coordinates = schema.Text(title=_(u"coordinates"),
+                              description=_(u"MUST match geometry type !"),
                               required=False,
                               )
-    
+
     model.fieldset('participants',
                    label=_(u"participants"),
                    fields=['chief',
                            'other',
                            ])
-    """
-    chief = RelationChoice(title=_(u"chief scientist"),
-                           # vocabulary="plone.app.vocabularies.Catalog",
-                           vocabulary="bebest.allportraits"
-                           )
-    other = RelationList(title=_(u"other participants"),
-                         value_type=RelationChoice(
-                                      title=_(u'Target'),
-                                      vocabulary="bebest.allportraits",
-                                      # vocabulary="plone.app.vocabularies.Catalog",
-                                      # source=CatalogSource(),
-                                      )
-                         )
-    """
     chief = RelationChoice(title=_(u"chief scientist"),
                            source=CatalogSource(portal_type="bebest.portrait"),
                            required=False,
@@ -146,16 +140,7 @@ class IMission(model.Schema):
                                       source=CatalogSource(portal_type="bebest.portrait")),
                          required=False,
                          )
-    """
-    chief = RelationChoice(title=_(u"chief scientits"),
-                           vocabulary="bebest.projectportraits")
-    other = RelationList(title=_(u"other participants"),
-                         value_type=RelationChoice(
-                                      title=_(u'Target'),
-                                      vocabulary="bebest.projectportraits")
-                         )
-    """
-    
+
     @invariant
     def validateStartEnd(data):
         if data.start_date is not None and data.end_date is not None:

@@ -67,10 +67,10 @@ class IProject(model.Schema):
                                )
     #
     model.fieldset('descriptions',
-                  label=_(u"project descriptions"),
-                  fields=['descripton_fr',
-                          'display_en',
-                          'descripton_en'])
+                   label=_(u"project descriptions"),
+                   fields=['descripton_fr',
+                           'display_en',
+                           'descripton_en'])
     descripton_fr = RichText(title=_(u"french description"),
                              required=False,
                              )

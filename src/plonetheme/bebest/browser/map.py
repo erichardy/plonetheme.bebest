@@ -3,7 +3,7 @@
 import logging
 from zope.publisher.browser import BrowserView
 # from operator import attrgetter
-from plone import api
+# from plone import api
 from OFS.interfaces import IOrderedContainer
 
 logger = logging.getLogger('bebest')

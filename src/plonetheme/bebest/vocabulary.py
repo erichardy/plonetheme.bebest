@@ -69,6 +69,23 @@ class _projectCategories(object):
         return voc
 
 
+class _geometry_types(object):
+    implements(IVocabularyFactory)
+
+    def __call__(self, context):
+        geo_types = []
+        geo_types.append("Point")
+        geo_types.append("MultiPoint")
+        geo_types.append("LineString")
+        geo_types.append("MultiLineString")
+        geo_types.append("Polygon")
+        geo_types.append("MultiPolygon")
+        terms = []
+        voc = make_voc(terms, geo_types)
+        return voc
+
+
 jobs = _Jobs()
 projectCategories = _projectCategories()
 localPortraits = _localPortraits()
+geometry_types = _geometry_types()

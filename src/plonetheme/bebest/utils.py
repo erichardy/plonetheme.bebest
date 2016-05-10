@@ -34,6 +34,8 @@ configure.zcml :
     name="plone.app.vocabularies.Catalog"
     />
 """
+
+
 @implementer(IVocabularyFactory)
 class ProjectPortraitsVocabularyFactory(object):
     def __call__(self, context):
@@ -42,12 +44,13 @@ class ProjectPortraitsVocabularyFactory(object):
         # logger.info(self.aq_parent(request['PUBLISHED']))
         logger.info('-=-=-=-=-=-')
         # import pdb;pdb.set_trace()
-        
-        brains = []
-        catalog = getToolByName(context, 'portal_catalog')
-        brains = catalog({'portal_type': 'Folder'})
+        # brains = []
+        # catalog = getToolByName(context, 'portal_catalog')
+        # brains = catalog({'portal_type': 'Folder'})
         # return CatalogVocabulary.fromItems(brains, context)
-        return SimpleVocabulary([SimpleTerm(value='aaa', token='aaa', title='aaa')])
+        return SimpleVocabulary([SimpleTerm(value='aaa',
+                                            token='aaa',
+                                            title='aaa')])
 
 
 @implementer(IVocabularyFactory)
