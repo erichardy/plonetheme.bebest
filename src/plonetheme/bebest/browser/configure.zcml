@@ -31,5 +31,12 @@
       template="portfolio.pt"
       permission="zope2.View"
       />
+   <browser:page
+      name="map"
+      for="*"
+      class=".map.Map"
+      template="map.pt"
+      permission="zope2.View"
+      />
 
 </configure>

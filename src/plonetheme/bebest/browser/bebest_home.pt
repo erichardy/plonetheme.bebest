@@ -10,13 +10,14 @@
 
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
+  <link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/css/leaflet.css" />
   <div tal:define="imgs python:view.getCarouselImages();
                    interval python:view.getCarouselInterval();
                    thumbs python:view.getCarouselThumbnails();
                    newsItems python:view.getHomeNews();
                    aboutBgImage python:view.getAboutBgImage();
                    aboutDocuments python:view.getAboutUsDocuments()">
-   
+  
     <section id="home-carousel-bebest"
              class="container-fluid hidden-xs"
              tal:condition="imgs">
