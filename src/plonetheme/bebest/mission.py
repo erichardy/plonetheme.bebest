@@ -24,6 +24,7 @@ from zope.interface import implements
 from zope.interface import Invalid, invariant
 from zope.interface import alsoProvides
 
+from zope.publisher.browser import BrowserView
 from collective import dexteritytextindexer
 # from plone.formwidget.contenttree import ObjPathSourceBinder
 # from plone.formwidget.contenttree.source import PathSource
@@ -112,6 +113,7 @@ class IMission(model.Schema):
                    label=_(u"geo"),
                    fields=['geometry',
                            'coordinates',
+                           'geojson',
                            ])
     dexteritytextindexer.searchable('geometry')
     geometry = schema.Choice(title=_(u"type of coordinates"),
@@ -120,11 +122,14 @@ class IMission(model.Schema):
                              default="point",
                              required=False)
     dexteritytextindexer.searchable('coordinates')
-    coordinates = schema.Text(title=_(u"coordinates"),
+    coordinates = schema.List(title=_(u"coordinates"),
                               description=_(u"MUST match geometry type !"),
+                              value_type=schema.TextLine(),
                               required=False,
                               )
-
+    geojson = schema.Text(title=_(u"coordinates in GEOJSON format"),
+                          description=_(u"Use http://geojson.io/"),
+                          required=False)
     model.fieldset('participants',
                    label=_(u"participants"),
                    fields=['chief',
@@ -189,7 +194,24 @@ class AddForm(add.DefaultAddForm):
 class AddView(add.DefaultAddView):
     form = AddForm
 
+class MissionView(BrowserView):
+    
+    def getCoordinates(self):
+        geo_type = self.context.geometry
+        lines = self.context.coordinates
+        
+        return lines
 
+    def getGeoJSON(self):
+        geo = self.context.geojson
+        if len(geo) > 5:
+            geojson = "<script>var features = "
+            geojson += self.context.geojson
+            geojson += ";</script>"
+            return geojson
+        else:
+            return False
+    
 class mission(Container):
     implements(IMission)
     pass

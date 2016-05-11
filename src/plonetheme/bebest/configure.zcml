@@ -44,12 +44,24 @@
        class=".controlpanel.IPlonethemeBebestSettingsForm"
        permission="cmf.ManagePortal"
     />
+    
+    <!-- content types VIEWs -->
+    <browser:page
+      name="view"
+      for="plonetheme.bebest.mission.IMission"
+      class="plonetheme.bebest.mission.MissionView"
+      template="templates/missionview.pt"
+      permission="zope2.View"
+      />
+    
+    <!-- misc views -->
     <browser:page
        name="debug"
        for="*"
        class=".utils.debug"
        permission="cmf.ManagePortal"
     />
+
     <!-- add forms -->
     <!-- PROJECT -->
     <adapter

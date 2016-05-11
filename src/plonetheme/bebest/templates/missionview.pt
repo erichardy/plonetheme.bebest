@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plonetheme.bebest">
+<body
+	>
+
+<metal:content-core fill-slot="main">
+  <metal:content-core define-macro="main">
+  <link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/css/leaflet.css" />
+  <div tal:define="features python:view.getGeoJSON();
+                   ">
+
+
+   <!-- DEBUT SECTION MAP -->
+   <style>
+     .leaflet-popup {
+     	position: absolute;
+     	left: 0px;
+     }
+     .leaflet-control-layers-toggle {
+		background-image:url(++theme++plonetheme.bebest/images/leaflet/layers.png);
+		width: 44px;
+		height: 44px;
+	 }
+	 #feature-infos {
+	    width: 15%;
+	    max-height: 5000px;
+	    background: rgba(255, 255, 255, 1);
+	    position: absolute;
+	    padding: 5px;
+	    border: 1px solid grey;
+	    border-radius: 5px;
+	    display: none;
+	    z-index: 2000;
+	}
+	#bebest-map-info {
+	    font-weight: bold;
+	    color: black;
+	}
+   </style>
+  
+   <section id="bebest-home-map" tal:condition="python:features">
+   	<div>
+   	<span tal:omit-tag="" tal:content="structure string:${features}">
+   	  features
+   	</span>
+	   	<div id="feature-infos">
+	   	  <span class="bebest-feature-name" id="bebest-feature-name">name</span>
+	   	  <br />
+	   	  <span class="bebest-feature-description" id="bebest-feature-description"></span>
+	   	</div>
+   	</div>
+		<div id="bebest-map">
+		</div>
+   
+   <section>
+  </div>
+
+  <script src="++theme++plonetheme.bebest/js/bebest-mission-map.js"></script>
+
+  </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+  
