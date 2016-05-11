@@ -10,13 +10,14 @@
 
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
+  <link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/css/leaflet.css" />
   <div tal:define="imgs python:view.getCarouselImages();
                    interval python:view.getCarouselInterval();
                    thumbs python:view.getCarouselThumbnails();
                    newsItems python:view.getHomeNews();
                    aboutBgImage python:view.getAboutBgImage();
                    aboutDocuments python:view.getAboutUsDocuments()">
-   
+  
     <section id="home-carousel-bebest"
              class="container-fluid hidden-xs"
              tal:condition="imgs">
@@ -158,7 +159,49 @@
    			</div>
    		</div>
    </section>
+   <!-- DEBUT SECTION MAP -->
+   <style>
+     .leaflet-popup {
+     	position: absolute;
+     	left: 0px;
+     }
+     .leaflet-control-layers-toggle {
+		background-image:url(++theme++plonetheme.bebest/images/leaflet/layers.png);
+		width: 44px;
+		height: 44px;
+	 }
+	 #feature-infos {
+	    width: 15%;
+	    height: 130px;
+	    background: rgba(255, 255, 255, 1);
+	    position: absolute;
+	    padding: 5px;
+	    border: 1px solid grey;
+	    border-radius: 25px;
+	    display: none;
+	    z-index: 2000;
+	}
+	#bebest-map-info {
+	    font-weight: bold;
+	    color: black;
+	}
+   </style>
+  
+   <section id="bebest-home-map">
+   	<div>
+	   	<div id="feature-infos">
+	   	  <span id="bebest-map-info">AAAAAAAA</span>
+	   	  XXXXXXXX
+	   	</div>
+   	</div>
+		<div id="bebest-map">
+		</div>
+   
+   <section>
   </div>
+
+  <script src="++theme++plonetheme.bebest/js/bebest-map.js"></script>
+
   </metal:content-core>
 </metal:content-core>
 

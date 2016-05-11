@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<object name="bebest.mission"
+<object name="bebest.project"
    meta_type="Dexterity FTI"
    i18n:domain="plonetheme.bebest" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
   <!-- Basic metadata -->
-  <property name="title" i18n:translate="">mission</property>
+  <property name="title" i18n:translate="">project</property>
   <property name="description"
-    i18n:translate="">mission</property>
+    i18n:translate="">project</property>
   <property name="icon_expr">string:${portal_url}/folder_icon.png</property>
-  <property name="factory">bebest.mission</property>
+  <property name="factory">bebest.project</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">False</property>
   <property name="allowed_content_types">
@@ -16,8 +16,8 @@
   <property name="allow_discussion">False</property>
 
   <!-- schema and class used for content items -->
-  <property name="schema">plonetheme.bebest.mission.IMission</property>
-  <property name="klass">plonetheme.bebest.mission.mission</property>
+  <property name="schema">plonetheme.bebest.project.IProject</property>
+  <property name="klass">plone.dexterity.content.Container</property>
 
   <property name="behaviors">
      <element value="plone.app.content.interfaces.INameFromTitle"/>

@@ -10,12 +10,25 @@
        </value>
     </records>
 
+    <!-- Il n'est pas possible d'integrer leafler.css dans la resource (helas)
+         cette resource est donc chargee separement dans chaque page/vue qui
+         affiche une carte.
+         Concernant leaflet.js, ce module est prevu pour utiliser RequireJS. De ce
+         fait, charger leaflet.js en dehors d'un bundle a pour effet que l'enemble
+         des resources fonctionnent mal. La meilleure solution trouvee est donc
+         d'integrer leaflet.js dans le bundle bebest.
+     -->
+    <records prefix="plone.resources/leaflet"
+              interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+       <value key="js">++theme++plonetheme.bebest/js/leaflet.js</value>
+    </records>
 
     <!-- bundle definition  date "+%Y-%m-%d %H:%M:%S" -->
     <records prefix="plone.bundles/bebest"
               interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
         <element>bebest-main</element>
+        <element>leaflet</element>
       </value>
       <value key="enabled">True</value>
       <value key="compile">True</value>

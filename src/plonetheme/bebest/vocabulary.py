@@ -8,6 +8,9 @@ from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 from plone import api
 from plone.i18n.normalizer.interfaces import INormalizer
 from zope.component import getUtility
+import logging
+
+logger = logging.getLogger('bebest')
 
 
 def make_terms(terms, termsList):
@@ -42,4 +45,47 @@ class _Jobs(object):
         return voc
 
 
+class _localPortraits(object):
+    implements(IVocabularyFactory)
+
+    def __call__(self, context):
+        logger.info(context.absolute_url())
+        portraits = ['a', 'b']
+        terms = []
+        voc = make_voc(terms, portraits)
+        return voc
+
+
+class _projectCategories(object):
+    implements(IVocabularyFactory)
+
+    def __call__(self, context):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.project_categories'
+        xjobs = api.portal.get_registry_record(prefix)
+        terms = []
+        voc = make_voc(terms, xjobs)
+        # import pdb;pdb.set_trace()
+        return voc
+
+
+class _geometry_types(object):
+    implements(IVocabularyFactory)
+
+    def __call__(self, context):
+        geo_types = []
+        geo_types.append("Point")
+        geo_types.append("MultiPoint")
+        geo_types.append("LineString")
+        geo_types.append("MultiLineString")
+        geo_types.append("Polygon")
+        geo_types.append("MultiPolygon")
+        terms = []
+        voc = make_voc(terms, geo_types)
+        return voc
+
+
 jobs = _Jobs()
+projectCategories = _projectCategories()
+localPortraits = _localPortraits()
+geometry_types = _geometry_types()
