@@ -1,12 +1,24 @@
-.bebest-article-thumbnail{
-	background-color: #ccc;
-	width: 100%
-	Height: 300px;
-	overflow: hidden;
-	padding: 10px;
+.thumbnails-background{
+	background-color: #eeeeee;
+	margin: 30px 0;
 }
 
-.img-vignette{
+.bebest-article-thumbnail{
+	overflow: hidden;
+	background-color: white;
+	margin: 20px 0;
+	border-radius: 5px;
+	&:hover{
+	opacity: 0.8;
+	background-color: @bg-bright;
+	}
+	img{
 	width: 100%;
 	height: 200px;
+	}
+	p{
+	padding: 15px;
+	margin: 0 10px;
+	}
 }
+
