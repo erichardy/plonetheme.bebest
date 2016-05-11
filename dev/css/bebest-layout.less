@@ -33,6 +33,24 @@
 	margin-top: 80px;
 }
 
+#bg-page-img {
+	z-index:-1000;
+	position: fixed;
+		img {
+		width: 100vw;	
+		}
+}
+
+#page-title {
+/*	background-color: @bg-bright; */
+	min-height: 40vh;
+}
+
+#page-content {
+	background-color: @bg-bright;
+	.pushtop;
+}
+
 .w-limit {
 	max-width: 1200px;
 	margin: auto;
@@ -49,7 +67,7 @@
 }
 
 .full-width {
-	width:100%;
+	width: 100%;
 	padding: 0;
 }
 
