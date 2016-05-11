@@ -3,6 +3,7 @@
 /* BACKGROUND VARIABLES-------------------------------------------*/
 @bg-dark: #000;
 @bg-bright: #fff;
+@bg-light-grey: #eee;
 
 /*LAYOUT VARIABLES-------------------------------------------*/
 @h-offset: 80px;
@@ -13,6 +14,10 @@
 
 .bg-bright {
 	background-color: @bg-bright;
+}
+
+.bg-light-grey {
+	background-color: @bg-light-grey;
 }
 
 /* IMAGES ---------------------------------------------------------*/
@@ -36,19 +41,20 @@
 #bg-page-img {
 	z-index:-1000;
 	position: fixed;
-		img {
+	img {
 		width: 100vw;	
-		}
+	}
 }
 
 #page-title {
-/*	background-color: @bg-bright; */
-	min-height: 40vh;
+	background-color: @bg-bright;
+	padding: 15px;
+	margin-bottom: 120px;
+	border-radius: 0px 0px 10px 10px;
 }
 
 #page-content {
 	background-color: @bg-bright;
-	.pushtop;
 }
 
 .w-limit {
