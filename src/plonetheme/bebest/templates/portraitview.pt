@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plonetheme.bebest">
+<body
+	>
+
+<metal:content-core fill-slot="main">
+  <metal:content-core define-macro="main">
+  <link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/css/leaflet.css" />
+  <div tal:define="
+                   toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+
+  
+  </div>
+  <span tal:define="thumb nocall:context/thumb_pict">
+     <img tal:attributes="src string:${context/absolute_url}/@@download/thumb_pict/${thumb/filename}" />
+  </span>
+
+  </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+  
