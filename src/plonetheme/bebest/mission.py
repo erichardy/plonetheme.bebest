@@ -7,6 +7,7 @@ pour associer un projet a des missions et des portraits.
 
 from plone.dexterity.content import Container
 from plone.dexterity.browser import add
+from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
 # from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
@@ -41,7 +42,19 @@ import logging
 from plonetheme.bebest import _
 
 logger = logging.getLogger('bebest MISSIONS')
-
+mois = []
+mois.append(u"Janvier")
+mois.append(u"Février")
+mois.append(u"Mars")
+mois.append(u"Avril")
+mois.append(u"Mai")
+mois.append(u"Juin")
+mois.append(u"Juillet")
+mois.append(u"Aout")
+mois.append(u"Septembre")
+mois.append(u"Octobre")
+mois.append(u"Novembre")
+mois.append(u"Décembre")
 
 class StartBeforeEnd(Invalid):
     __doc__ = _(u"The start or end date is invalid")
@@ -88,6 +101,7 @@ class IMission(model.Schema):
                            'display_en',
                            'presentation_en',
                            'main_pict',
+                           'pict_author',
                            'doc'])
     dexteritytextindexer.searchable('presentation')
     presentation = RichText(title=_(u"Presentation"),
@@ -106,6 +120,9 @@ class IMission(model.Schema):
     main_pict = NamedBlobImage(title=_(u"main photo"),
                                required=False
                                )
+    pict_author = schema.TextLine(title=_(u"picture author"),
+                                  required=False,
+                                  )
     doc = NamedBlobFile(title=_(u"other document"),
                         description=_(u"downloaded by visitors"),
                         required=False)
@@ -206,6 +223,10 @@ class AddView(add.DefaultAddView):
     form = AddForm
 
 
+class editForm(edit.DefaultEditForm):
+    pass
+
+
 class MissionView(BrowserView):
 
     def getGeoJSON(self):
@@ -217,6 +238,51 @@ class MissionView(BrowserView):
             return geojson
         else:
             return False
+
+    def _date_fr(self, date):
+        j = date.strftime("%d")
+        m = date.strftime("%m")
+        y = date.strftime("%Y")
+        M = mois[eval(m)]
+        return j + ' ' + M + ' ' + y
+
+    def getDates(self):
+        start = self.context.start_date
+        end = self.context.end_date
+        if (start is None) or (end is None):
+            return False
+        return self._date_fr(start) + ' - ' + self._date_fr(end)
+        
+    def getParentProject(self):
+        return self.context.aq_inner.aq_parent
+
+    def getPictAuthor(self):
+        if not self.context.pict_author:
+            return False
+        return self.context.pict_author
+
+    def getChief(self):
+        return self.context.chief.to_object
+
+    def getTeam(self):
+        others = []
+        for other in self.context.other:
+            others.append(other.to_object)
+        # import pdb;pdb.set_trace()
+        return others
+
+    def getAffiliations(self, person):
+        aff = u""
+        if person.affiliation1:
+            aff += person.affiliation1
+        if person.affiliation2:
+            aff += ' - ' + person.affiliation2
+        if person.affiliation3:
+            aff += ' - ' + person.affiliation3
+        return aff
+
+    def displayEN(self):
+        return self.context.display_en
 
 
 class mission(Container):

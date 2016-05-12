@@ -16,26 +16,34 @@
 
 .bright {
 	color: @text-bright;
-	}
+}
 .dark {
 	color: @text-dark;
-	}
+}
 .grey {
 	color: @text-grey;
-	}
+}
+
+.vivid {
+	color: @color-vivid;
+}
+.italic {
+	font-style: italic;
+}
+
 /* text size */
 .small {
 	font-size: 80%;
-	}
+}
 .large {
 	font-size: 140%;
-	}
+}
 .xlarge {
 	font-size: 200%;
-	}
+}
 
 /* decalages */ 
- .pushtop {
+.pushtop {
 	margin-top: @h-offset;
 }
  
@@ -78,6 +86,37 @@ h3, .h3 {
 	font-size: 1.5em;
 }
 
+/*----CHAMPS GENERIQUES-----*/
+.bebest-title {
+	.h1;
+	.text-left;
+	.pushtop;
+	margin-bottom: 15px;
+}
+
+.bebest-subtitle {
+	.h3;
+	.text-left;
+	color: @color-main;
+}
+
+.bebest-dates {
+	.text-left;
+	.grey; 
+	margin-bottom: 15px;
+}
+
+/* Content font */
+body{
+	font-family:@font-content;
+}
+
+p, .p {
+	font-family:@font-content;
+	font-size: 1.1em;
+	.text-justify;
+}
+
 /* liens--------------------------------*/
 a, .a {
 	color: @color-main;
@@ -100,20 +139,18 @@ a:active, .a:actve {
 }
 
 /* Alignment */
-.text-left           { text-align: left; }
-.text-right          { text-align: right; }
-.text-center         { text-align: center; }
-.text-justify        { text-align: justify; }
-.text-nowrap         { white-space: nowrap; }
-
-/* Transformation */
-.text-lowercase      { text-transform: lowercase; }
-.text-uppercase      { text-transform: uppercase; }
-.text-capitalize     { text-transform: capitalize; }
-
-/* Content font */
-
-p, .p {
-	font-family:@font-content;
-	font-size: 1em;
+.text-left  {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+.text-justify  {
+	text-align: justify;
+}
+.text-nowrap  { 
+    white-space: nowrap;
 }

@@ -28,3 +28,10 @@ $(window).scroll(function() {
 
 bodyClasses = document.getElementById("visual-portal-wrapper").classList
 
+// $("#show-english-version-collapse").hide();
+
+$("button.collapser").click(function(e){
+	// alert(this.id);
+	to_show = $(this).attr("id") + '-collapse';
+	$("#"+to_show).toggle("slow");
+})

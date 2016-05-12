@@ -17,7 +17,10 @@ from zope.interface import implements
 from zope.interface import Invalid
 from collective import dexteritytextindexer
 from plone.namedfile.field import NamedBlobImage
-# import logging
+from zope.interface import alsoProvides
+from plone.autoform.interfaces import IFormFieldProvider
+from zope.publisher.browser import BrowserView
+import logging
 import urllib
 import re
 
@@ -145,6 +148,11 @@ class IPortrait(model.Schema):
                                required=False,
                                )
 
+alsoProvides(IPortrait, IFormFieldProvider)
+
+
+class PortraitView(BrowserView):
+    pass
 
 class portrait(Item):
     implements(IPortrait)

@@ -7,6 +7,7 @@ pour associer un projet a des missions et des portraits.
 
 from plone.dexterity.content import Container
 from plone.dexterity.browser import add
+from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
@@ -19,13 +20,14 @@ from z3c.form import button
 from z3c.relationfield.schema import RelationChoice
 from plone.namedfile.field import NamedBlobImage
 # from z3c.relationfield.schema import RelationList
-# from plone.app.vocabularies.catalog import CatalogSource
+from plone.app.vocabularies.catalog import CatalogSource
 
 from zope.interface import implements
 from zope.interface import Invalid, invariant
 from zope.interface import alsoProvides
 
 from collective import dexteritytextindexer
+from zope.publisher.browser import BrowserView
 # from plone.formwidget.contenttree import PathSourceBinder
 # from plone.namedfile.field import NamedBlobImage
 # import logging
@@ -47,6 +49,7 @@ class IProject(model.Schema):
                            'subtitle',
                            'categories',
                            'main_pict',
+                           'pict_author',
                            ])
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(title=_(u"mission label"),
@@ -65,6 +68,9 @@ class IProject(model.Schema):
     main_pict = NamedBlobImage(title=_(u"main photo"),
                                required=False
                                )
+    pict_author = schema.TextLine(title=_(u"picture author"),
+                                  required=False,
+                                  )
     #
     model.fieldset('descriptions',
                    label=_(u"project descriptions"),
@@ -107,12 +113,12 @@ class IProject(model.Schema):
     # directives.widget(chief='plone.formwidget.contenttree.ContentTreeFieldWidget')
 
     primary_contact = RelationChoice(title=_(u"primary contact"),
-                                     vocabulary="bebest.allportraits")
+                                     source=CatalogSource(portal_type="bebest.portrait"),)
 
     contact_fr = RelationChoice(title=_(u"french contact"),
-                                vocabulary="bebest.allportraits")
+                                source=CatalogSource(portal_type="bebest.portrait"),)
     contact_ca = RelationChoice(title=_(u"canadian contact"),
-                                vocabulary="bebest.allportraits")
+                                source=CatalogSource(portal_type="bebest.portrait"),)
 
     @invariant
     def validateStartEnd(data):
@@ -158,6 +164,14 @@ class AddForm(add.DefaultAddForm):
 
 class AddView(add.DefaultAddView):
     form = AddForm
+
+
+class editForm(edit.DefaultEditForm):
+    pass
+
+
+class ProjectView(BrowserView):
+    pass
 
 
 class project(Container):

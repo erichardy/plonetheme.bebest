@@ -12,7 +12,13 @@
   <metal:content-core define-macro="main">
   <link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/css/leaflet.css" />
   <div tal:define="features python:view.getGeoJSON();
-                   ">
+                   dates python:view.getDates();
+                   project python:view.getParentProject();
+                   pictAuthor python:view.getPictAuthor();
+                   chief python:view.getChief();
+                   team python:view.getTeam();
+                   displayEN python:view.displayEN();
+                   toLocalizedTime nocall:context/@@plone/toLocalizedTime">
     <!-----Image de fond,fixe, l'image source est l'image principale---->
     <div id="bg-page-img" class="hidden-xs"
          tal:define="image nocall:context/main_pict;">
@@ -23,15 +29,92 @@
 			<div class="row">
 				<div id="page-title" class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-0 col-md-5 col-md-offset-1">
 					<!-----Champ title---->
-					<div class="bebest-title" tal:content="string:${context/title}">Mission stardust prince</div>
-					<hr></hr> <!----------un petit filet------------>
-					<div class="bebest-subtitle">Pose d'hydrophones passifs de type "spyders from Mars"</div> <!---Champ sous titre doit -il etre identique au champ description ?--->
-					<div class="bebest-dates">10 janvier 2016 - 21 avril 2016</div> <!------ Date début puis date de fin separés par " - "--->
-					<p>Cette mission fait partie du projet <a href="0index-4.html"><button type="button" class="btn btn-default">Matisse</button></a></p><!---lien vers le projet parent de la mission--->
+					<div class="bebest-title"
+					     tal:content="string:${context/title}">Mission title</div>
+					<hr />
+					<div class="bebest-subtitle"
+					     tal:content="string:${context/subtitle}">
+					     Mission subtitle</div>
+					<div class="bebest-dates"
+					     tal:condition="dates"
+					     tal:content="string:${dates}">date debut - date fin
+					</div> <!------ Date début puis date de fin separés par " - "--->
+					<p><span i18n:translate="">this mission is part of project </span>
+					   <a href="" tal:attributes="href string:${project/absolute_url}">
+					     <button type="button" class="btn btn-default"
+					             tal:content="string:${project/title}">project name</button>
+					   </a>
+					</p><!---lien vers le projet parent de la mission--->
 				</div>
 			</div>
 	</section>
 
+	<!---- auteur de la photo  --------->
+	<div class="img-author hidden-xs"
+	     tal:condition="python:pictAuthor"
+	     tal:content="string:(C) ${pictAuthor}"></div>
+
+   <!--------Début de la section team---------->
+   <section>
+	<div class="container-fluid bg-light-grey">
+		<div class="container">
+			<div class="thumbnail-wrapper">
+				<h3>chef de mission / chief scientist</h3>
+				  <a href="" tal:attributes="href string:${chief/absolute_url}">
+				     <div class="thumbnail-portrait portrait-second"
+				          tal:define="image nocall:chief/thumb_pict">
+				       <img tal:condition="image"
+				            tal:attributes="src string:${chief/absolute_url}/@@download/thumb_pict/${image/filename}"
+				            class="img-circle" />
+				       <h4 tal:content="string:${chief/first_name} ${chief/family_name}">NAME</h4>
+				       <p tal:content="python:view.getAffiliations(chief)">Affiliations</p>
+				     </div>
+				   </a>
+			</div>
+			<button id="show-participants"
+			        type="button"
+			        class="btn btn-default collapser">Participants</button>
+			<div class="thumbnail-wrapper bebest-collapse" id="show-participants-collapse">
+				<span tal:omit-tag="" tal:repeat="person team">
+				   <a href="" tal:attributes="href string:${person/absolute_url}">
+				     <div class="thumbnail-portrait portrait-second"
+				          tal:define="image nocall:person/thumb_pict">
+				       <img tal:condition="image"
+				            tal:attributes="src string:${person/absolute_url}/@@download/thumb_pict/${image/filename}"
+				            class="img-circle" />
+				       <h4 tal:content="string:${person/first_name} ${person/family_name}">NAME</h4>
+				       <p tal:content="python:view.getAffiliations(person)">Affiliations</p>
+				     </div>
+				   </a>
+				</span>
+			</div>
+		</div>			
+	</div>
+	</section>
+   
+   <div id="page-content" class="container-fluid">
+     <div class="container">
+       <div class="row pushtop">
+		<div class="col-xs-12 col-md-10 col-md-offset-1"> 
+			<div tal:condition="displayEN"
+			     class="align-right">
+			        <button type="button"
+			                id="show-english-version"
+			                class="btn btn-default collapser">English version</button>
+			<span class="bebest-collapse"
+			      tal:content="structure string:${context/presentation_en/raw}"
+			      id="show-english-version-collapse">
+			  presentation EN
+			</span>
+			<hr />
+			</div>
+		  <span tal:content="structure string:${context/presentation/raw}">
+		    presentation FR
+		  </span>
+	    </div>
+</div>
+     </div>
+   </div>
    <!-- DEBUT SECTION MAP -->
    <style>
      .leaflet-popup {

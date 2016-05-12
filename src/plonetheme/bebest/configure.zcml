@@ -48,9 +48,23 @@
     <!-- content types VIEWs -->
     <browser:page
       name="view"
+      for="plonetheme.bebest.project.IProject"
+      class="plonetheme.bebest.project.ProjectView"
+      template="templates/projectview.pt"
+      permission="zope2.View"
+      />
+    <browser:page
+      name="view"
       for="plonetheme.bebest.mission.IMission"
       class="plonetheme.bebest.mission.MissionView"
       template="templates/missionview.pt"
+      permission="zope2.View"
+      />
+    <browser:page
+      name="view"
+      for="plonetheme.bebest.portrait.IPortrait"
+      class="plonetheme.bebest.portrait.PortraitView"
+      template="templates/portraitview.pt"
       permission="zope2.View"
       />
     
