@@ -38,7 +38,8 @@
 	margin-top: 80px;
 }
 
-#bg-page-img {
+/*-----images de fond fixes-----*/
+#bg-page-img {     /*---conteneur des images---*/
 	z-index:-1000;
 	position: fixed;
 	max-height: 60vh;
@@ -48,6 +49,16 @@
 	}
 }
 
+@media (max-width: 991px) { /*----adaptation au format sm --*/
+	div#bg-page-img  {
+		img {
+			height: 100vh;
+			width: auto;
+		}
+	}
+}
+
+/*----bloc de titre-*/
 #page-title {
 	background-color: @bg-bright;
 	padding: 15px;
@@ -55,6 +66,13 @@
 	border-radius: 0px 0px 10px 10px;
 }
 
+@media (max-width: 767px) { /*-Adaptation du margin bottom sur xs---------*/
+	div#page-title {
+		margin-bottom: 20px;
+	}
+}
+
+/*----------Contenu de la page----------*/
 #page-content {
 	background-color: @bg-bright;
 }
