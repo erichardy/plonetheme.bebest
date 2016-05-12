@@ -85,6 +85,8 @@ class IMission(model.Schema):
     model.fieldset('descriptions',
                    label=_(u"descriptions"),
                    fields=['presentation',
+                           'display_en',
+                           'presentation_en',
                            'main_pict',
                            'doc'])
     dexteritytextindexer.searchable('presentation')
@@ -92,6 +94,15 @@ class IMission(model.Schema):
                             description=_(u"Mission presentation"),
                             required=False
                             )
+    display_en = schema.Bool(title=_(u"display english description"),
+                             description=_(u"unselect to disable"),
+                             default=True
+                             )
+
+    presentation_en = RichText(title=_(u"Presentation"),
+                               description=_(u"Mission presentation"),
+                               required=False
+                               )
     main_pict = NamedBlobImage(title=_(u"main photo"),
                                required=False
                                )
@@ -194,13 +205,8 @@ class AddForm(add.DefaultAddForm):
 class AddView(add.DefaultAddView):
     form = AddForm
 
+
 class MissionView(BrowserView):
-    
-    def getCoordinates(self):
-        geo_type = self.context.geometry
-        lines = self.context.coordinates
-        
-        return lines
 
     def getGeoJSON(self):
         geo = self.context.geojson
@@ -211,7 +217,8 @@ class MissionView(BrowserView):
             return geojson
         else:
             return False
-    
+
+
 class mission(Container):
     implements(IMission)
     pass

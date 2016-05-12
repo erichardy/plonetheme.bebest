@@ -3,6 +3,10 @@
 /* BACKGROUNDS-------------------------------------------*/
 @bg-dark: #000;
 @bg-bright: #fff;
+@bg-light-grey: #eee;
+
+/*LAYOUT VARIABLES-------------------------------------------*/
+@h-offset: 80px;
 
 .bg-dark {
 	background-color: @bg-dark;
@@ -10,6 +14,10 @@
 
 .bg-bright {
 	background-color: @bg-bright;
+}
+
+.bg-light-grey {
+	background-color: @bg-light-grey;
 }
 
 /* IMAGES ---------------------------------------------------------*/
@@ -26,12 +34,48 @@
 
 /* LAYOUT ---------------------------------*/
 
+#bg-page-img {
+	z-index:-1000;
+	position: fixed;
+	max-height: 60vh;
+	overflow: hidden;
+	img {
+		width: 100vw;
+	}
+}
+
+#page-title {
+	background-color: @bg-bright;
+	padding: 15px;
+	margin-bottom: 120px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+#page-content {
+	background-color: @bg-bright;
+}
+
 .w-limit {
 	max-width: 1200px;
 	margin: auto;
 }
 
+.h-limit-400 {
+	max-height: 400px;
+	overflow: hidden;
+}
+
+.h-limit-600 {
+	max-height: 600px;
+	overflow: hidden;
+}
+
 .full-width {
-	width:100%;
+	width: 100%;
 	padding: 0;
+}
+
+ /* decalages -----Décaler un élément du haut de sa div----*/ 
+ .pushtop {
+	margin-top: @h-offset;
 }

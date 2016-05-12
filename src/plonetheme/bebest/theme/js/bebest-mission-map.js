@@ -50,25 +50,50 @@ position = $("#bebest-home-map").position();
 $("#feature-infos").css("top", position.top + 100);
 $("#feature-infos").css("left", position.left + 10);
 
-/* code fortement instpire de http://jsfiddle.net/expedio/z1nw3pt4/  pour le popup
+/* code fortement inspire de http://jsfiddle.net/expedio/z1nw3pt4/  pour le popup
  * quand on clique sur un point, une ligne ou un polygone
  * */
+/* Pour les options de style, voir http://leafletjs.com/reference.html#path */
+props = ['']
+for (i = 0; i < features['features'].length ; i++) {
+	f = features['features'][i];
+	// console.log(f);
+	style = {};
+	if (f.properties['stroke']) {
+		style['color'] = f.properties['stroke'];
+	}
+	if (f.properties['stroke-width']) {
+		// stroke-
+		style['weight'] = f.properties['stroke-width'];
+	}
+	if (f.properties['fill']) {
+		style['fillColor'] = f.properties['fill'];
+	}
+	L.geoJson(f, {
+		"style": style
+	}).addTo(mymap)
+}
+
+function onEachFeature(feature, layer) {
+	layer.on('click', function (e) {
+		title = " ";
+		if (feature.properties.name) {
+			title = '<h3>' + feature.properties.name + '</h3>';
+		}
+		description = " ";
+		if (feature.properties.description) {
+			description = feature.properties.description;
+		}
+		document.getElementById("bebest-feature-name").innerHTML = title;
+		document.getElementById("bebest-feature-description").innerHTML = description;
+		$("#feature-infos").stop();
+        $("#feature-infos").fadeIn("fast");
+        // console.log(feature.properties.name);
+        $("#feature-infos").fadeOut(8000);
+	});
+}
+
 geojsonLayer = L.geoJson(features, {
-    onEachFeature: function (feature, layer) {
-    	layer.on('click', function (e) {
-    		title = '<h3>' + feature.properties.name + '</h3>';
-    		document.getElementById("bebest-feature-name").innerHTML = title;
-    		if (feature.properties.description) {
-    			document.getElementById("bebest-feature-description").innerHTML = feature.properties.description;
-    		}
-    		else {
-    			document.getElementById("bebest-feature-description").innerHTML = "";
-    		}
-    		$("#feature-infos").stop();
-            $("#feature-infos").fadeIn("fast");
-            // console.log(feature.properties.name);
-            $("#feature-infos").fadeOut(8000);
-    	});
-    }
+    onEachFeature: onEachFeature
 }).addTo(mymap);
 // mymap.addLayer(geojsonLayer);
