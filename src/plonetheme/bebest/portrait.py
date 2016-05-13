@@ -75,10 +75,14 @@ class IPortrait(model.Schema):
     dexteritytextindexer.searchable('email')
     email = schema.ASCIILine(title=_(u"email address"),
                              constraint=validateEmail,
+                             required=True,
                              )
     main_pict = NamedBlobImage(title=_(u"main photo"),
                                required=False
                                )
+    pict_author = schema.TextLine(title=_(u"picture author"),
+                                  required=False,
+                                  )
     thumb_pict = NamedBlobImage(title=_(u"small photo"),
                                 required=False
                                 )
@@ -127,7 +131,7 @@ class IPortrait(model.Schema):
                              )
     dexteritytextindexer.searchable('affiliation1')
     affiliation1 = schema.TextLine(title=_(u"main affiliation"),
-                                   required=False,
+                                   required=True,
                                    )
     dexteritytextindexer.searchable('affiliation2')
     affiliation2 = schema.TextLine(title=_(u"second affiliation"),
@@ -190,6 +194,21 @@ class PortraitView(BrowserView):
 
     def encodeEmail(self, email):
         return "blabla"
+
+    def displayEN(self):
+        return self.context.display_en
+
+    def bioFR(self):
+        try:
+            return len(self.context.bio_fr.raw) > 4
+        except Exception:
+            return False
+
+    def bioEN(self):
+        try:
+            return len(self.context.bio_en.raw) > 4
+        except Exception:
+            return False
 
 
 class AddView(add.DefaultAddView):
