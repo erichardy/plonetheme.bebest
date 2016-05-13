@@ -1,8 +1,19 @@
 
+if (typeof(zoom) === "undefined") {
+	var zoom = 4;
+}
+
+console.log(center);
+if (typeof(center) === "undefined") {
+	var center = [48.40003249610685, -4.5263671875];
+}
+
+console.log(center);
+
 /* initialisation de la carte */
 var mymap = L.map('bebest-map', {
-  center:[48.356248, -4.596884],
-  zoom: 3
+  center: center,
+  zoom: zoom
 });
 
 /* les tuiles */

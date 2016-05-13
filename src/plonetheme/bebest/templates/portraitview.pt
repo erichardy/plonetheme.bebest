@@ -55,8 +55,8 @@
 					<!----Email-->
 					<div>
 					  <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-					  <a href=""
-					     tal:attributes="href string:mailto:${eemail}">
+					  <span id="person-contact-coded" tal:attributes="contact python:view.mailEncoded()"></span>
+					  <a id="person-contact" href="">
 					     Contact
 					  </a>
 					</div>
@@ -129,7 +129,6 @@
 		</section>
 
   </div>
-
   </metal:content-core>
 </metal:content-core>
 

@@ -16,6 +16,7 @@ from zope.component import getUtility
 from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 # from plone import api
 import os
+from string import strip
 import logging
 
 logger = logging.getLogger('bebest')
@@ -26,6 +27,32 @@ def getFolderish(obj):
         return obj
     else:
         return getFolderish(obj.aq_parent)
+
+
+def reverse_email(email):
+    """return a transformed email string : nom.prenom@domaine.fr
+       monerp_mon__rf_eniamod
+    """
+    # email = strip(email)
+    try:
+        email = strip(email)
+        lemail = email.split('@')
+    except:
+        return 'on__liam'
+    if len(lemail) < 2:
+        return 'on__liam'
+    user_email = lemail[0]
+    domain = lemail[1]
+    rev_user_email = ''
+    rev_domain = ''
+    for u in user_email.split('.'):
+        uu = u[::-1]
+        rev_user_email = rev_user_email + uu + '_'
+    for d in domain.split('.'):
+        dd = d[::-1]
+        rev_domain = rev_domain + dd + '_'
+    rev_domain = rev_domain[0:len(rev_domain) - 1]
+    return rev_user_email + '_' + rev_domain
 
 """
 plone.app.vocabularies.Catalog from plone.app.vocabularies-2.2.3-py2.7.egg
@@ -218,6 +245,7 @@ def getTitleFromVoc(vocabulary, value):
     except:
         term = value
     return term
+
 
 class debug(object):
     def __call__(self):

@@ -35,3 +35,51 @@ $("button.collapser").click(function(e){
 	to_show = $(this).attr("id") + '-collapse';
 	$("#"+to_show).toggle("slow");
 })
+
+/* Gestion des mails */
+
+$("a#person-contact").on('click',function(e){
+	var mail = $('#person-contact-coded').attr('contact');
+	eemail = decryptEmail(mail);
+	$(this).attr('href', "mailto:" + decryptEmail(mail ));
+})	
+
+function decryptEmail(encodedEmail){
+	// S'IL NE FAUT PAS DECODER LA CHAINE DE CARACTERES OU SI ELLE EST VIDE.....
+	if(( encodedEmail == undefined )
+	||( encodedEmail.indexOf("__") == -1)
+	||( encodedEmail	== "on__liam" )
+	||( encodedEmail =="")) {
+		return false;
+	}
+	// SEPARATION DU NOM ET DU HOST DANS UN TABLEAU ..........................
+	var partsTabs	= encodedEmail.split("__");
+
+	var encodedFirstWords	= partsTabs[0].split("_");
+	var encodedLastWords	= partsTabs[1].split("_");
+	// RECONSTRUCTION DU DEBUT ................................................ 
+	var firstWords	= reconstructWord( encodedFirstWords );
+	// RECONSTRUCTION DE LA FIN ...............................................
+	var lastWords	= reconstructWord( encodedLastWords );
+	return firstWords + "@" + lastWords ;
+}
+
+function reconstructWord(wordsToReconstruct){
+	var wordDecoded	= "";
+	// ON CONCATENE TOUTES LES PARTIES SAUF LA DERNIERE..................................
+	for( i=0 ; i < wordsToReconstruct.length -1; i++) {
+		wordDecoded	= wordDecoded + inverseLetters( wordsToReconstruct[i] ) + ".";	
+	}
+	// ON AJOUTE LA DERNIERE PARTIE .....................................................
+	wordDecoded	= wordDecoded + inverseLetters(wordsToReconstruct[wordsToReconstruct.length -1]);
+	return wordDecoded;
+}
+
+function inverseLetters(encodedInverseEmail){
+	if ( encodedInverseEmail == "") return "";
+	var encodedEmail = "";
+	for(var i= encodedInverseEmail.length-1; i>=0 ; i-- ){
+		encodedEmail += encodedInverseEmail[i];
+	}
+	return encodedEmail.replace("_", ".");
+}
