@@ -160,10 +160,36 @@ alsoProvides(IPortrait, IFormFieldProvider)
 class PortraitView(BrowserView):
 
     def getJobs(self):
-        jobs = u""
+        jobs = []
         for job in self.context.jobs:
             j = getTitleFromVoc("bebest.jobs", job)
-        return j
+            jobs.append(j)
+        return (', ').join(jobs)
+
+    def getAffiliations(self):
+        c = self.context
+        aff = u""
+        if c.affiliation1:
+            aff += c.affiliation1
+        if c.affiliation2:
+            aff += ', ' + c.affiliation2
+        if c.affiliation3:
+            aff += ', ' + c.affiliation3
+        return aff
+
+    def getPortraitAttr(self, field):
+        p = self.context
+        try:
+            value = eval("p." + field)
+            if value:
+                return value
+            else:
+                return False
+        except Exception:
+            return False
+
+    def encodeEmail(self, email):
+        return "blabla"
 
 
 class AddView(add.DefaultAddView):

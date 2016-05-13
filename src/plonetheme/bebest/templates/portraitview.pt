@@ -21,7 +21,13 @@
 		              mail string:${context/email};
 		              thumb nocall:context/thumb_pict;
 		              image nocall:context/main_pict;
-		              jobs python:getJobs();
+		              jobs python:view.getJobs();
+		              affiliations python:view.getAffiliations();
+		              email python:view.getPortraitAttr("email");
+		              eemail python:view.encodeEmail(email);
+		              personal_page python:view.getPortraitAttr("personal_page");
+		              unit_page python:view.getPortraitAttr("unit_page");
+		              research python:view.getPortraitAttr("research");
 		              "
 		>
 			<div class="container-fluid full-width">
@@ -40,7 +46,10 @@
 						     tal:content="string:${jobs}">
 							jobs
 						</div> <!----métier de la personne-->
-						<div class="personnel-affiliation">CNRS, UMR6539 Lemar, UMS 3113</div> <!----affiliations 1,2 et3, séparées par une virgule-->
+						<div class="personnel-affiliation"
+						     tal:content="string:${affiliations}">
+						 </div>
+						 <!----affiliations 1,2 et3, séparées par une virgule-->
 						<div><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:laurent.chauvaud@univ-brest.fr"> Contact</a></div><!----Email-->
 						<a href="http://www-iuem.univ-brest.fr/observatoire/l-observatoire/fiches-personnel/fiche-chauvaud-laurent">page personnelle / personal page</a><!----lien vers page perso officielle-->
 						<br />
