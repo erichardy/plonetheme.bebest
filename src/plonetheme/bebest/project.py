@@ -28,14 +28,16 @@ from zope.interface import alsoProvides
 
 from collective import dexteritytextindexer
 from zope.publisher.browser import BrowserView
+from plone import api
 # from plone.formwidget.contenttree import PathSourceBinder
 # from plone.namedfile.field import NamedBlobImage
-# import logging
+import logging
 # import urllib
 # import re
 # from plonetheme.bebest.utils import CatalogSource
 from plonetheme.bebest import _
 
+logger = logging.getLogger('bebest PROJECT')
 
 class StartBeforeEnd(Invalid):
     __doc__ = _(u"The start or end date is invalid")
@@ -104,6 +106,23 @@ class IProject(model.Schema):
                            required=False,
                            )
     #
+    model.fieldset('geo',
+                   label=_(u"geo"),
+                   fields=['zoom',
+                           'map_center',
+                           ])
+    zoom = schema.Int(title=_(u"zoom level"),
+                             description=_(u"between 0 and 15"),
+                             min=0,
+                             max=15,
+                             default=4,
+                             required=False)
+    map_center = schema.TextLine(title=_(u"map center"),
+                                 description=_(u'must be in the form "[lat, long]"'),
+                                 default=u'[48.40003249610685, -4.5263671875]',
+                                 required=False,
+                                 )
+    #
     model.fieldset('contacts',
                    label=_(u"contacts"),
                    fields=['primary_contact',
@@ -171,7 +190,60 @@ class editForm(edit.DefaultEditForm):
 
 
 class ProjectView(BrowserView):
-    pass
+    
+    def getMissionsFeatures(self):
+        context = self.context
+        results = api.content.find(depth=1,
+                                   portal_type='bebest.mission',
+                                   path='/'.join(context.getPhysicalPath()))
+        features = []
+        for mission in results:
+            m = mission.getObject()
+            geo = m.geojson
+            try:
+                if len(geo) > 5:
+                    features.append(geo)
+            except Exception:
+                pass
+        logger.info(features)
+        if len(features) == 0:
+            return False
+        return features
+
+    def getMapZoom(self):
+        zoomjs = '<script>var zoom = 4;</script>'
+        try:
+            zoom = self.context.zoom
+            if zoom:
+                zoomjs = '<script>var zoom = ' + str(zoom) + ";</script>"
+                return zoomjs
+            else:
+                return zoomjs
+        except Exception:
+            return zoomjs
+
+    def getMapCenter(self):
+        center_a = '<script>var center = '
+        center_b = ';</script>'
+        val = ' [48.40003249610685, -4.5263671875] '
+        default = center_a + val + center_b
+        try:
+            center = self.context.map_center
+            if center:
+                testval = eval(center)
+                if len(testval) != 2:
+                    return default
+                val0 = (isinstance(testval[0], int)
+                        or
+                        isinstance(testval[0], float))
+                val1 = (isinstance(testval[1], int)
+                        or
+                        isinstance(testval[1], float))
+                if (not val0) or (not val1):
+                    return default
+                return center_a + center + center_b
+        except Exception:
+            return default
 
 
 class project(Container):
