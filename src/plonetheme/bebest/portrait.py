@@ -23,13 +23,13 @@ from plone.namedfile.field import NamedBlobImage
 from zope.interface import alsoProvides
 from plone.autoform.interfaces import IFormFieldProvider
 from zope.publisher.browser import BrowserView
-import logging
 import urllib
 import re
 from plonetheme.bebest.utils import getTitleFromVoc
 
 logger = logging.getLogger('bebest PORTRAIT')
 
+from plonetheme.bebest.utils import reverse_email
 from plonetheme.bebest import _
 
 checkEmail = re.compile(
@@ -58,6 +58,7 @@ class IPortrait(model.Schema):
                            'first_name',
                            'email',
                            'main_pict',
+                           'pict_author',
                            'thumb_pict',
                            ])
     directives.omitted('title')
@@ -163,6 +164,9 @@ alsoProvides(IPortrait, IFormFieldProvider)
 
 class PortraitView(BrowserView):
 
+    def mailEncoded(self):
+        return reverse_email(self.context.email)
+
     def getJobs(self):
         jobs = []
         for job in self.context.jobs:
@@ -219,7 +223,8 @@ class editForm(edit.DefaultEditForm):
     pass
 
 
-
 class portrait(Item):
     implements(IPortrait)
-    pass
+
+    def mailEncoded(self):
+        return reverse_email(self.context.email)

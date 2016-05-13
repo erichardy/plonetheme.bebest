@@ -19,7 +19,7 @@ from zope import schema
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from z3c.form import button
-from plone.app.vocabularies.catalog import CatalogSource
+from plone.app.vocabularies.catalog import CatalogSource as CS
 
 from zope.interface import implements
 from zope.interface import Invalid, invariant
@@ -37,7 +37,6 @@ from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 import logging
 # import urllib
 # import re
-# from plonetheme.bebest.utils import CatalogSource
 
 from plonetheme.bebest import _
 
@@ -55,6 +54,7 @@ mois.append(u"Septembre")
 mois.append(u"Octobre")
 mois.append(u"Novembre")
 mois.append(u"Décembre")
+
 
 class StartBeforeEnd(Invalid):
     __doc__ = _(u"The start or end date is invalid")
@@ -139,22 +139,21 @@ class IMission(model.Schema):
     """
     model.fieldset('geo',
                    label=_(u"geo"),
-                   fields=['geometry',
-                           'coordinates',
+                   fields=['zoom',
+                           'map_center',
                            'geojson',
                            ])
-    dexteritytextindexer.searchable('geometry')
-    geometry = schema.Choice(title=_(u"type of coordinates"),
-                             description=_(u"Point, MultiPoint, etc..."),
-                             vocabulary="bebest.geometry_types",
-                             default="point",
+    zoom = schema.Int(title=_(u"zoom level"),
+                             description=_(u"between 0 and 15"),
+                             min=0,
+                             max=15,
+                             default=4,
                              required=False)
-    dexteritytextindexer.searchable('coordinates')
-    coordinates = schema.List(title=_(u"coordinates"),
-                              description=_(u"MUST match geometry type !"),
-                              value_type=schema.TextLine(),
-                              required=False,
-                              )
+    map_center = schema.TextLine(title=_(u"map center"),
+                                 description=_(u'must be in the form "[lat, long]"'),
+                                 default=u'[48.40003249610685, -4.5263671875]',
+                                 required=False,
+                                 )
     geojson = schema.Text(title=_(u"coordinates in GEOJSON format"),
                           description=_(u"Use http://geojson.io/"),
                           required=False)
@@ -164,13 +163,13 @@ class IMission(model.Schema):
                            'other',
                            ])
     chief = RelationChoice(title=_(u"chief scientist"),
-                           source=CatalogSource(portal_type="bebest.portrait"),
+                           source=CS(portal_type="bebest.portrait"),
                            required=False,
                            )
     other = RelationList(title=_(u"other participants"),
                          value_type=RelationChoice(
-                                      title=_(u'Target'),
-                                      source=CatalogSource(portal_type="bebest.portrait")),
+                                 title=_(u'Target'),
+                                 source=CS(portal_type="bebest.portrait")),
                          required=False,
                          )
 
@@ -229,6 +228,41 @@ class editForm(edit.DefaultEditForm):
 
 class MissionView(BrowserView):
 
+    def getMapZoom(self):
+        zoomjs = '<script>var zoom = 4;</script>'
+        try:
+            zoom = self.context.zoom
+            if zoom:
+                zoomjs = '<script>var zoom = ' + str(zoom) + ";</script>"
+                return zoomjs
+            else:
+                return zoomjs
+        except Exception:
+            return zoomjs
+
+    def getMapCenter(self):
+        center_a = '<script>var center = '
+        center_b = ';</script>'
+        val = ' [48.40003249610685, -4.5263671875] '
+        default = center_a + val + center_b
+        try:
+            center = self.context.map_center
+            if center:
+                testval = eval(center)
+                if len(testval) != 2:
+                    return default
+                val0 = (isinstance(testval[0], int)
+                        or
+                        isinstance(testval[0], float))
+                val1 = (isinstance(testval[1], int)
+                        or
+                        isinstance(testval[1], float))
+                if (not val0) or (not val1):
+                    return default
+                return center_a + center + center_b
+        except Exception:
+            return default
+
     def getGeoJSON(self):
         geo = self.context.geojson
         if len(geo) > 5:
@@ -252,7 +286,7 @@ class MissionView(BrowserView):
         if (start is None) or (end is None):
             return False
         return self._date_fr(start) + ' - ' + self._date_fr(end)
-        
+
     def getParentProject(self):
         return self.context.aq_inner.aq_parent
 
@@ -287,4 +321,5 @@ class MissionView(BrowserView):
 
 class mission(Container):
     implements(IMission)
+
     pass
