@@ -73,7 +73,8 @@
 			</div>
 			<button id="show-participants"
 			        type="button"
-			        class="btn btn-default collapser">Participants</button>
+			        class="btn btn-default collapser"
+			        i18n:translate="">autres participants</button>
 			<div class="thumbnail-wrapper bebest-collapse" id="show-participants-collapse">
 				<span tal:omit-tag="" tal:repeat="person team">
 				   <a href="" tal:attributes="href string:${person/absolute_url}">

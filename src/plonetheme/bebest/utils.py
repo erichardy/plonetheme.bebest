@@ -12,6 +12,7 @@ from plone.uuid.interfaces import IUUID
 from Products.CMFCore.interfaces import IFolderish
 # from zope.schema.interfaces import IContextSourceBinder
 from Products.CMFCore.utils import getToolByName
+from zope.component import getUtility
 from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 # from plone import api
 import os
@@ -192,6 +193,31 @@ class CatalogSource(object):
         # {'sort_on': u'sortable_title', 'sort_order': 'ascending'}
         return catalog(query)
 
+
+def getTitleFromVoc(vocabulary, value):
+    """
+    Utilitaire qui permet d'obtenir le
+    libellé (``title``) d'une valeur d'un vocabulaire. Essentiellement destiné
+    aux affichages dans les templates.
+
+    :param vocabulary: nom du vocabulaire tel qu'il est défini en tant \
+    qu'utilitaire
+    :type vocabulary: string
+    :param value: valeur pour laquelle on recherche un libellé (``title``)
+    :type value: string
+    :returns: une chaîne de caractères qui est le ``title`` correspondant à la
+        valeur passée en paramètre pour le vocabulaire donné. Si la valeur
+        n'existe pas dans le vocabulaire, retourne la valeur elle-même
+        passée en paramètre.
+    """
+    portal = getSite()
+    factory = getUtility(IVocabularyFactory, vocabulary)
+    types_voc = factory(portal)
+    try:
+        term = types_voc.getTerm(value).title
+    except:
+        term = value
+    return term
 
 class debug(object):
     def __call__(self):

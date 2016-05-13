@@ -14,6 +14,59 @@
   <div tal:define="
                    toLocalizedTime nocall:context/@@plone/toLocalizedTime">
 
+<!-----------DEBUT SECTION PORTRAIT------------------>
+		<section
+		  tal:define="firstname string:${context/first_name};
+		              familyname string:${context/family_name};
+		              mail string:${context/email};
+		              thumb nocall:context/thumb_pict;
+		              image nocall:context/main_pict;
+		              jobs python:getJobs();
+		              "
+		>
+			<div class="container-fluid full-width">
+						<!---- conteneur des infos de la carte d'ID  --------->
+					<div class="personnel-info text-center">
+						<div class="personnel-name"
+						     tal:content="string:${firstname} ${familyname}">
+						     prenom nom
+						</div>
+						<div class="personnel-title"
+						      tal:content="string:${context/status}">
+						      status
+						</div>
+						<hr />
+						<div class="personnel-job"
+						     tal:content="string:${jobs}">
+							jobs
+						</div> <!----métier de la personne-->
+						<div class="personnel-affiliation">CNRS, UMR6539 Lemar, UMS 3113</div> <!----affiliations 1,2 et3, séparées par une virgule-->
+						<div><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:laurent.chauvaud@univ-brest.fr"> Contact</a></div><!----Email-->
+						<a href="http://www-iuem.univ-brest.fr/observatoire/l-observatoire/fiches-personnel/fiche-chauvaud-laurent">page personnelle / personal page</a><!----lien vers page perso officielle-->
+						<br />
+						<a href="https://www.researchgate.net/profile/Laurent_Chauvaud">Publications et travaux / publications and work</a><!----lien vers research gate/ autre-->
+						<br />
+						<a href="http://www-iuem.univ-brest.fr/UMR6539">Site web du partenaire /partner's website</a><!----site du labo/groupe-->
+					</div>
+						<!---- photo du portrait  --------->
+					<div class="personnel-img-wrapper">
+						<img class="img-responsive" src="images/portraits/amice.jpg"/>
+					</div>	
+						<!---- auteur de la photo  --------->
+					<div class="img-author">(C) Erwan Amice / CNRS</div>
+ 			</div>	
+				<!----La courte biographie --------->
+			<div class="container">
+				<div class="row personnel-bio col-xs-12 col-md-10 col-md-offset-1">
+					<h2>Courte biographie</h2> 
+					<p class="text-justify"> Erwan Amice coordonne pour l'IUEM les plongées scientifiques de prélèvement et de mise en œuvre des instruments de mesures sur les côtes françaises et à l'étranger en zones tropicales, tempérées ou polaires et il gère le planning des 2 bateaux de l'institut. Bénéficiant d'une formation universitaire en biologie et après une carrière dans la Marine Nationale en tant que plongeur démineur, il est employé au CNRS depuis 2002. Sa passion pour la photographie lui a tout naturellement amené à devenir spécialiste de la prise de vue sous-marine. Ses productions sont valorisées au travers de nombreuses expositions et publications. La grande majorité des photos de mission et du site proviennent de son travail.</p>
+					<hr></hr> <!-----un joli petit filet ----->
+					<h2>Short biography</h2>
+					<p class="texte-justify"> Erwan Amice coordinates for IUEM (Institut Universitaire Européen de la Mer) all scientific underwater sampling and the implementation of instrumentation along the French coast and as needed elsewhere (tropics, temperate or polar regions); he also manages the schedule of both of IUEM's boats. With an academic background in biology, followed by a career in the Navy as an explosive ordnance clearance diver, he has been employed as a scientific diver by the CNRS since 2002. His twin passions for photography and diving have naturally led him to become a specialist in underwater photography. His photographs have been used in numerous exhibitions and publications. The vast majority of images of different scientific missions on this site are his work.</p>
+				</div>
+			</div>	
+		</section>
+
   
   </div>
   <span tal:define="thumb nocall:context/thumb_pict">

@@ -5,7 +5,10 @@ http://docs.plone.org/external/plone.app.dexterity/docs/advanced/references.html
 pour associer un projet a des missions et des portraits.
 """
 
+import logging
 from plone.dexterity.content import Item
+from plone.dexterity.browser import add
+from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
 from plone.autoform import directives
 # from plone.namedfile import field as namedfile
@@ -23,6 +26,9 @@ from zope.publisher.browser import BrowserView
 import logging
 import urllib
 import re
+from plonetheme.bebest.utils import getTitleFromVoc
+
+logger = logging.getLogger('bebest PORTRAIT')
 
 from plonetheme.bebest import _
 
@@ -152,7 +158,22 @@ alsoProvides(IPortrait, IFormFieldProvider)
 
 
 class PortraitView(BrowserView):
+
+    def getJobs(self):
+        jobs = u""
+        for job in self.context.jobs:
+            j = getTitleFromVoc("bebest.jobs", job)
+        return j
+
+
+class AddView(add.DefaultAddView):
     pass
+
+
+class editForm(edit.DefaultEditForm):
+    pass
+
+
 
 class portrait(Item):
     implements(IPortrait)
