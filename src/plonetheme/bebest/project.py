@@ -29,6 +29,7 @@ from zope.interface import alsoProvides
 from collective import dexteritytextindexer
 from zope.publisher.browser import BrowserView
 from plone import api
+import json
 # from plone.formwidget.contenttree import PathSourceBinder
 # from plone.namedfile.field import NamedBlobImage
 import logging
@@ -196,19 +197,34 @@ class ProjectView(BrowserView):
         results = api.content.find(depth=1,
                                    portal_type='bebest.mission',
                                    path='/'.join(context.getPhysicalPath()))
+        js = u'<script>'
+        layers = u'var overlayMaps = {'
         features = []
         for mission in results:
             m = mission.getObject()
             geo = m.geojson
             try:
                 if len(geo) > 5:
+                    missionJS = u'var '
+                    missionJS += api.content.get_uuid(m)
+                    missionJS += u'=' + m.geojson + u';'
+                    js += missionJS
+                    layers += u"'"
+                    layers += m.title + u"':" + api.content.get_uuid(m) + u','
                     features.append(geo)
             except Exception:
                 pass
-        logger.info(features)
+        # logger.info(features)
         if len(features) == 0:
             return False
-        return features
+        layers = layers.strip(u',')
+        layers += u'};'
+        js += layers
+        js += u'</script>'
+        # logger.info(layers)
+        # logger.info(js)
+       
+        return js
 
     def getMapZoom(self):
         zoomjs = '<script>var zoom = 4;</script>'

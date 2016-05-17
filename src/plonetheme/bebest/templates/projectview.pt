@@ -23,6 +23,37 @@
         map center
   </span>
 
+  <span tal:content="structure python:view.getMissionsFeatures()"
+        tal:omit-tag="">
+        features
+  </span>
+  
+  <style>
+     .leaflet-popup {
+     	position: absolute;
+     	left: 0px;
+     }
+     .leaflet-control-layers-toggle {
+		background-image:url(++theme++plonetheme.bebest/images/leaflet/layers.png);
+		width: 44px;
+		height: 44px;
+	 }
+	 #feature-infos {
+	    width: 15%;
+	    max-height: 5000px;
+	    background: rgba(255, 255, 255, 1);
+	    position: absolute;
+	    padding: 5px;
+	    border: 1px solid grey;
+	    border-radius: 5px;
+	    display: none;
+	    z-index: 2000;
+	}
+	#bebest-map-info {
+	    font-weight: bold;
+	    color: black;
+	}
+   </style>
     <section id="bebest-map" tal:condition="python:features">
    	<div>
    	<span tal:omit-tag="" tal:content="structure string:${features}">

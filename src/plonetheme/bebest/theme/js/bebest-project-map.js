@@ -3,7 +3,6 @@ if (typeof(zoom) === "undefined") {
 	var zoom = 4;
 }
 
-console.log(center);
 if (typeof(center) === "undefined") {
 	var center = [48.40003249610685, -4.5263671875];
 }
@@ -29,24 +28,22 @@ osm.addTo(mymap);
 mymap.addLayer(stamenTiles);
 
 /* icone de point */
-var bebestIcon = L.icon({ // Appel de la variable Bebesticon pour personnaliser le marker
-    iconUrl: '++theme++plonetheme.bebest/images/leaflet/icon-orange.png', //Url du l'image icone
-	
-    iconSize:     [27, 40], // Taille de l'icone
-    iconAnchor:   [13, 40], // Point de l'icone où se trouve la location exacte du marker
-    popupAnchor:  [0, -40] // Point de l'icone où se trouvera le debut de la popup par rapport a l'iconAnchor
+var bebestIcon = L.icon({
+    iconUrl: '++theme++plonetheme.bebest/images/leaflet/icon-orange.png',	
+    iconSize:     [27, 40],
+    iconAnchor:   [13, 40],
+    popupAnchor:  [0, -40]
 });
 
 /* controle de changement de layer osm vs stamenTiles */
-var baseLayers = { //Appel des différents layers
+var baseLayers = {
 		"OpenStreetmap": osm, 
 		"Stamen Toner": stamenTiles
 };
-L.control.layers(baseLayers).addTo(mymap); // Bouton pour permettre au utilisateurs de choisir la map, controle la variable si dessus.
-
+//Bouton pour permettre au utilisateurs de choisir la map, controle la variable si dessus.
+L.control.layers(baseLayers, overlayMaps).addTo(mymap);
 
 L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
-
 
 /* Pour positionner de facon fixe la fenetre d'info, la difficulte etait dans le 
  * fait que l'attribut css "position: absolute" s'applique relativement a l'ancetre
@@ -55,7 +52,7 @@ L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/
  * la section qui contient la carte et d'afficher le popup d'info relativement a
  * cette derniere. 
  */
-position = $("#bebest-home-map").position();
+position = $("#bebest-map").position();
 $("#feature-infos").css("top", position.top + 100);
 $("#feature-infos").css("left", position.left + 10);
 
