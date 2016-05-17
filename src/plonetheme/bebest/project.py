@@ -198,8 +198,10 @@ class ProjectView(BrowserView):
                                    portal_type='bebest.mission',
                                    path='/'.join(context.getPhysicalPath()))
         js = u'<script>'
-        layers = u'\nvar overlayMaps = {'
+        missionsNames = u'\nvar missionsNames = ['
+        missionsUUID = u'\nvar missionsUUID = ['
         missionsFeatures = u'\nvar missionsFeatures = ['
+        missionsURL = u'\nvar missionsURL = ['
         features = []
         for mission in results:
             m = mission.getObject()
@@ -212,8 +214,9 @@ class ProjectView(BrowserView):
                     missionJS += u'=' + m.geojson + u';'
                     js += missionJS
                     missionsFeatures += uuid + u','
-                    layers += u"'"
-                    layers += m.title + u"': L.geoJson(" + uuid + u'),'
+                    missionsNames += u"'" + m.title + u"',"
+                    missionsUUID += u"'" + uuid + u"',"
+                    missionsURL += u"'" + m.absolute_url() + u"',"
                     features.append(geo)
             except Exception:
                 pass
@@ -222,10 +225,16 @@ class ProjectView(BrowserView):
             return False
         missionsFeatures = missionsFeatures.strip(u',')
         missionsFeatures += u'];'
-        layers = layers.strip(u',')
-        layers += u'};'
-        js += layers
+        missionsNames = missionsNames.strip(u',')
+        missionsNames += u'];'
+        missionsUUID = missionsUUID.strip(u',')
+        missionsUUID += u'];'
+        missionsURL = missionsURL.strip(u',')
+        missionsURL += u'];'
+        js += missionsNames
+        js += missionsUUID
         js += missionsFeatures
+        js += missionsURL
         js += u'</script>'
         # logger.info(layers)
         logger.info(js)

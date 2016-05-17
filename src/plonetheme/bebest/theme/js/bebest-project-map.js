@@ -2,6 +2,7 @@
 function onEachFeature(feature, layer) {
 	layer.on('click', function (e) {
 		title = " ";
+		console.log(feature.properties.name);
 		if (feature.properties.name) {
 			title = '<h3>' + feature.properties.name + '</h3>';
 		}
@@ -16,6 +17,12 @@ function onEachFeature(feature, layer) {
         // console.log(feature.properties.name);
         $("#feature-infos").fadeOut(8000);
 	});
+}
+
+function layerClic(layer, e) {
+	console.log(e.latlng);
+	console.log(e.target);
+	console.log(layer);
 }
 
 if (typeof(zoom) === "undefined") {
@@ -62,13 +69,13 @@ var baseLayers = {
 
 L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
 
+var overlayMaps = {}
 fLen = missionsFeatures.length;
-console.log(fLen);
 for (n = 0; n < fLen ; n++) {
 	features = missionsFeatures[n];
+	layer = L.geoJson();
 	for (i = 0; i < features['features'].length ; i++) {
 		f = features['features'][i];
-		console.log(f);
 		style = {};
 		if (f.properties['stroke']) {
 			style['color'] = f.properties['stroke'];
@@ -80,17 +87,17 @@ for (n = 0; n < fLen ; n++) {
 		if (f.properties['fill']) {
 			style['fillColor'] = f.properties['fill'];
 		}
-		/*
-		L.geoJson(f, {
-			"style": style,
-		})
-		*/
-		L.geoJson(f, {
-			"style": style,
-			onEachFeature: onEachFeature
-		});
-		// L.geoJson(features).addTo(mymap);
+		// onEachFeature(f, layer);
+		if (f.properties && f.properties.name) {
+			console.log(f.properties.name);
+			layer.bindPopup(f.properties.name);
+		}
+		layer.addData(f);
 	}
+	// on devrait passer le nom et l'URL de la mission
+	layer.bindPopup('<a heref="' + missionsURL[n] + '"> MISSION</a>');
+	overlayMaps[missionsNames[n]] = layer;
+	layer.addTo(mymap);
 }
 
 //Bouton pour permettre au utilisateurs de choisir la map, controle la variable si dessus.
