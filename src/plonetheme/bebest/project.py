@@ -207,13 +207,13 @@ class ProjectView(BrowserView):
             try:
                 if len(geo) > 5:
                     uuid = u'N' + api.content.get_uuid(m)
-                    missionJS = u'var '
+                    missionJS = u'\nvar '
                     missionJS += uuid
-                    missionJS += u'=L.geoJson(' + m.geojson + u');'
+                    missionJS += u'=' + m.geojson + u';'
                     js += missionJS
                     missionsFeatures += uuid + u','
                     layers += u"'"
-                    layers += m.title + u"':" + uuid + u','
+                    layers += m.title + u"': L.geoJson(" + uuid + u'),'
                     features.append(geo)
             except Exception:
                 pass

@@ -1,4 +1,23 @@
 
+function onEachFeature(feature, layer) {
+	layer.on('click', function (e) {
+		title = " ";
+		if (feature.properties.name) {
+			title = '<h3>' + feature.properties.name + '</h3>';
+		}
+		description = " ";
+		if (feature.properties.description) {
+			description = feature.properties.description;
+		}
+		document.getElementById("bebest-feature-name").innerHTML = title;
+		document.getElementById("bebest-feature-description").innerHTML = description;
+		$("#feature-infos").stop();
+        $("#feature-infos").fadeIn("fast");
+        // console.log(feature.properties.name);
+        $("#feature-infos").fadeOut(8000);
+	});
+}
+
 if (typeof(zoom) === "undefined") {
 	var zoom = 4;
 }
@@ -40,13 +59,45 @@ var baseLayers = {
 		"OpenStreetmap": osm, 
 		"Stamen Toner": stamenTiles
 };
-console.log(overlayMaps);
-fLen = missionsFeatures.lenght;
-for (i = 0; i < fLen; i++) {
-	missionsFeatures[i].addTo(mymap);
+
+L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
+
+fLen = missionsFeatures.length;
+console.log(fLen);
+for (n = 0; n < fLen ; n++) {
+	features = missionsFeatures[n];
+	for (i = 0; i < features['features'].length ; i++) {
+		f = features['features'][i];
+		console.log(f);
+		style = {};
+		if (f.properties['stroke']) {
+			style['color'] = f.properties['stroke'];
+		}
+		if (f.properties['stroke-width']) {
+			// stroke-
+			style['weight'] = f.properties['stroke-width'];
+		}
+		if (f.properties['fill']) {
+			style['fillColor'] = f.properties['fill'];
+		}
+		/*
+		L.geoJson(f, {
+			"style": style,
+		})
+		*/
+		L.geoJson(f, {
+			"style": style,
+			onEachFeature: onEachFeature
+		});
+		// L.geoJson(features).addTo(mymap);
+	}
 }
+
 //Bouton pour permettre au utilisateurs de choisir la map, controle la variable si dessus.
-L.control.layers(baseLayers, overlayMaps).addTo(mymap);
+// L'option ``collapsed`` permet que la liste des layers soir ouverte par defaut
+L.control.layers(baseLayers, overlayMaps, {collapsed:false}).addTo(mymap);
+// L.control.layers(baseLayers, overlayMaps).addTo(mymap);
+// $("input.leaflet-control-layers-selector").prop("checked", true);
 
 L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
 
@@ -60,6 +111,10 @@ L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/
 position = $("#bebest-map").position();
 $("#feature-infos").css("top", position.top + 100);
 $("#feature-infos").css("left", position.left + 10);
+
+
+
+
 
 /* code fortement inspire de http://jsfiddle.net/expedio/z1nw3pt4/  pour le popup
  * quand on clique sur un point, une ligne ou un polygone
