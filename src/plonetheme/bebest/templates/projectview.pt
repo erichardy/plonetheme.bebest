@@ -23,11 +23,6 @@
         map center
   </span>
 
-  <span tal:content="structure python:view.getMissionsFeatures()"
-        tal:omit-tag="">
-        features
-  </span>
-  
   <style>
      .leaflet-popup {
      	position: absolute;

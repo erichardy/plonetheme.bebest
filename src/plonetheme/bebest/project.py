@@ -198,32 +198,37 @@ class ProjectView(BrowserView):
                                    portal_type='bebest.mission',
                                    path='/'.join(context.getPhysicalPath()))
         js = u'<script>'
-        layers = u'var overlayMaps = {'
+        layers = u'\nvar overlayMaps = {'
+        missionsFeatures = u'\nvar missionsFeatures = ['
         features = []
         for mission in results:
             m = mission.getObject()
             geo = m.geojson
             try:
                 if len(geo) > 5:
+                    uuid = u'N' + api.content.get_uuid(m)
                     missionJS = u'var '
-                    missionJS += api.content.get_uuid(m)
-                    missionJS += u'=' + m.geojson + u';'
+                    missionJS += uuid
+                    missionJS += u'=L.geoJson(' + m.geojson + u');'
                     js += missionJS
+                    missionsFeatures += uuid + u','
                     layers += u"'"
-                    layers += m.title + u"':" + api.content.get_uuid(m) + u','
+                    layers += m.title + u"':" + uuid + u','
                     features.append(geo)
             except Exception:
                 pass
         # logger.info(features)
         if len(features) == 0:
             return False
+        missionsFeatures = missionsFeatures.strip(u',')
+        missionsFeatures += u'];'
         layers = layers.strip(u',')
         layers += u'};'
         js += layers
+        js += missionsFeatures
         js += u'</script>'
         # logger.info(layers)
-        # logger.info(js)
-       
+        logger.info(js)
         return js
 
     def getMapZoom(self):

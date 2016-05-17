@@ -40,6 +40,11 @@ var baseLayers = {
 		"OpenStreetmap": osm, 
 		"Stamen Toner": stamenTiles
 };
+console.log(overlayMaps);
+fLen = missionsFeatures.lenght;
+for (i = 0; i < fLen; i++) {
+	missionsFeatures[i].addTo(mymap);
+}
 //Bouton pour permettre au utilisateurs de choisir la map, controle la variable si dessus.
 L.control.layers(baseLayers, overlayMaps).addTo(mymap);
 
@@ -60,6 +65,7 @@ $("#feature-infos").css("left", position.left + 10);
  * quand on clique sur un point, une ligne ou un polygone
  * */
 /* Pour les options de style, voir http://leafletjs.com/reference.html#path */
+/*
 props = ['']
 for (i = 0; i < features['features'].length ; i++) {
 	f = features['features'][i];
@@ -102,4 +108,6 @@ function onEachFeature(feature, layer) {
 geojsonLayer = L.geoJson(features, {
     onEachFeature: onEachFeature
 }).addTo(mymap);
+
+*/
 // mymap.addLayer(geojsonLayer);
