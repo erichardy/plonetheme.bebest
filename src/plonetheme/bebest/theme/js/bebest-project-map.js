@@ -94,8 +94,11 @@ for (n = 0; n < fLen ; n++) {
 		}
 		layer.addData(f);
 	}
-	// on devrait passer le nom et l'URL de la mission
-	layer.bindPopup('<a heref="' + missionsURL[n] + '"> MISSION</a>');
+	// on passe le nom, le sous-titre et l'URL de la mission
+	popupContent = '<h2><a href="' + missionsURL[n] + '">' + missionsNames[n] + '</a></h2>';
+	popupContent += '<br />';
+	popupContent += missionsSubtitle[n];
+	layer.bindPopup(popupContent);
 	overlayMaps[missionsNames[n]] = layer;
 	layer.addTo(mymap);
 }

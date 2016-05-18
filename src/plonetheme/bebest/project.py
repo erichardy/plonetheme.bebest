@@ -29,7 +29,6 @@ from zope.interface import alsoProvides
 from collective import dexteritytextindexer
 from zope.publisher.browser import BrowserView
 from plone import api
-import json
 # from plone.formwidget.contenttree import PathSourceBinder
 # from plone.namedfile.field import NamedBlobImage
 import logging
@@ -39,6 +38,7 @@ import logging
 from plonetheme.bebest import _
 
 logger = logging.getLogger('bebest PROJECT')
+
 
 class StartBeforeEnd(Invalid):
     __doc__ = _(u"The start or end date is invalid")
@@ -65,9 +65,9 @@ class IProject(model.Schema):
     dexteritytextindexer.searchable('categories')
     directives.widget(categories='z3c.form.browser.checkbox.CheckBoxFieldWidget')
     categories = schema.Set(title=_(u"project categories"),
-                          description=_(u"select categories for this project"),
-                          value_type=schema.Choice(
-                                     vocabulary=u"bebest.projectcategories"),)
+                            description=_(u"select categories for this project"),
+                            value_type=schema.Choice(
+                                    vocabulary=u"bebest.projectcategories"),)
     main_pict = NamedBlobImage(title=_(u"main photo"),
                                required=False
                                )
@@ -113,11 +113,11 @@ class IProject(model.Schema):
                            'map_center',
                            ])
     zoom = schema.Int(title=_(u"zoom level"),
-                             description=_(u"between 0 and 15"),
-                             min=0,
-                             max=15,
-                             default=4,
-                             required=False)
+                      description=_(u"between 0 and 15"),
+                      min=0,
+                      max=15,
+                      default=4,
+                      required=False)
     map_center = schema.TextLine(title=_(u"map center"),
                                  description=_(u'must be in the form "[lat, long]"'),
                                  default=u'[48.40003249610685, -4.5263671875]',
@@ -191,7 +191,12 @@ class editForm(edit.DefaultEditForm):
 
 
 class ProjectView(BrowserView):
-    
+
+    def _toHTML(self, ch):
+        s = ch.replace("'", "&rsquo;").\
+            replace('"', "&rdquo;")
+        return s
+
     def getMissionsFeatures(self):
         context = self.context
         results = api.content.find(depth=1,
@@ -202,19 +207,23 @@ class ProjectView(BrowserView):
         missionsUUID = u'\nvar missionsUUID = ['
         missionsFeatures = u'\nvar missionsFeatures = ['
         missionsURL = u'\nvar missionsURL = ['
+        missionsSubtitle = u'\nvar missionsSubtitle = ['
         features = []
         for mission in results:
             m = mission.getObject()
             geo = m.geojson
             try:
                 if len(geo) > 5:
+                    title = self._toHTML(m.title)
+                    subtitle = self._toHTML(m.subtitle)
                     uuid = u'N' + api.content.get_uuid(m)
                     missionJS = u'\nvar '
                     missionJS += uuid
                     missionJS += u'=' + m.geojson + u';'
                     js += missionJS
                     missionsFeatures += uuid + u','
-                    missionsNames += u"'" + m.title + u"',"
+                    missionsNames += u"'" + title + u"',"
+                    missionsSubtitle += u"'" + subtitle + u"',"
                     missionsUUID += u"'" + uuid + u"',"
                     missionsURL += u"'" + m.absolute_url() + u"',"
                     features.append(geo)
@@ -227,11 +236,14 @@ class ProjectView(BrowserView):
         missionsFeatures += u'];'
         missionsNames = missionsNames.strip(u',')
         missionsNames += u'];'
+        missionsSubtitle = missionsSubtitle.strip(u',')
+        missionsSubtitle += u'];'
         missionsUUID = missionsUUID.strip(u',')
         missionsUUID += u'];'
         missionsURL = missionsURL.strip(u',')
         missionsURL += u'];'
         js += missionsNames
+        js += missionsSubtitle
         js += missionsUUID
         js += missionsFeatures
         js += missionsURL
