@@ -37,11 +37,13 @@ class portFolio(BrowserView):
         """
         @param registry_record:
         """
+        context = self.context
         prefix = 'plonetheme.bebest.interfaces.'
         prefix += 'IPlonethemeBebestSettings.' + registry_record
         tag = api.portal.get_registry_record(prefix)
         founds = api.content.find(context=self.context,
                                   portal_type=obj_type,
+                                  path='/'.join(context.getPhysicalPath()),
                                   depth=1,
                                   )
         if len(founds) == 0:

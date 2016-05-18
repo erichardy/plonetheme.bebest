@@ -32,8 +32,8 @@
 		              <span class="author text-center">
 		                  <img src=""
 		                       tal:attributes="src string:${author/absolute_url}"
-		                       class="img-circle"/>
-		                  <br />
+		                       class="img-portrait img-circle"/>
+		                  <br /> <br />
 		                  <span tal:content="string:${author/title}"
 		                        class="grey text-center h2 pushtop">title</span>
 		              </span>
