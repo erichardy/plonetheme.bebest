@@ -33,7 +33,12 @@ bodyClasses = document.getElementById("visual-portal-wrapper").classList
 $("button.collapser").click(function(e){
 	// alert(this.id);
 	to_show = $(this).attr("id") + '-collapse';
-	$("#"+to_show).toggle("slow");
+	$("#" + to_show).toggle("slow", "swing", function(e){
+		display = $("#" + to_show).css("display");
+		if (display === "block"){
+			$("#" + to_show).css("display", "flex");
+		}
+	});
 })
 
 /* Gestion des mails */

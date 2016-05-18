@@ -19,12 +19,7 @@
                    team python:view.getTeam();
                    displayEN python:view.displayEN();
                    toLocalizedTime nocall:context/@@plone/toLocalizedTime">
-    <!-----Image de fond,fixe, l'image source est l'image principale---->
-    <div id="bg-page-img" class="hidden-xs"
-         tal:define="image nocall:context/main_pict;">
-      <img tal:attributes="src string:${context/absolute_url}/@@download/main_pict/${image/filename}" />
-    </div>
-  
+
   <span tal:content="structure python:view.getMapZoom()"
         tal:omit-tag="">
         map zoom
@@ -34,7 +29,14 @@
         map center
   </span>
 
-   <section class="container"><!------Debut de la section titre de la mission--->
+    <!-----Image de fond,fixe, l'image source est l'image principale---->
+    <div id="bg-page-img" class="hidden-xs"
+         tal:define="image nocall:context/main_pict;">
+      <img tal:attributes="src string:${context/absolute_url}/@@download/main_pict/${image/filename}" />
+    </div>
+
+   <!------Debut de la section titre de la mission--->
+   <section class="container">
 			<div class="row">
 				<div id="page-title" class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-0 col-md-5 col-md-offset-1">
 					<!-----Champ title---->
@@ -67,35 +69,39 @@
    <section>
 	<div class="container-fluid bg-light-grey">
 		<div class="container">
+		<h2 class="text-center">Chef de mission / chief scientist</h2>
 			<div class="thumbnail-wrapper">
-				<h3>chef de mission / chief scientist</h3>
-				  <a href="" tal:attributes="href string:${chief/absolute_url}">
-				     <div class="thumbnail-portrait portrait-second"
+				
+				   <div class="thumbnail-portrait"
 				          tal:define="image nocall:chief/thumb_pict">
+				      <div class="thumbnail-portrait">
+				      <a href="" tal:attributes="href string:${chief/absolute_url}">
 				       <img tal:condition="image"
 				            tal:attributes="src string:${chief/absolute_url}/@@download/thumb_pict/${image/filename}"
-				            class="img-circle" />
+				            class="img-circle portrait-prime" />
 				       <h4 tal:content="string:${chief/first_name} ${chief/family_name}">NAME</h4>
 				       <p tal:content="python:view.getAffiliations(chief)">Affiliations</p>
+				      </a>
 				     </div>
-				   </a>
+				   </div>
 			</div>
 			<button id="show-participants"
 			        type="button"
-			        class="btn btn-default collapser"
+			        class="btn btn-default center-block collapser"
 			        i18n:translate="">other participants</button>
+			<p>&nbsp;</p>
 			<div class="thumbnail-wrapper bebest-collapse" id="show-participants-collapse">
 				<span tal:omit-tag="" tal:repeat="person team">
-				   <a href="" tal:attributes="href string:${person/absolute_url}">
-				     <div class="thumbnail-portrait portrait-second"
+				     <div class="thumbnail-portrait"
 				          tal:define="image nocall:person/thumb_pict">
+				      <a href="" tal:attributes="href string:${person/absolute_url}">
 				       <img tal:condition="image"
 				            tal:attributes="src string:${person/absolute_url}/@@download/thumb_pict/${image/filename}"
-				            class="img-circle" />
+				            class="img-circle portrait-second" />
 				       <h4 tal:content="string:${person/first_name} ${person/family_name}">NAME</h4>
 				       <p tal:content="python:view.getAffiliations(person)">Affiliations</p>
+				     </a>
 				     </div>
-				   </a>
 				</span>
 			</div>
 		</div>			

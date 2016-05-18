@@ -87,7 +87,12 @@
   <replace css:theme-children="#content"
            css:content-children="#content" />
 
+  <!--
   <drop css:content="#portal-footer-wrapper" />
   <drop css:theme="footer" />
+  -->
+  <replace css:content="#portal-footer-wrapper"
+           css:theme="footer#footer"
+           />
 
 </rules>
