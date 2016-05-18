@@ -49,7 +49,7 @@
                    	     width="500"
                    	     alt="bebest blanc"
                    	     />
-                    <p class="bright" tal:content="structure string:${view/getCarouselText}"></p>
+                    <p class="super bright text-center" tal:content="structure string:${view/getCarouselText}"></p>
 			   </div>
     </section> <!--FIN SECTION CAROUSEL-->
 
@@ -89,7 +89,6 @@
            <div class="carousel-inner" role="listbox">
            <span tal:omit-tag="" tal:repeat="newsItem newsItems">
              <div tal:condition="python:repeat.newsItem.start" class="item active news-wrapper">
-               <a href="#" tal:attributes="href string:${newsItem/absolute_url}">
 	             <div class="news-img">
 	             <img tal:define="scale newsItem/@@images"
 	                    tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='img-circle')"
@@ -100,12 +99,10 @@
 		             <hr />
 		             <p>${newsItem/Description}</p>
 		             <a href="#" tal:attributes="href string:${newsItem/absolute_url}"
-		                         tal:content="string:+">url</a>
+		                         tal:content="string:En savoir plus... / More...">url</a>
                  </div>
-               </a>
              </div>
              <div tal:condition="python:not repeat.newsItem.start" class="item news-wrapper">
-               <a href="#" tal:attributes="href string:${newsItem/absolute_url}">
 	             <div class="news-img">
 		             <img tal:define="scale newsItem/@@images"
 		                    tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='img-circle')"
@@ -116,9 +113,8 @@
 		             <hr />
 		             <p>${newsItem/Description}</p>
 		             <a href="#" tal:attributes="href string:${newsItem/absolute_url}"
-		                         tal:content="string:+">url</a>
+		                         tal:content="string:En savoir plus... / More...">url</a>
                  </div>
-               </a>
              </div>
 
            </span>
@@ -142,13 +138,14 @@
             tal:condition="aboutDocuments">
 		<img id="scrollreveal" class="hidden-xs"
 		     tal:attributes="src string:${portal_url}/images/${aboutBgImage}" />
+   		<!-- class="container-fluid" si nb == 3 -->
    		<div class="container"
    		     tal:define="nbDocs python:len(aboutDocuments);
    		                 classesAbout python:view.getAboutClasses(nbDocs)">
    			<div class="super text-center">What we do</div>
    			<div class="row">
    			<span tal:omit-tag="" tal:repeat="aboutDocument aboutDocuments">
-   			  <div tal:attributes="class python:classesAbout[0]">
+   			  <div tal:attributes="class python:classesAbout[repeat.aboutDocument.number - 1]">
    			    <h2 class="text-center"
    			        tal:content="string:${aboutDocument/title}">Benthic and coastal biodiversity science</h2>
 				<p class="home-content"

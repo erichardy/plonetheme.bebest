@@ -107,16 +107,16 @@
 		</div>			
 	</div>
 	</section>
-   
    <div id="page-content" class="container-fluid">
      <div class="container">
        <div class="row pushtop">
-		<div class="col-xs-12 col-md-10 col-md-offset-1"> 
 			<div tal:condition="displayEN"
 			     class="align-right">
+			     <div class="align-right">
 			        <button type="button"
 			                id="show-english-version"
 			                class="btn btn-default collapser">English version</button>
+			     </div>
 			<span class="bebest-collapse"
 			      tal:content="structure string:${context/presentation_en/raw}"
 			      id="show-english-version-collapse">
@@ -127,10 +127,8 @@
 		  <span tal:content="structure string:${context/presentation/raw}">
 		    presentation FR
 		  </span>
-	    </div>
-</div>
-     </div>
-   </div>
+	  </div>
+   
    <!-- DEBUT SECTION MAP -->
    <style>
      .leaflet-popup {
@@ -158,24 +156,25 @@
 	    color: black;
 	}
    </style>
-  
-   <section id="bebest-home-map" tal:condition="python:features">
+
+   <section id="bebest-mission-map" tal:condition="python:features">
    	<div>
-   	<span tal:omit-tag="" tal:content="structure string:${features}">
-   	  features
-   	</span>
+	   	<span tal:omit-tag="" tal:content="structure string:${features}">
+	   	  features
+	   	</span>
 	   	<div id="feature-infos">
 	   	  <span class="bebest-feature-name" id="bebest-feature-name">name</span>
 	   	  <br />
 	   	  <span class="bebest-feature-description" id="bebest-feature-description"></span>
 	   	</div>
    	</div>
-		<div id="bebest-map">
-		</div>
+	<div id="bebest-map">
+	</div>
    
    </section>
+   </div>
   </div>
-
+</div>
   <script src="++theme++plonetheme.bebest/js/bebest-mission-map.js"></script>
 
   </metal:content-core>
