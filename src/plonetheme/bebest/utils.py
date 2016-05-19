@@ -15,6 +15,7 @@ from Products.CMFCore.utils import getToolByName
 from zope.component import getUtility
 from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 from OFS.interfaces import IOrderedContainer
+from plone import api
 # from plone import api
 import os
 from string import strip
@@ -263,6 +264,26 @@ sortedMyList = sorted(myList, sort_by_position)
 """
 def sort_by_position(a, b):
     return get_position_in_parent(a) - get_position_in_parent(b)
+
+
+def getGalleryImages(context):
+    c = context
+    try:
+        carousel = c['carousel']
+        if api.content.get_state(carousel) != 'published':
+            return False
+    except Exception:
+        return False
+    founds = api.content.find(context=c,
+                              portal_type='Image',
+                              path='/'.join(carousel.getPhysicalPath())
+                              )
+    if len(founds) == 0:
+        return False
+    images = [i.getObject() for i in founds
+              if api.content.get_state(i.getObject()) == 'published']
+    # import pdb;pdb.set_trace()
+    return sorted(images, sort_by_position)
 
 
 class debug(object):

@@ -57,7 +57,7 @@ L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/
  * la section qui contient la carte et d'afficher le popup d'info relativement a
  * cette derniere. 
  */
-position = $("#bebest-home-map").position();
+position = $("#bebest-map").position();
 $("#feature-infos").css("top", position.top + 100);
 $("#feature-infos").css("left", position.left + 10);
 

@@ -10,6 +10,32 @@ from plonetheme.bebest.utils import sort_by_position
 
 logger = logging.getLogger('bebest')
 
+"""
+Fonctionnement du portfolio
+
+Le portfolio est une vue d'un Folder.
+
+Les folders ont un behavior ``leadimage`` et c'est cette image qui
+est utilisée comme image principale, la première image du portfolio.
+
+Les images qui apparaissent dans les vignettes rondes, sont celles qui
+sont taggée avec le tag qui est défini par ``portfolio_author_tag``.
+Par défaut, le mot clé est ``portfolio-author``
+
+Les images qui apparaissent dans le portfolio sont les images qui ne sont pas
+traggées avec le tag qui est défini par ``portfolio_author_tag`` (cf control panel)
+
+Le texte est dans un document qui a pour id ``portfolio-text``. Il permet de présenter
+du texte riche.
+
+La couleur du background est donnée par un document qui a pour id ``portfolio-bg``.
+Le contenu propre de ce document n'est pas pris en compte, seule la description est
+utilisée. Dans cette description, doit apparaître le nom d'une classe CSS
+définie dans les CSS. Par défault (si ce document n'existe pas ou s'il n'y a rien dans
+la description), la valeur est ``bg-dark``
+
+"""
+
 
 class portFolio(BrowserView):
 
@@ -54,6 +80,19 @@ class portFolio(BrowserView):
             return sortedObjs
         return objs
 
+    def getPorfolioBG(self):
+        try:
+            bgDoc = self.context['portfolio-bg']
+            if bgDoc.portal_type != 'Document':
+                return 'bg-dark'
+        except Exception:
+            return 'bg-dark'
+        bg = bgDoc.description
+        if bg:
+            return bg
+        else:
+            return 'bg-dark'
+
     def getPortfolioAuthors(self):
         reg = 'portfolio_author_tag'
         authors = self._getPortfolioObjs(registry_record=reg,
@@ -71,3 +110,13 @@ class portFolio(BrowserView):
                                         effective=True)
         sortedImages = sorted(images, sort_by_position)
         return sortedImages
+
+    def getPorfolioText(self):
+        try:
+            doc = self.context['portfolio-text']
+            if doc.portal_type != 'Document':
+                return False
+        except Exception:
+            return False
+        # import pdb;pdb.set_trace()
+        return doc.text.raw

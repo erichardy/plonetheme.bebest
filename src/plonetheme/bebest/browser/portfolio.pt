@@ -11,8 +11,9 @@
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
   <div tal:define="images python:view.getPortfolioImages();
-                   authors python:view.getPortfolioAuthors()"
-       class="bg-dark">
+                   authors python:view.getPortfolioAuthors();
+                   bg python:view.getPorfolioBG()"
+       tal:attributes="class string:${bg}">
    
 	<section>
 	  <div class="container-fluid portfolio-fullimg">
@@ -30,12 +31,12 @@
 		          <span tal:omit-tag="" tal:repeat="author authors">
 		            <td>
 		              <span class="author text-center">
-		                  <img src=""
+		                  <p><img src=""
 		                       tal:attributes="src string:${author/absolute_url}"
 		                       class="img-portrait img-circle"/>
-		                  <br /> <br />
-		                  <span tal:content="string:${author/title}"
-		                        class="grey text-center h2 pushtop">title</span>
+		                  </p>
+		                  <p tal:content="string:${author/title}"
+		                        class="grey text-center h2 pushtop">title</p>
 		              </span>
 		            </td>
 		          </span>
@@ -47,8 +48,10 @@
 		 <div class="super grey text-center">
 		   <span>${context/title}</span>
 		 </div>
-	     <div class="text-justify grey col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-	       <span>${context/description}</span>
+	     <div tal:define="doc python:view.getPorfolioText()"
+	          tal:condition="doc"
+	          class="text-justify grey col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+	       <span tal:content="structure string:${doc}">doc</span>
 	     </div>
 	     <span tal:omit-tag="" tal:repeat="image images">
 	       <img src=""
