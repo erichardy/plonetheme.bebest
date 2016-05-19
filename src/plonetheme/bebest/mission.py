@@ -9,6 +9,7 @@ from plone.dexterity.content import Container
 from plone.dexterity.browser import add
 from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
+from plone import api
 # from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 # from plone.namedfile import field as namedfile
@@ -37,7 +38,7 @@ from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 import logging
 # import urllib
 # import re
-
+from plonetheme.bebest.utils import sort_by_position
 from plonetheme.bebest import _
 
 logger = logging.getLogger('bebest MISSIONS')
@@ -318,6 +319,25 @@ class MissionView(BrowserView):
     def displayEN(self):
         return self.context.display_en
 
+    def getGalleryImages(self):
+        c = self.context
+        try:
+            carousel = c['carousel']
+            if api.content.get_state(carousel) != 'published':
+                return False
+        except Exception:
+            return False
+        founds = api.content.find(context=c,
+                                  portal_type='Image',
+                                  path='/'.join(carousel.getPhysicalPath())
+                                  )
+        if len(founds) == 0:
+            return False
+        images = [i.getObject() for i in founds
+                  if api.content.get_state(i.getObject()) == 'published']
+        # import pdb;pdb.set_trace()
+        return sorted(images, sort_by_position)
+        
 
 class mission(Container):
     implements(IMission)

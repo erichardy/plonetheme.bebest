@@ -14,6 +14,7 @@ from Products.CMFCore.interfaces import IFolderish
 from Products.CMFCore.utils import getToolByName
 from zope.component import getUtility
 from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
+from OFS.interfaces import IOrderedContainer
 # from plone import api
 import os
 from string import strip
@@ -245,6 +246,23 @@ def getTitleFromVoc(vocabulary, value):
     except:
         term = value
     return term
+
+
+# from http://docs.plone.org/develop/plone/content/listing.html
+def get_position_in_parent(obj):
+    parent = obj.aq_inner.aq_parent
+    ordered = IOrderedContainer(parent, None)
+    if ordered is not None:
+        return ordered.getObjectPosition(obj.getId())
+    return 0
+
+
+"""
+Usage :
+sortedMyList = sorted(myList, sort_by_position)
+"""
+def sort_by_position(a, b):
+    return get_position_in_parent(a) - get_position_in_parent(b)
 
 
 class debug(object):

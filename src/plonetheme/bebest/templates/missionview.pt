@@ -18,7 +18,8 @@
                    chief python:view.getChief();
                    team python:view.getTeam();
                    displayEN python:view.displayEN();
-                   toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+                   toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                   gallery python:view.getGalleryImages()">
 
   <span tal:content="structure python:view.getMapZoom()"
         tal:omit-tag="">
@@ -128,7 +129,9 @@
 		    presentation FR
 		  </span>
 	  </div>
-   
+   <span tal:condition="gallery">
+     <metal:macro use-macro="context/bebest_macros/macros/gallery" />
+   </span>
    <!-- DEBUT SECTION MAP -->
    <style>
      .leaflet-popup {
