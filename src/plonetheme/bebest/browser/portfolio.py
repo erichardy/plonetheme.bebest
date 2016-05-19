@@ -4,7 +4,6 @@ import logging
 from zope.publisher.browser import BrowserView
 # from operator import attrgetter
 from plone import api
-from OFS.interfaces import IOrderedContainer
 
 from plonetheme.bebest.utils import sort_by_position
 
@@ -23,17 +22,19 @@ sont taggée avec le tag qui est défini par ``portfolio_author_tag``.
 Par défaut, le mot clé est ``portfolio-author``
 
 Les images qui apparaissent dans le portfolio sont les images qui ne sont pas
-traggées avec le tag qui est défini par ``portfolio_author_tag`` (cf control panel)
+traggées avec le tag qui est défini par ``portfolio_author_tag``
+(cf control panel)
 
-Le texte est dans un document qui a pour id ``portfolio-text``. Il permet de présenter
-du texte riche.
+Le texte est dans un document qui a pour id ``portfolio-text``. Il permet de 
+présenter du texte riche.
 
-La couleur du background est donnée par un document qui a pour id ``portfolio-bg``.
-Le contenu propre de ce document n'est pas pris en compte, seule la description est
-utilisée. Dans cette description, doit apparaître le nom d'une classe CSS
-définie dans les CSS. Par défault (si ce document n'existe pas ou s'il n'y a rien dans
-la description), la valeur est ``bg-dark``
-
+La couleur du background est donnée par un document qui a pour id
+``portfolio-bg``.
+Le contenu propre de ce document n'est pas pris en compte, seule la
+description est utilisée. Dans cette description, doit apparaître le
+nom d'une classe CSS définie dans les CSS. Par défault (si ce document
+n'existe pas ou s'il n'y a rien dans la description),
+la valeur par défaut est ``bg-dark``
 """
 
 
