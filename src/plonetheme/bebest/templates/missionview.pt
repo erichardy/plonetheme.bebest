@@ -132,6 +132,7 @@
    <span tal:condition="gallery">
      <metal:macro use-macro="context/bebest_macros/macros/gallery" />
    </span>
+   <p>&nbsp;</p>
    <!-- DEBUT SECTION MAP -->
    <style>
      .leaflet-popup {
