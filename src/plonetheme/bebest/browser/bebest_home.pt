@@ -135,13 +135,13 @@
 
     <!-- DEBUT SECTION ABOUT-->
    <section id="about-bebest"
-            tal:condition="aboutDocuments">
+            tal:condition="aboutDocuments"
+            tal:define="nbDocs python:len(aboutDocuments)">
 		<img id="scrollreveal" class="hidden-xs"
 		     tal:attributes="src string:${portal_url}/images/${aboutBgImage}" />
    		<!-- class="container-fluid" si nb == 3 -->
    		<div class="container"
-   		     tal:define="nbDocs python:len(aboutDocuments);
-   		                 classesAbout python:view.getAboutClasses(nbDocs)">
+   		     tal:define="classesAbout python:view.getAboutClasses(nbDocs)">
    			<div class="super text-center">What we do</div>
    			<div class="row">
    			<span tal:omit-tag="" tal:repeat="aboutDocument aboutDocuments">

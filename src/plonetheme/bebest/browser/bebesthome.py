@@ -118,6 +118,11 @@ class bebestHome(BrowserView):
         else:
             return False
 
+    def getAboutContainerClass(self, nb):
+        if nb == 3:
+            return 'container-fluid'
+        return 'container'
+
     def getAboutClasses(self, nb):
         """
         les classes des items dependent du nombre de ceux-ci
