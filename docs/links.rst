@@ -20,6 +20,7 @@
 
 .. _plonetheme.barceloneta: https://github.com/plone/plonetheme.barceloneta
 
+.. _XSLT: http://www.w3schools.com/xsl/default.asp
 ..
    Quelques tips & tricks sur bootstrap
 

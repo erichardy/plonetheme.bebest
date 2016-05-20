@@ -47,8 +47,29 @@ Les spécificités de ce thème sont les suivantes :
 Le fichier de thème : ``bebest.html``
 =====================================
 
+Ce fichier est assez simple et la partie la plus *délicate* concerne la gestion des menus déroulants.
 
+La *nav bar* et les menus déroulants
+------------------------------------
 
+L'ensemble est placé dans les tags ``<nav ....> ... </nav>``. Cette *nav-bar* a pour id
+``portal-globalnav-wrapper`` et les classes sont celles de bootstrap.
+
+Les entrées de base sont placées dans ``<div class="navbar-header">...``.
+
+La ``div#div-navbar`` est celle qui gère les menus déroulants. C'est à cette ``div``, et
+plus spécialement à ``ul#navbar`` que s'applique les règles spécifiques de gestion des
+menus déoulants. C'est là que l'on trouve, dans le fichier ``rules.xml`` les règles::
+
+   <replace css:theme-children="div#div-navbar ul#navbar">
+      <xsl:for-each css:select="ul#portal-globalnav > li">
+        <xi:include href="navigation-rules.xml"/>
+      </xsl:for-each>
+   </replace>
+
+où l'on voit que l'on gère les entrées fournies par ``webcouturier.dropdownmenuwebcouturier.dropdownmenu``
+par les règles contenues dans le fichier ``navigation-rules.xml`` (relativement complexe à comprendre
+si l'on n'est pas à l'aise avec XPath et XTransform. Cf `XSLT`_)
 
 
 
