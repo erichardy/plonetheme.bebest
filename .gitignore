@@ -20,3 +20,4 @@ output.xml
 *.swp
 node_modules
 temp_resources
+docs/html/
