@@ -43,6 +43,7 @@ Toute la documentation
 .. toctree::
     :maxdepth: 2
 
-    Le README du package <README>
-    le Thème <theme>
+    Le Thème <theme>
+    Les resources JS et CSS <resources>
     Les types de contenu <content_types>
+    LICENSE

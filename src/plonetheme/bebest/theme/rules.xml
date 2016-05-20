@@ -61,7 +61,7 @@
       <xsl:for-each css:select="ul#portal-globalnav > li">
         <xi:include href="navigation-rules.xml"/>
       </xsl:for-each>
-   </replace>
+  </replace>
   
   
   <drop css:content="#portaltab-index_html" />

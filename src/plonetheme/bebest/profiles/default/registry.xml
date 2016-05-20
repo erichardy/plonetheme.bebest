@@ -10,7 +10,7 @@
        </value>
     </records>
 
-    <!-- Il n'est pas possible d'integrer leafler.css dans la resource (helas)
+    <!-- Il n'est pas possible d'integrer leaflet.css dans la resource (helas)
          cette resource est donc chargee separement dans chaque page/vue qui
          affiche une carte.
          Concernant leaflet.js, ce module est prevu pour utiliser RequireJS. De ce

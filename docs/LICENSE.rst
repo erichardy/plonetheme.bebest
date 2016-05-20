@@ -1,3 +1,8 @@
+
+=======
+LICENCE
+=======
+
 bobtemplates.plone Copyright 2015, Eric Hardy
 
 This program is free software; you can redistribute it and/or modify
