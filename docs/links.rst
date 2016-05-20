@@ -23,6 +23,12 @@
 .. _leaflet: http://leafletjs.com/
 
 .. _XSLT: http://www.w3schools.com/xsl/default.asp
+
+.. _Mastering Plone 5 (Theming): http://training.plone.org/5/theming/index.html
+
+.. _galleria: http://galleria.io/
+
+
 ..
    Quelques tips & tricks sur bootstrap
 

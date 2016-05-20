@@ -24,7 +24,7 @@ Les spécificités de ce thème sont les suivantes :
 
 * Pour les menus déroulants, le module ``webcouturier.dropdownmenu`` est acivé. Cependant, la version
   courante de ce module n'est pas compatible avec plone 5. C'est donc une branche spéciale qui est
-  chargée ici::
+  chargée ici (cf buildout.cfg)::
   
     webcouturier.dropdownmenu = git git://github.com/collective/webcouturier.dropdownmenu.git branch=plone5
 
@@ -37,7 +37,8 @@ Les spécificités de ce thème sont les suivantes :
       </xsl:for-each>
    </replace>
 
-* on notera aussi qu'il n'y a qu'un seul niveau de menus déroulants. Les sous-menus ne sont pas *possibles*
+* on notera aussi qu'il n'y a qu'un seul niveau de menus déroulants.
+  Les sous-menus ne sont pas *possibles*
 
 * ce thème n'est pas prévu pour utiliser les portlets dans les colonnes de droite et gauche.
   (NB: le footer, en plone 5 est un gestionnaire de portlets).
@@ -123,17 +124,8 @@ javascript spécifique à *bebest*. Voir en fin du fichier ``bebest.html``::
    <script src="js/bootstrap.js"></script>
    <script src="js/bebest-theme.js"></script>
 
-Le détail de la gestion des ressources est donnée dans une le document :ref:`resources` compte tenu
+Le détail de la gestion des ressources est donnée dans le document :ref:`resources` compte tenu
 de la spécificité de cette gestion sous plone 5.
-
-TODO
-====
-
-* ajouter des variables ``less`` pour une customisation en ligne
-
-* créer un *vrai* portlet pour le *footer*
-
-* améliorer *dropdown menu* pour avoir les sous-menus
 
 
 
