@@ -24,12 +24,12 @@ gulp.task('readme', shell.task('cp README.rst docs', {cwd: '.'}))
 
 gulp.task('docs', ['build-docs'], function() {
   gulp.watch(readme, ['readme'])
-  gulp.watch(['./docs/*.rst', './docs/*.py'], ['build-docs'])
+  gulp.watch(['./docs/*.rst', './docs/*.py', 'src/plonetheme/bebest/*.py', 'src/plonetheme/bebest/browser/*.py'], ['build-docs'])
 })
 
 gulp.task('htmldoc', ['build-docs'], function() {
   gulp.watch(readme, ['readme'])
-  gulp.watch(['./docs/*.rst', './docs/*.py'], ['build-docs'])
+  gulp.watch(['./docs/*.rst', './docs/*.py', 'src/plonetheme/bebest/*.py', 'src/plonetheme/bebest/browser/*.py'], ['build-docs'])
 })
 
 /*

@@ -45,6 +45,7 @@ Toute la documentation
 
     Le Thème <theme>
     Les resources JS et CSS <resources>
+    Les vues <vues>
     Les types de contenu <content_types>
     LICENSE
 
@@ -55,6 +56,11 @@ Liens utiles
 
 * `Mastering Plone 5 (Theming)`_
 
+* `bootstrap`_
+
+* `leaflet`_
+
+* `galleria`_
 
 
 .. _todo:
@@ -63,7 +69,20 @@ TODO
 ====
 
 * ajouter des variables ``less`` pour une customisation en ligne (cf
-  Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/profiles/dependencies/registry.xml, ligne 972)
+  Products.CMFPlone-5.0.4-py2.7.egg/Products/CMFPlone/profiles/dependencies/registry.xml, ligne 972).
+  Après quelques essais, il semble que la *bonne solution* est de déclarer une section::
+  
+   <record name="plone.lessvariables" purge="false"> ... </record>
+  
+  idenique à celle de ``registry.xml`` de CMFPlone en veillant à ajouter le paramètre
+  ``purge="false"`` à la section ``<value>``::
+  
+   <value purge="false">
+      <element key="bebest-toolbar-font-primary">sans-serif</element>
+      <element key="bebest-toolbar-bg">rgba(0,0,0,.9)</element>
+   </value>
+
+  A vérifier !!!!
 
 * créer un *vrai* portlet pour le *footer*
 

@@ -67,15 +67,19 @@
   </record>
 -->
 
+
   <!-- Mixins vars for less with the paths -->
-  <record name="plone.lessvariables">
-    <field type="plone.registry.field.Dict">
+  <record name="plone.lessvariables" purge="false">
+    <field type="plone.registry.field.Dict" purge="false">
       <title>Less variables</title>
       <description>Variables that are going to be compiled on less</description>
       <key_type type="plone.registry.field.ASCIILine" />
       <value_type type="plone.registry.field.TextLine" />
     </field>
-    <value>
+    <value purge="false">
+      <element key="bebest-toolbar-font-primary">sans-serif</element>
+      <element key="bebest-toolbar-bg">rgba(0,0,0,.9)</element>
+      <!--
       <element key="icon-font-path">\"../fonts/\"</element>
       <element key="bowerPath">\"{site_url}/++plone++static/components/\"</element>
       <element key="mockupPath">\"{site_url}/++resource++mockup/\"</element>
@@ -87,10 +91,7 @@
 
       <element key="plone-toolbar-bg">rgba(0,0,0,.9)</element>
       <element key="plone-toolbar-submenu-bg">rgba(20,20,20,.9)</element>
-      <!--
-      <element key="plone-toolbar-font-primary">'Roboto Condensed', sans-serif</element>
-      <element key="plone-toolbar-font-secundary">'Roboto', sans-serif</element>
-      -->
+
       <element key="plone-toolbar-font-primary">sans-serif</element>
       <element key="plone-toolbar-font-secundary">sans-serif</element>
       <element key="plone-toolbar-separator-color">rgba(255,255,255,.17)</element>
@@ -120,6 +121,11 @@
       <element key="plone-screen-xs-max">(@plone-screen-sm-min + 1)</element>
       <element key="plone-screen-sm-max">(@plone-screen-md-min + 1)</element>
       <element key="plone-screen-md-max">(@plone-screen-lg-min + 1)</element>
+      -->
+      <!--
+      <element key="plone-toolbar-font-primary">'Roboto Condensed', sans-serif</element>
+      <element key="plone-toolbar-font-secundary">'Roboto', sans-serif</element>
+      -->
 
     </value>
   </record>
