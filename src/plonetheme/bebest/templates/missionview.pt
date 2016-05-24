@@ -91,7 +91,7 @@
 			        class="btn btn-default center-block collapser"
 			        i18n:translate="">other participants</button>
 			<p>&nbsp;</p>
-			<div class="thumbnail-wrapper bebest-collapse" id="show-participants-collapse">
+			<div class="thumbnail-wrapper bebest-collapse" id="show-participants-collapse" style="display:none;">
 				<span tal:omit-tag="" tal:repeat="person team">
 				     <div class="thumbnail-portrait"
 				          tal:define="image nocall:person/thumb_pict">

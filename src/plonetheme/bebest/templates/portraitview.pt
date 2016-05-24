@@ -15,7 +15,7 @@
                    toLocalizedTime nocall:context/@@plone/toLocalizedTime">
 
 <!-----------DEBUT SECTION PORTRAIT------------------>
-		<section
+		<section id="bebest-portrait"
 		  tal:define="firstname string:${context/first_name};
 		              familyname string:${context/family_name};
 		              mail string:${context/email};

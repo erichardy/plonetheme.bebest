@@ -1,16 +1,13 @@
 /* LAYOUT */
 
-/* BACKGROUNDS-------------------------------------------*/
+/* BACKGROUND VARIABLES-------------------------------------------*/
 @bg-dark: #000;
 @bg-bright: #fff;
 @bg-light-grey: #eee;
 
-#content {
-	margin-bottom: 0px;
-}
 /*LAYOUT VARIABLES-------------------------------------------*/
 @h-offset: 80px;
-
+ 
 .bg-dark {
 	background-color: @bg-dark;
 }
@@ -37,7 +34,12 @@
 
 /* LAYOUT ---------------------------------*/
 
-#bg-page-img {
+#content {
+	margin-top: 80px;
+}
+
+/*-----images de fond fixes-----*/
+#bg-page-img {     /*---conteneur des images---*/
 	z-index:-1000;
 	position: fixed;
 	max-height: 60vh;
@@ -47,13 +49,30 @@
 	}
 }
 
+@media (max-width: 991px) { /*----adaptation au format sm --*/
+	div#bg-page-img  {
+		img {
+			height: 70vh;
+			width: auto;
+		}
+	}
+}
+
+/*----bloc de titre-*/
 #page-title {
 	background-color: @bg-bright;
-	padding: 15px;
-	margin-bottom: 120px;
+	padding: 15px 15px 25px 15px;
+	margin-bottom: 150px;
 	border-radius: 0px 0px 10px 10px;
 }
 
+@media (max-width: 767px) { /*-Adaptation du margin bottom sur xs---------*/
+	div#page-title {
+		margin-bottom: 20px;
+	}
+}
+
+/*----------Contenu de la page----------*/
 #page-content {
 	background-color: @bg-bright;
 }
@@ -78,7 +97,70 @@
 	padding: 0;
 }
 
+/* collapses */
+.bebest-collapse {
+	display: none;
+}
+
+
  /* decalages -----Décaler un élément du haut de sa div----*/ 
  .pushtop {
 	margin-top: @h-offset;
+}
+
+/* Thumbnails */
+.thumbnail-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	.text-center;
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	button {
+		align: center;
+	}
+	.thumbnail-portrait{
+		margin: auto;
+		.text-center;
+		p {
+			.small;
+			.text-center;
+		}
+		a {
+			color: @text-dark;	
+		}
+		.portrait-prime {
+				width: 150px;
+				height: 150px;
+		}
+		
+		.portrait-second {
+				width: 100px;
+				height: 100px;
+		}
+	}
+	.thumbnail-mission {
+		margin: auto;
+		width: 220px;
+		height: auto;
+		.header{
+			background-color: @color-main;
+			padding: 10px;
+			border-radius: 10px 10px 0px 0px;
+			.h3 {
+				margin-top: 0px;
+				}
+			}
+		.img-mission {
+			margin: auto;
+			margin-bottom: 15px;
+			width: 220px;
+			height: 220px;
+			border-radius: 0 0 50% 50%;
+			overflow: hidden;
+			img {
+				height: 220px;
+				}
+		}
+	}
 }
