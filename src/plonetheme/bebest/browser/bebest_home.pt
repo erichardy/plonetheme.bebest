@@ -18,39 +18,42 @@
                    aboutBgImage python:view.getAboutBgImage();
                    aboutDocuments python:view.getAboutUsDocuments()">
   
-    <section id="home-carousel-bebest"
-             class="container-fluid hidden-xs"
+    <section id="bebest-home-carousel"
+             class="hidden-xs"
              tal:condition="imgs">
-             	<div class="carousel slide" data-ride="carousel" data-wrap="true" data-pause="false"
-             	     tal:attributes="data-interval string:${interval}">
-                <!-- Wrapper for slides -->
-                  	<div class="carousel-inner" role="listbox">
-                  	<span tal:omit-tag="" tal:repeat="img imgs">
-                    	<div tal:condition="python:repeat.img.start" class="item active homeimg-container">
-                      		<img tal:attributes="src python:img.absolute_url()"
-                      		     width="100%"
-                      		     alt="banner"
-                      		     class="img-responsive" />
-                   		</div>
-                   		<div tal:condition="python:not repeat.img.start" class="item homeimg-container">
-                            <img tal:attributes="src python:img.absolute_url()"
-                                 width="100%"
-                                 alt="banner"
-                                 class="img-responsive" />
-                        </div>
-                    </span>
-                  	</div>
-                </div>
-              	<div id="bebest-slider-content" class="text-center hidden-xs"
-              	     tal:define="logo_name python:view.getCarouselLogoName()"
-              	     >
-                   	<img class="imgwhite img-responsive"
-                   	     tal:attributes="src string:${portal_url}/images/${logo_name}"
-                   	     width="500"
-                   	     alt="bebest blanc"
-                   	     />
-                    <p class="super bright text-center" tal:content="structure string:${view/getCarouselText}"></p>
-			   </div>
+           	<div id="homeCarousel"
+           	     class="carousel slide" data-ride="carousel" data-wrap="true" data-pause="false"
+           	     tal:attributes="data-interval string:${interval}">
+              <!-- Wrapper for slides -->
+                	<div class="carousel-inner carousel-home-inner" role="listbox">
+	                	<span tal:omit-tag="" tal:repeat="img imgs">
+		                  	<div tal:condition="python:repeat.img.start" class="item active">
+		                    	<img tal:attributes="src python:img.absolute_url()"
+		                    	     alt="banner"
+		                    	     class="full-width" />
+		                 	</div>
+		                 	<div tal:condition="python:not repeat.img.start" class="item">
+		                         <img tal:attributes="src python:img.absolute_url()"
+		                              alt="banner"
+		                              class="full-width" />
+		                    </div>
+	                    </span>
+                	</div>
+            </div>
+              <!-- Wrapper for info -->
+           	<div class="carousel-home-title"
+           	     tal:define="logo_name python:view.getCarouselLogoName()"
+           	     >
+           	    <div class="text-center">
+                	<img id="bebest-logo-white"
+                	     tal:attributes="src string:${portal_url}/images/${logo_name}"
+                	     alt="bebest blanc"
+                	     />
+                 </div>
+                 <div class="super bright text-center"
+                      tal:content="structure string:${view/getCarouselText}">
+                 </div>
+	        </div>
     </section> <!--FIN SECTION CAROUSEL-->
 
 	<!-- DEBUT THUMBNAILS -->
@@ -79,7 +82,7 @@
              class="container w-limit"
              tal:condition="newsItems">
       <div  class="row">
-      <div class="super-small text-left">News</div>
+      <div class="super-small text-center">News</div>
       <div id="news-Carousel" 
            class="carousel slide"
            data-ride="carousel"
