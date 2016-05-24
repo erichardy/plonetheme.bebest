@@ -1,0 +1,137 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plonetheme.bebest">
+<body
+	>
+
+<metal:content-core fill-slot="main">
+  <metal:content-core define-macro="main">
+  <link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/css/leaflet.css" />
+  <div tal:define="
+                   toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+
+<!-----------DEBUT SECTION PORTRAIT------------------>
+		<section id="bebest-portrait"
+		  tal:define="firstname string:${context/first_name};
+		              familyname string:${context/family_name};
+		              mail string:${context/email};
+		              thumb nocall:context/thumb_pict;
+		              image nocall:context/main_pict;
+		              jobs python:view.getJobs();
+		              affiliations python:view.getAffiliations();
+		              email python:view.getPortraitAttr('email');
+		              eemail python:view.encodeEmail(email);
+		              personal_page python:view.getPortraitAttr('personal_page');
+		              unit_page python:view.getPortraitAttr('unit_page');
+		              research python:view.getPortraitAttr('research');
+		              displayEN python:view.displayEN();
+		              "
+		>
+			<div class="container-fluid full-width">
+				<!---- conteneur des infos de la carte d'ID  --------->
+				<div class="personnel-info text-center">
+					<div class="personnel-name"
+					     tal:content="string:${firstname} ${familyname}">
+					     prenom nom
+					</div>
+					<div class="personnel-title"
+					      tal:content="string:${context/status}">
+					      status
+					</div>
+					<hr />
+					<!----métier de la personne-->
+					<div class="personnel-job"
+					     tal:content="string:${jobs}">
+						jobs
+					</div>
+					<!----affiliations 1,2 et 3, séparées par une virgule-->
+					<div class="personnel-affiliation"
+					     tal:content="string:${affiliations}">
+					 </div>
+					<!----Email-->
+					<div>
+					  <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+					  <span id="person-contact-coded" tal:attributes="contact python:view.mailEncoded()"></span>
+					  <a id="person-contact" href="">
+					     Contact
+					  </a>
+					</div>
+					<!----lien vers page perso officielle-->
+					<span tal:condition="python:view.getPortraitAttr('personal_page')">
+						<a  href=""
+						   tal:attributes="href string:${personal_page}"
+						   i18n:translate="">
+						   personal page
+						</a>
+						<br />
+					</span>
+					<!----lien vers research gate/ autre-->
+					<span tal:condition="python:view.getPortraitAttr('research')">
+						<a href=""
+						   tal:attributes="href string:${research}"
+						   i18n:translate="">
+						   publications and work
+						</a>
+						<br />
+					</span>
+					<!----site du labo/groupe-->
+					<span tal:condition="python:view.getPortraitAttr('unit_page')">
+						<a href=""
+						   tal:attributes="href string:${unit_page}"
+						   i18n:translate="">
+						   partner's website
+					</a>
+					</span>
+				</div>
+					<!---- photo du portrait  --------->
+				<div class="personnel-img-wrapper"
+				     tal:define="main_pict nocall:context/main_pict">
+					<img tal:attributes="src string:${context/absolute_url}/@@download/main_pict/${main_pict/filename}"/>
+				</div>	
+					<!---- auteur de la photo  --------->
+				<div tal:condition="python:view.getPortraitAttr('pict_author')"
+				     class="img-author"
+				     tal:content="python:view.getPortraitAttr('pict_author')">pict author</div>
+ 			</div>	
+				<!----La courte biographie --------->
+			<div class="container">
+				<div class="row personnel-bio col-xs-12 col-md-10 col-md-offset-1">
+				   <span tal:condition="python:view.bioEN()">
+					 <div tal:condition="displayEN"
+					     class="align-right">
+				        <button type="button"
+				                id="show-english-version"
+				                class="btn btn-default collapser">English version</button>
+					    
+						<span class="bebest-collapse"
+						      id="show-english-version-collapse">
+						  <h2 i18n:translate="">short biography</h2>
+						  <p tal:content="structure string:${context/bio_en/raw}">
+						  	bio EN
+						  </p>
+						</span>
+						<hr />
+					</div>
+			     </span>
+					<span tal:condition="python:view.bioFR()">
+					<h2>Biographie</h2> 
+					<p class="text-justify"
+					   tal:content="structure string:${context/bio_fr/raw}">
+					  bio fr
+					</p>
+					</span>
+				</div>
+			</div>	
+		</section>
+
+  </div>
+  </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+  
