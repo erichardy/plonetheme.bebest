@@ -1,4 +1,4 @@
-var mymap = L.map('bebest-map', { //definition de la variable mumap de la map leaflet bebest*
+var mymap = L.map('bebest-home-map', { //definition de la variable mumap de la map leaflet bebest*
   center:[65.505, -45.09], //Position initial sur la map
   zoom: 3 //Zoom initial 3, le zoom leaflet allant de 0 à 15.
 });
