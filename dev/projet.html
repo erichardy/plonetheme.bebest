@@ -18,10 +18,10 @@
 
 <body>
     <!-- DEBUT HEADER-->
-    <header>
-        <nav id="portal-globalnav-wrapper" class="navbar navbar-default navbar-bebest navbar-fixed-top header-top">
+	<header>
+        <nav id="portal-globalnav-wrapper" class="navbar navbar-default navbar-fixed-top navbar-bebest">
             <div class="container">
-            	<div class="navbar-header">
+            	<div>
      			 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -30,22 +30,22 @@
      			 </button>
       				<a class="navbar-brand" href="#"><img src="images/logos/bebestlogo.png" class="img-responsive" /></a>
     			</div>
-                   <!-- Collect the nav links, forms, and other content for toggling -->
-    				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    	<ul class="nav navbar-nav navbar-bebest navbar-right">
-                        	<li class="active"><a href="/">About us</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Outreach and Media</a></li>
-                            <li><a href="#">Position Papers</a></li>
-                        </ul>
-                    </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-bebest navbar-right">
+                        <li class="active"><a href="/">About us</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Outreach and Media</a></li>
+                        <li><a href="#">Position Papers</a></li>
+                    </ul>
+                </div>
            </div>
         </nav>
     </header>
 	
 	<div id="content">
 		<!-----Image de fond,fixe, l'image source est l'image principale---->
-		<div id="bg-page-img" class="hidden-xs" ><img src="images/projet/matisse/coupe2.jpg"/></div>
+		<div id="bg-page-img" class="hidden-xs"><img src="images/projet/matisse/coupe2.jpg"/></div>
 		<!------Debut de la section titre de la mission--->
         <section class="container">
 			<div class="row">
@@ -153,7 +153,7 @@
                     islandica, Spissula solidissima, Placopecten magellanicus) sont soumis de la fin du printemps à la fin de l'automne. Nous cherchons à analyser synoptiquement la dynamique de 
                     croissance de ces bivalves par sclérochronologie et sclérochimie  pour identifier finement leurs capacités à s’acclimater (ou pas) à une contrainte physique forte.</br>Le 
                     financement vient du <a href"#">programme EC2CO</a> - CNRS.</br>MATISSE est “Mesures des fluctuations atypiques de l’environnement de Saint-Pierre et Miquelon pour une 
-                    application rétrospective des archives benthiques”. Le projet débute en 2016..</p>
+                    application rétrospective des archives benthiques”. Le projet débute en 2016.</p>
 				</div>
         	</div>        				
 		</div>
@@ -161,7 +161,7 @@
 			<div class="container-fluid bg-bright">
 				<div class="container">
                     <!----------thumbnails des missions---------->
-                    <h2 class="text-center">Missions associées / related missions</h2>
+            <!--        <h2 class="text-center">Missions associées / related missions</h2>   
                     <div class="thumbnail-wrapper">
                     	<div class="thumbnail-mission">
                         	<a href="mission-v2.html">
@@ -199,9 +199,42 @@
                                 </div>
                             </a>
                         </div>
+                    </div>--->
+                    <h2 class="text-center">Missions associées-V2 / related missions-V2</h2>
+                    <div class="thumbnail-wrapper">
+                    	<div class="thumbnail-mission-v2">
+                        	<a href="mission-v2.html">
+                                <div class="header">
+                                    <h4>Mission GAAP 2016</h4>
+                                </div>
+                                <div class="img-mission">
+                                	<img src="images/missions/benthos.jpg"></img>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="thumbnail-mission-v2">
+                        	<a href="mission-v2.html">
+                                <div class="header">
+                                <h4>Mission avec un titre vraiment beaucoup trop long</h4>
+                                </div>
+                                <div class="img-mission">
+                                	<img src="images/thumbnail/6.jpg"></img>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="thumbnail-mission-v2">
+                        	<a href="mission-v2.html">
+                                <div class="header">
+                                <h4>Mission avec un titre à rallonge</h4>
+                                </div>
+                                <div class="img-mission">
+                                	<img src="images/missions/missionbanner.jpg"></img>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                     <!-- DEBUT SECTION MAP -->
-                    <div id="bebest-map" class="page-map"></div>
+                    <div id="bebest-home-map"></div>
                 </div>
             </div>
         </section>		
@@ -245,6 +278,6 @@
 <script src="webmapping/leaflet/leaflet.js"></script>
 <script src="js/bebest.js"></script>
 <script src="js/onscroll.js"></script>
-<script src="js/bebest-map.js"></script>
+<script src="js/bebest-home-map.js"></script>
 </body>
 </html>
