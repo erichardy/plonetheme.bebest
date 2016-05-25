@@ -10,30 +10,23 @@ from plone.dexterity.content import Container
 from plone.dexterity.browser import add
 from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
-from plone.autoform import directives
-# from plone.namedfile import field as namedfile
 from plone.supermodel import model
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import implements
-from zope.interface import Invalid
 from collective import dexteritytextindexer
 from plone.namedfile.field import NamedBlobImage
 from zope.interface import alsoProvides
 from plone.autoform.interfaces import IFormFieldProvider
 from zope.publisher.browser import BrowserView
 from plone import api
-import urllib
-import re
-from plonetheme.bebest.utils import getTitleFromVoc
 
 logger = logging.getLogger('bebest PORTFOLIO')
 
 from plonetheme.bebest.utils import sort_by_position
 from plonetheme.bebest.utils import isPublished
 from plonetheme.bebest import _
-
 
 
 class IPortfolio(model.Schema):
@@ -62,21 +55,18 @@ class IPortfolio(model.Schema):
     #
     model.fieldset('description',
                    label=_(u"description"),
-                   fields=[
-                           'blabla',
-                           ])
+                   fields=['blabla', ])
     blabla = RichText(title=_(u"description text"),
                       required=False,
                       )
     model.fieldset('configuration',
                    label=_(u"configuration"),
-                   fields=[
-                           'bg_css_class',
+                   fields=['bg_css_class',
                            ])
     bg_css_class = schema.TextLine(title=_(u"CSS class for background"),
-                                     required=True,
-                                     default=u"bg-dark",
-                                     )
+                                   required=True,
+                                   default=u"bg-dark",
+                                   )
     #
 
 alsoProvides(IPortfolio, IFormFieldProvider)
@@ -130,8 +120,7 @@ class portfolio(Container):
 
     def getPortfolioImages(self):
         # c = self.context
-        founds = api.content.find(
-                                  portal_type='Image',
+        founds = api.content.find(portal_type='Image',
                                   path='/'.join(self.getPhysicalPath()),
                                   depth=1,
                                   )
@@ -145,4 +134,3 @@ class portfolio(Container):
             return self.blabla.raw
         except Exception:
             return False
-
