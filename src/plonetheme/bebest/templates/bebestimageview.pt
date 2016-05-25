@@ -10,10 +10,12 @@
 
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
-  <div tal:define="">
+  <div tal:define="src python:context.getImageSRC()">
    
 	<section>
 
+<span tal:content="string:${src}"> </span>
+<img tal:attributes="src string:${src}" />
 	
 	</section>
   </div>

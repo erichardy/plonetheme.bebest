@@ -86,7 +86,9 @@ class bebestimage(Item):
         pour utiliser avec l'attribut src de <img src="....
         """
         # c = self.context
-        return "azerazer"
+        # import pdb;pdb.set_trace()
+        src = self.absolute_url() + '/@@download/main_pict/' + self.main_pict.filename
+        return src
 
     def getImageText(self):
         try:
