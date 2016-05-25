@@ -9,7 +9,7 @@ from plone.dexterity.content import Container
 from plone.dexterity.browser import add
 from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
-from plone import api
+# from plone import api
 # from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 # from plone.namedfile import field as namedfile
@@ -145,13 +145,13 @@ class IMission(model.Schema):
                            'geojson',
                            ])
     zoom = schema.Int(title=_(u"zoom level"),
-                             description=_(u"between 0 and 15"),
-                             min=0,
-                             max=15,
-                             default=4,
-                             required=False)
+                      description=_(u"between 0 and 15"),
+                      min=0,
+                      max=15,
+                      default=4,
+                      required=False)
     map_center = schema.TextLine(title=_(u"map center"),
-                                 description=_(u'must be in the form "[lat, long]"'),
+                                 description=_(u'in the form "[lat, long]"'),
                                  default=u'[48.40003249610685, -4.5263671875]',
                                  required=False,
                                  )
@@ -206,8 +206,9 @@ class AddForm(add.DefaultAddForm):
             return
         try:
             obj = self.createAndAdd(data)
-            contextURL = self.context.absolute_url()
-            self.request.response.redirect(contextURL)
+            # contextURL = obj.absolute_url()
+            # contextURL = self.context.absolute_url()
+            # self.request.response.redirect(contextURL)
         except Exception:
             raise
 

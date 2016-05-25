@@ -5,4 +5,5 @@
   <object name="bebest.mission" meta_type="Dexterity FTI" />
   <object name="bebest.project" meta_type="Dexterity FTI" />
   <object name="bebest.portfolio" meta_type="Dexterity FTI" />
+  <object name="bebest.bebestimage" meta_type="Dexterity FTI" />
 </object>

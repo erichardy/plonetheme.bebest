@@ -84,8 +84,20 @@ class _geometry_types(object):
         voc = make_voc(terms, geo_types)
         return voc
 
+class _portfolio_bg(object):
+    implements(IVocabularyFactory)
+
+    def __call__(self, context):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.portfolio_bg_classes'
+        bg = api.portal.get_registry_record(prefix)
+        terms = []
+        voc = make_voc(terms, bg)
+        # import pdb;pdb.set_trace()
+        return voc
 
 jobs = _Jobs()
 projectCategories = _projectCategories()
 localPortraits = _localPortraits()
 geometry_types = _geometry_types()
+portfolio_bg = _portfolio_bg()

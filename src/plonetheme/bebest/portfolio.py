@@ -11,6 +11,7 @@ from plone.dexterity.browser import add
 from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
 from plone.supermodel import model
+from plone.autoform import directives
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
@@ -19,6 +20,7 @@ from collective import dexteritytextindexer
 from plone.namedfile.field import NamedBlobImage
 from zope.interface import alsoProvides
 from plone.autoform.interfaces import IFormFieldProvider
+
 from zope.publisher.browser import BrowserView
 from plone import api
 
@@ -44,14 +46,14 @@ class IPortfolio(model.Schema):
     main_pict = NamedBlobImage(title=_(u"main photo"),
                                required=False
                                )
+    thumb_pict = NamedBlobImage(title=_(u"small photo"),
+                                required=False
+                                )
     authors_pict_folder = schema.TextLine(title=_(u"authors pictures"),
                                           description=_(u"folder of picts"),
                                           required=False,
                                           default=u"authors",
                                           )
-    thumb_pict = NamedBlobImage(title=_(u"small photo"),
-                                required=False
-                                )
     #
     model.fieldset('description',
                    label=_(u"description"),
@@ -63,10 +65,11 @@ class IPortfolio(model.Schema):
                    label=_(u"configuration"),
                    fields=['bg_css_class',
                            ])
-    bg_css_class = schema.TextLine(title=_(u"CSS class for background"),
-                                   required=True,
-                                   default=u"bg-dark",
-                                   )
+    bg_css_class = schema.Choice(title=_(u"CSS class for background"),
+                               required=True,
+                               vocabulary="bebest.portfolio_bg",
+                               default=u"bg-dark",
+                               )
     #
 
 alsoProvides(IPortfolio, IFormFieldProvider)

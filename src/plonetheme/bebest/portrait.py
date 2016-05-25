@@ -29,7 +29,7 @@ from plonetheme.bebest.utils import getTitleFromVoc
 
 logger = logging.getLogger('bebest PORTRAIT')
 
-from plonetheme.bebest.utils import reverse_email
+from plonetheme.bebest.utils import reverse_email, validateURL
 from plonetheme.bebest import _
 
 checkEmail = re.compile(
@@ -40,14 +40,6 @@ def validateEmail(value):
     if not checkEmail(value):
         raise Invalid(_(u"Invalid adress email"))
     return True
-
-
-def validateURL(url):
-    try:
-        urllib.urlopen(url)
-        return True
-    except Exception:
-        raise Invalid(_(u"Invalid URL"))
 
 
 class IPortrait(model.Schema):
