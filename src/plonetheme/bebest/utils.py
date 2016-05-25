@@ -286,6 +286,10 @@ def getGalleryImages(context):
     return sorted(images, sort_by_position)
 
 
+def isPublished(obj):
+    return api.content.get_state(obj.getObject()) == 'published'
+
+
 class debug(object):
     def __call__(self):
         import pdb

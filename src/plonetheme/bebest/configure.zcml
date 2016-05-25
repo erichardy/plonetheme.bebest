@@ -67,6 +67,13 @@
       template="templates/portraitview.pt"
       permission="zope2.View"
       />
+    <browser:page
+      name="view"
+      for="plonetheme.bebest.portfolio.IPortfolio"
+      class="plonetheme.bebest.portfolio.PortfolioView"
+      template="templates/portfolioview.pt"
+      permission="zope2.View"
+      />
     
     <!-- misc views -->
     <browser:page

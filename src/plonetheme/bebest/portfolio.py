@@ -23,34 +23,36 @@ from plone.namedfile.field import NamedBlobImage
 from zope.interface import alsoProvides
 from plone.autoform.interfaces import IFormFieldProvider
 from zope.publisher.browser import BrowserView
+from plone import api
 import urllib
 import re
 from plonetheme.bebest.utils import getTitleFromVoc
 
 logger = logging.getLogger('bebest PORTFOLIO')
 
+from plonetheme.bebest.utils import sort_by_position
+from plonetheme.bebest.utils import isPublished
 from plonetheme.bebest import _
 
 
 
 class IPortfolio(model.Schema):
 
-    model.fieldset('indentification',
-                   label=_(u"identification"),
-                   fields=[
+    model.fieldset('general',
+                   label=_(u"general"),
+                   fields=['title',
                            'main_pict',
-                           'authors_pict_folder',
                            'thumb_pict',
+                           'authors_pict_folder',
                            ])
-    directives.omitted('title')
     dexteritytextindexer.searchable('title')
-    title = schema.TextLine(title=_(u"Form title"),)
+    title = schema.TextLine(title=_(u"portfolio title"),)
 
-    dexteritytextindexer.searchable('email')
     main_pict = NamedBlobImage(title=_(u"main photo"),
                                required=False
                                )
-    authors_pict_folder = schema.TextLine(title=_(u"picture author"),
+    authors_pict_folder = schema.TextLine(title=_(u"authors pictures"),
+                                          description=_(u"folder of picts"),
                                           required=False,
                                           default=u"authors",
                                           )
@@ -58,12 +60,20 @@ class IPortfolio(model.Schema):
                                 required=False
                                 )
     #
+    model.fieldset('description',
+                   label=_(u"description"),
+                   fields=[
+                           'blabla',
+                           ])
+    blabla = RichText(title=_(u"description text"),
+                      required=False,
+                      )
     model.fieldset('configuration',
                    label=_(u"configuration"),
                    fields=[
-                           'main_css_class',
+                           'bg_css_class',
                            ])
-    main_css_class = schema.TextLine(title=_(u"main affiliation"),
+    bg_css_class = schema.TextLine(title=_(u"CSS class for background"),
                                      required=True,
                                      default=u"bg-dark",
                                      )
@@ -73,35 +83,7 @@ alsoProvides(IPortfolio, IFormFieldProvider)
 
 
 class PortfolioView(BrowserView):
-
-    def getPortraitAttr(self, field):
-        p = self.context
-        try:
-            value = eval("p." + field)
-            if value:
-                return value
-            else:
-                return False
-        except Exception:
-            return False
-
-    def encodeEmail(self, email):
-        return "blabla"
-
-    def displayEN(self):
-        return self.context.display_en
-
-    def bioFR(self):
-        try:
-            return len(self.context.bio_fr.raw) > 4
-        except Exception:
-            return False
-
-    def bioEN(self):
-        try:
-            return len(self.context.bio_en.raw) > 4
-        except Exception:
-            return False
+    pass
 
 
 class AddView(add.DefaultAddView):
@@ -114,4 +96,53 @@ class editForm(edit.DefaultEditForm):
 
 class portfolio(Container):
     implements(IPortfolio)
+
+    def getPorfolioBG(self):
+        try:
+            bg = self.context.main_css_class
+            if len(bg) > 0:
+                return bg
+            else:
+                return 'bg-dark'
+        except Exception:
+            return 'bg-dark'
+
+    def getPortfolioAuthors(self):
+        # c = self.context
+        authors_folder = self.authors_pict_folder
+        if len(authors_folder) > 0:
+            try:
+                f = self[authors_folder]
+                founds = api.content.find(portal_type='Image',
+                                          path='/'.join(f.getPhysicalPath()),
+                                          depth=1,
+                                          )
+                logger.info(founds)
+                if len(founds) == 0:
+                    return False
+                objs = [i.getObject() for i in founds
+                        if api.content.get_state(i.getObject()) == 'published']
+                return sorted(objs, sort_by_position)
+            except Exception:
+                return False
+        else:
+            return False
+
+    def getPortfolioImages(self):
+        # c = self.context
+        founds = api.content.find(
+                                  portal_type='Image',
+                                  path='/'.join(self.getPhysicalPath()),
+                                  depth=1,
+                                  )
+        if len(founds) == 0:
+            return False
+        objs = [i.getObject() for i in founds if isPublished(i)]
+        return sorted(objs, sort_by_position)
+
+    def getPorfolioText(self):
+        try:
+            return self.blabla.raw
+        except Exception:
+            return False
 

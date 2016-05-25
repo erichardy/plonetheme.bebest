@@ -107,7 +107,7 @@
 				                id="show-english-version"
 				                class="btn btn-default collapser">English version</button>
 					    
-						<span class="bebest-collapse"
+						<span class="bebest-collapse" style="display: none"
 						      id="show-english-version-collapse">
 						  <h2 i18n:translate="">short biography</h2>
 						  <p tal:content="structure string:${context/bio_en/raw}">
