@@ -85,9 +85,16 @@ class bebestimage(Item):
         """
         pour utiliser avec l'attribut src de <img src="....
         """
-        # c = self.context
-        # import pdb;pdb.set_trace()
-        src = self.absolute_url() + '/@@download/main_pict/' + self.main_pict.filename
+        src = self.absolute_url() + '/@@download/main_pict/'
+        src += self.main_pict.filename
+        return src
+
+    def getThumbSRC(self):
+        """
+        pour utiliser avec l'attribut src de <img src="....
+        """
+        src = self.absolute_url() + '/@@download/thumb_pict/'
+        src += self.thumb_pict.filename
         return src
 
     def getImageText(self):
