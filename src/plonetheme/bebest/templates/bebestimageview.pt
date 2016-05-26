@@ -10,12 +10,30 @@
 
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
-  <div tal:define="src python:context.getImageSRC()">
-   
+  <div tal:define="src python:context.getImageSRC();
+                   thumb python:context.getThumbSRC();
+                   url python:context.getImageURL();
+                   desc python:context.getImageDescription();
+                   text python:context.getImageText()">
 	<section>
-
-<span tal:content="string:${src}"> </span>
-<img tal:attributes="src string:${src}" />
+	  <h2 tal:content="string:${context/title}">title</h2>
+	  <div tal:condition="url">
+	    <a tal:attributes="href string:${url}; target string:_blank" tal:content="string:${url}">URL</a>
+	  </div>
+	  <div tal:condition="desc">
+	    <hr />
+	    <p tal:content="string:${desc}">description</p>
+	    <hr />
+	  </div>
+	  <div tal:condition="text">
+	    <hr />
+	    <span tal:omit-tag="" tal:content="structure string:${text}">text</span>
+	    <hr />
+	  </div>
+	  <span tal:condition="thumb">
+	    <img tal:attributes="src string:${thumb}" />
+	  </span>
+	  <img tal:attributes="src string:${src}" />
 	
 	</section>
   </div>

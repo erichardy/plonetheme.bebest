@@ -290,6 +290,7 @@ def getGalleryImages(context):
 
 
 def validateURL(url):
+    # import pdb;pdb.set_trace()
     try:
         urllib.urlopen(url)
         return True

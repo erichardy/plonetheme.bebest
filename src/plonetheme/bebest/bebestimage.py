@@ -37,27 +37,29 @@ class IBebestImage(model.Schema):
     model.fieldset('general',
                    label=_(u"general"),
                    fields=['title',
-                           'main_pict',
+                           'image',
                            'thumb_pict',
                            'url',
                            ])
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(title=_(u"image title"),)
 
-    main_pict = NamedBlobImage(title=_(u"main photo"),
-                               required=False
-                               )
+    image = NamedBlobImage(title=_(u"main photo"),
+                           required=True
+                           )
     thumb_pict = NamedBlobImage(title=_(u"small photo"),
                                 required=False
                                 )
-    url = schema.TextLine(title=_(u"web site related"),
-                                constraint=validateURL,
+    url = schema.URI(title=_(u"web site related"),
+                                # constraint=validateURL,
                                 required=False,
                                 )
     #
     model.fieldset('description',
                    label=_(u"description"),
-                   fields=['blabla', ])
+                   fields=['description', 'blabla', ])
+    description = schema.Text(title=_(u"description"),
+                              required=False)
     blabla = RichText(title=_(u"description text"),
                       required=False,
                       )
@@ -85,17 +87,32 @@ class bebestimage(Item):
         """
         pour utiliser avec l'attribut src de <img src="....
         """
-        src = self.absolute_url() + '/@@download/main_pict/'
-        src += self.main_pict.filename
+        src = self.absolute_url() + '/@@download/image/'
+        src += self.image.filename
         return src
 
     def getThumbSRC(self):
         """
         pour utiliser avec l'attribut src de <img src="....
         """
-        src = self.absolute_url() + '/@@download/thumb_pict/'
-        src += self.thumb_pict.filename
-        return src
+        try:
+            src = self.absolute_url() + '/@@download/thumb_pict/'
+            src += self.thumb_pict.filename
+            return src
+        except Exception:
+            return False
+
+    def getImageURL(self):
+        if self.url:
+            return self.url
+        else:
+            return False
+
+    def getImageDescription(self):
+        try:
+            return self.description
+        except Exception:
+            return False
 
     def getImageText(self):
         try:

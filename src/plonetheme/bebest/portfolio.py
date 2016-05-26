@@ -110,7 +110,7 @@ class portfolio(Container):
                                           path='/'.join(f.getPhysicalPath()),
                                           depth=1,
                                           )
-                logger.info(founds)
+                # logger.info(founds)
                 if len(founds) == 0:
                     return False
                 objs = [i.getObject() for i in founds
@@ -123,14 +123,36 @@ class portfolio(Container):
 
     def getPortfolioImages(self):
         # c = self.context
-        founds = api.content.find(portal_type='Image',
+        images = api.content.find(portal_type='Image',
                                   path='/'.join(self.getPhysicalPath()),
                                   depth=1,
                                   )
+        bimages = api.content.find(portal_type='bebest.bebestimage',
+                                   path='/'.join(self.getPhysicalPath()),
+                                   depth=1,
+                                   )
+        # import pdb;pdb.set_trace()
+        founds = images + bimages
         if len(founds) == 0:
             return False
         objs = [i.getObject() for i in founds if isPublished(i)]
         return sorted(objs, sort_by_position)
+
+    def getImageSRC(self, image):
+        """
+        pour utiliser avec l'attribut src de <img src="....
+        """
+        if image.portal_type == 'bebest.bebestimage':
+            src = image.absolute_url() + '/@@download/image/'
+            src += image.image.filename
+            return src
+        else:
+            return image.absolute_url()
+
+    def getPortfolioImagesSRC(self):
+        founds = self.getPortfolioImages()
+        # import pdb;pdb.set_trace()
+        return [self.getImageSRC(i) for i in founds]
 
     def getPorfolioText(self):
         try:

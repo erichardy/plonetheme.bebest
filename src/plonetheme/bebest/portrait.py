@@ -138,16 +138,16 @@ class IPortrait(model.Schema):
     model.fieldset('web',
                    label=_(u"web"),
                    fields=['personal_page', 'unit_page', 'research'])
-    personal_page = schema.TextLine(title=_(u"personal page"),
-                                    constraint=validateURL,
+    personal_page = schema.URI(title=_(u"personal page"),
+                                    # constraint=validateURL,
                                     required=False,
                                     )
-    unit_page = schema.TextLine(title=_(u"web site of the research unit"),
-                                constraint=validateURL,
+    unit_page = schema.URI(title=_(u"web site of the research unit"),
+                                # constraint=validateURL,
                                 required=False,
                                 )
-    research = schema.TextLine(title=_(u"web page of your researches"),
-                               constraint=validateURL,
+    research = schema.URI(title=_(u"web page of your researches"),
+                               # constraint=validateURL,
                                required=False,
                                )
 
