@@ -318,7 +318,11 @@ class project(Container):
         return [ mission.getObject() for mission in bmissions ]
 
     def sort_by_title(self, a, b):
-        return a.title - b.title
+        a_name = a.family_name + ' ' + a.first_name
+        b_name = b.family_name + ' ' + b.first_name
+        if a_name < b_name:
+            return -1
+        return 1
 
     def getMissionsTeams(self):
         """
@@ -328,22 +332,25 @@ class project(Container):
         missions = self.getMissions()
         if len(missions) == 0:
             return False
-        participants = []
+        p = []
         for mission in missions:
-            participants.append(mission.getChief())
+            p.append(mission.getChief())
             team = mission.getTeam()
             if team:
-                participants += team
-        for p in participants:
-            logger.info(p)
-        # return sorted(participants, self.sort_by_title)
-        return participants
+                p += team
+        participants = []
+        for participant in p:
+            if participant not in participants:
+                participants.append(participant)
+        return sorted(participants, self.sort_by_title)
 
     def getDescriptionFR(self):
-        pass
+        if len(self.descripton_fr) < 5:
+            return '<p>&nbsp;</p>'
     
     def getDescriptionEN(self):
-        pass
+        if len(self.descripton_en) < 5:
+            return '<p>&nbsp;</p>'
     
     def getProjectCategories(self):
         voc = "bebest.projectcategories"
