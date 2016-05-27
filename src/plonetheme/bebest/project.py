@@ -309,9 +309,31 @@ class project(Container):
     def getContactCA(self):
         return self.contact_ca.to_object
 
-    def getMissionsTeam(self):
+    def getMissions(self):
+        bmissions = api.content.find(portal_type='bebest.mission',
+                                     path='/'.join(self.getPhysicalPath()),
+                                     depth=1,
+                                     )
+        return [ mission.getObject() for mission in bmissions ]
+
+    def sort_by_title(self, a, b):
+        return a.title - b.title
+
+    def getMissionsTeams(self):
         """
         :returns: la liste de tous les participants à toutes les missions,
-          par ordre alpabétique et épurée des doublons
+          par ordre alpabétique et épurée des doublons (à faire!)
         """
-        return False
+        missions = self.getMissions()
+        if len(missions) == 0:
+            return False
+        participants = []
+        for mission in missions:
+            participants.append(mission.getChief())
+            team = mission.getTeam()
+            if team:
+                participants += team
+        for p in participants:
+            logger.info(p)
+        # return sorted(participants, self.sort_by_title)
+        return participants

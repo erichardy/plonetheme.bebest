@@ -327,4 +327,14 @@ class MissionView(BrowserView):
 class mission(Container):
     implements(IMission)
 
-    pass
+    def getTeam(self):
+        others = []
+        for other in self.other:
+            others.append(other.to_object)
+        # import pdb;pdb.set_trace()
+        if not len(others):
+            return False
+        return others
+
+    def getChief(self):
+        return self.chief.to_object

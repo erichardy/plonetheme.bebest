@@ -12,7 +12,9 @@
   <metal:content-core define-macro="main">
   <link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/css/leaflet.css" />
   <div tal:define="features python:view.getMissionsFeatures();
-                   toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+                   toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                   primary_contact python:context.getPrimaryContact();
+                   teams python:context.getMissionsTeams()">
 
   <div id="bg-page-img" class="hidden-xs"
          tal:define="image nocall:context/main_pict;">
@@ -38,7 +40,7 @@
   		</div>
     </div>
   </section>
-  
+
   <section>
     <div class="container-fluid bg-light-grey">
       <div class="container">

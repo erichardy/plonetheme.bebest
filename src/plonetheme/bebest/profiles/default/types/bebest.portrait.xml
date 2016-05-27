@@ -17,7 +17,7 @@
 
   <!-- schema and class used for content items -->
   <property name="schema">plonetheme.bebest.portrait.IPortrait</property>
-  <property name="klass">plone.dexterity.content.Item</property>
+  <property name="klass">plonetheme.bebest.portrait.portrait</property>
 
   <property name="behaviors">
      <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
