@@ -93,7 +93,7 @@
 	    color: black;
 	}
    </style>
-    <section id="bebest-map" tal:condition="python:features">
+    <section id="bebest-projet-map" tal:condition="python:features">
    	<div>
    	<span tal:omit-tag="" tal:content="structure string:${features}">
    	  features
@@ -104,7 +104,7 @@
 	   	  <span class="bebest-feature-description" id="bebest-feature-description"></span>
 	   	</div>
    	</div>
-		<div id="bebest-project-map">
+		<div id="bebest-map">
 		</div>
    
    </section>
