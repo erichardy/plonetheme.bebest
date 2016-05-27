@@ -327,6 +327,90 @@ class MissionView(BrowserView):
 class mission(Container):
     implements(IMission)
 
+    def getMapZoom(self):
+        zoomjs = '<script>var zoom = 4;</script>'
+        try:
+            zoom = self.zoom
+            if zoom:
+                zoomjs = '<script>var zoom = ' + str(zoom) + ";</script>"
+                return zoomjs
+            else:
+                return zoomjs
+        except Exception:
+            return zoomjs
+
+    def getMapCenter(self):
+        center_a = '<script>var center = '
+        center_b = ';</script>'
+        val = ' [48.40003249610685, -4.5263671875] '
+        default = center_a + val + center_b
+        try:
+            center = self.map_center
+            if center:
+                testval = eval(center)
+                if len(testval) != 2:
+                    return default
+                val0 = (isinstance(testval[0], int)
+                        or
+                        isinstance(testval[0], float))
+                val1 = (isinstance(testval[1], int)
+                        or
+                        isinstance(testval[1], float))
+                if (not val0) or (not val1):
+                    return default
+                return center_a + center + center_b
+        except Exception:
+            return default
+
+    def getGeoJSON(self):
+        geo = self.geojson
+        if len(geo) > 5:
+            geojson = "<script>var features = "
+            geojson += self.geojson
+            geojson += ";</script>"
+            return geojson
+        else:
+            return False
+
+    def _date_fr(self, date):
+        j = date.strftime("%d")
+        m = date.strftime("%m")
+        y = date.strftime("%Y")
+        M = mois[eval(m)]
+        return j + ' ' + M + ' ' + y
+
+    def getDates(self):
+        start = self.start_date
+        end = self.end_date
+        if (start is None) or (end is None):
+            return False
+        return self._date_fr(start) + ' - ' + self._date_fr(end)
+
+    def getParentProject(self):
+        return self.aq_inner.aq_parent
+
+    def getPictAuthor(self):
+        if not self.pict_author:
+            return False
+        return self.pict_author
+
+    def getAffiliations(self, person):
+        aff = u""
+        if person.affiliation1:
+            aff += person.affiliation1
+        if person.affiliation2:
+            aff += ' - ' + person.affiliation2
+        if person.affiliation3:
+            aff += ' - ' + person.affiliation3
+        return aff
+
+    def displayEN(self):
+        return self.display_en
+
+    def getGalleryImages(self):
+        return ggi(self)
+        
+
     def getTeam(self):
         others = []
         for other in self.other:

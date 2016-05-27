@@ -219,4 +219,51 @@ class portrait(Item):
     implements(IPortrait)
 
     def mailEncoded(self):
-        return reverse_email(self.context.email)
+        return reverse_email(self.email)
+
+    def getJobs(self):
+        jobs = []
+        for job in self.jobs:
+            j = getTitleFromVoc("bebest.jobs", job)
+            jobs.append(j)
+        return (', ').join(jobs)
+
+    def getAffiliations(self):
+        c = self
+        aff = u""
+        if c.affiliation1:
+            aff += c.affiliation1
+        if c.affiliation2:
+            aff += ', ' + c.affiliation2
+        if c.affiliation3:
+            aff += ', ' + c.affiliation3
+        return aff
+
+    def getPortraitAttr(self, field):
+        p = self
+        try:
+            value = eval("p." + field)
+            if value:
+                return value
+            else:
+                return False
+        except Exception:
+            return False
+
+    def encodeEmail(self, email):
+        return "blabla"
+
+    def displayEN(self):
+        return self.display_en
+
+    def bioFR(self):
+        try:
+            return len(self.bio_fr.raw) > 4
+        except Exception:
+            return False
+
+    def bioEN(self):
+        try:
+            return len(self.bio_en.raw) > 4
+        except Exception:
+            return False
