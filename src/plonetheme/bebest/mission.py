@@ -84,7 +84,7 @@ class IMission(model.Schema):
                             )
     dexteritytextindexer.searchable('subtitle')
     subtitle = schema.TextLine(title=_(u"very short description"),
-                               required=False,
+                               required=True,
                                )
     dexteritytextindexer.searchable('start_date')
     start_date = schema.Date(title=_(u"start date for the mission"),

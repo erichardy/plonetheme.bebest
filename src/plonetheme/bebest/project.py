@@ -60,7 +60,7 @@ class IProject(model.Schema):
                             )
     dexteritytextindexer.searchable('subtitle')
     subtitle = schema.TextLine(title=_(u"very short description"),
-                               required=False,
+                               required=True,
                                )
     dexteritytextindexer.searchable('categories')
     directives.widget(categories='z3c.form.browser.checkbox.CheckBoxFieldWidget')
@@ -69,7 +69,7 @@ class IProject(model.Schema):
                             value_type=schema.Choice(
                                     vocabulary=u"bebest.projectcategories"),)
     main_pict = NamedBlobImage(title=_(u"main photo"),
-                               required=False
+                               required=True
                                )
     pict_author = schema.TextLine(title=_(u"picture author"),
                                   required=False,
@@ -211,6 +211,7 @@ class ProjectView(BrowserView):
         results = api.content.find(depth=1,
                                    portal_type='bebest.mission',
                                    path='/'.join(context.getPhysicalPath()))
+        logger.info(results)
         js = u'<script>'
         missionsNames = u'\nvar missionsNames = ['
         missionsUUID = u'\nvar missionsUUID = ['
@@ -338,6 +339,12 @@ class project(Container):
         # return sorted(participants, self.sort_by_title)
         return participants
 
+    def getDescriptionFR(self):
+        pass
+    
+    def getDescriptionEN(self):
+        pass
+    
     def getProjectCategories(self):
         voc = "bebest.projectcategories"
         c = self
