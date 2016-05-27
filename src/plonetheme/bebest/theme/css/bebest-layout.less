@@ -20,17 +20,6 @@
 	background-color: @bg-light-grey;
 }
 
-/* IMAGES ---------------------------------------------------------*/
-
-.img-portrait {
-	width: 200px;
-	Height: 200px;
-	display: block;
-	margin-left: auto; 
-	margin-right: auto;
-	margin-top: 50px;
-	margin-bottom: -50px;
-}
 
 /* LAYOUT ---------------------------------*/
 
@@ -68,7 +57,7 @@
 
 @media (max-width: 767px) { /*-Adaptation du margin bottom sur xs---------*/
 	div#page-title {
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 	}
 }
 
@@ -138,29 +127,46 @@
 				width: 100px;
 				height: 100px;
 		}
+		.portrait-portfolio {
+				width: 180px;
+				Height: 180px;
+				margin-top: 30px;
+		}
 	}
 	.thumbnail-mission {
 		margin: auto;
-		width: 220px;
+		margin-top: 15px;
+		width: 254px;
 		height: auto;
 		.header{
-			background-color: @color-main;
+			background-color: @bg-light-grey;
 			padding: 10px;
-			border-radius: 10px 10px 0px 0px;
-			.h3 {
-				margin-top: 0px;
+			border-style: solid;
+   			border-width: 0px 0px 3px 0px;
+			h4 {
+				.text-left;
+				margin: 0px;
+				font-weight: 500;
+				.dark;
 				}
 			}
 		.img-mission {
 			margin: auto;
-			margin-bottom: 15px;
-			width: 220px;
-			height: 220px;
-			border-radius: 0 0 50% 50%;
+			width: 254px;
+			height: 180px;
 			overflow: hidden;
+			border-radius: 0px 0px 15px 15px;
+			margin-bottom: 15px;
 			img {
-				height: 220px;
+				height: 180px;
 				}
 		}
 	}
+}
+
+/* Galleria module */
+.galleria {
+	 .full-width; 
+	 height: 500px; 
+	 background: #FFF; 
 }

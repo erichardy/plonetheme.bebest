@@ -1,29 +1,30 @@
 
-/* TYPOGRAPHIE */
- 
+
+/*--------------------TYPOGRAPHIE---------------------------------------------------*/
+
+/*VARIABLES*/
+
 @text-bright: #FFF;
 @text-dark: #000;
 @text-grey: #808080;
 @color-main: #47AAC9;
 @color-vivid: #8BB797;
 @color-contrast: #DE963E;
-@font-content: 'Lora';
+@font-content: 'Merriweather';
 @font-titre: 'Exo';
 @font-contrast: 'Courgette';
-@h-offset: 80px;
 
 /* Modifications de texte */
-
+/* color */
 .bright {
 	color: @text-bright;
-}
+	}
 .dark {
 	color: @text-dark;
-}
+	}
 .grey {
 	color: @text-grey;
-}
-
+	}
 .vivid {
 	color: @color-vivid;
 }
@@ -34,32 +35,31 @@
 /* text size */
 .small {
 	font-size: 80%;
-}
+	}
 .large {
-	font-size: 140%;
-}
+	font-size: 125%;
+	}
 .xlarge {
 	font-size: 200%;
-}
+	}
 
+	
 /* Headings */
 
 .super {
-	Font-family: @font-contrast;
-	Font-size: 3.5em;
-	Font-weight: 300;
+	font-family: @font-contrast;
+	font-size: 3.5em;
+	font-weight: 300;
 	padding-left: 50px;
 	padding-right: 50px;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	// width: 100%;
 }
+
 .super-small {
-	Font-family: @font-contrast;
-	Font-size: 2.5em;
-	Font-weight: 300;
-	padding-left: 35px;
-	padding-right: 35px;
+	font-family: @font-contrast;
+	font-size: 2.5em;
+	font-weight: 300;
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
@@ -73,14 +73,23 @@ h1, h2, h3, h4, h5, h6,
 h1, .h1 {
 	font-size: 3em;
 }
+
 h2, .h2 {
 	font-size: 2em;
 }
+
 h3, .h3 {
 	font-size: 1.5em;
 }
 
 /*----CHAMPS GENERIQUES-----*/
+.img-author {
+		.grey;
+		.small;
+		.text-right;
+		padding: 10px 35px 10px 0;
+}	
+
 .bebest-title {
 	.h1;
 	.text-left;
@@ -88,10 +97,19 @@ h3, .h3 {
 	margin-bottom: 15px;
 }
 
+@media (max-width: 767px) { /*-Adaptation du margin bottom sur xs---------*/
+	.bebest-title {
+		.h1;
+		.text-left;
+		margin-top: 30px;
+		margin-bottom: 15px;
+	}
+}
 .bebest-subtitle {
 	.h3;
 	.text-left;
 	color: @color-main;
+	font-weight: 600;
 }
 
 .bebest-dates {
@@ -108,6 +126,7 @@ body{
 p, .p {
 	font-family:@font-content;
 	font-size: 1.1em;
+	line-height: 1.65;
 	.text-justify;
 }
 
@@ -133,6 +152,7 @@ a:active, .a:actve {
 }
 
 /* Alignment */
+
 .text-left  {
 	text-align: left;
 }
@@ -146,5 +166,10 @@ a:active, .a:actve {
 	text-align: justify;
 }
 .text-nowrap  { 
-    white-space: nowrap;
+	white-space: nowrap;
 }
+
+
+
+
+	
