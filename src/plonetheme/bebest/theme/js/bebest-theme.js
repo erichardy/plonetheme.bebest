@@ -7,12 +7,19 @@ $('#home-carousel-bebest').carousel({
 /*
 */
 
+/* sous-menus de la nav bar */
 /* code from http://codepen.io/betdream/pen/frDqh */
 $('ul.nav li.dropdown').hover(function() {
   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
 }, function() {
   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
 });
+
+// pour que la description du dossier n'apparaisse pas dans le sous-menu
+$("span.submenu_description").css("display", "none");
+
+
+/* FIN sous-menus de la nav bar */
 
 
 $(window).scroll(function() {
@@ -26,10 +33,11 @@ $(window).scroll(function() {
 		});
 });
 
-bodyClasses = document.getElementById("visual-portal-wrapper").classList
+bodyClasses = document.getElementById("visual-portal-wrapper").classList ;
 
+
+/* Les boutons d'affichage/cache des versions anglaises */
 // $("#show-english-version-collapse").hide();
-
 $("button.collapser").click(function(e){
 	// alert(this.id);
 	to_show = $(this).attr("id") + '-collapse';
@@ -40,6 +48,7 @@ $("button.collapser").click(function(e){
 		}
 	});
 })
+/* FIN Les boutons d'affichage/cache des versions anglaises */
 
 /* Gestion des mails */
 
@@ -88,3 +97,4 @@ function inverseLetters(encodedInverseEmail){
 	}
 	return encodedEmail.replace("_", ".");
 }
+/* FIN Gestion des mails */

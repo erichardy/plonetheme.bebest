@@ -34,7 +34,7 @@ from plone import api
 import logging
 # import urllib
 # import re
-# from plonetheme.bebest.utils import CatalogSource
+from plonetheme.bebest.utils import getTitleFromVoc
 from plonetheme.bebest import _
 
 logger = logging.getLogger('bebest PROJECT')
@@ -192,6 +192,15 @@ class editForm(edit.DefaultEditForm):
 
 class ProjectView(BrowserView):
 
+    def getProjectCategories(self):
+        voc = "bebest.projectcategories"
+        c = self.context
+        clist = [getTitleFromVoc(voc, category) for category in c.categories]
+        cat = [ ctg + '<br />' for ctg in clist
+               if ctg != clist[-1]]
+        cat.append(clist[-1])
+        return ''.join(cat)
+
     def _toHTML(self, ch):
         s = ch.replace("'", "&rsquo;").\
             replace('"', "&rdquo;")
@@ -290,4 +299,19 @@ class ProjectView(BrowserView):
 
 class project(Container):
     implements(IProject)
-    pass
+
+    def getPrimaryContact(self):
+        return self.primary_contact.to_object
+    
+    def getContactFR(self):
+        return self.contact_fr.to_object
+
+    def getContactCA(self):
+        return self.contact_ca.to_object
+
+    def getMissionsTeam(self):
+        """
+        :returns: la liste de tous les participants à toutes les missions,
+          par ordre alpabétique et épurée des doublons
+        """
+        return False
