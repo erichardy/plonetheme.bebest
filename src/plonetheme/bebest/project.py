@@ -55,7 +55,7 @@ class IProject(model.Schema):
                            'pict_author',
                            ])
     dexteritytextindexer.searchable('title')
-    title = schema.TextLine(title=_(u"mission label"),
+    title = schema.TextLine(title=_(u"project label"),
                             required=True,
                             )
     dexteritytextindexer.searchable('subtitle')
@@ -238,7 +238,7 @@ class ProjectView(BrowserView):
                     features.append(geo)
             except Exception:
                 pass
-        # logger.info(features)
+        logger.info(features)
         if len(features) == 0:
             return False
         missionsFeatures = missionsFeatures.strip(u',')
