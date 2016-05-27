@@ -14,16 +14,8 @@
   <link rel="stylesheet/less" type="text/css" href="css/bebest-theme.less">
   <!---import css galleria----->
   <link id="galleria-theme-twelve" rel="stylesheet" href="twelve/galleria/themes/twelve/galleria.twelve.css">
-  
+   
   <script src="js/less.min.js" type="text/javascript"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="webmapping/leaflet/leaflet.js"></script>
-  <script src="js/bebest.js"></script>
-  <script src="js/onscroll.js"></script>
-  <script src="js/bebest-map.js"></script>
-  <!---import galleria---->
-  <script src="twelve/galleria/galleria-1.4.2.min.js"></script>
 
 </head>
 
@@ -95,7 +87,6 @@
                     <h2>Baie de St Pierre et Miquelon</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat erat in metus pulvinar, a gravida nulla euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur id erat dolor. Ut auctor vehicula metus, eget rhoncus nunc cursus imperdiet. </br>Vivamus dictum, nunc a tincidunt semper, lectus justo maximus neque, et pulvinar ipsum dolor at nisl. Maecenas porttitor dolor nec ante cursus viverra. Maecenas massa nunc, semper vitae pulvinar at, semper at metus. Cras a fermentum diam. Sed a lobortis risus, efficitur tincidunt lorem. </br>Vivamus dictum, nunc a tincidunt semper, lectus justo maximus neque, et pulvinar ipsum dolor at nisl. Maecenas porttitor dolor nec ante cursus viverra. Maecenas massa nunc, semper vitae pulvinar at, semper at metus. Cras a fermentum diam. Sed a lobortis risus, efficitur tincidunt lorem.
                     </p>
-                    <img src="images/sites/spmiquelon/7.jpg" class="img-responsive"/>
                     <h2>Un écosystème sous monitoring</h2>
                     <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur pellentesque ipsum vitae tristique posuere.Pellentesque vestibulum semper rutrum. Ut volutpat erat in metus pulvinar, a gravida nulla euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat erat in metus pulvinar, a gravida nulla euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur id erat dolor. Ut auctor vehicula metus, eget rhoncus nunc cursus imperdiet. </br>Vivamus dictum, nunc a tincidunt semper, lectus justo maximus neque, et pulvinar ipsum dolor at nisl. Maecenas porttitor dolor nec ante cursus viverra. Maecenas massa nunc, semper vitae pulvinar at, semper at metus. Cras a fermentum diam. Sed a lobortis risus, efficitur tincidunt lorem. </br>
                     </p>
@@ -109,7 +100,16 @@
                 <img src="images/sites/spmiquelon/4.jpg" data-title="(C) Pierre Poitevin / UBO" data-description="My  other description">
         	</div>
 		</div>		
-			
+		
+        <!---Integration de la carte -->
+ 		<section>
+            <div class="container-fluid bg-bright">
+                <div class="container pushtop">
+                    <div id="bebest-home-map">
+                    </div>
+                </div>
+             </div>   
+ 		</section>
 	</div>
 
 	<!---------- DEBUT FOOTER ---------------------------->
@@ -144,6 +144,17 @@
 			</div>
 		</div>
 	</footer>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="webmapping/leaflet/leaflet.js"></script>
+  <script src="js/bebest.js"></script>
+  <script src="js/onscroll.js"></script>
+  <script src="js/bebest-home-map.js"></script>
+  <!---import galleria---->
+  <script src="twelve/galleria/galleria-1.4.2.min.js"></script>
+
 	
 <script>
 	Galleria.loadTheme('twelve/galleria/themes/twelve/galleria.twelve.min.js');
