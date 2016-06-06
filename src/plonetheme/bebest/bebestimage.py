@@ -7,11 +7,11 @@ pour associer un projet a des missions et des portraits.
 
 import logging
 from plone.dexterity.content import Item
-from plone.dexterity.browser import add
-from plone.dexterity.browser import edit
+# from plone.dexterity.browser import add
+# from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
 from plone.supermodel import model
-from plone.autoform import directives
+# from plone.autoform import directives
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
@@ -22,13 +22,13 @@ from zope.interface import alsoProvides
 from plone.autoform.interfaces import IFormFieldProvider
 
 from zope.publisher.browser import BrowserView
-from plone import api
+# from plone import api
 
 logger = logging.getLogger('bebest PORTFOLIO')
 
-from plonetheme.bebest.utils import sort_by_position
-from plonetheme.bebest.utils import isPublished
-from plonetheme.bebest.utils import validateURL
+# from plonetheme.bebest.utils import sort_by_position
+# from plonetheme.bebest.utils import isPublished
+# from plonetheme.bebest.utils import validateURL
 from plonetheme.bebest import _
 
 
@@ -51,9 +51,9 @@ class IBebestImage(model.Schema):
                                 required=False
                                 )
     url = schema.URI(title=_(u"web site related"),
-                                # constraint=validateURL,
-                                required=False,
-                                )
+                     # constraint=validateURL,
+                     required=False,
+                     )
     #
     model.fieldset('description',
                    label=_(u"description"),
@@ -72,12 +72,14 @@ class BebestImageView(BrowserView):
     pass
 
 
+"""
 class AddView(add.DefaultAddView):
     pass
 
 
 class editForm(edit.DefaultEditForm):
     pass
+"""
 
 
 class bebestimage(Item):

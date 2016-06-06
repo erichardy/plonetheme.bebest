@@ -21,6 +21,7 @@
 		              mail string:${context/email};
 		              thumb nocall:context/thumb_pict;
 		              image nocall:context/main_pict;
+		              pictFilename python:context.getPictFilename();
 		              jobs python:view.getJobs();
 		              affiliations python:view.getAffiliations();
 		              email python:view.getPortraitAttr('email');
@@ -92,6 +93,7 @@
 				</div>
 					<!---- photo du portrait  --------->
 				<div class="personnel-img-wrapper"
+				     tal:condition="pictFilename"
 				     tal:define="main_pict nocall:context/main_pict">
 					<img tal:attributes="src string:${context/absolute_url}/@@download/main_pict/${main_pict/filename}"/>
 				</div>	

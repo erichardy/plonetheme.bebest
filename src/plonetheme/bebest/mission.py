@@ -7,7 +7,7 @@ pour associer un projet a des missions et des portraits.
 
 from plone.dexterity.content import Container
 from plone.dexterity.browser import add
-from plone.dexterity.browser import edit
+# from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
 # from plone import api
 # from plone.autoform import directives
@@ -68,7 +68,6 @@ months['09'] = u"Septembre"
 months['10'] = u"Octobre"
 months['11'] = u"Novembre"
 months['12'] = u"Décembre"
-
 
 
 class StartBeforeEnd(Invalid):
@@ -183,8 +182,8 @@ class IMission(model.Schema):
                            )
     other = RelationList(title=_(u"other participants"),
                          value_type=RelationChoice(
-                                 title=_(u'Target'),
-                                 source=CS(portal_type="bebest.portrait")),
+                             title=_(u'Target'),
+                             source=CS(portal_type="bebest.portrait")),
                          required=False,
                          )
 
@@ -241,6 +240,7 @@ class AddView(add.DefaultAddView):
 class editForm(edit.DefaultEditForm):
     pass
 """
+
 
 class MissionView(BrowserView):
 
@@ -339,7 +339,7 @@ class MissionView(BrowserView):
 
     def getGalleryImages(self):
         return ggi(self.context)
-        
+
 
 class mission(Container):
     implements(IMission)
@@ -429,7 +429,6 @@ class mission(Container):
 
     def getGalleryImages(self):
         return ggi(self)
-        
 
     def getTeam(self):
         others = []

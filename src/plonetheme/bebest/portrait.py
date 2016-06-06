@@ -7,8 +7,8 @@ pour associer un projet a des missions et des portraits.
 
 import logging
 from plone.dexterity.content import Item
-from plone.dexterity.browser import add
-from plone.dexterity.browser import edit
+# from plone.dexterity.browser import add
+# from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
 from plone.autoform import directives
 # from plone.namedfile import field as namedfile
@@ -23,13 +23,12 @@ from plone.namedfile.field import NamedBlobImage
 from zope.interface import alsoProvides
 from plone.autoform.interfaces import IFormFieldProvider
 from zope.publisher.browser import BrowserView
-import urllib
 import re
 from plonetheme.bebest.utils import getTitleFromVoc
 
 logger = logging.getLogger('bebest PORTRAIT')
 
-from plonetheme.bebest.utils import reverse_email, validateURL
+from plonetheme.bebest.utils import reverse_email
 from plonetheme.bebest import _
 
 checkEmail = re.compile(
@@ -139,17 +138,17 @@ class IPortrait(model.Schema):
                    label=_(u"web"),
                    fields=['personal_page', 'unit_page', 'research'])
     personal_page = schema.URI(title=_(u"personal page"),
-                                    # constraint=validateURL,
-                                    required=False,
-                                    )
-    unit_page = schema.URI(title=_(u"web site of the research unit"),
-                                # constraint=validateURL,
-                                required=False,
-                                )
-    research = schema.URI(title=_(u"web page of your researches"),
                                # constraint=validateURL,
                                required=False,
                                )
+    unit_page = schema.URI(title=_(u"web site of the research unit"),
+                           # constraint=validateURL,
+                           required=False,
+                           )
+    research = schema.URI(title=_(u"web page of your researches"),
+                          # constraint=validateURL,
+                          required=False,
+                          )
 
 alsoProvides(IPortrait, IFormFieldProvider)
 
@@ -178,9 +177,9 @@ class PortraitView(BrowserView):
         return aff
 
     def getPortraitAttr(self, field):
-        p = self.context
+        # p = self.context
         try:
-            value = eval("p." + field)
+            value = eval("self.context." + field)
             if value:
                 return value
             else:
@@ -207,12 +206,14 @@ class PortraitView(BrowserView):
             return False
 
 
+"""
 class AddView(add.DefaultAddView):
     pass
 
 
 class editForm(edit.DefaultEditForm):
     pass
+"""
 
 
 class portrait(Item):
@@ -240,9 +241,9 @@ class portrait(Item):
         return aff
 
     def getPortraitAttr(self, field):
-        p = self
+        # p = self
         try:
-            value = eval("p." + field)
+            value = eval("self." + field)
             if value:
                 return value
             else:
@@ -265,5 +266,11 @@ class portrait(Item):
     def bioEN(self):
         try:
             return len(self.bio_en.raw) > 4
+        except Exception:
+            return False
+
+    def getPictFilename(self):
+        try:
+            return self.main_pict.filename
         except Exception:
             return False

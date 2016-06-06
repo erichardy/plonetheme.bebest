@@ -7,7 +7,7 @@ pour associer un projet a des missions et des portraits.
 
 from plone.dexterity.content import Container
 from plone.dexterity.browser import add
-from plone.dexterity.browser import edit
+# from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
@@ -122,11 +122,12 @@ class IProject(model.Schema):
                       max=15,
                       default=4,
                       required=False)
-    map_center = schema.TextLine(title=_(u"map center"),
-                                 description=_(u'must be in the form "[lat, long]"'),
-                                 default=u'[48.40003249610685, -4.5263671875]',
-                                 required=False,
-                                 )
+    map_center = schema.TextLine(
+        title=_(u"map center"),
+        description=_(u'must be in the form "[lat, long]"'),
+        default=u'[48.40003249610685, -4.5263671875]',
+        required=False,
+        )
     #
     model.fieldset('contacts',
                    label=_(u"contacts"),
@@ -136,13 +137,19 @@ class IProject(model.Schema):
                            ])
     # directives.widget(chief='plone.formwidget.contenttree.ContentTreeFieldWidget')
 
-    primary_contact = RelationChoice(title=_(u"primary contact"),
-                                     source=CatalogSource(portal_type="bebest.portrait"),)
+    primary_contact = RelationChoice(
+        title=_(u"primary contact"),
+        source=CatalogSource(portal_type="bebest.portrait"),
+        )
 
-    contact_fr = RelationChoice(title=_(u"french contact"),
-                                source=CatalogSource(portal_type="bebest.portrait"),)
-    contact_ca = RelationChoice(title=_(u"canadian contact"),
-                                source=CatalogSource(portal_type="bebest.portrait"),)
+    contact_fr = RelationChoice(
+        title=_(u"french contact"),
+        source=CatalogSource(portal_type="bebest.portrait"),
+        )
+    contact_ca = RelationChoice(
+        title=_(u"canadian contact"),
+        source=CatalogSource(portal_type="bebest.portrait"),
+        )
 
     @invariant
     def validateStartEnd(data):
@@ -173,6 +180,7 @@ class AddForm(add.DefaultAddForm):
             return
         try:
             obj = self.createAndAdd(data)
+            logger.info(obj.absolute_url())
             contextURL = self.context.absolute_url()
             self.request.response.redirect(contextURL)
         except Exception:
@@ -190,8 +198,10 @@ class AddView(add.DefaultAddView):
     form = AddForm
 
 
+"""
 class editForm(edit.DefaultEditForm):
     pass
+"""
 
 
 class ProjectView(BrowserView):
@@ -200,7 +210,7 @@ class ProjectView(BrowserView):
         voc = "bebest.projectcategories"
         c = self.context
         clist = [getTitleFromVoc(voc, category) for category in c.categories]
-        cat = [ ctg + '<br />' for ctg in clist
+        cat = [ctg + '<br />' for ctg in clist
                if ctg != clist[-1]]
         cat.append(clist[-1])
         return ''.join(cat)
@@ -307,7 +317,7 @@ class project(Container):
 
     def getPrimaryContact(self):
         return self.primary_contact.to_object
-    
+
     def getContactFR(self):
         return self.contact_fr.to_object
 
@@ -319,7 +329,7 @@ class project(Container):
                                      path='/'.join(self.getPhysicalPath()),
                                      depth=1,
                                      )
-        return [ mission.getObject() for mission in bmissions ]
+        return [mission.getObject() for mission in bmissions]
 
     def sort_by_title(self, a, b):
         a_name = a.family_name + ' ' + a.first_name
@@ -351,16 +361,16 @@ class project(Container):
     def getDescriptionFR(self):
         if len(self.descripton_fr) < 5:
             return '<p>&nbsp;</p>'
-    
+
     def getDescriptionEN(self):
         if len(self.descripton_en) < 5:
             return '<p>&nbsp;</p>'
-    
+
     def getProjectCategories(self):
         voc = "bebest.projectcategories"
         c = self
         clist = [getTitleFromVoc(voc, category) for category in c.categories]
-        cat = [ ctg + '<br />' for ctg in clist
+        cat = [ctg + '<br />' for ctg in clist
                if ctg != clist[-1]]
         cat.append(clist[-1])
         return ''.join(cat)

@@ -7,11 +7,11 @@ pour associer un projet a des missions et des portraits.
 
 import logging
 from plone.dexterity.content import Container
-from plone.dexterity.browser import add
-from plone.dexterity.browser import edit
+# from plone.dexterity.browser import add
+# from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
 from plone.supermodel import model
-from plone.autoform import directives
+# from plone.autoform import directives
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
@@ -66,10 +66,10 @@ class IPortfolio(model.Schema):
                    fields=['bg_css_class',
                            ])
     bg_css_class = schema.Choice(title=_(u"CSS class for background"),
-                               required=True,
-                               vocabulary="bebest.portfolio_bg",
-                               default=u"bg-dark",
-                               )
+                                 required=True,
+                                 vocabulary="bebest.portfolio_bg",
+                                 default=u"bg-dark",
+                                 )
     #
 
 alsoProvides(IPortfolio, IFormFieldProvider)
@@ -79,12 +79,14 @@ class PortfolioView(BrowserView):
     pass
 
 
+"""
 class AddView(add.DefaultAddView):
     pass
 
 
 class editForm(edit.DefaultEditForm):
     pass
+"""
 
 
 class portfolio(Container):

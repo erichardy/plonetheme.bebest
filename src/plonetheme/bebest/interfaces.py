@@ -32,6 +32,7 @@ portfolioBGClasses = []
 portfolioBGClasses.append(u"bg-dark")
 portfolioBGClasses.append(u"bg-light")
 
+
 class IPlonethemeBebestSettings(model.Schema):
 
     model.fieldset('home-page',
