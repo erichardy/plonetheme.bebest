@@ -265,6 +265,8 @@ def get_position_in_parent(obj):
 Usage :
 sortedMyList = sorted(myList, sort_by_position)
 """
+
+
 def sort_by_position(a, b):
     return get_position_in_parent(a) - get_position_in_parent(b)
 

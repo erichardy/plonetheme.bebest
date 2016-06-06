@@ -25,7 +25,7 @@ Les images qui apparaissent dans le portfolio sont les images qui ne sont pas
 traggées avec le tag qui est défini par ``portfolio_author_tag``
 (cf control panel)
 
-Le texte est dans un document qui a pour id ``portfolio-text``. Il permet de 
+Le texte est dans un document qui a pour id ``portfolio-text``. Il permet de
 présenter du texte riche.
 
 La couleur du background est donnée par un document qui a pour id

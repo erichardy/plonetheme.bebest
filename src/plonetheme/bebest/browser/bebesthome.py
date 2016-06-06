@@ -20,14 +20,14 @@ class bebestHome(BrowserView):
                        effective=True):
         """
         méthode qui permet de trouver des objets selon les critères suivants :
-        
+
         * un des mots clé de l'objet contient le mot clé enregistré dans
           le registre donné en paramètre
-        
+
         * le type de contenu
-        
+
         * la liste est retournée triée en fonction de la date de publication
-        
+
         :param registry_record: le registre où aller chercher une valeur.
             Dernier élément après
             'plonetheme.bebest.interfaces.IPlonethemeBebestSettings'
@@ -169,7 +169,7 @@ class bebestHome(BrowserView):
             qui ont le mot clé enregistré dans ``about_document_tag``.
             De ces documents, on affiche que la description dans la
             *home page*.
-        """ 
+        """
         reg = 'about_document_tag'
         aboutUsDocuments = self._getHomeObject(registry_record=reg,
                                                obj_type='Document',

@@ -38,6 +38,7 @@ from plonetheme.bebest.utils import getTitleFromVoc
 from plonetheme.bebest import _
 
 logger = logging.getLogger('bebest PROJECT')
+CheckBoxFieldWidget = 'z3c.form.browser.checkbox.CheckBoxFieldWidget'
 
 
 class StartBeforeEnd(Invalid):
@@ -65,9 +66,10 @@ class IProject(model.Schema):
     dexteritytextindexer.searchable('categories')
     directives.widget(categories='z3c.form.browser.checkbox.CheckBoxFieldWidget')
     categories = schema.Set(title=_(u"project categories"),
-                            description=_(u"select categories for this project"),
+                            description=_(u"select one or more"),
                             value_type=schema.Choice(
-                                    vocabulary=u"bebest.projectcategories"),)
+                                       vocabulary=u"bebest.projectcategories"),
+                            )
     main_pict = NamedBlobImage(title=_(u"main photo"),
                                required=True
                                )

@@ -84,6 +84,7 @@ class _geometry_types(object):
         voc = make_voc(terms, geo_types)
         return voc
 
+
 class _portfolio_bg(object):
     implements(IVocabularyFactory)
 
