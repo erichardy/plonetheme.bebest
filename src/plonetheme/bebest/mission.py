@@ -55,6 +55,20 @@ mois.append(u"Septembre")
 mois.append(u"Octobre")
 mois.append(u"Novembre")
 mois.append(u"Décembre")
+months = {}
+months['01'] = u"Janvier"
+months['02'] = u"Février"
+months['03'] = u"Mars"
+months['04'] = u"Avril"
+months['05'] = u"Mai"
+months['06'] = u"Juin"
+months['07'] = u"Juillet"
+months['08'] = u"Aout"
+months['09'] = u"Septembre"
+months['10'] = u"Octobre"
+months['11'] = u"Novembre"
+months['12'] = u"Décembre"
+
 
 
 class StartBeforeEnd(Invalid):
@@ -279,7 +293,7 @@ class MissionView(BrowserView):
         j = date.strftime("%d")
         m = date.strftime("%m")
         y = date.strftime("%Y")
-        M = mois[eval(m)]
+        M = months[m]
         return j + ' ' + M + ' ' + y
 
     def getDates(self):
@@ -376,7 +390,7 @@ class mission(Container):
         j = date.strftime("%d")
         m = date.strftime("%m")
         y = date.strftime("%Y")
-        M = mois[eval(m)]
+        M = months[m]
         return j + ' ' + M + ' ' + y
 
     def getDates(self):
