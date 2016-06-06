@@ -64,6 +64,7 @@
 					<span tal:condition="python:view.getPortraitAttr('personal_page')">
 						<a  href=""
 						   tal:attributes="href string:${personal_page}"
+						   target="_blank"
 						   i18n:translate="">
 						   personal page
 						</a>
@@ -73,6 +74,7 @@
 					<span tal:condition="python:view.getPortraitAttr('research')">
 						<a href=""
 						   tal:attributes="href string:${research}"
+						   target="_blank"
 						   i18n:translate="">
 						   publications and work
 						</a>
@@ -82,6 +84,7 @@
 					<span tal:condition="python:view.getPortraitAttr('unit_page')">
 						<a href=""
 						   tal:attributes="href string:${unit_page}"
+						   target="_blank"
 						   i18n:translate="">
 						   partner's website
 					</a>

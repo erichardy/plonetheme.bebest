@@ -237,10 +237,10 @@ class AddForm(add.DefaultAddForm):
 class AddView(add.DefaultAddView):
     form = AddForm
 
-
+"""
 class editForm(edit.DefaultEditForm):
     pass
-
+"""
 
 class MissionView(BrowserView):
 
@@ -281,12 +281,15 @@ class MissionView(BrowserView):
 
     def getGeoJSON(self):
         geo = self.context.geojson
-        if len(geo) > 5:
-            geojson = "<script>var features = "
-            geojson += self.context.geojson
-            geojson += ";</script>"
-            return geojson
-        else:
+        try:
+            if len(geo) > 5:
+                geojson = "<script>var features = "
+                geojson += self.context.geojson
+                geojson += ";</script>"
+                return geojson
+            else:
+                return False
+        except Exception:
             return False
 
     def _date_fr(self, date):
@@ -378,12 +381,15 @@ class mission(Container):
 
     def getGeoJSON(self):
         geo = self.geojson
-        if len(geo) > 5:
-            geojson = "<script>var features = "
-            geojson += self.geojson
-            geojson += ";</script>"
-            return geojson
-        else:
+        try:
+            if len(geo) > 5:
+                geojson = "<script>var features = "
+                geojson += self.geojson
+                geojson += ";</script>"
+                return geojson
+            else:
+                return False
+        except Exception:
             return False
 
     def _date_fr(self, date):
@@ -436,3 +442,23 @@ class mission(Container):
 
     def getChief(self):
         return self.chief.to_object
+
+    def getTextFR(self):
+        try:
+            if len(self.presentation.raw) < 6:
+                logger.info('inf a 6')
+                return False
+            else:
+                return self.presentation.raw
+        except Exception:
+            logger.info('excepppppp')
+            return False
+
+    def getTextEN(self):
+        try:
+            if len(self.presentation_en.raw) < 6:
+                return False
+            else:
+                return self.presentation_en.raw
+        except Exception:
+            return False
