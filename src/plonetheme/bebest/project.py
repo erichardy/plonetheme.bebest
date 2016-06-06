@@ -64,12 +64,14 @@ class IProject(model.Schema):
                                required=True,
                                )
     dexteritytextindexer.searchable('categories')
-    directives.widget(categories='z3c.form.browser.checkbox.CheckBoxFieldWidget')
-    categories = schema.Set(title=_(u"project categories"),
-                            description=_(u"select one or more"),
-                            value_type=schema.Choice(
-                                       vocabulary=u"bebest.projectcategories"),
-                            )
+    directives.widget(
+        categories='z3c.form.browser.checkbox.CheckBoxFieldWidget')
+    categories = schema.Set(
+        title=_(u"project categories"),
+        description=_(u"select one or more"),
+        value_type=schema.Choice(
+            vocabulary=u"bebest.projectcategories"),
+        )
     main_pict = NamedBlobImage(title=_(u"main photo"),
                                required=True
                                )
