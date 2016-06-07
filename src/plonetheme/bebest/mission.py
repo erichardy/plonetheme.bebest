@@ -219,6 +219,7 @@ class AddForm(add.DefaultAddForm):
             return
         try:
             obj = self.createAndAdd(data)
+            logger.info(obj.absolute_url())
             # contextURL = obj.absolute_url()
             # contextURL = self.context.absolute_url()
             # self.request.response.redirect(contextURL)

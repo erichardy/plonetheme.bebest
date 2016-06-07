@@ -4,7 +4,6 @@ from plone.app.textfield.value import RichTextValue
 import datetime
 
 
-
 bio_fr_text = """
 <h4>Savoir-faire opérationnels</h4>
 <ul>
@@ -13,7 +12,8 @@ de gestion des risques<br/></li>
 </ul>
 <h4>Lieu d'exercice</h4>
 <ul>
-<li>L’activité s’exerce généralement au sein d'un service informatique<br/></li>
+<li>L’activité s’exerce généralement au sein d'un service informatique<br/>
+</li>
 </ul>
 <h3>Dipl&ocirc;me exig&eacute;</h3>
 <ul>
@@ -24,27 +24,37 @@ de gestion des risques<br/></li>
 """
 
 bio_en_text = """
-<h2>The RichTextValue<a class="headerlink" href="#the-richtextvalue" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal"><span class="pre">RichText</span></code> field does not store a string. Instead, it stores a
-<code class="docutils literal"><span class="pre">RichTextValue</span></code> object. This is an immutable object that has the
+<h2>The RichTextValue<a class="headerlink" href="#the-richtextvalue"
+title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">RichText</span>
+</code> field does not store a string. Instead, it stores a
+<code class="docutils literal"><span class="pre">RichTextValue</span>
+</code> object. This is an immutable object that has the
 following properties:</p>
 <dl class="docutils">
 <dt><code class="docutils literal"><span class="pre">raw</span></code></dt>
 <dd>a unicode string with the original input markup;</dd>
-<dt><code class="docutils literal"><span class="pre">mimeType</span></code></dt>
-<dd>the MIME type of the original markup, e.g. <code class="docutils literal"><span class="pre">text/html</span></code> or
-<code class="docutils literal"><span class="pre">text/structured</span></code>;</dd>
-<dt><code class="docutils literal"><span class="pre">encoding</span></code></dt>
+<dt><code class="docutils literal"><span class="pre">mimeType</span></code>
+</dt>
+<dd>the MIME type of the original markup, e.g.
+<code class="docutils literal"><span class="pre">text/html</span></code> or
+<code class="docutils literal"><span class="pre">text/structured</span>
+</code>;</dd>
+<dt><code class="docutils literal"><span class="pre">encoding</span></code>
+</dt>
 <dd>the default character encoding used when transforming the input markup.
 Most likely, this will be UTF-8;</dd>
-<dt><code class="docutils literal"><span class="pre">raw_encoded</span></code></dt>
+<dt><code class="docutils literal"><span class="pre">raw_encoded</span>
+</code></dt>
 <dd>the raw input encoded in the given encoding;</dd>
-<dt><code class="docutils literal"><span class="pre">outputMimeType</span></code></dt>
+<dt><code class="docutils literal"><span class="pre">outputMimeType</span>
+</code></dt>
 <dd>the MIME type of the default output, taken from the field at the time of
 instantiation;</dd>
 <dt><code class="docutils literal"><span class="pre">output</span></code></dt>
 <dd>a unicode object representing the transformed output. If possible, this
-is cached persistently until the <code class="docutils literal"><span class="pre">RichTextValue</span></code> is replaced with a
+is cached persistently until the <code class="docutils literal">
+<span class="pre">RichTextValue</span></code> is replaced with a
 new one (as happens when an edit form is saved, for example).</dd>
 </dl>
 """
@@ -133,4 +143,3 @@ portraits = []
 portraits.append(portraitA)
 portraits.append(portraitB)
 portraits.append(portraitC)
-

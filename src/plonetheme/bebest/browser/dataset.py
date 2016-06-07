@@ -4,8 +4,8 @@ import logging
 from plone import api
 from zope.publisher.browser import BrowserView
 from plone.namedfile import NamedBlobImage
-from os.path import join, abspath, dirname, basename
-from plone.i18n.normalizer.interfaces import INormalizer
+from os.path import join, abspath, dirname
+# from plone.i18n.normalizer.interfaces import INormalizer
 from zope.component import getUtility
 from zope.intid.interfaces import IIntIds
 from z3c.relationfield.relation import RelationValue
@@ -14,6 +14,7 @@ from data import portraits, projects
 
 PREFIX = abspath(dirname(__file__))
 logger = logging.getLogger('plonetheme.bebest: CREATEDATASET')
+
 
 def input_image_path(f):
     return join(PREFIX, '../tests/images/', f)
@@ -27,7 +28,7 @@ class createDataSet(BrowserView):
         # self.createPortraits()
         self.deleteProject()
         self.createProject()
-        
+
         url = portal.absolute_url()
         self.request.response.redirect(url)
 
@@ -47,8 +48,6 @@ class createDataSet(BrowserView):
         for portrait in portraits:
             title = portrait['family_name'] + '-' + portrait['first_name']
             logger.info(title)
-            thumb_pict = NamedBlobImage()
-            # import pdb;pdb.set_trace()
             obj = api.content.create(type='bebest.portrait',
                                      title=title,
                                      family_name=portrait['family_name'],
@@ -76,7 +75,7 @@ class createDataSet(BrowserView):
             fd.close()
             obj.main_pict.filename = portrait['main_pict']
             obj.reindexObject()
-            
+
             path_thumb = input_image_path(portrait['thumb_pict'])
             fd = open(path_thumb, "r")
             obj.thumb_pict.data = fd.read()
@@ -88,9 +87,9 @@ class createDataSet(BrowserView):
         portal = api.portal.get()
         intids = getUtility(IIntIds)
         founds = api.content.find(context=portal,
-                              portal_type='bebest.portrait',
-                              path='/'.join(portal.getPhysicalPath())
-                              )
+                                  portal_type='bebest.portrait',
+                                  path='/'.join(portal.getPhysicalPath())
+                                  )
         p_ids = []
         for found in founds:
             p_ids.append(intids.getId(found.getObject()))
@@ -128,14 +127,9 @@ class createDataSet(BrowserView):
         obj.reindexObject()
         allPortraits = self.getPortraits()
         obj.primary_contact = RelationValue(allPortraits[0])
-        # obj.primary_contact.to_id = allPortraits[0]
         obj.contact_fr = RelationValue(allPortraits[1])
-        # obj.contact_fr.to_id = allPortraits[1]
         obj.contact_ca = RelationValue(allPortraits[2])
-        # obj.contact_ca.to_id = allPortraits[2]
-        
         obj.reindexObject()
 
     def createMissions(self):
         pass
-
