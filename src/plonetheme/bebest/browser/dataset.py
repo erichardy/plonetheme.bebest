@@ -10,7 +10,7 @@ from zope.component import getUtility
 from zope.intid.interfaces import IIntIds
 from z3c.relationfield.relation import RelationValue
 
-from data import portraits, projects
+from data import portraits, projects, missions
 
 PREFIX = abspath(dirname(__file__))
 logger = logging.getLogger('plonetheme.bebest: CREATEDATASET')
@@ -130,6 +130,34 @@ class createDataSet(BrowserView):
         obj.contact_fr = RelationValue(allPortraits[1])
         obj.contact_ca = RelationValue(allPortraits[2])
         obj.reindexObject()
+        self.createMissions(obj)
 
-    def createMissions(self):
-        pass
+    def createMissions(self, project):
+        for mission in missions:
+            obj = api.content.create(type='bebest.mission',
+                                     title=mission['title'],
+                                     subtitle=mission['subtitle'],
+                                     start_date=mission['start_date'],
+                                     end_date=mission['end_date'],
+                                     presentation=mission['presentation'],
+                                     display_en=mission['display_en'],
+                                     presentation_en=mission['presentation_en'],
+                                     main_pict=NamedBlobImage(),
+                                     pict_author=mission['pict_author'],
+                                     doc=mission['doc'],
+                                     zoom=mission['zoom'],
+                                     map_center=mission['map_center'],
+                                     geojson=mission['geojson'],
+                                     container=project)
+            path_main = input_image_path(mission['main_pict'])
+            fd = open(path_main, "r")
+            obj.main_pict.data = fd.read()
+            fd.close()
+            obj.main_pict.filename = mission['main_pict']
+            obj.reindexObject()
+            allPortraits = self.getPortraits()
+            obj.chief = RelationValue(allPortraits[0])
+            obj.other = set([RelationValue(allPortraits[1]),
+                             RelationValue(allPortraits[2])])
+            obj.reindexObject()
+        

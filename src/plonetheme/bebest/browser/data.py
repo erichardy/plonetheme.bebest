@@ -62,6 +62,133 @@ new one (as happens when an edit form is saved, for example).</dd>
 bio_fr = RichTextValue(bio_fr_text, 'text/plain', 'text/html')
 bio_en = RichTextValue(bio_en_text, 'text/plain', 'text/html')
 
+geojsonA = """
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#555555",
+        "fill-opacity": 0.5,
+        "name": "zone dans le Golfe",
+        "description": "Oui oui, dans le golfe de Gascogne"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.57080078125,
+              46.98025235521883
+            ],
+            [
+              -1.4501953125,
+              45.67548217560647
+            ],
+            [
+              -1.7358398437499998,
+              43.628123412124616
+            ],
+            [
+              -4.5703125,
+              43.739352079154706
+            ],
+            [
+              -4.02099609375,
+              46.483264729155586
+            ],
+            [
+              -2.57080078125,
+              46.98025235521883
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Un point par ci par là",
+        "description": "De Brest au Golf de Cascogne"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.5263671875,
+          48.40003249610685
+        ]
+      }
+    }
+  ]
+}
+"""
+
+geojsonB = """
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Galway bay",
+        "description": "Au sud de Galway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.2724609375,
+          53.15994678846807
+        ]
+      }
+    }
+  ]
+}
+"""
+missionA = {}
+missionA['title'] = u"Première mission"
+missionA['subtitle'] = u"Il faut être très hardi pour aller là-bas !"
+missionA['start_date'] = datetime.datetime(2016, 5, 1)
+missionA['end_date'] = datetime.datetime(2016, 6, 1)
+missionA['presentation'] = bio_fr
+missionA['display_en'] = True
+missionA['presentation_en'] = bio_en
+missionA['main_pict'] = u"benthos.jpg"
+missionA['pict_author'] = u"S. Hervé"
+missionA['doc'] = None
+missionA['zoom'] = 6
+missionA['map_center'] = u"[48.40003249610685, -4.5263671875]"
+missionA['geojson'] = geojsonA
+
+missionB = {}
+missionB['title'] = u"Deuxième mission"
+missionB['subtitle'] = u"Et là, on a de la chance de revenir entiers !"
+missionB['start_date'] = datetime.datetime(2016, 7, 21)
+missionB['end_date'] = datetime.datetime(2016, 8, 10)
+missionB['presentation'] = bio_fr
+missionB['display_en'] = True
+missionB['presentation_en'] = bio_en
+missionB['main_pict'] = u"hydrophone.jpg"
+missionB['pict_author'] = u"H. Seb"
+missionB['doc'] = None
+missionB['zoom'] = 5
+missionB['map_center'] = u"[53.15994678846807, -9.2724609375]"
+missionB['geojson'] = geojsonB
+
+missions = []
+missions.append(missionA)
+missions.append(missionB)
+
+
 projectA = {}
 projectA['title'] = u"Mon projet"
 projectA['subtitle'] = u"C'est là qu'on voit si ça colle"
