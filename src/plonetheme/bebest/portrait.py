@@ -205,7 +205,11 @@ class PortraitView(BrowserView):
         except Exception:
             return False
 
-
+    def getPictFilename(self):
+        try:
+            return self.context.main_pict.filename
+        except Exception:
+            return False
 """
 class AddView(add.DefaultAddView):
     pass

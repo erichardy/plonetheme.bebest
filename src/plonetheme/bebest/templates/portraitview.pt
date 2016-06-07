@@ -21,7 +21,7 @@
 		              mail string:${context/email};
 		              thumb nocall:context/thumb_pict;
 		              image nocall:context/main_pict;
-		              pictFilename python:context.getPictFilename();
+		              pictFilename python:view.getPictFilename();
 		              jobs python:view.getJobs();
 		              affiliations python:view.getAffiliations();
 		              email python:view.getPortraitAttr('email');
