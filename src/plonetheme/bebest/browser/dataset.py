@@ -24,8 +24,8 @@ class createDataSet(BrowserView):
 
     def __call__(self):
         portal = api.portal.get()
-        # self.deletePortraits()
-        # self.createPortraits()
+        self.deletePortraits()
+        self.createPortraits()
         self.deleteProject()
         self.createProject()
 
@@ -108,12 +108,12 @@ class createDataSet(BrowserView):
         obj = api.content.create(type='bebest.project',
                                  title=project['title'],
                                  subtitle=project['subtitle'],
-                                 categories=project['categories'],
+                                 categories=set(project['categories']),
                                  start_date=project['start_date'],
                                  end_date=project['end_date'],
-                                 presentation=project['presentation'],
+                                 description_fr=project['description_fr'],
                                  display_en=project['display_en'],
-                                 presentation_en=project['presentation_en'],
+                                 description_en=project['description_en'],
                                  main_pict=NamedBlobImage(),
                                  pict_author=project['pict_author'],
                                  zoom=project['zoom'],

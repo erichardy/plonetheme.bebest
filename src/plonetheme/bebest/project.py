@@ -81,17 +81,17 @@ class IProject(model.Schema):
     #
     model.fieldset('descriptions',
                    label=_(u"project descriptions"),
-                   fields=['descripton_fr',
+                   fields=['description_fr',
                            'display_en',
-                           'descripton_en'])
-    descripton_fr = RichText(title=_(u"french description"),
+                           'description_en'])
+    description_fr = RichText(title=_(u"french description"),
                              required=False,
                              )
     display_en = schema.Bool(title=_(u"display or not english description"),
                              description=_(u"unselect to disable"),
                              default=True
                              )
-    descripton_en = RichText(title=_(u"english description"),
+    description_en = RichText(title=_(u"english description"),
                              required=False,
                              )
     #
