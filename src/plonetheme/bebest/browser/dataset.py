@@ -160,4 +160,28 @@ class createDataSet(BrowserView):
             obj.other = set([RelationValue(allPortraits[1]),
                              RelationValue(allPortraits[2])])
             obj.reindexObject()
-        
+            self.createCarousel(obj)
+
+    def createCarousel(self, loc):
+        carousel = api.content.create(type='Folder',
+                                      title=u'carousel',
+                                      container=loc)
+        api.content.transition(obj=carousel, transition='publish')
+        imgs = [u'spmiquelon/1.JPG', u'spmiquelon/2.JPG',
+                u'spmiquelon/3.JPG', u'spmiquelon/4.JPG',
+                u'spmiquelon/5.JPG', u'spmiquelon/6.JPG',
+                u'spmiquelon/7.JPG', u'spmiquelon/8.JPG']
+        for img in imgs:
+            title = img.split('/')[1]
+            image = api.content.create(type='Image',
+                                       title=title,
+                                       image=NamedBlobImage(),
+                                       container=carousel)
+            path = input_image_path(img)
+            fd = open(path, "r")
+            image.image.data = fd.read()
+            fd.close()
+            image.image.filename = title
+            image.reindexObject()
+            api.content.transition(obj=image, transition='publish')
+            image.reindexObject()

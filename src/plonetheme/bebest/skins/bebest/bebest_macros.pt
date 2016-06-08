@@ -8,9 +8,8 @@
 <body>
 
 <metal:row define-macro="gallery">
-	<link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/galleria/themes/classic/galleria.classic.css" />
+	<link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/galleria/themes/twelve/galleria.twelve.css" />
 	<script src="++theme++plonetheme.bebest/galleria/galleria-1.4.2.min.js"></script>
-    <script src="++theme++plonetheme.bebest/galleria/themes/classic/galleria.classic.min.js"></script>
 	<style>
 	  .galleria {
 	  	width: 100%;
@@ -30,7 +29,7 @@
 		</span>
 	</div>
 	<script>
-	  // Galleria.loadTheme('++theme++plonetheme.bebest/galleria/themes/classic/galleria.classic.min.js');
+	  Galleria.loadTheme('++theme++plonetheme.bebest/galleria/themes/twelve/galleria.twelve.min.js');
 	  Galleria.configure({
 		autoplay: 5000,
 		imageCrop: true,
@@ -43,7 +42,30 @@
 		easing: 'galleriaIn',
 		imagePan: true,
 		showInfo: true,
-    	transition: 'fadeslide'
+    	transition: 'fadeslide',
+    	// Toggles the fullscreen button
+        _showFullscreen: true,
+
+        // Toggles the lightbox button
+        _showPopout: true,
+
+        // Toggles the progress bar when playing a slideshow
+        _showProgress: true,
+
+        // Toggles tooltip
+        _showTooltip: true,
+
+        // Localized strings, modify these if you want tooltips in your language
+        _locale: {
+            show_thumbnails: "Show thumbnails",
+            hide_thumbnails: "Hide thumbnails",
+            play: "Play slideshow",
+            pause: "Pause slideshow",
+            enter_fullscreen: "Enter fullscreen",
+            exit_fullscreen: "Exit fullscreen",
+            popout_image: "Popout image",
+            showing_image: "Showing image %s of %s"
+        }
 	  });
 	  Galleria.run('.galleria');
 	</script>
