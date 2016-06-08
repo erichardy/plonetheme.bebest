@@ -85,15 +85,15 @@ class IProject(model.Schema):
                            'display_en',
                            'description_en'])
     description_fr = RichText(title=_(u"french description"),
-                             required=False,
-                             )
+                              required=False,
+                              )
     display_en = schema.Bool(title=_(u"display or not english description"),
                              description=_(u"unselect to disable"),
                              default=True
                              )
     description_en = RichText(title=_(u"english description"),
-                             required=False,
-                             )
+                              required=False,
+                              )
     #
     model.fieldset('dates',
                    label=_(u"dates"),
