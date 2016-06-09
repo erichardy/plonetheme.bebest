@@ -237,7 +237,6 @@ class createDataSet(BrowserView):
                                        main_pict=NamedBlobImage(),
                                        thumb_pict=NamedBlobImage(),
                                        authors_pict_folder=u"authors",
-                                       
                                        container=portal)
         self._loadImage(portfolio.main_pict, u'spmiquelon/1.JPG')
         self._loadImage(portfolio.thumb_pict, u'spmiquelon/2.JPG')
@@ -247,8 +246,8 @@ class createDataSet(BrowserView):
                 u'spmiquelon/7.JPG', u'spmiquelon/8.JPG']
         self._loadImagesInFolder(portfolio, imgs)
         authors = api.content.create(type='Folder',
-                                       title='authors',
-                                       container=portfolio)
+                                     title='authors',
+                                     container=portfolio)
         imgs = [u'amice-sq.jpg', u'gaumy-sq.jpg']
         self._loadImagesInFolder(authors, imgs)
         api.content.transition(obj=portfolio, transition='publish')
