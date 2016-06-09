@@ -20,7 +20,7 @@ from z3c.form import button
 from z3c.relationfield.schema import RelationChoice
 from plone.namedfile.field import NamedBlobImage
 from z3c.relationfield.schema import RelationList
-from plone.app.vocabularies.catalog import CatalogSource
+from plone.app.vocabularies.catalog import CatalogSource as CS
 
 from zope.interface import implements
 from zope.interface import Invalid, invariant
@@ -140,23 +140,23 @@ class IProject(model.Schema):
 
     primary_contact = RelationChoice(
         title=_(u"primary contact"),
-        source=CatalogSource(portal_type="bebest.portrait"),
+        source=CS(portal_type="bebest.portrait"),
         )
 
     contact_fr = RelationChoice(
         title=_(u"french contact"),
-        source=CatalogSource(portal_type="bebest.portrait"),
+        source=CS(portal_type="bebest.portrait"),
         )
     contact_ca = RelationChoice(
         title=_(u"canadian contact"),
-        source=CatalogSource(portal_type="bebest.portrait"),
+        source=CS(portal_type="bebest.portrait"),
         )
     other = RelationList(title=_(u"other participants"),
-        value_type=RelationChoice(
-        title=_(u'Target'),
-        source=CatalogSource(portal_type="bebest.portrait")),
-        required=False,
-        )
+                         value_type=RelationChoice(
+                             title=_(u'Target'),
+                             source=CS(portal_type="bebest.portrait")),
+                         required=False,
+                         )
 
     @invariant
     def validateStartEnd(data):

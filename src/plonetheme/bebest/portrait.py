@@ -58,8 +58,8 @@ class IPortrait(model.Schema):
 
     dexteritytextindexer.searchable('description')
     description = schema.TextLine(title=_(u"very short description"),
-                                required=False,
-                                )
+                                  required=False,
+                                  )
     dexteritytextindexer.searchable('family_name')
     family_name = schema.TextLine(title=_(u"person family name"),
                                   required=True,

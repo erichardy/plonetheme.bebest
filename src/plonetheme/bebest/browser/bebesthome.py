@@ -43,10 +43,15 @@ class bebestHome(BrowserView):
         prefix += 'IPlonethemeBebestSettings.' + registry_record
         tag = api.portal.get_registry_record(prefix)
         portal = api.portal.get()
-        founds = api.content.find(context=portal,
-                                  portal_type=obj_type,
-                                  state="published"
-                                  )
+        if obj_type:
+            founds = api.content.find(context=portal,
+                                      portal_type=obj_type,
+                                      state="published"
+                                      )
+        else:
+            founds = api.content.find(context=portal,
+                                      state="published"
+                                      )
         if len(founds) == 0:
             return False
         objs = []
@@ -138,9 +143,14 @@ class bebestHome(BrowserView):
             enregistré dans ``tag_home``.
         """
         homeThumbnails = self._getHomeObject(registry_record='tag_home',
-                                             obj_type=[],
+                                             obj_type=None,
                                              effective=True)
         return homeThumbnails
+
+    def asLeadImage(self, thumb):
+        logger.info(thumb.portal_type)
+        # import pdb;pdb.set_trace()
+        return True
 
     def getHomeNews(self):
         """
