@@ -6,11 +6,12 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plonetheme.bebest">
 <body
-	>
+	tal:define="portal_state context/@@plone_portal_state;
+	            portal_url portal_state/portal_url">
 
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
-  <link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/css/leaflet.css" />
+  <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
   <div tal:define="features python:context.getGeoJSON();
                    dates python:context.getDates();
                    project python:context.getParentProject();
@@ -182,7 +183,7 @@
    </div>
   </div>
 </div>
-  <script src="++theme++plonetheme.bebest/js/bebest-mission-map.js"></script>
+  <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-mission-map.js"></script>
 
   </metal:content-core>
 </metal:content-core>

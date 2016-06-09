@@ -6,7 +6,9 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plonetheme.bebest">
 
-<body>
+<body
+    tal:define="portal_state context/@@plone_portal_state;
+	            portal_url portal_state/portal_url">
 
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
