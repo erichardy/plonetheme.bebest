@@ -41,6 +41,7 @@ class IPlonethemeBebestSettings(model.Schema):
                            'carousel_interval',
                            'logo_name',
                            'tag_home',
+                           'tag_home_news',
                            'about_bg_image',
                            'about_document_tag', ])
 
@@ -60,6 +61,10 @@ class IPlonethemeBebestSettings(model.Schema):
                         description=_(u"Only One word, used for folders"),
                         default=u"bebest-home",
                         )
+    tag_home_news = TextLine(title=_(u"Tag used for news on home page"),
+                             description=_(u"Only One word, used for news"),
+                             default=u"bebest-home-news",
+                             )
     about_bg_image = TextLine(title=_(u"Background image for about section"),
                               description=_(u"in portal_skins/custom/images"),
                               default=u"csj-soft.png",

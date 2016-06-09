@@ -19,7 +19,7 @@ from zope import schema
 from z3c.form import button
 from z3c.relationfield.schema import RelationChoice
 from plone.namedfile.field import NamedBlobImage
-# from z3c.relationfield.schema import RelationList
+from z3c.relationfield.schema import RelationList
 from plone.app.vocabularies.catalog import CatalogSource
 
 from zope.interface import implements
@@ -50,7 +50,7 @@ class IProject(model.Schema):
     model.fieldset('general',
                    label=_(u"general"),
                    fields=['title',
-                           'subtitle',
+                           'description',
                            'categories',
                            'main_pict',
                            'pict_author',
@@ -59,10 +59,10 @@ class IProject(model.Schema):
     title = schema.TextLine(title=_(u"project label"),
                             required=True,
                             )
-    dexteritytextindexer.searchable('subtitle')
-    subtitle = schema.TextLine(title=_(u"very short description"),
-                               required=True,
-                               )
+    dexteritytextindexer.searchable('description')
+    description = schema.TextLine(title=_(u"very short description"),
+                                  required=True,
+                                  )
     dexteritytextindexer.searchable('categories')
     directives.widget(
         categories='z3c.form.browser.checkbox.CheckBoxFieldWidget')
@@ -133,7 +133,8 @@ class IProject(model.Schema):
                    label=_(u"contacts"),
                    fields=['primary_contact',
                            'contact_fr',
-                           'contact_ca'
+                           'contact_ca',
+                           'other'
                            ])
     # directives.widget(chief='plone.formwidget.contenttree.ContentTreeFieldWidget')
 
@@ -149,6 +150,12 @@ class IProject(model.Schema):
     contact_ca = RelationChoice(
         title=_(u"canadian contact"),
         source=CatalogSource(portal_type="bebest.portrait"),
+        )
+    other = RelationList(title=_(u"other participants"),
+        value_type=RelationChoice(
+        title=_(u'Target'),
+        source=CatalogSource(portal_type="bebest.portrait")),
+        required=False,
         )
 
     @invariant
@@ -294,7 +301,7 @@ class project(Container):
             try:
                 if len(geo) > 5:
                     title = self._toHTML(m.title)
-                    subtitle = self._toHTML(m.subtitle)
+                    subtitle = self._toHTML(m.description)
                     uuid = u'N' + api.content.get_uuid(m)
                     missionJS = u'\nvar '
                     missionJS += uuid

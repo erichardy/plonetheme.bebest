@@ -109,7 +109,7 @@ class createDataSet(BrowserView):
         project = projects[0]
         obj = api.content.create(type='bebest.project',
                                  title=project['title'],
-                                 subtitle=project['subtitle'],
+                                 description=project['description'],
                                  categories=set(project['categories']),
                                  start_date=project['start_date'],
                                  end_date=project['end_date'],
@@ -139,7 +139,7 @@ class createDataSet(BrowserView):
             obj = api.content.create(
                 type='bebest.mission',
                 title=mission['title'],
-                subtitle=mission['subtitle'],
+                description=mission['description'],
                 start_date=mission['start_date'],
                 end_date=mission['end_date'],
                 presentation=mission['presentation'],

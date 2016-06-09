@@ -163,7 +163,7 @@ geojsonB = """
 """
 missionA = {}
 missionA['title'] = u"Première mission"
-missionA['subtitle'] = u"Il faut être très hardi pour aller là-bas !"
+missionA['description'] = u"Il faut être très hardi pour aller là-bas !"
 missionA['start_date'] = datetime.datetime(2016, 5, 1)
 missionA['end_date'] = datetime.datetime(2016, 6, 1)
 missionA['presentation'] = bio_fr
@@ -178,7 +178,7 @@ missionA['geojson'] = geojsonA
 
 missionB = {}
 missionB['title'] = u"Deuxième mission"
-missionB['subtitle'] = u"Et là, on a de la chance de revenir entiers !"
+missionB['description'] = u"Et là, on a de la chance de revenir entiers !"
 missionB['start_date'] = datetime.datetime(2016, 7, 21)
 missionB['end_date'] = datetime.datetime(2016, 8, 10)
 missionB['presentation'] = bio_fr
@@ -198,7 +198,7 @@ missions.append(missionB)
 
 projectA = {}
 projectA['title'] = u"Mon projet"
-projectA['subtitle'] = u"C'est là qu'on voit si ça colle"
+projectA['description'] = u"C'est là qu'on voit si ça colle"
 projectA['categories'] = ['film-documentaire', 'enseignement']
 projectA['start_date'] = datetime.datetime(2016, 4, 12)
 projectA['end_date'] = datetime.datetime(2016, 11, 30)

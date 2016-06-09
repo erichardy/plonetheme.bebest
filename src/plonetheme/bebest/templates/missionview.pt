@@ -48,7 +48,7 @@
 					     tal:content="string:${context/title}">Mission title</div>
 					<hr />
 					<div class="bebest-subtitle"
-					     tal:content="string:${context/subtitle}">
+					     tal:content="string:${context/description}">
 					     Mission subtitle</div>
 					<div class="bebest-dates"
 					     tal:condition="dates"
@@ -133,6 +133,7 @@
 		    presentation FR
 		  </span>
 	  </div>
+	 </div>
    <span tal:condition="gallery">
      <metal:macro use-macro="context/bebest_macros/macros/gallery" />
    </span>
@@ -166,7 +167,8 @@
    </style>
 
    <section id="bebest-mission-map" tal:condition="python:features">
-   	<div>
+   	<div class="container-fluid bg-bright">
+   	<div class=container>
 	   	<span tal:omit-tag="" tal:content="structure string:${features}">
 	   	  features
 	   	</span>
@@ -175,12 +177,14 @@
 	   	  <br />
 	   	  <span class="bebest-feature-description" id="bebest-feature-description"></span>
 	   	</div>
-   	</div>
+   	
 	<div id="bebest-map">
+	</div>
+	</div>
 	</div>
    
    </section>
-   </div>
+
   </div>
 </div>
   <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-mission-map.js"></script>

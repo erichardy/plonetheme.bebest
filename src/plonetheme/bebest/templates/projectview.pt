@@ -35,7 +35,7 @@
 			 
 			 </div>
   		     <div class="bebest-subtitle"
-					     tal:content="string:${context/subtitle}">
+					     tal:content="string:${context/description}">
 					     Project subtitle
 		     </div>
   		</div>
@@ -47,11 +47,11 @@
       <div class="container">
         <div class="thumbnail-wrapper">
           <div class="thumbnail-portrait"
-               tal:define="image nocall:primary_contact/main_pict;">
+               tal:define="image nocall:primary_contact/thumb_pict;">
               <h4 class="text-center">Primary contact / Principal Investigator</h4>
               <a href="#"
                  tal:attributes="href string:${primary_contact/absolute_url}">
-                  <img tal:attributes="src string:${primary_contact/absolute_url}/@@download/main_pict/${image/filename}"
+                  <img tal:attributes="src string:${primary_contact/absolute_url}/@@download/thumb_pict/${image/filename}"
                        class="img-circle portrait-prime"></img>
                   <h4 tal:content="string:${primary_contact/first_name} ${primary_contact/family_name}">Laurent Chauvaud</h4>
                   <p tal:content="string:${primary_contact/affiliation1}">LEMAR - CNRS</p>

@@ -56,6 +56,10 @@ class IPortrait(model.Schema):
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(title=_(u"Form title"),)
 
+    dexteritytextindexer.searchable('description')
+    description = schema.TextLine(title=_(u"very short description"),
+                                required=False,
+                                )
     dexteritytextindexer.searchable('family_name')
     family_name = schema.TextLine(title=_(u"person family name"),
                                   required=True,
@@ -70,13 +74,13 @@ class IPortrait(model.Schema):
                              required=True,
                              )
     main_pict = NamedBlobImage(title=_(u"main photo"),
-                               required=False
+                               required=True
                                )
     pict_author = schema.TextLine(title=_(u"picture author"),
                                   required=False,
                                   )
     thumb_pict = NamedBlobImage(title=_(u"small photo"),
-                                required=False
+                                required=True
                                 )
     """
     status : technicien, ingenieur, chercheur (ne pas faire apparaitre)

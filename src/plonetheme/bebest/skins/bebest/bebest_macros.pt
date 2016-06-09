@@ -42,7 +42,8 @@
 		easing: 'galleriaIn',
 		imagePan: true,
 		showInfo: true,
-    	transition: 'fadeslide',
+		variation: 'light',
+    	transition: 'fade',
     	// Toggles the fullscreen button
         _showFullscreen: true,
 

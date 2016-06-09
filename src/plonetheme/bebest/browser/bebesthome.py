@@ -138,7 +138,7 @@ class bebestHome(BrowserView):
             enregistré dans ``tag_home``.
         """
         homeThumbnails = self._getHomeObject(registry_record='tag_home',
-                                             obj_type='Folder',
+                                             obj_type=[],
                                              effective=True)
         return homeThumbnails
 
@@ -147,7 +147,7 @@ class bebestHome(BrowserView):
         :return: la liste des ``News Item`` qui ont le mot clé
           enregistré dans ``tag_home``.
         """
-        homeNews = self._getHomeObject(registry_record='tag_home',
+        homeNews = self._getHomeObject(registry_record='tag_home_news',
                                        obj_type='News Item',
                                        effective=True)
         return homeNews

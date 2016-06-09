@@ -87,7 +87,7 @@ class IMission(model.Schema):
     model.fieldset('general',
                    label=_(u"general"),
                    fields=['title',
-                           'subtitle',
+                           'description',
                            'start_date',
                            'end_date',
                            ])
@@ -95,10 +95,10 @@ class IMission(model.Schema):
     title = schema.TextLine(title=_(u"mission label"),
                             required=True,
                             )
-    dexteritytextindexer.searchable('subtitle')
-    subtitle = schema.TextLine(title=_(u"very short description"),
-                               required=True,
-                               )
+    dexteritytextindexer.searchable('description')
+    description = schema.TextLine(title=_(u"very short description"),
+                                required=True,
+                                )
     dexteritytextindexer.searchable('start_date')
     start_date = schema.Date(title=_(u"start date for the mission"),
                              description=_(u""),
