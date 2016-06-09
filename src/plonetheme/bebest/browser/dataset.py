@@ -28,6 +28,7 @@ class createDataSet(BrowserView):
         self.createPortraits()
         self.deleteProject()
         self.createProject()
+        self.createPortFolio()
 
         url = portal.absolute_url()
         self.request.response.redirect(url)
@@ -164,6 +165,26 @@ class createDataSet(BrowserView):
             obj.reindexObject()
             self.createCarousel(obj)
 
+    def _loadImagesInFolder(self, folderish, images):
+        for img in images:
+            imgPath = img.split('/')
+            if len(imgPath) > 1:
+                title = imgPath[len(imgPath) - 1]
+            else:
+                title = img
+            image = api.content.create(type='Image',
+                                       title=title,
+                                       image=NamedBlobImage(),
+                                       container=folderish)
+            path = input_image_path(img)
+            fd = open(path, "r")
+            image.image.data = fd.read()
+            fd.close()
+            image.image.filename = title
+            image.reindexObject()
+            api.content.transition(obj=image, transition='publish')
+            image.reindexObject()
+
     def createCarousel(self, loc):
         carousel = api.content.create(type='Folder',
                                       title=u'carousel',
@@ -187,3 +208,14 @@ class createDataSet(BrowserView):
             image.reindexObject()
             api.content.transition(obj=image, transition='publish')
             image.reindexObject()
+
+    def createPortFolio(self):
+        portal = api.portal.get()
+        portfolio = api.content.create(type='bebest.portfolio',
+                                       title='Mon Portfolio',
+                                       container=portal)
+        imgs = [u'spmiquelon/1.JPG', u'spmiquelon/2.JPG',
+                u'spmiquelon/3.JPG', u'spmiquelon/4.JPG',
+                u'spmiquelon/5.JPG', u'spmiquelon/6.JPG',
+                u'spmiquelon/7.JPG', u'spmiquelon/8.JPG']
+        self._loadImagesInFolder(portfolio, imgs)
