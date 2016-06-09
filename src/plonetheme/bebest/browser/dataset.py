@@ -10,7 +10,7 @@ from zope.component import getUtility
 from zope.intid.interfaces import IIntIds
 from z3c.relationfield.relation import RelationValue
 
-from data import portraits, projects, missions
+from data import portraits, projects, missions, bio_fr, lorem
 
 PREFIX = abspath(dirname(__file__))
 logger = logging.getLogger('plonetheme.bebest: CREATEDATASET')
@@ -28,9 +28,10 @@ class createDataSet(BrowserView):
         self.createPortraits()
         self.deleteProject()
         self.createProject()
+        self.deletePortFolio()
         self.createPortFolio()
 
-        url = portal.absolute_url()
+        url = portal.absolute_url() + '/folder_contents'
         self.request.response.redirect(url)
 
     def deletePortraits(self):
@@ -165,6 +166,18 @@ class createDataSet(BrowserView):
             obj.reindexObject()
             self.createCarousel(obj)
 
+    def _loadImage(self, objField, image):
+        imgPath = image.split('/')
+        if len(imgPath) > 1:
+            title = imgPath[len(imgPath) - 1]
+        else:
+            title = image
+        path = input_image_path(image)
+        fd = open(path, "r")
+        objField.data = fd.read()
+        fd.close()
+        objField.filename = title
+
     def _loadImagesInFolder(self, folderish, images):
         for img in images:
             imgPath = img.split('/')
@@ -175,12 +188,9 @@ class createDataSet(BrowserView):
             image = api.content.create(type='Image',
                                        title=title,
                                        image=NamedBlobImage(),
+                                       description=lorem,
                                        container=folderish)
-            path = input_image_path(img)
-            fd = open(path, "r")
-            image.image.data = fd.read()
-            fd.close()
-            image.image.filename = title
+            self._loadImage(image.image, img)
             image.reindexObject()
             api.content.transition(obj=image, transition='publish')
             image.reindexObject()
@@ -194,6 +204,8 @@ class createDataSet(BrowserView):
                 u'spmiquelon/3.JPG', u'spmiquelon/4.JPG',
                 u'spmiquelon/5.JPG', u'spmiquelon/6.JPG',
                 u'spmiquelon/7.JPG', u'spmiquelon/8.JPG']
+        self._loadImagesInFolder(carousel, imgs)
+        """
         for img in imgs:
             title = img.split('/')[1]
             image = api.content.create(type='Image',
@@ -208,14 +220,36 @@ class createDataSet(BrowserView):
             image.reindexObject()
             api.content.transition(obj=image, transition='publish')
             image.reindexObject()
+        """
+
+    def deletePortFolio(self):
+        portal = api.portal.get()
+        try:
+            api.content.delete(obj=portal['mon-portfolio'])
+        except Exception:
+            pass
 
     def createPortFolio(self):
         portal = api.portal.get()
         portfolio = api.content.create(type='bebest.portfolio',
                                        title='Mon Portfolio',
+                                       blabla=bio_fr,
+                                       main_pict=NamedBlobImage(),
+                                       thumb_pict=NamedBlobImage(),
+                                       authors_pict_folder=u"authors",
+                                       
                                        container=portal)
+        self._loadImage(portfolio.main_pict, u'spmiquelon/1.JPG')
+        self._loadImage(portfolio.thumb_pict, u'spmiquelon/2.JPG')
         imgs = [u'spmiquelon/1.JPG', u'spmiquelon/2.JPG',
                 u'spmiquelon/3.JPG', u'spmiquelon/4.JPG',
                 u'spmiquelon/5.JPG', u'spmiquelon/6.JPG',
                 u'spmiquelon/7.JPG', u'spmiquelon/8.JPG']
         self._loadImagesInFolder(portfolio, imgs)
+        authors = api.content.create(type='Folder',
+                                       title='authors',
+                                       container=portfolio)
+        imgs = [u'amice-sq.jpg', u'gaumy-sq.jpg']
+        self._loadImagesInFolder(authors, imgs)
+        api.content.transition(obj=portfolio, transition='publish')
+        api.content.transition(obj=authors, transition='publish')

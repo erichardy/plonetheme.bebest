@@ -3,6 +3,13 @@
 from plone.app.textfield.value import RichTextValue
 import datetime
 
+lorem = """
+Vivamus dictum, nunc a tincidunt semper, lectus justo maximus neque,
+et pulvinar ipsum dolor at nisl. Maecenas porttitor dolor nec ante cursus
+viverra. Maecenas massa nunc, semper vitae pulvinar at, semper
+at metus. Cras a fermentum diam. Sed a lobortis
+risus, efficitur tincidunt lorem.
+"""
 
 bio_fr_text = """
 <h4>Savoir-faire opérationnels</h4>
