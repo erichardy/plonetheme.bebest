@@ -207,6 +207,7 @@ class editForm(edit.DefaultEditForm):
 class ProjectView(BrowserView):
     pass
 
+
 class project(Container):
     implements(IProject)
 
