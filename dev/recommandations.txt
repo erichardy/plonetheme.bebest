@@ -1,0 +1,25 @@
+<--------Interface / général
+- bizarre le dossier "contenu" à la racine- Quezaco ?
+- Le dossier accueil ne devrait pas apparaitre dans la nav-bar.
+- Espace en trop entre la nav bar et le contenu
+
+<--------Accueil
+Mettre tout le contenu dans un dossier Accueil
+Les thumbnails ne semblent pas fonctionner
+
+<--------Portraits
+- Pour les auteurs des photos, mettre un préfixe « © », et  quand il n’y a pas d’auteur, mettre, © DR
+
+
+<--------Mission
+- Dans description / other description, le  remove ne marche pas. PBM de rafraichissement
+
+
+<-------Projet
+- Seul le portrait du PI s’affiche. Il doit aussi y avoir les contacts FR et Quebec
+- Il manque la section auteur de la main picture
+- Surement un pb de div (container fluid » ) pour le contenu (l’image de fond dépasse en bas)
+
+
+<--------Thumbnails général
+L’image portrait sélectionnée pour l’icone thumbnail n’est pas la bonne. Ce  doit etre la -SQ
