@@ -11,7 +11,7 @@
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
   <link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/css/leaflet.css" />
-  <div tal:define="features python:view.getMissionsFeatures();
+  <div tal:define="features python:context.getMissionsFeatures();
                    toLocalizedTime nocall:context/@@plone/toLocalizedTime;
                    primary_contact python:context.getPrimaryContact();
                    teams python:context.getMissionsTeams()">
@@ -29,7 +29,7 @@
 					     tal:content="string:${context/title}">Project title
 			 </div>
 			 <div class="bebest-project-category"
-			      tal:content="structure python:view.getProjectCategories()">
+			      tal:content="structure python:context.getProjectCategories()">
 			 	
 			 
 			 </div>
@@ -61,11 +61,11 @@
     </div>
   </section>
   
-  <span tal:content="structure python:view.getMapZoom()"
+  <span tal:content="structure python:context.getMapZoom()"
         tal:omit-tag="">
         map zoom
   </span>
-  <span tal:content="structure python:view.getMapCenter()"
+  <span tal:content="structure python:context.getMapCenter()"
         tal:omit-tag="">
         map center
   </span>
