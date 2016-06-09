@@ -15,12 +15,13 @@
                    toLocalizedTime nocall:context/@@plone/toLocalizedTime">
 
 <!-----------DEBUT SECTION PORTRAIT------------------>
-		<section
+		<section id="bebest-portrait"
 		  tal:define="firstname string:${context/first_name};
 		              familyname string:${context/family_name};
 		              mail string:${context/email};
 		              thumb nocall:context/thumb_pict;
 		              image nocall:context/main_pict;
+		              pictFilename python:view.getPictFilename();
 		              jobs python:view.getJobs();
 		              affiliations python:view.getAffiliations();
 		              email python:view.getPortraitAttr('email');
@@ -64,6 +65,7 @@
 					<span tal:condition="python:view.getPortraitAttr('personal_page')">
 						<a  href=""
 						   tal:attributes="href string:${personal_page}"
+						   target="_blank"
 						   i18n:translate="">
 						   personal page
 						</a>
@@ -73,6 +75,7 @@
 					<span tal:condition="python:view.getPortraitAttr('research')">
 						<a href=""
 						   tal:attributes="href string:${research}"
+						   target="_blank"
 						   i18n:translate="">
 						   publications and work
 						</a>
@@ -82,6 +85,7 @@
 					<span tal:condition="python:view.getPortraitAttr('unit_page')">
 						<a href=""
 						   tal:attributes="href string:${unit_page}"
+						   target="_blank"
 						   i18n:translate="">
 						   partner's website
 					</a>
@@ -89,6 +93,7 @@
 				</div>
 					<!---- photo du portrait  --------->
 				<div class="personnel-img-wrapper"
+				     tal:condition="pictFilename"
 				     tal:define="main_pict nocall:context/main_pict">
 					<img tal:attributes="src string:${context/absolute_url}/@@download/main_pict/${main_pict/filename}"/>
 				</div>	
@@ -107,7 +112,7 @@
 				                id="show-english-version"
 				                class="btn btn-default collapser">English version</button>
 					    
-						<span class="bebest-collapse"
+						<span class="bebest-collapse" style="display: none"
 						      id="show-english-version-collapse">
 						  <h2 i18n:translate="">short biography</h2>
 						  <p tal:content="structure string:${context/bio_en/raw}">

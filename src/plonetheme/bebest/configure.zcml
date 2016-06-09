@@ -67,7 +67,21 @@
       template="templates/portraitview.pt"
       permission="zope2.View"
       />
-    
+    <browser:page
+      name="view"
+      for="plonetheme.bebest.portfolio.IPortfolio"
+      class="plonetheme.bebest.portfolio.PortfolioView"
+      template="templates/portfolioview.pt"
+      permission="zope2.View"
+      />
+    <browser:page
+      name="view"
+      for="plonetheme.bebest.bebestimage.IBebestImage"
+      class="plonetheme.bebest.bebestimage.BebestImageView"
+      template="templates/bebestimageview.pt"
+      permission="zope2.View"
+      />
+    bebest_image
     <!-- misc views -->
     <browser:page
        name="debug"
@@ -119,7 +133,7 @@
     <utility component=".vocabulary.jobs" name="bebest.jobs" />
     <utility component=".vocabulary.projectCategories" name="bebest.projectcategories" />
     <utility component=".vocabulary.geometry_types" name="bebest.geometry_types" />
-    
+    <utility component=".vocabulary.portfolio_bg" name="bebest.portfolio_bg" />
     <utility
       factory=".utils.CatalogVocabularyFactory"
       name="bebest.Catalog"

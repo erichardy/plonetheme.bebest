@@ -28,6 +28,9 @@ categoriesList.append(u"création artistique")
 categoriesList.append(u"Enseignement")
 categoriesList.append(u"Film documentaire")
 categoriesList.append(u'Exposition "grand public"')
+portfolioBGClasses = []
+portfolioBGClasses.append(u"bg-dark")
+portfolioBGClasses.append(u"bg-light")
 
 
 class IPlonethemeBebestSettings(model.Schema):
@@ -67,7 +70,14 @@ class IPlonethemeBebestSettings(model.Schema):
                                   )
     model.fieldset('portfolio',
                    label=_(u"portfolio settings"),
-                   fields=['portfolio_author_tag'],)
+                   fields=['portfolio_author_tag',
+                           'portfolio_bg_classes',
+                           ],)
+    portfolio_bg_classes = List(title=_(u"CSS Classes"),
+                                description=_(u"for portfolio background"),
+                                value_type=TextLine(),
+                                default=portfolioBGClasses,
+                                )
     portfolio_author_tag = TextLine(title=_(u"Tag used for Authors"),
                                     description=_(u"used for portfolio view"),
                                     default=u"portfolio-author",
@@ -80,6 +90,9 @@ class IPlonethemeBebestSettings(model.Schema):
                 value_type=TextLine(),
                 default=jobList,
                 )
+    model.fieldset('projects',
+                   label=_(u"misc for projects"),
+                   fields=['project_categories'],)
     project_categories = List(title=_(u"Project categories"),
                               description=_(u"One category per line"),
                               value_type=TextLine(),

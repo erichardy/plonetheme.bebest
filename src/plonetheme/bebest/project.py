@@ -7,7 +7,7 @@ pour associer un projet a des missions et des portraits.
 
 from plone.dexterity.content import Container
 from plone.dexterity.browser import add
-from plone.dexterity.browser import edit
+# from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
@@ -34,10 +34,11 @@ from plone import api
 import logging
 # import urllib
 # import re
-# from plonetheme.bebest.utils import CatalogSource
+from plonetheme.bebest.utils import getTitleFromVoc
 from plonetheme.bebest import _
 
 logger = logging.getLogger('bebest PROJECT')
+CheckBoxFieldWidget = 'z3c.form.browser.checkbox.CheckBoxFieldWidget'
 
 
 class StartBeforeEnd(Invalid):
@@ -55,21 +56,24 @@ class IProject(model.Schema):
                            'pict_author',
                            ])
     dexteritytextindexer.searchable('title')
-    title = schema.TextLine(title=_(u"mission label"),
+    title = schema.TextLine(title=_(u"project label"),
                             required=True,
                             )
     dexteritytextindexer.searchable('subtitle')
     subtitle = schema.TextLine(title=_(u"very short description"),
-                               required=False,
+                               required=True,
                                )
     dexteritytextindexer.searchable('categories')
-    directives.widget(categories='z3c.form.browser.checkbox.CheckBoxFieldWidget')
-    categories = schema.Set(title=_(u"project categories"),
-                            description=_(u"select categories for this project"),
-                            value_type=schema.Choice(
-                                    vocabulary=u"bebest.projectcategories"),)
+    directives.widget(
+        categories='z3c.form.browser.checkbox.CheckBoxFieldWidget')
+    categories = schema.Set(
+        title=_(u"project categories"),
+        description=_(u"select one or more"),
+        value_type=schema.Choice(
+            vocabulary=u"bebest.projectcategories"),
+        )
     main_pict = NamedBlobImage(title=_(u"main photo"),
-                               required=False
+                               required=True
                                )
     pict_author = schema.TextLine(title=_(u"picture author"),
                                   required=False,
@@ -77,19 +81,19 @@ class IProject(model.Schema):
     #
     model.fieldset('descriptions',
                    label=_(u"project descriptions"),
-                   fields=['descripton_fr',
+                   fields=['description_fr',
                            'display_en',
-                           'descripton_en'])
-    descripton_fr = RichText(title=_(u"french description"),
-                             required=False,
-                             )
+                           'description_en'])
+    description_fr = RichText(title=_(u"french description"),
+                              required=False,
+                              )
     display_en = schema.Bool(title=_(u"display or not english description"),
                              description=_(u"unselect to disable"),
                              default=True
                              )
-    descripton_en = RichText(title=_(u"english description"),
-                             required=False,
-                             )
+    description_en = RichText(title=_(u"english description"),
+                              required=False,
+                              )
     #
     model.fieldset('dates',
                    label=_(u"dates"),
@@ -118,11 +122,12 @@ class IProject(model.Schema):
                       max=15,
                       default=4,
                       required=False)
-    map_center = schema.TextLine(title=_(u"map center"),
-                                 description=_(u'must be in the form "[lat, long]"'),
-                                 default=u'[48.40003249610685, -4.5263671875]',
-                                 required=False,
-                                 )
+    map_center = schema.TextLine(
+        title=_(u"map center"),
+        description=_(u'must be in the form "[lat, long]"'),
+        default=u'[48.40003249610685, -4.5263671875]',
+        required=False,
+        )
     #
     model.fieldset('contacts',
                    label=_(u"contacts"),
@@ -132,13 +137,19 @@ class IProject(model.Schema):
                            ])
     # directives.widget(chief='plone.formwidget.contenttree.ContentTreeFieldWidget')
 
-    primary_contact = RelationChoice(title=_(u"primary contact"),
-                                     source=CatalogSource(portal_type="bebest.portrait"),)
+    primary_contact = RelationChoice(
+        title=_(u"primary contact"),
+        source=CatalogSource(portal_type="bebest.portrait"),
+        )
 
-    contact_fr = RelationChoice(title=_(u"french contact"),
-                                source=CatalogSource(portal_type="bebest.portrait"),)
-    contact_ca = RelationChoice(title=_(u"canadian contact"),
-                                source=CatalogSource(portal_type="bebest.portrait"),)
+    contact_fr = RelationChoice(
+        title=_(u"french contact"),
+        source=CatalogSource(portal_type="bebest.portrait"),
+        )
+    contact_ca = RelationChoice(
+        title=_(u"canadian contact"),
+        source=CatalogSource(portal_type="bebest.portrait"),
+        )
 
     @invariant
     def validateStartEnd(data):
@@ -169,6 +180,7 @@ class AddForm(add.DefaultAddForm):
             return
         try:
             obj = self.createAndAdd(data)
+            logger.info(obj.absolute_url())
             contextURL = self.context.absolute_url()
             self.request.response.redirect(contextURL)
         except Exception:
@@ -186,11 +198,78 @@ class AddView(add.DefaultAddView):
     form = AddForm
 
 
+"""
 class editForm(edit.DefaultEditForm):
     pass
+"""
 
 
 class ProjectView(BrowserView):
+    pass
+
+
+class project(Container):
+    implements(IProject)
+
+    def getPrimaryContact(self):
+        return self.primary_contact.to_object
+
+    def getContactFR(self):
+        return self.contact_fr.to_object
+
+    def getContactCA(self):
+        return self.contact_ca.to_object
+
+    def getMissions(self):
+        bmissions = api.content.find(portal_type='bebest.mission',
+                                     path='/'.join(self.getPhysicalPath()),
+                                     depth=1,
+                                     )
+        return [mission.getObject() for mission in bmissions]
+
+    def sort_by_title(self, a, b):
+        a_name = a.family_name + ' ' + a.first_name
+        b_name = b.family_name + ' ' + b.first_name
+        if a_name < b_name:
+            return -1
+        return 1
+
+    def getMissionsTeams(self):
+        """
+        :returns: la liste de tous les participants à toutes les missions,
+          par ordre alpabétique et épurée des doublons (à faire!)
+        """
+        missions = self.getMissions()
+        if len(missions) == 0:
+            return False
+        p = []
+        for mission in missions:
+            p.append(mission.getChief())
+            team = mission.getTeam()
+            if team:
+                p += team
+        participants = []
+        for participant in p:
+            if participant not in participants:
+                participants.append(participant)
+        return sorted(participants, self.sort_by_title)
+
+    def getDescriptionFR(self):
+        if len(self.descripton_fr) < 5:
+            return '<p>&nbsp;</p>'
+
+    def getDescriptionEN(self):
+        if len(self.descripton_en) < 5:
+            return '<p>&nbsp;</p>'
+
+    def getProjectCategories(self):
+        voc = "bebest.projectcategories"
+        c = self
+        clist = [getTitleFromVoc(voc, category) for category in c.categories]
+        cat = [ctg + '<br />' for ctg in clist
+               if ctg != clist[-1]]
+        cat.append(clist[-1])
+        return ''.join(cat)
 
     def _toHTML(self, ch):
         s = ch.replace("'", "&rsquo;").\
@@ -198,7 +277,7 @@ class ProjectView(BrowserView):
         return s
 
     def getMissionsFeatures(self):
-        context = self.context
+        context = self
         results = api.content.find(depth=1,
                                    portal_type='bebest.mission',
                                    path='/'.join(context.getPhysicalPath()))
@@ -219,7 +298,7 @@ class ProjectView(BrowserView):
                     uuid = u'N' + api.content.get_uuid(m)
                     missionJS = u'\nvar '
                     missionJS += uuid
-                    missionJS += u'=' + m.geojson + u';'
+                    missionJS += u'=' + unicode(m.geojson, "UTF-8") + u';'
                     js += missionJS
                     missionsFeatures += uuid + u','
                     missionsNames += u"'" + title + u"',"
@@ -249,13 +328,13 @@ class ProjectView(BrowserView):
         js += missionsURL
         js += u'</script>'
         # logger.info(layers)
-        logger.info(js)
+        # logger.info(js)
         return js
 
     def getMapZoom(self):
         zoomjs = '<script>var zoom = 4;</script>'
         try:
-            zoom = self.context.zoom
+            zoom = self.zoom
             if zoom:
                 zoomjs = '<script>var zoom = ' + str(zoom) + ";</script>"
                 return zoomjs
@@ -270,7 +349,7 @@ class ProjectView(BrowserView):
         val = ' [48.40003249610685, -4.5263671875] '
         default = center_a + val + center_b
         try:
-            center = self.context.map_center
+            center = self.map_center
             if center:
                 testval = eval(center)
                 if len(testval) != 2:
@@ -286,8 +365,3 @@ class ProjectView(BrowserView):
                 return center_a + center + center_b
         except Exception:
             return default
-
-
-class project(Container):
-    implements(IProject)
-    pass

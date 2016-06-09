@@ -1,16 +1,13 @@
 /* LAYOUT */
 
-/* BACKGROUNDS-------------------------------------------*/
+/* BACKGROUND VARIABLES-------------------------------------------*/
 @bg-dark: #000;
 @bg-bright: #fff;
 @bg-light-grey: #eee;
 
-#content {
-	margin-bottom: 0px;
-}
 /*LAYOUT VARIABLES-------------------------------------------*/
 @h-offset: 80px;
-
+ 
 .bg-dark {
 	background-color: @bg-dark;
 }
@@ -23,21 +20,15 @@
 	background-color: @bg-light-grey;
 }
 
-/* IMAGES ---------------------------------------------------------*/
-
-.img-portrait {
-	width: 200px;
-	Height: 200px;
-	display: block;
-	margin-left: auto; 
-	margin-right: auto;
-	margin-top: 50px;
-	margin-bottom: -50px;
-}
 
 /* LAYOUT ---------------------------------*/
 
-#bg-page-img {
+#content {
+	margin-top: 80px;
+}
+
+/*-----images de fond fixes-----*/
+#bg-page-img {     /*---conteneur des images---*/
 	z-index:-1000;
 	position: fixed;
 	max-height: 60vh;
@@ -47,13 +38,30 @@
 	}
 }
 
+@media (max-width: 991px) { /*----adaptation au format sm --*/
+	div#bg-page-img  {
+		img {
+			height: 70vh;
+			width: auto;
+		}
+	}
+}
+
+/*----bloc de titre-*/
 #page-title {
 	background-color: @bg-bright;
-	padding: 15px;
-	margin-bottom: 120px;
+	padding: 15px 15px 25px 15px;
+	margin-bottom: 150px;
 	border-radius: 0px 0px 10px 10px;
 }
 
+@media (max-width: 767px) { /*-Adaptation du margin bottom sur xs---------*/
+	div#page-title {
+		margin-bottom: 15px;
+	}
+}
+
+/*----------Contenu de la page----------*/
 #page-content {
 	background-color: @bg-bright;
 }
@@ -78,7 +86,87 @@
 	padding: 0;
 }
 
+/* collapses */
+.bebest-collapse {
+	display: none;
+}
+
+
  /* decalages -----Décaler un élément du haut de sa div----*/ 
  .pushtop {
 	margin-top: @h-offset;
+}
+
+/* Thumbnails */
+.thumbnail-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	.text-center;
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	button {
+		align: center;
+	}
+	.thumbnail-portrait{
+		margin: auto;
+		.text-center;
+		p {
+			.small;
+			.text-center;
+		}
+		a {
+			color: @text-dark;	
+		}
+		.portrait-prime {
+				width: 150px;
+				height: 150px;
+		}
+		
+		.portrait-second {
+				width: 100px;
+				height: 100px;
+		}
+		.portrait-portfolio {
+				width: 180px;
+				Height: 180px;
+				margin-top: 30px;
+		}
+	}
+	.thumbnail-mission {
+		margin: auto;
+		margin-top: 15px;
+		width: 254px;
+		height: auto;
+		.header{
+			background-color: @bg-light-grey;
+			padding: 10px;
+			border-style: solid;
+   			border-width: 0px 0px 3px 0px;
+			h4 {
+				.text-left;
+				margin: 0px;
+				font-weight: 500;
+				.dark;
+				}
+			}
+		.img-mission {
+			margin: auto;
+			width: 254px;
+			height: 180px;
+			overflow: hidden;
+			border-radius: 0px 0px 15px 15px;
+			margin-bottom: 15px;
+			img {
+				height: 180px;
+				}
+		}
+	}
+}
+
+/* Galleria module */
+.galleria {
+	 .full-width; 
+	 height: 500px; 
+	 background: #FFF; 
 }

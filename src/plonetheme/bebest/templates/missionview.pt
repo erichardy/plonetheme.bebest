@@ -11,13 +11,15 @@
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
   <link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/css/leaflet.css" />
-  <div tal:define="features python:view.getGeoJSON();
-                   dates python:view.getDates();
-                   project python:view.getParentProject();
-                   pictAuthor python:view.getPictAuthor();
-                   chief python:view.getChief();
-                   team python:view.getTeam();
-                   displayEN python:view.displayEN();
+  <div tal:define="features python:context.getGeoJSON();
+                   dates python:context.getDates();
+                   project python:context.getParentProject();
+                   pictAuthor python:context.getPictAuthor();
+                   chief python:context.getChief();
+                   team python:context.getTeam();
+                   textFR python:context.getTextFR();
+                   textEN python:context.getTextEN();
+                   displayEN python:context.displayEN();
                    toLocalizedTime nocall:context/@@plone/toLocalizedTime;
                    gallery python:view.getGalleryImages()">
 
@@ -91,7 +93,7 @@
 			        class="btn btn-default center-block collapser"
 			        i18n:translate="">other participants</button>
 			<p>&nbsp;</p>
-			<div class="thumbnail-wrapper bebest-collapse" id="show-participants-collapse">
+			<div class="thumbnail-wrapper bebest-collapse" id="show-participants-collapse" style="display:none;">
 				<span tal:omit-tag="" tal:repeat="person team">
 				     <div class="thumbnail-portrait"
 				          tal:define="image nocall:person/thumb_pict">
@@ -110,8 +112,9 @@
 	</section>
    <div id="page-content" class="container-fluid">
      <div class="container">
-       <div class="row pushtop">
-			<div tal:condition="displayEN"
+       <div tal:condition="textFR"
+            class="row pushtop">
+			<div tal:condition="python:displayEN and textEN"
 			     class="align-right">
 			     <div class="align-right">
 			        <button type="button"

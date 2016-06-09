@@ -7,8 +7,8 @@ pour associer un projet a des missions et des portraits.
 
 import logging
 from plone.dexterity.content import Item
-from plone.dexterity.browser import add
-from plone.dexterity.browser import edit
+# from plone.dexterity.browser import add
+# from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
 from plone.autoform import directives
 # from plone.namedfile import field as namedfile
@@ -23,7 +23,6 @@ from plone.namedfile.field import NamedBlobImage
 from zope.interface import alsoProvides
 from plone.autoform.interfaces import IFormFieldProvider
 from zope.publisher.browser import BrowserView
-import urllib
 import re
 from plonetheme.bebest.utils import getTitleFromVoc
 
@@ -40,14 +39,6 @@ def validateEmail(value):
     if not checkEmail(value):
         raise Invalid(_(u"Invalid adress email"))
     return True
-
-
-def validateURL(url):
-    try:
-        urllib.urlopen(url)
-        return True
-    except Exception:
-        raise Invalid(_(u"Invalid URL"))
 
 
 class IPortrait(model.Schema):
@@ -146,18 +137,18 @@ class IPortrait(model.Schema):
     model.fieldset('web',
                    label=_(u"web"),
                    fields=['personal_page', 'unit_page', 'research'])
-    personal_page = schema.TextLine(title=_(u"personal page"),
-                                    constraint=validateURL,
-                                    required=False,
-                                    )
-    unit_page = schema.TextLine(title=_(u"web site of the research unit"),
-                                constraint=validateURL,
-                                required=False,
-                                )
-    research = schema.TextLine(title=_(u"web page of your researches"),
-                               constraint=validateURL,
+    personal_page = schema.URI(title=_(u"personal page"),
+                               # constraint=validateURL,
                                required=False,
                                )
+    unit_page = schema.URI(title=_(u"web site of the research unit"),
+                           # constraint=validateURL,
+                           required=False,
+                           )
+    research = schema.URI(title=_(u"web page of your researches"),
+                          # constraint=validateURL,
+                          required=False,
+                          )
 
 alsoProvides(IPortrait, IFormFieldProvider)
 
@@ -186,9 +177,9 @@ class PortraitView(BrowserView):
         return aff
 
     def getPortraitAttr(self, field):
-        p = self.context
+        # p = self.context
         try:
-            value = eval("p." + field)
+            value = eval("self.context." + field)
             if value:
                 return value
             else:
@@ -214,17 +205,76 @@ class PortraitView(BrowserView):
         except Exception:
             return False
 
-
+    def getPictFilename(self):
+        try:
+            return self.context.main_pict.filename
+        except Exception:
+            return False
+"""
 class AddView(add.DefaultAddView):
     pass
 
 
 class editForm(edit.DefaultEditForm):
     pass
+"""
 
 
 class portrait(Item):
     implements(IPortrait)
 
     def mailEncoded(self):
-        return reverse_email(self.context.email)
+        return reverse_email(self.email)
+
+    def getJobs(self):
+        jobs = []
+        for job in self.jobs:
+            j = getTitleFromVoc("bebest.jobs", job)
+            jobs.append(j)
+        return (', ').join(jobs)
+
+    def getAffiliations(self):
+        c = self
+        aff = u""
+        if c.affiliation1:
+            aff += c.affiliation1
+        if c.affiliation2:
+            aff += ', ' + c.affiliation2
+        if c.affiliation3:
+            aff += ', ' + c.affiliation3
+        return aff
+
+    def getPortraitAttr(self, field):
+        # p = self
+        try:
+            value = eval("self." + field)
+            if value:
+                return value
+            else:
+                return False
+        except Exception:
+            return False
+
+    def encodeEmail(self, email):
+        return "blabla"
+
+    def displayEN(self):
+        return self.display_en
+
+    def bioFR(self):
+        try:
+            return len(self.bio_fr.raw) > 4
+        except Exception:
+            return False
+
+    def bioEN(self):
+        try:
+            return len(self.bio_en.raw) > 4
+        except Exception:
+            return False
+
+    def getPictFilename(self):
+        try:
+            return self.main_pict.filename
+        except Exception:
+            return False

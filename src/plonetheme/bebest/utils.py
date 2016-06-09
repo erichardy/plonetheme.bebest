@@ -16,10 +16,13 @@ from zope.component import getUtility
 from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 from OFS.interfaces import IOrderedContainer
 from plone import api
+from zope.interface import Invalid
 # from plone import api
 import os
 from string import strip
+import urllib
 import logging
+from plonetheme.bebest import _
 
 logger = logging.getLogger('bebest')
 
@@ -262,6 +265,8 @@ def get_position_in_parent(obj):
 Usage :
 sortedMyList = sorted(myList, sort_by_position)
 """
+
+
 def sort_by_position(a, b):
     return get_position_in_parent(a) - get_position_in_parent(b)
 
@@ -284,6 +289,19 @@ def getGalleryImages(context):
               if api.content.get_state(i.getObject()) == 'published']
     # import pdb;pdb.set_trace()
     return sorted(images, sort_by_position)
+
+
+def validateURL(url):
+    # import pdb;pdb.set_trace()
+    try:
+        urllib.urlopen(url)
+        return True
+    except Exception:
+        raise Invalid(_(u"Invalid URL"))
+
+
+def isPublished(obj):
+    return api.content.get_state(obj.getObject()) == 'published'
 
 
 class debug(object):

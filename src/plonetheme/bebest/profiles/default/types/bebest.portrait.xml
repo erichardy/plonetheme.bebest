@@ -17,9 +17,10 @@
 
   <!-- schema and class used for content items -->
   <property name="schema">plonetheme.bebest.portrait.IPortrait</property>
-  <property name="klass">plone.dexterity.content.Item</property>
+  <property name="klass">plonetheme.bebest.portrait.portrait</property>
 
   <property name="behaviors">
+     <element value="plone.app.content.interfaces.INameFromTitle" />
      <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
      <!--
      <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
@@ -32,7 +33,6 @@
   <property name="default_view">view</property>
   <property name="view_methods">
    <element value="view"/>
-   <element value="agreement_view"/>
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>

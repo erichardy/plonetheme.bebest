@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plonetheme.bebest">
+
+<body>
+
+<metal:content-core fill-slot="main">
+  <metal:content-core define-macro="main">
+  <div tal:define="src python:context.getImageSRC();
+                   thumb python:context.getThumbSRC();
+                   url python:context.getImageURL();
+                   desc python:context.getImageDescription();
+                   text python:context.getImageText()">
+	<section>
+	  <h2 tal:content="string:${context/title}">title</h2>
+	  <div tal:condition="url">
+	    <a tal:attributes="href string:${url}; target string:_blank" tal:content="string:${url}">URL</a>
+	  </div>
+	  <div tal:condition="desc">
+	    <hr />
+	    <p tal:content="string:${desc}">description</p>
+	    <hr />
+	  </div>
+	  <div tal:condition="text">
+	    <hr />
+	    <span tal:omit-tag="" tal:content="structure string:${text}">text</span>
+	    <hr />
+	  </div>
+	  <span tal:condition="thumb">
+	    <img tal:attributes="src string:${thumb}" />
+	  </span>
+	  <img tal:attributes="src string:${src}" />
+	
+	</section>
+  </div>
+  </metal:content-core>
+</metal:content-core>
+</body>
+</html>

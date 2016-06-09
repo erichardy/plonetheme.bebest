@@ -7,9 +7,9 @@ pour associer un projet a des missions et des portraits.
 
 from plone.dexterity.content import Container
 from plone.dexterity.browser import add
-from plone.dexterity.browser import edit
+# from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
-from plone import api
+# from plone import api
 # from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 # from plone.namedfile import field as namedfile
@@ -55,6 +55,19 @@ mois.append(u"Septembre")
 mois.append(u"Octobre")
 mois.append(u"Novembre")
 mois.append(u"Décembre")
+months = {}
+months['01'] = u"Janvier"
+months['02'] = u"Février"
+months['03'] = u"Mars"
+months['04'] = u"Avril"
+months['05'] = u"Mai"
+months['06'] = u"Juin"
+months['07'] = u"Juillet"
+months['08'] = u"Aout"
+months['09'] = u"Septembre"
+months['10'] = u"Octobre"
+months['11'] = u"Novembre"
+months['12'] = u"Décembre"
 
 
 class StartBeforeEnd(Invalid):
@@ -84,7 +97,7 @@ class IMission(model.Schema):
                             )
     dexteritytextindexer.searchable('subtitle')
     subtitle = schema.TextLine(title=_(u"very short description"),
-                               required=False,
+                               required=True,
                                )
     dexteritytextindexer.searchable('start_date')
     start_date = schema.Date(title=_(u"start date for the mission"),
@@ -145,13 +158,13 @@ class IMission(model.Schema):
                            'geojson',
                            ])
     zoom = schema.Int(title=_(u"zoom level"),
-                             description=_(u"between 0 and 15"),
-                             min=0,
-                             max=15,
-                             default=4,
-                             required=False)
+                      description=_(u"between 0 and 15"),
+                      min=0,
+                      max=15,
+                      default=4,
+                      required=False)
     map_center = schema.TextLine(title=_(u"map center"),
-                                 description=_(u'must be in the form "[lat, long]"'),
+                                 description=_(u'in the form "[lat, long]"'),
                                  default=u'[48.40003249610685, -4.5263671875]',
                                  required=False,
                                  )
@@ -169,8 +182,8 @@ class IMission(model.Schema):
                            )
     other = RelationList(title=_(u"other participants"),
                          value_type=RelationChoice(
-                                 title=_(u'Target'),
-                                 source=CS(portal_type="bebest.portrait")),
+                             title=_(u'Target'),
+                             source=CS(portal_type="bebest.portrait")),
                          required=False,
                          )
 
@@ -206,8 +219,10 @@ class AddForm(add.DefaultAddForm):
             return
         try:
             obj = self.createAndAdd(data)
-            contextURL = self.context.absolute_url()
-            self.request.response.redirect(contextURL)
+            logger.info(obj.absolute_url())
+            # contextURL = obj.absolute_url()
+            # contextURL = self.context.absolute_url()
+            # self.request.response.redirect(contextURL)
         except Exception:
             raise
 
@@ -222,9 +237,10 @@ class AddForm(add.DefaultAddForm):
 class AddView(add.DefaultAddView):
     form = AddForm
 
-
+"""
 class editForm(edit.DefaultEditForm):
     pass
+"""
 
 
 class MissionView(BrowserView):
@@ -266,19 +282,22 @@ class MissionView(BrowserView):
 
     def getGeoJSON(self):
         geo = self.context.geojson
-        if len(geo) > 5:
-            geojson = "<script>var features = "
-            geojson += self.context.geojson
-            geojson += ";</script>"
-            return geojson
-        else:
+        try:
+            if len(geo) > 5:
+                geojson = "<script>var features = "
+                geojson += self.context.geojson
+                geojson += ";</script>"
+                return geojson
+            else:
+                return False
+        except Exception:
             return False
 
     def _date_fr(self, date):
         j = date.strftime("%d")
         m = date.strftime("%m")
         y = date.strftime("%Y")
-        M = mois[eval(m)]
+        M = months[m]
         return j + ' ' + M + ' ' + y
 
     def getDates(self):
@@ -321,9 +340,125 @@ class MissionView(BrowserView):
 
     def getGalleryImages(self):
         return ggi(self.context)
-        
+
 
 class mission(Container):
     implements(IMission)
 
-    pass
+    def getMapZoom(self):
+        zoomjs = '<script>var zoom = 4;</script>'
+        try:
+            zoom = self.zoom
+            if zoom:
+                zoomjs = '<script>var zoom = ' + str(zoom) + ";</script>"
+                return zoomjs
+            else:
+                return zoomjs
+        except Exception:
+            return zoomjs
+
+    def getMapCenter(self):
+        center_a = '<script>var center = '
+        center_b = ';</script>'
+        val = ' [48.40003249610685, -4.5263671875] '
+        default = center_a + val + center_b
+        try:
+            center = self.map_center
+            if center:
+                testval = eval(center)
+                if len(testval) != 2:
+                    return default
+                val0 = (isinstance(testval[0], int)
+                        or
+                        isinstance(testval[0], float))
+                val1 = (isinstance(testval[1], int)
+                        or
+                        isinstance(testval[1], float))
+                if (not val0) or (not val1):
+                    return default
+                return center_a + center + center_b
+        except Exception:
+            return default
+
+    def getGeoJSON(self):
+        geo = self.geojson
+        try:
+            if len(geo) > 5:
+                geojson = "<script>var features = "
+                geojson += self.geojson
+                geojson += ";</script>"
+                return geojson
+            else:
+                return False
+        except Exception:
+            return False
+
+    def _date_fr(self, date):
+        j = date.strftime("%d")
+        m = date.strftime("%m")
+        y = date.strftime("%Y")
+        M = months[m]
+        return j + ' ' + M + ' ' + y
+
+    def getDates(self):
+        start = self.start_date
+        end = self.end_date
+        if (start is None) or (end is None):
+            return False
+        return self._date_fr(start) + ' - ' + self._date_fr(end)
+
+    def getParentProject(self):
+        return self.aq_inner.aq_parent
+
+    def getPictAuthor(self):
+        if not self.pict_author:
+            return False
+        return self.pict_author
+
+    def getAffiliations(self, person):
+        aff = u""
+        if person.affiliation1:
+            aff += person.affiliation1
+        if person.affiliation2:
+            aff += ' - ' + person.affiliation2
+        if person.affiliation3:
+            aff += ' - ' + person.affiliation3
+        return aff
+
+    def displayEN(self):
+        return self.display_en
+
+    def getGalleryImages(self):
+        return ggi(self)
+
+    def getTeam(self):
+        others = []
+        for other in self.other:
+            others.append(other.to_object)
+        # import pdb;pdb.set_trace()
+        if not len(others):
+            return False
+        return others
+
+    def getChief(self):
+        return self.chief.to_object
+
+    def getTextFR(self):
+        try:
+            if len(self.presentation.raw) < 6:
+                logger.info('inf a 6')
+                return False
+            else:
+                return self.presentation.raw
+        except Exception:
+            logger.info('excepppppp')
+            return False
+
+    def getTextEN(self):
+        try:
+            if len(self.presentation_en.raw) < 6:
+                return False
+            else:
+                return self.presentation_en.raw
+        except Exception:
+            return False

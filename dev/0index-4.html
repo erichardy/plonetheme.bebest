@@ -18,9 +18,9 @@
 <body>
     <!-- DEBUT HEADER-->
     <header>
-        <nav id="navbar-bebest" class="navbar navbar-default navbar-bebest navbar-fixed-top header-top">
+        <nav id="portal-globalnav-wrapper" class="navbar navbar-default navbar-fixed-top navbar-bebest">
             <div class="container">
-            	<div class="navbar-header">
+            	<div>
      			 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -29,22 +29,23 @@
      			 </button>
       				<a class="navbar-brand" href="#"><img src="images/logos/bebestlogo.png" class="img-responsive" /></a>
     			</div>
-                   <!-- Collect the nav links, forms, and other content for toggling -->
-    				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    	<ul class="nav navbar-nav navbar-bebest navbar-right">
-                        	<li class="active"><a href="/">About us</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Outreach and Media</a></li>
-                            <li><a href="#">Position Papers</a></li>
-                        </ul>
-                    </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-bebest navbar-right">
+                        <li class="active"><a href="/">About us</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Outreach and Media</a></li>
+                        <li><a href="#">Position Papers</a></li>
+                    </ul>
+                </div>
            </div>
         </nav>
     </header>
 
 	<!-- DEBUT SECTION HOME-CAROUSEL-->
-	<section id="section-carousel" class="hidden-xs">
-		<div id="homeCarousel" class="carousel slide" data-ride="carousel"
+	<section id="bebest-home-carousel" class="hidden-xs">
+		<div id="homeCarousel"
+		     class="carousel slide" data-ride="carousel"
 		     data-wrap="true" data-pause="false" data-interval="4000">
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner carousel-home-inner" role="listbox">
@@ -54,17 +55,19 @@
 			</div>
 		</div>	
 		<!-- Wrapper for info -->		
-		<div class="carousel-title">
-			<div class="text-center"><img id="bebest-logo-white" src="images/logos/logoblanc.svg" alt="logo bebest blanc"/></div>
-			<div class="super bright text-center">Benthic Biodiversity Ecology Sciences and Technologies</div>
+		<div class="carousel-home-title">
+			<div class="text-center">
+			   <img id="bebest-logo-white" src="images/logos/logoblanc.svg" alt="logo bebest blanc"/>
+			</div>
+			<div class="super bright text-center">Benthic Biodiversity Ecology, Sciences and Technologies</div>
 		</div>
 	</section>
     <!--FIN SECTION HOME-CAROUSEL---->
 	
 	<!-- DEBUT THUMBNAILS-->
-	<section id="home-thumbnail" class="container"> <!-- Titres devraient êtres limités a 80 caractères -->
+	<section id="bebest-home-thumbnail" class="container"> <!-- Titres devraient êtres limités a 80 caractères -->
 		<div class="row">
-			<div class="col-xs-12 col-sm-6 col-md-4 text-center">  
+			<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 text-center">  
 					<div class="home-thumbnail-item">
                     	<a href="archambault.html">
                             <img src="images/portraits/archambault.jpg"/>
@@ -77,7 +80,7 @@
 					</div>  
 			  </div>
 
-			  <div class="col-xs-12 col-sm-6 col-md-4 text-center">      
+			  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 text-center">      
 					 <div class="home-thumbnail-item">
 						<a href="portfolio.html">
 							<img src="images/portfolio/gaumy/gaumy09.jpg"/>
@@ -90,7 +93,7 @@
 					</div>      
 			  </div>
 
-			  <div class="col-xs-12 col-sm-6 col-md-4 text-center">      
+			  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 text-center">      
 					 <div class="home-thumbnail-item">
 						<img src="images/thumbnail/3.jpg"/>
 						<div class="thumbnail-item-dark"> 
@@ -101,7 +104,7 @@
 					</div>      
 			  </div>
 			  
-			  <div class="col-xs-12 col-sm-6 col-md-4 text-center">      
+			  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 text-center">      
 					 <div class="home-thumbnail-item">
 						<a href="studysites.html">
 							<img src="images/sites/spmiquelon/2.jpg"/>
@@ -114,7 +117,7 @@
 					</div>      
 			  </div>
 			  
-			  <div class="col-xs-12 col-sm-6 col-md-4 text-center">      
+			  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 text-center">      
 					 <div class="home-thumbnail-item">
                      	<a href="mission-v2.html">
                             <img src="images/missions/benthos.jpg"/>
@@ -127,7 +130,7 @@
 					</div>      
 			  </div>
 			 
-			  <div class="col-xs-12 col-sm-6 col-md-4 text-center">      
+			  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 text-center">      
 					 <div class="home-thumbnail-item">
 						<img src="images/thumbnail/6.jpg"/>
 						<div class="thumbnail-item-dark"> 
@@ -142,7 +145,7 @@
    <!--Fin Section thumbnails-->
   
    <!-- DEBUT SECTION NEWS-CAROUSEL-->
-	<section id="section-news-carousel" class="container w-limit">
+	<section id="bebest-home-news" class="container w-limit">
 		<div  class="row">
 			<div class="super-small text-center">Actualités</div>
 			<div id="news-Carousel" class="carousel slide" data-ride="carousel">
@@ -187,7 +190,7 @@
    <!--FIN SECTION NEWS-CAROUSEL---->
    
      <!-- DEBUT SECTION ABOUT 2-->
-   <section id="about-bebest">
+   <section id="bebest-home-about">
 		<img id="scrollreveal" class="hidden-xs" src="images/about/csj-soft.png" />
 		<div class="container-fluid">
 			<div class="super text-center">Laboratoire Franco-Québecois de recherche et de developpement technologique en écologie benthique</div>
@@ -207,10 +210,10 @@ pour explorer des voies de perception des phénomènes naturels qui s'écartent 
    <!--FIN SECTION ABOUT -->
    <!-- DEBUT SECTION MAP -->
    <section>
-		<div id="bebest-map">
+		<div id="bebest-home-map">
 			<div class="super text-center">Sites d'étude</div>
 		</div>
-   <section>
+   </section>
    <!-- FIN SECTION MAP -->
    <!-- DEBUT FOOTER -->
 <footer>
@@ -251,7 +254,6 @@ pour explorer des voies de perception des phénomènes naturels qui s'écartent 
 <script src="webmapping/leaflet/leaflet.js"></script>
 <script src="js/bebest.js"></script>
 <script src="js/onscroll.js"></script>
-<script src="js/bebest-map.js"></script>
+<script src="js/bebest-home-map.js"></script>
 </body>
 </html>
-

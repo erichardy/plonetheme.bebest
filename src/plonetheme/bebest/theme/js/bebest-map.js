@@ -53,6 +53,7 @@ $("#feature-infos").css("left", position.left + 10);
 /* code fortement instpire de http://jsfiddle.net/expedio/z1nw3pt4/  pour le popup
  * quand on clique sur un point, une ligne ou un polygone
  * */
+/*
 geojsonLayer = L.geoJson(features, {
     onEachFeature: function (feature, layer) {
     	layer.on('click', function (e) {
@@ -71,4 +72,5 @@ geojsonLayer = L.geoJson(features, {
     	});
     }
 }).addTo(mymap);
+*/
 // mymap.addLayer(geojsonLayer);
