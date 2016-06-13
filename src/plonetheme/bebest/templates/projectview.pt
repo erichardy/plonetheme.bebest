@@ -17,7 +17,8 @@
                    primary_contact python:context.getPrimaryContact();
                    contactFR python:context.getContactFR();
                    contactCA python:context.getContactCA();
-                   teams python:context.getMissionsTeams()">
+                   teams python:context.getMissionsTeams();
+                   displayEN python:context.display_en">
 
   <div id="bg-page-img" class="hidden-xs"
          tal:define="image nocall:context/main_pict;">
@@ -109,6 +110,30 @@
       </div>
     </div>
   </section>
+  
+  <div id="page-content" class="container-fluid">
+	<div class="container">
+	  <div class="row pushtop">
+      <!-- Bouton toggle english -->
+        <div tal:condition="python:displayEN"
+             class="align-right">
+            <button type="button"
+		            id="show-english-version"
+		            class="btn btn-default collapser">English version</button>
+        </div>
+          <span class="bebest-collapse"
+			    tal:content="structure string:${context/description_en/raw}"
+			    id="show-english-version-collapse">
+			  presentation EN
+		  </span>
+		  <hr />
+	 </div>
+		<span tal:content="structure string:${context/description_fr/raw}">
+		  presentation FR
+		</span>
+    </div>
+  </div>
+                    
   
   <span tal:content="structure python:context.getMapZoom()"
         tal:omit-tag="">
