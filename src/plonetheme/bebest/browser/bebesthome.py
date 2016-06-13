@@ -145,12 +145,30 @@ class bebestHome(BrowserView):
         homeThumbnails = self._getHomeObject(registry_record='tag_home',
                                              obj_type=None,
                                              effective=True)
-        return homeThumbnails
+        return homeThumbnails[:6]
 
-    def asLeadImage(self, thumb):
-        logger.info(thumb.portal_type)
-        # import pdb;pdb.set_trace()
-        return True
+    def getImageSRC(self, thumb):
+        """
+        :returns: src attributes of an image field
+        """
+        image = None
+        try:
+            try:
+                image = thumb.image
+                field = 'image'
+                filename = image.filename
+            except Exception:
+                image = thumb.maint_pict
+                field = 'main_pict'
+                filename = image.filename
+        except Exception:
+            prefix = 'plonetheme.bebest.interfaces.'
+            prefix += 'IPlonethemeBebestSettings.default_thumb'
+            imgName = api.portal.get_registry_record(prefix)
+            return thumb.absolute_url() + '/' + imgName
+        url = thumb.absolute_url() + '/@@download/' + field + '/'
+        url += filename
+        return url
 
     def getHomeNews(self):
         """

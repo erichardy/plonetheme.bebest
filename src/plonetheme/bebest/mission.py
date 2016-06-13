@@ -186,6 +186,11 @@ class IMission(model.Schema):
                              source=CS(portal_type="bebest.portrait")),
                          required=False,
                          )
+    model.fieldset('participants',
+                   label=_(u"participants"),
+                   fields=['chief',
+                           'other',
+                           ])
 
     @invariant
     def validateStartEnd(data):

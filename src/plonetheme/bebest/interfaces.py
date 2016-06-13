@@ -41,6 +41,7 @@ class IPlonethemeBebestSettings(model.Schema):
                            'carousel_interval',
                            'logo_name',
                            'tag_home',
+                           'default_thumb',
                            'tag_home_news',
                            'about_bg_image',
                            'about_document_tag', ])
@@ -61,6 +62,10 @@ class IPlonethemeBebestSettings(model.Schema):
                         description=_(u"Only One word, used for folders"),
                         default=u"bebest-home",
                         )
+    default_thumb = TextLine(title=_(u"Name of the default thumb image"),
+                             description=_(u"image in portal_skins/custom"),
+                             default=u"default_thumbnail.jpg",
+                             )
     tag_home_news = TextLine(title=_(u"Tag used for news on home page"),
                              description=_(u"Only One word, used for news"),
                              default=u"bebest-home-news",
