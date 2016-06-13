@@ -128,6 +128,12 @@
            zope.lifecycleevent.interfaces.IObjectCreatedEvent"
       handler=".subscribers.setPortraitTitle"
 	/>
+	<!-- test event when traversing
+	<subscriber
+	  for="*
+	       zope.traversing.interfaces.IBeforeTraverseEvent"
+	  handler=".subscribers.trav"
+	/> -->
 	
 	<!-- utilities  -->
     <utility component=".vocabulary.jobs" name="bebest.jobs" />
