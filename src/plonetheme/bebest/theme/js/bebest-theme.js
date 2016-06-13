@@ -7,6 +7,9 @@ $('#home-carousel-bebest').carousel({
 /*
 */
 
+// suppression de l'icone 'Accueil' de la nav bar
+// $('#navbar li').first().html('');
+
 /* sous-menus de la nav bar */
 /* code from http://codepen.io/betdream/pen/frDqh */
 $('ul.nav li.dropdown').hover(function() {
