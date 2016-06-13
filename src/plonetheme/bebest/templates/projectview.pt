@@ -18,7 +18,8 @@
                    contactFR python:context.getContactFR();
                    contactCA python:context.getContactCA();
                    teams python:context.getMissionsTeams();
-                   displayEN python:context.display_en">
+                   displayEN python:context.display_en;
+                   missions python:context.getMissions()">
 
   <div id="bg-page-img" class="hidden-xs"
          tal:define="image nocall:context/main_pict;">
@@ -133,8 +134,24 @@
 		</span>
     </div>
   </div>
-                    
-  
+
+<section><!--------Début de la section missions associées---------->
+	<div class="container-fluid bg-bright">
+		<div class="container">
+           <!----------thumbnails des missions---------->
+           <h2 class="text-center">Missions associées / related missions</h2>
+           <div class="thumbnail-wrapper">
+			<span  tal:omit-tag="" tal:repeat="mission missions">
+	           	<div class="thumbnail-mission">
+	           	 lksqldklkqsl dkl
+	           	</div>
+           	</span>
+          </div>
+       </div>
+    </div>
+</section>
+
+
   <span tal:content="structure python:context.getMapZoom()"
         tal:omit-tag="">
         map zoom
