@@ -6,7 +6,7 @@ then
     exit
 fi
 
-FILES="bebest-general.less bebest-imports.less bebest-map.less bebest-portfolio.less bebest-theme.less bebest-home.less bebest-layout.less bebest-navbar.less bebest-portrait.less bebest-typo.less"
+FILES="bebest-general.less bebest-imports.less bebest-map.less bebest-portfolio.less bebest-home.less bebest-layout.less bebest-portrait.less bebest-typo.less"
 
 DEV="/Users/hardy/Dev/plonetheme.bebest/dev/css/"
 THEME="/Users/hardy/Dev/plonetheme.bebest/src/plonetheme/bebest/theme/css/"
