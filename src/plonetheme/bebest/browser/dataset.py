@@ -51,7 +51,6 @@ class createDataSet(BrowserView):
 
         for portrait in portraits:
             title = portrait['family_name'] + '-' + portrait['first_name']
-            logger.info(title)
             obj = api.content.create(type='bebest.portrait',
                                      title=title,
                                      family_name=portrait['family_name'],
@@ -86,6 +85,7 @@ class createDataSet(BrowserView):
             fd.close()
             obj.thumb_pict.filename = portrait['thumb_pict']
             obj.reindexObject()
+            logger.info(obj.title + ' Created')
 
     def getPortraits(self):
         portal = api.portal.get()
@@ -146,6 +146,7 @@ class createDataSet(BrowserView):
         obj.contact_fr = RelationValue(allPortraits[1])
         obj.contact_ca = RelationValue(allPortraits[2])
         obj.reindexObject()
+        logger.info(obj.title + ' Created')
         self.createMissions(obj)
 
     def createMissions(self, project):
@@ -182,6 +183,7 @@ class createDataSet(BrowserView):
                              ])
             obj.reindexObject()
             self.createCarousel(obj)
+            logger.info(obj.title + ' Created')
 
     def _loadImage(self, objField, image):
         imgPath = image.split('/')
@@ -222,6 +224,7 @@ class createDataSet(BrowserView):
                 u'spmiquelon/5.jpg', u'spmiquelon/6.jpg',
                 u'spmiquelon/7.jpg', u'spmiquelon/8.jpg']
         self._loadImagesInFolder(carousel, imgs)
+        logger.info(carousel.title + ' Created')
 
     def deletePortFolio(self):
         portal = api.portal.get()
@@ -253,11 +256,12 @@ class createDataSet(BrowserView):
         self._loadImagesInFolder(authors, imgs)
         api.content.transition(obj=portfolio, transition='publish')
         api.content.transition(obj=authors, transition='publish')
+        logger.info(portfolio.title + ' Created')
 
     def deleteStudySite(self):
         portal = api.portal.get()
         try:
-            title = u'mon-joli-site-d-etudes'
+            title = u'mon-joli-site-detudes'
             api.content.delete(obj=portal[title])
         except Exception:
             pass
@@ -281,6 +285,7 @@ class createDataSet(BrowserView):
         stsite.missions = set([RelationValue(allMissions[1]),
                          RelationValue(allMissions[2]),
                          RelationValue(allMissions[3]),
-                         RelationValue(allMissions[4]),
+                         RelationValue(allMissions[0]),
                          ])
         stsite.reindexObject()
+        logger.info(stsite.title + ' Created')

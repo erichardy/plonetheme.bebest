@@ -8,7 +8,7 @@ pour associer un projet a des missions et des portraits.
 from plone.dexterity.content import Container
 # from plone.dexterity.browser import add
 # from plone.dexterity.browser import edit
-# from plone.app.textfield import RichText
+from plone.app.textfield import RichText
 # from plone import api
 # from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
