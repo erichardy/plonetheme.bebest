@@ -35,6 +35,7 @@ import logging
 # import urllib
 # import re
 from plonetheme.bebest.utils import getTitleFromVoc
+from plonetheme.bebest.utils import getGalleryImages as ggi
 from plonetheme.bebest import _
 
 logger = logging.getLogger('bebest PROJECT')
@@ -81,19 +82,21 @@ class IProject(model.Schema):
     #
     model.fieldset('descriptions',
                    label=_(u"project descriptions"),
-                   fields=['description_fr',
+                   fields=['presentation_fr',
                            'display_en',
-                           'description_en'])
-    description_fr = RichText(title=_(u"french description"),
-                              required=False,
-                              )
+                           'presentation_en'])
+    dexteritytextindexer.searchable('presentation_fr')
+    presentation_fr = RichText(title=_(u"french description"),
+                               required=False,
+                               )
     display_en = schema.Bool(title=_(u"display or not english description"),
                              description=_(u"unselect to disable"),
                              default=True
                              )
-    description_en = RichText(title=_(u"english description"),
-                              required=False,
-                              )
+    dexteritytextindexer.searchable('presentation_en')
+    presentation_en = RichText(title=_(u"english description"),
+                               required=False,
+                               )
     #
     model.fieldset('dates',
                    label=_(u"dates"),
@@ -212,7 +215,9 @@ class editForm(edit.DefaultEditForm):
 
 
 class ProjectView(BrowserView):
-    pass
+
+    def getGalleryImages(self):
+        return ggi(self.context)
 
 
 class project(Container):

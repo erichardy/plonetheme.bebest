@@ -19,7 +19,8 @@
                    contactCA python:context.getContactCA();
                    teams python:context.getMissionsTeams();
                    displayEN python:context.display_en;
-                   missions python:context.getMissions()">
+                   missions python:context.getMissions();
+                   gallery python:view.getGalleryImages()">
 
   <div id="bg-page-img" class="hidden-xs"
          tal:define="image nocall:context/main_pict;">
@@ -123,13 +124,13 @@
 		            class="btn btn-default collapser">English version</button>
         </div>
           <span class="bebest-collapse"
-			    tal:content="structure string:${context/description_en/raw}"
+			    tal:content="structure string:${context/presentation_en/raw}"
 			    id="show-english-version-collapse">
 			  presentation EN
 		  </span>
 		  <hr />
 	 </div>
-		<span tal:content="structure string:${context/description_fr/raw}">
+		<span tal:content="structure string:${context/presentation_fr/raw}">
 		  presentation FR
 		</span>
     </div>
@@ -160,6 +161,9 @@
     </div>
 </section>
 
+<span tal:condition="gallery">
+     <metal:macro use-macro="context/bebest_macros/macros/gallery" />
+</span>
 
   <span tal:content="structure python:context.getMapZoom()"
         tal:omit-tag="">

@@ -127,9 +127,9 @@ class createDataSet(BrowserView):
                                  categories=set(project['categories']),
                                  start_date=project['start_date'],
                                  end_date=project['end_date'],
-                                 description_fr=project['description_fr'],
+                                 presentation_fr=project['presentation_fr'],
                                  display_en=project['display_en'],
-                                 description_en=project['description_en'],
+                                 presentation_en=project['presentation_en'],
                                  main_pict=NamedBlobImage(),
                                  pict_author=project['pict_author'],
                                  zoom=project['zoom'],
@@ -147,6 +147,7 @@ class createDataSet(BrowserView):
         obj.contact_ca = RelationValue(allPortraits[2])
         obj.reindexObject()
         logger.info(obj.title + ' Created')
+        self.createCarousel(obj)
         self.createMissions(obj)
 
     def createMissions(self, project):
@@ -157,7 +158,7 @@ class createDataSet(BrowserView):
                 description=mission['description'],
                 start_date=mission['start_date'],
                 end_date=mission['end_date'],
-                presentation=mission['presentation'],
+                presentation_fr=mission['presentation_fr'],
                 display_en=mission['display_en'],
                 presentation_en=mission['presentation_en'],
                 main_pict=NamedBlobImage(),
@@ -271,7 +272,7 @@ class createDataSet(BrowserView):
         stsite = api.content.create(type='bebest.studysite',
                                     title=sts['title'],
                                     description=sts['description'],
-                                    presentation=sts['presentation'],
+                                    presentation_fr=sts['presentation_fr'],
                                     display_en=sts['display_en'],
                                     presentation_en=sts['presentation_en'],
                                     main_pict=NamedBlobImage(),
@@ -281,11 +282,13 @@ class createDataSet(BrowserView):
                                     map_center=sts['map_center'],
                                     geojson=sts['geojson'],
                                     container=portal)
+        self._loadImage(stsite.main_pict, sts['main_pict'])
         allMissions = self.getMissions()
         stsite.missions = set([RelationValue(allMissions[1]),
                                RelationValue(allMissions[2]),
                                RelationValue(allMissions[3]),
                                RelationValue(allMissions[0]),
                                ])
+        self.createCarousel(stsite)
         stsite.reindexObject()
         logger.info(stsite.title + ' Created')

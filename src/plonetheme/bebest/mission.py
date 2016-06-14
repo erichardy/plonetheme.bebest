@@ -111,23 +111,23 @@ class IMission(model.Schema):
                            )
     model.fieldset('descriptions',
                    label=_(u"descriptions"),
-                   fields=['presentation',
+                   fields=['presentation_fr',
                            'display_en',
                            'presentation_en',
                            'main_pict',
                            'pict_author',
                            'doc'])
-    dexteritytextindexer.searchable('presentation')
-    presentation = RichText(title=_(u"Presentation"),
-                            description=_(u"Mission presentation"),
-                            required=False
-                            )
+    dexteritytextindexer.searchable('presentation_fr')
+    presentation_fr = RichText(title=_(u"french presentation"),
+                               description=_(u"Mission presentation"),
+                               required=False
+                               )
     display_en = schema.Bool(title=_(u"display english description"),
                              description=_(u"unselect to disable"),
                              default=True
                              )
 
-    presentation_en = RichText(title=_(u"Presentation"),
+    presentation_en = RichText(title=_(u"english presentation"),
                                description=_(u"Mission presentation"),
                                required=False
                                )
@@ -445,11 +445,11 @@ class mission(Container):
 
     def getTextFR(self):
         try:
-            if len(self.presentation.raw) < 6:
+            if len(self.presentation_fr.raw) < 6:
                 logger.info('inf a 6')
                 return False
             else:
-                return self.presentation.raw
+                return self.presentation_fr.raw
         except Exception:
             logger.info('excepppppp')
             return False

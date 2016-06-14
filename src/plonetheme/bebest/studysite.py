@@ -9,7 +9,7 @@ from plone.dexterity.content import Container
 # from plone.dexterity.browser import add
 # from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
-# from plone import api
+from plone import api
 # from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 # from plone.namedfile import field as namedfile
@@ -68,24 +68,24 @@ class IStudysite(model.Schema):
                             )
     model.fieldset('descriptions',
                    label=_(u"descriptions"),
-                   fields=['presentation',
+                   fields=['presentation_fr',
                            'display_en',
                            'presentation_en',
                            'main_pict',
                            'pict_author',
                            'doc'])
-    dexteritytextindexer.searchable('presentation')
-    presentation = RichText(title=_(u"Presentation"),
-                            description=_(u"Mission presentation"),
-                            required=False
-                            )
+    dexteritytextindexer.searchable('presentation_fr')
+    presentation_fr = RichText(title=_(u"Presentation"),
+                               description=_(u"study site presentation"),
+                               required=False
+                               )
     display_en = schema.Bool(title=_(u"display english description"),
                              description=_(u"unselect to disable"),
                              default=True
                              )
 
     presentation_en = RichText(title=_(u"Presentation"),
-                               description=_(u"Mission presentation"),
+                               description=_(u"study site presentation en"),
                                required=False
                                )
     main_pict = NamedBlobImage(title=_(u"main photo"),
@@ -133,11 +133,88 @@ alsoProvides(IStudysite, IFormFieldProvider)
 
 
 class StudySiteView(BrowserView):
-    pass
+    def getGalleryImages(self):
+        return ggi(self.context)
 
 
 class studysite(Container):
     implements(IStudysite)
+
+    def _toHTML(self, ch):
+        s = ch.replace("'", "&rsquo;").\
+            replace('"', "&rdquo;")
+        return s
+
+    def getMissions(self):
+        return [ mission.to_object for mission in self.missions ]
+
+    def getMissionsFeatures(self):
+        missions = self.getMissions()
+        js = u'<script>'
+        missionsNames = u'\nvar missionsNames = ['
+        missionsUUID = u'\nvar missionsUUID = ['
+        missionsFeatures = u'\nvar missionsFeatures = ['
+        missionsURL = u'\nvar missionsURL = ['
+        missionsSubtitle = u'\nvar missionsSubtitle = ['
+        features = []
+        for m in missions:
+            geo = m.geojson
+            """
+            try:
+                if len(geo) > 5:
+                    title = self._toHTML(m.title)
+                    subtitle = self._toHTML(m.description)
+                    uuid = u'N' + api.content.get_uuid(m)
+                    missionJS = u'\nvar '
+                    missionJS += uuid
+                    missionJS += u'=' + unicode(m.geojson, "UTF-8") + u';'
+                    js += missionJS
+                    missionsFeatures += uuid + u','
+                    missionsNames += u"'" + title + u"',"
+                    missionsSubtitle += u"'" + subtitle + u"',"
+                    missionsUUID += u"'" + uuid + u"',"
+                    missionsURL += u"'" + m.absolute_url() + u"',"
+                    features.append(geo)
+            except Exception:
+                pass
+            """
+            if len(geo) > 5:
+                title = self._toHTML(m.title)
+                subtitle = self._toHTML(m.description)
+                uuid = u'N' + api.content.get_uuid(m)
+                missionJS = u'\nvar '
+                missionJS += uuid
+                missionJS += u'=' + unicode(m.geojson, "UTF-8") + u';'
+                js += missionJS
+                missionsFeatures += uuid + u','
+                missionsNames += u"'" + title + u"',"
+                missionsSubtitle += u"'" + subtitle + u"',"
+                missionsUUID += u"'" + uuid + u"',"
+                missionsURL += u"'" + m.absolute_url() + u"',"
+                features.append(geo)
+
+        # logger.info(features)
+        if len(features) == 0:
+            return False
+        missionsFeatures = missionsFeatures.strip(u',')
+        missionsFeatures += u'];'
+        missionsNames = missionsNames.strip(u',')
+        missionsNames += u'];'
+        missionsSubtitle = missionsSubtitle.strip(u',')
+        missionsSubtitle += u'];'
+        missionsUUID = missionsUUID.strip(u',')
+        missionsUUID += u'];'
+        missionsURL = missionsURL.strip(u',')
+        missionsURL += u'];'
+        js += missionsNames
+        js += missionsSubtitle
+        js += missionsUUID
+        js += missionsFeatures
+        js += missionsURL
+        js += u'</script>'
+        # logger.info(layers)
+        # logger.info(js)
+        return js
 
     def getMapZoom(self):
         zoomjs = '<script>var zoom = 4;</script>'
@@ -194,9 +271,6 @@ class studysite(Container):
 
     def displayEN(self):
         return self.display_en
-
-    def getGalleryImages(self):
-        return ggi(self)
 
     def getTextFR(self):
         try:

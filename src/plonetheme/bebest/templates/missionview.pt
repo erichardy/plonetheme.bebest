@@ -129,7 +129,7 @@
 			</span>
 			<hr />
 			</div>
-		  <span tal:content="structure string:${context/presentation/raw}">
+		  <span tal:content="structure string:${context/presentation_fr/raw}">
 		    presentation FR
 		  </span>
 	  </div>

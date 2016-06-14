@@ -1,0 +1,125 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plonetheme.bebest">
+<body
+	tal:define="portal_state context/@@plone_portal_state;
+	            portal_url portal_state/portal_url">
+
+<metal:content-core fill-slot="main">
+  <metal:content-core define-macro="main">
+  <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
+  <div tal:define="features python:context.getMissionsFeatures();
+                   displayEN python:context.display_en;
+                   missions python:context.getMissions();
+                   gallery python:view.getGalleryImages()">
+
+  <div id="bg-page-img" class="hidden-xs"
+         tal:define="image nocall:context/main_pict;">
+      <img tal:attributes="src string:${context/absolute_url}/@@download/main_pict/${image/filename}" />
+  </div>
+
+  <section class="container">
+	<div class="row">
+  		<div id="page-title"
+  		     class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-0 col-md-5 col-md-offset-1">
+  		     <div class="bebest-title"
+					     tal:content="string:${context/title}">study site title
+			 </div>
+  		     <div class="bebest-subtitle"
+					     tal:content="string:${context/description}">
+					     Project subtitle
+		     </div>
+  		</div>
+    </div>
+  </section>
+  
+  <div id="page-content" class="container-fluid">
+	<div class="container">
+	  <div class="row pushtop">
+      <!-- Bouton toggle english -->
+        <div tal:condition="python:displayEN"
+             class="align-right">
+            <button type="button"
+		            id="show-english-version"
+		            class="btn btn-default collapser">English version</button>
+        </div>
+          <span class="bebest-collapse"
+			    tal:content="structure string:${context/presentation_en/raw}"
+			    id="show-english-version-collapse">
+			  presentation EN
+		  </span>
+		  <hr />
+	 </div>
+		<span tal:content="structure string:${context/presentation_fr/raw}">
+		  presentation FR
+		</span>
+    </div>
+  </div>
+
+<span tal:condition="gallery">
+     <metal:macro use-macro="context/bebest_macros/macros/gallery" />
+</span>
+
+  <span tal:content="structure python:context.getMapZoom()"
+        tal:omit-tag="">
+        map zoom
+  </span>
+  <span tal:content="structure python:context.getMapCenter()"
+        tal:omit-tag="">
+        map center
+  </span>
+
+  <style>
+     .leaflet-popup {
+     	position: absolute;
+     	left: 0px;
+     }
+     .leaflet-control-layers-toggle {
+		background-image:url(++theme++plonetheme.bebest/images/leaflet/layers.png);
+		width: 44px;
+		height: 44px;
+	 }
+	 #feature-infos {
+	    width: 15%;
+	    max-height: 5000px;
+	    background: rgba(255, 255, 255, 1);
+	    position: absolute;
+	    padding: 5px;
+	    border: 1px solid grey;
+	    border-radius: 5px;
+	    display: none;
+	    z-index: 2000;
+	}
+	#bebest-map-info {
+	    font-weight: bold;
+	    color: black;
+	}
+   </style>
+    <section id="bebest-projet-map" tal:condition="python:features">
+   	<div>
+   	<span tal:omit-tag="" tal:content="structure string:${features}">
+   	  features
+   	</span>
+	   	<div id="feature-infos">
+	   	  <span class="bebest-feature-name" id="bebest-feature-name">name</span>
+	   	  <br />
+	   	  <span class="bebest-feature-description" id="bebest-feature-description"></span>
+	   	</div>
+   	</div>
+		<div id="bebest-map">
+		</div>
+    <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-studysite-map.js"></script>
+   </section>
+ 
+  
+</div>
+  </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+  

@@ -81,7 +81,14 @@
       template="templates/bebestimageview.pt"
       permission="zope2.View"
       />
-    bebest_image
+    <browser:page
+      name="view"
+      for="plonetheme.bebest.studysite.IStudysite"
+      class="plonetheme.bebest.studysite.StudySiteView"
+      template="templates/studysiteview.pt"
+      permission="zope2.View"
+      />
+    
     <!-- misc views -->
     <browser:page
        name="debug"
