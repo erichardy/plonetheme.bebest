@@ -143,7 +143,16 @@
            <div class="thumbnail-wrapper">
 			<span  tal:omit-tag="" tal:repeat="mission missions">
 	           	<div class="thumbnail-mission">
-	           	 lksqldklkqsl dkl
+	           	 <a href=""
+	           	    tal:attributes="href string:${mission/absolute_url}">
+	           	    <div class="header">
+	           	      <h4>${mission/title}</h4>
+	           	    </div>
+	           	    <div class="img-mission"
+	           	         tal:define="image nocall:mission/main_pict">
+	           	      <img tal:attributes="src string:${mission/absolute_url}/@@download/main_pict/${image/filename}" />
+	           	    </div>
+	           	 </a>
 	           	</div>
            	</span>
           </div>
