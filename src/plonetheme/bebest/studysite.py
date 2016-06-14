@@ -146,7 +146,7 @@ class studysite(Container):
         return s
 
     def getMissions(self):
-        return [ mission.to_object for mission in self.missions ]
+        return [mission.to_object for mission in self.missions]
 
     def getMissionsFeatures(self):
         missions = self.getMissions()
