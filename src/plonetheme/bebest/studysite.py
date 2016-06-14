@@ -6,9 +6,9 @@ pour associer un projet a des missions et des portraits.
 """
 
 from plone.dexterity.content import Container
-from plone.dexterity.browser import add
+# from plone.dexterity.browser import add
 # from plone.dexterity.browser import edit
-from plone.app.textfield import RichText
+# from plone.app.textfield import RichText
 # from plone import api
 # from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
@@ -19,11 +19,11 @@ from plone.supermodel import model
 from zope import schema
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
-from z3c.form import button
+# from z3c.form import button
 from plone.app.vocabularies.catalog import CatalogSource as CS
 
 from zope.interface import implements
-from zope.interface import Invalid, invariant
+# from zope.interface import Invalid, invariant
 from zope.interface import alsoProvides
 
 from zope.publisher.browser import BrowserView
@@ -61,7 +61,7 @@ class IStudysite(model.Schema):
                                   required=True,
                                   )
     missions = RelationList(title=_(u"related missions"),
-                    value_type=RelationChoice(
+        value_type=RelationChoice(
                     title=_(u'Target'),
                     source=CS(portal_type="bebest.mission")),
                     required=False,

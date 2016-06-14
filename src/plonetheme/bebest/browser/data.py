@@ -161,6 +161,117 @@ geojsonB = """
   ]
 }
 """
+
+geojsonC = """
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#555555",
+        "fill-opacity": 0.5,
+        "name": "Sud Irlande",
+        "description": "Est-ce qu'il y a des coquilles en Irlande ?"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -7.371826171874999,
+              52.032218104145294
+            ],
+            [
+              -8.514404296875,
+              51.62483746174322
+            ],
+            [
+              -8.404541015625,
+              51.42661449707482
+            ],
+            [
+              -7.706909179687499,
+              51.39920565355378
+            ],
+            [
+              -7.086181640625,
+              51.49848454717058
+            ],
+            [
+              -6.921386718749999,
+              51.85274593491394
+            ],
+            [
+              -7.371826171874999,
+              52.032218104145294
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
+"""
+
+geojsonD = """
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#555555",
+        "fill-opacity": 0.5,
+        "name": "Les Iles anglo-normandes",
+        "description": "C'est le Brexit pour elles aussi ?"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.621612548828125,
+              49.38952445158216
+            ],
+            [
+              -2.4018859863281246,
+              49.16284875720288
+            ],
+            [
+              -2.26043701171875,
+              49.25705010952243
+            ],
+            [
+              -2.1533203125,
+              49.419907413282516
+            ],
+            [
+              -2.368927001953125,
+              49.3939937133246
+            ],
+            [
+              -2.5048828125,
+              49.39309989350566
+            ],
+            [
+              -2.621612548828125,
+              49.38952445158216
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
+"""
+
 missionA = {}
 missionA['title'] = u"Première mission"
 missionA['description'] = u"Il faut être très hardi pour aller là-bas !"
@@ -191,9 +302,41 @@ missionB['zoom'] = 5
 missionB['map_center'] = u"[53.15994678846807, -9.2724609375]"
 missionB['geojson'] = geojsonB
 
+missionC = {}
+missionC['title'] = u"Troisième mission"
+missionC['description'] = u"Et là, on a de la chance de revenir entiers !"
+missionC['start_date'] = datetime.datetime(2015, 8, 21)
+missionC['end_date'] = datetime.datetime(2015, 9, 10)
+missionC['presentation'] = bio_fr
+missionC['display_en'] = True
+missionC['presentation_en'] = bio_en
+missionC['main_pict'] = u"hydrophone.jpg"
+missionC['pict_author'] = u"H. Seb"
+missionC['doc'] = None
+missionC['zoom'] = 5
+missionC['map_center'] = u"[51.570241445811234, -7.932128906249999]"
+missionC['geojson'] = geojsonC
+
+missionD = {}
+missionD['title'] = u"Quatrième mission"
+missionD['description'] = u"Et là, on a de la chance de revenir entiers !"
+missionD['start_date'] = datetime.datetime(2015, 1, 21)
+missionD['end_date'] = datetime.datetime(2015, 3, 10)
+missionD['presentation'] = bio_fr
+missionD['display_en'] = True
+missionD['presentation_en'] = bio_en
+missionD['main_pict'] = u"hydrophone.jpg"
+missionD['pict_author'] = u"H. Seb"
+missionD['doc'] = None
+missionD['zoom'] = 5
+missionD['map_center'] = u"[49.32780711070416, -2.43896484375]"
+missionD['geojson'] = geojsonD
+
 missions = []
 missions.append(missionA)
 missions.append(missionB)
+missions.append(missionC)
+missions.append(missionD)
 
 
 projectA = {}
@@ -273,7 +416,119 @@ portraitC['personal_page'] = u"http://www.cnrs.fr/me"
 portraitC['unit_page'] = u"http://www.cnrs.fr/unit"
 portraitC['research'] = u"http://www.cnrs.fr/search"
 
+portraitD = {}
+portraitD['family_name'] = u"Guarini"
+portraitD['first_name'] = u"Jennifer"
+portraitD['email'] = u"e.a@iuem.org"
+portraitD['main_pict'] = u"guarini_jennifer.jpg"
+portraitD['pict_author'] = u""
+portraitD['thumb_pict'] = u"guarini_jennifer-sq.jpg"
+portraitD['bio_fr'] = bio_fr
+portraitD['display_en'] = False
+portraitD['bio_en'] = bio_en
+portraitD['jobs'] = [u"plongeur", u"photographe"]
+portraitD['status'] = u"Assistant ingénieur"
+portraitD['affiliation1'] = u"CCNNRRSS"
+portraitD['affiliation2'] = u"LEMAR"
+portraitD['affiliation3'] = u""
+portraitD['personal_page'] = u"http://www.cnrs.fr/me"
+portraitD['unit_page'] = u"http://www.cnrs.fr/unit"
+portraitD['research'] = u"http://www.cnrs.fr/search"
+
+portraitE = {}
+portraitE['family_name'] = u"Grall"
+portraitE['first_name'] = u"Jacques"
+portraitE['email'] = u"e.a@iuem.org"
+portraitE['main_pict'] = u"grall.jpg"
+portraitE['pict_author'] = u""
+portraitE['thumb_pict'] = u"grall-sq.jpg"
+portraitE['bio_fr'] = bio_fr
+portraitE['display_en'] = False
+portraitE['bio_en'] = bio_en
+portraitE['jobs'] = [u"plongeur", u"photographe"]
+portraitE['status'] = u"Assistant ingénieur"
+portraitE['affiliation1'] = u"CCNNRRSS"
+portraitE['affiliation2'] = u"LEMAR"
+portraitE['affiliation3'] = u""
+portraitE['personal_page'] = u"http://www.cnrs.fr/me"
+portraitE['unit_page'] = u"http://www.cnrs.fr/unit"
+portraitE['research'] = u"http://www.cnrs.fr/search"
+
 portraits = []
 portraits.append(portraitA)
 portraits.append(portraitB)
 portraits.append(portraitC)
+portraits.append(portraitD)
+portraits.append(portraitE)
+
+geojsonSTS = """
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#555555",
+        "fill-opacity": 0.5,
+        "name": "Des coquilles partout",
+        "description": "Et surtout là où on s'y attendait le moins...."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -5.9326171875,
+              52.3755991766591
+            ],
+            [
+              -11.689453125,
+              50.62507306341435
+            ],
+            [
+              -9.052734375,
+              43.35713822211053
+            ],
+            [
+              -1.494140625,
+              43.26120612479979
+            ],
+            [
+              -2.021484375,
+              50.20503326494332
+            ],
+            [
+              -6.064453125,
+              49.92293545449574
+            ],
+            [
+              -5.888671875,
+              51.6180165487737
+            ],
+            [
+              -5.9326171875,
+              52.3755991766591
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
+"""
+sts = {}
+sts['title'] = u"Mon joli site d'études"
+sts['description'] = u"Et là, on a de la chance de revenir entiers !"
+sts['presentation'] = bio_fr
+sts['display_en'] = True
+sts['presentation_en'] = bio_en
+sts['main_pict'] = u"hydrophone.jpg"
+sts['pict_author'] = u"H. Seb"
+sts['doc'] = None
+sts['zoom'] = 5
+sts['map_center'] = u"[49.781264058178365, -7.207031249999999]"
+sts['geojson'] = geojsonSTS
+

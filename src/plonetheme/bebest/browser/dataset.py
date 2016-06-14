@@ -10,7 +10,7 @@ from zope.component import getUtility
 from zope.intid.interfaces import IIntIds
 from z3c.relationfield.relation import RelationValue
 
-from data import portraits, projects, missions, bio_fr, lorem
+from data import portraits, projects, missions, bio_fr, lorem, sts
 
 PREFIX = abspath(dirname(__file__))
 logger = logging.getLogger('plonetheme.bebest: CREATEDATASET')
@@ -30,6 +30,8 @@ class createDataSet(BrowserView):
         self.createProject()
         self.deletePortFolio()
         self.createPortFolio()
+        self.deleteStudySite()
+        self.createStudySite()
 
         url = portal.absolute_url() + '/folder_contents'
         self.request.response.redirect(url)
@@ -90,6 +92,18 @@ class createDataSet(BrowserView):
         intids = getUtility(IIntIds)
         founds = api.content.find(context=portal,
                                   portal_type='bebest.portrait',
+                                  path='/'.join(portal.getPhysicalPath())
+                                  )
+        p_ids = []
+        for found in founds:
+            p_ids.append(intids.getId(found.getObject()))
+        return p_ids
+
+    def getMissions(self):
+        portal = api.portal.get()
+        intids = getUtility(IIntIds)
+        founds = api.content.find(context=portal,
+                                  portal_type='bebest.mission',
                                   path='/'.join(portal.getPhysicalPath())
                                   )
         p_ids = []
@@ -162,7 +176,10 @@ class createDataSet(BrowserView):
             allPortraits = self.getPortraits()
             obj.chief = RelationValue(allPortraits[0])
             obj.other = set([RelationValue(allPortraits[1]),
-                             RelationValue(allPortraits[2])])
+                             RelationValue(allPortraits[2]),
+                             RelationValue(allPortraits[3]),
+                             RelationValue(allPortraits[4]),
+                             ])
             obj.reindexObject()
             self.createCarousel(obj)
 
@@ -200,27 +217,11 @@ class createDataSet(BrowserView):
                                       title=u'carousel',
                                       container=loc)
         api.content.transition(obj=carousel, transition='publish')
-        imgs = [u'spmiquelon/1.JPG', u'spmiquelon/2.JPG',
-                u'spmiquelon/3.JPG', u'spmiquelon/4.JPG',
-                u'spmiquelon/5.JPG', u'spmiquelon/6.JPG',
-                u'spmiquelon/7.JPG', u'spmiquelon/8.JPG']
+        imgs = [u'spmiquelon/1.jpg', u'spmiquelon/2.jpg',
+                u'spmiquelon/3.jpg', u'spmiquelon/4.jpg',
+                u'spmiquelon/5.jpg', u'spmiquelon/6.jpg',
+                u'spmiquelon/7.jpg', u'spmiquelon/8.jpg']
         self._loadImagesInFolder(carousel, imgs)
-        """
-        for img in imgs:
-            title = img.split('/')[1]
-            image = api.content.create(type='Image',
-                                       title=title,
-                                       image=NamedBlobImage(),
-                                       container=carousel)
-            path = input_image_path(img)
-            fd = open(path, "r")
-            image.image.data = fd.read()
-            fd.close()
-            image.image.filename = title
-            image.reindexObject()
-            api.content.transition(obj=image, transition='publish')
-            image.reindexObject()
-        """
 
     def deletePortFolio(self):
         portal = api.portal.get()
@@ -238,12 +239,12 @@ class createDataSet(BrowserView):
                                        thumb_pict=NamedBlobImage(),
                                        authors_pict_folder=u"authors",
                                        container=portal)
-        self._loadImage(portfolio.main_pict, u'spmiquelon/1.JPG')
-        self._loadImage(portfolio.thumb_pict, u'spmiquelon/2.JPG')
-        imgs = [u'spmiquelon/1.JPG', u'spmiquelon/2.JPG',
-                u'spmiquelon/3.JPG', u'spmiquelon/4.JPG',
-                u'spmiquelon/5.JPG', u'spmiquelon/6.JPG',
-                u'spmiquelon/7.JPG', u'spmiquelon/8.JPG']
+        self._loadImage(portfolio.main_pict, u'spmiquelon/1.jpg')
+        self._loadImage(portfolio.thumb_pict, u'spmiquelon/2.jpg')
+        imgs = [u'spmiquelon/1.jpg', u'spmiquelon/2.jpg',
+                u'spmiquelon/3.jpg', u'spmiquelon/4.jpg',
+                u'spmiquelon/5.jpg', u'spmiquelon/6.jpg',
+                u'spmiquelon/7.jpg', u'spmiquelon/8.jpg']
         self._loadImagesInFolder(portfolio, imgs)
         authors = api.content.create(type='Folder',
                                      title='authors',
@@ -252,3 +253,34 @@ class createDataSet(BrowserView):
         self._loadImagesInFolder(authors, imgs)
         api.content.transition(obj=portfolio, transition='publish')
         api.content.transition(obj=authors, transition='publish')
+
+    def deleteStudySite(self):
+        portal = api.portal.get()
+        try:
+            title = u'mon-joli-site-d-etudes'
+            api.content.delete(obj=portal[title])
+        except Exception:
+            pass
+
+    def createStudySite(self):
+        portal = api.portal.get()
+        stsite = api.content.create(type='bebest.studysite',
+                                 title=sts['title'],
+                                 description=sts['description'],
+                                 presentation=sts['presentation'],
+                                 display_en=sts['display_en'],
+                                 presentation_en=sts['presentation_en'],
+                                 main_pict=NamedBlobImage(),
+                                 pict_author=sts['pict_author'],
+                                 doc=sts['doc'],
+                                 zoom=sts['zoom'],
+                                 map_center=sts['map_center'],
+                                 geojson=sts['geojson'],
+                                 container=portal)
+        allMissions = self.getMissions()
+        stsite.missions = set([RelationValue(allMissions[1]),
+                         RelationValue(allMissions[2]),
+                         RelationValue(allMissions[3]),
+                         RelationValue(allMissions[4]),
+                         ])
+        stsite.reindexObject()
