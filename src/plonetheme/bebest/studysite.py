@@ -61,13 +61,11 @@ class IStudysite(model.Schema):
                                   required=True,
                                   )
     missions = RelationList(title=_(u"related missions"),
-        value_type=RelationChoice(
-                    title=_(u'Target'),
-                    source=CS(portal_type="bebest.mission")),
-                    required=False,
-                    )
-
-
+                            value_type=RelationChoice(
+                            title=_(u'Target'),
+                            source=CS(portal_type="bebest.mission")),
+                            required=False,
+                            )
     model.fieldset('descriptions',
                    label=_(u"descriptions"),
                    fields=['presentation',

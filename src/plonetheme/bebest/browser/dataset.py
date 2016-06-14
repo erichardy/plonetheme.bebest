@@ -269,23 +269,23 @@ class createDataSet(BrowserView):
     def createStudySite(self):
         portal = api.portal.get()
         stsite = api.content.create(type='bebest.studysite',
-                                 title=sts['title'],
-                                 description=sts['description'],
-                                 presentation=sts['presentation'],
-                                 display_en=sts['display_en'],
-                                 presentation_en=sts['presentation_en'],
-                                 main_pict=NamedBlobImage(),
-                                 pict_author=sts['pict_author'],
-                                 doc=sts['doc'],
-                                 zoom=sts['zoom'],
-                                 map_center=sts['map_center'],
-                                 geojson=sts['geojson'],
-                                 container=portal)
+                                    title=sts['title'],
+                                    description=sts['description'],
+                                    presentation=sts['presentation'],
+                                    display_en=sts['display_en'],
+                                    presentation_en=sts['presentation_en'],
+                                    main_pict=NamedBlobImage(),
+                                    pict_author=sts['pict_author'],
+                                    doc=sts['doc'],
+                                    zoom=sts['zoom'],
+                                    map_center=sts['map_center'],
+                                    geojson=sts['geojson'],
+                                    container=portal)
         allMissions = self.getMissions()
         stsite.missions = set([RelationValue(allMissions[1]),
-                         RelationValue(allMissions[2]),
-                         RelationValue(allMissions[3]),
-                         RelationValue(allMissions[0]),
-                         ])
+                               RelationValue(allMissions[2]),
+                               RelationValue(allMissions[3]),
+                               RelationValue(allMissions[0]),
+                               ])
         stsite.reindexObject()
         logger.info(stsite.title + ' Created')

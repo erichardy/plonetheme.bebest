@@ -531,4 +531,3 @@ sts['doc'] = None
 sts['zoom'] = 5
 sts['map_center'] = u"[49.781264058178365, -7.207031249999999]"
 sts['geojson'] = geojsonSTS
-
