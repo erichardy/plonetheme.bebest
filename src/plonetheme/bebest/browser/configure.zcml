@@ -32,6 +32,21 @@
       permission="zope2.View"
       />
    <browser:page
+      name="portraits_view"
+      for="*"
+      class=".portraits_view.portraitsView"
+      template="portraits_view.pt"
+      permission="zope2.View"
+      />
+   <browser:page
+      name="projects_view"
+      for="*"
+      class=".projects_view.projectsView"
+      template="portfolio.pt"
+      permission="zope2.View"
+      />
+
+   <browser:page
       name="map"
       for="*"
       class=".map.Map"

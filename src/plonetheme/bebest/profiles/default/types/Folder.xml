@@ -21,6 +21,8 @@
   <element value="album_view"/>
   <element value="event_listing"/>
   <element value="portfolio"/>
+  <element value="portraits_view"/>
+  <element value="projects_view"/>
  </property>
  <property name="default_view_fallback">False</property>
  <property name="add_permission">plone.app.contenttypes.addFolder</property>
