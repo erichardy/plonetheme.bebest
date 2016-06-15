@@ -41,7 +41,7 @@ class IEnglishText(model.Schema):
 @implementer(IEnglishText)
 @adapter(IDexterityContent)
 class englishText(object):
-    
+
     def __init__(self, context):
         self.context = context
 

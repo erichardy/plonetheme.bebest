@@ -35,6 +35,4 @@ class projectsView(BrowserView):
                                 key=lambda obj: obj.effective(),
                                 reverse=True)
             return sortedObjs
-        return sorted(objs,
-                      key=lambda obj: obj.Title(),
-                      reverse=False)
+        return sorted(objs, sort_by_position)

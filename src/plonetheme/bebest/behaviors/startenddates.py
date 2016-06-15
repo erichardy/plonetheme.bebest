@@ -21,7 +21,8 @@ class IStartEndDates(model.Schema):
                    fields=['display_dates',
                            'display_time',
                            'start_date',
-                           'end_date',],
+                           'end_date',
+                           ],
                    )
     display_dates = schema.Bool(title=_(u"display start and end dates ?"),
                                 description=_(u"unselect to disable"),
@@ -42,9 +43,10 @@ class IStartEndDates(model.Schema):
                                required=False,
                                )
 
+
 @implementer(IStartEndDates)
 @adapter(IDexterityContent)
 class startEndDates(object):
-    
+
     def __init__(self, context):
         self.context = context

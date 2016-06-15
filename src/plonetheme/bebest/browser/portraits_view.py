@@ -5,7 +5,7 @@ from zope.publisher.browser import BrowserView
 # from operator import attrgetter
 from plone import api
 
-from plonetheme.bebest.utils import sort_by_position
+# from plonetheme.bebest.utils import sort_by_position
 
 logger = logging.getLogger('bebest')
 
@@ -16,8 +16,7 @@ class portraitsView(BrowserView):
         self.context = context
         self.request = request
 
-    def getPortraitsObjs(self,
-                          effective=False):
+    def getPortraitsObjs(self, effective=False):
         """
         @param effective: tri par date de publication
         """
@@ -29,7 +28,7 @@ class portraitsView(BrowserView):
                                   )
         if len(founds) == 0:
             return False
-        objs = [found.getObjects() for found in founds]
+        objs = [found.getObject() for found in founds]
         if effective:
             sortedObjs = sorted(objs,
                                 key=lambda obj: obj.effective(),
