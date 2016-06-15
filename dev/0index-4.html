@@ -12,7 +12,7 @@
   <link href="css/bootstrap.css" rel="stylesheet">
   <link rel="stylesheet" href="webmapping/leaflet/leaflet.css"/>
   <link rel="stylesheet/less" type="text/css" href="css/bebest-theme.less">
- <script src="js/less.min.js" type="text/javascript"></script>
+  <script src="js/less.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -63,7 +63,6 @@
 			<div class="super bright text-center">Benthic Biodiversity Ecology, Sciences and Technologies</div>
 		</div>
 	</section>
-    <!--FIN SECTION HOME-CAROUSEL---->
 	
 	<!-- DEBUT THUMBNAILS-->
 	<section id="bebest-home-thumbnail" class="container"> <!-- Titres devraient êtres limités a 80 caractères -->
@@ -147,7 +146,6 @@
 			  </div>
 		</div>
    </section> 
-   <!--Fin Section thumbnails-->
   
    <!-- DEBUT SECTION NEWS-CAROUSEL-->
 	<section id="bebest-home-news" class="container w-limit">
@@ -201,7 +199,6 @@
 			</div>
 		</div>
 	</section>
-   <!--FIN SECTION NEWS-CAROUSEL---->
    
      <!-- DEBUT SECTION ABOUT 2-->
    <section id="bebest-home-about">
@@ -221,15 +218,36 @@ pour explorer des voies de perception des phénomènes naturels qui s'écartent 
 			</div>	
 		</div>
    </section> 
-   <!--FIN SECTION ABOUT -->
    
    <!-- DEBUT SECTION MAP -->
-   <section>
-		<div id="bebest-home-map">
-			<div class="super text-center">Sites d'étude</div>
+   <section class="section-map">
+   		<!---le type de feature présenté (sites ou missions)---->
+        <div class="feature-type col-xs-12">
+            Sites d'étude
+        </div>
+		<!----La map en elle même------->
+        <div id="bebest-home-map" class="col-xs-7 col-sm-8 col-md-9">
 		</div>
+        <!----le panneau des features---->
+        <div class="map-feature-panel col-xs-5 col-sm-4 col-md-3">
+        	<div class="feature-info">
+            	<!---titre de l'item--->
+                <h3>
+                	Saint-Pierre et Miquelon
+                </h3>
+                <!---un petit filet--->
+                <hr />
+                <!---description de l'item--->
+                <p>
+                	Archipel français d'Amérique du Nord situé dans l'océan Atlantique nord, à 25 km au sud de l’île canadienne de Terre-Neuve.
+                </p>
+                <!---lien vers l'item--->
+                <a href="studysites.html">
+                	En savoir plus...
+                </a>
+            </div>
+        </div>
    </section>
-   <!-- FIN SECTION MAP -->
    <!-- DEBUT FOOTER -->
 <footer>
 		<div id="bebest-footer" class="text-center">

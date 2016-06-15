@@ -128,7 +128,7 @@
 		</section>
 		
         <!-----début du contenu hors titre------------->	
-		<div id="page-content" class="container-fluid">
+		<div id="page-content" class="container-fluid full-width">
 			<!--------debut du rich text---------------->
             <div class="container">
 				<!------Contenu texte------>
@@ -149,15 +149,52 @@
                         vehicula metus, eget rhoncus nunc cursus imperdiet. </br>Vivamus dictum, nunc a tincidunt semper, lectus justo maximus neque, et pulvinar ipsum dolor at nisl. Maecenas porttitor 
                         dolor nec ante cursus viverra. Maecenas massa nunc, semper vitae pulvinar at, semper at metus. Cras a fermentum diam. Sed a lobortis risus, efficitur tincidunt lorem. </br></p>
 				</div>
-				
-				<div class="embed-responsive embed-responsive-16by9"><!-----------INSERTION VIDEO --->
-					<iframe class="embed-responsive-item" src="https://player.vimeo.com/video/129753793?color=00153f" width="1170" height="658" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/129753793">Underground Movement: Cave Diving in J&auml;mtland</a> from <a href="https://vimeo.com/klattermusen">Kl&auml;ttermusen</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+				<!-----------INSERTION VIDEO --->
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe class="embed-responsive-item" src="https://player.vimeo.com/video/129753793?color=00153f" width="1170" height="658" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>				
+                    </iframe>
+					<p>
+                    	<a href="https://vimeo.com/129753793">Underground Movement: Cave Diving in J&auml;mtland
+                        </a> 
+                        from 
+                        <a href="https://vimeo.com/klattermusen">Kl&auml;ttermusen
+                        </a> 
+                        on
+                        <a href="https://vimeo.com">Vimeo
+                        </a>
+                        .
+                        </p>
 				</div>
 			</div>
-			<!-- DEBUT SECTION MAP -->
-			<div id="bebest-map" class="page-map pushtop">
-			</div>			
+           <!-- DEBUT SECTION MAP -->
+           <section class="section-map pushtop">
+                <!---le type de feature présenté (sites ou missions)---->
+                <div class="feature-type col-xs-12">
+                    La mission
+                </div>
+                <!----La map en elle même------->
+                <div id="bebest-home-map" class="col-xs-7 col-sm-8 col-md-9">
+                </div>
+                <!----le panneau des features---->
+                <div class="map-feature-panel col-xs-5 col-sm-4 col-md-3">
+                    <div class="feature-info">
+                        <!---titre de l'item--->
+                        <h3>
+                            Mission GAAP 2016
+                        </h3>
+                        <!---un petit filet--->
+                        <hr />
+                        <!---description de l'item--->
+                        <p>
+                            Acoustique passive dans le Yung Sund.
+                        </p>
+                        <!---lien vers l'item--->
+                        <a href="mission-v2.html">
+                            En savoir plus...
+                        </a>
+                    </div>
+                </div>
+           </section>
 		</div>		
 			
 	</div>
@@ -200,6 +237,6 @@
 <script src="webmapping/leaflet/leaflet.js"></script>
 <script src="js/bebest.js"></script>
 <script src="js/onscroll.js"></script>
-<script src="js/bebest-map.js"></script>
+<script src="js/bebest-home-map.js"></script>
 </body>
 </html>

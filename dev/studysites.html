@@ -60,7 +60,7 @@
 					<hr /> 
                     <!---Champ sous titre doit -il etre identique au champ description ?--->
 					<div class="bebest-subtitle">
-                    	Site d'étude du projet bebest
+                    	Archipel français d'Amérique du Nord situé dans l'océan Atlantique nord, à 25 km au sud de l’île canadienne de Terre-Neuve.
                     </div> 
 				</div>
 			</div>
@@ -72,7 +72,7 @@
         </div>
         
 		<!-----début du contenu hors titre------------->	
-		<div id="page-content" class="container-fluid">
+		<div id="page-content" class="container-fluid full-width">
 			<!--------debut du rich text---------------->
             <div class="container">
 				<!------Contenu texte------>
@@ -100,17 +100,38 @@
                 <img src="images/sites/spmiquelon/3.jpg" data-title="(C) Pierre Poitevin / UBO" data-description="My  other description">
                 <img src="images/sites/spmiquelon/4.jpg" data-title="(C) Pierre Poitevin / UBO" data-description="My  other description">
         	</div>
-		</div>		
 		
-        <!---Integration de la carte -->
- 		<section>
-            <div class="container-fluid bg-bright">
-                <div class="container pushtop">
-                    <div id="bebest-home-map">
+            <!-- DEBUT SECTION MAP -->
+           <section class="section-map pushtop">
+                <!---le type de feature présenté (sites ou missions)---->
+                <div class="feature-type col-xs-12">
+                    Sites d'étude
+                </div>
+                <!----La map en elle même------->
+                <div id="bebest-home-map" class="col-xs-7 col-sm-8 col-md-9">
+                </div>
+                <!----le panneau des features---->
+                <div class="map-feature-panel col-xs-5 col-sm-4 col-md-3">
+                    <div class="feature-info">
+                        <!---titre de l'item--->
+                        <h3>
+                            Mission GAAP 2016
+                        </h3>
+                        <!---un petit filet--->
+                        <hr />
+                        <!---description de l'item--->
+                        <p>
+                            Acoustique passive dans le Yung Sund.
+                        </p>
+                        <!---lien vers l'item--->
+                        <a href="mission-v2.html">
+                            En savoir plus...
+                        </a>
                     </div>
                 </div>
-             </div>   
- 		</section>
+           </section>
+
+        </div>
 	</div>
 
 	<!---------- DEBUT FOOTER ---------------------------->
