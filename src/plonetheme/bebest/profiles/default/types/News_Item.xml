@@ -4,13 +4,14 @@
  <property name="title" i18n:translate="">News Item</property>
  <property name="description" i18n:translate=""></property>
  <property name="add_view_expr">string:${folder_url}/++add++News Item</property>
- <property name="immediate_view">view</property>
+ <property name="immediate_view">bebest_news_view</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types"/>
  <property name="allow_discussion">False</property>
  <property name="default_view">newsitem_view</property>
  <property name="view_methods">
+  <element value="bebest_news_view" />
   <element value="newsitem_view"/>
  </property>
  <property name="default_view_fallback">False</property>

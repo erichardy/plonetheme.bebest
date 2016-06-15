@@ -45,6 +45,13 @@
       template="portfolio.pt"
       permission="zope2.View"
       />
+   <browser:page
+      name="bebest_news_view"
+      for="plone.app.contenttypes.interfaces.INewsItem"
+      class=".bebest_news_view.bebestNewsView"
+      template="bebest_news_view.pt"
+      permission="zope2.View"
+      />
 
    <browser:page
       name="map"
@@ -53,6 +60,8 @@
       template="map.pt"
       permission="zope2.View"
       />
+from 
+
 
    <browser:page
       name="dataset"
