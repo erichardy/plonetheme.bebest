@@ -16,7 +16,7 @@ class portraitsView(BrowserView):
         self.context = context
         self.request = request
 
-    def getPortraitssObjs(self,
+    def getPortraitsObjs(self,
                           effective=False):
         """
         @param effective: tri par date de publication

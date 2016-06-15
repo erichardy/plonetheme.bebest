@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="plonetheme.bebest">
+
+    <plone:behavior
+        title="EnglishText"
+        description="add RichText for english version and option to display it"
+        provides=".englishtext.IEnglishText"
+        factory=".englishtext.englishText"
+        />
+    <plone:behavior
+        title="StartEndDates"
+        description="add start and end dates"
+        provides=".startenddates.IStartEndDates"
+        factory=".startenddates.startEndDates"
+        />
+
+</configure>

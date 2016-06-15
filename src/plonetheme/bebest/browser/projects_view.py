@@ -17,7 +17,7 @@ class projectsView(BrowserView):
         self.request = request
 
     def getProjectsObjs(self,
-                          effective=False):
+                        effective=False):
         """
         @param effective: tri par date de publication
         """
