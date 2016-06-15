@@ -42,7 +42,7 @@
       name="projects_view"
       for="*"
       class=".projects_view.projectsView"
-      template="portfolio.pt"
+      template="projects_view.pt"
       permission="zope2.View"
       />
    <browser:page

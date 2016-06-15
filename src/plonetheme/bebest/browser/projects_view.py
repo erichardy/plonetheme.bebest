@@ -29,7 +29,7 @@ class projectsView(BrowserView):
                                   )
         if len(founds) == 0:
             return False
-        objs = [found.getObjects() for found in founds]
+        objs = [found.getObject() for found in founds]
         if effective:
             sortedObjs = sorted(objs,
                                 key=lambda obj: obj.effective(),
