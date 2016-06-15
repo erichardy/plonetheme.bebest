@@ -10,25 +10,50 @@
 
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
-  <div>
-   
-	<section>
-	  <div class="container-fluid portfolio-fullimg">
-	    <img tal:define="scale context/@@images"
-             tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='full-width img-responsive')"
-             tal:on-error="string: No image for this folder !" />
-	  </div>
-	  <div class="row w-limit">
-		
-		 <div class="super grey text-center">
-		   <span>${context/title}</span>
-		 </div>
-	  </div>
-	  <p tal:content="structure string:${context/presentation_en/raw}">QSdqsd</p>
-	  <p tal:content="structure string:${context/start_date}">QSdqsd</p>
-	</section>
+    <div class="container"
+         tal:define="displayEN python:context.display_en;
+                     textFR python:context.text.raw;
+                     textEN python:context.presentation_en.raw;"
+         >
+      <div class="row">
+        <!-----Contenu de la page----->
+        <div class="col-xs-12 col-sm-9">
+          <div class="actu-img">
+             <img tal:define="scale context/@@images"
+                  tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='full-width img-responsive')"
+                  tal:on-error="string: No image for this News Item!" />
+          </div>
+          <!----Partie Info text------>
+          <div>
+              <!-----Champ title---->
+              <div class="bebest-title">
+                  ${context/title}
+              </div> 
+              <!----------un petit filet------------>
+              <hr /> 
+              <!---Champ sous titre doit -il etre identique au champ description ?--->
+              <div class="bebest-subtitle">
+	            <span tal:content="structure string:${textFR}">text FR</span>
+              </div> 
+              <!------ Date de l'evenement, doit etre un string text libre  pour pouvoir indiquer une date ou une période--->
+              <div class="bebest-dates">
+                  du 16 au 20 Mai 2016
+              </div>
+          </div>
+        </div>
 
-  </div>
+        <!-----acces aux actus précédentes----->
+        <div class="col-xs-12 col-sm-3 bg-light-grey pushbottom">
+          <h3 class="pushtop">Actualités</h3>
+          <!-----un petit filet--->
+          <hr class="main-line" />
+          
+          
+        </div>
+      </div>
+    </div>
+   
+
   </metal:content-core>
 </metal:content-core>
 
