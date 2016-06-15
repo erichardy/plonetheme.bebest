@@ -11,13 +11,17 @@
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
     <div class="container"
-         tal:define="displayEN python:context.display_en;
+         tal:define="displayEN python:view.getDisplayEN();
+         			 description python:context.description;
                      textFR python:context.text.raw;
-                     textEN python:context.presentation_en.raw;"
+                     textEN python:view.getTextEN();
+                     dates python:view.getDates();
+                     news python:view.getOtherNews()"
          >
       <div class="row">
         <!-----Contenu de la page----->
         <div class="col-xs-12 col-sm-9">
+        <section>
           <div class="actu-img">
              <img tal:define="scale context/@@images"
                   tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='full-width img-responsive')"
@@ -33,13 +37,33 @@
               <hr /> 
               <!---Champ sous titre doit -il etre identique au champ description ?--->
               <div class="bebest-subtitle">
-	            <span tal:content="structure string:${textFR}">text FR</span>
+	            <span tal:content="structure string:${description}">description</span>
               </div> 
               <!------ Date de l'evenement, doit etre un string text libre  pour pouvoir indiquer une date ou une période--->
-              <div class="bebest-dates">
-                  du 16 au 20 Mai 2016
+              <div tal:condition="dates"
+                   class="bebest-dates">
+                  ${dates}
               </div>
           </div>
+        </section>
+        <section>
+	        <div tal:condition="displayEN"
+	             class="align-right">
+	            <button type="button"
+			            id="show-english-version"
+			            class="btn btn-default collapser">English version</button>
+	        </div>
+	          <span tal:condition="textEN"
+	                class="bebest-collapse"
+				    tal:content="structure string:${textEN}"
+				    id="show-english-version-collapse">
+				  presentation EN
+			  </span>
+			  <hr />
+		  <span tal:content="structure string:${context/text/raw}">
+		    presentation FR
+		  </span>
+        </section>
         </div>
 
         <!-----acces aux actus précédentes----->
@@ -47,7 +71,17 @@
           <h3 class="pushtop">Actualités</h3>
           <!-----un petit filet--->
           <hr class="main-line" />
-          
+          <ul>
+            <span tal:omit-tag=""
+                  tal:repeat="news_item news">
+              <li>
+                <a href=""
+                   tal:define="effective python:news_item.effective()"
+                   tal:attributes="href string:${news_item/absolute_url}"
+                   tal:content="string:${news_item/title} ${effective}">news item</a>
+              </li>
+            </span>
+          </ul>
           
         </div>
       </div>
