@@ -216,12 +216,19 @@ class editForm(edit.DefaultEditForm):
 
 class ProjectView(BrowserView):
 
+    
+
     def getGalleryImages(self):
         return ggi(self.context)
 
 
 class project(Container):
     implements(IProject)
+
+    def getPictAuthor(self):
+        if not self.pict_author:
+            return False
+        return self.pict_author
 
     def getPrimaryContact(self):
         return self.primary_contact.to_object

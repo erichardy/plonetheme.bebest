@@ -14,6 +14,7 @@
   <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
   <div tal:define="features python:context.getMissionsFeatures();
                    displayEN python:context.display_en;
+                   pictAuthor python:context.getPictAuthor();
                    missions python:context.getMissions();
                    gallery python:view.getGalleryImages()">
 
@@ -36,8 +37,18 @@
   		</div>
     </div>
   </section>
-  
-  <div id="page-content" class="container-fluid">
+
+  <!---- auteur de la photo  --------->
+	<div class="img-author hidden-xs"
+	     tal:condition="python:pictAuthor"
+	     tal:content="string:${pictAuthor}">
+	</div>
+	<div class="img-no-author hidden-xs"
+	     tal:condition="python:not pictAuthor"
+	     tal:content="string:(DR)">
+	</div>
+
+  <div id="page-content" class="container-fluid full-width">
 	<div class="container">
 	  <div class="row pushtop">
       <!-- Bouton toggle english -->

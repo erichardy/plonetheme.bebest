@@ -14,6 +14,7 @@
   <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
   <div tal:define="features python:context.getMissionsFeatures();
                    toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                   pictAuthor python:context.getPictAuthor();
                    primary_contact python:context.getPrimaryContact();
                    contactFR python:context.getContactFR();
                    contactCA python:context.getContactCA();
@@ -46,6 +47,16 @@
   		</div>
     </div>
   </section>
+
+<!---- auteur de la photo  --------->
+	<div class="img-author hidden-xs"
+	     tal:condition="python:pictAuthor"
+	     tal:content="string:${pictAuthor}">
+	</div>
+	<div class="img-no-author hidden-xs"
+	     tal:condition="python:not pictAuthor"
+	     tal:content="string:(DR)">
+	</div>
 
   <section>
     <div class="container-fluid bg-light-grey">

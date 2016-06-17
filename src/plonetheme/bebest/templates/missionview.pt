@@ -67,7 +67,12 @@
 	<!---- auteur de la photo  --------->
 	<div class="img-author hidden-xs"
 	     tal:condition="python:pictAuthor"
-	     tal:content="string:(C) ${pictAuthor}"></div>
+	     tal:content="string:${pictAuthor}">
+	</div>
+	<div class="img-no-author hidden-xs"
+	     tal:condition="python:pictAuthor"
+	     tal:content="string:(DR)">
+	</div>
 
    <!--------Début de la section team---------->
    <section>
