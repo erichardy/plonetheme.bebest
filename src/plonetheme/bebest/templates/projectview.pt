@@ -55,7 +55,7 @@
 	</div>
 	<div class="img-no-author hidden-xs"
 	     tal:condition="python:not pictAuthor"
-	     tal:content="string:(DR)">
+	     >&nbsp;
 	</div>
 
   <section>

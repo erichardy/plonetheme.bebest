@@ -45,11 +45,11 @@ L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/
  * positionnees. La solution consiste donc a aller chercher dynamiquement la position de
  * la section qui contient la carte et d'afficher le popup d'info relativement a
  * cette derniere. 
- */
+ 
 position = $("#bebest-home-map").position();
 $("#feature-infos").css("top", position.top + 100);
 $("#feature-infos").css("left", position.left + 10);
-
+*/
 /* code fortement instpire de http://jsfiddle.net/expedio/z1nw3pt4/  pour le popup
  * quand on clique sur un point, une ligne ou un polygone
  * */

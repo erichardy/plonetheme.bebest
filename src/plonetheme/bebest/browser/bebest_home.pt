@@ -150,7 +150,8 @@
    		<div class="container"
    		     tal:define="nbDocs python:len(aboutDocuments);
    		                 classesAbout python:view.getAboutClasses(nbDocs)">
-   			<div class="super text-center">What we do</div>
+   			<div class="super text-center"
+   			     tal:content="string:${context/description}">What we do</div>
    			<div class="row">
    			<span tal:omit-tag="" tal:repeat="aboutDocument aboutDocuments">
    			  <div tal:attributes="class python:classesAbout[repeat.aboutDocument.number - 1]">
@@ -192,15 +193,16 @@
 	}
    </style>
   
-   <section id="bebest-home-map">
-   	<div>
-	   	<div id="feature-infos">
-	   	  <span id="bebest-map-info">AAAAAAAA</span>
-	   	  XXXXXXXX
-	   	</div>
+   <section class="section-map">
+   	<div class="feature-type col-xs-12">
+   	  Sites d'études
    	</div>
-		<div id="bebest-map">
-		</div>
+	<div id="bebest-map" class="col-xs-7 col-sm-8 col-md-9">
+	</div>
+	<div class="map-feature-panel col-xs-5 col-sm-4 col-md-3">
+	  <div class="feature-info">
+	  </div>
+	</div>
    
    <section>
   </div>
