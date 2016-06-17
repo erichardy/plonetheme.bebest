@@ -47,6 +47,7 @@ class IPortrait(model.Schema):
                    label=_(u"identification"),
                    fields=['family_name',
                            'first_name',
+                           'description',
                            'email',
                            'main_pict',
                            'pict_author',

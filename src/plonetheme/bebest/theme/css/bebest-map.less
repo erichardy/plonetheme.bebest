@@ -1,15 +1,29 @@
-#bebest-map {
-   height: 600px;
-   background-color: black;
-   .super{
-		color: #47AAC9;
-		position: relative;
-		z-index: 1000;
-		.pushtop;
-	}
-}
 
-.leaflet-popup-content-wrapper {
+.section-map {
+	height: 600px;
+	.full-width;
+	background-color: @bg-dark;
+	.feature-type {
+			.super-small;
+			.main-color;
+			.text-center;	
+		}
+	#bebest-home-map {
+		height: 520px;
+		background-color: @bg-dark;
+	}
+	.map-feature-panel {
+		height: 520px;
+		.feature-info {
+			background-color: @bg-bright;
+			padding: 15px;
+			border: 2px solid @color-main;
+			border-radius: 5px;
+			text-align: left;
+			height: 505px;
+		}
+	}
+	.leaflet-popup-content-wrapper {
 		width: 300px;
 		min-height: 250px;
 		max-height: 500px;
@@ -21,14 +35,13 @@
 		h3{
 			color: #47AAC9;
 		}
+	}
+	.leaflet-popup-tip {
+		opacity:0;
+	}
+	.leaflet-popup {
+		transform: none;
+		position: absolute;
+		top: 0px;
+	} 
 }
-
-.leaflet-popup-tip {
-	opacity:0;
-}
-
-.leaflet-popup {
-	transform: none;
-	position: absolute;
-	top: 0px;
-} 
