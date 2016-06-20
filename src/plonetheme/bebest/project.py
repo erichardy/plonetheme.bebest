@@ -219,14 +219,14 @@ class ProjectView(BrowserView):
     def getGalleryImages(self):
         return ggi(self.context)
 
-    def getGeoJSON(self):
-        return self.context.getMissionsFeatures()
+    
 
     def getMapZoom(self):
+        
         return self.context.getMapZoom()
 
-    def getMapCenter(self):
-        return self.context.getMapCenter()
+    def getMapCenter(self, context):
+        return self.context.getMapCenter(context)
 
 
 class project(Container):
@@ -301,6 +301,9 @@ class project(Container):
         s = ch.replace("'", "&rsquo;").\
             replace('"', "&rdquo;")
         return s
+
+    def getGeoJSON(self):
+        return self.getMissionsFeatures()
 
     def getMissionsFeatures(self):
         context = self

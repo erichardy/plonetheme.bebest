@@ -7,20 +7,20 @@
       i18n:domain="plonetheme.bebest">
 <body>
 
+
 <metal:row define-macro="map-bebest">
   <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
    <section class="section-map">
-     <span tal:define="map_zoom python:context.getMapZoom();
-                       map_center python:context.getMapCenter():
-                       features python:context.getGeoJSON();"
-           tal:on-error="string:No map!"
-           >
-   		
-   		<span tal:content="structure python:view.getMapZoom()"
+     <span>
+   		<span tal:content="structure python:context.getMapZoom()"
 	        tal:omit-tag="">
 	        map zoom
 	    </span>
-	  	<span tal:content="structure python:view.getMapCenter()"
+	  	<span tal:content="structure python:context.getMapCenter()"
+	        tal:omit-tag="">
+	        map center
+	  	</span>
+	    <span tal:content="structure python:context.getGeoJSON()"
 	        tal:omit-tag="">
 	        map center
 	  	</span>
@@ -55,7 +55,7 @@
    </section>
 </metal:row>
 
-<metal:row define-macro="gallery">
+<metal:row define-macro="gallery-bebest">
 	<link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/galleria/themes/twelve/galleria.twelve.css" />
 	<script src="++theme++plonetheme.bebest/galleria/galleria-1.4.2.min.js"></script>
 	<style>

@@ -287,7 +287,6 @@ def getGalleryImages(context):
         return False
     images = [i.getObject() for i in founds
               if api.content.get_state(i.getObject()) == 'published']
-    # import pdb;pdb.set_trace()
     return sorted(images, sort_by_position)
 
 

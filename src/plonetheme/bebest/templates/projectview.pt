@@ -173,8 +173,13 @@
 </section>
 
 <span tal:condition="gallery">
-     <metal:macro use-macro="context/bebest_macros/macros/gallery" />
+     <metal:macro use-macro="context/bebest_macros/macros/gallery-bebest" />
 </span>
+
+<metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
+
+<span tal:replace="nothing">
+
 
   <span tal:content="structure python:context.getMapZoom()"
         tal:omit-tag="">
@@ -226,8 +231,8 @@
 		</div>
    
    </section>
- 
-  <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-project-map.js"></script>
+
+</span> 
 </div>
   </metal:content-core>
 </metal:content-core>

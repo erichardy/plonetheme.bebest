@@ -166,48 +166,9 @@
    		</div>
    </section>
    <!-- DEBUT SECTION MAP -->
-   <style>
-     .leaflet-popup {
-     	position: absolute;
-     	left: 0px;
-     }
-     .leaflet-control-layers-toggle {
-		background-image:url(++theme++plonetheme.bebest/images/leaflet/layers.png);
-		width: 44px;
-		height: 44px;
-	 }
-	 #feature-infos {
-	    width: 15%;
-	    height: 130px;
-	    background: rgba(255, 255, 255, 1);
-	    position: absolute;
-	    padding: 5px;
-	    border: 1px solid grey;
-	    border-radius: 25px;
-	    display: none;
-	    z-index: 2000;
-	}
-	#bebest-map-info {
-	    font-weight: bold;
-	    color: black;
-	}
-   </style>
-  
-   <section class="section-map">
-   	<div class="feature-type col-xs-12">
-   	  Sites d'études
-   	</div>
-	<div id="bebest-map" class="col-xs-7 col-sm-8 col-md-9">
-	</div>
-	<div class="map-feature-panel col-xs-5 col-sm-4 col-md-3">
-	  <div class="feature-info">
-	  </div>
-	</div>
-   
-   <section>
   </div>
 
-  <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-map.js"></script>
+  <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-home-map.js"></script>
 
   </metal:content-core>
 </metal:content-core>
