@@ -70,7 +70,7 @@ var baseLayers = {
 L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
 
 var overlayMaps = {}
-fLen = missionsFeatures.length;
+fLen = missionsFeatures['features'].length;
 
 L.geoJson(missionsFeatures, {
 	style: function(f){
@@ -83,7 +83,7 @@ L.geoJson(missionsFeatures, {
 		}
 	},
 	onEachFeature: function(f, layer) {
-		overlayMaps[f.properties['mission']] = f ;
+		// overlayMaps[f.properties['mission']] = f ;
 		layer.on('click', function (e){
 			$("#feature-info h3").html(f.properties['name']);
 			$("#feature-info p").html(f.properties['description']);
@@ -92,6 +92,20 @@ L.geoJson(missionsFeatures, {
 		
 	}
 }).addTo(mymap);
+
+for (n = 0; n < fLen ; n++) {
+	feature = missionsFeatures['features'][n];
+	overlayMaps[feature['properties']['mission']] = feature;
+	// console.log(feature);
+}
+
+//Bouton pour permettre au utilisateurs de choisir la map, controle la variable si dessus.
+//L'option ``collapsed`` permet que la liste des layers soit ouverte par defaut
+L.control.layers(baseLayers, overlayMaps, {collapsed:false}).addTo(mymap);
+//L.control.layers(baseLayers, overlayMaps).addTo(mymap);
+//$("input.leaflet-control-layers-selector").prop("checked", true);
+
+L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
 
 /*
 for (n = 0; n < fLen ; n++) {
@@ -130,13 +144,6 @@ for (n = 0; n < fLen ; n++) {
 
 */
 
-//Bouton pour permettre au utilisateurs de choisir la map, controle la variable si dessus.
-// L'option ``collapsed`` permet que la liste des layers soir ouverte par defaut
-L.control.layers(baseLayers, overlayMaps, {collapsed:false}).addTo(mymap);
-// L.control.layers(baseLayers, overlayMaps).addTo(mymap);
-// $("input.leaflet-control-layers-selector").prop("checked", true);
-
-L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
 
 /* Pour positionner de facon fixe la fenetre d'info, la difficulte etait dans le 
  * fait que l'attribut css "position: absolute" s'applique relativement a l'ancetre

@@ -325,12 +325,17 @@ class project(Container):
         results = api.content.find(depth=1,
                                    portal_type='bebest.mission',
                                    path='/'.join(context.getPhysicalPath()))
+        missionsUUID = []
+        missionsFeatures = {}
         js = u'<script>'
         features = []
         # import pdb;pdb.set_trace()
         for mission in results:
             m = mission.getObject()
+            uuid = 'F' + api.content.get_uuid(m)
+            missionsUUID.append(uuid)
             geo = geojson.loads(m.geojson)
+            missionsFeatures[uuid] = geo
             if geo['type'] == 'FeatureCollection':
                 for f in geo['features']:
                     features.append(self._fprops(f, m))
@@ -338,8 +343,19 @@ class project(Container):
                 features.append(self._fprops(geo['feature'], m))
         if len(features) == 0:
             return False
+        
+        uuids = u'var uuids = ['
+        for uuid in missionsFeatures.keys():
+            uuids += u"'" + uuid + u"',"
+            prop = u'var ' + uuid + u' = '
+            prop += geojson.dumps(missionsFeatures[uuid]) + u';\n\n'
+            js += prop
+        uuids = uuids.strip(u',')
+        uuids += u'];\n\n'
+        logger.info(uuids)
+        js += uuids
         feature_collection = geojson.FeatureCollection(features)
-        js += 'missionsFeatures = ' + geojson.dumps(feature_collection)
+        js += u'var missionsFeatures = ' + geojson.dumps(feature_collection) + u";\n\n"
         js += u'</script>'
         return js
         """
