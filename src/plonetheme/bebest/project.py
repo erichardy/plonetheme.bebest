@@ -31,6 +31,8 @@ from zope.publisher.browser import BrowserView
 from plone import api
 # from plone.formwidget.contenttree import PathSourceBinder
 # from plone.namedfile.field import NamedBlobImage
+import geojson
+
 import logging
 # import urllib
 # import re
@@ -219,14 +221,11 @@ class ProjectView(BrowserView):
     def getGalleryImages(self):
         return ggi(self.context)
 
-    
-
-    def getMapZoom(self):
-        
-        return self.context.getMapZoom()
+    def getMapZoom(self, context):
+        return context.getMapZoom()
 
     def getMapCenter(self, context):
-        return self.context.getMapCenter(context)
+        return context.getMapCenter()
 
 
 class project(Container):
@@ -305,11 +304,46 @@ class project(Container):
     def getGeoJSON(self):
         return self.getMissionsFeatures()
 
+    def _fprops(self, f, m):
+        """
+        Ajoute des proprietes aux features geojson à partir des
+        attributs de la mission
+        f = feature
+        m = mission
+        """
+        fname = f['properties'].get('name') 
+        f['properties']['name'] = m.title + ' (' + fname + ')'
+        fdesc = f['properties'].get('description')
+        f['properties']['description'] = m.description + ' ('
+        f['properties']['description'] += fdesc + ')'
+        f['properties']['url'] = m.absolute_url()
+        f['properties']['mission'] = m.title
+        return f
+    
     def getMissionsFeatures(self):
         context = self
         results = api.content.find(depth=1,
                                    portal_type='bebest.mission',
                                    path='/'.join(context.getPhysicalPath()))
+        js = u'<script>'
+        features = []
+        # import pdb;pdb.set_trace()
+        for mission in results:
+            m = mission.getObject()
+            geo = geojson.loads(m.geojson)
+            if geo['type'] == 'FeatureCollection':
+                for f in geo['features']:
+                    features.append(self._fprops(f, m))
+            else:
+                features.append(self._fprops(geo['feature'], m))
+        if len(features) == 0:
+            return False
+        feature_collection = geojson.FeatureCollection(features)
+        js += 'missionsFeatures = ' + geojson.dumps(feature_collection)
+        js += u'</script>'
+        return js
+        """
+        Revision complete du code en utilisant geojson !
         js = u'<script>'
         missionsNames = u'\nvar missionsNames = ['
         missionsUUID = u'\nvar missionsUUID = ['
@@ -317,9 +351,16 @@ class project(Container):
         missionsURL = u'\nvar missionsURL = ['
         missionsSubtitle = u'\nvar missionsSubtitle = ['
         features = []
+        gfeatures = []
         for mission in results:
             m = mission.getObject()
             geo = m.geojson
+            
+            if fgeo['type'] == 'FeatureCollection':
+                for f in fgeo['features']:
+                    gfeatures.append(f)
+            else:
+                gfeatures.append(fgeo)
             try:
                 if len(geo) > 5:
                     title = self._toHTML(m.title)
@@ -359,6 +400,7 @@ class project(Container):
         # logger.info(layers)
         # logger.info(js)
         return js
+        """
 
     def getMapZoom(self):
         zoomjs = '<script>var zoom = 4;</script>'

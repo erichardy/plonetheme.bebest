@@ -10,7 +10,8 @@
 
 <metal:row define-macro="map-bebest">
   <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
-   <section class="section-map">
+   <section class="section-map"
+            tal:on-error="string:">
      <span>
    		<span tal:content="structure python:context.getMapZoom()"
 	        tal:omit-tag="">
@@ -33,19 +34,20 @@
 		</div>
         <!----le panneau des features---->
         <div class="map-feature-panel col-xs-5 col-sm-4 col-md-3">
-        	<div class="feature-info">
+        	<div class="feature-info" id="feature-info">
             	<!---titre de l'item--->
-                <h3>
+                <h3 tal:content="string:${feature_info_title}">
                 	Saint-Pierre et Miquelon
                 </h3>
                 <!---un petit filet--->
                 <hr />
                 <!---description de l'item--->
-                <p>
+                <p tal:content="string:${feature_info_text}">
                 	Archipel français d'Amérique du Nord situé dans l'océan Atlantique nord, à 25 km au sud de l’île canadienne de Terre-Neuve.
                 </p>
                 <!---lien vers l'item--->
-                <a href="studysites.html">
+                <a href="" 
+                   tal:attributes="href string:${feature_info_link}">
                 	En savoir plus...
                 </a>
             </div>

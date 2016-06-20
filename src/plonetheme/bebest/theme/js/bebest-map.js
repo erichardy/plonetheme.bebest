@@ -71,6 +71,29 @@ L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/
 
 var overlayMaps = {}
 fLen = missionsFeatures.length;
+
+L.geoJson(missionsFeatures, {
+	style: function(f){
+		styles = {};
+		if (f.properties['stroke']) {
+			styles['color'] = f.properties['stroke'];
+		}
+		if (f.properties['stroke-width']) {
+			styles['weight'] = f.properties['stroke-width'];
+		}
+	},
+	onEachFeature: function(f, layer) {
+		overlayMaps[f.properties['mission']] = f ;
+		layer.on('click', function (e){
+			$("#feature-info h3").html(f.properties['name']);
+			$("#feature-info p").html(f.properties['description']);
+			$("#feature-info a").attr('href', f.properties['url']);
+		})
+		
+	}
+}).addTo(mymap);
+
+/*
 for (n = 0; n < fLen ; n++) {
 	features = missionsFeatures[n];
 	layer = L.geoJson();
@@ -93,7 +116,9 @@ for (n = 0; n < fLen ; n++) {
 			layer.bindPopup(f.properties.name);
 		}
 		layer.addData(f);
+		
 	}
+	$("#feature-info h3").html= missionsNames[n];
 	// on passe le nom, le sous-titre et l'URL de la mission
 	popupContent = '<h2><a href="' + missionsURL[n] + '">' + missionsNames[n] + '</a></h2>';
 	popupContent += '<br />';
@@ -102,6 +127,8 @@ for (n = 0; n < fLen ; n++) {
 	overlayMaps[missionsNames[n]] = layer;
 	layer.addTo(mymap);
 }
+
+*/
 
 //Bouton pour permettre au utilisateurs de choisir la map, controle la variable si dessus.
 // L'option ``collapsed`` permet que la liste des layers soir ouverte par defaut
@@ -117,11 +144,11 @@ L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/
  * positionnees. La solution consiste donc a aller chercher dynamiquement la position de
  * la section qui contient la carte et d'afficher le popup d'info relativement a
  * cette derniere. 
- */
+
 position = $("#bebest-map").position();
 $("#feature-infos").css("top", position.top + 100);
 $("#feature-infos").css("left", position.left + 10);
-
+ */
 
 
 

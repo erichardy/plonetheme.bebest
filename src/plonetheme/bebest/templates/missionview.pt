@@ -140,7 +140,7 @@
 	  </div>
 	 </div>
    <span tal:condition="gallery">
-     <metal:macro use-macro="context/bebest_macros/macros/gallery" />
+     <metal:macro use-macro="context/bebest_macros/macros/gallery-bebest" />
    </span>
    <p>&nbsp;</p>
    <!-- DEBUT SECTION MAP -->
