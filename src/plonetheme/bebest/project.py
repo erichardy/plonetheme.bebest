@@ -350,6 +350,9 @@ class project(Container):
         # logger.info(js)
         return js
 
+    def getGeoJSON(self):
+        return self.getMissionsFeatures()
+
     def getMapZoom(self):
         zoomjs = '<script>var zoom = 4;</script>'
         try:
