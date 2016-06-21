@@ -325,37 +325,52 @@ class project(Container):
         results = api.content.find(depth=1,
                                    portal_type='bebest.mission',
                                    path='/'.join(context.getPhysicalPath()))
-        missionsUUID = []
-        missionsFeatures = {}
         js = u'<script>'
-        features = []
+        missionsUUID = []
+        featuresCollections = {}
         # import pdb;pdb.set_trace()
         for mission in results:
             m = mission.getObject()
             uuid = 'F' + api.content.get_uuid(m)
+            # la liste des uuid des missions
             missionsUUID.append(uuid)
-            geo = geojson.loads(m.geojson)
-            missionsFeatures[uuid] = geo
-            if geo['type'] == 'FeatureCollection':
-                for f in geo['features']:
-                    features.append(self._fprops(f, m))
-            else:
-                features.append(self._fprops(geo['feature'], m))
-        if len(features) == 0:
+            geo = m.geojson
+            # ici, on peut modifier les parametres des geojson des missions
+            # i.e. : ajouter des proprietes...
+            #....
+            
+            # import pdb;pdb.set_trace()
+            xgeo = geojson.loads(geo)
+            xgeo['name'] = m.title
+            xgeo['description'] = m.description
+            xgeo['url'] = m.absolute_url()
+            
+            # la liste des geojson des missions sous forme de chaine de car.
+            # pour les traiter en js
+            featuresCollections[uuid] = xgeo
+            
+        if len(featuresCollections.keys()) == 0:
             return False
-        
+        # on genere un tableau javascript qui contient les uuid des missions
         uuids = u'var uuids = ['
-        for uuid in missionsFeatures.keys():
+        for uuid in missionsUUID:
             uuids += u"'" + uuid + u"',"
-            prop = u'var ' + uuid + u' = '
-            prop += geojson.dumps(missionsFeatures[uuid]) + u';\n\n'
-            js += prop
         uuids = uuids.strip(u',')
         uuids += u'];\n\n'
-        logger.info(uuids)
+        # logger.info(uuids)
         js += uuids
-        feature_collection = geojson.FeatureCollection(features)
-        js += u'var missionsFeatures = ' + geojson.dumps(feature_collection) + u";\n\n"
+        for uuid in featuresCollections.keys():
+            fjs = u'\n var ' + uuid + u' = '
+            fjs += geojson.dumps(featuresCollections[uuid])
+            fjs += u';\n'
+            js += fjs
+        js += u"\n\n"
+        fjs += u'var featuresCollections = ['
+        for uuid in missionsUUID:
+            fjs += geojson.dumps(featuresCollections[uuid]) + u','
+        fjs = fjs.strip(u',')
+        fjs += u'];\n'
+        js += fjs
         js += u'</script>'
         return js
         """

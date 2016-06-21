@@ -11,7 +11,7 @@
 <metal:row define-macro="map-bebest">
   <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
    <section class="section-map"
-            tal:on-error="string:">
+            >
      <span>
    		<span tal:content="structure python:context.getMapZoom()"
 	        tal:omit-tag="">
@@ -27,7 +27,7 @@
 	  	</span>
    		<!---le type de feature présenté (sites ou missions)---->
         <div class="feature-type col-xs-12">
-            Sites d'étude
+            <span tal:content="string:${feature_info_title}">Sites d'étude</span>
         </div>
 		<!----La map en elle même------->
         <div id="bebest-map" class="col-xs-7 col-sm-8 col-md-9">

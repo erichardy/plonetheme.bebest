@@ -69,36 +69,83 @@ var baseLayers = {
 
 L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
 
-var overlayMaps = {}
-fLen = missionsFeatures['features'].length;
-
-L.geoJson(missionsFeatures, {
-	style: function(f){
-		styles = {};
-		if (f.properties['stroke']) {
-			styles['color'] = f.properties['stroke'];
+// on est dans le cas, ici ou on travaille avec une 'FeatureCollection'
+// i.e. : les missions
+if (typeof missionsFeatures !== 'undefined'){
+	var overlayMaps = {} ;
+	fLen = missionsFeatures['features'].length;
+	L.geoJson(missionsFeatures, {
+		style: function(f){
+			styles = {};
+			if (f.properties['stroke']) {
+				styles['color'] = f.properties['stroke'];
+			}
+			if (f.properties['stroke-width']) {
+				styles['weight'] = f.properties['stroke-width'];
+			}
+		},
+		onEachFeature: function(f, layer) {
+			overlayMaps[f['properties']['mission']] = layer ;
+			layer.on('click', function (e){
+				$("#feature-info h3").html(f.properties['name']);
+				$("#feature-info p").html(f.properties['description']);
+				$("#feature-info a").attr('href', f.properties['url']);
+			})
+			
 		}
-		if (f.properties['stroke-width']) {
-			styles['weight'] = f.properties['stroke-width'];
-		}
-	},
-	onEachFeature: function(f, layer) {
-		// overlayMaps[f.properties['mission']] = f ;
-		layer.on('click', function (e){
-			$("#feature-info h3").html(f.properties['name']);
-			$("#feature-info p").html(f.properties['description']);
-			$("#feature-info a").attr('href', f.properties['url']);
-		})
-		
-	}
-}).addTo(mymap);
-
-for (n = 0; n < fLen ; n++) {
-	feature = missionsFeatures['features'][n];
-	overlayMaps[feature['properties']['mission']] = feature;
-	// console.log(feature);
+	}).addTo(mymap);
 }
 
+if (typeof featuresCollections !== 'undefined'){
+	fLen = featuresCollections.length;
+	var overlayMaps = {};
+	for (n = 0; n < fLen ; n++) {
+		layer = L.geoJson();
+		featuresCollection = featuresCollections[n];
+		
+		for (i = 0; i < featuresCollection['features'].length ; i++) {
+			f = featuresCollection['features'][i];
+			style = {};
+			if (f.properties['stroke']) {
+				style['color'] = f.properties['stroke'];
+			}
+			if (f.properties['stroke-width']) {
+				// stroke-
+				style['weight'] = f.properties['stroke-width'];
+			}
+			if (f.properties['fill']) {
+				style['fillColor'] = f.properties['fill'];
+			}
+			layer.addData(f);
+		}
+		overlayMaps[featuresCollection['name']] = layer;
+		layer.addTo(mymap);
+		console.log(layer._leaflet_id);
+		layer.on('click', function(e){
+			// console.log(featuresCollection['name']);
+			alert(layer._leaflet_id);
+			$("#feature-info h3").html(featuresCollection['name']);
+			$("#feature-info p").html(featuresCollection['description']);
+		});
+	}
+}
+//on est dans le cas, ici ou on travaille avec un ensemble de
+// 'FeatureCollection's. Ces collections sont dans une liste :
+// 'featuresCollections' dont les clés sont les uuid des missions
+
+/*
+ * il faut traiter les ensembles de featuresCollection differemment !
+ * cf le code ci-dessous : for (n = 0; ....
+ */
+/*
+for (n = 0; n < fLen ; n++) {
+	// on cree une couche par FeaturesCollection
+	layer = L.geojson();
+	features = featuresCollections[n]['features'];
+	overlayMaps[features['properties']['mission']] = feature;
+	// console.log(feature);
+}
+*/
 //Bouton pour permettre au utilisateurs de choisir la map, controle la variable si dessus.
 //L'option ``collapsed`` permet que la liste des layers soit ouverte par defaut
 L.control.layers(baseLayers, overlayMaps, {collapsed:false}).addTo(mymap);
