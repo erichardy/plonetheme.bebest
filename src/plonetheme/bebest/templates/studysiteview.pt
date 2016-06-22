@@ -16,7 +16,10 @@
                    displayEN python:context.display_en;
                    pictAuthor python:context.getPictAuthor();
                    missions python:context.getMissions();
-                   gallery python:view.getGalleryImages()">
+                   gallery python:view.getGalleryImages();
+                   feature_info_title string:${context/title};
+                   feature_info_text string:${context/description};
+                   feature_info_link string:">
 
   <div id="bg-page-img" class="hidden-xs"
          tal:define="image nocall:context/main_pict;">
@@ -72,60 +75,11 @@
   </div>
 
 <span tal:condition="gallery">
-     <metal:macro use-macro="context/bebest_macros/macros/gallery" />
+     <metal:macro use-macro="context/bebest_macros/macros/gallery-bebest" />
 </span>
 
-  <span tal:content="structure python:context.getMapZoom()"
-        tal:omit-tag="">
-        map zoom
-  </span>
-  <span tal:content="structure python:context.getMapCenter()"
-        tal:omit-tag="">
-        map center
-  </span>
+<metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
 
-  <style>
-     .leaflet-popup {
-     	position: absolute;
-     	left: 0px;
-     }
-     .leaflet-control-layers-toggle {
-		background-image:url(++theme++plonetheme.bebest/images/leaflet/layers.png);
-		width: 44px;
-		height: 44px;
-	 }
-	 #feature-infos {
-	    width: 15%;
-	    max-height: 5000px;
-	    background: rgba(255, 255, 255, 1);
-	    position: absolute;
-	    padding: 5px;
-	    border: 1px solid grey;
-	    border-radius: 5px;
-	    display: none;
-	    z-index: 2000;
-	}
-	#bebest-map-info {
-	    font-weight: bold;
-	    color: black;
-	}
-   </style>
-    <section id="bebest-projet-map" tal:condition="python:features">
-   	<div>
-   	<span tal:omit-tag="" tal:content="structure string:${features}">
-   	  features
-   	</span>
-	   	<div id="feature-infos">
-	   	  <span class="bebest-feature-name" id="bebest-feature-name">name</span>
-	   	  <br />
-	   	  <span class="bebest-feature-description" id="bebest-feature-description"></span>
-	   	</div>
-   	</div>
-		<div id="bebest-map">
-		</div>
-    <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-studysite-map.js"></script>
-   </section>
- 
   
 </div>
   </metal:content-core>
