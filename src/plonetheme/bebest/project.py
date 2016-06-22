@@ -384,7 +384,6 @@ class project(Container):
         js += u'</script>'
         return js
 
-
     def getMapZoom(self):
         zoomjs = '<script>var zoom = 4;</script>'
         try:

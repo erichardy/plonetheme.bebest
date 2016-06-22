@@ -46,8 +46,8 @@ class IPlonethemeBebestSettings(model.Schema):
                            'about_bg_image',
                            'about_document_tag',
                            'zoom',
-                            'map_center',
-                            ])
+                           'map_center',
+                           ])
 
     carousel_label = TextLine(title=_(u"carousel label"),
                               description=_(u"for carousel at home page"),

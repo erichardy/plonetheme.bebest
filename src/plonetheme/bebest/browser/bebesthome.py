@@ -5,7 +5,6 @@ from zope.publisher.browser import BrowserView
 # from operator import attrgetter
 from plone import api
 import geojson
-from plonetheme.bebest.utils import getMissionsFeatures
 
 logger = logging.getLogger('bebest')
 
@@ -309,7 +308,7 @@ class bebestHome(BrowserView):
             featuresCollections[uuid] = geo
         if len(featuresCollections.keys()) == 0:
             return False
-        
+
         js = u'<script>'
         fjs = u'\n'
         fjs += u'var featuresCollections = ['
