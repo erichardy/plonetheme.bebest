@@ -27,15 +27,6 @@
                    feature_info_text string:${context/description};
                    feature_info_link string:">
 
-  <span tal:content="structure python:view.getMapZoom()"
-        tal:omit-tag="">
-        map zoom
-  </span>
-  <span tal:content="structure python:view.getMapCenter()"
-        tal:omit-tag="">
-        map center
-  </span>
-
     <!-----Image de fond,fixe, l'image source est l'image principale---->
     <div id="bg-page-img" class="hidden-xs"
          tal:define="image nocall:context/main_pict;">
@@ -151,7 +142,6 @@
 
   </div>
 </div>
-  <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-mission-map.js"></script>
 
   </metal:content-core>
 </metal:content-core>

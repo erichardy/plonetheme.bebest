@@ -19,6 +19,45 @@ function onEachFeature(feature, layer) {
 	});
 }
 
+/* A partir des properties qui sont positionnees avec le site
+ * http://geojson.io/ , on etabli le dictionnaire des styles
+ * necessaire a leaflet
+ */
+function styleFromFeature(f) {
+	style = {}
+	if (f.properties['stroke']) {
+		style['color'] = f.properties['stroke'];
+		f.properties['stroke'] = true;
+	}
+	if (f.properties['color']) {
+		style['color'] = f.properties['color'];
+		f.properties['stroke'] = true;
+	}
+	if (f.properties['marker-color']) {
+		style['color'] = f.properties['marker-color'];
+		f.properties['color'] = f.properties['marker-color'];
+	}
+	if (f.properties['stroke-width']) {
+		style['weight'] = f.properties['stroke-width'];
+		f.properties['weight'] = f.properties['stroke-width'];
+	}
+	if (f.properties['stroke-opacity']) {
+		style['opacity'] = f.properties['stroke-opacity'];
+		f.properties['opacity'] = f.properties['stroke-opacity']
+	}
+	if (f.properties['fill']) {
+		style['fillColor'] = f.properties['fill'];
+		style['fill'] = true;
+		f.properties['fillColor'] = f.properties['fill'];
+		f.properties['fill'] = true;
+	}
+	if (f.properties['fill-opacity']) {
+		style['fillOpacity'] = f.properties['fill-opacity'];
+		f.properties['fillOpacity'] = f.properties['fill-opacity'];
+	}
+	return style
+}
+
 function layerClic(layer, e) {
 	console.log(e.latlng);
 	console.log(e.target);
@@ -67,7 +106,8 @@ var baseLayers = {
 		"Stamen Toner": stamenTiles
 };
 
-L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
+// L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
+L.Icon.Default.imagePath = '++theme++plonetheme.bebest/images/leaflet/' ;
 
 // Cas des mission, on a une 'FeatureCollection'
 if (typeof missionsFeatures !== 'undefined'){
@@ -75,17 +115,12 @@ if (typeof missionsFeatures !== 'undefined'){
 	fLen = missionsFeatures['features'].length;
 	L.geoJson(missionsFeatures, {
 		style: function(f){
-			styles = {};
-			if (f.properties['stroke']) {
-				styles['color'] = f.properties['stroke'];
-			}
-			if (f.properties['stroke-width']) {
-				styles['weight'] = f.properties['stroke-width'];
-			}
+			return styleFromFeature(f);
 		},
 		onEachFeature: function(f, layer) {
 			overlayMaps[f['properties']['name']] = layer ;
 			layer.on('click', function (e){
+				console.log(f);
 				$("#feature-info h3").html(f.properties['name']);
 				$("#feature-info p").html(f.properties['description']);
 				$("#feature-info a").attr('href', f.properties['url']);

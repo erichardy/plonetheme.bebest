@@ -45,6 +45,8 @@ class IPlonethemeBebestSettings(model.Schema):
                            'tag_home_news',
                            'about_bg_image',
                            'about_document_tag',
+                           'home_map_title',
+                           'home_map_description',
                            'zoom',
                            'map_center',
                            ])
