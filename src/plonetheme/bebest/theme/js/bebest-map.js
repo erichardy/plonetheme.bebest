@@ -69,8 +69,7 @@ var baseLayers = {
 
 L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
 
-// on est dans le cas, ici ou on travaille avec une 'FeatureCollection'
-// i.e. : les missions
+// Cas des mission, on a une 'FeatureCollection'
 if (typeof missionsFeatures !== 'undefined'){
 	var overlayMaps = {} ;
 	fLen = missionsFeatures['features'].length;
@@ -85,7 +84,7 @@ if (typeof missionsFeatures !== 'undefined'){
 			}
 		},
 		onEachFeature: function(f, layer) {
-			overlayMaps[f['properties']['mission']] = layer ;
+			overlayMaps[f['properties']['name']] = layer ;
 			layer.on('click', function (e){
 				$("#feature-info h3").html(f.properties['name']);
 				$("#feature-info p").html(f.properties['description']);
@@ -95,7 +94,8 @@ if (typeof missionsFeatures !== 'undefined'){
 		}
 	}).addTo(mymap);
 }
-
+// cas des sites d'etude et des projets. On a une liste de
+// 'featuresCollection'
 if (typeof featuresCollections !== 'undefined'){
 	fLen = featuresCollections.length;
 	var overlayMaps = {};

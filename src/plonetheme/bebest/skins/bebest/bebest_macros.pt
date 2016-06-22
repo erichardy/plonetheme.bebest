@@ -11,7 +11,8 @@
 <metal:row define-macro="map-bebest">
   <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
    <section class="section-map"
-            >
+            tal:on-error="string:No map !">
+     <span tal:replace="nothing" tal:on-error="string:No map !">rien</span>
      <span>
    		<span tal:content="structure python:context.getMapZoom()"
 	        tal:omit-tag="">

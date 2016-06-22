@@ -384,7 +384,7 @@ class mission(Container):
         geo = self.geojson
         try:
             if len(geo) > 5:
-                geojson = "<script>var features = "
+                geojson = "<script>var missionsFeatures = "
                 geojson += self.geojson
                 geojson += ";</script>"
                 return geojson

@@ -22,7 +22,10 @@
                    textEN python:context.getTextEN();
                    displayEN python:context.displayEN();
                    toLocalizedTime nocall:context/@@plone/toLocalizedTime;
-                   gallery python:view.getGalleryImages()">
+                   gallery python:view.getGalleryImages();
+                   feature_info_title string:${context/title};
+                   feature_info_text string:${context/description};
+                   feature_info_link string:">
 
   <span tal:content="structure python:view.getMapZoom()"
         tal:omit-tag="">
@@ -143,52 +146,8 @@
      <metal:macro use-macro="context/bebest_macros/macros/gallery-bebest" />
    </span>
    <p>&nbsp;</p>
-   <!-- DEBUT SECTION MAP -->
-   <style>
-     .leaflet-popup {
-     	position: absolute;
-     	left: 0px;
-     }
-     .leaflet-control-layers-toggle {
-		background-image:url(++theme++plonetheme.bebest/images/leaflet/layers.png);
-		width: 44px;
-		height: 44px;
-	 }
-	 #feature-infos {
-	    width: 15%;
-	    max-height: 5000px;
-	    background: rgba(255, 255, 255, 1);
-	    position: absolute;
-	    padding: 5px;
-	    border: 1px solid grey;
-	    border-radius: 5px;
-	    display: none;
-	    z-index: 2000;
-	}
-	#bebest-map-info {
-	    font-weight: bold;
-	    color: black;
-	}
-   </style>
 
-   <section id="bebest-mission-map" tal:condition="python:features">
-   	<div class="container-fluid bg-bright">
-   	<div class=container>
-	   	<span tal:omit-tag="" tal:content="structure string:${features}">
-	   	  features
-	   	</span>
-	   	<div id="feature-infos">
-	   	  <span class="bebest-feature-name" id="bebest-feature-name">name</span>
-	   	  <br />
-	   	  <span class="bebest-feature-description" id="bebest-feature-description"></span>
-	   	</div>
-   	
-	<div id="bebest-map">
-	</div>
-	</div>
-	</div>
-   
-   </section>
+   <metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
 
   </div>
 </div>
