@@ -311,7 +311,7 @@ class project(Container):
         f = feature
         m = mission
         """
-        fname = f['properties'].get('name') 
+        fname = f['properties'].get('name')
         f['properties']['name'] = m.title + ' (' + fname + ')'
         fdesc = f['properties'].get('description')
         f['properties']['description'] = m.description + ' ('
@@ -319,7 +319,7 @@ class project(Container):
         f['properties']['url'] = m.absolute_url()
         f['properties']['mission'] = m.title
         return f
-    
+
     def getMissionsFeatures(self):
         context = self
         results = api.content.find(depth=1,
@@ -337,7 +337,7 @@ class project(Container):
             geo = geojson.loads(m.geojson)
             # ici, on peut modifier les parametres des geojson des missions
             # i.e. : ajouter des proprietes...
-            #....
+            # ....
             for f in geo['features']:
                 name = f['properties'].get('name')
                 if name:
@@ -355,7 +355,7 @@ class project(Container):
                 f['properties']['url'] = url
             geo['name'] = m.title
             featuresCollections[uuid] = geo
-            
+
         if len(featuresCollections.keys()) == 0:
             return False
         # on genere un tableau javascript qui contient les uuid des missions
@@ -393,7 +393,6 @@ class project(Container):
         for mission in results:
             m = mission.getObject()
             geo = m.geojson
-            
             if fgeo['type'] == 'FeatureCollection':
                 for f in fgeo['features']:
                     gfeatures.append(f)
