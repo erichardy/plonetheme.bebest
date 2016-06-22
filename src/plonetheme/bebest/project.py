@@ -334,20 +334,27 @@ class project(Container):
             uuid = 'F' + api.content.get_uuid(m)
             # la liste des uuid des missions
             missionsUUID.append(uuid)
-            geo = m.geojson
+            geo = geojson.loads(m.geojson)
             # ici, on peut modifier les parametres des geojson des missions
             # i.e. : ajouter des proprietes...
             #....
-            
-            # import pdb;pdb.set_trace()
-            xgeo = geojson.loads(geo)
-            xgeo['name'] = m.title
-            xgeo['description'] = m.description
-            xgeo['url'] = m.absolute_url()
-            
-            # la liste des geojson des missions sous forme de chaine de car.
-            # pour les traiter en js
-            featuresCollections[uuid] = xgeo
+            for f in geo['features']:
+                name = f['properties'].get('name')
+                if name:
+                    f['properties']['name'] = name
+                else:
+                    f['properties']['name'] = m.title
+                description = f['properties'].get('description')
+                desc_plus = u'Mission : ' + m.title
+                if description:
+                    desc = description + u'<br />' + desc_plus
+                    f['properties']['description'] = desc
+                else:
+                    f['properties']['description'] = desc_plus
+                url = m.absolute_url()
+                f['properties']['url'] = url
+            geo['name'] = m.title
+            featuresCollections[uuid] = geo
             
         if len(featuresCollections.keys()) == 0:
             return False

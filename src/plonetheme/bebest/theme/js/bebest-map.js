@@ -41,13 +41,13 @@ var mymap = L.map('bebest-map', {
 
 /* les tuiles */
 var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
- 	attribution: 'OpenStreetMap',  //Attribution du nom OpenStreetMap en bas a droit a coté du lien Leaflet
-	minZoom: 2 //Zoom minimum, on peut pas zoomer moins que ça comme ça on évite une répétition trop grande de la map.
+ 	attribution: 'OpenStreetMap',  // Affichage du nom OpenStreetMap en bas a droit a coté du lien Leaflet
+	minZoom: 2 //Zoom minimum
 });
 
 var stamenTiles = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', { //Appel du tilelayer StamenToner
-	attribution: 'StamenToner', //Attribution du nom StamenToner en bas a droit a coté du lien Leaflet
-	minZoom: 2	 //Zoom minimum, on peut pas zoomer moins que ça comme ça on évite une répétition trop grande de la map.
+	attribution: 'StamenToner', // Affichage du nom StamenToner en bas a droit a coté du lien Leaflet
+	minZoom: 2	 //Zoom minimum
 }); 
 
 osm.addTo(mymap);
@@ -102,7 +102,7 @@ if (typeof featuresCollections !== 'undefined'){
 	for (n = 0; n < fLen ; n++) {
 		layer = L.geoJson();
 		featuresCollection = featuresCollections[n];
-		
+
 		for (i = 0; i < featuresCollection['features'].length ; i++) {
 			f = featuresCollection['features'][i];
 			style = {};
@@ -120,140 +120,21 @@ if (typeof featuresCollections !== 'undefined'){
 		}
 		overlayMaps[featuresCollection['name']] = layer;
 		layer.addTo(mymap);
-		console.log(layer._leaflet_id);
 		layer.on('click', function(e){
-			// console.log(featuresCollection['name']);
-			alert(layer._leaflet_id);
-			$("#feature-info h3").html(featuresCollection['name']);
-			$("#feature-info p").html(featuresCollection['description']);
+			name = e['layer']['feature']['properties']['name'];
+			description = e['layer']['feature']['properties']['description'];
+			url = e['layer']['feature']['properties']['url'];
+			$("#feature-info h3").html(name);
+			$("#feature-info p").html(description);
+			$("#feature-info a").attr("href" , url);
 		});
 	}
 }
-//on est dans le cas, ici ou on travaille avec un ensemble de
-// 'FeatureCollection's. Ces collections sont dans une liste :
-// 'featuresCollections' dont les clés sont les uuid des missions
 
-/*
- * il faut traiter les ensembles de featuresCollection differemment !
- * cf le code ci-dessous : for (n = 0; ....
- */
-/*
-for (n = 0; n < fLen ; n++) {
-	// on cree une couche par FeaturesCollection
-	layer = L.geojson();
-	features = featuresCollections[n]['features'];
-	overlayMaps[features['properties']['mission']] = feature;
-	// console.log(feature);
-}
-*/
 //Bouton pour permettre au utilisateurs de choisir la map, controle la variable si dessus.
 //L'option ``collapsed`` permet que la liste des layers soit ouverte par defaut
 L.control.layers(baseLayers, overlayMaps, {collapsed:false}).addTo(mymap);
-//L.control.layers(baseLayers, overlayMaps).addTo(mymap);
+
 //$("input.leaflet-control-layers-selector").prop("checked", true);
 
 L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
-
-/*
-for (n = 0; n < fLen ; n++) {
-	features = missionsFeatures[n];
-	layer = L.geoJson();
-	for (i = 0; i < features['features'].length ; i++) {
-		f = features['features'][i];
-		style = {};
-		if (f.properties['stroke']) {
-			style['color'] = f.properties['stroke'];
-		}
-		if (f.properties['stroke-width']) {
-			// stroke-
-			style['weight'] = f.properties['stroke-width'];
-		}
-		if (f.properties['fill']) {
-			style['fillColor'] = f.properties['fill'];
-		}
-		// onEachFeature(f, layer);
-		if (f.properties && f.properties.name) {
-			console.log(f.properties.name);
-			layer.bindPopup(f.properties.name);
-		}
-		layer.addData(f);
-		
-	}
-	$("#feature-info h3").html= missionsNames[n];
-	// on passe le nom, le sous-titre et l'URL de la mission
-	popupContent = '<h2><a href="' + missionsURL[n] + '">' + missionsNames[n] + '</a></h2>';
-	popupContent += '<br />';
-	popupContent += missionsSubtitle[n];
-	layer.bindPopup(popupContent);
-	overlayMaps[missionsNames[n]] = layer;
-	layer.addTo(mymap);
-}
-
-*/
-
-
-/* Pour positionner de facon fixe la fenetre d'info, la difficulte etait dans le 
- * fait que l'attribut css "position: absolute" s'applique relativement a l'ancetre
- * le plus proche qui a ete positione _explicitement_. Or, les "<section>" ne sont pas
- * positionnees. La solution consiste donc a aller chercher dynamiquement la position de
- * la section qui contient la carte et d'afficher le popup d'info relativement a
- * cette derniere. 
-
-position = $("#bebest-map").position();
-$("#feature-infos").css("top", position.top + 100);
-$("#feature-infos").css("left", position.left + 10);
- */
-
-
-
-
-/* code fortement inspire de http://jsfiddle.net/expedio/z1nw3pt4/  pour le popup
- * quand on clique sur un point, une ligne ou un polygone
- * */
-/* Pour les options de style, voir http://leafletjs.com/reference.html#path */
-/*
-props = ['']
-for (i = 0; i < features['features'].length ; i++) {
-	f = features['features'][i];
-	// console.log(f);
-	style = {};
-	if (f.properties['stroke']) {
-		style['color'] = f.properties['stroke'];
-	}
-	if (f.properties['stroke-width']) {
-		// stroke-
-		style['weight'] = f.properties['stroke-width'];
-	}
-	if (f.properties['fill']) {
-		style['fillColor'] = f.properties['fill'];
-	}
-	L.geoJson(f, {
-		"style": style
-	}).addTo(mymap)
-}
-
-function onEachFeature(feature, layer) {
-	layer.on('click', function (e) {
-		title = " ";
-		if (feature.properties.name) {
-			title = '<h3>' + feature.properties.name + '</h3>';
-		}
-		description = " ";
-		if (feature.properties.description) {
-			description = feature.properties.description;
-		}
-		document.getElementById("bebest-feature-name").innerHTML = title;
-		document.getElementById("bebest-feature-description").innerHTML = description;
-		$("#feature-infos").stop();
-        $("#feature-infos").fadeIn("fast");
-        // console.log(feature.properties.name);
-        $("#feature-infos").fadeOut(8000);
-	});
-}
-
-geojsonLayer = L.geoJson(features, {
-    onEachFeature: onEachFeature
-}).addTo(mymap);
-
-*/
-// mymap.addLayer(geojsonLayer);
