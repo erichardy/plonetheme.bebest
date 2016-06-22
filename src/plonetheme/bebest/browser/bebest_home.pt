@@ -18,7 +18,13 @@
                    thumbs python:view.getCarouselThumbnails();
                    newsItems python:view.getHomeNews();
                    aboutBgImage python:view.getAboutBgImage();
-                   aboutDocuments python:view.getAboutUsDocuments()">
+                   aboutDocuments python:view.getAboutUsDocuments();
+                   feature_info_title string:${view/getMapTitle};
+                   feature_info_text string:${view/getMapDescription};
+                   feature_info_link string:;
+                   zoom python:view.getMapZoom();
+                   center python:view.getMapCenter();
+                   geojson python:view.getGeoJSON()">
   
     <section id="bebest-home-carousel"
              class="hidden-xs"
@@ -165,10 +171,8 @@
    			</div>
    		</div>
    </section>
-   <!-- DEBUT SECTION MAP -->
+   <metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
   </div>
-
-  <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-home-map.js"></script>
 
   </metal:content-core>
 </metal:content-core>

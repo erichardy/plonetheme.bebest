@@ -37,6 +37,7 @@ import logging
 # import urllib
 # import re
 from plonetheme.bebest.utils import getTitleFromVoc
+from plonetheme.bebest.utils import getMissionsFeatures
 from plonetheme.bebest.utils import getGalleryImages as ggi
 from plonetheme.bebest import _
 
@@ -221,12 +222,6 @@ class ProjectView(BrowserView):
     def getGalleryImages(self):
         return ggi(self.context)
 
-    def getMapZoom(self, context):
-        return context.getMapZoom()
-
-    def getMapCenter(self, context):
-        return context.getMapCenter()
-
 
 class project(Container):
     implements(IProject)
@@ -302,7 +297,12 @@ class project(Container):
         return s
 
     def getGeoJSON(self):
-        return self.getMissionsFeatures()
+        context = self
+        results = api.content.find(depth=1,
+                                   portal_type='bebest.mission',
+                                   path='/'.join(context.getPhysicalPath()))
+        missions = [mission.getObject() for mission in results]
+        return getMissionsFeatures(missions)
 
     def _fprops(self, f, m):
         """
@@ -321,6 +321,9 @@ class project(Container):
         return f
 
     def getMissionsFeatures(self):
+        """
+        no more used, see utils.getMissionsFeatures(list_of_missions_objects)
+        """
         context = self
         results = api.content.find(depth=1,
                                    portal_type='bebest.mission',
@@ -380,64 +383,7 @@ class project(Container):
         js += fjs
         js += u'</script>'
         return js
-        """
-        Revision complete du code en utilisant geojson !
-        js = u'<script>'
-        missionsNames = u'\nvar missionsNames = ['
-        missionsUUID = u'\nvar missionsUUID = ['
-        missionsFeatures = u'\nvar missionsFeatures = ['
-        missionsURL = u'\nvar missionsURL = ['
-        missionsSubtitle = u'\nvar missionsSubtitle = ['
-        features = []
-        gfeatures = []
-        for mission in results:
-            m = mission.getObject()
-            geo = m.geojson
-            if fgeo['type'] == 'FeatureCollection':
-                for f in fgeo['features']:
-                    gfeatures.append(f)
-            else:
-                gfeatures.append(fgeo)
-            try:
-                if len(geo) > 5:
-                    title = self._toHTML(m.title)
-                    subtitle = self._toHTML(m.description)
-                    uuid = u'N' + api.content.get_uuid(m)
-                    missionJS = u'\nvar '
-                    missionJS += uuid
-                    missionJS += u'=' + unicode(m.geojson, "UTF-8") + u';'
-                    js += missionJS
-                    missionsFeatures += uuid + u','
-                    missionsNames += u"'" + title + u"',"
-                    missionsSubtitle += u"'" + subtitle + u"',"
-                    missionsUUID += u"'" + uuid + u"',"
-                    missionsURL += u"'" + m.absolute_url() + u"',"
-                    features.append(geo)
-            except Exception:
-                pass
-        # logger.info(features)
-        if len(features) == 0:
-            return False
-        missionsFeatures = missionsFeatures.strip(u',')
-        missionsFeatures += u'];'
-        missionsNames = missionsNames.strip(u',')
-        missionsNames += u'];'
-        missionsSubtitle = missionsSubtitle.strip(u',')
-        missionsSubtitle += u'];'
-        missionsUUID = missionsUUID.strip(u',')
-        missionsUUID += u'];'
-        missionsURL = missionsURL.strip(u',')
-        missionsURL += u'];'
-        js += missionsNames
-        js += missionsSubtitle
-        js += missionsUUID
-        js += missionsFeatures
-        js += missionsURL
-        js += u'</script>'
-        # logger.info(layers)
-        # logger.info(js)
-        return js
-        """
+
 
     def getMapZoom(self):
         zoomjs = '<script>var zoom = 4;</script>'

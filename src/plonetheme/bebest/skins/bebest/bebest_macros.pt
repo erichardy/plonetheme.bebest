@@ -11,21 +11,47 @@
 <metal:row define-macro="map-bebest">
   <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
    <section class="section-map"
-            tal:on-error="string:No map !">
+            >
      <span tal:replace="nothing" tal:on-error="string:No map !">rien</span>
      <span>
+        <tal:comment tal:replace="nothing">
+        Les appels ci-dessous sont doubles (view/context) car dans les cas des missions,
+        projets et sites d'etude, getMapZoom, getMapCenter et getGeoJSON
+        sont des attributs des objects.
+        Dans le cas de la home page (ou toute autre vue), ce sera un
+        attribut de la vue et non du context.
+        </tal:comment>
    		<span tal:content="structure python:context.getMapZoom()"
-	        tal:omit-tag="">
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        map zoom
+	    </span>
+		<span tal:content="structure string:${zoom}"
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
 	        map zoom
 	    </span>
 	  	<span tal:content="structure python:context.getMapCenter()"
-	        tal:omit-tag="">
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
 	        map center
 	  	</span>
+		<span tal:content="structure string:${center}"
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        map zoom
+	    </span>
 	    <span tal:content="structure python:context.getGeoJSON()"
-	        tal:omit-tag="">
-	        map center
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        map geojson
 	  	</span>
+	  	<span tal:content="structure string:${geojson}" 
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        map geojson
+	  	</span>
+
    		<!---le type de feature présenté (sites ou missions)---->
         <div class="feature-type col-xs-12">
             <span tal:content="string:${feature_info_title}">Sites d'étude</span>

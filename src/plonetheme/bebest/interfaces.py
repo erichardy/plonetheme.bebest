@@ -44,7 +44,10 @@ class IPlonethemeBebestSettings(model.Schema):
                            'default_thumb',
                            'tag_home_news',
                            'about_bg_image',
-                           'about_document_tag', ])
+                           'about_document_tag',
+                           'zoom',
+                            'map_center',
+                            ])
 
     carousel_label = TextLine(title=_(u"carousel label"),
                               description=_(u"for carousel at home page"),
@@ -75,9 +78,27 @@ class IPlonethemeBebestSettings(model.Schema):
                               default=u"csj-soft.png",
                               )
     about_document_tag = TextLine(title=_(u"Tag used for about items"),
-                                  description=_(u"For home page"),
+                                  description=_(u"for home page"),
                                   default=u"bebest-home",
                                   )
+    home_map_title = TextLine(title=_(u"main title for map on home page"),
+                              description=_(u"for home page"),
+                              default=u"Les sites d'étude du LIA Bebest",
+                              )
+    home_map_description = TextLine(title=_(u"description for map"),
+                                    description=_(u"for home page"),
+                                    default=u"Les sites d'étude du LIA Bebest",
+                                    )
+    zoom = Int(title=_(u"zoom level"),
+               description=_(u"between 0 and 15"),
+               max=15,
+               default=4,
+               required=False)
+    map_center = TextLine(title=_(u"map center"),
+                          description=_(u'in the form "[lat, long]"'),
+                          default=u'[48.40003249610685, -4.5263671875]',
+                          required=False,
+                          )
     model.fieldset('portfolio',
                    label=_(u"portfolio settings"),
                    fields=['portfolio_author_tag',

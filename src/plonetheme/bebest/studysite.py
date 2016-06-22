@@ -40,6 +40,7 @@ import geojson
 # import urllib
 # import re
 from plonetheme.bebest.utils import getGalleryImages as ggi
+from plonetheme.bebest.utils import getMissionsFeatures
 from plonetheme.bebest import _
 
 logger = logging.getLogger('bebest STUDYSITE')
@@ -54,7 +55,7 @@ class IStudysite(model.Schema):
                            'missions'
                            ])
     dexteritytextindexer.searchable('title')
-    title = schema.TextLine(title=_(u"mission label"),
+    title = schema.TextLine(title=_(u"study site label"),
                             required=True,
                             )
     dexteritytextindexer.searchable('description')
@@ -150,6 +151,9 @@ class studysite(Container):
         return [mission.to_object for mission in self.missions]
 
     def getMissionsFeatures(self):
+        """
+        no more used, see utils.getMissionsFeatures(list_of_missions_objects)
+        """
         results = self.getMissions()
         js = u'<script>'
         missionsUUID = []
@@ -243,7 +247,8 @@ class studysite(Container):
             return default
 
     def getGeoJSON(self):
-        return self.getMissionsFeatures()
+        results = self.getMissions()
+        return getMissionsFeatures(results)
 
     def getPictAuthor(self):
         if not self.pict_author:

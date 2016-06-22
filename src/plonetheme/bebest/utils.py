@@ -21,6 +21,7 @@ from zope.interface import Invalid
 import os
 from string import strip
 import urllib
+import geojson
 import logging
 from plonetheme.bebest import _
 
@@ -119,29 +120,6 @@ class CatalogVocabularyFactory(object):
         return returned
         """ """
         # return CatalogVocabulary.fromItems(brains, context)
-
-
-"""
-[21] > /Volumes/SSD/Dev/plonetheme.bebest/src/plonetheme/bebest/utils.py(58)\
-__call__()
--> return returned
-(Pdb++) returned
-<plone.app.vocabularies.catalog.CatalogVocabulary object at 0x10ac59710>
-(Pdb++) ret = returned[0]
-(Pdb++) ret
-<zope.schema.vocabulary.SimpleTerm object at 0x10bfa37d0>
-(Pdb++) ret.title
-'8417c14bbd9e4260bbb4352034bee0ec'
-(Pdb++) ret.token
-'8417c14bbd9e4260bbb4352034bee0ec'
-(Pdb++) ret.value
-<Products.ZCatalog.Catalog.mybrains object at 0x108288c18>
-(Pdb++) ret.value.getObject().title
-u'Plonetheme Bebest2'
-Construire un vocabulaire qui contient :
-title = token = UUID
-value = brain
-"""
 
 
 @implementer(IVocabularyFactory)
@@ -261,13 +239,11 @@ def get_position_in_parent(obj):
     return 0
 
 
-"""
-Usage :
-sortedMyList = sorted(myList, sort_by_position)
-"""
-
-
 def sort_by_position(a, b):
+    """
+    Usage :
+    sortedMyList = sorted(myList, sort_by_position)
+    """
     return get_position_in_parent(a) - get_position_in_parent(b)
 
 
@@ -301,6 +277,64 @@ def validateURL(url):
 
 def isPublished(obj):
     return api.content.get_state(obj.getObject()) == 'published'
+
+
+def getMissionsFeatures(results):
+    js = u'<script>'
+    missionsUUID = []
+    featuresCollections = {}
+    # import pdb;pdb.set_trace()
+    for mission in results:
+        m = mission
+        uuid = 'F' + api.content.get_uuid(m)
+        # la liste des uuid des missions
+        missionsUUID.append(uuid)
+        geo = geojson.loads(m.geojson)
+        # ici, on peut modifier les parametres des geojson des missions
+        # i.e. : ajouter des proprietes...
+        # ....
+        for f in geo['features']:
+            name = f['properties'].get('name')
+            if name:
+                f['properties']['name'] = name
+            else:
+                f['properties']['name'] = m.title
+            description = f['properties'].get('description')
+            desc_plus = u'Mission : ' + m.title
+            if description:
+                desc = description + u'<br />' + desc_plus
+                f['properties']['description'] = desc
+            else:
+                f['properties']['description'] = desc_plus
+            url = m.absolute_url()
+            f['properties']['url'] = url
+        geo['name'] = m.title
+        featuresCollections[uuid] = geo
+
+    if len(featuresCollections.keys()) == 0:
+        return False
+    # on genere un tableau javascript qui contient les uuid des missions
+    uuids = u'var uuids = ['
+    for uuid in missionsUUID:
+        uuids += u"'" + uuid + u"',"
+    uuids = uuids.strip(u',')
+    uuids += u'];\n\n'
+    # logger.info(uuids)
+    js += uuids
+    for uuid in featuresCollections.keys():
+        fjs = u'\n var ' + uuid + u' = '
+        fjs += geojson.dumps(featuresCollections[uuid])
+        fjs += u';\n'
+        js += fjs
+    js += u"\n\n"
+    fjs += u'var featuresCollections = ['
+    for uuid in missionsUUID:
+        fjs += geojson.dumps(featuresCollections[uuid]) + u','
+    fjs = fjs.strip(u',')
+    fjs += u'];\n'
+    js += fjs
+    js += u'</script>'
+    return js
 
 
 class debug(object):
