@@ -113,6 +113,35 @@ var baseLayers = {
 // L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
 // L.Icon.Default.imagePath = '++theme++plonetheme.bebest/images/leaflet/' ;
 L.Icon.Default.imagePath = 'markers';
+/*
+var defaultIcon = L.icon({
+	iconUrl: 'markers/marker-icon.png',
+	iconSize: [27, 27],
+	iconAnchor: [13, 27]
+});
+var orange = L.icon ({
+    iconSize: [27, 27],
+    iconAnchor: [13, 27],
+    iconUrl: 'markers/icon-orange.png'
+});
+
+if (typeof defaultIcon === 'undefined'){
+	console.log('defaultIcon');
+	var defaultIcon = L.icon({
+		iconSize: [27, 27],
+		iconAnchor: [13, 27],
+		iconUrl: 'markers/marker-icon.png'
+	});
+};
+*/
+
+function markerIcon(feature) {
+	if ((feature.properties['icon']) && (feature.properties['icon'] !== 'undefined')) {
+		return iconList[feature.properties['icon']]
+	}
+	console.log(defaultIcon);
+	return defaultIcon
+}
 
 // Cas des mission, on a une 'FeatureCollection'
 if (typeof missionsFeatures !== 'undefined'){
@@ -123,12 +152,7 @@ if (typeof missionsFeatures !== 'undefined'){
 			return styleFromFeature(f);
 		},
 		pointToLayer: function (f, latlng) {
-			var rocket = L.icon ({
-				iconSize: [27, 27],
-				iconAnchor: [13, 27],
-				iconUrl: 'icon-orange.png'
-			});
-			return L.marker(latlng, {icon: rocket});
+			return L.marker(latlng, {icon: markerIcon(f)});
 		},
 		onEachFeature: function(f, layer) {
 			overlayMaps[f['properties']['name']] = layer ;

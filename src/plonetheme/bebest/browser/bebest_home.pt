@@ -24,6 +24,7 @@
                    feature_info_link string:;
                    zoom python:view.getMapZoom();
                    center python:view.getMapCenter();
+                   iconsList python:view.getIconsList();
                    geojson python:view.getGeoJSON()">
   
     <section id="bebest-home-carousel"

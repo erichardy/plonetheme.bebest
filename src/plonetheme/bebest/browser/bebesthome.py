@@ -319,3 +319,9 @@ class bebestHome(BrowserView):
         js += fjs
         js += u'</script>'
         return js
+
+    def getIconsList(self):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.icons'
+        icons = api.portal.get_registry_record(prefix)
+        return icons

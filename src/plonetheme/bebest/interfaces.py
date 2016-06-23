@@ -2,7 +2,7 @@
 """Module where all interfaces, events and exceptions live."""
 
 from plonetheme.bebest import _
-from zope.schema import TextLine, List, Int
+from zope.schema import TextLine, List, Int, Text
 # from zope.interface import Interface
 from plone.supermodel import model
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
@@ -31,7 +31,24 @@ categoriesList.append(u'Exposition "grand public"')
 portfolioBGClasses = []
 portfolioBGClasses.append(u"bg-dark")
 portfolioBGClasses.append(u"bg-light")
+defaultIconList = u"""
+var iconList = {
+   "defaultIcon": defaultIcon,
+   "orange": orange
+   };
+   
+var defaultIcon = L.icon({
+    iconAnchor: [13, 27],
+    iconUrl: 'markers/marker-icon.png'
+});
 
+var orange = L.icon ({
+    iconSize: [27, 27],
+    iconAnchor: [13, 27],
+    iconUrl: 'markers/icon-orange.png'
+});
+
+"""
 
 class IPlonethemeBebestSettings(model.Schema):
 
@@ -133,9 +150,15 @@ class IPlonethemeBebestSettings(model.Schema):
                               )
     model.fieldset('misc',
                    label=_(u"misc"),
-                   fields=['max_news'],)
+                   fields=['max_news',
+                           'icons',
+                           ],)
     max_news = Int(title=_(u"max news to display"),
                    min=1,
                    max=300,
                    default=8,
                    )
+    icons = Text(title=_(u"icon list"),
+                 description=_(u"must be valid javascript code !"),
+                 default=defaultIconList,
+                 )

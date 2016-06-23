@@ -9,7 +9,7 @@ from plone.dexterity.content import Container
 from plone.dexterity.browser import add
 # from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
-# from plone import api
+from plone import api
 # from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 # from plone.namedfile import field as namedfile
@@ -336,14 +336,20 @@ class mission(Container):
         geo = self.geojson
         try:
             if len(geo) > 5:
-                geojson = "<script>var missionsFeatures = "
+                geojson = u"<script>var missionsFeatures = "
                 geojson += self.geojson
-                geojson += ";</script>"
+                geojson += u";</script>"
                 return geojson
             else:
                 return False
         except Exception:
             return False
+
+    def getIconsList(self):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.icons'
+        icons = api.portal.get_registry_record(prefix)
+        return u"<script>" + icons + u"</script>"
 
     def _date_fr(self, date):
         j = date.strftime("%d")

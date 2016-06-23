@@ -41,6 +41,17 @@
 	        tal:on-error="nothing">
 	        map zoom
 	    </span>
+	     <span tal:content="structure python:context.getIconsList()"
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        iconsList
+	    </span>
+	     <span tal:content="structure string:${iconsList}"
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        iconsList
+	    </span>
+	    
 	    <span tal:content="structure python:context.getGeoJSON()"
 	        tal:omit-tag=""
 	        tal:on-error="nothing">
