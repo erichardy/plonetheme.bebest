@@ -250,6 +250,12 @@ class studysite(Container):
         results = self.getMissions()
         return getMissionsFeatures(results)
 
+    def getIconsList(self):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.icons'
+        icons = api.portal.get_registry_record(prefix)
+        return u"<script>" + icons + u"</script>"
+
     def getPictAuthor(self):
         if not self.pict_author:
             return False

@@ -418,3 +418,9 @@ class project(Container):
                 return center_a + center + center_b
         except Exception:
             return default
+
+    def getIconsList(self):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.icons'
+        icons = api.portal.get_registry_record(prefix)
+        return u"<script>" + icons + u"</script>"

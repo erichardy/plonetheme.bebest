@@ -32,22 +32,28 @@ portfolioBGClasses = []
 portfolioBGClasses.append(u"bg-dark")
 portfolioBGClasses.append(u"bg-light")
 defaultIconList = u"""
-var iconList = {
-   "defaultIcon": defaultIcon,
-   "orange": orange
-   };
-   
+
 var defaultIcon = L.icon({
     iconAnchor: [13, 27],
     iconUrl: 'markers/marker-icon.png'
 });
-
+var bebestIcon = L.icon({
+    iconUrl: '++theme++plonetheme.bebest/images/leaflet/icon-orange.png',    
+    iconSize:     [27, 40],
+    iconAnchor:   [13, 40],
+    popupAnchor:  [0, -40]
+});
 var orange = L.icon ({
     iconSize: [27, 27],
     iconAnchor: [13, 27],
     iconUrl: 'markers/icon-orange.png'
 });
-
+var iconList = {
+   "defaultIcon": defaultIcon,
+   "orange": orange,
+   "bebestIcon": bebestIcon
+   };
+   
 """
 
 class IPlonethemeBebestSettings(model.Schema):

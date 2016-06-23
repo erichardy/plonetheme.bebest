@@ -59,6 +59,7 @@ function styleFromFeature(f) {
 		style['fillOpacity'] = f.properties['fill-opacity'];
 		f.properties['fillOpacity'] = f.properties['fill-opacity'];
 	}
+	style['iconUrl'] = 'icon-orange.png';
 	return style
 }
 
@@ -104,6 +105,8 @@ var bebestIcon = L.icon({
     popupAnchor:  [0, -40]
 });
 
+
+
 /* controle de changement de layer osm vs stamenTiles */
 var baseLayers = {
 		"OpenStreetmap": osm, 
@@ -113,27 +116,6 @@ var baseLayers = {
 // L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
 // L.Icon.Default.imagePath = '++theme++plonetheme.bebest/images/leaflet/' ;
 L.Icon.Default.imagePath = 'markers';
-/*
-var defaultIcon = L.icon({
-	iconUrl: 'markers/marker-icon.png',
-	iconSize: [27, 27],
-	iconAnchor: [13, 27]
-});
-var orange = L.icon ({
-    iconSize: [27, 27],
-    iconAnchor: [13, 27],
-    iconUrl: 'markers/icon-orange.png'
-});
-
-if (typeof defaultIcon === 'undefined'){
-	console.log('defaultIcon');
-	var defaultIcon = L.icon({
-		iconSize: [27, 27],
-		iconAnchor: [13, 27],
-		iconUrl: 'markers/marker-icon.png'
-	});
-};
-*/
 
 function markerIcon(feature) {
 	if ((feature.properties['icon']) && (feature.properties['icon'] !== 'undefined')) {
@@ -177,18 +159,12 @@ if (typeof featuresCollections !== 'undefined'){
 
 		for (i = 0; i < featuresCollection['features'].length ; i++) {
 			f = featuresCollection['features'][i];
-			style = {};
-			if (f.properties['stroke']) {
-				style['color'] = f.properties['stroke'];
-			}
-			if (f.properties['stroke-width']) {
-				// stroke-
-				style['weight'] = f.properties['stroke-width'];
-			}
-			if (f.properties['fill']) {
-				style['fillColor'] = f.properties['fill'];
-			}
-			layer.addData(f);
+			L.geoJson(f, {
+				style: styleFromFeature(f),
+				pointToLayer: function (f, latlng) {
+					return L.marker(latlng, {icon: markerIcon(f)});
+				}
+			}).addTo(layer);
 		}
 		overlayMaps[featuresCollection['name']] = layer;
 		layer.addTo(mymap);
