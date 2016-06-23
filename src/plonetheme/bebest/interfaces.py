@@ -38,7 +38,7 @@ var defaultIcon = L.icon({
     iconUrl: 'markers/marker-icon.png'
 });
 var bebestIcon = L.icon({
-    iconUrl: '++theme++plonetheme.bebest/images/leaflet/icon-orange.png',    
+    iconUrl: '++theme++plonetheme.bebest/images/leaflet/icon-orange.png',
     iconSize:     [27, 40],
     iconAnchor:   [13, 40],
     popupAnchor:  [0, -40]
@@ -53,8 +53,9 @@ var iconList = {
    "orange": orange,
    "bebestIcon": bebestIcon
    };
-   
+
 """
+
 
 class IPlonethemeBebestSettings(model.Schema):
 
