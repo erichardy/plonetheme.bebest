@@ -19,6 +19,10 @@ function onEachFeature(feature, layer) {
 	});
 }
 
+var rocket = L.Icon ({
+	iconUrl: 'icon-orange.png'
+});
+
 /* A partir des properties qui sont positionnees avec le site
  * http://geojson.io/ , on etabli le dictionnaire des styles
  * necessaire a leaflet
@@ -107,7 +111,8 @@ var baseLayers = {
 };
 
 // L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
-L.Icon.Default.imagePath = '++theme++plonetheme.bebest/images/leaflet/' ;
+// L.Icon.Default.imagePath = '++theme++plonetheme.bebest/images/leaflet/' ;
+L.Icon.Default.imagePath = 'markers';
 
 // Cas des mission, on a une 'FeatureCollection'
 if (typeof missionsFeatures !== 'undefined'){
@@ -116,6 +121,14 @@ if (typeof missionsFeatures !== 'undefined'){
 	L.geoJson(missionsFeatures, {
 		style: function(f){
 			return styleFromFeature(f);
+		},
+		pointToLayer: function (f, latlng) {
+			var rocket = L.icon ({
+				iconSize: [27, 27],
+				iconAnchor: [13, 27],
+				iconUrl: 'icon-orange.png'
+			});
+			return L.marker(latlng, {icon: rocket});
 		},
 		onEachFeature: function(f, layer) {
 			overlayMaps[f['properties']['name']] = layer ;
