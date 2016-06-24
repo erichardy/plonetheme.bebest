@@ -1,0 +1,594 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./mission.py:203
+msgid "Add a new mission !"
+msgstr ""
+
+#: ./project.py:180
+msgid "Add a new project !"
+msgstr ""
+
+#: ./interfaces.py:102
+msgid "Background image for about section"
+msgstr ""
+
+#: ./interfaces.py:133
+msgid "CSS Classes"
+msgstr ""
+
+#: ./portfolio.py:68
+msgid "CSS class for background"
+msgstr ""
+
+#: ./mission.py:229
+msgid "Cancel this mission"
+msgstr ""
+
+#: ./project.py:202
+msgid "Cancel this project"
+msgstr ""
+
+#: ./profiles/default/types/Collection.xml
+msgid "Collection"
+msgstr ""
+
+#: ./profiles/default/types/Folder.xml
+#: ./profiles/default/types/News_Item.xml
+msgid "Edit"
+msgstr ""
+
+#: ./profiles/default/types/Event.xml
+msgid "Event"
+msgstr ""
+
+#: ./profiles/default/types/Event.xml
+msgid "Events can be shown in calendars."
+msgstr ""
+
+#: ./profiles/default/types/Folder.xml
+msgid "Folder"
+msgstr ""
+
+#: ./portrait.py:58
+msgid "Form title"
+msgstr ""
+
+#: ./utils.py:275
+msgid "Invalid URL"
+msgstr ""
+
+#: ./portrait.py:40
+msgid "Invalid adress email"
+msgstr ""
+
+#: ./interfaces.py:86
+msgid "Logo filename, should be in"
+msgstr ""
+
+#: ./mission.py:122
+msgid "Mission presentation"
+msgstr ""
+
+#: ./interfaces.py:94
+msgid "Name of the default thumb image"
+msgstr ""
+
+#: ./profiles/default/types/News_Item.xml
+msgid "News Item"
+msgstr ""
+
+#: ./mission.py:82
+msgid "Not a float number"
+msgstr ""
+
+#: ./interfaces.py:154
+msgid "One category per line"
+msgstr ""
+
+#: ./interfaces.py:146
+msgid "One job per line"
+msgstr ""
+
+#: ./interfaces.py:91
+msgid "Only One word, used for folders"
+msgstr ""
+
+#: ./interfaces.py:99
+msgid "Only One word, used for news"
+msgstr ""
+
+#: ./mission.py:218
+#: ./project.py:192
+msgid "Please correct errors"
+msgstr ""
+
+#: ./studysite.py:80
+msgid "Presentation"
+msgstr ""
+
+#: ./interfaces.py:153
+msgid "Project categories"
+msgstr ""
+
+#: ./mission.py:214
+msgid "Save this mission"
+msgstr ""
+
+#: ./project.py:188
+msgid "Save this project"
+msgstr ""
+
+#: ./interfaces.py:138
+msgid "Tag used for Authors"
+msgstr ""
+
+#: ./interfaces.py:106
+msgid "Tag used for about items"
+msgstr ""
+
+#: ./interfaces.py:98
+msgid "Tag used for news on home page"
+msgstr ""
+
+#: ./interfaces.py:90
+msgid "Tag used for thumbnails on home page"
+msgstr ""
+
+#: ./mission.py:185
+#: ./project.py:162
+#: ./studysite.py:67
+msgid "Target"
+msgstr ""
+
+#: ./mission.py:74
+#: ./project.py:49
+msgid "The start or end date is invalid"
+msgstr ""
+
+#: ./mission.py:172
+#: ./studysite.py:131
+msgid "Use http://geojson.io/"
+msgstr ""
+
+#: ./profiles/default/types/Folder.xml
+#: ./profiles/default/types/News_Item.xml
+msgid "View"
+msgstr ""
+
+#: ./portfolio.py:52
+msgid "authors pictures"
+msgstr ""
+
+#: ./interfaces.py:119
+#: ./mission.py:161
+#: ./project.py:126
+msgid "between 0 and 15"
+msgstr ""
+
+#: ./portrait.py:95
+msgid "biography"
+msgstr ""
+
+#: ./project.py:157
+msgid "canadian contact"
+msgstr ""
+
+#: ./interfaces.py:82
+msgid "carousel interval"
+msgstr ""
+
+#: ./interfaces.py:78
+msgid "carousel label"
+msgstr ""
+
+#: ./mission.py:179
+msgid "chief scientist"
+msgstr ""
+
+#: ./portfolio.py:65
+msgid "configuration"
+msgstr ""
+
+#: ./project.py:139
+msgid "contacts"
+msgstr ""
+
+#: ./mission.py:171
+#: ./studysite.py:130
+msgid "coordinates in GEOJSON format"
+msgstr ""
+
+#: ./project.py:105
+msgid "dates"
+msgstr ""
+
+#: ./bebestimage.py:59
+#: ./portfolio.py:59
+msgid "description"
+msgstr ""
+
+#: ./interfaces.py:114
+msgid "description for map"
+msgstr ""
+
+#: ./bebestimage.py:63
+#: ./portfolio.py:61
+msgid "description text"
+msgstr ""
+
+#: ./mission.py:113
+#: ./studysite.py:72
+msgid "descriptions"
+msgstr ""
+
+#: ./mission.py:125
+#: ./studysite.py:84
+msgid "display english description"
+msgstr ""
+
+#: ./behaviors/englishtext.py:28
+msgid "display english text"
+msgstr ""
+
+#: ./portrait.py:103
+msgid "display or not english biography"
+msgstr ""
+
+#: ./project.py:95
+msgid "display or not english description"
+msgstr ""
+
+#: ./behaviors/startenddates.py:27
+msgid "display start and end dates ?"
+msgstr ""
+
+#: ./behaviors/startenddates.py:31
+msgid "display time with dates ?"
+msgstr ""
+
+#: ./mission.py:141
+#: ./studysite.py:100
+msgid "downloaded by visitors"
+msgstr ""
+
+#: ./portrait.py:73
+msgid "email address"
+msgstr ""
+
+#: ./behaviors/startenddates.py:41
+msgid "end date"
+msgstr ""
+
+#: ./mission.py:108
+#: ./project.py:115
+msgid "end date for the mission"
+msgstr ""
+
+#: ./portrait.py:108
+msgid "english biography"
+msgstr ""
+
+#: ./project.py:100
+msgid "english description"
+msgstr ""
+
+#: ./mission.py:130
+msgid "english presentation"
+msgstr ""
+
+#: ./behaviors/englishtext.py:33
+msgid "english text"
+msgstr ""
+
+#: ./portfolio.py:53
+msgid "folder of picts"
+msgstr ""
+
+#: ./interfaces.py:79
+msgid "for carousel at home page"
+msgstr ""
+
+#: ./interfaces.py:107
+msgid "for home page"
+msgstr ""
+
+#: ./interfaces.py:134
+msgid "for portfolio background"
+msgstr ""
+
+#: ./portrait.py:100
+msgid "french biography"
+msgstr ""
+
+#: ./project.py:153
+msgid "french contact"
+msgstr ""
+
+#: ./project.py:92
+msgid "french description"
+msgstr ""
+
+#: ./mission.py:121
+msgid "french presentation"
+msgstr ""
+
+#: ./bebestimage.py:38
+#: ./mission.py:88
+#: ./portfolio.py:37
+msgid "general"
+msgstr ""
+
+#: ./mission.py:155
+#: ./project.py:121
+#: ./studysite.py:114
+msgid "geo"
+msgstr ""
+
+#: ./interfaces.py:63
+msgid "home page settings"
+msgstr ""
+
+#: ./interfaces.py:168
+msgid "icon list"
+msgstr ""
+
+#: ./portrait.py:47
+msgid "identification"
+msgstr ""
+
+#: ./interfaces.py:95
+msgid "image in portal_skins/custom"
+msgstr ""
+
+#: ./bebestimage.py:45
+msgid "image title"
+msgstr ""
+
+#: ./interfaces.py:103
+msgid "in portal_skins/custom/images"
+msgstr ""
+
+#: ./interfaces.py:124
+#: ./mission.py:167
+#: ./studysite.py:126
+msgid "in the form \"[lat, long]\""
+msgstr ""
+
+#: ./portrait.py:122
+msgid "jobs"
+msgstr ""
+
+#: ./portrait.py:130
+msgid "main affiliation"
+msgstr ""
+
+#: ./bebestimage.py:47
+#: ./mission.py:134
+#: ./portfolio.py:46
+msgid "main photo"
+msgstr ""
+
+#: ./interfaces.py:110
+msgid "main title for map on home page"
+msgstr ""
+
+#: ./interfaces.py:123
+#: ./mission.py:166
+#: ./project.py:132
+msgid "map center"
+msgstr ""
+
+#: ./interfaces.py:163
+msgid "max news to display"
+msgstr ""
+
+#: ./interfaces.py:83
+msgid "milliseconds"
+msgstr ""
+
+#: ./interfaces.py:159
+msgid "misc"
+msgstr ""
+
+#: ./interfaces.py:143
+msgid "misc for portraits"
+msgstr ""
+
+#: ./interfaces.py:151
+msgid "misc for projects"
+msgstr ""
+
+#: ./mission.py:95
+msgid "mission label"
+msgstr ""
+
+#: ./project.py:133
+msgid "must be in the form \"[lat, long]\""
+msgstr ""
+
+#: ./interfaces.py:169
+msgid "must be valid javascript code !"
+msgstr ""
+
+#: ./mission.py:140
+#: ./studysite.py:99
+msgid "other document"
+msgstr ""
+
+#: ./mission.py:183
+#: ./project.py:160
+msgid "other participants"
+msgstr ""
+
+#: ./mission.py:175
+msgid "participants"
+msgstr ""
+
+#: ./portrait.py:65
+msgid "person family name"
+msgstr ""
+
+#: ./portrait.py:69
+msgid "person first name"
+msgstr ""
+
+#: ./portrait.py:145
+msgid "personal page"
+msgstr ""
+
+#: ./mission.py:137
+#: ./portrait.py:80
+#: ./project.py:82
+msgid "picture author"
+msgstr ""
+
+#: ./controlpanel.py:10
+msgid "plonetheme.bebest Settings"
+msgstr ""
+
+#: ./controlpanel.py:11
+msgid "plonetheme.bebest Settings Description"
+msgstr ""
+
+#: ./interfaces.py:87
+msgid "portal_skins/custom/images"
+msgstr ""
+
+#: ./interfaces.py:129
+msgid "portfolio settings"
+msgstr ""
+
+#: ./portfolio.py:44
+msgid "portfolio title"
+msgstr ""
+
+#: ./portrait.py:113
+msgid "position"
+msgstr ""
+
+#: ./interfaces.py:145
+msgid "position, jobs, etc..."
+msgstr ""
+
+#: ./behaviors/englishtext.py:34
+msgid "presentation en"
+msgstr ""
+
+#: ./project.py:148
+msgid "primary contact"
+msgstr ""
+
+#: ./project.py:74
+msgid "project categories"
+msgstr ""
+
+#: ./project.py:87
+msgid "project descriptions"
+msgstr ""
+
+#: ./project.py:63
+msgid "project label"
+msgstr ""
+
+#: ./studysite.py:65
+msgid "related missions"
+msgstr ""
+
+#: ./portrait.py:134
+msgid "second affiliation"
+msgstr ""
+
+#: ./project.py:75
+msgid "select one or more"
+msgstr ""
+
+#: ./portrait.py:123
+msgid "select your jobs"
+msgstr ""
+
+#: ./bebestimage.py:50
+#: ./portfolio.py:49
+#: ./portrait.py:83
+msgid "small photo"
+msgstr ""
+
+#: ./behaviors/startenddates.py:36
+msgid "start date"
+msgstr ""
+
+#: ./mission.py:103
+#: ./project.py:110
+msgid "start date for the mission"
+msgstr ""
+
+#: ./portrait.py:126
+msgid "status"
+msgstr ""
+
+#: ./studysite.py:58
+msgid "study site label"
+msgstr ""
+
+#: ./studysite.py:81
+msgid "study site presentation"
+msgstr ""
+
+#: ./studysite.py:90
+msgid "study site presentation en"
+msgstr ""
+
+#: ./portrait.py:138
+msgid "third affiliation"
+msgstr ""
+
+#: ./behaviors/englishtext.py:29
+#: ./behaviors/startenddates.py:28
+#: ./mission.py:126
+msgid "unselect to disable"
+msgstr ""
+
+#: ./interfaces.py:139
+msgid "used for portfolio view"
+msgstr ""
+
+#: ./mission.py:99
+#: ./portrait.py:61
+#: ./project.py:67
+msgid "very short description"
+msgstr ""
+
+#: ./portrait.py:143
+msgid "web"
+msgstr ""
+
+#: ./portrait.py:153
+msgid "web page of your researches"
+msgstr ""
+
+#: ./portrait.py:149
+msgid "web site of the research unit"
+msgstr ""
+
+#: ./bebestimage.py:53
+msgid "web site related"
+msgstr ""
+
+#: ./interfaces.py:118
+#: ./mission.py:160
+#: ./project.py:125
+msgid "zoom level"
+msgstr ""
