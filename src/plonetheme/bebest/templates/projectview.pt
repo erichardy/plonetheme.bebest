@@ -71,7 +71,7 @@
               <a href="#"
                  tal:attributes="href string:${contact/absolute_url}">
                   <img tal:attributes="src string:${contact/absolute_url}/@@download/thumb_pict/${image/filename}"
-                       class="img-circle portrait-prime"></img>
+                       class="img-circle portrait-prime" />
                   <h4 tal:content="string:${contact/first_name} ${contact/family_name}">Laurent Chauvaud</h4>
                   <p tal:content="string:${contact/affiliation1}">LEMAR - CNRS</p>
               </a>    
@@ -83,7 +83,7 @@
               <a href="#"
                  tal:attributes="href string:${contact/absolute_url}">
                   <img tal:attributes="src string:${contact/absolute_url}/@@download/thumb_pict/${image/filename}"
-                       class="img-circle portrait-prime"></img>
+                       class="img-circle portrait-prime" />
                   <h4 tal:content="string:${contact/first_name} ${contact/family_name}">Laurent Chauvaud</h4>
                   <p tal:content="string:${contact/affiliation1}">LEMAR - CNRS</p>
               </a>    
@@ -95,7 +95,7 @@
               <a href="#"
                  tal:attributes="href string:${contact/absolute_url}">
                   <img tal:attributes="src string:${contact/absolute_url}/@@download/thumb_pict/${image/filename}"
-                       class="img-circle portrait-prime"></img>
+                       class="img-circle portrait-prime" />
                   <h4 tal:content="string:${contact/first_name} ${contact/family_name}">Laurent Chauvaud</h4>
                   <p tal:content="string:${contact/affiliation1}">LEMAR - CNRS</p>
               </a>    

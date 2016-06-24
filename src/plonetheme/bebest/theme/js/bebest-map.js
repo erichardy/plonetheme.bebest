@@ -183,6 +183,10 @@ if (typeof featuresCollections !== 'undefined'){
 //L'option ``collapsed`` permet que la liste des layers soit ouverte par defaut
 L.control.layers(baseLayers, overlayMaps, {collapsed:false}).addTo(mymap);
 
+function onMapClick(e) {
+    console.log("You clicked the map at " + e.latlng);
+}
+mymap.on('click', onMapClick);
+
 //$("input.leaflet-control-layers-selector").prop("checked", true);
 
-L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';

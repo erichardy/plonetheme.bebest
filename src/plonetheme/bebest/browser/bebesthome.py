@@ -324,4 +324,4 @@ class bebestHome(BrowserView):
         prefix = 'plonetheme.bebest.interfaces.'
         prefix += 'IPlonethemeBebestSettings.icons'
         icons = api.portal.get_registry_record(prefix)
-        return icons
+        return u"<script>" + icons + u"</script>"
