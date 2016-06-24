@@ -102,6 +102,10 @@
 				<div tal:condition="python:view.getPortraitAttr('pict_author')"
 				     class="img-author"
 				     tal:content="python:view.getPortraitAttr('pict_author')">pict author</div>
+				<div tal:condition="python:not view.getPortraitAttr('pict_author')"
+				     class="img-no-author">
+				  (DR)
+				</div>
  			</div>	
 				<!----La courte biographie --------->
 			<div class="container">

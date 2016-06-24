@@ -31,10 +31,13 @@ from zope.publisher.browser import BrowserView
 from plone import api
 # from plone.formwidget.contenttree import PathSourceBinder
 # from plone.namedfile.field import NamedBlobImage
+import geojson
+
 import logging
 # import urllib
 # import re
 from plonetheme.bebest.utils import getTitleFromVoc
+from plonetheme.bebest.utils import getMissionsFeatures
 from plonetheme.bebest.utils import getGalleryImages as ggi
 from plonetheme.bebest import _
 
@@ -223,6 +226,11 @@ class ProjectView(BrowserView):
 class project(Container):
     implements(IProject)
 
+    def getPictAuthor(self):
+        if not self.pict_author:
+            return False
+        return self.pict_author
+
     def getPrimaryContact(self):
         return self.primary_contact.to_object
 
@@ -288,59 +296,92 @@ class project(Container):
             replace('"', "&rdquo;")
         return s
 
+    def getGeoJSON(self):
+        context = self
+        results = api.content.find(depth=1,
+                                   portal_type='bebest.mission',
+                                   path='/'.join(context.getPhysicalPath()))
+        missions = [mission.getObject() for mission in results]
+        return getMissionsFeatures(missions)
+
+    def _fprops(self, f, m):
+        """
+        Ajoute des proprietes aux features geojson à partir des
+        attributs de la mission
+        f = feature
+        m = mission
+        """
+        fname = f['properties'].get('name')
+        f['properties']['name'] = m.title + ' (' + fname + ')'
+        fdesc = f['properties'].get('description')
+        f['properties']['description'] = m.description + ' ('
+        f['properties']['description'] += fdesc + ')'
+        f['properties']['url'] = m.absolute_url()
+        f['properties']['mission'] = m.title
+        return f
+
     def getMissionsFeatures(self):
+        """
+        no more used, see utils.getMissionsFeatures(list_of_missions_objects)
+        """
         context = self
         results = api.content.find(depth=1,
                                    portal_type='bebest.mission',
                                    path='/'.join(context.getPhysicalPath()))
         js = u'<script>'
-        missionsNames = u'\nvar missionsNames = ['
-        missionsUUID = u'\nvar missionsUUID = ['
-        missionsFeatures = u'\nvar missionsFeatures = ['
-        missionsURL = u'\nvar missionsURL = ['
-        missionsSubtitle = u'\nvar missionsSubtitle = ['
-        features = []
+        missionsUUID = []
+        featuresCollections = {}
+        # import pdb;pdb.set_trace()
         for mission in results:
             m = mission.getObject()
-            geo = m.geojson
-            try:
-                if len(geo) > 5:
-                    title = self._toHTML(m.title)
-                    subtitle = self._toHTML(m.description)
-                    uuid = u'N' + api.content.get_uuid(m)
-                    missionJS = u'\nvar '
-                    missionJS += uuid
-                    missionJS += u'=' + unicode(m.geojson, "UTF-8") + u';'
-                    js += missionJS
-                    missionsFeatures += uuid + u','
-                    missionsNames += u"'" + title + u"',"
-                    missionsSubtitle += u"'" + subtitle + u"',"
-                    missionsUUID += u"'" + uuid + u"',"
-                    missionsURL += u"'" + m.absolute_url() + u"',"
-                    features.append(geo)
-            except Exception:
-                pass
-        # logger.info(features)
-        if len(features) == 0:
+            uuid = 'F' + api.content.get_uuid(m)
+            # la liste des uuid des missions
+            missionsUUID.append(uuid)
+            geo = geojson.loads(m.geojson)
+            # ici, on peut modifier les parametres des geojson des missions
+            # i.e. : ajouter des proprietes...
+            # ....
+            for f in geo['features']:
+                name = f['properties'].get('name')
+                if name:
+                    f['properties']['name'] = name
+                else:
+                    f['properties']['name'] = m.title
+                description = f['properties'].get('description')
+                desc_plus = u'Mission : ' + m.title
+                if description:
+                    desc = description + u'<br />' + desc_plus
+                    f['properties']['description'] = desc
+                else:
+                    f['properties']['description'] = desc_plus
+                url = m.absolute_url()
+                f['properties']['url'] = url
+            geo['name'] = m.title
+            featuresCollections[uuid] = geo
+
+        if len(featuresCollections.keys()) == 0:
             return False
-        missionsFeatures = missionsFeatures.strip(u',')
-        missionsFeatures += u'];'
-        missionsNames = missionsNames.strip(u',')
-        missionsNames += u'];'
-        missionsSubtitle = missionsSubtitle.strip(u',')
-        missionsSubtitle += u'];'
-        missionsUUID = missionsUUID.strip(u',')
-        missionsUUID += u'];'
-        missionsURL = missionsURL.strip(u',')
-        missionsURL += u'];'
-        js += missionsNames
-        js += missionsSubtitle
-        js += missionsUUID
-        js += missionsFeatures
-        js += missionsURL
+        # on genere un tableau javascript qui contient les uuid des missions
+        uuids = u'var uuids = ['
+        for uuid in missionsUUID:
+            uuids += u"'" + uuid + u"',"
+        uuids = uuids.strip(u',')
+        uuids += u'];\n\n'
+        # logger.info(uuids)
+        js += uuids
+        for uuid in featuresCollections.keys():
+            fjs = u'\n var ' + uuid + u' = '
+            fjs += geojson.dumps(featuresCollections[uuid])
+            fjs += u';\n'
+            js += fjs
+        js += u"\n\n"
+        fjs += u'var featuresCollections = ['
+        for uuid in missionsUUID:
+            fjs += geojson.dumps(featuresCollections[uuid]) + u','
+        fjs = fjs.strip(u',')
+        fjs += u'];\n'
+        js += fjs
         js += u'</script>'
-        # logger.info(layers)
-        # logger.info(js)
         return js
 
     def getMapZoom(self):
@@ -377,3 +418,9 @@ class project(Container):
                 return center_a + center + center_b
         except Exception:
             return default
+
+    def getIconsList(self):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.icons'
+        icons = api.portal.get_registry_record(prefix)
+        return u"<script>" + icons + u"</script>"

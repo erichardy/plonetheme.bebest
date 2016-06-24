@@ -12,15 +12,18 @@
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
   <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
-  <div tal:define="features python:context.getMissionsFeatures();
-                   toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+  <div tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                   pictAuthor python:context.getPictAuthor();
                    primary_contact python:context.getPrimaryContact();
                    contactFR python:context.getContactFR();
                    contactCA python:context.getContactCA();
                    teams python:context.getMissionsTeams();
                    displayEN python:context.display_en;
                    missions python:context.getMissions();
-                   gallery python:view.getGalleryImages()">
+                   gallery python:view.getGalleryImages();
+                   feature_info_title string:${context/title};
+                   feature_info_text string:${context/description};
+                   feature_info_link string:">
 
   <div id="bg-page-img" class="hidden-xs"
          tal:define="image nocall:context/main_pict;">
@@ -47,6 +50,16 @@
     </div>
   </section>
 
+<!---- auteur de la photo  --------->
+	<div class="img-author hidden-xs"
+	     tal:condition="python:pictAuthor"
+	     tal:content="string:${pictAuthor}">
+	</div>
+	<div class="img-no-author hidden-xs"
+	     tal:condition="python:not pictAuthor"
+	     >&nbsp;
+	</div>
+
   <section>
     <div class="container-fluid bg-light-grey">
       <div class="container">
@@ -58,7 +71,7 @@
               <a href="#"
                  tal:attributes="href string:${contact/absolute_url}">
                   <img tal:attributes="src string:${contact/absolute_url}/@@download/thumb_pict/${image/filename}"
-                       class="img-circle portrait-prime"></img>
+                       class="img-circle portrait-prime" />
                   <h4 tal:content="string:${contact/first_name} ${contact/family_name}">Laurent Chauvaud</h4>
                   <p tal:content="string:${contact/affiliation1}">LEMAR - CNRS</p>
               </a>    
@@ -70,7 +83,7 @@
               <a href="#"
                  tal:attributes="href string:${contact/absolute_url}">
                   <img tal:attributes="src string:${contact/absolute_url}/@@download/thumb_pict/${image/filename}"
-                       class="img-circle portrait-prime"></img>
+                       class="img-circle portrait-prime" />
                   <h4 tal:content="string:${contact/first_name} ${contact/family_name}">Laurent Chauvaud</h4>
                   <p tal:content="string:${contact/affiliation1}">LEMAR - CNRS</p>
               </a>    
@@ -82,7 +95,7 @@
               <a href="#"
                  tal:attributes="href string:${contact/absolute_url}">
                   <img tal:attributes="src string:${contact/absolute_url}/@@download/thumb_pict/${image/filename}"
-                       class="img-circle portrait-prime"></img>
+                       class="img-circle portrait-prime" />
                   <h4 tal:content="string:${contact/first_name} ${contact/family_name}">Laurent Chauvaud</h4>
                   <p tal:content="string:${contact/affiliation1}">LEMAR - CNRS</p>
               </a>    
@@ -162,61 +175,11 @@
 </section>
 
 <span tal:condition="gallery">
-     <metal:macro use-macro="context/bebest_macros/macros/gallery" />
+     <metal:macro use-macro="context/bebest_macros/macros/gallery-bebest" />
 </span>
 
-  <span tal:content="structure python:context.getMapZoom()"
-        tal:omit-tag="">
-        map zoom
-  </span>
-  <span tal:content="structure python:context.getMapCenter()"
-        tal:omit-tag="">
-        map center
-  </span>
+<metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
 
-  <style>
-     .leaflet-popup {
-     	position: absolute;
-     	left: 0px;
-     }
-     .leaflet-control-layers-toggle {
-		background-image:url(++theme++plonetheme.bebest/images/leaflet/layers.png);
-		width: 44px;
-		height: 44px;
-	 }
-	 #feature-infos {
-	    width: 15%;
-	    max-height: 5000px;
-	    background: rgba(255, 255, 255, 1);
-	    position: absolute;
-	    padding: 5px;
-	    border: 1px solid grey;
-	    border-radius: 5px;
-	    display: none;
-	    z-index: 2000;
-	}
-	#bebest-map-info {
-	    font-weight: bold;
-	    color: black;
-	}
-   </style>
-    <section id="bebest-projet-map" tal:condition="python:features">
-   	<div>
-   	<span tal:omit-tag="" tal:content="structure string:${features}">
-   	  features
-   	</span>
-	   	<div id="feature-infos">
-	   	  <span class="bebest-feature-name" id="bebest-feature-name">name</span>
-	   	  <br />
-	   	  <span class="bebest-feature-description" id="bebest-feature-description"></span>
-	   	</div>
-   	</div>
-		<div id="bebest-map">
-		</div>
-   
-   </section>
- 
-  <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-project-map.js"></script>
 </div>
   </metal:content-core>
 </metal:content-core>

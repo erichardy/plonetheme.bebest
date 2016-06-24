@@ -2,7 +2,7 @@
 """Module where all interfaces, events and exceptions live."""
 
 from plonetheme.bebest import _
-from zope.schema import TextLine, List, Int
+from zope.schema import TextLine, List, Int, Text
 # from zope.interface import Interface
 from plone.supermodel import model
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
@@ -31,6 +31,30 @@ categoriesList.append(u'Exposition "grand public"')
 portfolioBGClasses = []
 portfolioBGClasses.append(u"bg-dark")
 portfolioBGClasses.append(u"bg-light")
+defaultIconList = u"""
+
+var defaultIcon = L.icon({
+    iconAnchor: [13, 27],
+    iconUrl: 'markers/marker-icon.png'
+});
+var bebestIcon = L.icon({
+    iconUrl: '++theme++plonetheme.bebest/images/leaflet/icon-orange.png',
+    iconSize:     [27, 40],
+    iconAnchor:   [13, 40],
+    popupAnchor:  [0, -40]
+});
+var orange = L.icon ({
+    iconSize: [27, 27],
+    iconAnchor: [13, 27],
+    iconUrl: 'markers/icon-orange.png'
+});
+var iconList = {
+   "defaultIcon": defaultIcon,
+   "orange": orange,
+   "bebestIcon": bebestIcon
+   };
+
+"""
 
 
 class IPlonethemeBebestSettings(model.Schema):
@@ -44,7 +68,12 @@ class IPlonethemeBebestSettings(model.Schema):
                            'default_thumb',
                            'tag_home_news',
                            'about_bg_image',
-                           'about_document_tag', ])
+                           'about_document_tag',
+                           'home_map_title',
+                           'home_map_description',
+                           'zoom',
+                           'map_center',
+                           ])
 
     carousel_label = TextLine(title=_(u"carousel label"),
                               description=_(u"for carousel at home page"),
@@ -75,9 +104,27 @@ class IPlonethemeBebestSettings(model.Schema):
                               default=u"csj-soft.png",
                               )
     about_document_tag = TextLine(title=_(u"Tag used for about items"),
-                                  description=_(u"For home page"),
+                                  description=_(u"for home page"),
                                   default=u"bebest-home",
                                   )
+    home_map_title = TextLine(title=_(u"main title for map on home page"),
+                              description=_(u"for home page"),
+                              default=u"Les sites d'étude du LIA Bebest",
+                              )
+    home_map_description = TextLine(title=_(u"description for map"),
+                                    description=_(u"for home page"),
+                                    default=u"Les sites d'étude du LIA Bebest",
+                                    )
+    zoom = Int(title=_(u"zoom level"),
+               description=_(u"between 0 and 15"),
+               max=15,
+               default=4,
+               required=False)
+    map_center = TextLine(title=_(u"map center"),
+                          description=_(u'in the form "[lat, long]"'),
+                          default=u'[48.40003249610685, -4.5263671875]',
+                          required=False,
+                          )
     model.fieldset('portfolio',
                    label=_(u"portfolio settings"),
                    fields=['portfolio_author_tag',
@@ -110,9 +157,15 @@ class IPlonethemeBebestSettings(model.Schema):
                               )
     model.fieldset('misc',
                    label=_(u"misc"),
-                   fields=['max_news'],)
+                   fields=['max_news',
+                           'icons',
+                           ],)
     max_news = Int(title=_(u"max news to display"),
                    min=1,
                    max=300,
                    default=8,
                    )
+    icons = Text(title=_(u"icon list"),
+                 description=_(u"must be valid javascript code !"),
+                 default=defaultIconList,
+                 )

@@ -4,6 +4,7 @@ import logging
 from zope.publisher.browser import BrowserView
 # from operator import attrgetter
 from plone import api
+import geojson
 
 logger = logging.getLogger('bebest')
 
@@ -229,3 +230,98 @@ class bebestHome(BrowserView):
             classesAbout.append(classesAbout[0])
             classesAbout.append(classesAbout[0])
         return classesAbout
+
+    def getMapTitle(self):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.home_map_title'
+        title = api.portal.get_registry_record(prefix)
+        return title
+
+    def getMapDescription(self):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.home_map_description'
+        home_map_description = api.portal.get_registry_record(prefix)
+        return home_map_description
+
+    def getMapZoom(self):
+        zoomjs = '<script>var zoom = 4;</script>'
+        try:
+            prefix = 'plonetheme.bebest.interfaces.'
+            prefix += 'IPlonethemeBebestSettings.zoom'
+            zoom = api.portal.get_registry_record(prefix)
+            if zoom:
+                zoomjs = '<script>var zoom = ' + str(zoom) + ";</script>"
+                return zoomjs
+            else:
+                return zoomjs
+        except Exception:
+            return zoomjs
+
+    def getMapCenter(self):
+        center_a = '<script>var center = '
+        center_b = ';</script>'
+        val = ' [48.40003249610685, -4.5263671875] '
+        default = center_a + val + center_b
+        try:
+            prefix = 'plonetheme.bebest.interfaces.'
+            prefix += 'IPlonethemeBebestSettings.map_center'
+            center = api.portal.get_registry_record(prefix)
+            if center:
+                testval = eval(center)
+                if len(testval) != 2:
+                    return default
+                val0 = (isinstance(testval[0], int)
+                        or
+                        isinstance(testval[0], float))
+                val1 = (isinstance(testval[1], int)
+                        or
+                        isinstance(testval[1], float))
+                if (not val0) or (not val1):
+                    return default
+                return center_a + center + center_b
+        except Exception:
+            return default
+
+    def getGeoJSON(self):
+        portal = api.portal.get()
+        results = api.content.find(depth=9,
+                                   portal_type='bebest.studysite',
+                                   path='/'.join(portal.getPhysicalPath()))
+        sites = [site.getObject() for site in results]
+        featuresCollections = {}
+        for site in sites:
+            uuid = 'F' + api.content.get_uuid(site)
+            geo = geojson.loads(site.geojson)
+            geo['name'] = site.title
+            for f in geo['features']:
+                name = f['properties'].get('name')
+                if name:
+                    f['properties']['name'] = name
+                else:
+                    f['properties']['name'] = site.title
+                description = f['properties'].get('description')
+                if description:
+                    f['properties']['description'] = description
+                else:
+                    f['properties']['description'] = site.description
+                f['properties']['url'] = site.absolute_url()
+            featuresCollections[uuid] = geo
+        if len(featuresCollections.keys()) == 0:
+            return False
+
+        js = u'<script>'
+        fjs = u'\n'
+        fjs += u'var featuresCollections = ['
+        for uuid in featuresCollections.keys():
+            fjs += geojson.dumps(featuresCollections[uuid]) + u','
+        fjs = fjs.strip(u',')
+        fjs += u'];\n'
+        js += fjs
+        js += u'</script>'
+        return js
+
+    def getIconsList(self):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.icons'
+        icons = api.portal.get_registry_record(prefix)
+        return u"<script>" + icons + u"</script>"

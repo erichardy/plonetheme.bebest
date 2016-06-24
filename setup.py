@@ -49,6 +49,7 @@ setup(
         'collective.dexteritytextindexer',
         'plone.formwidget.autocomplete',
         'plone.formwidget.contenttree',
+        'geojson',
     ],
     extras_require={
         'test': [

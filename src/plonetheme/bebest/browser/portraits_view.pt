@@ -10,7 +10,7 @@
 
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
-  <div tal:define="portraits python:view.getPortraitsObjs();">
+  <div class="container" tal:define="portraits python:view.getPortraitsObjs();">
    <div class="pushtop super text-center">
         	L'équipe Bebest
    </div>

@@ -18,7 +18,14 @@
                    thumbs python:view.getCarouselThumbnails();
                    newsItems python:view.getHomeNews();
                    aboutBgImage python:view.getAboutBgImage();
-                   aboutDocuments python:view.getAboutUsDocuments()">
+                   aboutDocuments python:view.getAboutUsDocuments();
+                   feature_info_title string:${view/getMapTitle};
+                   feature_info_text string:${view/getMapDescription};
+                   feature_info_link string:;
+                   zoom python:view.getMapZoom();
+                   center python:view.getMapCenter();
+                   iconsList python:view.getIconsList();
+                   geojson python:view.getGeoJSON()">
   
     <section id="bebest-home-carousel"
              class="hidden-xs"
@@ -150,7 +157,8 @@
    		<div class="container"
    		     tal:define="nbDocs python:len(aboutDocuments);
    		                 classesAbout python:view.getAboutClasses(nbDocs)">
-   			<div class="super text-center">What we do</div>
+   			<div class="super text-center"
+   			     tal:content="string:${context/description}">What we do</div>
    			<div class="row">
    			<span tal:omit-tag="" tal:repeat="aboutDocument aboutDocuments">
    			  <div tal:attributes="class python:classesAbout[repeat.aboutDocument.number - 1]">
@@ -164,48 +172,8 @@
    			</div>
    		</div>
    </section>
-   <!-- DEBUT SECTION MAP -->
-   <style>
-     .leaflet-popup {
-     	position: absolute;
-     	left: 0px;
-     }
-     .leaflet-control-layers-toggle {
-		background-image:url(++theme++plonetheme.bebest/images/leaflet/layers.png);
-		width: 44px;
-		height: 44px;
-	 }
-	 #feature-infos {
-	    width: 15%;
-	    height: 130px;
-	    background: rgba(255, 255, 255, 1);
-	    position: absolute;
-	    padding: 5px;
-	    border: 1px solid grey;
-	    border-radius: 25px;
-	    display: none;
-	    z-index: 2000;
-	}
-	#bebest-map-info {
-	    font-weight: bold;
-	    color: black;
-	}
-   </style>
-  
-   <section id="bebest-home-map">
-   	<div>
-	   	<div id="feature-infos">
-	   	  <span id="bebest-map-info">AAAAAAAA</span>
-	   	  XXXXXXXX
-	   	</div>
-   	</div>
-		<div id="bebest-map">
-		</div>
-   
-   <section>
+   <metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
   </div>
-
-  <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-map.js"></script>
 
   </metal:content-core>
 </metal:content-core>

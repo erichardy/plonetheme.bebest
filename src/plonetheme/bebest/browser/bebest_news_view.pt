@@ -16,7 +16,7 @@
                      textFR python:context.text.raw;
                      textEN python:view.getTextEN();
                      dates python:view.getDates();
-                     news python:view.getOtherNews()"
+                     news python:view.getOtherNews();"
          >
       <div class="row">
         <!-----Contenu de la page----->

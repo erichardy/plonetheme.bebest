@@ -122,6 +122,7 @@ geojsonA = """
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
+        "icon": "orange",
         "name": "Un point par ci par là",
         "description": "De Brest au Golf de Cascogne"
       },
@@ -169,10 +170,10 @@ geojsonC = """
     {
       "type": "Feature",
       "properties": {
-        "stroke": "#555555",
+        "stroke": "#00ff00",
         "stroke-width": 2,
         "stroke-opacity": 1,
-        "fill": "#555555",
+        "fill": "#00ff00",
         "fill-opacity": 0.5,
         "name": "Sud Irlande",
         "description": "Est-ce qu'il y a des coquilles en Irlande ?"
@@ -224,10 +225,10 @@ geojsonD = """
     {
       "type": "Feature",
       "properties": {
-        "stroke": "#555555",
+        "stroke": "#ff0000",
         "stroke-width": 2,
         "stroke-opacity": 1,
-        "fill": "#555555",
+        "fill": "#dd0000",
         "fill-opacity": 0.5,
         "name": "Les Iles anglo-normandes",
         "description": "C'est le Brexit pour elles aussi ?"

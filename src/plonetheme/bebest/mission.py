@@ -9,7 +9,7 @@ from plone.dexterity.content import Container
 from plone.dexterity.browser import add
 # from plone.dexterity.browser import edit
 from plone.app.textfield import RichText
-# from plone import api
+from plone import api
 # from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 # from plone.namedfile import field as namedfile
@@ -245,54 +245,6 @@ class editForm(edit.DefaultEditForm):
 
 class MissionView(BrowserView):
 
-    def getMapZoom(self):
-        zoomjs = '<script>var zoom = 4;</script>'
-        try:
-            zoom = self.context.zoom
-            if zoom:
-                zoomjs = '<script>var zoom = ' + str(zoom) + ";</script>"
-                return zoomjs
-            else:
-                return zoomjs
-        except Exception:
-            return zoomjs
-
-    def getMapCenter(self):
-        center_a = '<script>var center = '
-        center_b = ';</script>'
-        val = ' [48.40003249610685, -4.5263671875] '
-        default = center_a + val + center_b
-        try:
-            center = self.context.map_center
-            if center:
-                testval = eval(center)
-                if len(testval) != 2:
-                    return default
-                val0 = (isinstance(testval[0], int)
-                        or
-                        isinstance(testval[0], float))
-                val1 = (isinstance(testval[1], int)
-                        or
-                        isinstance(testval[1], float))
-                if (not val0) or (not val1):
-                    return default
-                return center_a + center + center_b
-        except Exception:
-            return default
-
-    def getGeoJSON(self):
-        geo = self.context.geojson
-        try:
-            if len(geo) > 5:
-                geojson = "<script>var features = "
-                geojson += self.context.geojson
-                geojson += ";</script>"
-                return geojson
-            else:
-                return False
-        except Exception:
-            return False
-
     def _date_fr(self, date):
         j = date.strftime("%d")
         m = date.strftime("%m")
@@ -384,14 +336,20 @@ class mission(Container):
         geo = self.geojson
         try:
             if len(geo) > 5:
-                geojson = "<script>var features = "
+                geojson = u"<script>var missionsFeatures = "
                 geojson += self.geojson
-                geojson += ";</script>"
+                geojson += u";</script>"
                 return geojson
             else:
                 return False
         except Exception:
             return False
+
+    def getIconsList(self):
+        prefix = 'plonetheme.bebest.interfaces.'
+        prefix += 'IPlonethemeBebestSettings.icons'
+        icons = api.portal.get_registry_record(prefix)
+        return u"<script>" + icons + u"</script>"
 
     def _date_fr(self, date):
         j = date.strftime("%d")

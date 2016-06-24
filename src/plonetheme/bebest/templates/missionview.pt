@@ -22,16 +22,10 @@
                    textEN python:context.getTextEN();
                    displayEN python:context.displayEN();
                    toLocalizedTime nocall:context/@@plone/toLocalizedTime;
-                   gallery python:view.getGalleryImages()">
-
-  <span tal:content="structure python:view.getMapZoom()"
-        tal:omit-tag="">
-        map zoom
-  </span>
-  <span tal:content="structure python:view.getMapCenter()"
-        tal:omit-tag="">
-        map center
-  </span>
+                   gallery python:view.getGalleryImages();
+                   feature_info_title string:${context/title};
+                   feature_info_text string:${context/description};
+                   feature_info_link string:">
 
     <!-----Image de fond,fixe, l'image source est l'image principale---->
     <div id="bg-page-img" class="hidden-xs"
@@ -67,7 +61,12 @@
 	<!---- auteur de la photo  --------->
 	<div class="img-author hidden-xs"
 	     tal:condition="python:pictAuthor"
-	     tal:content="string:(C) ${pictAuthor}"></div>
+	     tal:content="string:${pictAuthor}">
+	</div>
+	<div class="img-no-author hidden-xs"
+	     tal:condition="python:pictAuthor"
+	     tal:content="string:(DR)">
+	</div>
 
    <!--------Début de la section team---------->
    <section>
@@ -135,59 +134,14 @@
 	  </div>
 	 </div>
    <span tal:condition="gallery">
-     <metal:macro use-macro="context/bebest_macros/macros/gallery" />
+     <metal:macro use-macro="context/bebest_macros/macros/gallery-bebest" />
    </span>
    <p>&nbsp;</p>
-   <!-- DEBUT SECTION MAP -->
-   <style>
-     .leaflet-popup {
-     	position: absolute;
-     	left: 0px;
-     }
-     .leaflet-control-layers-toggle {
-		background-image:url(++theme++plonetheme.bebest/images/leaflet/layers.png);
-		width: 44px;
-		height: 44px;
-	 }
-	 #feature-infos {
-	    width: 15%;
-	    max-height: 5000px;
-	    background: rgba(255, 255, 255, 1);
-	    position: absolute;
-	    padding: 5px;
-	    border: 1px solid grey;
-	    border-radius: 5px;
-	    display: none;
-	    z-index: 2000;
-	}
-	#bebest-map-info {
-	    font-weight: bold;
-	    color: black;
-	}
-   </style>
 
-   <section id="bebest-mission-map" tal:condition="python:features">
-   	<div class="container-fluid bg-bright">
-   	<div class=container>
-	   	<span tal:omit-tag="" tal:content="structure string:${features}">
-	   	  features
-	   	</span>
-	   	<div id="feature-infos">
-	   	  <span class="bebest-feature-name" id="bebest-feature-name">name</span>
-	   	  <br />
-	   	  <span class="bebest-feature-description" id="bebest-feature-description"></span>
-	   	</div>
-   	
-	<div id="bebest-map">
-	</div>
-	</div>
-	</div>
-   
-   </section>
+   <metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
 
   </div>
 </div>
-  <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-mission-map.js"></script>
 
   </metal:content-core>
 </metal:content-core>

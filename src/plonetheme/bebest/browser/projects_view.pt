@@ -12,25 +12,32 @@
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
   <div tal:define="projects python:view.getProjectsObjs(effective=False)">
-  <div class="pushtop super text-center">
+
+ <div class="container">
+
+  <div class="pushtop super text-center pushbottom">
         	${context/description}
   </div>
 
    <div class="thumbnail-wrapper" tal:condition="projects">
      <span  tal:omit-tag="" tal:repeat="project projects">
-     <div class="thumbnail-portrait"
+     
+     <div class="thumbnail-mission"
           tal:define="image nocall:project/main_pict">
        <a href="" tal:attributes="href string:${project/absolute_url}">
+       <div class="header">
+       <h4 tal:content="string:${project/title}">project title</h4>
+       </div>
 	      <img tal:condition="image"
 	           tal:attributes="src string:${project/absolute_url}/@@download/main_pict/${image/filename}"
-	           class="img-circle portrait-second" />
-	      <h4 tal:content="string:${project/title}">project title</h4>
-	      <p tal:content="python:project.description">project description</p>
+	           class="img-mission" />
+	      
       </a>    
      </div>
      </span>
    </div>
 
+ </div>
 </div>
   </metal:content-core>
 </metal:content-core>

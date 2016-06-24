@@ -7,7 +7,95 @@
       i18n:domain="plonetheme.bebest">
 <body>
 
-<metal:row define-macro="gallery">
+
+<metal:row define-macro="map-bebest">
+  <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
+   <section class="section-map"
+            >
+     <span tal:replace="nothing" tal:on-error="string:No map !">rien</span>
+     <span>
+        <tal:comment tal:replace="nothing">
+        Les appels ci-dessous sont doubles (view/context) car dans les cas des missions,
+        projets et sites d'etude, getMapZoom, getMapCenter et getGeoJSON
+        sont des attributs des objects.
+        Dans le cas de la home page (ou toute autre vue), ce sera un
+        attribut de la vue et non du context.
+        </tal:comment>
+   		<span tal:content="structure python:context.getMapZoom()"
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        map zoom
+	    </span>
+		<span tal:content="structure string:${zoom}"
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        map zoom
+	    </span>
+	  	<span tal:content="structure python:context.getMapCenter()"
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        map center
+	  	</span>
+		<span tal:content="structure string:${center}"
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        map zoom
+	    </span>
+	     <span tal:content="structure python:context.getIconsList()"
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        iconsList
+	    </span>
+	     <span tal:content="structure string:${iconsList}"
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        iconsList
+	    </span>
+	    
+	    <span tal:content="structure python:context.getGeoJSON()"
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        map geojson
+	  	</span>
+	  	<span tal:content="structure string:${geojson}" 
+	        tal:omit-tag=""
+	        tal:on-error="nothing">
+	        map geojson
+	  	</span>
+
+   		<!---le type de feature présenté (sites ou missions)---->
+        <div class="feature-type col-xs-12">
+            <span tal:content="string:${feature_info_title}">Sites d'étude</span>
+        </div>
+		<!----La map en elle même------->
+        <div id="bebest-map" class="col-xs-7 col-sm-8 col-md-9">
+		</div>
+        <!----le panneau des features---->
+        <div class="map-feature-panel col-xs-5 col-sm-4 col-md-3">
+        	<div class="feature-info" id="feature-info">
+            	<!---titre de l'item--->
+                <h3 tal:content="string:${feature_info_title}">
+                	Saint-Pierre et Miquelon
+                </h3>
+                <!---un petit filet--->
+                <hr />
+                <!---description de l'item--->
+                <p tal:content="string:${feature_info_text}">
+                	Archipel français d'Amérique du Nord situé dans l'océan Atlantique nord, à 25 km au sud de l’île canadienne de Terre-Neuve.
+                </p>
+                <!---lien vers l'item--->
+                <a href="" 
+                   tal:attributes="href string:${feature_info_link}">
+                	En savoir plus...
+                </a>
+            </div>
+        </div>
+        <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-map.js"></script>
+     </span>
+   </section>
+</metal:row>
+
+<metal:row define-macro="gallery-bebest">
 	<link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/galleria/themes/twelve/galleria.twelve.css" />
 	<script src="++theme++plonetheme.bebest/galleria/galleria-1.4.2.min.js"></script>
 	<style>
