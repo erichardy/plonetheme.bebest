@@ -104,7 +104,7 @@
 				     tal:content="python:view.getPortraitAttr('pict_author')">pict author</div>
 				<div tal:condition="python:not view.getPortraitAttr('pict_author')"
 				     class="img-no-author">
-				  (DR)
+				  
 				</div>
  			</div>	
 				<!----La courte biographie --------->
@@ -119,7 +119,7 @@
 					    
 						<span class="bebest-collapse" style="display: none"
 						      id="show-english-version-collapse">
-						  <h2 i18n:translate="">short biography</h2>
+						  <h2 i18n:translate="">Biography</h2>
 						  <p tal:content="structure string:${context/bio_en/raw}">
 						  	bio EN
 						  </p>
