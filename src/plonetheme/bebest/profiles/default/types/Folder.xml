@@ -23,6 +23,7 @@
   <element value="portfolio"/>
   <element value="portraits_view"/>
   <element value="projects_view"/>
+  <element value="studysites_view"/>
  </property>
  <property name="default_view_fallback">False</property>
  <property name="add_permission">plone.app.contenttypes.addFolder</property>

@@ -46,6 +46,13 @@
       permission="zope2.View"
       />
    <browser:page
+      name="studysites_view"
+      for="*"
+      class=".studysites_view.studySitesView"
+      template="studysites_view.pt"
+      permission="zope2.View"
+      />
+   <browser:page
       name="bebest_news_view"
       for="plone.app.contenttypes.interfaces.INewsItem"
       class=".bebest_news_view.bebestNewsView"
