@@ -102,6 +102,7 @@
           </div>
 
         </div>
+       <span tal:condition="teams">
         <button id="show-participants"
 			        type="button"
 			        class="btn btn-default center-block collapser"
@@ -122,6 +123,7 @@
 		
 		</span>
 		</div>
+	   </span>
       </div>
     </div>
   </section>
@@ -149,7 +151,7 @@
     </div>
   </div>
 
-<section><!--------Début de la section missions associées---------->
+<section tal:condition="missions"><!--------Début de la section missions associées---------->
 	<div class="container-fluid bg-bright">
 		<div class="container">
            <!----------thumbnails des missions---------->

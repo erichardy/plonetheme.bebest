@@ -104,9 +104,9 @@
            <div class="carousel-inner" role="listbox">
            <span tal:omit-tag="" tal:repeat="newsItem newsItems">
              <div tal:condition="python:repeat.newsItem.start" class="item active news-wrapper">
-	             <div class="news-img">
+	             <div class="news-img img-circle">
 	             <img tal:define="scale newsItem/@@images"
-	                    tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='img-circle')"
+	                    tal:replace="structure python: scale.scale('image', scale='large').tag()"
 	                    tal:on-error="string: Image cannot be displayed" />
 	             </div>
 	             <div class="news-info">
@@ -118,9 +118,9 @@
                  </div>
              </div>
              <div tal:condition="python:not repeat.newsItem.start" class="item news-wrapper">
-	             <div class="news-img">
+	             <div class="news-img img-circle">
 		             <img tal:define="scale newsItem/@@images"
-		                    tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='img-circle')"
+		                    tal:replace="structure python: scale.scale('image', scale='large').tag()"
 		                    tal:on-error="string: Image cannot be displayed" />
 	             </div>
 	             <div class="news-info">

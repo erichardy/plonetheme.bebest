@@ -10,9 +10,8 @@
 
 <metal:row define-macro="map-bebest">
   <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
-   <section class="section-map"
-            >
-     <span tal:replace="nothing" tal:on-error="string:No map !">rien</span>
+   
+
      <span>
         <tal:comment tal:replace="nothing">
         Les appels ci-dessous sont doubles (view/context) car dans les cas des missions,
@@ -51,18 +50,24 @@
 	        tal:on-error="nothing">
 	        iconsList
 	    </span>
-	    
-	    <span tal:content="structure python:context.getGeoJSON()"
-	        tal:omit-tag=""
-	        tal:on-error="nothing">
-	        map geojson
-	  	</span>
-	  	<span tal:content="structure string:${geojson}" 
-	        tal:omit-tag=""
-	        tal:on-error="nothing">
-	        map geojson
-	  	</span>
 
+   	    <span tal:condition="python:context.portal_type in ['bebest.mission', 'bebest.project', 'bebest.studysite']"
+	          tal:define="global geojson_view python:context.getGeoJSON();
+	                      portalType python:context.portal_type"
+	          tal:on-error="nothing">
+	    	<span tal:condition="geojson_view" tal:content="structure string:${geojson_view}">geojson</span>
+	    	<span tal:content="string:${portalType}"></span>
+	    </span>
+
+	    <span tal:condition="python:context.portal_type not in ['bebest.mission', 'bebest.project', 'bebest.studysite']"
+	          tal:define="global geojson_view string:${geojson}"
+	          tal:on-error="nothing">
+	    	<span tal:condition="geojson_view"
+	    	      tal:content="structure string:${geojson}">geojson
+	        </span>
+	  	</span>
+<span>
+	 <section tal:condition="python:geojson_view != 'False' and geojson_view != False" class="section-map">
    		<!---le type de feature présenté (sites ou missions)---->
         <div class="feature-type col-xs-12">
             <span tal:content="string:${feature_info_title}">Sites d'étude</span>
@@ -91,8 +96,10 @@
             </div>
         </div>
         <script src="${portal_url}/++theme++plonetheme.bebest/js/bebest-map.js"></script>
+      </section>
+</span>
      </span>
-   </section>
+   
 </metal:row>
 
 <metal:row define-macro="gallery-bebest">

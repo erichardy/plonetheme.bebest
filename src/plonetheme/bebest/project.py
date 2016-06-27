@@ -246,6 +246,9 @@ class project(Container):
                                      path='/'.join(self.getPhysicalPath()),
                                      depth=1,
                                      )
+        missions = [mission.getObject() for mission in bmissions]
+        if len(missions) == 0:
+            return False
         return [mission.getObject() for mission in bmissions]
 
     def sort_by_title(self, a, b):
@@ -261,7 +264,7 @@ class project(Container):
           par ordre alpabétique et épurée des doublons (à faire!)
         """
         missions = self.getMissions()
-        if len(missions) == 0:
+        if not missions:
             return False
         p = []
         for mission in missions:
