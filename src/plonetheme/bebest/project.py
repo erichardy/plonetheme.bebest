@@ -27,6 +27,7 @@ from zope.interface import Invalid, invariant
 from zope.interface import alsoProvides
 
 from collective import dexteritytextindexer
+from Products.CMFPlone.utils import safe_unicode
 from zope.publisher.browser import BrowserView
 from plone import api
 # from plone.formwidget.contenttree import PathSourceBinder
@@ -382,7 +383,7 @@ class project(Container):
         fjs += u'];\n'
         js += fjs
         js += u'</script>'
-        return js
+        return safe_unicode(js)
 
     def getMapZoom(self):
         zoomjs = '<script>var zoom = 4;</script>'

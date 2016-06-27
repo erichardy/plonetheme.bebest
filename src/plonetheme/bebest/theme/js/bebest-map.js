@@ -2,7 +2,6 @@
 function onEachFeature(feature, layer) {
 	layer.on('click', function (e) {
 		title = " ";
-		console.log(feature.properties.name);
 		if (feature.properties.name) {
 			title = '<h3>' + feature.properties.name + '</h3>';
 		}
@@ -121,7 +120,7 @@ function markerIcon(feature) {
 	if ((feature.properties['icon']) && (feature.properties['icon'] !== 'undefined')) {
 		return iconList[feature.properties['icon']]
 	}
-	console.log(defaultIcon);
+	// console.log(defaultIcon);
 	return defaultIcon
 }
 
@@ -139,7 +138,7 @@ if (typeof missionsFeatures !== 'undefined'){
 		onEachFeature: function(f, layer) {
 			overlayMaps[f['properties']['name']] = layer ;
 			layer.on('click', function (e){
-				console.log(f);
+				// console.log(f);
 				$("#feature-info h3").html(f.properties['name']);
 				$("#feature-info p").html(f.properties['description']);
 				$("#feature-info a").attr('href', f.properties['url']);

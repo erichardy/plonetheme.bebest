@@ -28,6 +28,7 @@ from zope.interface import alsoProvides
 
 from zope.publisher.browser import BrowserView
 from collective import dexteritytextindexer
+from Products.CMFPlone.utils import safe_unicode
 # from plone.formwidget.contenttree import ObjPathSourceBinder
 # from plone.formwidget.contenttree.source import PathSource
 # from Products.CMFCore.interfaces import IFolderish
@@ -337,7 +338,7 @@ class mission(Container):
         try:
             if len(geo) > 5:
                 geojson = u"<script>var missionsFeatures = "
-                geojson += self.geojson
+                geojson += safe_unicode(geo)
                 geojson += u";</script>"
                 return geojson
             else:
