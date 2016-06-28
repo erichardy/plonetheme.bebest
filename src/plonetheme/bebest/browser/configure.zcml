@@ -59,6 +59,13 @@
       template="bebest_news_view.pt"
       permission="zope2.View"
       />
+   <browser:page
+      name="bebest_page_view"
+      for="plone.app.contenttypes.interfaces.IDocument"
+      class=".bebest_page_view.bebestPageView"
+      template="bebest_page_view.pt"
+      permission="zope2.View"
+      />
 
    <browser:page
       name="map"

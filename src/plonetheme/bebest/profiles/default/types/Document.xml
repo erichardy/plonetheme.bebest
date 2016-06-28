@@ -1,12 +1,15 @@
 <?xml version="1.0"?>
 <object name="Document" meta_type="Factory-based Type Information"
    i18n:domain="cmf_default" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-   <property name="default_view">document_view</property>
+   <property name="immediate_view">bebest_page_view</property>
+   <property name="default_view">bebest_page_view</property>
    <property name="behaviors" purge="false">
+     <element value="plonetheme.bebest.behaviors.englishtext.IEnglishText" />
      <element value="plone.app.contenttypes.behaviors.leadimage.ILeadImage"/>
    </property>
    <property name="view_methods">
      <element value="document_view"/>
      <element value="bebest_home"/>
+     <element value="bebest_page_view"/>
    </property>
 </object>

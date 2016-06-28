@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plonetheme.bebest">
+<body
+	tal:define="portal_state context/@@plone_portal_state;
+	            portal_url portal_state/portal_url"
+	>
+
+<metal:content-core fill-slot="main">
+  <metal:content-core define-macro="main">
+  <div tal:define="displayEN python:view.displayEN();
+                   istextFR python:view.istextFR();
+                   istextEN python:view.istextEN();">
+  <div class="container">
+        <div class="row">
+            <section>
+                <div class="bebest-title" tal:content="string:${context/title}">
+                    Title
+                </div> 
+                <!----------un petit filet------------>
+                <hr /> 
+                <!---Champ sous titre/description--->
+                <div class="bebest-subtitle" tal:content="string:${context/description}">
+                    Description
+                </div> 
+            </section>
+            <p>&nbsp;</p>
+            <section class=" pushbottom">
+              <span tal:condition="istextEN">
+					 <div tal:condition="python:displayEN and istextEN"
+					     class="align-right">
+				        <button type="button"
+				                id="show-english-version"
+				                class="btn btn-default collapser">English version</button>
+					    
+						<span class="bebest-collapse" style="display: none"
+						      id="show-english-version-collapse">
+						  <p>&nbsp;</p>
+						  <div tal:content="structure string:${context/presentation_en/raw}">
+						  	text EN
+						  </div>
+						</span>
+						<hr />
+					</div>
+			     </span>
+                <!------Rich Text---------->
+                <div tal:content="structure string:${context/text/raw}">
+                  text FR
+                </div>
+
+            </section>
+        </div>
+	</div>
+
+
+  </div>
+
+  </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+  
