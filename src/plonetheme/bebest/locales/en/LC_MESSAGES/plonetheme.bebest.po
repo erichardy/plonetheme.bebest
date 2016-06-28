@@ -14,16 +14,20 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./mission.py:203
+#: ./mission.py:204
 msgid "Add a new mission !"
 msgstr ""
 
-#: ./project.py:180
+#: ./project.py:181
 msgid "Add a new project !"
 msgstr ""
 
 #: ./interfaces.py:102
 msgid "Background image for about section"
+msgstr ""
+
+#: ./templates/portraitview.pt:123
+msgid "Biography"
 msgstr ""
 
 #: ./interfaces.py:133
@@ -34,11 +38,11 @@ msgstr ""
 msgid "CSS class for background"
 msgstr ""
 
-#: ./mission.py:229
+#: ./mission.py:230
 msgid "Cancel this mission"
 msgstr ""
 
-#: ./project.py:202
+#: ./project.py:203
 msgid "Cancel this project"
 msgstr ""
 
@@ -50,7 +54,7 @@ msgstr ""
 msgid "Form title"
 msgstr ""
 
-#: ./configure.zcml:32
+#: ./configure.zcml:36
 msgid "Installs the plonetheme.bebest add-on."
 msgstr ""
 
@@ -66,7 +70,7 @@ msgstr ""
 msgid "Logo filename, should be in"
 msgstr ""
 
-#: ./mission.py:122
+#: ./mission.py:123
 msgid "Mission presentation"
 msgstr ""
 
@@ -74,7 +78,7 @@ msgstr ""
 msgid "Name of the default thumb image"
 msgstr ""
 
-#: ./mission.py:82
+#: ./mission.py:83
 msgid "Not a float number"
 msgstr ""
 
@@ -94,8 +98,8 @@ msgstr ""
 msgid "Only One word, used for news"
 msgstr ""
 
-#: ./mission.py:218
-#: ./project.py:192
+#: ./mission.py:219
+#: ./project.py:193
 msgid "Please correct errors"
 msgstr ""
 
@@ -103,7 +107,7 @@ msgstr ""
 msgid "Portrait of a bebest participant"
 msgstr ""
 
-#: ./studysite.py:80
+#: ./studysite.py:81
 msgid "Presentation"
 msgstr ""
 
@@ -111,11 +115,11 @@ msgstr ""
 msgid "Project categories"
 msgstr ""
 
-#: ./mission.py:214
+#: ./mission.py:215
 msgid "Save this mission"
 msgstr ""
 
-#: ./project.py:188
+#: ./project.py:189
 msgid "Save this project"
 msgstr ""
 
@@ -139,19 +143,19 @@ msgstr ""
 msgid "Tag used for thumbnails on home page"
 msgstr ""
 
-#: ./mission.py:185
-#: ./project.py:162
-#: ./studysite.py:67
+#: ./mission.py:186
+#: ./project.py:163
+#: ./studysite.py:68
 msgid "Target"
 msgstr ""
 
-#: ./mission.py:74
-#: ./project.py:49
+#: ./mission.py:75
+#: ./project.py:50
 msgid "The start or end date is invalid"
 msgstr ""
 
-#: ./mission.py:172
-#: ./studysite.py:131
+#: ./mission.py:173
+#: ./studysite.py:132
 msgid "Use http://geojson.io/"
 msgstr ""
 
@@ -172,8 +176,8 @@ msgid "bebestimage"
 msgstr ""
 
 #: ./interfaces.py:119
-#: ./mission.py:161
-#: ./project.py:126
+#: ./mission.py:162
+#: ./project.py:127
 msgid "between 0 and 15"
 msgstr ""
 
@@ -181,7 +185,7 @@ msgstr ""
 msgid "biography"
 msgstr ""
 
-#: ./project.py:157
+#: ./project.py:158
 msgid "canadian contact"
 msgstr ""
 
@@ -193,7 +197,7 @@ msgstr ""
 msgid "carousel label"
 msgstr ""
 
-#: ./mission.py:179
+#: ./mission.py:180
 msgid "chief scientist"
 msgstr ""
 
@@ -201,16 +205,16 @@ msgstr ""
 msgid "configuration"
 msgstr ""
 
-#: ./project.py:139
+#: ./project.py:140
 msgid "contacts"
 msgstr ""
 
-#: ./mission.py:171
-#: ./studysite.py:130
+#: ./mission.py:172
+#: ./studysite.py:131
 msgid "coordinates in GEOJSON format"
 msgstr ""
 
-#: ./project.py:105
+#: ./project.py:106
 msgid "dates"
 msgstr ""
 
@@ -228,13 +232,13 @@ msgstr ""
 msgid "description text"
 msgstr ""
 
-#: ./mission.py:113
-#: ./studysite.py:72
+#: ./mission.py:114
+#: ./studysite.py:73
 msgid "descriptions"
 msgstr ""
 
-#: ./mission.py:125
-#: ./studysite.py:84
+#: ./mission.py:126
+#: ./studysite.py:85
 msgid "display english description"
 msgstr ""
 
@@ -246,7 +250,7 @@ msgstr ""
 msgid "display or not english biography"
 msgstr ""
 
-#: ./project.py:95
+#: ./project.py:96
 msgid "display or not english description"
 msgstr ""
 
@@ -258,8 +262,8 @@ msgstr ""
 msgid "display time with dates ?"
 msgstr ""
 
-#: ./mission.py:141
-#: ./studysite.py:100
+#: ./mission.py:142
+#: ./studysite.py:101
 msgid "downloaded by visitors"
 msgstr ""
 
@@ -271,8 +275,8 @@ msgstr ""
 msgid "end date"
 msgstr ""
 
-#: ./mission.py:108
-#: ./project.py:115
+#: ./mission.py:109
+#: ./project.py:116
 msgid "end date for the mission"
 msgstr ""
 
@@ -280,11 +284,11 @@ msgstr ""
 msgid "english biography"
 msgstr ""
 
-#: ./project.py:100
+#: ./project.py:101
 msgid "english description"
 msgstr ""
 
-#: ./mission.py:130
+#: ./mission.py:131
 msgid "english presentation"
 msgstr ""
 
@@ -312,27 +316,27 @@ msgstr ""
 msgid "french biography"
 msgstr ""
 
-#: ./project.py:153
+#: ./project.py:154
 msgid "french contact"
 msgstr ""
 
-#: ./project.py:92
+#: ./project.py:93
 msgid "french description"
 msgstr ""
 
-#: ./mission.py:121
+#: ./mission.py:122
 msgid "french presentation"
 msgstr ""
 
 #: ./bebestimage.py:38
-#: ./mission.py:88
+#: ./mission.py:89
 #: ./portfolio.py:37
 msgid "general"
 msgstr ""
 
-#: ./mission.py:155
-#: ./project.py:121
-#: ./studysite.py:114
+#: ./mission.py:156
+#: ./project.py:122
+#: ./studysite.py:115
 msgid "geo"
 msgstr ""
 
@@ -361,8 +365,8 @@ msgid "in portal_skins/custom/images"
 msgstr ""
 
 #: ./interfaces.py:124
-#: ./mission.py:167
-#: ./studysite.py:126
+#: ./mission.py:168
+#: ./studysite.py:127
 msgid "in the form \"[lat, long]\""
 msgstr ""
 
@@ -375,7 +379,7 @@ msgid "main affiliation"
 msgstr ""
 
 #: ./bebestimage.py:47
-#: ./mission.py:134
+#: ./mission.py:135
 #: ./portfolio.py:46
 msgid "main photo"
 msgstr ""
@@ -385,8 +389,8 @@ msgid "main title for map on home page"
 msgstr ""
 
 #: ./interfaces.py:123
-#: ./mission.py:166
-#: ./project.py:132
+#: ./mission.py:167
+#: ./project.py:133
 msgid "map center"
 msgstr ""
 
@@ -414,11 +418,11 @@ msgstr ""
 msgid "mission"
 msgstr ""
 
-#: ./mission.py:95
+#: ./mission.py:96
 msgid "mission label"
 msgstr ""
 
-#: ./project.py:133
+#: ./project.py:134
 msgid "must be in the form \"[lat, long]\""
 msgstr ""
 
@@ -426,22 +430,22 @@ msgstr ""
 msgid "must be valid javascript code !"
 msgstr ""
 
-#: ./mission.py:140
-#: ./studysite.py:99
+#: ./mission.py:141
+#: ./studysite.py:100
 msgid "other document"
 msgstr ""
 
-#: ./mission.py:183
-#: ./project.py:160
+#: ./mission.py:184
+#: ./project.py:161
 #: ./templates/missionview.pt:91
 msgid "other participants"
 msgstr ""
 
-#: ./mission.py:175
+#: ./mission.py:176
 msgid "participants"
 msgstr ""
 
-#: ./templates/portraitview.pt:87
+#: ./templates/portraitview.pt:88
 msgid "partner's website"
 msgstr ""
 
@@ -454,17 +458,17 @@ msgid "person first name"
 msgstr ""
 
 #: ./portrait.py:145
-#: ./templates/portraitview.pt:67
+#: ./templates/portraitview.pt:68
 msgid "personal page"
 msgstr ""
 
-#: ./mission.py:137
+#: ./mission.py:138
 #: ./portrait.py:80
-#: ./project.py:82
+#: ./project.py:83
 msgid "picture author"
 msgstr ""
 
-#: ./configure.zcml:32
+#: ./configure.zcml:36
 msgid "plonetheme.bebest"
 msgstr ""
 
@@ -508,7 +512,7 @@ msgstr ""
 msgid "presentation en"
 msgstr ""
 
-#: ./project.py:148
+#: ./project.py:149
 msgid "primary contact"
 msgstr ""
 
@@ -516,23 +520,23 @@ msgstr ""
 msgid "project"
 msgstr ""
 
-#: ./project.py:74
+#: ./project.py:75
 msgid "project categories"
 msgstr ""
 
-#: ./project.py:87
+#: ./project.py:88
 msgid "project descriptions"
 msgstr ""
 
-#: ./project.py:63
+#: ./project.py:64
 msgid "project label"
 msgstr ""
 
-#: ./templates/portraitview.pt:77
+#: ./templates/portraitview.pt:78
 msgid "publications and work"
 msgstr ""
 
-#: ./studysite.py:65
+#: ./studysite.py:66
 msgid "related missions"
 msgstr ""
 
@@ -540,16 +544,12 @@ msgstr ""
 msgid "second affiliation"
 msgstr ""
 
-#: ./project.py:75
+#: ./project.py:76
 msgid "select one or more"
 msgstr ""
 
 #: ./portrait.py:123
 msgid "select your jobs"
-msgstr ""
-
-#: ./templates/portraitview.pt:122
-msgid "short biography"
 msgstr ""
 
 #: ./bebestimage.py:50
@@ -562,8 +562,8 @@ msgstr ""
 msgid "start date"
 msgstr ""
 
-#: ./mission.py:103
-#: ./project.py:110
+#: ./mission.py:104
+#: ./project.py:111
 msgid "start date for the mission"
 msgstr ""
 
@@ -575,15 +575,15 @@ msgstr ""
 msgid "study site"
 msgstr ""
 
-#: ./studysite.py:58
+#: ./studysite.py:59
 msgid "study site label"
 msgstr ""
 
-#: ./studysite.py:81
+#: ./studysite.py:82
 msgid "study site presentation"
 msgstr ""
 
-#: ./studysite.py:90
+#: ./studysite.py:91
 msgid "study site presentation en"
 msgstr ""
 
@@ -601,7 +601,7 @@ msgstr ""
 
 #: ./behaviors/englishtext.py:29
 #: ./behaviors/startenddates.py:28
-#: ./mission.py:126
+#: ./mission.py:127
 msgid "unselect to disable"
 msgstr ""
 
@@ -609,9 +609,9 @@ msgstr ""
 msgid "used for portfolio view"
 msgstr ""
 
-#: ./mission.py:99
+#: ./mission.py:100
 #: ./portrait.py:61
-#: ./project.py:67
+#: ./project.py:68
 msgid "very short description"
 msgstr ""
 
@@ -632,7 +632,7 @@ msgid "web site related"
 msgstr ""
 
 #: ./interfaces.py:118
-#: ./mission.py:160
-#: ./project.py:125
+#: ./mission.py:161
+#: ./project.py:126
 msgid "zoom level"
 msgstr ""

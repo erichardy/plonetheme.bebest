@@ -17,6 +17,10 @@
 
     <cmf:registerDirectory name="bebest" recursive="True"/>
 
+    <interface
+      interface=".interfaces.IPlonethemeBebestLayer"
+      name="plonetheme.bebest"
+    />
     <plone:static
         directory="theme"
         type="theme"
