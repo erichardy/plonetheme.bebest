@@ -72,7 +72,7 @@ class IPortrait(model.Schema):
     dexteritytextindexer.searchable('email')
     email = schema.ASCIILine(title=_(u"email address"),
                              constraint=validateEmail,
-                             required=True,
+                             required=False,
                              )
     main_pict = NamedBlobImage(title=_(u"main photo"),
                                required=True
@@ -161,6 +161,11 @@ alsoProvides(IPortrait, IFormFieldProvider)
 class PortraitView(BrowserView):
 
     def mailEncoded(self):
+        try:
+            if len(self.context.email) == 0:
+                return False
+        except Exception:
+            return False
         return reverse_email(self.context.email)
 
     def getJobs(self):

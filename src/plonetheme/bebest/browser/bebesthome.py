@@ -153,15 +153,20 @@ class bebestHome(BrowserView):
         :returns: src attributes of an image field
         """
         image = None
+        portal_type = thumb.portal_type
+        image_field = {}
+        image_field['Folder'] = 'image'
+        image_field['Document'] = 'image'
+        image_field['News Item'] = 'image'
+        image_field['Event'] = 'image'
+        image_field['bebest.portrait'] = 'main_pict'
+        image_field['bebest.project'] = 'main_pict'
+        image_field['bebest.mission'] = 'main_pict'
+        image_field['bebest.studysite'] = 'main_pict'
         try:
-            try:
-                image = thumb.image
-                field = 'image'
-                filename = image.filename
-            except Exception:
-                image = thumb.maint_pict
-                field = 'main_pict'
-                filename = image.filename
+            field = image_field[portal_type]
+            image = eval('thumb.' + field)
+            filename = image.filename
         except Exception:
             prefix = 'plonetheme.bebest.interfaces.'
             prefix += 'IPlonethemeBebestSettings.default_thumb'
