@@ -78,8 +78,10 @@
                   class="newsImage"
                   />
            </span>
-            <div class="thumbnail-item-dark"> 
-              <h3>${thumb/title}</h3>
+            <div class="thumbnail-item-dark">
+              <h3 tal:condition="python:thumb.portal_type == 'bebest.portrait'"
+                  tal:content="string:${thumb/first_name} ${thumb/family_name}"> Title</h3>
+              <h3 tal:condition="python:thumb.portal_type != 'bebest.portrait'">${thumb/title}</h3>
 			  <hr />
               <p>${thumb/description}</p>
            </div>
