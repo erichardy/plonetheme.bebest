@@ -56,7 +56,6 @@
 	                      portalType python:context.portal_type"
 	          tal:on-error="nothing">
 	    	<span tal:condition="geojson_view" tal:content="structure string:${geojson_view}">geojson</span>
-	    	<span tal:content="string:${portalType}"></span>
 	    </span>
 
 	    <span tal:condition="python:context.portal_type not in ['bebest.mission', 'bebest.project', 'bebest.studysite']"
