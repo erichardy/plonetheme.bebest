@@ -20,7 +20,7 @@
   </div>
  <div class="container">
  <div class="pushtop super text-center pushbottom">
-        	Actualités / News
+        	Actualit&eacute;s / News
  </div>
  <div id="bebest-news-collector">
 
@@ -35,15 +35,16 @@
 	                            itemTitle string:${item/Title}">
 		          <a href="#" tal:attributes="href string:${itemURL}">
 	                   <div class="news-img img-circle">
-	                       <img src="images/news/reunion.jpg"/>
+	                       <img tal:attributes="src string:${itemURL}/@@download/image/${item/image/filename}"
+	                            />
 	                   </div>
 	               </a>    
 	               <!-----les infos------>
 	               <div class="news-info">
-	                   <h3 tal:content="string:${itemTitle}">Cérémonie de signature du LIA Bebest</h3>
-	                   <hr></hr>
-	                   <p>Un Laboratoire International Associé pour étudier la vulnérabilité des écosystèmes marins côtiers vis à vis des pressions anthropiques et environnementales. </p>
-	                   <a href="actualite.html">hum, ...interessant!</a>
+	                   <h3 tal:content="string:${itemTitle}">News Title</h3>
+	                   <hr/>
+	                   <p tal:content="string:${item/description}">New Item description</p>
+	                   <a tal:attributes="href string:${itemURL}">En savoir plus.../Show more...</a>
 	               </div>
               </span>
 	          </div> <!-- class="news-wrapper" -->
