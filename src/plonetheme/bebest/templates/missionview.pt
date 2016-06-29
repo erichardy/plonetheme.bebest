@@ -64,8 +64,8 @@
 	     tal:content="string:${pictAuthor}">
 	</div>
 	<div class="img-no-author hidden-xs"
-	     tal:condition="python:pictAuthor"
-	     tal:content="string:(DR)">
+	     tal:condition="python:not pictAuthor"
+	     >
 	</div>
 
    <!--------Début de la section team---------->

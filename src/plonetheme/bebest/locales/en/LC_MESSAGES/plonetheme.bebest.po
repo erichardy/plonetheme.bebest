@@ -248,7 +248,7 @@ msgstr ""
 
 #: ./portrait.py:103
 msgid "display or not english biography"
-msgstr ""
+msgstr "Check to enable English biography"
 
 #: ./project.py:96
 msgid "display or not english description"
@@ -613,7 +613,7 @@ msgstr ""
 #: ./portrait.py:61
 #: ./project.py:68
 msgid "very short description"
-msgstr ""
+msgstr "Short description for thumbnail (<80 char)"
 
 #: ./portrait.py:143
 msgid "web"

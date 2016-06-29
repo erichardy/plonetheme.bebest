@@ -447,7 +447,7 @@ msgstr "Participants"
 
 #: ./templates/portraitview.pt:88
 msgid "partner's website"
-msgstr "Site WEB du partenaire"
+msgstr "Groupe ou Laboratoire / Group or Laboratory"
 
 #: ./portrait.py:65
 msgid "person family name"
@@ -460,7 +460,7 @@ msgstr "Prénom"
 #: ./portrait.py:145
 #: ./templates/portraitview.pt:68
 msgid "personal page"
-msgstr "Page WEB personnelle"
+msgstr "Page web personnelle / Individual web page"
 
 #: ./mission.py:138
 #: ./portrait.py:80
@@ -534,7 +534,7 @@ msgstr "Label du projet"
 
 #: ./templates/portraitview.pt:78
 msgid "publications and work"
-msgstr "Publications et autres productions"
+msgstr "Activités professionnelles / Professional activities"
 
 #: ./studysite.py:66
 msgid "related missions"
@@ -613,7 +613,7 @@ msgstr "Utilisé pour la vue portfolio"
 #: ./portrait.py:61
 #: ./project.py:68
 msgid "very short description"
-msgstr "Courte description"
+msgstr "Courte description qui apparaît quand le portrait est dans un thumbnail (< 80 caractères)"
 
 #: ./portrait.py:143
 msgid "web"
