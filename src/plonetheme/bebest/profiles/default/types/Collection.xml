@@ -11,9 +11,9 @@
     <element value="plone.app.contenttypes.behaviors.leadimage.ILeadImage"/>
   </property>
 
-  <!-- View information
-  <property name="view_methods">
-   <element value="ma_nouvelle_vue"/>
-  </property> -->
+  <!-- View information  -->
+  <property name="view_methods" purge="false">
+   <element value="bebest_newsCollection"/>
+  </property>
 
 </object>
