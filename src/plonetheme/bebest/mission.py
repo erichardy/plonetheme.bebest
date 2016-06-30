@@ -133,7 +133,7 @@ class IMission(model.Schema):
                                required=False
                                )
     main_pict = NamedBlobImage(title=_(u"main photo"),
-                               required=False
+                               required=True
                                )
     pict_author = schema.TextLine(title=_(u"picture author"),
                                   required=False,
@@ -220,10 +220,12 @@ class AddForm(add.DefaultAddForm):
             return
         try:
             obj = self.createAndAdd(data)
-            logger.info(obj.absolute_url())
-            # contextURL = obj.absolute_url()
-            # contextURL = self.context.absolute_url()
-            # self.request.response.redirect(contextURL)
+            logger.info(obj)
+            logger.info(u'=-=-=-=-=')
+            context = self.context
+            objId = obj.getId()
+            url = context[objId].absolute_url()
+            self.request.response.redirect(url)
         except Exception:
             raise
 

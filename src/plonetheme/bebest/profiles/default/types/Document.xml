@@ -7,7 +7,7 @@
      <element value="plonetheme.bebest.behaviors.englishtext.IEnglishText" />
      <element value="plone.app.contenttypes.behaviors.leadimage.ILeadImage"/>
    </property>
-   <property name="view_methods">
+   <property name="view_methods" purge="false">
      <element value="document_view"/>
      <element value="bebest_home"/>
      <element value="bebest_page_view"/>

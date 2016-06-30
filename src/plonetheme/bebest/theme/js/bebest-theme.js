@@ -7,6 +7,24 @@ $('#home-carousel-bebest').carousel({
 /*
 */
 
+/* essai de correction du bug d'affichage quand on saisi les contacts
+ * et que l'on clique sur l'icone pour avoir l'arborescence
+ * 
+ * Sans succes !!!
+$('.glyphicon-indent-left').click(function(){
+	$('.pattern-relateditems-path').each(function(){
+		console.log($(this));
+		$(this).removeProp('z-index');
+	});
+});
+
+$('.pattern-relateditems-tree').click(function(){
+	// console.log($(this).parent());
+	parent = $(this).parent();
+	$(parent).css('padding-bottom', '100px');
+})
+*/
+
 // suppression de l'icone 'Accueil' de la nav bar
 // $('#navbar li').first().html('');
 

@@ -261,7 +261,9 @@ class project(Container):
     def getMissionsTeams(self):
         """
         :returns: la liste de tous les participants à toutes les missions,
-          par ordre alpabétique et épurée des doublons (à faire!)
+          par ordre alpabétique et épurée des doublons
+          A cette liste est ajoutée la liste des portraits ajoutés dans
+          le champ other du projet
         """
         missions = self.getMissions()
         if not missions:
@@ -272,10 +274,15 @@ class project(Container):
             team = mission.getTeam()
             if team:
                 p += team
+        other = [o.to_object for o in self.other]
         participants = []
         for participant in p:
             if participant not in participants:
                 participants.append(participant)
+        if len(other) > 0:
+            for o in other:
+                if o not in participants:
+                    participants.append(o)
         return sorted(participants, self.sort_by_title)
 
     def getDescriptionFR(self):
