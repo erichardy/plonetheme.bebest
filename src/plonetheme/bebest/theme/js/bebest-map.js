@@ -127,6 +127,7 @@ function markerIcon(feature) {
 // Cas des mission, on a une 'FeatureCollection'
 if (typeof missionsFeatures !== 'undefined'){
 	var overlayMaps = {} ;
+	$("#feature-info a").hide();
 	fLen = missionsFeatures['features'].length;
 	L.geoJson(missionsFeatures, {
 		style: function(f){
@@ -141,6 +142,7 @@ if (typeof missionsFeatures !== 'undefined'){
 				// console.log(f);
 				$("#feature-info h3").html(f.properties['name']);
 				$("#feature-info p").html(f.properties['description']);
+				$("#feature-info a").show();
 				$("#feature-info a").attr('href', f.properties['url']);
 			})
 			
@@ -152,6 +154,7 @@ if (typeof missionsFeatures !== 'undefined'){
 if (typeof featuresCollections !== 'undefined'){
 	fLen = featuresCollections.length;
 	var overlayMaps = {};
+	$("#feature-info a").hide();
 	for (n = 0; n < fLen ; n++) {
 		layer = L.geoJson();
 		featuresCollection = featuresCollections[n];
@@ -173,6 +176,7 @@ if (typeof featuresCollections !== 'undefined'){
 			url = e['layer']['feature']['properties']['url'];
 			$("#feature-info h3").html(name);
 			$("#feature-info p").html(description);
+			$("#feature-info a").show();
 			$("#feature-info a").attr("href" , url);
 		});
 	}

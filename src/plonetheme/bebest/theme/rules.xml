@@ -92,6 +92,10 @@
   <drop css:content="#portal-footer-wrapper" />
   <drop css:theme="footer" />
   -->
+  <!--
+  <replace css:content="#portal-footer-wrapper"
+           css:theme="footer#ffootteerr"
+           /> -->
   <replace css:content="#portal-footer-wrapper"
            css:theme="footer#footer"
            />
