@@ -84,12 +84,12 @@ var mymap = L.map('bebest-map', {
 
 protocol = window.location.protocol;
 /* les tuiles */
-var osm = L.tileLayer(protocol + '//{s}.tile.osm.org/{z}/{x}/{y}.png', {
+var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
  	attribution: 'OpenStreetMap',  // Affichage du nom OpenStreetMap en bas a droit a coté du lien Leaflet
 	minZoom: 2 //Zoom minimum
 });
 
-var stamenTiles = L.tileLayer(protocol + '//{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', { //Appel du tilelayer StamenToner
+var stamenTiles = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', { //Appel du tilelayer StamenToner
 	attribution: 'StamenToner', // Affichage du nom StamenToner en bas a droit a coté du lien Leaflet
 	minZoom: 2	 //Zoom minimum
 }); 
