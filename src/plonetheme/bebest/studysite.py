@@ -92,7 +92,7 @@ class IStudysite(model.Schema):
                                required=False
                                )
     main_pict = NamedBlobImage(title=_(u"main photo"),
-                               required=False
+                               required=True
                                )
     pict_author = schema.TextLine(title=_(u"picture author"),
                                   required=False,

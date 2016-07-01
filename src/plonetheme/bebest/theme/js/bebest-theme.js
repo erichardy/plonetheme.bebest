@@ -24,9 +24,8 @@ $('.pattern-relateditems-tree').click(function(){
 	$(parent).css('padding-bottom', '100px');
 })
 */
-
-// suppression de l'icone 'Accueil' de la nav bar
-// $('#navbar li').first().html('');
+geojson_help = 'Utiliser / Use : <a href="http://geojson.io/" target="_blank">http://geojson.io/</a>';
+$('#formfield-form-widgets-geojson span.formHelp').html(geojson_help);
 
 /* sous-menus de la nav bar */
 /* code from http://codepen.io/betdream/pen/frDqh */

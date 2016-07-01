@@ -237,18 +237,31 @@ class bebestHome(BrowserView):
         return classesAbout
 
     def getMapTitle(self):
+        """
+        :return: le titre qui est affiché dans le cartouche
+            des cartes de la page home est pris dans le controlpanel
+        """
         prefix = 'plonetheme.bebest.interfaces.'
         prefix += 'IPlonethemeBebestSettings.home_map_title'
         title = api.portal.get_registry_record(prefix)
         return title
 
     def getMapDescription(self):
+        """
+        :return: la description qui est affichée dans le cartouche
+            des cartes de la page home est prise dans le controlpanel
+        """
         prefix = 'plonetheme.bebest.interfaces.'
         prefix += 'IPlonethemeBebestSettings.home_map_description'
         home_map_description = api.portal.get_registry_record(prefix)
         return home_map_description
 
     def getMapZoom(self):
+        """
+        :return: Dans la page HOME, la valeur du zoom de la carte est
+            pris dans le comtrol panel. Mais s'il n'y a pas de valeur,
+            on retourne une valeur par défaut : 4
+        """
         zoomjs = '<script>var zoom = 4;</script>'
         try:
             prefix = 'plonetheme.bebest.interfaces.'
@@ -263,6 +276,11 @@ class bebestHome(BrowserView):
             return zoomjs
 
     def getMapCenter(self):
+        """
+        :return: Dans la page HOME, la valeur du centre de la carte est
+            pris dans le comtrol panel. Mais s'il n'y a pas de valeur,
+            on retourne une valeur par défaut.
+        """
         center_a = '<script>var center = '
         center_b = ';</script>'
         val = ' [48.40003249610685, -4.5263671875] '
@@ -295,7 +313,12 @@ class bebestHome(BrowserView):
         sites = [site.getObject() for site in results]
         featuresCollections = {}
         for site in sites:
+            # on doit ajouter une lettre car des Ids peuvent etre composes
+            # seulement de chiffres, or, un nom de variable ne peut commencer
+            # par un chiffre
             uuid = 'F' + api.content.get_uuid(site)
+            if not site.geojson:
+                continue
             geo = geojson.loads(site.geojson)
             geo['name'] = site.title
             for f in geo['features']:
