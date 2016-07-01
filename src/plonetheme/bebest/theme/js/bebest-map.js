@@ -83,13 +83,20 @@ var mymap = L.map('bebest-map', {
 });
 
 protocol = window.location.protocol;
+osmTilesServer = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
+stamenTilesServer = 'http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png';
+if (protocol === 'https:'){
+	osmTilesServer = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	// a tenter pour stamenToner....
+	// stamenTilesServer = 'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png';
+}
 /* les tuiles */
-var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+var osm = L.tileLayer(osmTilesServer, {
  	attribution: 'OpenStreetMap',  // Affichage du nom OpenStreetMap en bas a droit a coté du lien Leaflet
 	minZoom: 2 //Zoom minimum
 });
 
-var stamenTiles = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', { //Appel du tilelayer StamenToner
+var stamenTiles = L.tileLayer(stamenTilesServer, { //Appel du tilelayer StamenToner
 	attribution: 'StamenToner', // Affichage du nom StamenToner en bas a droit a coté du lien Leaflet
 	minZoom: 2	 //Zoom minimum
 }); 
