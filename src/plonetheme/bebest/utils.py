@@ -289,6 +289,8 @@ def getMissionsFeatures(results):
         uuid = 'F' + api.content.get_uuid(m)
         # la liste des uuid des missions
         missionsUUID.append(uuid)
+        if not m.geojson:
+            continue
         geo = geojson.loads(m.geojson)
         # ici, on peut modifier les parametres des geojson des missions
         # i.e. : ajouter des proprietes...
