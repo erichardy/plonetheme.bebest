@@ -1,4 +1,5 @@
 
+/*
 function onEachFeature(feature, layer) {
 	layer.on('click', function (e) {
 		title = " ";
@@ -13,65 +14,87 @@ function onEachFeature(feature, layer) {
 		document.getElementById("bebest-feature-description").innerHTML = description;
 		$("#feature-infos").stop();
         $("#feature-infos").fadeIn("fast");
-        // console.log(feature.properties.name);
         $("#feature-infos").fadeOut(8000);
 	});
 }
-
+*/
 var rocket = L.Icon ({
 	iconUrl: 'icon-orange.png'
 });
 
 /* A partir des properties qui sont positionnees avec le site
- * http://geojson.io/ , on etabli le dictionnaire des styles
- * necessaire a leaflet
+ * http://geojson.io/ , on etablit le dictionnaire des styles
+ * necessaires a leaflet
  */
 function styleFromFeature(f) {
 	style = {}
+	// stroke pour geojson.io == color pour leaflet
+	// stroke => color
+	// utilise pour les lignes
 	if (f.properties['stroke']) {
 		style['color'] = f.properties['stroke'];
 		f.properties['stroke'] = true;
 	}
+	// dans le cas ou on positione une propriete "color"
 	if (f.properties['color']) {
 		style['color'] = f.properties['color'];
 		f.properties['stroke'] = true;
 	}
+	// pour les points
 	if (f.properties['marker-color']) {
 		style['color'] = f.properties['marker-color'];
 		f.properties['color'] = f.properties['marker-color'];
 	}
+	// epaisseur du trait : stroke-width => weight
 	if (f.properties['stroke-width']) {
 		style['weight'] = f.properties['stroke-width'];
 		f.properties['weight'] = f.properties['stroke-width'];
 	}
+	// opacite du trait : stroke-opacity => opacity
 	if (f.properties['stroke-opacity']) {
 		style['opacity'] = f.properties['stroke-opacity'];
 		f.properties['opacity'] = f.properties['stroke-opacity']
 	}
+	// remplissage des polygones : fill => fillcolor
+	// fill : booleen pour leafleat
 	if (f.properties['fill']) {
 		style['fillColor'] = f.properties['fill'];
 		style['fill'] = true;
 		f.properties['fillColor'] = f.properties['fill'];
 		f.properties['fill'] = true;
 	}
+	// opacite des traits : fill-opacity => fillOpacity
 	if (f.properties['fill-opacity']) {
 		style['fillOpacity'] = f.properties['fill-opacity'];
 		f.properties['fillOpacity'] = f.properties['fill-opacity'];
 	}
+	// iconUrl : a ne pas utiliser, il vaut mieux preferer 
+	// "icon" : nom_icon (dans iconList)
+	// iconList est un tableau contenu dans un parametre du control panel
 	style['iconUrl'] = 'icon-orange.png';
 	return style
 }
 
+
+/*
+ * 
+ */
 function layerClic(layer, e) {
 	console.log(e.latlng);
 	console.log(e.target);
 	console.log(layer);
 }
 
+/*
+ * zoom par defaut si non present
+ */
 if (typeof(zoom) === "undefined") {
 	var zoom = 4;
 }
 
+/*
+ * centrage de la carte si non present
+ */
 if (typeof(center) === "undefined") {
 	var center = [48.40003249610685, -4.5263671875];
 }
@@ -82,13 +105,19 @@ var mymap = L.map('bebest-map', {
   zoom: zoom
 });
 
+/*
+ * Lors du passage en HTTPS, de nombreux messages d'alerte en raison des
+ * appels à un site HTTP.
+ * Ci-dessous, on adapte donc l'URL de chargement des tuiles en fonction
+ * du protocole.
+ */
 protocol = window.location.protocol;
 osmTilesServer = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
 stamenTilesServer = 'http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png';
 if (protocol === 'https:'){
-	osmTilesServer = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	osmTilesServer = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 	// a tenter pour stamenToner....
-	// stamenTilesServer = 'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png';
+	stamenTilesServer = 'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png';
 }
 /* les tuiles */
 var osm = L.tileLayer(osmTilesServer, {
@@ -104,26 +133,31 @@ var stamenTiles = L.tileLayer(stamenTilesServer, { //Appel du tilelayer StamenTo
 osm.addTo(mymap);
 mymap.addLayer(stamenTiles);
 
-/* icone de point */
+/* normalement cet icone est defini dans le control panel
 var bebestIcon = L.icon({
     iconUrl: '++theme++plonetheme.bebest/images/leaflet/icon-orange.png',	
     iconSize:     [27, 40],
     iconAnchor:   [13, 40],
     popupAnchor:  [0, -40]
 });
+*/
 
-
-
-/* controle de changement de layer osm vs stamenTiles */
+/*
+ * controle de changement de layer osm vs stamenTiles
+*/
 var baseLayers = {
-		"OpenStreetmap": osm, 
+		"OpenStreetmap": osm,
 		"Stamen Toner": stamenTiles
 };
 
 // L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
 // L.Icon.Default.imagePath = '++theme++plonetheme.bebest/images/leaflet/' ;
+// chemin dans portal_skins/bebest ou portal_skins/custom
 L.Icon.Default.imagePath = 'markers';
 
+/*
+ * retourne l'icone en fonction de la propriete declaree dans le geojson
+ */
 function markerIcon(feature) {
 	if ((feature.properties['icon']) && (feature.properties['icon'] !== 'undefined')) {
 		return iconList[feature.properties['icon']]
@@ -146,6 +180,8 @@ if (typeof missionsFeatures !== 'undefined'){
 		},
 		onEachFeature: function(f, layer) {
 			overlayMaps[f['properties']['name']] = layer ;
+			// affichage dans le cartouche de droite du titres et
+			// de la description de l'element quand on clique sur celui-ci dans la carte
 			layer.on('click', function (e){
 				// console.log(f);
 				$("#feature-info h3").html(f.properties['name']);
@@ -194,10 +230,12 @@ if (typeof featuresCollections !== 'undefined'){
 //L'option ``collapsed`` permet que la liste des layers soit ouverte par defaut
 L.control.layers(baseLayers, overlayMaps, {collapsed:false}).addTo(mymap);
 
+/*
+ * juste un petit utilitaire qui permet d'afficher dans la console les
+ * coordonnees d'un point ou l'on clique dans la carte
+ */
 function onMapClick(e) {
     console.log("You clicked the map at " + e.latlng);
 }
 mymap.on('click', onMapClick);
-
-//$("input.leaflet-control-layers-selector").prop("checked", true);
 

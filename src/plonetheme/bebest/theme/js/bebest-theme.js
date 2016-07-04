@@ -1,12 +1,4 @@
 
-/*
-$('#home-carousel-bebest').carousel({
-  interval: 4000
-});
-*/
-/*
-*/
-
 /* essai de correction du bug d'affichage quand on saisi les contacts
  * et que l'on clique sur l'icone pour avoir l'arborescence
  * 
@@ -24,11 +16,19 @@ $('.pattern-relateditems-tree').click(function(){
 	$(parent).css('padding-bottom', '100px');
 })
 */
+
+/*
+ * Dans les formulaires d'ajout/modif des elements, permet que l'URL
+ * vers geojson.io soit cliquable
+ */
 geojson_help = 'Utiliser / Use : <a href="http://geojson.io/" target="_blank">http://geojson.io/</a>';
 $('#formfield-form-widgets-geojson span.formHelp').html(geojson_help);
 
 /* sous-menus de la nav bar */
 /* code from http://codepen.io/betdream/pen/frDqh */
+/*
+ * Permet de montrer/cacher (sans clic, par hover) un sous-menu de la nav-bar
+ */
 $('ul.nav li.dropdown').hover(function() {
   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
 }, function() {
@@ -38,14 +38,16 @@ $('ul.nav li.dropdown').hover(function() {
 // pour que la description du dossier n'apparaisse pas dans le sous-menu
 $("span.submenu_description").css("display", "none");
 
-
 /* FIN sous-menus de la nav bar */
 
 
+/*
+ * Dans la section "about", fait apparaitre l'image de decoration
+ * a droite quand le scroll de la page arrive sur cette section
+ */
 $(window).scroll(function() {
 	$('#scrollreveal').each(function(){
 		var imagePos = $(this).offset().top;
-		
 		var topOfWindow = $(window).scrollTop();
 			if (imagePos < topOfWindow + 500) {
 				$(this).addClass("fadeIn");
@@ -57,9 +59,13 @@ bodyClasses = document.getElementById("visual-portal-wrapper").classList ;
 
 
 /* Les boutons d'affichage/cache des versions anglaises */
-// $("#show-english-version-collapse").hide();
+/*
+ * - un bouton est de la classe "collapser"
+ * - son id est, par exemple : show-english-version
+ * - le clic sur ce bouton montre/cache un element du DOM qui
+ *   a pour id : show-english-version-collapse
+ */
 $("button.collapser").click(function(e){
-	// alert(this.id);
 	to_show = $(this).attr("id") + '-collapse';
 	$("#" + to_show).toggle("slow", "swing", function(e){
 		display = $("#" + to_show).css("display");
@@ -70,8 +76,10 @@ $("button.collapser").click(function(e){
 })
 /* FIN Les boutons d'affichage/cache des versions anglaises */
 
-/* Gestion des mails */
 
+/*
+ * Gestion des mails
+ */
 $("a#person-contact").on('click',function(e){
 	var mail = $('#person-contact-coded').attr('contact');
 	eemail = decryptEmail(mail);
