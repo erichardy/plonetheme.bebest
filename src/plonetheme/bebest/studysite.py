@@ -49,7 +49,7 @@ logger = logging.getLogger('bebest STUDYSITE')
 
 
 class invalidGeoJson(Invalid):
-    __doc__ = _(u"geosjon not valid")
+    __doc__ = _(u"geojson not valid")
 
 
 class IStudysite(model.Schema):
