@@ -37,6 +37,7 @@ from Products.CMFPlone.utils import safe_unicode
 # from plone.formwidget.contenttree import MultiContentTreeFieldWidget
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 import logging
+import geojson
 # import urllib
 # import re
 from plonetheme.bebest.utils import getGalleryImages as ggi
@@ -73,6 +74,10 @@ months['12'] = u"Décembre"
 
 class StartBeforeEnd(Invalid):
     __doc__ = _(u"The start or end date is invalid")
+
+
+class invalidGeoJson(Invalid):
+    __doc__ = _(u"geosjon not valid")
 
 
 def validateCoord(coord):
@@ -194,6 +199,16 @@ class IMission(model.Schema):
             if data.start_date > data.end_date:
                 msg = u"The start date must be before the end date."
                 raise StartBeforeEnd(_(msg))
+
+    @invariant
+    def validateGeoJson(data):
+        if data.geojson:
+            try:
+                geojson.loads(data.geojson)
+            except ValueError as e:
+                logger.info(str(e))
+                raise invalidGeoJson(str(e))
+
 
 alsoProvides(IMission, IFormFieldProvider)
 

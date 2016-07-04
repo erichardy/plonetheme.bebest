@@ -16,6 +16,7 @@ from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
+from zope.interface import Invalid, invariant
 from zope import schema
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
@@ -45,6 +46,10 @@ from plonetheme.bebest.utils import getMissionsFeatures
 from plonetheme.bebest import _
 
 logger = logging.getLogger('bebest STUDYSITE')
+
+
+class invalidGeoJson(Invalid):
+    __doc__ = _(u"geosjon not valid")
 
 
 class IStudysite(model.Schema):
@@ -131,6 +136,15 @@ class IStudysite(model.Schema):
     geojson = schema.Text(title=_(u"coordinates in GEOJSON format"),
                           description=_(u"Use http://geojson.io/"),
                           required=False)
+
+    @invariant
+    def validateGeoJson(data):
+        if data.geojson:
+            try:
+                geojson.loads(data.geojson)
+            except ValueError as e:
+                logger.info(str(e))
+                raise invalidGeoJson(str(e))
 
 alsoProvides(IStudysite, IFormFieldProvider)
 
