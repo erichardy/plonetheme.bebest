@@ -14,7 +14,7 @@ from plonetheme.bebest import _
 
 @provider(IFormFieldProvider)
 class IStartEndDates(model.Schema):
-    """Add tags to content
+    """Add start and end dates to content
     """
 
     model.fieldset('dates',

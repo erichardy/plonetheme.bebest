@@ -45,8 +45,7 @@ Toute la documentation
 
     Le Thème <theme>
     Les resources JS et CSS <resources>
-    Les vues <vues>
-    Les types de contenu <content_types>
+    Les types de contenu et les vues <content_types>
     LICENSE
 
 .. links:

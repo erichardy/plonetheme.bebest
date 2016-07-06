@@ -11,7 +11,7 @@ Généralités
 Le thème de ce module est un thème `Diazo`_ et est installé dans le répertoire ``theme``. Il est basé
 sur `bootstrap`_ version 3.3.6.
 
-.. note:: la version 4 de bootstrap et sortie mais en raison de sa *jeunesse* et du fait
+.. note:: la version 4 de bootstrap est sortie mais en raison de sa *jeunesse* et du fait
    qu'une large communauté connait la version 3, le choix est fait de rester à celle-ci.
    D'autre part, le thème de base de Plone (barcelonetta), dont certains éléments sont utilisés,
    est basé sur une version 3 de bootstrap.
