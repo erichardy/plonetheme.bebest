@@ -24,6 +24,10 @@ différentes du dossier.
 
 .. image:: vues_dossiers1.png
 
+.. warning:: Le choix d'une vue pour un dossier est fait pour tous les visiteurs du site.
+   Il ne s'agit pas ici de choisir comment *je veux voir le dossier*, mais comment
+   *tous les visiteurs vont voir ce dossier* ! 
+
 Les vues développées pour *BeBEST* sont les vues suivantes :
 
 * ``portfolio`` : voir la section :doc:`misc`
