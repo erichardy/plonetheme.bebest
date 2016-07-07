@@ -14,7 +14,7 @@ pour les utilisateurs et sur le plan technique.
 
 Les deux types de documentations sont dans les mêmes pages, mais, généralement, dans des
 paragraphes différents. Les utilisateurs pourront se passer de lire les informations
-techniques !  
+techniques !
 
 
 Un petit glossaire technique
@@ -33,7 +33,7 @@ des non habitués aux termes couramment utilisés avec le CMS `Plone`_.
 * **Type de contenu** : il s'agit des divers éléments que l'on peut ajouter dans un site.
   La plateforme Plone propose *clé en main* un certain nombre de types de contenus comme
   un *dossier*, une *image* ou un *document*. Pour *BeBEST*, des types de contenus spécifiques
-  ont été développés : *mission*, *portrait*, *projet*, *site d'étude*.
+  ont été développés : *mission*, *portrait*, *projet*, *site d'étude*, *portfolio*.
 
 * **Vue** : présentation d'un type de contenu. Par exemple, un document peut être présenté de
   plusieurs façons différentes. Il en est de même pour un dossier qui, quand on l'ouvre,

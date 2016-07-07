@@ -27,15 +27,19 @@ et la source dans la section ``[sources]``::
 Motivation
 ==========
 
-Le module plonetheme.bebest a été dévéloppe sur la demande de Jennifer Guarini et
+Le module ``plonetheme.bebest`` a été dévéloppé sur la demande de Jennifer Guarini et
 Laurent Chauvaud pour le projet `BeBEST`_.
 
 Sébastien Hervé a pris en charge la partie design et Eric Hardy l'implémentation
 de ce design, le développement des types de contenus et l'installation de la
 plateforme.
 
-Ce module est développé pour Plone 5 (5.0.4 au 20/05/2106)
+Ce module est développé pour `Plone`_ 5 (5.0.4 au 20/05/2106)
 
+.. warning:: les personnes qui ne sont concernées que par la mise en place de contenu
+   sont vivement encouragées à lire les sections qui traitent plus spécialement de
+   cet aspect : :doc:`intro` (avec petit glossaire), :doc:`bebest_content_types`, et
+   les pages des types de contenu spécifiques à BeBEST.
 
 Toute la documentation
 ======================

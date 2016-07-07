@@ -23,7 +23,7 @@ sera ajouté dans le dossier où vous serez préalablement placé**.
 
 .. warning:: certains types de contenu ne sont pas explicitement nommés ``Dossier`` mais
    sont de ce *type* dans le sens où ils peuvent contenir d'autres éléments. Dans le cas de BeBEST,
-   c'est le cas pour les **missions**, les **projets** et les **sites d'étude**.
+   c'est le cas pour les **portfolio**, **missions**, les **projets** et les **sites d'étude**.
 
 La saisie d'un élément commence par choisir cet élément dans le menu ``Ajout d'un élément`` :
 
