@@ -19,7 +19,11 @@ class studySitesView(BrowserView):
     def getStudySitesObjs(self,
                           effective=False):
         """
-        @param effective: tri par date de publication
+        :param effective: si ``True``, tri par date de publication
+        :type effective: Boolean
+        :return: liste des sites d'étude triés par disposition dans le
+          dossier, ou par ordre de date de publication. Pour les sites
+          d'étude, c'est la date de publication qui est choisie.
         """
         portal = api.portal.get()
         founds = api.content.find(context=portal,
@@ -27,7 +31,7 @@ class studySitesView(BrowserView):
                                   path='/'.join(portal.getPhysicalPath()),
                                   depth=9,
                                   )
-        logger.info(founds)
+        # logger.info(founds)
         if len(founds) == 0:
             return False
         objs = [found.getObject() for found in founds]

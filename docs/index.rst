@@ -28,7 +28,7 @@ Motivation
 ==========
 
 Le module plonetheme.bebest a été dévéloppe sur la demande de Jennifer Guarini et
-Laurent Chauvaud pour le projet **bebest**.
+Laurent Chauvaud pour le projet `BeBEST`_.
 
 Sébastien Hervé a pris en charge la partie design et Eric Hardy l'implémentation
 de ce design, le développement des types de contenus et l'installation de la
@@ -41,8 +41,9 @@ Toute la documentation
 ======================
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
 
+    Introduction <intro>
     Le Thème <theme>
     Les resources JS et CSS <resources>
     Les types de contenu et les vues <content_types>

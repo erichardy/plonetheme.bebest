@@ -1,5 +1,6 @@
 
 
+.. include:: links.rst
 
 
 ===========================
@@ -57,14 +58,25 @@ seront abordés au fur et à mesure des détails de la vue.
 
 * **Les thumbnails sous le carousel**
 
-  Un maximum de 6 vignettes apparaissent ici. Le choix de ces vignettes se fait en fonction
+  **Un maximum de 6 vignettes** apparaissent ici. Le choix de ces vignettes se fait en fonction
   du mot clé qui est appliqué à des types de contenus dans le site. Ce mot clé est défini dans
   le controlpanel.
   
   L'ordre d'apparition de ces vignettes est celui de la date de publication, les éléments plubliés
   les derniers apparaisant les premier. Agir sur les dates de publication permet donc de décider
   de l'ordre d'apparition de ces vignettes.
+
+  Ces vignettes présentent une dynamique : quand on passe la souris au dessus, un voile apparaît
+  avec du contenu :
   
+  * le titre qui apparaît d'abord est le **titre** du document
+  
+  * le texte qui apparaît quand on passe la souris est la decription de l'élément. Dans le cas
+    d'un type de contenu standard, c'est le contenu du champ *Description*, dans le cas des
+    types de contenu spécifiques à `BeBEST`_, c'est le champ *Courte description*.
+
+  .. image:: home4.png
+
   Si une vignette est un type de contenu qui n'a pas d'image, l'image par défaut sera celle
   déclarée dans le control panel. Ce fichier image **DOIT ÊTRE PRÉSENT** dans le dossier
   ``portal_skins/custom`` de la ``ZMI``.

@@ -29,6 +29,15 @@ class bebestNewsView(BrowserView):
         self.request = request
 
     def _date_fr(self, date, display_time=False):
+        """
+        :param date: une date à convertir en ``str`` au format présenté
+          habituellement en france
+        :type date: objet python ``date``
+        :param display_time: on inclu ou non l'heure
+        :type display_time: Bolean
+        :return: une chaine de caractères représentant une date,
+          éventuellement avec l'heure
+        """
         j = date.strftime("%d")
         m = date.strftime("%m")
         y = date.strftime("%Y")
@@ -42,12 +51,20 @@ class bebestNewsView(BrowserView):
         return str_date
 
     def getTextEN(self):
+        """
+        :return: retourne, en format *raw* le ``RichText`` anglais
+        """
         try:
             return self.context.presentation_en.raw
         except Exception:
             return False
 
     def getDisplayEN(self):
+        """
+        :return: ``True`` si on affiche le texte anglais. Détermniné par
+          le fait que le texte anglais a plus de 10 caractères et le tag
+          ``display_en`` est activé
+        """
         try:
             return (self.context.display_en and
                     (len(self.context.presentation_en.raw) > 10)
@@ -56,6 +73,13 @@ class bebestNewsView(BrowserView):
             return False
 
     def getDates(self):
+        """
+        On obtient les dates si le behavior ``IStartEndDates`` est actif.
+        
+        :return: ``False`` si on ne peut obtenir une date, sinon, renvoie
+          les dates début et fin sous forme de ``string`` pour affichage dans
+          la vue.
+        """
         try:
             start = self.context.start_date
             end = self.context.end_date
@@ -73,6 +97,14 @@ class bebestNewsView(BrowserView):
         return start + ' - ' + end
 
     def getOtherNews(self):
+        """
+        Méthode utilisée pour l'affichage des autres actus dans le cartouche
+        à droite
+        
+        :return: une liste d'objets de type ``News Item``, triés par
+          date de publication inversée. Le nombre max d'éléments est déterminé
+          par la valeur ``max_news`` du controlpanel
+        """
         portal = api.portal.get()
         founds = api.content.find(portal_type='News Item',
                                   path='/'.join(portal.getPhysicalPath()),

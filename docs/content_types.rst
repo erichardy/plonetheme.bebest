@@ -19,7 +19,8 @@ Ces travaux sont détaillés dans la table des matières ci-dessous...
     La vue document bebest <bebest_page>
     Les vues des Folders <folder_views>
     La vue News de BeBEST <news>
-    Les types de contenus standards (et leurs adaptations) <standard_types>
+    Les types de contenus standards (behaviors et vues) <standard_types>
+    Les types de contenus BeBEST : généralités <bebest_content_types>
     Les portraits <portraits>
     Les missions <missions>
     Les projets <projects>

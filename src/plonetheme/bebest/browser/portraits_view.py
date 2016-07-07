@@ -18,7 +18,11 @@ class portraitsView(BrowserView):
 
     def getPortraitsObjs(self, effective=False):
         """
-        @param effective: tri par date de publication
+        :param effective: tri par date de publication
+        :type effective: Boolean
+        :return: liste des portraits triés par ordre alphabétique du nom,
+          ou par ordre de date de publication. Pour les portraits,
+          le tri se fait par ordre alphabétique du nom.
         """
         context = self.context
         founds = api.content.find(context=self.context,

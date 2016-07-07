@@ -42,6 +42,9 @@ def validateEmail(value):
 
 
 class IPortrait(model.Schema):
+    """
+    Schema du type de contenu ``bebest.portrait``.
+    """
 
     model.fieldset('indentification',
                    label=_(u"identification"),

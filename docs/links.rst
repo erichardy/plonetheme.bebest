@@ -1,5 +1,6 @@
 
 
+.. _Plone: http://plone.org
 .. _plone.app.theming: http://docs.plone.org/external/plone.app.theming/docs/index.html
 .. _bootstrap: http://getbootstrap.com/
 .. _navbar sur w3schools: http://www.w3schools.com/bootstrap/bootstrap_navbar.asp
@@ -28,6 +29,7 @@
 
 .. _galleria: http://galleria.io/
 
+.. _BeBEST: http://www.liabebest.org
 
 ..
    Quelques tips & tricks sur bootstrap

@@ -26,23 +26,50 @@ différentes du dossier.
 
 .. warning:: Le choix d'une vue pour un dossier est fait pour tous les visiteurs du site.
    Il ne s'agit pas ici de choisir comment *je veux voir le dossier*, mais comment
-   *tous les visiteurs vont voir ce dossier* ! 
+   *tous les visiteurs vont voir ce dossier* !
 
 Les vues développées pour *BeBEST* sont les vues suivantes :
 
 * ``portfolio`` : voir la section :doc:`misc`
 
-* ``portraits_view`` : affiche, dans le style *BeBEST*, tous les portraits présents dans le dossier
+* ``portraits_view`` : affiche, dans le style *BeBEST*, tous les **portraits** présents dans le dossier
   lui-même
 
-* ``projects_view`` : affiche, dans le style *BeBEST*, tous les projets présents dans le dossier
+* ``projects_view`` : affiche, dans le style *BeBEST*, tous les **projets** présents dans le dossier
  
-* ``studysitesview`` : affiche, dans le style *BeBEST*, tous les sites d'étude présents dans le site
+* ``studysitesview`` : affiche, dans le style *BeBEST*, tous les **sites d'étude** présents dans le site
   web.
 
 
-Par exemple, la vue d'un dossier qui contient des portrait :
+Par exemple, la vue d'un dossier qui contient des **portraits** :
 
 .. image:: vues_dossiers2.png
 
 Chaque vignette de portrait est cliquable et envoie vers la page du portrait lui-même.
+
+Documentation du code
+=====================
+
+Toutes les vues sont développées dans le dossier ``plonetheme.bebest.browser``.
+
+**Les portraits**
+
+À la classe ``portraitsView``, la template associée est ``portraits_view.pt``.
+
+.. autoclass:: plonetheme.bebest.browser.portraits_view.portraitsView
+   :members:
+
+**Les projets**
+
+À la classe ``projectsView``, la template associée est ``projects_view``.
+
+.. autoclass:: plonetheme.bebest.browser.projects_view.projectsView
+   :members:
+
+**Les sites d'étude**
+
+À la classe ``studySitesView``, la template associée est ``studysites_view.pt``.
+
+.. autoclass:: plonetheme.bebest.browser.studysites_view.studySitesView
+   :members:
+

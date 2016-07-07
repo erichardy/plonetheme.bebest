@@ -19,7 +19,11 @@ class projectsView(BrowserView):
     def getProjectsObjs(self,
                         effective=False):
         """
-        @param effective: tri par date de publication
+        :param effective: tri par date de publication
+        :type effective: Boolean
+        :return: liste des projets triés par ordre de disposition dans le
+          dossier, ou par ordre de date de publication. Dans la vue,
+          on affiche par ordre de disposition dans le dossier.
         """
         context = self.context
         founds = api.content.find(context=self.context,
