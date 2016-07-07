@@ -31,6 +31,10 @@
 
 .. _BeBEST: http://www.liabebest.org
 
+.. _geojson: http://geojson.org/
+.. _geojson.io: http://geojson.io/
+
+
 ..
    Quelques tips & tricks sur bootstrap
 

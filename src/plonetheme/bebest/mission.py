@@ -262,6 +262,9 @@ class editForm(edit.DefaultEditForm):
 
 
 class MissionView(BrowserView):
+    """
+    Vue des missions
+    """
 
     def _date_fr(self, date):
         j = date.strftime("%d")
