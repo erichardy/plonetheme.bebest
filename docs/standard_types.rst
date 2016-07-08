@@ -58,15 +58,15 @@ Le nombre maximal d'actualités présentes dans ce cartouche est déterminé dan
 .. image:: divers1.png
 
 
-Le code de bebest_page_view
-===========================
+Le code de ``bebest_page_view``
+===============================
 
 .. autoclass:: plonetheme.bebest.browser.bebest_page_view.bebestPageView
    :members:
 
 
-Le code de bebest_news_view
-===========================
+Le code de ``bebest_news_view``
+===============================
 
 .. autoclass:: plonetheme.bebest.browser.bebest_news_view.bebestNewsView
    :members:

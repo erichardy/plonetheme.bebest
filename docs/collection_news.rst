@@ -23,5 +23,7 @@ Ce qui donnera... (mais on admettra qu'il faudra avoir un jeu de données plus r
 
 .. image:: news2.png
 
+Le code
+=======
 
 

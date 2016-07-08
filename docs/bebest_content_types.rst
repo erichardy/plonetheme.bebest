@@ -113,7 +113,7 @@ servir pour les moteurs de recherche si on a configuré le site pour qu'il expos
 données *Dublin Core*.
 
 Quand on veut affecter un (ou plusieurs) mot clé à un élément, une liste apparaît dès que
-l'on a cliqué dans le champ. On choisi alors le/les mot(s) clé dans cette liste.
+l'on a cliqué dans le champ. On choisit alors le/les mot(s) clé dans cette liste.
 
 Si on désire ajouter une nouveau mot clé, il faut le taper et le terminer par la touche **Enter**
 afin de valider la saisie.

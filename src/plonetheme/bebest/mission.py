@@ -319,6 +319,10 @@ class mission(Container):
     implements(IMission)
 
     def getMapZoom(self):
+        """
+        :return: un code javascript rendu dans la vue contenant le niveau
+           de zoom au chargement de la carte. Valeur par défaut : ``4``
+        """
         zoomjs = '<script>var zoom = 4;</script>'
         try:
             zoom = self.zoom
@@ -331,6 +335,11 @@ class mission(Container):
             return zoomjs
 
     def getMapCenter(self):
+        """
+        :return: les coordonnées de centrage de la carte au chargement
+           de la page. Valeurs par défaut :
+           ``[48.40003249610685, -4.5263671875]``
+        """
         center_a = '<script>var center = '
         center_b = ';</script>'
         val = ' [48.40003249610685, -4.5263671875] '
@@ -354,6 +363,10 @@ class mission(Container):
             return default
 
     def getGeoJSON(self):
+        """
+        :return: la **featureCollection** de la mission.
+           Si aucune valeur, retourne ``False``
+        """
         geo = self.geojson
         try:
             if len(geo) > 5:
@@ -367,12 +380,20 @@ class mission(Container):
             return False
 
     def getIconsList(self):
+        """
+        :return: le code javascript de la liste des icones définis
+           dans le controlpanel
+        """
         prefix = 'plonetheme.bebest.interfaces.'
         prefix += 'IPlonethemeBebestSettings.icons'
         icons = api.portal.get_registry_record(prefix)
         return u"<script>" + icons + u"</script>"
 
     def _date_fr(self, date):
+        """
+        :return: une chaine de caractères représentant une date telle
+           qu'on la représente habituellement en france : jj Mois YYYY
+        """
         j = date.strftime("%d")
         m = date.strftime("%m")
         y = date.strftime("%Y")
@@ -380,6 +401,10 @@ class mission(Container):
         return j + ' ' + M + ' ' + y
 
     def getDates(self):
+        """
+        :return: les dates de début et de fin de la mission. Si pas de
+           date, retourne ``False``
+        """
         start = self.start_date
         end = self.end_date
         if (start is None) or (end is None):
@@ -387,14 +412,30 @@ class mission(Container):
         return self._date_fr(start) + ' - ' + self._date_fr(end)
 
     def getParentProject(self):
+        """
+        :return: l'objet parent de la mission. Normalement, ce doit être
+           un projet
+        """
         return self.aq_inner.aq_parent
 
     def getPictAuthor(self):
+        """
+        :return: L'auteur de l'image principale de la mission.
+           Ou ``False`` si pas d'auteur
+        """
         if not self.pict_author:
             return False
         return self.pict_author
 
     def getAffiliations(self, person):
+        """
+        A une mission, sont associées des personnes dont le portrait
+        a été préalablement saisi.
+        
+        :param person: l'une des personnes impliquée dans la mission
+        :type person: bebest.portrait
+        :return: les affiliations de la personne
+        """
         aff = u""
         if person.affiliation1:
             aff += person.affiliation1
@@ -405,12 +446,23 @@ class mission(Container):
         return aff
 
     def displayEN(self):
+        """
+        :return: Booléen qui indique si on affiche la version anglaise
+        """
         return self.display_en
 
     def getGalleryImages(self):
+        """
+        :return: la liste des images du répertoire ``carousel`` si présent.
+           Sinon, ``False``
+        """
         return ggi(self)
 
     def getTeam(self):
+        """
+        :return: La liste des ``bebest.portrait`` des participants
+           à la mission. Si liste vide : ``False``
+        """
         others = []
         for other in self.other:
             others.append(other.to_object)
@@ -420,20 +472,31 @@ class mission(Container):
         return others
 
     def getChief(self):
+        """
+        :return: le ``bebest.portrait`` du chef de mission
+        """
         return self.chief.to_object
 
     def getTextFR(self):
+        """
+        :return: Le texte en français en format ``raw`` s'il existe.
+           Sinon ``False``
+        """
         try:
             if len(self.presentation_fr.raw) < 6:
-                logger.info('inf a 6')
+                # logger.info('inf a 6')
                 return False
             else:
                 return self.presentation_fr.raw
         except Exception:
-            logger.info('excepppppp')
+            # logger.info('excepppppp')
             return False
 
     def getTextEN(self):
+        """
+        :return: Le texte en anglais en format ``raw`` s'il existe.
+           Sinon ``False``
+        """
         try:
             if len(self.presentation_en.raw) < 6:
                 return False
