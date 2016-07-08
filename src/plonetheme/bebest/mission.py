@@ -452,7 +452,7 @@ class mission(Container):
         """
         A une mission, sont associées des personnes dont le portrait
         a été préalablement saisi.
-        
+
         :param person: l'une des personnes impliquée dans la mission
         :type person: bebest.portrait
         :return: les affiliations de la personne

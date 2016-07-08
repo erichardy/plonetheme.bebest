@@ -14,6 +14,8 @@ Les missions
 La Saisie
 =========
 
+.. warning:: L'ajout d'une mission se fait à l'intérieur d'un projet (voir :doc:`projects`)
+
 Nous ne parlerons ici que des aspects particuliers aux missions.
 
 Le formulaire de saisie d'une mission se présente comme ceci :

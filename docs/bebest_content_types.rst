@@ -75,6 +75,8 @@ est faite soit pendant la saisie du formulaire soit au moment de la validation d
 Quelques détails sur certains champs que l'on retrouve dans plusieurs types de contenu
 ======================================================================================
 
+.. _RichText:
+
 Les champs ``RichText`` de description détaillée de l'élément
 -------------------------------------------------------------
 
@@ -104,6 +106,7 @@ au champ ``Description`` des types de contenu standard.
 Ce champ est utilisé fréquemment dans les vues et est aussi utilisé quand l'élément
 est choisi pour être un thumbnail de la page home (cf :doc:`home`).
 
+.. _images:
 
 Les champs **image**
 --------------------
@@ -156,6 +159,7 @@ est automatiquement détectée et le carousel apparaîtra dans la page.
 
 L'odre de défilement des photos dépend de la position de celles-ci dans le dossier.
 
+.. _carto:
 
 Les champs liés à la carto
 --------------------------

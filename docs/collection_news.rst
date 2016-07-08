@@ -29,6 +29,4 @@ Le code
 Pour cette vue, aucun code python spécifique. La template ``bebest_newsCollection_view.pt``
 fait appel aux attributs de la vue standard des ``collections``.
 
-.. autoclass:: plone.app.contenttypes.browser.collection.CollectionView
-
 
