@@ -119,17 +119,17 @@ ne s'affichera dans les cartes.
 
 Ce code javascript contient :
 
-* les définitions des icônes
+* la définition de chacun des icônes
 
 * à la fin, un tableau ``iconList`` qui contient le nom que l'on utilise pour un icône et
   l'identifiant correspondant à cet icône. Si on ajoute une définition d'un icône, il faut
   impérativement ajouter cet élément dans le tableau.
 
 
-NOTE: les tableaux javascript sont des suites clé/valeur séparés par un ``:``.
-Les éléments  "clé":valeur de la suite sont séparés entre eux par une virgule.
-Javascript est très chatouilleux sur un aspect : **le dernier élément d'un tableau n'est
-pas suivi d'une virgule**.
+.. warning:: les tableaux javascript sont des suites clé/valeur séparés par un ``:``.
+   Les éléments  "clé":``valeur`` de la suite sont séparés entre eux par une virgule.
+   Javascript est très chatouilleux sur un aspect : **le dernier élément d'un tableau n'est
+   pas suivi d'une virgule**.
 
 
 Le code par défaut au moment de l'installation de BeBEST::
