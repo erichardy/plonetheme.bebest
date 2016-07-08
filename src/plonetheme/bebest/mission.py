@@ -3,6 +3,16 @@
 Nous auront besoin des references :
 http://docs.plone.org/external/plone.app.dexterity/docs/advanced/references.html
 pour associer un projet a des missions et des portraits.
+
+tools to get coordinates :
+http://www.birdtheme.org/useful/v3tool.html
+http://www.latlong.net/
+http://codepen.io/jhawes/pen/ujdgK
+http://stackoverflow.com/questions/5072059/polygon-drawing-and-getting-\
+coordinates-with-google-map-api-v3
+charger un kml/gps/geojson dans leaflet :
+http://www.d3noob.org/2014/02/load-kml-gpx-or-geojson-traces-into.html
+
 """
 
 from plone.dexterity.content import Container
@@ -81,6 +91,9 @@ class invalidGeoJson(Invalid):
 
 
 def validateCoord(coord):
+    """
+    Vérification qu'une coordonnée est un nombre flottant valide
+    """
     try:
         float(coord)
         return True
@@ -89,7 +102,9 @@ def validateCoord(coord):
 
 
 class IMission(model.Schema):
-
+    """
+    Schema du type de contenu ``bebest.mission``
+    """
     model.fieldset('general',
                    label=_(u"general"),
                    fields=['title',
@@ -97,12 +112,13 @@ class IMission(model.Schema):
                            'start_date',
                            'end_date',
                            ])
+
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(title=_(u"mission label"),
                             required=True,
                             )
     dexteritytextindexer.searchable('description')
-    description = schema.TextLine(title=_(u"very short description"),
+    description = schema.TextLine(title=_(u"very short mission description"),
                                   required=True,
                                   )
     dexteritytextindexer.searchable('start_date')
@@ -147,16 +163,6 @@ class IMission(model.Schema):
                         description=_(u"downloaded by visitors"),
                         required=False)
 
-    """
-    tools to get coordinates :
-    http://www.birdtheme.org/useful/v3tool.html
-    http://www.latlong.net/
-    http://codepen.io/jhawes/pen/ujdgK
-    http://stackoverflow.com/questions/5072059/polygon-drawing-and-getting-\
-    coordinates-with-google-map-api-v3
-    charger un kml/gps/geojson dans leaflet :
-    http://www.d3noob.org/2014/02/load-kml-gpx-or-geojson-traces-into.html
-    """
     model.fieldset('geo',
                    label=_(u"geo"),
                    fields=['zoom',
@@ -195,6 +201,11 @@ class IMission(model.Schema):
 
     @invariant
     def validateStartEnd(data):
+        """
+        :param data: les données du formulaire
+        :type data: objet ayant pour attrituts les champs du formulaire
+        :return: lève une erreur si la date de début est après la date de fin
+        """
         if data.start_date is not None and data.end_date is not None:
             if data.start_date > data.end_date:
                 msg = u"The start date must be before the end date."
@@ -202,6 +213,13 @@ class IMission(model.Schema):
 
     @invariant
     def validateGeoJson(data):
+        """
+        :param data: les données du formulaire
+        :type data: objet ayant pour attrituts les champs du formulaire
+        :return: lève une erreur si les données geojson ne sont pas valides.
+           Cette vérification est seulement faite en tentant la
+           méthode ``loads`` de la librairie ``geojson``
+        """
         if data.geojson:
             try:
                 geojson.loads(data.geojson)
@@ -235,8 +253,8 @@ class AddForm(add.DefaultAddForm):
             return
         try:
             obj = self.createAndAdd(data)
-            logger.info(obj)
-            logger.info(u'=-=-=-=-=')
+            # logger.info(obj)
+            # logger.info(u'=-=-=-=-=')
             context = self.context
             objId = obj.getId()
             url = context[objId].absolute_url()
@@ -264,6 +282,9 @@ class editForm(edit.DefaultEditForm):
 class MissionView(BrowserView):
     """
     Vue des missions
+
+    .. note:: les méthodes de cette vue ne sont généralement pas utilisée.
+       on préfère utiliser les méthodes de l'objet lui-même
     """
 
     def _date_fr(self, date):

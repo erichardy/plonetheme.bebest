@@ -65,7 +65,7 @@ class IStudysite(model.Schema):
                             required=True,
                             )
     dexteritytextindexer.searchable('description')
-    description = schema.TextLine(title=_(u"very short description"),
+    description = schema.TextLine(title=_(u"very short st site description"),
                                   required=True,
                                   )
     missions = RelationList(title=_(u"related missions"),

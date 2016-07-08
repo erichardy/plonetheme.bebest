@@ -61,7 +61,7 @@ class IPortrait(model.Schema):
     title = schema.TextLine(title=_(u"Form title"),)
 
     dexteritytextindexer.searchable('description')
-    description = schema.TextLine(title=_(u"very short description"),
+    description = schema.TextLine(title=_(u"very short portrait description"),
                                   required=False,
                                   )
     dexteritytextindexer.searchable('family_name')

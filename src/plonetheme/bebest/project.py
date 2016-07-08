@@ -69,7 +69,7 @@ class IProject(model.Schema):
                             required=True,
                             )
     dexteritytextindexer.searchable('description')
-    description = schema.TextLine(title=_(u"very short description"),
+    description = schema.TextLine(title=_(u"very short project description"),
                                   required=True,
                                   )
     dexteritytextindexer.searchable('categories')

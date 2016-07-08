@@ -91,6 +91,20 @@ Entre les deux, on a une case à cocher pour décider si on propose la version a
    anglaise. Cette option peut aussi être mise à profit le temps de la mise au point
    de la version anglaise.
 
+.. _short description:
+
+Le champ ``Courte description qui apparaît...``
+-----------------------------------------------
+
+Ce champ est à remplir pour plusieurs :term:`types de contenu` BeBEST, et est équivalent
+au champ ``Description`` des types de contenu standard.
+
+.. note:: on ne peut faire aucun mise en forme dans ce champ.
+
+Ce champ est utilisé fréquemment dans les vues et est aussi utilisé quand l'élément
+est choisi pour être un thumbnail de la page home (cf :doc:`home`).
+
+
 Les champs **image**
 --------------------
 
@@ -120,6 +134,28 @@ afin de valider la saisie.
 
 On remarquera que ce nouveau mot clé apparaîtra dans la liste quand on voudra affecter des
 mots clé à un autre élément.
+
+.. _carousels:
+
+Les carousels
+-------------
+
+Pour les :term:`types de contenu` BeBEST, on peut ajouter dynamiquement un carousel de la
+façon suivante :
+
+* ajouter dans l'élément un ``Dossier`` en lui donnant le nom : ``carousel`` (PAS UN AUTRE NOM !)
+
+* le publier
+
+* y jouter des photos
+
+* les publier.
+
+Au moment de l'affichage de l'élement  (mission, portrait, ...) la présence de ce dossier
+est automatiquement détectée et le carousel apparaîtra dans la page.
+
+L'odre de défilement des photos dépend de la position de celles-ci dans le dossier.
+
 
 Les champs liés à la carto
 --------------------------

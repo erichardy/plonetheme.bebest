@@ -9,7 +9,7 @@ La vue collection de news
 Cette vue s'applique uniquement au type de contenu ``Collection`` et n'a d'intérêt que si
 cette collection contient des ``News Item`` (en français : ``Actualités``).
 
-Pour l'utiliser, il faut donc créer une collection qui sera configurée pour
+Pour l'utiliser, il faut donc créer une :term:`collection` qui sera configurée pour
 collecter les types de contenu ``Actualités``.
 
 On préfèrera un affichage en fonction
@@ -25,5 +25,10 @@ Ce qui donnera... (mais on admettra qu'il faudra avoir un jeu de données plus r
 
 Le code
 =======
+
+Pour cette vue, aucun code python spécifique. La template ``bebest_newsCollection_view.pt``
+fait appel aux attributs de la vue standard des ``collections``.
+
+.. autoclass:: plone.app.contenttypes.browser.collection.CollectionView
 
 
