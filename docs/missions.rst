@@ -23,6 +23,7 @@ Le formulaire de saisie d'une mission se présente comme ceci :
 .. image:: mission1.png
 
 |
+
 * Le label de la mission correspond au champ ``Titre`` que l'on trouve habituellement.
 
 * **Courte description...** : voir :ref:`short description`

@@ -176,15 +176,6 @@ class IProject(model.Schema):
                 msg = u"The start date must be before the end date."
                 raise StartBeforeEnd(_(msg))
 
-    @invariant
-    def validateGeoJson(data):
-        if data.geojson:
-            try:
-                geojson.loads(data.geojson)
-            except ValueError as e:
-                logger.info(str(e))
-                raise invalidGeoJson(str(e))
-
 
 alsoProvides(IProject, IFormFieldProvider)
 
