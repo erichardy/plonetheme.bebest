@@ -3,7 +3,7 @@
 LICENCE
 =======
 
-bobtemplates.plone Copyright 2015, Eric Hardy
+plonetheme.bebest Copyright 2016, Institut Universitaire Européen de la Mer
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
