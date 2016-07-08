@@ -44,6 +44,7 @@ Le formulaire de saisie d'une mission se présente comme ceci :
   
   .. image:: mission3.png
 
+
 |
 
 Carousel
