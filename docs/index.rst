@@ -51,6 +51,7 @@ Toute la documentation
     Le Thème <theme>
     Les resources JS et CSS <resources>
     Les types de contenu et les vues <content_types>
+    Entrer des données geojson <geojson>
     LICENSE
 
 .. links:

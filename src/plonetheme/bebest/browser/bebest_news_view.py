@@ -75,7 +75,7 @@ class bebestNewsView(BrowserView):
     def getDates(self):
         """
         On obtient les dates si le behavior ``IStartEndDates`` est actif.
-        
+
         :return: ``False`` si on ne peut obtenir une date, sinon, renvoie
           les dates début et fin sous forme de ``string`` pour affichage dans
           la vue.
@@ -100,7 +100,7 @@ class bebestNewsView(BrowserView):
         """
         Méthode utilisée pour l'affichage des autres actus dans le cartouche
         à droite
-        
+
         :return: une liste d'objets de type ``News Item``, triés par
           date de publication inversée. Le nombre max d'éléments est déterminé
           par la valeur ``max_news`` du controlpanel
