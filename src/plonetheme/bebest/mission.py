@@ -2,7 +2,7 @@
 """
 Nous aurons besoin des references :
 http://docs.plone.org/external/plone.app.dexterity/docs/advanced/references.html
-pour associer un projet a des missions et des portraits.
+pour associer un projet à des missions et des portraits.
 
 tools to get coordinates :
 
@@ -288,7 +288,7 @@ class MissionView(BrowserView):
     """
     Vue des missions
 
-    .. note:: les méthodes de cette vue ne sont généralement pas utilisée.
+    .. note:: les méthodes de cette vue ne sont généralement pas utilisées.
        on préfère utiliser les méthodes de l'objet lui-même
     """
 

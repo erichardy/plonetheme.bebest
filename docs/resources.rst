@@ -89,7 +89,7 @@ L'implémentation de galleries (carousels) avec ``galleria``
 
 Actuellement (mai 2016), `galleria`_ n'est pas inclu dans les ressources. Son utilisation
 intervenant pour la gestion de carousels, qui sont développés dans la
-template ``skins/bebest/bebest_macros.pt``, macro ``gallery``, les ressources
+template ``skins/bebest/bebest_macros.pt``, macro ``gallery``. Les ressources
 nécessaires sont importées directement dans la template::
 
    <link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/galleria/themes/classic/galleria.classic.css" />
@@ -128,10 +128,10 @@ Leaflet est utilisé pour les cartes qui visualisent les emplacements des missio
 sites d'études.
 
 Une stratégie idéale aurait été de faire une ressource ``leaflet`` qui contienne la CSS et le javascript
-les `leaflet`_. Or cette stratégie n'a pas fonctionné, probablement due au fait de l'ordre de
+de `leaflet`_. Or cette stratégie n'a pas fonctionné, probablement due au fait de l'ordre de
 chargement des différentes ressources.
 
-La ressource ``leaflet`` ne contient donc que le javascript et la css associée est chargée
+La ressource ``leaflet`` ne contient donc que le javascript. La css associée est chargée
 dans les templates qui utilisent `leaflet`_ sous la forme::
 
    <link rel="stylesheet" type="text/css" href="++theme++plonetheme.bebest/css/leaflet.css" />
