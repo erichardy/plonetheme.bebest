@@ -1,17 +1,22 @@
 # -*- coding: utf-8 -*-
 """
-Nous auront besoin des references :
+Nous aurons besoin des references :
 http://docs.plone.org/external/plone.app.dexterity/docs/advanced/references.html
 pour associer un projet a des missions et des portraits.
 
 tools to get coordinates :
-http://www.birdtheme.org/useful/v3tool.html
-http://www.latlong.net/
-http://codepen.io/jhawes/pen/ujdgK
-http://stackoverflow.com/questions/5072059/polygon-drawing-and-getting-\
-coordinates-with-google-map-api-v3
-charger un kml/gps/geojson dans leaflet :
-http://www.d3noob.org/2014/02/load-kml-gpx-or-geojson-traces-into.html
+
+* http://www.birdtheme.org/useful/v3tool.html
+
+* http://www.latlong.net/
+
+* http://codepen.io/jhawes/pen/ujdgK
+
+* http://stackoverflow.com/questions/5072059/polygon-drawing-and-getting-
+  coordinates-with-google-map-api-v3
+
+* charger un kml/gps/geojson dans leaflet :
+  http://www.d3noob.org/2014/02/load-kml-gpx-or-geojson-traces-into.html
 
 """
 

@@ -124,7 +124,7 @@ contient ``bebest-compiled.min.css`` généré lors de la compilation des fichie
 leaflet
 -------
 
-Leaflet est utilisé pour les cartes qui visualisent les emplacement des missions, projets et autres
+Leaflet est utilisé pour les cartes qui visualisent les emplacements des missions, projets et autres
 sites d'études.
 
 Une stratégie idéale aurait été de faire une ressource ``leaflet`` qui contienne la CSS et le javascript
