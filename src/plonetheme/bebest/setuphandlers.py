@@ -58,14 +58,13 @@ def post_install(context):
         return
     # Do something during the installation of this package
     # logger.info('Installation de BeBEst')
-    installInCustom('src/plonetheme/bebest/theme/images/logos',
-                    'logoblanc.svg',
-                    obj_type='File')
-    installInCustom('src/plonetheme/bebest/theme/images/about/',
-                    'csj-soft.png',
-                    obj_type='Image')
+    d = 'src/plonetheme.bebest/src/plonetheme/bebest/theme/images/logos'
+    installInCustom(d, 'logoblanc.svg', obj_type='File')
+    d = 'src/plonetheme.bebest/src/plonetheme/bebest/theme/images/about/'
+    installInCustom(d, 'csj-soft.png', obj_type='Image')
 
-    carouselDir = 'src/plonetheme/bebest/theme/images/carousel/home/'
+    carouselDir = 'src/plonetheme.bebest/'
+    carouselDir += 'src/plonetheme/bebest/theme/images/carousel/home'
     installImages('bebest-carousel', carouselDir)
 
 
