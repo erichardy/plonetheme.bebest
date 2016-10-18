@@ -94,7 +94,7 @@ class portfolio(Container):
 
     def getPorfolioBG(self):
         try:
-            bg = self.context.main_css_class
+            bg = self.context.bg_css_class
             if len(bg) > 0:
                 return bg
             else:

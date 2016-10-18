@@ -21,9 +21,10 @@
 	  <div class="container-fluid portfolio-fullimg"
 	       tal:define="main_pict nocall:context/main_pict">
 	    <img tal:attributes="src string:${context/absolute_url}/@@download/main_pict/${main_pict/filename}"
+	         class="full-width img-responsive"
              tal:on-error="string: No image for this folder !" />
 	  </div>
-	  <div class="row">
+	  <div class="container">
 		
 		  <div class="thumbnail-wrapper"
 		       tal:condition="authors">
