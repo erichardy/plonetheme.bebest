@@ -71,7 +71,7 @@
           <h3 class="pushtop">Actualités</h3>
           <!-----un petit filet--->
           <hr class="main-line" />
-          <ul>
+          <ul tal:condition="news">
             <span tal:omit-tag=""
                   tal:repeat="news_item news">
               <li>
