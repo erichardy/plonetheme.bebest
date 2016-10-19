@@ -163,6 +163,7 @@ class bebestHome(BrowserView):
         image_field['bebest.project'] = 'main_pict'
         image_field['bebest.mission'] = 'main_pict'
         image_field['bebest.studysite'] = 'main_pict'
+        image_field['bebest.portfolio'] = 'main_pict'
         try:
             field = image_field[portal_type]
             image = eval('thumb.' + field)
