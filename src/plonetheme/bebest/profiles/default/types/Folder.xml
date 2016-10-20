@@ -19,8 +19,8 @@
   <element value="tabular_view"/>
   <element value="full_view"/>
   <element value="album_view"/>
+  <element value="bebest_thumbs_view"/>
   <element value="event_listing"/>
-  <element value="portfolio"/>
   <element value="portraits_view"/>
   <element value="projects_view"/>
   <element value="studysites_view"/>

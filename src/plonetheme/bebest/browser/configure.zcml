@@ -66,6 +66,14 @@
       template="bebest_page_view.pt"
       permission="zope2.View"
       />
+   <browser:page
+      name="bebest_thumbs_view"
+      for="plone.app.contenttypes.interfaces.IFolder"
+      class=".bebest_thumbs_view.bebestThumbsView"
+      template="bebest_thumbs_view.pt"
+      permission="zope2.View"
+      />
+
     <!--  Special collection view for news -->
     <browser:page
        name="bebest_newsCollection"
