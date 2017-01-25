@@ -14,11 +14,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./mission.py:224
+#: ./mission.py:242
 msgid "Add a new mission !"
 msgstr "Ajouter une nouvelle mission !"
 
-#: ./project.py:195
+#: ./project.py:186
 msgid "Add a new project !"
 msgstr "Ajouter un nouveau projet !"
 
@@ -38,11 +38,11 @@ msgstr "Classes CSS"
 msgid "CSS class for background"
 msgstr "Classe CSS pour le fond"
 
-#: ./mission.py:252
+#: ./mission.py:270
 msgid "Cancel this mission"
 msgstr "Annuler cette mission"
 
-#: ./project.py:217
+#: ./project.py:208
 msgid "Cancel this project"
 msgstr "Annuler ce projet"
 
@@ -70,7 +70,7 @@ msgstr "Adresse de couriel non valide"
 msgid "Logo filename, should be in"
 msgstr "Nom du fichier contenant le logo... doit être dans : "
 
-#: ./mission.py:133
+#: ./mission.py:149
 msgid "Mission presentation"
 msgstr "Présentation de la mission"
 
@@ -78,7 +78,7 @@ msgstr "Présentation de la mission"
 msgid "Name of the default thumb image"
 msgstr "Nom de l'image de fond par défaut pour les thumbnails"
 
-#: ./mission.py:88
+#: ./mission.py:106
 msgid "Not a float number"
 msgstr "Ce n'est pas un nombre flottant (par ex: 48.4000324)"
 
@@ -98,8 +98,8 @@ msgstr "Ne mettre qu'un seul mot, utilisé pour les dossiers (i.e.: bebest-home)
 msgid "Only One word, used for news"
 msgstr "Ne mettre qu'un seul mot, utilisé pour les Actualités (i.e.: bebest-home)"
 
-#: ./mission.py:239
-#: ./project.py:207
+#: ./mission.py:257
+#: ./project.py:198
 msgid "Please correct errors"
 msgstr "Veuillez corriger les erreurs...!"
 
@@ -115,11 +115,11 @@ msgstr "Présentation"
 msgid "Project categories"
 msgstr "Les catégories de projets"
 
-#: ./mission.py:235
+#: ./mission.py:253
 msgid "Save this mission"
 msgstr "Enregistrer cette mission"
 
-#: ./project.py:203
+#: ./project.py:194
 msgid "Save this project"
 msgstr "Enregistrer ce projet"
 
@@ -143,18 +143,18 @@ msgstr "Mot clé utilisé pour les actualités qui apparaîssent dans la Home pa
 msgid "Tag used for thumbnails on home page"
 msgstr "Mot clé utilisé pour les thumbnails de la Home Page."
 
-#: ./mission.py:196
+#: ./mission.py:202
 #: ./project.py:167
 #: ./studysite.py:73
 msgid "Target"
 msgstr "Choix"
 
-#: ./mission.py:76
+#: ./mission.py:91
 #: ./project.py:50
 msgid "The start or end date is invalid"
 msgstr "La date de début ou la date de fin est non valide"
 
-#: ./mission.py:183
+#: ./mission.py:189
 #: ./studysite.py:137
 msgid "Use http://geojson.io/"
 msgstr "Utiliser le site : http://geojson.io/"
@@ -176,7 +176,7 @@ msgid "bebestimage"
 msgstr "bebestimage"
 
 #: ./interfaces.py:119
-#: ./mission.py:172
+#: ./mission.py:178
 #: ./project.py:131
 msgid "between 0 and 15"
 msgstr "entre 0 et 15"
@@ -197,7 +197,7 @@ msgstr "Intervalle de temps de défilement des photos du carousel"
 msgid "carousel label"
 msgstr "Label du carousel du haut de la page Home"
 
-#: ./mission.py:190
+#: ./mission.py:196
 msgid "chief scientist"
 msgstr "Responsable scientifique"
 
@@ -209,7 +209,7 @@ msgstr "Configuration"
 msgid "contacts"
 msgstr "Contacts"
 
-#: ./mission.py:182
+#: ./mission.py:188
 #: ./studysite.py:136
 msgid "coordinates in GEOJSON format"
 msgstr "Les coordonnées en format GEOJSON"
@@ -232,12 +232,12 @@ msgstr "Description qui apparaît dans le cartouche à droite de la carte de la 
 msgid "description text"
 msgstr "Texte de description"
 
-#: ./mission.py:124
+#: ./mission.py:140
 #: ./studysite.py:78
 msgid "descriptions"
 msgstr "Descriptions"
 
-#: ./mission.py:136
+#: ./mission.py:152
 #: ./studysite.py:90
 msgid "display english description"
 msgstr "Afficher ou non le texte Anglais ?"
@@ -262,7 +262,7 @@ msgstr "Afficher ou non les dates de début et de fin ?"
 msgid "display time with dates ?"
 msgstr "Afficher aussi l'heure avec les dates ?"
 
-#: ./mission.py:152
+#: ./mission.py:168
 #: ./studysite.py:106
 msgid "downloaded by visitors"
 msgstr "qui peut être téléchargé par les visiteurs"
@@ -275,7 +275,7 @@ msgstr "Adresse de courier électronique"
 msgid "end date"
 msgstr "Date de fin"
 
-#: ./mission.py:119
+#: ./mission.py:135
 #: ./project.py:120
 msgid "end date for the mission"
 msgstr "Date de fin de la mission"
@@ -288,7 +288,7 @@ msgstr "Biographie en anglais"
 msgid "english description"
 msgstr "Description en anglais"
 
-#: ./mission.py:141
+#: ./mission.py:157
 msgid "english presentation"
 msgstr "Présentation en anglais"
 
@@ -324,23 +324,23 @@ msgstr "Contact français"
 msgid "french description"
 msgstr "Description en français"
 
-#: ./mission.py:132
+#: ./mission.py:148
 msgid "french presentation"
 msgstr "Présentation en Français"
 
 #: ./bebestimage.py:38
-#: ./mission.py:97
+#: ./mission.py:114
 #: ./portfolio.py:37
 msgid "general"
 msgstr "Général"
 
-#: ./mission.py:166
+#: ./mission.py:172
 #: ./project.py:126
 #: ./studysite.py:120
 msgid "geo"
 msgstr "Cartographie"
 
-#: ./mission.py:80
+#: ./mission.py:95
 #: ./project.py:54
 #: ./studysite.py:52
 msgid "geojson not valid"
@@ -371,7 +371,7 @@ msgid "in portal_skins/custom/images"
 msgstr "doit être présente dans portal_skins/custom/images"
 
 #: ./interfaces.py:124
-#: ./mission.py:178
+#: ./mission.py:184
 #: ./studysite.py:132
 msgid "in the form \"[lat, long]\""
 msgstr "sous la forme \"[Latitude, Longitude]\""
@@ -385,7 +385,7 @@ msgid "main affiliation"
 msgstr "Affiliation principale"
 
 #: ./bebestimage.py:47
-#: ./mission.py:145
+#: ./mission.py:161
 #: ./portfolio.py:46
 msgid "main photo"
 msgstr "Photo principale"
@@ -395,7 +395,7 @@ msgid "main title for map on home page"
 msgstr "Titre de la carte de la Home Page"
 
 #: ./interfaces.py:123
-#: ./mission.py:177
+#: ./mission.py:183
 #: ./project.py:137
 msgid "map center"
 msgstr "Centrer la carte sur ces coordonnées"
@@ -424,7 +424,7 @@ msgstr "Divers pour les projets"
 msgid "mission"
 msgstr "Mission"
 
-#: ./mission.py:106
+#: ./mission.py:122
 msgid "mission label"
 msgstr "Label de la mission"
 
@@ -436,18 +436,18 @@ msgstr "Doit être de la forme \"[Latitude, Longitude]\""
 msgid "must be valid javascript code !"
 msgstr "ATTENTION: ce doit être impérativement un code javascript valide !!!"
 
-#: ./mission.py:151
+#: ./mission.py:167
 #: ./studysite.py:105
 msgid "other document"
 msgstr "Document annexe"
 
-#: ./mission.py:194
+#: ./mission.py:200
 #: ./project.py:165
 #: ./templates/missionview.pt:91
 msgid "other participants"
 msgstr "Autres participants"
 
-#: ./mission.py:186
+#: ./mission.py:192
 msgid "participants"
 msgstr "Participants"
 
@@ -468,7 +468,7 @@ msgstr "Prénom"
 msgid "personal page"
 msgstr "Page web personnelle / Individual web page"
 
-#: ./mission.py:148
+#: ./mission.py:164
 #: ./portrait.py:83
 #: ./project.py:87
 msgid "picture author"
@@ -568,7 +568,7 @@ msgstr "Photo en format réduit"
 msgid "start date"
 msgstr "Date de début"
 
-#: ./mission.py:114
+#: ./mission.py:130
 #: ./project.py:115
 msgid "start date for the mission"
 msgstr "Date de début de la mission"
@@ -607,7 +607,7 @@ msgstr "Mission du projet : "
 
 #: ./behaviors/englishtext.py:29
 #: ./behaviors/startenddates.py:28
-#: ./mission.py:137
+#: ./mission.py:153
 msgid "unselect to disable"
 msgstr "Désélectionner pour désactiver"
 
@@ -615,7 +615,7 @@ msgstr "Désélectionner pour désactiver"
 msgid "used for portfolio view"
 msgstr "Utilisé pour la vue portfolio"
 
-#: ./mission.py:110
+#: ./mission.py:126
 msgid "very short mission description"
 msgstr "Courte description qui apparaît quand la mission est dans un thumbnail (< 80 caractères)"
 
@@ -648,7 +648,7 @@ msgid "web site related"
 msgstr "Site WEB associé à cette image"
 
 #: ./interfaces.py:118
-#: ./mission.py:171
+#: ./mission.py:177
 #: ./project.py:130
 msgid "zoom level"
 msgstr "Niveau de zoom de la carte au moment du chargement de la page."
