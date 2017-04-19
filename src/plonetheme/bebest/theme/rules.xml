@@ -9,8 +9,7 @@
   <!-- Apply the following rules to standard Plone pages -->
   
   <!-- <rules css:if-content="#visual-portal-wrapper"> -->
-  <!-- <theme href="bebest.html" />-->
-  <theme href="index.html"  />
+  <theme href="bebest.html" />
   
   <notheme css:if-not-content="#visual-portal-wrapper" />
   
