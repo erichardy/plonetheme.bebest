@@ -12,7 +12,7 @@
   <metal:content-core define-macro="main">
   <div class="container" tal:define="portraits python:view.getPortraitsObjs();">
    <div class="pushtop super text-center">
-        	L'équipe Apolimer
+        	Apolimer 
    </div>
    <!-----la gallerie, par ordre alphabetique------>
    <div class="thumbnail-wrapper">
