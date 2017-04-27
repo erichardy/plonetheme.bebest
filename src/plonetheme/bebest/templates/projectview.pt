@@ -16,6 +16,7 @@
                    pictAuthor python:context.getPictAuthor();
                    primary_contact python:context.getPrimaryContact();
                    contactFR python:context.getContactFR();
+                   contactCA python:context.getContactCA();
                    teams python:context.getMissionsTeams();
                    displayEN python:context.display_en;
                    missions python:context.getMissions();
