@@ -152,15 +152,18 @@ class IProject(model.Schema):
     primary_contact = RelationChoice(
         title=_(u"primary contact"),
         source=CS(portal_type="bebest.portrait"),
+        required=False,
         )
 
     contact_fr = RelationChoice(
         title=_(u"french contact"),
         source=CS(portal_type="bebest.portrait"),
+        required=False,
         )
     contact_ca = RelationChoice(
         title=_(u"canadian contact"),
         source=CS(portal_type="bebest.portrait"),
+        required=False,
         )
     other = RelationList(title=_(u"other participants"),
                          value_type=RelationChoice(
