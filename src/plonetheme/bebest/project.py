@@ -242,8 +242,9 @@ class project(Container):
 
     def getPrimaryContact(self):
         if not self.getPrimaryContact:
-            return True
-        return self.primary_contact.to_object
+            return nothing
+        else:
+            return self.primary_contact.to_object
 
     def getContactFR(self):
         return self.contact_fr.to_object
