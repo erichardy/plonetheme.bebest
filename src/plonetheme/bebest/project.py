@@ -241,13 +241,13 @@ class project(Container):
         return self.pict_author
 
     def getPrimaryContact(self):
-        return self.primary_contact
+        return self.primary_contact.to_object()
 
     def getContactFR(self):
-        return self.contact_fr
+        return self.contact_fr.to_object()
 
     def getContactCA(self):
-        return self.contact_ca
+        return self.contact_ca.to_object()
 
     def getMissions(self):
         bmissions = api.content.find(portal_type='bebest.mission',
