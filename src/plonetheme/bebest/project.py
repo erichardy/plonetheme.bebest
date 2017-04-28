@@ -241,9 +241,8 @@ class project(Container):
         return self.pict_author
 
     def getPrimaryContact(self):
-        contactFR = self.getPrimaryContact()
-        if not contactFR:
-            return nothing
+        if not self.getPrimaryContact():
+            return ''
         return self.primary_contact.to_object
 
     def getContactFR(self):
