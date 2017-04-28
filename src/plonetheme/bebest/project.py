@@ -241,18 +241,12 @@ class project(Container):
         return self.pict_author
 
     def getPrimaryContact(self):
-         if not self.primary_contact.to_object:
-            return False
         return self.primary_contact.to_object
 
     def getContactFR(self):
-         if not self.contact_fr.to_object:
-            return False
         return self.contact_fr.to_object
 
     def getContactCA(self):
-         if not self.contact_ca.to_object:
-            return False
         return self.contact_ca.to_object
 
     def getMissions(self):
