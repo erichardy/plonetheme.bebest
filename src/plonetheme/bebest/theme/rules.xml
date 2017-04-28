@@ -57,7 +57,7 @@
     css:content-children="#portal-globalnav" />
   -->
   <!-- methode avec dropdown menu issue de plonetheme.dellec -->
-  <drop css:content="li#portaltab-index_html" />
+  <!--<drop css:content="li#portaltab-index_html" />-->
   <replace css:theme-children="div#div-navbar ul#navbar">
       <xsl:for-each css:select="ul#portal-globalnav > li">
         <xi:include href="navigation-rules.xml"/>
