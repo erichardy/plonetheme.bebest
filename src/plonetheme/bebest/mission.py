@@ -315,12 +315,12 @@ class MissionView(BrowserView):
         return self.context.pict_author
 
     def getChief(self):
-        return self.context.chief.to_object
+        return self.context.chief
 
     def getTeam(self):
         others = []
         for other in self.context.other:
-            others.append(other.to_object)
+            others.append(other)
         # import pdb;pdb.set_trace()
         return others
 
