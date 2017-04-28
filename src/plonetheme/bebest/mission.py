@@ -315,7 +315,7 @@ class MissionView(BrowserView):
         return self.context.pict_author
 
     def getChief(self):
-        return self.context.chief.to_object()
+        return self.context.chief.to_object
 
     def getTeam(self):
         others = []
@@ -501,7 +501,7 @@ class mission(Container):
         """
         :return: le ``bebest.portrait`` du chef de mission
         """
-        return self.chief.to_object()
+        return self.chief.to_object
 
     def getTextFR(self):
         """
