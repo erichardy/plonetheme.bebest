@@ -13,9 +13,7 @@
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
   <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
-  <div tal:define="imgs python:view.getCarouselImages();
-                   interval python:view.getCarouselInterval();
-                   aboutBgImage python:view.getAboutBgImage();
+  <div tal:define="aboutBgImage python:view.getAboutBgImage();
                    aboutDocuments python:view.getAboutUsDocuments();
                    newsItems python:view.getHomeNews();
                    feature_info_title string:${view/getMapTitle};
@@ -53,7 +51,6 @@
         </div>
       </div>
    </section>
-  
 
     <section id="bebest-home-news"
              class="container w-limit"
