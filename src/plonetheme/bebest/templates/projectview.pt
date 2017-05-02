@@ -6,8 +6,8 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plonetheme.bebest">
 <body
-	tal:define="portal_state context/@@plone_portal_state;
-	            portal_url portal_state/portal_url">
+  tal:define="portal_state context/@@plone_portal_state;
+              portal_url portal_state/portal_url">
 
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
@@ -31,34 +31,33 @@
   </div>
 
   <section class="container">
-	<div class="row">
-  		<div id="page-title"
-  		     class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-0 col-md-5 col-md-offset-1">
-  		     <div class="bebest-title"
-					     tal:content="string:${context/title}">Project title
-			 </div>
-			 <div class="bebest-project-category"
-			      tal:content="structure python:context.getProjectCategories()">
-			 	
-			 
-			 </div>
-  		     <div class="bebest-subtitle"
-					     tal:content="string:${context/description}">
-					     Project subtitle
-		     </div>
-  		</div>
+  <div class="row">
+      <div id="page-title"
+           class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-0 col-md-5 col-md-offset-1">
+           <div class="bebest-title"
+               tal:content="string:${context/title}">Project title
+       </div>
+       <div class="bebest-project-category"
+            tal:content="structure python:context.getProjectCategories()">
+        
+       
+       </div>
+           <div class="bebest-subtitle"
+               tal:content="string:${context/description}">
+               Project subtitle
+         </div>
+      </div>
     </div>
   </section>
 
-<!---- auteur de la photo  --------->
-	<div class="img-author hidden-xs"
-	     tal:condition="python:pictAuthor"
-	     tal:content="string:${pictAuthor}">
-	</div>
-	<div class="img-no-author hidden-xs"
-	     tal:condition="python:not pictAuthor"
-	     >&nbsp;
-	</div>
+  <div class="img-author hidden-xs"
+       tal:condition="python:pictAuthor"
+       tal:content="string:${pictAuthor}">
+  </div>
+  <div class="img-no-author hidden-xs"
+       tal:condition="python:not pictAuthor"
+       >&nbsp;
+  </div>
 
   <section>
     <div class="container-fluid bg-light-grey">
@@ -72,105 +71,82 @@
                  tal:attributes="href string:${contact/absolute_url}">
                   <img tal:attributes="src string:${contact/absolute_url}/@@download/thumb_pict/${image/filename}"
                        class="img-circle portrait-prime" />
-                  <h4 tal:content="string:${contact/first_name} ${contact/family_name}">Laurent Chauvaud</h4>
-                  <p tal:content="string:${contact/affiliation1}">LEMAR - CNRS</p>
+                  <h4 tal:content="string:${contact/first_name} ${contact/family_name}">Camille Mazé</h4>
+                  <p tal:content="string:${contact/affiliation1}">CNRS - LEMAR</p>
               </a>    
           </div>
-          <div class="thumbnail-portrait"
-               tal:define="image nocall:contactFR/thumb_pict;
-                           contact nocall:contactFR">
-              <h4 class="text-center">Contact, France</h4>
-              <a href="#"
-                 tal:attributes="href string:${contact/absolute_url}">
-                  <img tal:attributes="src string:${contact/absolute_url}/@@download/thumb_pict/${image/filename}"
-                       class="img-circle portrait-prime" />
-                  <h4 tal:content="string:${contact/first_name} ${contact/family_name}">Laurent Chauvaud</h4>
-                  <p tal:content="string:${contact/affiliation1}">LEMAR - CNRS</p>
-              </a>    
-          </div>
-          <div class="thumbnail-portrait"
-               tal:define="image nocall:contactCA/thumb_pict;
-                           contact nocall:contactCA">
-              <h4 class="text-center">Contact, Quebec</h4>
-              <a href="#"
-                 tal:attributes="href string:${contact/absolute_url}">
-                  <img tal:attributes="src string:${contact/absolute_url}/@@download/thumb_pict/${image/filename}"
-                       class="img-circle portrait-prime" />
-                  <h4 tal:content="string:${contact/first_name} ${contact/family_name}">Laurent Chauvaud</h4>
-                  <p tal:content="string:${contact/affiliation1}">LEMAR - CNRS</p>
-              </a>    
-          </div>
+         
 
         </div>
        <span tal:condition="teams">
         <button id="show-participants"
-			        type="button"
-			        class="btn btn-default center-block collapser"
-			        i18n:translate="">other participants</button>
-		<p>&nbsp;</p>
-		<div class="thumbnail-wrapper bebest-collapse" id="show-participants-collapse" style="display:none;">
-		<span tal:omit-tag="" tal:repeat="person teams">
-		  <div class="thumbnail-portrait"
-			   tal:define="image nocall:person/thumb_pict">
-			<a href="" tal:attributes="href string:${person/absolute_url}">
-		       <img tal:condition="image"
-		            tal:attributes="src string:${person/absolute_url}/@@download/thumb_pict/${image/filename}"
-		            class="img-circle portrait-second" />
-		       <h4 tal:content="string:${person/first_name} ${person/family_name}">NAME</h4>
-		       <p tal:content="python:person.getAffiliations()">Affiliations</p>
-			</a>
-  		  </div>
-		
-		</span>
-		</div>
-	   </span>
+              type="button"
+              class="btn btn-default center-block collapser"
+              i18n:translate="">other participants</button>
+    <p>&nbsp;</p>
+    <div class="thumbnail-wrapper bebest-collapse" id="show-participants-collapse" style="display:none;">
+    <span tal:omit-tag="" tal:repeat="person teams">
+      <div class="thumbnail-portrait"
+         tal:define="image nocall:person/thumb_pict">
+      <a href="" tal:attributes="href string:${person/absolute_url}">
+           <img tal:condition="image"
+                tal:attributes="src string:${person/absolute_url}/@@download/thumb_pict/${image/filename}"
+                class="img-circle portrait-second" />
+           <h4 tal:content="string:${person/first_name} ${person/family_name}">NAME</h4>
+           <p tal:content="python:person.getAffiliations()">Affiliations</p>
+      </a>
+        </div>
+    
+    </span>
+    </div>
+     </span>
       </div>
     </div>
   </section>
   
   <div id="page-content" class="container-fluid">
-	<div class="container">
-	  <div class="row pushtop">
+  <div class="container">
+    <div class="row pushtop">
       <!-- Bouton toggle english -->
         <div tal:condition="python:displayEN"
              class="align-right">
             <button type="button"
-		            id="show-english-version"
-		            class="btn btn-default collapser">English version</button>
+                id="show-english-version"
+                class="btn btn-default collapser">English version</button>
         </div>
           <span class="bebest-collapse"
-			    tal:content="structure string:${context/presentation_en/raw}"
-			    id="show-english-version-collapse">
-			  presentation EN
-		  </span>
-		  <hr />
-	 </div>
-		<span tal:content="structure string:${context/presentation_fr/raw}">
-		  presentation FR
-		</span>
+          tal:content="structure string:${context/presentation_en/raw}"
+          id="show-english-version-collapse">
+        presentation EN
+      </span>
+      <hr />
+   </div>
+    <span tal:content="structure string:${context/presentation_fr/raw}">
+      presentation FR
+    </span>
     </div>
   </div>
 
 <section tal:condition="missions"><!--------Début de la section missions associées---------->
-	<div class="container-fluid bg-bright">
-		<div class="container">
+  <div class="container-fluid bg-bright">
+    <div class="container">
            <!----------thumbnails des missions---------->
            <h2 class="text-center">Missions associées / related missions</h2>
            <div class="thumbnail-wrapper">
-			<span  tal:omit-tag="" tal:repeat="mission missions">
-	           	<div class="thumbnail-mission">
-	           	 <a href=""
-	           	    tal:attributes="href string:${mission/absolute_url}">
-	           	    <div class="header">
-	           	      <h4>${mission/title}</h4>
-	           	    </div>
-	           	    <div class="img-mission"
-	           	         tal:define="image nocall:mission/main_pict">
-	           	      <img tal:attributes="src string:${mission/absolute_url}/@@download/main_pict/${image/filename}" />
-	           	    </div>
-	           	 </a>
-	           	</div>
-           	</span>
+      <span  tal:omit-tag="" tal:repeat="mission missions">
+              <div class="thumbnail-mission">
+               <a href=""
+                  tal:attributes="href string:${mission/absolute_url}">
+                  <div class="header">
+                    <h4>${mission/title}</h4>
+                  </div>
+                  <div class="img-mission"
+                       tal:define="image nocall:mission/main_pict">
+                    <img tal:attributes="src string:${mission/absolute_url}/@@download/main_pict/${image/filename}" />
+                  </div>
+               </a>
+              </div>
+            </span>
           </div>
        </div>
     </div>

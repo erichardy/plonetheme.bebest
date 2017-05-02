@@ -6,19 +6,18 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plonetheme.bebest">
 <body
-	tal:define="portal_state context/@@plone_portal_state;
-	            portal_url portal_state/portal_url"
-	>
+  tal:define="portal_state context/@@plone_portal_state;
+              portal_url portal_state/portal_url"
+  >
 
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
   <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
   <div tal:define="imgs python:view.getCarouselImages();
                    interval python:view.getCarouselInterval();
-                   thumbs python:view.getCarouselThumbnails();
-                   newsItems python:view.getHomeNews();
                    aboutBgImage python:view.getAboutBgImage();
                    aboutDocuments python:view.getAboutUsDocuments();
+                   newsItems python:view.getHomeNews();
                    feature_info_title string:${view/getMapTitle};
                    feature_info_text string:${view/getMapDescription};
                    feature_info_link string:;
@@ -27,75 +26,34 @@
                    iconsList python:view.getIconsList();
                    geojson python:view.getGeoJSON()">
   
-  <metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
-  </div>
-    </metal:content-core>
-</metal:content-core>
+   <metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
 
-    <!--><section id="bebest-home-carousel"
-             class="hidden-xs"
-             tal:condition="imgs">
-           	<div id="homeCarousel"
-           	     class="carousel slide" data-ride="carousel" data-wrap="true" data-pause="false"
-           	     tal:attributes="data-interval string:${interval}">
-              <!-- Wrapper for slides -->
-                	<!--<div class="carousel-inner carousel-home-inner" role="listbox">
-	                	<span tal:omit-tag="" tal:repeat="img imgs">
-		                  	<div tal:condition="python:repeat.img.start" class="item active">
-		                    	<img tal:attributes="src python:img.absolute_url()"
-		                    	     alt="banner"
-		                    	     class="full-width" />
-		                 	</div>
-		                 	<div tal:condition="python:not repeat.img.start" class="item">
-		                         <img tal:attributes="src python:img.absolute_url()"
-		                              alt="banner"
-		                              class="full-width" />
-		                    </div>
-	                    </span>
-                	</div>
-            </div>
-              <!-- Wrapper for info -->
-           	<!--<div class="carousel-home-title"
-           	     tal:define="logo_name python:view.getCarouselLogoName()"
-           	     >
-           	    <div class="text-center">
-                	<img id="bebest-logo-white"
-                	     tal:attributes="src string:${portal_url}/images/${logo_name}"
-                	     alt="bebest blanc"
-                	     />
-                 </div>
-                 <div class="super bright text-center"
-                      tal:content="structure string:${view/getCarouselText}">
-                 </div>
-	        </div>
-    </section> <!--FIN SECTION CAROUSEL-->
 
-	<!-- DEBUT THUMBNAILS -->
-	<section id="bebest-home-thumbnail"
-	         class="container"
-	         tal:condition="thumbs">
-	  <span tal:omit-tag="" tal:repeat="thumb thumbs">
-		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 text-center">  
-      	  <a href="#" tal:attributes="href string:${thumb/absolute_url}">
-      	  <div class="home-thumbnail-item" tal:define="imgSRC python:view.getImageSRC(thumb)">
-           <span tal:condition="imgSRC">
-             <img tal:attributes="src string:${imgSRC}"
-                  class="newsImage"
-                  />
-           </span>
-            <div class="thumbnail-item-dark">
-              <h3 tal:condition="python:thumb.portal_type == 'bebest.portrait'"
-                  tal:content="string:${thumb/first_name} ${thumb/family_name}"> Title</h3>
-              <h3 tal:condition="python:thumb.portal_type != 'bebest.portrait'">${thumb/title}</h3>
-			  <hr />
-              <p>${thumb/description}</p>
-           </div>
-          
-          </div>  
-          </a>
+ <!-- DEBUT SECTION ABOUT-->
+   <section id="bebest-home-about"
+            tal:condition="aboutDocuments">
+    <img id="scrollreveal" class="hidden-xs"
+         tal:attributes="src string:${portal_url}/images/${aboutBgImage}" />
+      <!-- class="container-fluid" si nb == 3 -->
+      <div class="container"
+           tal:define="nbDocs python:len(aboutDocuments);
+                       classesAbout python:view.getAboutClasses(nbDocs)">
+        <div class="super text-center"
+             tal:content="string:${context/description}">What we do</div>
+        <div class="row">
+        <span tal:omit-tag="" tal:repeat="aboutDocument aboutDocuments">
+          <div tal:attributes="class python:classesAbout[repeat.aboutDocument.number - 1]">
+            <h2 class="text-center"
+                tal:content="string:${aboutDocument/title}">Benthic and coastal biodiversity science</h2>
+        <p class="home-content"
+           tal:content="string:${aboutDocument/description}">Lorem ipsum
+        </p>
+          </div>
+      </span>
         </div>
-	  </span>
-	</section>
+      </div>
+   </section>
+  
 
     <section id="bebest-home-news"
              class="container w-limit"
@@ -111,74 +69,54 @@
            <div class="carousel-inner" role="listbox">
            <span tal:omit-tag="" tal:repeat="newsItem newsItems">
              <div tal:condition="python:repeat.newsItem.start" class="item active news-wrapper">
-	             <div class="news-img img-circle">
-	             <img tal:define="scale newsItem/@@images"
-	                    tal:replace="structure python: scale.scale('image', scale='large').tag()"
-	                    tal:on-error="string: Image cannot be displayed" />
-	             </div>
-	             <div class="news-info">
-		             <h3>${newsItem/title}</h3>
-		             <hr />
-		             <p>${newsItem/Description}</p>
-		             <a href="#" tal:attributes="href string:${newsItem/absolute_url}"
-		                         tal:content="string:En savoir plus... / More...">url</a>
+               <div class="news-img img-circle">
+               <img tal:define="scale newsItem/@@images"
+                      tal:replace="structure python: scale.scale('image', scale='large').tag()"
+                      tal:on-error="string: Image cannot be displayed" />
+               </div>
+               <div class="news-info">
+                 <h3>${newsItem/title}</h3>
+                 <hr />
+                 <p>${newsItem/Description}</p>
+                 <a href="#" tal:attributes="href string:${newsItem/absolute_url}"
+                             tal:content="string:En savoir plus... / More...">url</a>
                  </div>
              </div>
              <div tal:condition="python:not repeat.newsItem.start" class="item news-wrapper">
-	             <div class="news-img img-circle">
-		             <img tal:define="scale newsItem/@@images"
-		                    tal:replace="structure python: scale.scale('image', scale='large').tag()"
-		                    tal:on-error="string: Image cannot be displayed" />
-	             </div>
-	             <div class="news-info">
-		             <h3>${newsItem/title}</h3>
-		             <hr />
-		             <p>${newsItem/Description}</p>
-		             <a href="#" tal:attributes="href string:${newsItem/absolute_url}"
-		                         tal:content="string:En savoir plus... / More...">url</a>
+               <div class="news-img img-circle">
+                 <img tal:define="scale newsItem/@@images"
+                        tal:replace="structure python: scale.scale('image', scale='large').tag()"
+                        tal:on-error="string: Image cannot be displayed" />
+               </div>
+               <div class="news-info">
+                 <h3>${newsItem/title}</h3>
+                 <hr />
+                 <p>${newsItem/Description}</p>
+                 <a href="#" tal:attributes="href string:${newsItem/absolute_url}"
+                             tal:content="string:En savoir plus... / More...">url</a>
                  </div>
              </div>
 
            </span>
            </div>
-      	<!-- Left and right controls -->
-		<a class="left carousel-control" href="#news-Carousel" role="button" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="right carousel-control" href="#news-Carousel" role="button" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
+        <!-- Left and right controls -->
+    <a class="left carousel-control" href="#news-Carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#news-Carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
       </div>
       </div>
     </section>
 
+  </div>
 
-    <!-- DEBUT SECTION ABOUT-->
-   <!--<section id="bebest-home-about"
-            tal:condition="aboutDocuments">
-		<img id="scrollreveal" class="hidden-xs"
-		     tal:attributes="src string:${portal_url}/images/${aboutBgImage}" />
-   		<!-- class="container-fluid" si nb == 3 -->
-   		<!--<div class="container"
-   		     tal:define="nbDocs python:len(aboutDocuments);
-   		                 classesAbout python:view.getAboutClasses(nbDocs)">
-   			<div class="super text-center"
-   			     tal:content="string:${context/description}">What we do</div>
-   			<div class="row">
-   			<span tal:omit-tag="" tal:repeat="aboutDocument aboutDocuments">
-   			  <div tal:attributes="class python:classesAbout[repeat.aboutDocument.number - 1]">
-   			    <h2 class="text-center"
-   			        tal:content="string:${aboutDocument/title}">Benthic and coastal biodiversity science</h2>
-				<p class="home-content"
-				   tal:content="string:${aboutDocument/description}">Lorem ipsum
-				</p>
-   			  </div>
-			</span>
-   			</div>
-   		</div>
-   </section>-->
+  </metal:content-core>
+</metal:content-core>
+
 </body>
 </html>
   

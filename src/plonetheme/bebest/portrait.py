@@ -131,7 +131,7 @@ class IPortrait(model.Schema):
                              )
     dexteritytextindexer.searchable('affiliation1')
     affiliation1 = schema.TextLine(title=_(u"main affiliation"),
-                                   required=True,
+                                   required=False,
                                    )
     dexteritytextindexer.searchable('affiliation2')
     affiliation2 = schema.TextLine(title=_(u"second affiliation"),

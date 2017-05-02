@@ -45,10 +45,10 @@ class IBebestImage(model.Schema):
     title = schema.TextLine(title=_(u"image title"),)
 
     image = NamedBlobImage(title=_(u"main photo"),
-                           required=True
+                           required=False,
                            )
     thumb_pict = NamedBlobImage(title=_(u"small photo"),
-                                required=False
+                                required=False,
                                 )
     url = schema.URI(title=_(u"web site related"),
                      # constraint=validateURL,

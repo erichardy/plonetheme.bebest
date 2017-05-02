@@ -12,7 +12,7 @@
   <metal:content-core define-macro="main">
   <div class="container" tal:define="portraits python:view.getPortraitsObjs();">
    <div class="pushtop super text-center">
-        	Apolimer 
+          L'équipe Bebest
    </div>
    <!-----la gallerie, par ordre alphabetique------>
    <div class="thumbnail-wrapper">
@@ -20,11 +20,11 @@
      <div class="thumbnail-portrait"
           tal:define="image nocall:person/thumb_pict">
        <a href="" tal:attributes="href string:${person/absolute_url}">
-	      <img tal:condition="image"
-	           tal:attributes="src string:${person/absolute_url}/@@download/thumb_pict/${image/filename}"
-	           class="img-circle portrait-second" />
-	      <h4 tal:content="string:${person/first_name} ${person/family_name}">NAME</h4>
-	      <p tal:content="python:person.getAffiliations()">Affiliations</p>
+        <img tal:condition="image"
+             tal:attributes="src string:${person/absolute_url}/@@download/thumb_pict/${image/filename}"
+             class="img-circle portrait-second" />
+        <h4 tal:content="string:${person/first_name} ${person/family_name}">NAME</h4>
+        <p tal:content="python:person.getAffiliations()">Affiliations</p>
       </a>    
      </div>
      </span>
