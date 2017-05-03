@@ -14,6 +14,7 @@
    <div class="pushtop super text-center">
         	Chercheurs Associés
    </div>
+    <h4 tal:content="string:${obj/title}">project title</h4>
    <!-----la gallerie, par ordre alphabetique------>
    <div class="thumbnail-wrapper">
      <span  tal:omit-tag="" tal:repeat="person portraits">
