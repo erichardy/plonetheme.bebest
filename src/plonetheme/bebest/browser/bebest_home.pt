@@ -15,6 +15,7 @@
   <link rel="stylesheet" type="text/css" href="${portal_url}/++theme++plonetheme.bebest/css/leaflet.css" />
   <div tal:define="imgs python:view.getCarouselImages();
                    interval python:view.getCarouselInterval();
+                   thumbs python:view.getCarouselThumbnails();
                    aboutBgImage python:view.getAboutBgImage();
                    aboutDocuments python:view.getAboutUsDocuments();
                    newsItems python:view.getHomeNews();
@@ -28,33 +29,34 @@
   
    <metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
 
-
- <!-- DEBUT SECTION ABOUT-->
-   <section id="bebest-home-about"
-            tal:condition="aboutDocuments">
-    <img id="scrollreveal" class="hidden-xs"
-         tal:attributes="src string:${portal_url}/images/${aboutBgImage}" />
-      <!-- class="container-fluid" si nb == 3 -->
-      <div class="container"
-           tal:define="nbDocs python:len(aboutDocuments);
-                       classesAbout python:view.getAboutClasses(nbDocs)">
-        <div class="super text-center"
-             tal:content="string:${context/description}">What we do</div>
-        <div class="row">
-        <span tal:omit-tag="" tal:repeat="aboutDocument aboutDocuments">
-          <div tal:attributes="class python:classesAbout[repeat.aboutDocument.number - 1]">
-            <h2 class="text-center"
-                tal:content="string:${aboutDocument/title}">Benthic and coastal biodiversity science</h2>
-        <p class="home-content"
-           tal:content="string:${aboutDocument/description}">Lorem ipsum
-        </p>
-          </div>
-      </span>
+   <!-- DEBUT THUMBNAILS -->
+  <section id="bebest-home-thumbnail"
+           class="container"
+           tal:condition="thumbs">
+    <span tal:omit-tag="" tal:repeat="thumb thumbs">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 text-center">  
+          <a href="#" tal:attributes="href string:${thumb/absolute_url}">
+          <div class="home-thumbnail-item" tal:define="imgSRC python:view.getImageSRC(thumb)">
+           <span tal:condition="imgSRC">
+             <img tal:attributes="src string:${imgSRC}"
+                  class="newsImage"
+                  />
+           </span>
+            <div class="thumbnail-item-dark">
+              <h3 tal:condition="python:thumb.portal_type == 'bebest.portrait'"
+                  tal:content="string:${thumb/first_name} ${thumb/family_name}"> Title</h3>
+              <h3 tal:condition="python:thumb.portal_type != 'bebest.portrait'">${thumb/title}</h3>
+        <hr />
+              <p>${thumb/description}</p>
+           </div>
+          
+          </div>  
+          </a>
         </div>
-      </div>
-   </section>
+    </span>
+  </section>
 
-    <section id="bebest-home-news"
+   <section id="bebest-home-news"
              class="container w-limit"
              tal:condition="newsItems">
       <div  class="row">
@@ -110,6 +112,34 @@
       </div>
       </div>
     </section>
+
+
+ <!-- DEBUT SECTION ABOUT-->
+   <section id="bebest-home-about"
+            tal:condition="aboutDocuments">
+    <img id="scrollreveal" class="hidden-xs"
+         tal:attributes="src string:${portal_url}/images/${aboutBgImage}" />
+      <!-- class="container-fluid" si nb == 3 -->
+      <div class="container"
+           tal:define="nbDocs python:len(aboutDocuments);
+                       classesAbout python:view.getAboutClasses(nbDocs)">
+        <div class="super text-center"
+             tal:content="string:${context/description}">What we do</div>
+        <div class="row">
+        <span tal:omit-tag="" tal:repeat="aboutDocument aboutDocuments">
+          <div tal:attributes="class python:classesAbout[repeat.aboutDocument.number - 1]">
+            <h2 class="text-center"
+                tal:content="string:${aboutDocument/title}">Benthic and coastal biodiversity science</h2>
+        <p class="home-content"
+           tal:content="string:${aboutDocument/description}">Lorem ipsum
+        </p>
+          </div>
+      </span>
+        </div>
+      </div>
+   </section>
+
+   
 
   </div>
 

@@ -19,7 +19,7 @@ function onEachFeature(feature, layer) {
 }
 */
 var rocket = L.Icon ({
-	iconUrl: 'icon-orange.png'
+	iconUrl: 'marker-icon.png'
 });
 
 /* A partir des properties qui sont positionnees avec le site
@@ -71,7 +71,7 @@ function styleFromFeature(f) {
 	// iconUrl : a ne pas utiliser, il vaut mieux preferer 
 	// "icon" : nom_icon (dans iconList)
 	// iconList est un tableau contenu dans un parametre du control panel
-	style['iconUrl'] = 'icon-orange.png';
+	style['iconUrl'] = 'marker-icon.png';
 	return style
 }
 
@@ -113,7 +113,7 @@ var mymap = L.map('bebest-map', {
  */
 protocol = window.location.protocol;
 osmTilesServer = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
-stamenTilesServer = 'http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png';
+stamenTilesServer = 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}';
 if (protocol === 'https:'){
 	osmTilesServer = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 	// a tenter pour stamenToner....
@@ -131,7 +131,7 @@ var stamenTiles = L.tileLayer(stamenTilesServer, { //Appel du tilelayer StamenTo
 }); 
 
 osm.addTo(mymap);
-mymap.addLayer(stamenTiles);
+mymap.addLayer(osm);
 
 /* normalement cet icone est defini dans le control panel
 var bebestIcon = L.icon({
@@ -147,7 +147,7 @@ var bebestIcon = L.icon({
 */
 var baseLayers = {
 		"OpenStreetmap": osm,
-		"Stamen Toner": stamenTiles
+		"WorldStreetMap": stamenTiles
 };
 
 // L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
@@ -239,3 +239,24 @@ function onMapClick(e) {
 }
 mymap.on('click', onMapClick);
 
+/*ajout logo apolimer sur la carte
+L.Control.Watermark = L.Control.extend({
+    onAdd: function(map) {
+        var img = L.DomUtil.create('img');
+
+        img.src = '../../dev/images/logo.png';
+        img.style.width = '200px';
+
+        return img;
+    },
+
+    onRemove: function(map) {
+        // Nothing to do here
+    }
+});
+
+L.control.watermark = function(opts) {
+    return new L.Control.Watermark(opts);
+}
+
+L.control.watermark({ position: 'bottomleft' }).addTo(map);*/
