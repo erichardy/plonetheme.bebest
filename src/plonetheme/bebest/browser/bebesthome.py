@@ -227,7 +227,7 @@ class bebestHome(BrowserView):
         base = "col-xs-12 col-sm-10 col-sm-offset-1 "
         classesAbout = []
         if nb == 1:
-            classesAbout.append(base + "col-md-8 col-md-offset-2")
+            classesAbout.append(base + "col-md-10 col-md-offset-1")
         if nb == 2:
             classesAbout.append(base + "col-md-5 col-md-offset-0")
             classesAbout.append(base + "col-md-5 col-md-offset-2")
