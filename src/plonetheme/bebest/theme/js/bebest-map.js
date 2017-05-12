@@ -113,11 +113,11 @@ var mymap = L.map('bebest-map', {
  */
 protocol = window.location.protocol;
 osmTilesServer = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
-stamenTilesServer = 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}';
+wsmTilesServer = 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}';
 if (protocol === 'https:'){
 	osmTilesServer = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-	// a tenter pour stamenToner....
-	stamenTilesServer = 'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png';
+	// a tenter pour WorldStreetMap....
+	wsmTilesServer = 'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png';
 }
 /* les tuiles */
 var osm = L.tileLayer(osmTilesServer, {
@@ -125,8 +125,8 @@ var osm = L.tileLayer(osmTilesServer, {
 	minZoom: 2 //Zoom minimum
 });
 
-var stamenTiles = L.tileLayer(stamenTilesServer, { //Appel du tilelayer StamenToner
-	attribution: 'StamenToner', // Affichage du nom StamenToner en bas a droit a coté du lien Leaflet
+var wsm = L.tileLayer(wsmTilesServer, { //Appel du tilelayer WorldStreetMap
+	attribution: 'WorldStreetMap', // Affichage du nom WorldStreetMap en bas a droit a coté du lien Leaflet
 	minZoom: 2	 //Zoom minimum
 }); 
 
@@ -135,7 +135,7 @@ mymap.addLayer(osm);
 
 /* normalement cet icone est defini dans le control panel
 var bebestIcon = L.icon({
-    iconUrl: '++theme++plonetheme.bebest/images/leaflet/icon-orange.png',	
+    iconUrl: '++theme++plonetheme.bebest/images/leaflet/marker-icon.png',	
     iconSize:     [27, 40],
     iconAnchor:   [13, 40],
     popupAnchor:  [0, -40]
@@ -143,11 +143,11 @@ var bebestIcon = L.icon({
 */
 
 /*
- * controle de changement de layer osm vs stamenTiles
+ * controle de changement de layer osm vs wsm
 */
 var baseLayers = {
 		"OpenStreetmap": osm,
-		"WorldStreetMap": stamenTiles
+		"WorldStreetMap": wsm
 };
 
 // L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';

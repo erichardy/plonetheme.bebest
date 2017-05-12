@@ -12,27 +12,19 @@ var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     minZoom: 2 //Zoom minimum, on peut pas zoomer moins que ça comme ça on évite une répétition trop grande de la map.
 });
 
-var stamenTiles = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', { //Appel du tilelayer StamenToner
-    attribution: 'StamenToner', //Attribution du nom StamenToner en bas a droit a coté du lien Leaflet
+var wsm = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', { //Appel du tilelayer StamenToner
+    attribution: 'WorldStreeMap', //Attribution du nom StamenToner en bas a droit a coté du lien Leaflet
     minZoom: 2   //Zoom minimum, on peut pas zoomer moins que ça comme ça on évite une répétition trop grande de la map.
 }); 
 
 osm.addTo(mymap);
-mymap.addLayer(stamenTiles);
+mymap.addLayer(wsm);
 
-/* icone de point */
-var bebestIcon = L.icon({ // Appel de la variable Bebesticon pour personnaliser le marker
-    iconUrl: '++theme++plonetheme.bebest/images/leaflet/icon-orange.png', //Url du l'image icone
-    
-    iconSize:     [27, 40], // Taille de l'icone
-    iconAnchor:   [13, 40], // Point de l'icone où se trouve la location exacte du marker
-    popupAnchor:  [0, -40] // Point de l'icone où se trouvera le debut de la popup par rapport a l'iconAnchor
-});
 
-/* controle de changement de layer osm vs stamenTiles */
+/* controle de changement de layer osm vs wsm */
 var baseLayers = { //Appel des différents layers
         "OpenStreetmap": osm, 
-        "Stamen Toner": stamenTiles
+        "WorldStreeMap": wsm
 };
 L.control.layers(baseLayers).addTo(mymap); // Bouton pour permettre au utilisateurs de choisir la map, controle la variable si dessus.
 
