@@ -50,7 +50,7 @@
     </div>
   </section>
 
-<!---- auteur de la photo  --------->
+<!-- auteur de la photo  -->
 	<div class="img-author hidden-xs"
 	     tal:condition="python:pictAuthor"
 	     tal:content="string:${pictAuthor}">
