@@ -15,7 +15,7 @@
   <div tal:define="
                    toLocalizedTime nocall:context/@@plone/toLocalizedTime">
 
-<!-----------DEBUT SECTION PORTRAIT------------------>
+<!---DEBUT SECTION PORTRAIT-->
 		<section id="bebest-portrait"
 		  tal:define="firstname string:${context/first_name};
 		              familyname string:${context/family_name};
@@ -35,7 +35,7 @@
 		              "
 		>
 			<div class="container-fluid full-width">
-				<!---- conteneur des infos de la carte d'ID  --------->
+				<!-- conteneur des infos de la carte d'ID  -->
 				<div class="personnel-info text-center">
 					<div class="personnel-name"
 					     tal:content="string:${firstname} ${familyname}">
@@ -46,16 +46,16 @@
 					      status
 					</div>
 					<hr />
-					<!----métier de la personne-->
+					<!--métier de la personne-->
 					<div class="personnel-job"
 					     tal:content="string:${jobs}">
 						jobs
 					</div>
-					<!----affiliations 1,2 et 3, séparées par une virgule-->
+					<!---affiliations 1,2 et 3, séparées par une virgule-->
 					<div class="personnel-affiliation"
 					     tal:content="string:${affiliations}">
 					 </div>
-					<!----Email-->
+					<!--Email-->
 					<div tal:condition="contact">
 					  <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 					  <span id="person-contact-coded" tal:attributes="contact python:view.mailEncoded()"></span>
@@ -63,7 +63,7 @@
 					     Contact
 					  </a>
 					</div>
-					<!----lien vers page perso officielle-->
+					<!--lien vers page perso officielle-->
 					<span tal:condition="python:view.getPortraitAttr('personal_page')">
 						<a  href=""
 						   tal:attributes="href string:${personal_page}"
@@ -93,13 +93,13 @@
 					</a>
 					</span>
 				</div>
-					<!---- photo du portrait  --------->
+					<!-- photo du portrait  -->
 				<div class="personnel-img-wrapper"
 				     tal:condition="pictFilename"
 				     tal:define="main_pict nocall:context/main_pict">
 					<img tal:attributes="src string:${context/absolute_url}/@@download/main_pict/${main_pict/filename}"/>
 				</div>	
-					<!---- auteur de la photo  --------->
+					<!-- auteur de la photo  -->
 				<div tal:condition="python:view.getPortraitAttr('pict_author')"
 				     class="img-author"
 				     tal:content="python:view.getPortraitAttr('pict_author')">pict author</div>
@@ -108,7 +108,7 @@
 				  
 				</div>
  			</div>	
-				<!----La courte biographie --------->
+				<!--La courte biographie -->
 			<div class="container">
 				<div class="row personnel-bio col-xs-12 col-md-10 col-md-offset-1">
 				   <span tal:condition="python:view.bioEN()">
