@@ -186,8 +186,8 @@ msgid "biography"
 msgstr "Biographie"
 
 #: ./project.py:162
-msgid "canadian contact"
-msgstr "Contact canadien"
+msgid "Associated researcher"
+msgstr "Chercheur associé"
 
 #: ./interfaces.py:82
 msgid "carousel interval"
@@ -317,8 +317,8 @@ msgid "french biography"
 msgstr "Biographie en français"
 
 #: ./project.py:158
-msgid "french contact"
-msgstr "Contact français"
+msgid "Associated researcher"
+msgstr "Chercheur associé"
 
 #: ./project.py:97
 msgid "french description"

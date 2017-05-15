@@ -156,12 +156,12 @@ class IProject(model.Schema):
         )
 
     contact_fr = RelationChoice(
-        title=_(u"french contact"),
+        title=_(u"Associated researcher"),
         source=CS(portal_type="bebest.portrait"),
         required=False,
         )
     contact_ca = RelationChoice(
-        title=_(u"canadian contact"),
+        title=_(u"Associated researcher"),
         source=CS(portal_type="bebest.portrait"),
         required=False,
         )
