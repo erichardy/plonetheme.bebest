@@ -67,27 +67,27 @@
 	  	</span>
 <span>
 	 <section tal:condition="python:geojson_view != 'False' and geojson_view != False" class="section-map">
-   		<!---le type de feature présenté (sites ou missions)---->
+   		<!---le type de feature présenté (sites ou missions)-->
         <div class="feature-type col-xs-12">
             <span tal:content="string:${feature_info_title}">Sites d'étude</span>
         </div>
-		<!----La map en elle même------->
+		<!--La map en elle même-->
         <div id="bebest-map" class="col-xs-7 col-sm-8 col-md-9">
 		</div>
-        <!----le panneau des features---->
+        <!--le panneau des features-->
         <div class="map-feature-panel col-xs-5 col-sm-4 col-md-3">
         	<div class="feature-info" id="feature-info">
-            	<!---titre de l'item--->
+            	<!--titre de l'item-->
                 <h3 tal:content="string:${feature_info_title}">
                 	Saint-Pierre et Miquelon
                 </h3>
-                <!---un petit filet--->
+                <!--un petit filet-->
                 <hr />
-                <!---description de l'item--->
+                <!--description de l'item-->
                 <p tal:content="string:${feature_info_text}">
                 	Archipel français d'Amérique du Nord situé dans l'océan Atlantique nord, à 25 km au sud de l’île canadienne de Terre-Neuve.
                 </p>
-                <!---lien vers l'item--->
+                <!--lien vers l'item-->
                 <a href="" 
                    tal:attributes="href string:${feature_info_link}">
                 	En savoir plus...
@@ -133,8 +133,8 @@
 		idleMode: 'hover',
 		pauseOnInteraction: true,
 		carousel: false,
-		easing: 'galleriaIn',
-		imagePan: true,
+		easing: 'galleriaOut',
+		imagePan: false,
 		showInfo: true,
 		variation: 'light',
     	transition: 'fade',
