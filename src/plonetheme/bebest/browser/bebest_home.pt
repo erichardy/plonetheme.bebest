@@ -27,7 +27,6 @@
                    iconsList python:view.getIconsList();
                    geojson python:view.getGeoJSON()">
   
-   <metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
 
     <!-- DEBUT SECTION ABOUT-->
    <section id="bebest-home-about"
@@ -54,6 +53,7 @@
       </div>
    </section>
 
+   <metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
    
 
    <!-- DEBUT THUMBNAILS -->
