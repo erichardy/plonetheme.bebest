@@ -53,10 +53,7 @@
       </div>
    </section>
 
-   <metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
-   
-
-   <!-- DEBUT THUMBNAILS -->
+     <!-- DEBUT THUMBNAILS -->
   <section id="bebest-home-thumbnail"
            class="container"
            tal:condition="thumbs">
@@ -140,6 +137,7 @@
       </div>
     </section>
 
+ <metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
 
   </div>
 
