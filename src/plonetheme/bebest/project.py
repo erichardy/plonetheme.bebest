@@ -144,27 +144,22 @@ class IProject(model.Schema):
                    label=_(u"contacts"),
                    fields=['primary_contact',
                            'contact_fr',
-                           'contact_ca',
                            'other'
                            ])
     # directives.widget(chief='plone.formwidget.contenttree.ContentTreeFieldWidget')
 
     primary_contact = RelationChoice(
-        title=_(u"primary contact"),
+        title=_(u"primary investigator"),
         source=CS(portal_type="bebest.portrait"),
-
         )
 
     contact_fr = RelationChoice(
         title=_(u"Associated researcher"),
         source=CS(portal_type="bebest.portrait"),
+        required=False,
         )
 
-    contact_ca = RelationChoice(
-        title=_(u"Associated researcher"),
-        source=CS(portal_type="bebest.portrait"),
-        )
-    other = RelationList(title=_(u"other participants"),
+    other = RelationList(title=_(u"investigators"),
                          value_type=RelationChoice(
                              title=_(u'Target'),
                              source=CS(portal_type="bebest.portrait")),
@@ -244,9 +239,6 @@ class project(Container):
 
     def getContactFR(self):
         return self.contact_fr.to_object
-
-    def getContactCA(self):
-        return self.contact_ca.to_object
 
     def getMissions(self):
         bmissions = api.content.find(portal_type='bebest.mission',

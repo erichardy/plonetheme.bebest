@@ -104,8 +104,8 @@ msgid "Please correct errors"
 msgstr "Veuillez corriger les erreurs...!"
 
 #: ./profiles/default/types/bebest.portrait.xml
-msgid "Portrait of a bebest participant"
-msgstr "Portrait d'un participant au projet BeBEST"
+msgid "Portrait of a ApoliMer participant"
+msgstr "Portrait d'un participant au projet ApoliMer"
 
 #: ./studysite.py:86
 msgid "Presentation"
@@ -441,8 +441,10 @@ msgstr "ATTENTION: ce doit être impérativement un code javascript valide !!!"
 msgid "other document"
 msgstr "Document annexe"
 
-#: ./mission.py:200
 #: ./project.py:165
+msgid "investigators"
+msgstr "Enquêteurs"
+
 #: ./templates/missionview.pt:91
 msgid "other participants"
 msgstr "Autres participants"
@@ -519,8 +521,8 @@ msgid "presentation en"
 msgstr "Présentation en anglais"
 
 #: ./project.py:153
-msgid "primary contact"
-msgstr "Contact principal"
+msgid "primary investigator"
+msgstr "Chercheur principal"
 
 #: ./profiles/default/types/bebest.project.xml
 msgid "project"

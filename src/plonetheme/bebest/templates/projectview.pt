@@ -16,7 +16,6 @@
                    pictAuthor python:context.getPictAuthor();
                    primary_contact python:context.getPrimaryContact();
                    contactFR python:context.getContactFR();
-                   contactCA python:context.getContactCA();
                    teams python:context.getMissionsTeams();
                    displayEN python:context.display_en;
                    missions python:context.getMissions();
@@ -77,11 +76,12 @@
               </a>    
           </div>
 
+
           <div class="thumbnail-portrait"
                tal:define="image nocall:contactFR/thumb_pict;
                            contact nocall:contactFR">
               <h4 class="text-center">Chercheur associé - Associated researcher</h4>
-              <a href="#"
+              <a href=""
                  tal:attributes="href string:${contact/absolute_url}">
                   <img tal:attributes="src string:${contact/absolute_url}/@@download/thumb_pict/${image/filename}"
                        class="img-circle portrait-prime" />
@@ -89,18 +89,7 @@
                   <p tal:content="string:${contact/affiliation1}">LEMAR - CNRS</p>
               </a>    
           </div>
-          <div class="thumbnail-portrait"
-               tal:define="image nocall:contactCA/thumb_pict;
-                           contact nocall:contactCA">
-              <h4 class="text-center">Chercheur associé - Associated researcher</h4>
-              <a href="#"
-                 tal:attributes="href string:${contact/absolute_url}">
-                  <img tal:attributes="src string:${contact/absolute_url}/@@download/thumb_pict/${image/filename}"
-                       class="img-circle portrait-prime" />
-                  <h4 tal:content="string:${contact/first_name} ${contact/family_name}">Camille Maze</h4>
-                  <p tal:content="string:${contact/affiliation1}">LEMAR - CNRS</p>
-              </a>    
-          </div>
+
          
 
         </div>
@@ -108,7 +97,7 @@
         <button id="show-participants"
               type="button"
               class="btn btn-default center-block collapser"
-              i18n:translate="">Participants - other participants</button>
+              i18n:translate="">Enquêteurs - Investigators</button>
     <p>&nbsp;</p>
     <div class="thumbnail-wrapper bebest-collapse" id="show-participants-collapse" style="display:none;">
     <span tal:omit-tag="" tal:repeat="person teams">
