@@ -56,7 +56,7 @@
                 <div class="text-center">
                   <img id="bebest-logo-white"
                        tal:attributes="src string:${portal_url}/images/${logo_name}"
-                       alt="bebest blanc"
+                       alt=""
                        />
                  </div>
                  <div class="super bright text-center"
