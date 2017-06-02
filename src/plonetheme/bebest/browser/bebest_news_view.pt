@@ -19,7 +19,7 @@
                      news python:view.getOtherNews();"
          >
       <div class="row">
-        <!-----Contenu de la page----->
+        <!--Contenu de la page-->
         <div class="col-xs-12 col-sm-9">
         <section>
           <div class="actu-img">
@@ -27,19 +27,19 @@
                   tal:replace="structure python: scale.scale('image', scale='large').tag(css_class='full-width img-responsive')"
                   tal:on-error="string: No image for this News Item!" />
           </div>
-          <!----Partie Info text------>
+          <!--Partie Info text-->
           <div>
-              <!-----Champ title---->
+              <!--Champ title-->
               <div class="bebest-title">
                   ${context/title}
               </div> 
-              <!----------un petit filet------------>
+              <!--un petit filet-->
               <hr /> 
-              <!---Champ sous titre doit -il etre identique au champ description ?--->
+              <!--Champ sous titre doit -il etre identique au champ description ?-->
               <div class="bebest-subtitle">
 	            <span tal:content="structure string:${description}">description</span>
               </div> 
-              <!------ Date de l'evenement, doit etre un string text libre  pour pouvoir indiquer une date ou une période--->
+              <!-- Date de l'evenement, doit etre un string text libre  pour pouvoir indiquer une date ou une période-->
               <div tal:condition="dates"
                    class="bebest-dates">
                   ${dates}
@@ -51,7 +51,7 @@
 	             class="align-right">
 	            <button type="button"
 			            id="show-english-version"
-			            class="btn btn-default collapser">English version</button>
+			            class="btn btn-default collapser">version française</button>
 	        </div>
 	          <span tal:condition="textEN"
 	                class="bebest-collapse"
@@ -66,10 +66,10 @@
         </section>
         </div>
 
-        <!-----acces aux actus précédentes----->
+        <!--acces aux actus précédentes-->
         <div class="col-xs-12 col-sm-3 bg-light-grey pushbottom">
           <h3 class="pushtop">Actualités</h3>
-          <!-----un petit filet--->
+          <!--un petit filet-->
           <hr class="main-line" />
           <ul tal:condition="news">
             <span tal:omit-tag=""
