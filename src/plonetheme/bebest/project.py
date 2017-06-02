@@ -156,7 +156,6 @@ class IProject(model.Schema):
     contact_fr = RelationChoice(
         title=_(u"Associated researcher"),
         source=CS(portal_type="bebest.portrait"),
-        required=False,
         )
 
     other = RelationList(title=_(u"investigators"),
