@@ -116,7 +116,7 @@
 					     class="align-right">
 				        <button type="button"
 				                id="show-english-version"
-				                class="btn btn-default collapser">English version</button>
+				                class="btn btn-default collapser">version Française</button>
 					    
 						<span class="bebest-collapse" style="display: none"
 						      id="show-english-version-collapse">
