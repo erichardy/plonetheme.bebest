@@ -21,9 +21,9 @@
                 <div class="bebest-title" tal:content="string:${context/title}">
                     Title
                 </div> 
-                <!----------un petit filet------------>
+                <!--un petit filet-->
                 <hr /> 
-                <!---Champ sous titre/description--->
+                <!--Champ sous titre/description-->
                 <div class="bebest-subtitle" tal:content="string:${context/description}">
                     Description
                 </div> 
@@ -47,7 +47,7 @@
 						<hr />
 					</div>
 			     </span>
-                <!------Rich Text---------->
+                <!--Rich Text-->
                 <div tal:content="structure string:${context/text/raw}">
                   text FR
                 </div>
