@@ -120,7 +120,7 @@
 					    
 						<span class="bebest-collapse" style="display: none"
 						      id="show-english-version-collapse">
-						  <h2 i18n:translate="">Biography</h2>
+						  <h2 i18n:translate="">Biographie</h2>
 						  <p tal:content="structure string:${context/bio_en/raw}">
 						  	bio EN
 						  </p>
@@ -129,7 +129,7 @@
 					</div>
 			     </span>
 					<span tal:condition="python:view.bioFR()">
-					<h2>Biographie</h2> 
+					<h2>Biography</h2> 
 					<p class="text-justify"
 					   tal:content="structure string:${context/bio_fr/raw}">
 					  bio fr
