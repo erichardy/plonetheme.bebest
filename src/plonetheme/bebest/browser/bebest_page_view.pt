@@ -35,13 +35,13 @@
 					     class="align-right">
 				        <button type="button"
 				                id="show-english-version"
-				                class="btn btn-default collapser">English version</button>
+				                class="btn btn-default collapser">Version française</button>
 					    
 						<span class="bebest-collapse" style="display: none"
 						      id="show-english-version-collapse">
 						  <p>&nbsp;</p>
 						  <div tal:content="structure string:${context/presentation_en/raw}">
-						  	text EN
+						  	text FR
 						  </div>
 						</span>
 						<hr />
@@ -49,7 +49,7 @@
 			     </span>
                 <!--Rich Text-->
                 <div tal:content="structure string:${context/text/raw}">
-                  text FR
+                  text 
                 </div>
 
             </section>
