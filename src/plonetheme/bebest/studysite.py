@@ -87,7 +87,7 @@ class IStudysite(model.Schema):
                                description=_(u"study site presentation"),
                                required=False
                                )
-    display_en = schema.Bool(title=_(u"display english description"),
+    display_en = schema.Bool(title=_(u"display french description"),
                              description=_(u"unselect to disable"),
                              default=True
                              )

@@ -132,12 +132,12 @@
           <span class="bebest-collapse"
           tal:content="structure string:${context/presentation_en/raw}"
           id="show-english-version-collapse">
-        presentation EN
+        presentation FR
       </span>
       <hr />
    </div>
     <span tal:content="structure string:${context/presentation_fr/raw}">
-      presentation FR
+      presentation EN
     </span>
     </div>
   </div>

@@ -145,16 +145,16 @@ class IMission(model.Schema):
                            'pict_author',
                            'doc'])
     dexteritytextindexer.searchable('presentation_fr')
-    presentation_fr = RichText(title=_(u"french presentation"),
+    presentation_fr = RichText(title=_(u"english presentation"),
                                description=_(u"Mission presentation"),
                                required=False
                                )
-    display_en = schema.Bool(title=_(u"display english description"),
+    display_en = schema.Bool(title=_(u"display french description"),
                              description=_(u"unselect to disable"),
                              default=True
                              )
 
-    presentation_en = RichText(title=_(u"english presentation"),
+    presentation_en = RichText(title=_(u"french presentation"),
                                description=_(u"Mission presentation"),
                                required=False
                                )

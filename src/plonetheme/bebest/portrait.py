@@ -100,7 +100,7 @@ class IPortrait(model.Schema):
                            'display_en',
                            'bio_en'])
     dexteritytextindexer.searchable('bio_fr')
-    bio_fr = RichText(title=_(u"french biography"),
+    bio_fr = RichText(title=_(u"english biography"),
                       required=False,
                       )
     display_en = schema.Bool(title=_(u"display or not english biography"),
@@ -108,7 +108,7 @@ class IPortrait(model.Schema):
                              default=True
                              )
     dexteritytextindexer.searchable('bio_en')
-    bio_en = RichText(title=_(u"english biography"),
+    bio_en = RichText(title=_(u"french biography"),
                       required=False,
                       )
     #

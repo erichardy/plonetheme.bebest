@@ -94,7 +94,7 @@ class IProject(model.Schema):
                            'display_en',
                            'presentation_en'])
     dexteritytextindexer.searchable('presentation_fr')
-    presentation_fr = RichText(title=_(u"french description"),
+    presentation_fr = RichText(title=_(u"english description"),
                                required=False,
                                )
     display_en = schema.Bool(title=_(u"display or not english description"),
@@ -102,7 +102,7 @@ class IProject(model.Schema):
                              default=True
                              )
     dexteritytextindexer.searchable('presentation_en')
-    presentation_en = RichText(title=_(u"english description"),
+    presentation_en = RichText(title=_(u"french description"),
                                required=False,
                                )
     #
