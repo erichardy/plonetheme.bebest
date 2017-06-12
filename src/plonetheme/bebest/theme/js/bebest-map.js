@@ -117,7 +117,7 @@ wsmTilesServer = 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Stre
 if (protocol === 'https:'){
 	osmTilesServer = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 	// a tenter pour WorldStreetMap....
-	wsmTilesServer = 'http://{s}.server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',;
+	wsmTilesServer = 'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png';
 }
 /* les tuiles */
 var osm = L.tileLayer(osmTilesServer, {
@@ -125,9 +125,9 @@ var osm = L.tileLayer(osmTilesServer, {
 	minZoom: 2 //Zoom minimum
 });
 
-var wsm = L.tileLayer(wsmTilesServer, { //Appel du tilelayer WorldSeaMap
-	attribution: 'WorldSeaMap', // Affichage du nom WorldSeaMap en bas a droit a coté du lien Leaflet
-	minZoom: 2 //Zoom minimum
+var wsm = L.tileLayer(wsmTilesServer, { //Appel du tilelayer WorldStreetMap
+	attribution: 'WorldStreetMap', // Affichage du nom WorldStreetMap en bas a droit a coté du lien Leaflet
+	minZoom: 2	 //Zoom minimum
 }); 
 
 osm.addTo(mymap);
@@ -147,7 +147,7 @@ var bebestIcon = L.icon({
 */
 var baseLayers = {
 		"OpenStreetmap": osm,
-		"WorldSeaMap": wsm
+		"WorldStreetMap": wsm
 };
 
 // L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';

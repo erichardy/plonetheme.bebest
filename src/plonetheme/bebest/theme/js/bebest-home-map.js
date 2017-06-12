@@ -11,8 +11,8 @@ var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     minZoom: 2 //Zoom minimum, on peut pas zoomer moins que ça comme ça on évite une répétition trop grande de la map.
 });
 
-var wsm = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', { //Appel du tilelayer StamenToner
-    attribution: 'WorldSeaMap', //Attribution du nom WorldSeaMap en bas a droit a coté du lien Leaflet
+var wsm = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', { //Appel du tilelayer StamenToner
+    attribution: 'WorldStreeMap', //Attribution du nom StamenToner en bas a droit a coté du lien Leaflet
     minZoom: 2   //Zoom minimum, on peut pas zoomer moins que ça comme ça on évite une répétition trop grande de la map.
 }); 
 
@@ -23,7 +23,7 @@ mymap.addLayer(wsm);
 /* controle de changement de layer osm vs wsm */
 var baseLayers = { //Appel des différents layers
         "OpenStreetmap": osm, 
-        "WorldSeaMap": wsm
+        "WorldStreeMap": wsm
 };
 L.control.layers(baseLayers).addTo(mymap); // Bouton pour permettre au utilisateurs de choisir la map, controle la variable si dessus.
 
