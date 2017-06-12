@@ -45,13 +45,14 @@ var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 	minZoom: 2 //Zoom minimum, on peut pas zoomer moins que ça comme ça on évite une répétition trop grande de la map.
 });
 
-var stamenTiles = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', { //Appel du tilelayer StamenToner
-	attribution: 'StamenToner', //Attribution du nom StamenToner en bas a droit a coté du lien Leaflet
+var wsm = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}.png', { //Appel du tilelayer WorldStreetMap
+	attribution: 'WorldStreetMap', //Attribution du nom WorldStreetMap en bas a droit a coté du lien Leaflet
 	minZoom: 2	 //Zoom minimum, on peut pas zoomer moins que ça comme ça on évite une répétition trop grande de la map.
 }); 
 
+
 osm.addTo(mymap);
-mymap.addLayer(stamenTiles);
+mymap.addLayer(wsm);
 
 /* icone de point */
 var bebestIcon = L.icon({
@@ -61,10 +62,10 @@ var bebestIcon = L.icon({
     popupAnchor:  [0, -40]
 });
 
-/* controle de changement de layer osm vs stamenTiles */
+/* controle de changement de layer osm vs WorldStreetMap */
 var baseLayers = {
 		"OpenStreetmap": osm, 
-		"Stamen Toner": stamenTiles
+		"WorldStreetMap": wsm
 };
 
 L.Icon.Default.imagePath = 'http://api.tiles.mapbox.com/mapbox.js/v1.0.0beta0.0/images';
