@@ -119,7 +119,7 @@ var OpenMapSurfer_Roads = L.tileLayer('http://korona.geog.uni-heidelberg.de/tile
  */
 protocol = window.location.protocol;
 osmTilesServer = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
-wsmTilesServer = 'http://{s}.server.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}';
+wsmTilesServer = 'http://server.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}';
 if (protocol === 'https:'){
 	osmTilesServer = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 	// a tenter pour WorldStreetMap....
