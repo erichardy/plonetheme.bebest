@@ -105,12 +105,6 @@ var mymap = L.map('bebest-map', {
   zoom: zoom
 });
 
-
-var OpenMapSurfer_Roads = L.tileLayer('http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
-	maxZoom: 20,
-	attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-});
-
 /*
  * Lors du passage en HTTPS, de nombreux messages d'alerte en raison des
  * appels à un site HTTP.
@@ -119,11 +113,11 @@ var OpenMapSurfer_Roads = L.tileLayer('http://korona.geog.uni-heidelberg.de/tile
  */
 protocol = window.location.protocol;
 osmTilesServer = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
-wsmTilesServer = 'http://server.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}';
+wsmTilesServer = 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}';
 if (protocol === 'https:'){
 	osmTilesServer = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 	// a tenter pour WorldStreetMap....
-	wsmTilesServer = 'http://{s}.server.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}.png';
+	wsmTilesServer = 'http://{s}.server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',;
 }
 /* les tuiles */
 var osm = L.tileLayer(osmTilesServer, {
@@ -133,7 +127,7 @@ var osm = L.tileLayer(osmTilesServer, {
 
 var wsm = L.tileLayer(wsmTilesServer, { //Appel du tilelayer WorldSeaMap
 	attribution: 'WorldSeaMap', // Affichage du nom WorldSeaMap en bas a droit a coté du lien Leaflet
-	minZoom: 2	 //Zoom minimum
+	minZoom: 2 //Zoom minimum
 }); 
 
 osm.addTo(mymap);
