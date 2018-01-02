@@ -12,9 +12,9 @@
   <metal:content-core define-macro="main">
   <div class="container" tal:define="objs python:view.getObjs();">
 
-   <div class="pushtop super text-center pushbottom">
+   <h1 class="bebest-title text-center">
         	${context/title}
-   </div>
+   </h1>
    <div tal:define="description context/description"
         class="text-justify col-xs-12">
      <span tal:content="structure string:${description}">description</span>
@@ -23,17 +23,19 @@
    <!-----la gallerie, par ordre alphabetique------>
    <div class="thumbnail-wrapper">
      <span  tal:omit-tag="" tal:repeat="obj objs">
-     <div class="thumbnail-mission"
-          tal:define="imageURL python:view.getImageURL(obj)">
+     <div class="thumbnail-mission">
        <a href="" tal:attributes="href string:${obj/absolute_url};
                                   title string:${obj/description}">
 	      <div class="header">
              <h4 tal:content="string:${obj/title}">project title</h4>
           </div>
-	      <img tal:condition="imageURL"
-	           tal:attributes="src string:${imageURL}"
-	           class="img-mission" />
-      </a>    
+         <img class="img-mission"
+             tal:define="scale obj/@@images;
+                         image_attr python: 'thumb_pict' if hasattr(obj.aq_inner, 'thumb_pict') else ('main_pict' if hasattr(obj.aq_inner, 'main_pict') else 'image');
+                         has_image python: getattr(obj.aq_inner, image_attr) or view.getImageURL(obj)"
+             tal:attributes="src python: scale.scale(image_attr, scale='preview') and scale.scale(image_attr, scale='preview').url or view.getImageURL(obj)"
+             tal:on-error="string: Image cannot be displayed ${image_attr}" />
+      </a>
      </div>
      </span>
    </div>
@@ -43,4 +45,3 @@
 
 </body>
 </html>
-  

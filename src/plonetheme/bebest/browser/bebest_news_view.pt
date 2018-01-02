@@ -30,16 +30,16 @@
           <!--Partie Info text-->
           <div>
               <!--Champ title-->
-              <div class="bebest-title">
+              <h1 class="bebest-title">
                   ${context/title}
-              </div> 
+              </h1>
               <!--un petit filet-->
-              <hr /> 
+              <hr />
               <!--Champ sous titre doit -il etre identique au champ description ?-->
               <div class="bebest-subtitle">
 	            <span tal:content="structure string:${description}">description</span>
-              </div> 
-              <!-- Date de l'evenement, doit etre un string text libre  pour pouvoir indiquer une date ou une période-->
+              </div>
+              <!-- Date de l'evenement, doit etre un string text libre  pour pouvoir indiquer une date ou une pÃ©riode-->
               <div tal:condition="dates"
                    class="bebest-dates">
                   ${dates}
@@ -66,7 +66,7 @@
         </section>
         </div>
 
-        <!--acces aux actus précédentes-->
+        <!--acces aux actus prÃ©cÃ©dentes-->
         <div class="col-xs-12 col-sm-3 bg-light-grey pushbottom">
           <h3 class="pushtop">Actualités</h3>
           <!--un petit filet-->
@@ -82,15 +82,14 @@
               </li>
             </span>
           </ul>
-          
+
         </div>
       </div>
     </div>
-   
+
 
   </metal:content-core>
 </metal:content-core>
 
 </body>
 </html>
-  

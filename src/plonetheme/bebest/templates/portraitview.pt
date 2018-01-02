@@ -37,21 +37,21 @@
 			<div class="container-fluid full-width">
 				<!-- conteneur des infos de la carte d'ID  -->
 				<div class="personnel-info text-center">
-					<div class="personnel-name"
+					<h1 class="bebest-title text-center"
 					     tal:content="string:${firstname} ${familyname}">
 					     prenom nom
-					</div>
-					<div class="personnel-title"
+					</h1>
+					<!-- <div class="personnel-title"
 					      tal:content="string:${context/status}">
 					      status
-					</div>
+					</div> -->
 					<hr />
-					<!--métier de la personne-->
+					<!--mÃ©tier de la personne-->
 					<div class="personnel-job"
 					     tal:content="string:${jobs}">
 						jobs
 					</div>
-					<!---affiliations 1,2 et 3, séparées par une virgule-->
+					<!---affiliations 1,2 et 3, sÃ©parÃ©es par une virgule-->
 					<div class="personnel-affiliation"
 					     tal:content="string:${affiliations}">
 					 </div>
@@ -98,16 +98,16 @@
 				     tal:condition="pictFilename"
 				     tal:define="main_pict nocall:context/main_pict">
 					<img tal:attributes="src string:${context/absolute_url}/@@download/main_pict/${main_pict/filename}"/>
-				</div>	
+				</div>
 					<!-- auteur de la photo  -->
 				<div tal:condition="python:view.getPortraitAttr('pict_author')"
 				     class="img-author"
 				     tal:content="python:view.getPortraitAttr('pict_author')">pict author</div>
 				<div tal:condition="python:not view.getPortraitAttr('pict_author')"
 				     class="img-no-author">
-				  
+
 				</div>
- 			</div>	
+ 			</div>
 				<!--La courte biographie -->
 			<div class="container">
 				<div class="row personnel-bio col-xs-12 col-md-10 col-md-offset-1">
@@ -117,7 +117,7 @@
 				        <button type="button"
 				                id="show-english-version"
 				                class="btn btn-default collapser">version Française</button>
-					    
+
 						<span class="bebest-collapse" style="display: none"
 						      id="show-english-version-collapse">
 						  <h2 i18n:translate="">Biographie</h2>
@@ -129,14 +129,14 @@
 					</div>
 			     </span>
 					<span tal:condition="python:view.bioFR()">
-					<h2>Biography</h2> 
+					<h2>Biography</h2>
 					<p class="text-justify"
 					   tal:content="structure string:${context/bio_fr/raw}">
 					  bio fr
 					</p>
 					</span>
 				</div>
-			</div>	
+			</div>
 		</section>
 
   </div>
@@ -145,4 +145,3 @@
 
 </body>
 </html>
-  

@@ -18,17 +18,16 @@
   <div class="container">
         <div class="row">
             <section>
-                <div class="bebest-title" tal:content="string:${context/title}">
+                <h1 class="bebest-title" tal:content="string:${context/title}">
                     Title
-                </div> 
+                </h1>
                 <!--un petit filet-->
-                <hr /> 
+                <hr />
                 <!--Champ sous titre/description-->
                 <div class="bebest-subtitle" tal:content="string:${context/description}">
                     Description
-                </div> 
+                </div>
             </section>
-            <p>&nbsp;</p>
             <section class=" pushbottom">
               <span tal:condition="istextEN">
 					 <div tal:condition="python:displayEN and istextEN"
@@ -36,7 +35,7 @@
 				        <button type="button"
 				                id="show-english-version"
 				                class="btn btn-default collapser">Version française</button>
-					    
+
 						<span class="bebest-collapse" style="display: none"
 						      id="show-english-version-collapse">
 						  <p>&nbsp;</p>
@@ -49,7 +48,7 @@
 			     </span>
                 <!--Rich Text-->
                 <div tal:content="structure string:${context/text/raw}">
-                  text 
+                  text
                 </div>
 
             </section>
@@ -64,4 +63,3 @@
 
 </body>
 </html>
-  

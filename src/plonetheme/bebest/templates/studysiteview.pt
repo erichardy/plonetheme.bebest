@@ -79,11 +79,10 @@
 
 <metal:macro use-macro="context/bebest_macros/macros/map-bebest" />
 
-  
+
 </div>
   </metal:content-core>
 </metal:content-core>
 
 </body>
 </html>
-  

@@ -15,24 +15,24 @@
 
  <div class="container">
 
-  <div class="pushtop super text-center pushbottom">
+  <h1 class="bebest-title text-center">
         	${context/description}
-  </div>
+  </h1>
 
    <div class="thumbnail-wrapper" tal:condition="studysites">
      <span  tal:omit-tag="" tal:repeat="studysite studysites">
-     
+
      <div class="thumbnail-mission"
           tal:define="image nocall:studysite/main_pict">
        <a href="" tal:attributes="href string:${studysite/absolute_url}">
        <div class="header">
-       <h4 tal:content="string:${studysite/title}">studysite title</h4>
+       <h2 tal:content="string:${studysite/title}">studysite title</h2>
        </div>
 	      <img tal:condition="image"
 	           tal:attributes="src string:${studysite/absolute_url}/@@download/main_pict/${image/filename}"
 	           class="img-mission" />
-	      
-      </a>    
+
+      </a>
      </div>
      </span>
    </div>
@@ -44,4 +44,3 @@
 
 </body>
 </html>
-  

@@ -8,31 +8,212 @@
 
 <body>
 
+<metal:portrait define-macro="portrait">
+  <div class="thumbnail-portrait"
+      tal:define="image nocall:person/thumb_pict">
+   <a href="" tal:attributes="href string:${person/absolute_url}">
+     <div class="portrait-second">
+      <img tal:condition="image"
+           tal:attributes="src string:${person/absolute_url}/@@images/thumb_pict/mini"
+           class="img-responsive" />
+     </div>
+    <h4 tal:content="string:${person/first_name} ${person/family_name}">NAME</h4>
+    <p tal:content="python:person.getAffiliations()">Affiliations</p>
+  </a>
+ </div>
+</metal:portrait>
+
 <metal:content-core fill-slot="main">
   <metal:content-core define-macro="main">
-  <div class="container" tal:define="portraits python:view.getPortraitsObjs();">
-   <div class="pushtop super text-center">
-        	The Team
-   </div>
-   <!--la gallerie, par ordre alphabetique-->
-   <div class="thumbnail-wrapper">
-     <span  tal:omit-tag="" tal:repeat="person portraits">
-     <div class="thumbnail-portrait"
-          tal:define="image nocall:person/thumb_pict">
-       <a href="" tal:attributes="href string:${person/absolute_url}">
-        <img tal:condition="image"
-             tal:attributes="src string:${person/absolute_url}/@@download/thumb_pict/${image/filename}"
-             class="img-circle portrait-second img-responsive" />
-        <h4 tal:content="string:${person/first_name} ${person/family_name}">NAME</h4>
-        <p tal:content="python:person.getAffiliations()">Affiliations</p>
-      </a>    
-     </div>
-     </span>
-   </div>
+
+  <div style="background-color: #eee;">
+    <div class="container">
+      <h2 class="text-center">Steering commitee</h2>
+
+      <div class="thumbnail-wrapper">
+        <div style="width: 150px;"></div>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/maze-camille"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/ragueneau-olivier"></metal:macro>
+        <div style="width: 150px;"></div>
+      </div>
+      <div class="thumbnail-wrapper">
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/danto-anatole"></metal:macro>
+      </div>
+    </div>
   </div>
+
+  <div class="container">
+    <h2 class="text-center">Scientific Board</h2>
+
+    <h3 class="text-center">Americas</h3>
+
+    <div class="thumbnail-wrapper">
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/doyon-sabrina"></metal:macro>
+      <div><img tal:define="scale context/recherche-research/study-grounds/ameriques/@@images"
+                tal:replace="structure python: scale.scale('image', scale='preview').tag()"
+                tal:on-error="string: Image cannot be displayed"
+      /></div>
+      <div style="width: 300px; margin: auto;"></div>
+    </div>
+
+    <h3 class="text-center">Europe</h3>
+
+    <div class="thumbnail-wrapper">
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/maze-camille"></metal:macro>
+      <div><img tal:define="scale context/recherche-research/study-grounds/europe/@@images"
+                tal:replace="structure python: scale.scale('image', scale='preview').tag()"
+                tal:on-error="string: Image cannot be displayed"
+      /></div>
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/carter-caitriona"></metal:macro>
+    </div>
+
+    <h3 class="text-center">Africa</h3>
+
+    <div class="thumbnail-wrapper">
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/dahou-tarik"></metal:macro>
+      <div><img tal:define="scale context/recherche-research/study-grounds/afrique/@@images"
+                tal:replace="structure python: scale.scale('image', scale='preview').tag()"
+                tal:on-error="string: Image cannot be displayed"
+      /></div>
+      <div style="width: 300px; margin: auto;"></div>
+    </div>
+
+    <h3 class="text-center">Oceania</h3>
+
+    <div class="thumbnail-wrapper">
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/le-meur-pierre-yves"></metal:macro>
+      <div><img tal:define="scale context/recherche-research/study-grounds/oceania/@@images"
+                tal:replace="structure python: scale.scale('image', scale='preview').tag()"
+                tal:on-error="string: Image cannot be displayed"
+      /></div>
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/foale-simon"></metal:macro>
+    </div>
+
+    <h3 class="text-center">Asia</h3>
+
+    <div class="thumbnail-wrapper">
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/frecon-eric"></metal:macro>
+      <div><img tal:define="scale context/recherche-research/study-grounds/asie/@@images"
+                tal:replace="structure python: scale.scale('image', scale='preview').tag()"
+                tal:on-error="string: Image cannot be displayed"
+      /></div>
+      <div style="width: 300px; margin: auto;"></div>
+    </div>
+
+    <h3 class="text-center">The Poles</h3>
+
+    <div class="thumbnail-wrapper">
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/lasserre-frederic"></metal:macro>
+      <div><img tal:define="scale context/recherche-research/study-grounds/arctique/@@images"
+                tal:replace="structure python: scale.scale('image', scale='preview').tag()"
+                tal:on-error="string: Image cannot be displayed"
+      /></div>
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/choquet-anne"></metal:macro>
+    </div>
+
+    <h3 class="text-center">Natural Sciences, Natural Resources Management, Sustainability Sciences</h3>
+
+    <div class="thumbnail-wrapper">
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/ragueneau-olivier"></metal:macro>
+      <div><img tal:define="scale context/terre.jpg/@@images"
+                tal:replace="structure python: scale.scale('image', scale='preview').tag()"
+                tal:on-error="string: Image cannot be displayed"
+      /></div>
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/kofinas-gary"></metal:macro>
+    </div>
+
+    <h3 class="text-center">Link to Future Earth</h3>
+
+    <div class="thumbnail-wrapper">
+      <div class="thumbnail-portrait"
+            tal:define="person nocall:context/kiefer-thorsten;
+                        image nocall:person/thumb_pict">
+         <a href="" tal:attributes="href string:${person/absolute_url}">
+           <div class="portrait-second">
+            <img tal:condition="image"
+                 tal:attributes="src string:${person/absolute_url}/@@download/thumb_pict/${image/filename}"
+                 class="img-responsive" />
+           </div>
+          <h4 tal:content="string:${person/first_name} ${person/family_name}">NAME</h4>
+           <p><a href="http://www.futureearth.org/" style="text-decoration: underline" target="_blank" tal:content="python:person.getAffiliations()">Affiliations</a></p>
+        </a>
+       </div>
+    </div>
+  </div>
+
+  <div style="background-color: #eee;">
+    <div class="container">
+      <h2 class="text-center">People</h2>
+
+      <h3 class="text-center">Social Science of politics - SSP</h3>
+
+      <div class="thumbnail-wrapper">
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/maze-camille"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/lasserre-frederic"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/frecon-eric"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/weisbein-julien"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/carter-caitriona"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/kowalski-jean-marie"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/dahou-tarik"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/rodary-estienne"></metal:macro>
+      </div>
+      <div class="thumbnail-wrapper">
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/degremont-marlene"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/frozel-barros-natalia"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/ngo-baha-esther"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/danto-anatole"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/graczyk-piotr"></metal:macro>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3 class="text-center">Maritime Anthropology - AMAR</h3>
+
+    <div class="thumbnail-wrapper">
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/mariat-roy-emilie"></metal:macro>
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/biget-denis"></metal:macro>
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/camus-guigone"></metal:macro>
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/reyes-nastassia"></metal:macro>
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/levain-alix"></metal:macro>
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/danto-anatole"></metal:macro>
+    </div>
+  </div>
+
+  <div style="background-color: #97c8f3;">
+    <div class="container">
+      <h3 class="text-center">Marine Environmental Sciences - MES</h3>
+
+      <h4 class="text-center">Natural Sciences</h4>
+
+      <div class="thumbnail-wrapper">
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/ragueneau-olivier"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/niquil-nathalie"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/coston-guarini-jennifer"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/guarini-jean-marc"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/chauvaud-laurent"></metal:macro>
+      </div>
+
+      <h4 class="text-center">Engineering Sciences</h4>
+
+      <div class="thumbnail-wrapper">
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/lambrechts-adrien"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/danto-jules"></metal:macro>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3 class="text-center">Related views</h3>
+
+    <div class="thumbnail-wrapper">
+      <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/gleize-pierre"></metal:macro>
+    </div>
+
+  </div>
+
   </metal:content-core>
 </metal:content-core>
 
 </body>
 </html>
-  

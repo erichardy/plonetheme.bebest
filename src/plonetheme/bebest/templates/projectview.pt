@@ -38,8 +38,8 @@
        </div>
        <div class="bebest-project-category"
             tal:content="structure python:context.getProjectCategories()">
-        
-       
+
+
        </div>
            <div class="bebest-subtitle"
                tal:content="string:${context/description}">
@@ -73,7 +73,7 @@
                        class="img-circle portrait-prime" />
                   <h4 tal:content="string:${contact/first_name} ${contact/family_name}">Camille Mazé</h4>
                   <p tal:content="string:${contact/affiliation1}">CNRS - LEMAR</p>
-              </a>    
+              </a>
           </div>
 
 
@@ -87,10 +87,10 @@
                        class="img-circle portrait-prime" />
                   <h4 tal:content="string:${contact/first_name} ${contact/family_name}">Camille Maze</h4>
                   <p tal:content="string:${contact/affiliation1}">LEMAR - CNRS</p>
-              </a>    
+              </a>
           </div>
 
-         
+
 
         </div>
        <span tal:condition="teams">
@@ -111,14 +111,14 @@
            <p tal:content="python:person.getAffiliations()">Affiliations</p>
       </a>
         </div>
-    
+
     </span>
     </div>
      </span>
       </div>
     </div>
   </section>
-  
+
   <div id="page-content" class="container-fluid">
   <div class="container">
     <div class="row pushtop">
@@ -142,7 +142,7 @@
     </div>
   </div>
 
-<section tal:condition="missions"><!--------Début de la section missions associées---------->
+<section tal:condition="missions"><!--------DÃ©but de la section missions associÃ©es---------->
   <div class="container-fluid bg-bright">
     <div class="container">
            <!----------thumbnails des missions---------->
@@ -179,4 +179,3 @@
 
 </body>
 </html>
-  
