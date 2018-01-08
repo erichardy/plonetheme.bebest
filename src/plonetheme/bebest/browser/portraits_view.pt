@@ -184,7 +184,7 @@
     <div class="container">
       <h3 class="text-center">Marine Environmental Sciences - MES</h3>
 
-      <h4 class="text-center">Natural Sciences</h4>
+      <h4 class="text-center">Natural Sciences and social-ecological modelling</h4>
 
       <div class="thumbnail-wrapper">
         <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/ragueneau-olivier"></metal:macro>
@@ -192,6 +192,8 @@
         <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/coston-guarini-jennifer"></metal:macro>
         <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/guarini-jean-marc"></metal:macro>
         <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/chauvaud-laurent"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/riera-fabien"></metal:macro>
+        <metal:macro use-macro="template/macros/portrait" tal:define="person nocall:context/boudry-pierre"></metal:macro>
       </div>
 
       <h4 class="text-center">Engineering Sciences</h4>
